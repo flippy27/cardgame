@@ -1,0 +1,22 @@
+{
+    "name": "Flippy.CardDuelMobile.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "Unity.InputSystem",
+        "Unity.Netcode.Runtime",
+        "Unity.Services.Authentication",
+        "Unity.Services.Core",
+        "Unity.Services.Core.Environments",
+        "Unity.Services.Multiplayer",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

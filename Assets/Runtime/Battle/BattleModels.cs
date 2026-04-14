@@ -1,0 +1,132 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Flippy.CardDuelMobile.Core;
+using Flippy.CardDuelMobile.Data;
+
+namespace Flippy.CardDuelMobile.Battle
+{
+    [Serializable]
+    public sealed class CardRuntime
+    {
+        public string RuntimeId;
+        public string CardId;
+        public string DisplayName;
+        public int OwnerIndex;
+        public int Attack;
+        public int CurrentHealth;
+        public int MaxHealth;
+        public int Armor;
+        public BoardSlot CurrentSlot;
+        public CardDefinition Definition;
+        public bool IsDead => CurrentHealth <= 0;
+    }
+
+    [Serializable]
+    public sealed class BoardSlotRuntime
+    {
+        public BoardSlot Slot;
+        public CardRuntime Occupant;
+    }
+
+    [Serializable]
+    public sealed class HandCardRuntime
+    {
+        public string RuntimeHandKey;
+        public CardDefinition Definition;
+    }
+
+    [Serializable]
+    public sealed class DuelPlayerState
+    {
+        public int PlayerIndex;
+        public int HeroHealth;
+        public int Mana;
+        public int MaxMana;
+        public readonly List<CardDefinition> Deck = new();
+        public readonly List<HandCardRuntime> Hand = new();
+        public readonly List<BoardSlotRuntime> Board = new()
+        {
+            new BoardSlotRuntime{ Slot = BoardSlot.Front },
+            new BoardSlotRuntime{ Slot = BoardSlot.BackLeft },
+            new BoardSlotRuntime{ Slot = BoardSlot.BackRight }
+        };
+
+        /// <summary>
+        /// Busca ocupante por slot.
+        /// </summary>
+        public CardRuntime FindOccupant(BoardSlot slot)
+        {
+            return Board.FirstOrDefault(x => x.Slot == slot)?.Occupant;
+        }
+
+        /// <summary>
+        /// Determina si existe espacio libre en ese slot.
+        /// </summary>
+        public bool IsSlotEmpty(BoardSlot slot)
+        {
+            return FindOccupant(slot) == null;
+        }
+    }
+
+    [Serializable]
+    public sealed class BattleLogEntry
+    {
+        public BattleLogType type;
+        public string message;
+    }
+
+    [Serializable]
+    public sealed class DuelState
+    {
+        public DuelPlayerState[] Players = new DuelPlayerState[2];
+        public int ActivePlayerIndex;
+        public int TurnNumber;
+        public bool DuelEnded;
+        public DuelEndReason EndReason;
+        public readonly List<BattleLogEntry> Logs = new();
+
+        /// <summary>
+        /// Devuelve estado de jugador por índice.
+        /// </summary>
+        public DuelPlayerState GetPlayer(int index)
+        {
+            if (Players == null || index < 0 || index >= Players.Length)
+            {
+                return null;
+            }
+
+            return Players[index];
+        }
+    }
+
+    public readonly struct TargetSelectionRequest
+    {
+        public readonly int SourcePlayer;
+        public readonly int TargetPlayer;
+        public readonly string SourceRuntimeId;
+
+        public TargetSelectionRequest(int sourcePlayer, int targetPlayer, string sourceRuntimeId)
+        {
+            SourcePlayer = sourcePlayer;
+            TargetPlayer = targetPlayer;
+            SourceRuntimeId = sourceRuntimeId;
+        }
+    }
+
+    public readonly struct EffectExecution
+    {
+        public readonly int SourcePlayer;
+        public readonly int TargetPlayer;
+        public readonly string SourceRuntimeId;
+        public readonly string TargetRuntimeId;
+
+        public EffectExecution(int sourcePlayer, int targetPlayer, string sourceRuntimeId, string targetRuntimeId)
+        {
+            SourcePlayer = sourcePlayer;
+            TargetPlayer = targetPlayer;
+            SourceRuntimeId = sourceRuntimeId;
+            TargetRuntimeId = targetRuntimeId;
+        }
+    }
+}

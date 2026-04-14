@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27d01d11f6d70ef47af805def3eb09ab, type: 3}
+  m_Name: VP_Grove
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Data.CardVisualProfile
+  artwork: {fileID: -1985466816804586764, guid: 6aac0f54cf16edb4ab1162fc987bd560, type: 3}
+  frame: {fileID: 4526681642182344468, guid: af6c7e643a6629d49a98c9544bdfdd92, type: 3}
+  icon: {fileID: -5166389707501408383, guid: 579bc2a84ff5b3343b06b33123b570e9, type: 3}
+  primaryColor: {r: 0.32, g: 0.78, b: 0.33, a: 1}
+  secondaryColor: {r: 0.06, g: 0.16, b: 0.08, a: 1}
+  glowColor: {r: 0.384, g: 0.936, b: 0.39600003, a: 1.2}
+  cardMaterial: {fileID: 2100000, guid: a57f56631f4c0454080a9a4367852064, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 0b8e3d77ec61e914287b54e14f8c4e17, type: 2}
+  rarity: 0

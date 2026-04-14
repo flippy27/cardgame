@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059bcad5aaabf3a4d97c0b7aef8f7e71, type: 3}
+  m_Name: grove_shaper
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Data.CardDefinition
+  cardId: grove_shaper
+  displayName: Grove Shaper
+  description: Buffs allies over time.
+  faction: 2
+  rarity: 1
+  manaCost: 3
+  attack: 1
+  health: 4
+  armor: 0
+  canBePlayedInFront: 0
+  canBePlayedInBack: 1
+  defaultAttackTargetSelector: {fileID: 11400000, guid: de921d8279c1d224c80561018b79922d, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: 55d25643f3e691b489d687ab161dd29d, type: 2}
+  visualProfile: {fileID: 11400000, guid: 409d0f395600fd24889724a32df23140, type: 2}
