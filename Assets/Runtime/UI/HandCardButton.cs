@@ -91,25 +91,8 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            // Save original position
-            _originalParent = transform.parent;
-            _originalSiblingIndex = transform.GetSiblingIndex();
-
-            // Move to dragLayer to prevent blocking raycast to slots
-            if (_presenter.dragLayer != null)
-            {
-                transform.SetParent(_presenter.dragLayer, false);
-                transform.SetAsLastSibling();
-
-                // Ensure dragLayer doesn't block raycasts during drag
-                var dragLayerCanvas = _presenter.dragLayer.GetComponent<CanvasGroup>();
-                if (dragLayerCanvas == null)
-                {
-                    dragLayerCanvas = _presenter.dragLayer.gameObject.AddComponent<CanvasGroup>();
-                }
-                dragLayerCanvas.blocksRaycasts = false;
-            }
-
+            // Don't change parent - it breaks EventSystem drag tracking
+            // Just disable raycast blocking so raycasts pass through
             if (canvasGroup != null)
             {
                 canvasGroup.blocksRaycasts = false;
@@ -135,27 +118,10 @@ namespace Flippy.CardDuelMobile.UI
         {
             Debug.Log("[Hand] OnEndDrag");
 
-            // Return to original position
-            if (_originalParent != null)
-            {
-                transform.SetParent(_originalParent, false);
-                transform.SetSiblingIndex(_originalSiblingIndex);
-            }
-
             if (canvasGroup != null)
             {
                 canvasGroup.blocksRaycasts = true;
                 canvasGroup.alpha = 1f;
-            }
-
-            // Restore dragLayer raycast blocking after drag ends
-            if (_presenter != null && _presenter.dragLayer != null)
-            {
-                var dragLayerCanvas = _presenter.dragLayer.GetComponent<CanvasGroup>();
-                if (dragLayerCanvas != null)
-                {
-                    dragLayerCanvas.blocksRaycasts = true;
-                }
             }
 
             if (_presenter != null)
