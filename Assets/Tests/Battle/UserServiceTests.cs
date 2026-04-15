@@ -17,7 +17,7 @@ namespace Flippy.CardDuelMobile.Tests
         public void Setup()
         {
             _apiClient = new CardGameApiClient("http://localhost:5000");
-            _authService = new AuthService(_apiClient);
+            _authService = new AuthService("http://localhost:5000");
             _userService = new UserService(_apiClient, _authService);
         }
 
