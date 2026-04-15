@@ -17,7 +17,7 @@ namespace Flippy.CardDuelMobile.Networking
 
         public MatchCompletionService(GameService gameService)
         {
-            _gameService = gameService ?? throw new ValidationException("GameService required.");
+            _gameService = gameService; // Optional, used only for cache clearing
         }
 
         /// <summary>
@@ -70,7 +70,10 @@ namespace Flippy.CardDuelMobile.Networking
                          $"API Response: {response}");
 
                 // Invalidar cache de match history (datos desactualizados)
-                _gameService.MatchHistory.ClearCache();
+                if (_gameService != null)
+                {
+                    _gameService.MatchHistory.ClearCache();
+                }
 
                 return result;
             }

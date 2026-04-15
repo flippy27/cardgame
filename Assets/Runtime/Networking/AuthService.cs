@@ -33,6 +33,26 @@ namespace Flippy.CardDuelMobile.Networking
         }
 
         /// <summary>
+        /// Refresca el token si está a punto de expirar.
+        /// </summary>
+        public async Task RefreshTokenIfNeeded()
+        {
+            var expiry = SecureTokenStorage.GetTokenExpiry();
+            if (expiry == 0) return; // No expiry set
+
+            var expiryTime = DateTimeOffset.FromUnixTimeSeconds(expiry);
+            var now = DateTimeOffset.UtcNow;
+
+            // Refresh if token expires in less than 5 minutes
+            if (expiryTime - now < TimeSpan.FromMinutes(5))
+            {
+                Debug.LogWarning("[Auth] Token expiring soon, user needs to login again");
+                // Token expired - user needs to login again
+                Logout();
+            }
+        }
+
+        /// <summary>
         /// Login con Email y Password.
         /// Retorna true si es exitoso, false si credenciales inválidas.
         /// </summary>
@@ -48,7 +68,7 @@ namespace Flippy.CardDuelMobile.Networking
                 var request = new LoginRequest { email = email, password = password };
                 var json = JsonUtility.ToJson(request);
 
-                using var webRequest = UnityWebRequest.Post($"{_baseUrl}/api/auth/login", "application/json");
+                using var webRequest = UnityWebRequest.PostWwwForm($"{_baseUrl}/api/auth/login", "application/json");
                 webRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));
                 webRequest.downloadHandler = new DownloadHandlerBuffer();
                 webRequest.timeout = 30;
@@ -96,7 +116,7 @@ namespace Flippy.CardDuelMobile.Networking
                 var request = new RegisterRequest { email = email, username = username, password = password };
                 var json = JsonUtility.ToJson(request);
 
-                using var webRequest = UnityWebRequest.Post($"{_baseUrl}/api/auth/register", "application/json");
+                using var webRequest = UnityWebRequest.PostWwwForm($"{_baseUrl}/api/auth/register", "application/json");
                 webRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));
                 webRequest.downloadHandler = new DownloadHandlerBuffer();
                 webRequest.timeout = 30;

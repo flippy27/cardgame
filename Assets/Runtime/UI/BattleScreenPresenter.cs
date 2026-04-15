@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -865,9 +866,8 @@ namespace Flippy.CardDuelMobile.UI
                 Debug.Log($"[BattleScreen] Match ended. Winner: {_latestSnapshot.winnerPlayerIndex}, " +
                          $"Local player: {_latestSnapshot.localPlayerIndex}, Won: {playerWon}");
 
-                // Get GameService for match completion
-                var gameService = new GameService();
-                var completionService = new MatchCompletionService(gameService);
+                // Create match completion service (GameService can be null, only used for cache clearing)
+                var completionService = new MatchCompletionService(null);
 
                 // Use rating from snapshot (or default 1000 if not available)
                 var localRating = local?.rating ?? 1000;
