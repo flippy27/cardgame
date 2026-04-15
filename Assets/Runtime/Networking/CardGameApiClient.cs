@@ -14,14 +14,14 @@ namespace Flippy.CardDuelMobile.Networking
     /// </summary>
     public sealed class CardGameApiClient
     {
-        private readonly string _baseUrl;
+        public string BaseUrl { get; }
 
         public CardGameApiClient(string baseUrl = "http://localhost:5000")
         {
             if (string.IsNullOrWhiteSpace(baseUrl))
                 throw new ValidationException("BaseUrl cannot be empty.");
 
-            _baseUrl = baseUrl.TrimEnd('/');
+            BaseUrl = baseUrl.TrimEnd('/');
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public async Task<List<ServerCardDefinition>> FetchAllCards()
         {
-            using var request = UnityWebRequest.Get($"{_baseUrl}/api/cards");
+            using var request = UnityWebRequest.Get($"{BaseUrl}/api/cards");
             request.downloadHandler = new DownloadHandlerBuffer();
 
             var operation = request.SendWebRequest();

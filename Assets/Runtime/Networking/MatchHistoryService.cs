@@ -49,7 +49,7 @@ namespace Flippy.CardDuelMobile.Networking
             }
 
             // Fetch from API
-            var url = $"{_apiClient._baseUrl}/api/matches/history/{playerId}?page={page}&pageSize={pageSize}";
+            var url = $"{_apiClient.BaseUrl}/api/matches/history/{playerId}?page={page}&pageSize={pageSize}";
             using var request = UnityWebRequest.Get(url);
 
             // Add auth header if available
