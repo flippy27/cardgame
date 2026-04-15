@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using Flippy.CardDuelMobile.Battle;
 
 namespace Flippy.CardDuelMobile.UI
@@ -94,10 +95,16 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            var mousePos = (Vector2)UnityEngine.Input.mousePosition;
+            var mouse = Mouse.current;
+            if (mouse == null)
+            {
+                return;
+            }
+
+            var mousePos = mouse.position.ReadValue();
 
             // Start drag when mouse pressed over this card
-            if (!_isDragging && UnityEngine.Input.GetMouseButtonDown(0))
+            if (!_isDragging && mouse.leftButton.wasPressedThisFrame)
             {
                 if (IsMouseOverThisCard(mousePos))
                 {
@@ -117,7 +124,7 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             // Update drag position while mouse held
-            if (_isDragging && UnityEngine.Input.GetMouseButton(0))
+            if (_isDragging && mouse.leftButton.isPressed)
             {
                 if (mousePos != _lastDragPosition)
                 {
@@ -127,7 +134,7 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             // End drag when mouse released
-            if (_isDragging && UnityEngine.Input.GetMouseButtonUp(0))
+            if (_isDragging && mouse.leftButton.wasReleasedThisFrame)
             {
                 _isDragging = false;
 
