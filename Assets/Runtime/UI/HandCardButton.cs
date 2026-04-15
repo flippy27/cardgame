@@ -104,13 +104,14 @@ namespace Flippy.CardDuelMobile.UI
 
         public void OnDrag(PointerEventData eventData)
         {
+            Debug.Log($"[Hand] OnDrag CALLED at {eventData.position}");
+
             if (!_canDrag || _presenter == null)
             {
                 Debug.LogWarning($"[Hand] OnDrag: canDrag={_canDrag}, presenter={(_presenter != null ? "OK" : "NULL")}");
                 return;
             }
 
-            Debug.Log($"[Hand] OnDrag at {eventData.position}");
             _presenter.UpdateDrag(eventData.position);
         }
 
