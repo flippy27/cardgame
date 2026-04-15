@@ -135,6 +135,8 @@ namespace Flippy.CardDuelMobile.UI
             _dragSource = source;
             _dragDropCommitted = false;
 
+            Debug.Log($"[Drag] BEGIN: {dto.displayName} at {screenPosition}");
+
             CreateDragGhost(dto, screenPosition);
             RefreshSelectionLabel();
             RefreshAllSlotVisuals();
@@ -180,8 +182,11 @@ namespace Flippy.CardDuelMobile.UI
                 targetSlot = RaycastForSlot(UnityEngine.Input.mousePosition);
             }
 
+            Debug.Log($"[Drag] END: dragOverSlot={(_dragOverSlot != null ? _dragOverSlot.slot.ToString() : "NULL")}, targetSlot={targetSlot}, card={(_draggedCard != null ? _draggedCard.displayName : "NULL")}");
+
             if (!_dragDropCommitted && _draggedCard != null && targetSlot != null)
             {
+                Debug.Log($"[Drag] PLAYING: {_draggedCard.displayName} to {targetSlot.slot}");
                 TryPlayDraggedCardTo(targetSlot.slot, targetSlot.CardAnchor);
             }
 
@@ -207,15 +212,19 @@ namespace Flippy.CardDuelMobile.UI
 
             EventSystem.current.RaycastAll(pointerEventData, hits);
 
+            Debug.Log($"[Raycast] Position {screenPosition}: found {hits.Count} hits");
             foreach (var hit in hits)
             {
+                Debug.Log($"  - {hit.gameObject.name} ({hit.gameObject.GetComponent<BoardSlotButton>() != null ? "BoardSlot" : "Other"})");
                 var slotButton = hit.gameObject.GetComponent<BoardSlotButton>();
                 if (slotButton != null && slotButton.isLocalSide && CanCardBePlayedTo(_draggedCard, slotButton.slot))
                 {
+                    Debug.Log($"  -> MATCH: {slotButton.slot}");
                     return slotButton;
                 }
             }
 
+            Debug.Log($"[Raycast] No valid slot found");
             return null;
         }
 
