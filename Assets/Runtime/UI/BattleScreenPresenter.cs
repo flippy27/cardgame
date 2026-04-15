@@ -169,7 +169,7 @@ namespace Flippy.CardDuelMobile.UI
             {
                 var pointerData = new PointerEventData(EventSystem.current)
                 {
-                    position = Input.mousePosition
+                    position = UnityEngine.Input.mousePosition
                 };
 
                 var raycastResults = new List<RaycastResult>();
