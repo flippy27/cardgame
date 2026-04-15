@@ -54,6 +54,7 @@ namespace Flippy.CardDuelMobile.UI
         private HandCardButton _dragSource;
         private CardViewWidget _dragGhost;
         private bool _dragDropCommitted;
+        private BoardSlotButton _dragOverSlot;
 
         private readonly List<GameObject> _spawnedHandCards = new();
         private readonly Dictionary<BoardSlot, BoardSlotButton> _localSlots = new();
@@ -164,30 +165,18 @@ namespace Flippy.CardDuelMobile.UI
 
         public void EndDrag()
         {
-            // Manually trigger drop if card is over a valid slot
-            if (!_dragDropCommitted && _draggedCard != null)
+            // Try using tracked slot first
+            var targetSlot = _dragOverSlot;
+
+            // Fallback: raycast from mouse position if tracking didn't work
+            if (targetSlot == null && !_dragDropCommitted && _draggedCard != null)
             {
-                var pointerData = new PointerEventData(EventSystem.current)
-                {
-                    position = UnityEngine.Input.mousePosition
-                };
+                targetSlot = RaycastForSlot(UnityEngine.Input.mousePosition);
+            }
 
-                var raycastResults = new List<RaycastResult>();
-                EventSystem.current.RaycastAll(pointerData, raycastResults);
-
-                // Find first BoardSlotButton under mouse
-                foreach (var result in raycastResults)
-                {
-                    var slotButton = result.gameObject.GetComponent<BoardSlotButton>();
-                    if (slotButton != null)
-                    {
-                        TryPlayDraggedCardTo(slotButton.slot, slotButton.CardAnchor);
-                        if (_dragDropCommitted)
-                        {
-                            break;
-                        }
-                    }
-                }
+            if (!_dragDropCommitted && _draggedCard != null && targetSlot != null)
+            {
+                TryPlayDraggedCardTo(targetSlot.slot, targetSlot.CardAnchor);
             }
 
             if (!_dragDropCommitted)
@@ -197,8 +186,36 @@ namespace Flippy.CardDuelMobile.UI
 
             _draggedCard = null;
             _dragSource = null;
+            _dragOverSlot = null;
             RefreshAllSlotVisuals();
             RebuildHandOnly();
+        }
+
+        private BoardSlotButton RaycastForSlot(Vector2 screenPosition)
+        {
+            var hits = new List<RaycastResult>();
+            var pointerEventData = new PointerEventData(EventSystem.current)
+            {
+                position = screenPosition
+            };
+
+            EventSystem.current.RaycastAll(pointerEventData, hits);
+
+            foreach (var hit in hits)
+            {
+                var slotButton = hit.gameObject.GetComponent<BoardSlotButton>();
+                if (slotButton != null && slotButton.isLocalSide && CanCardBePlayedTo(_draggedCard, slotButton.slot))
+                {
+                    return slotButton;
+                }
+            }
+
+            return null;
+        }
+
+        public void SetDragOverSlot(BoardSlotButton slot)
+        {
+            _dragOverSlot = slot;
         }
 
         public void TryPlayDraggedCardTo(BoardSlot slot, RectTransform targetAnchor)

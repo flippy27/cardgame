@@ -133,12 +133,24 @@ namespace Flippy.CardDuelMobile.UI
         {
             _isHovering = true;
             RefreshOnlyVisual(_hasSelectedCard, _legalForSelectedCard, _hasDrag);
+
+            // Register this slot as drop target during drag
+            if (_presenter != null && _presenter.HasDraggedCard)
+            {
+                _presenter.SetDragOverSlot(this);
+            }
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             _isHovering = false;
             RefreshOnlyVisual(_hasSelectedCard, _legalForSelectedCard, _hasDrag);
+
+            // Unregister drop target
+            if (_presenter != null)
+            {
+                _presenter.SetDragOverSlot(null);
+            }
         }
 
         public void OnPointerClick(PointerEventData eventData)

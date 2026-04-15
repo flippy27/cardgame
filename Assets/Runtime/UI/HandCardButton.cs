@@ -100,6 +100,14 @@ namespace Flippy.CardDuelMobile.UI
             {
                 transform.SetParent(_presenter.dragLayer, false);
                 transform.SetAsLastSibling();
+
+                // Ensure dragLayer doesn't block raycasts during drag
+                var dragLayerCanvas = _presenter.dragLayer.GetComponent<CanvasGroup>();
+                if (dragLayerCanvas == null)
+                {
+                    dragLayerCanvas = _presenter.dragLayer.gameObject.AddComponent<CanvasGroup>();
+                }
+                dragLayerCanvas.blocksRaycasts = false;
             }
 
             if (canvasGroup != null)
@@ -134,6 +142,16 @@ namespace Flippy.CardDuelMobile.UI
             {
                 canvasGroup.blocksRaycasts = true;
                 canvasGroup.alpha = 1f;
+            }
+
+            // Restore dragLayer raycast blocking after drag ends
+            if (_presenter != null && _presenter.dragLayer != null)
+            {
+                var dragLayerCanvas = _presenter.dragLayer.GetComponent<CanvasGroup>();
+                if (dragLayerCanvas != null)
+                {
+                    dragLayerCanvas.blocksRaycasts = true;
+                }
             }
 
             if (_presenter != null)
