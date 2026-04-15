@@ -48,7 +48,7 @@ namespace Flippy.CardDuelMobile.Networking
             try
             {
                 ApiClient = new CardGameApiClient(apiBaseUrl);
-                AuthService = new AuthService(ApiClient);
+                AuthService = new AuthService(apiBaseUrl);
                 CardCatalog = new CardCatalogCache(ApiClient);
                 MatchHistory = new MatchHistoryService(ApiClient, AuthService);
                 UserService = new UserService(ApiClient, AuthService);
