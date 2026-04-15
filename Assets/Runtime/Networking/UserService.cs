@@ -238,7 +238,7 @@ namespace Flippy.CardDuelMobile.Networking
     /// Wrapper para array de logros.
     /// </summary>
     [System.Serializable]
-    private sealed class AchievementWrapper
+    internal sealed class AchievementWrapper
     {
         public AchievementDto[] achievements;
     }

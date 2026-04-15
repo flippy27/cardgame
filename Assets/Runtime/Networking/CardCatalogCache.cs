@@ -92,11 +92,11 @@ namespace Flippy.CardDuelMobile.Networking
         /// <summary>
         /// Valida una lista de card IDs contra el catálogo.
         /// </summary>
-        public DeckValidator.DeckValidationResult ValidateDeck(IEnumerable<string> cardIds)
+        public DeckValidationResult ValidateDeck(IEnumerable<string> cardIds)
         {
             if (!_isLoaded)
             {
-                return new DeckValidator.DeckValidationResult
+                return new DeckValidationResult
                 {
                     IsValid = false
                 };

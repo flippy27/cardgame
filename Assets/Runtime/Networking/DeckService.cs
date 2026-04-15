@@ -207,7 +207,7 @@ namespace Flippy.CardDuelMobile.Networking
         /// <summary>
         /// Valida un mazo contra el catálogo.
         /// </summary>
-        public DeckValidator.DeckValidationResult ValidateDeck(string[] cardIds)
+        public DeckValidationResult ValidateDeck(string[] cardIds)
         {
             if (!_cardCatalog.IsLoaded)
             {
@@ -344,7 +344,7 @@ namespace Flippy.CardDuelMobile.Networking
     /// Wrapper para lista de mazos.
     /// </summary>
     [System.Serializable]
-    private sealed class DeckListWrapper
+    internal sealed class DeckListWrapper
     {
         public DeckDto[] decks;
     }

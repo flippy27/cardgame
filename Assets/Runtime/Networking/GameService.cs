@@ -187,11 +187,11 @@ namespace Flippy.CardDuelMobile.Networking
         /// <summary>
         /// Valida un mazo contra el catálogo.
         /// </summary>
-        public DeckValidator.DeckValidationResult ValidateDeck(System.Collections.Generic.IEnumerable<string> cardIds)
+        public DeckValidationResult ValidateDeck(System.Collections.Generic.IEnumerable<string> cardIds)
         {
             if (!IsCatalogReady)
             {
-                return new DeckValidator.DeckValidationResult
+                return new DeckValidationResult
                 {
                     IsValid = false
                 };
