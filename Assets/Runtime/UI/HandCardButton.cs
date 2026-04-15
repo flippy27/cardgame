@@ -8,7 +8,7 @@ namespace Flippy.CardDuelMobile.UI
     /// <summary>
     /// Carta de la mano con click y drag and drop.
     /// </summary>
-    public sealed class HandCardButton : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
+    public sealed class HandCardButton : MonoBehaviour, IPointerClickHandler
     {
         public Button button;
         public Image backgroundImage;
@@ -81,64 +81,77 @@ namespace Flippy.CardDuelMobile.UI
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            _presenter?.NotifyCardClicked(_dto);
+            if (!_isDragging)
+            {
+                _presenter?.NotifyCardClicked(_dto);
+            }
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+        private void Update()
         {
             if (!_canDrag || _presenter == null)
             {
                 return;
             }
 
-            _isDragging = true;
-            _lastDragPosition = eventData.position;
+            var mousePos = (Vector2)Input.mousePosition;
 
-            Debug.Log($"[Hand] Drag start: {_dto.displayName}");
-
-            if (canvasGroup != null)
+            // Start drag when mouse pressed over this card
+            if (!_isDragging && Input.GetMouseButtonDown(0))
             {
-                canvasGroup.blocksRaycasts = false;
-                canvasGroup.alpha = 0.50f;
+                if (IsMouseOverThisCard(mousePos))
+                {
+                    _isDragging = true;
+                    _lastDragPosition = mousePos;
+
+                    Debug.Log($"[Hand] Drag start: {_dto.displayName}");
+
+                    if (canvasGroup != null)
+                    {
+                        canvasGroup.blocksRaycasts = false;
+                        canvasGroup.alpha = 0.50f;
+                    }
+
+                    _presenter.BeginDrag(_dto, this, mousePos);
+                }
             }
 
-            _presenter.BeginDrag(_dto, this, eventData.position);
-        }
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            if (!_isDragging)
+            // Update drag position while mouse held
+            if (_isDragging && Input.GetMouseButton(0))
             {
-                return;
-            }
-
-            _isDragging = false;
-
-            Debug.Log("[Hand] Drag end");
-
-            if (canvasGroup != null)
-            {
-                canvasGroup.blocksRaycasts = true;
-                canvasGroup.alpha = 1f;
-            }
-
-            if (_presenter != null)
-            {
-                _presenter.EndDrag();
-            }
-        }
-
-        private void Update()
-        {
-            if (_isDragging && _presenter != null)
-            {
-                var mousePos = (Vector2)UnityEngine.Input.mousePosition;
                 if (mousePos != _lastDragPosition)
                 {
                     _lastDragPosition = mousePos;
                     _presenter.UpdateDrag(mousePos);
                 }
             }
+
+            // End drag when mouse released
+            if (_isDragging && Input.GetMouseButtonUp(0))
+            {
+                _isDragging = false;
+
+                Debug.Log("[Hand] Drag end");
+
+                if (canvasGroup != null)
+                {
+                    canvasGroup.blocksRaycasts = true;
+                    canvasGroup.alpha = 1f;
+                }
+
+                _presenter.EndDrag();
+            }
+        }
+
+        private bool IsMouseOverThisCard(Vector2 mousePos)
+        {
+            var rect = transform as RectTransform;
+            if (rect == null)
+            {
+                return false;
+            }
+
+            return RectTransformUtility.RectangleContainsScreenPoint(rect, mousePos);
         }
     }
 }
