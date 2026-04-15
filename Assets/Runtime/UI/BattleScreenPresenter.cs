@@ -143,7 +143,21 @@ namespace Flippy.CardDuelMobile.UI
         {
             if (_dragGhost != null)
             {
-                _dragGhost.transform.position = screenPosition;
+                var ghostRect = _dragGhost.transform as RectTransform;
+                if (ghostRect != null && dragLayer != null)
+                {
+                    // Convert screen position to local position in dragLayer
+                    if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                        dragLayer, screenPosition, null, out var localPos))
+                    {
+                        ghostRect.anchoredPosition = localPos;
+                    }
+                }
+                else if (ghostRect != null)
+                {
+                    // Fallback: use world position if no dragLayer
+                    ghostRect.position = screenPosition;
+                }
             }
         }
 
