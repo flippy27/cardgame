@@ -56,9 +56,18 @@ namespace Flippy.CardDuelMobile.Networking
                     completedAt = DateTimeOffset.UtcNow
                 };
 
-                // TODO: Enviar resultado a servidor (POST /api/matches/{matchId}/complete)
-                Debug.Log($"Match {matchId}: {(playerWon ? "WIN" : "LOSS")} | " +
-                         $"Rating {playerRatingBefore} → {playerRatingAfter} ({(result.ratingDelta > 0 ? "+" : "")}{result.ratingDelta})");
+                // Enviar resultado a servidor
+                var apiClient = new CardGameApiClient();
+                var response = await apiClient.CompleteMatchAsync(
+                    matchId,
+                    playerId,
+                    opponentId,
+                    playerWon,
+                    durationSeconds);
+
+                Debug.Log($"[MatchCompletion] Match {matchId}: {(playerWon ? "WIN" : "LOSS")} | " +
+                         $"Rating {playerRatingBefore} → {playerRatingAfter} ({(result.ratingDelta > 0 ? "+" : "")}{result.ratingDelta}) | " +
+                         $"API Response: {response}");
 
                 // Invalidar cache de match history (datos desactualizados)
                 _gameService.MatchHistory.ClearCache();
@@ -67,7 +76,7 @@ namespace Flippy.CardDuelMobile.Networking
             }
             catch (Exception ex)
             {
-                Debug.LogError($"Match completion error: {ex.Message}");
+                Debug.LogError($"[MatchCompletion] Error: {ex.Message}");
                 throw;
             }
         }

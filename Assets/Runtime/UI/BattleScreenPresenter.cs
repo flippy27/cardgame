@@ -57,6 +57,12 @@ namespace Flippy.CardDuelMobile.UI
         private bool _dragDropCommitted;
         private BoardSlotButton _dragOverSlot;
 
+        private bool _matchCompletionHandled;
+        private string _matchId;
+        private string _playerId;
+        private string _opponentId;
+        private int _matchStartTime;
+
         private readonly List<GameObject> _spawnedHandCards = new();
         private readonly Dictionary<BoardSlot, BoardSlotButton> _localSlots = new();
         private readonly Dictionary<BoardSlot, BoardSlotButton> _remoteSlots = new();
@@ -386,6 +392,15 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
+            // Initialize match info on first snapshot
+            if (string.IsNullOrEmpty(_matchId))
+            {
+                _matchId = _latestSnapshot.matchId;
+                _playerId = _latestSnapshot.players[_latestSnapshot.localPlayerIndex].playerId;
+                _opponentId = _latestSnapshot.players[1 - _latestSnapshot.localPlayerIndex].playerId;
+                _matchStartTime = Time.frameCount; // Simple time tracking
+            }
+
             RebuildHandOnly();
 
             var local = _latestSnapshot.players[_latestSnapshot.localPlayerIndex];
@@ -414,6 +429,12 @@ namespace Flippy.CardDuelMobile.UI
             if (endTurnButton != null)
             {
                 endTurnButton.interactable = isLocalTurn;
+            }
+
+            // Handle match completion
+            if (_latestSnapshot.duelEnded && !_matchCompletionHandled)
+            {
+                HandleMatchCompletion(local, remote);
             }
 
             RefreshSelectionLabel();
@@ -830,6 +851,40 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             _spawnedHandCards.Clear();
+        }
+
+        private async void HandleMatchCompletion(PlayerSnapshotDto local, PlayerSnapshotDto remote)
+        {
+            _matchCompletionHandled = true;
+
+            try
+            {
+                var playerWon = _latestSnapshot.winnerPlayerIndex == _latestSnapshot.localPlayerIndex;
+                var durationSeconds = Mathf.RoundToInt(Time.time);
+
+                Debug.Log($"[BattleScreen] Match ended. Winner: {_latestSnapshot.winnerPlayerIndex}, " +
+                         $"Local player: {_latestSnapshot.localPlayerIndex}, Won: {playerWon}");
+
+                // Get GameService for match completion
+                var gameService = new GameService();
+                var completionService = new MatchCompletionService(gameService);
+
+                var result = await completionService.CompleteMatch(
+                    _matchId,
+                    _playerId,
+                    _opponentId,
+                    local.rating,
+                    remote.rating,
+                    playerWon,
+                    durationSeconds);
+
+                Debug.Log($"[BattleScreen] Match completion result: {result.matchId} | " +
+                         $"Won: {result.won} | Rating delta: {(result.ratingDelta > 0 ? "+" : "")}{result.ratingDelta}");
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[BattleScreen] Error completing match: {ex.Message}");
+            }
         }
     }
 }

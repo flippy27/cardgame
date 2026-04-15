@@ -79,7 +79,70 @@ namespace Flippy.CardDuelMobile.Networking
         }
 
         /// <summary>
-        /// Ejecuta request con retry exponencial y timeout.
+        /// Completa un match y registra resultado en servidor.
+        /// </summary>
+        public async Task<string> CompleteMatchAsync(string matchId, string playerId, string opponentId, bool playerWon, int durationSeconds)
+        {
+            var request = new MatchCompletionRequestDto
+            {
+                playerId = playerId,
+                opponentId = opponentId,
+                playerWon = playerWon,
+                durationSeconds = durationSeconds
+            };
+
+            var json = JsonUtility.ToJson(request);
+            return await ExecutePostWithRetry($"{BaseUrl}/api/matches/{matchId}/complete", json);
+        }
+
+        /// <summary>
+        /// Ejecuta request POST con retry exponencial y timeout.
+        /// </summary>
+        private async Task<string> ExecutePostWithRetry(string url, string jsonBody, int retryAttempt = 0)
+        {
+            try
+            {
+                using var request = UnityWebRequest.Post(url, "");
+                request.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(jsonBody));
+                request.downloadHandler = new DownloadHandlerBuffer();
+                request.SetRequestHeader("Content-Type", "application/json");
+                request.timeout = TimeoutSeconds;
+
+                var operation = request.SendWebRequest();
+                while (!operation.isDone)
+                {
+                    await Task.Delay(10);
+                }
+
+                if (request.result != UnityWebRequest.Result.Success)
+                {
+                    var error = $"HTTP {request.responseCode}: {request.error}";
+                    if (retryAttempt < MaxRetries && request.responseCode >= 500)
+                    {
+                        var delay = (int)Math.Pow(2, retryAttempt) * 1000;
+                        await Task.Delay(delay);
+                        return await ExecutePostWithRetry(url, jsonBody, retryAttempt + 1);
+                    }
+
+                    throw new InvalidOperationException($"Request failed: {error}");
+                }
+
+                return request.downloadHandler.text;
+            }
+            catch (TaskCanceledException)
+            {
+                if (retryAttempt < MaxRetries)
+                {
+                    var delay = (int)Math.Pow(2, retryAttempt) * 1000;
+                    await Task.Delay(delay);
+                    return await ExecutePostWithRetry(url, jsonBody, retryAttempt + 1);
+                }
+                throw new InvalidOperationException($"Request timeout after {MaxRetries} retries");
+            }
+        }
+
+        /// <summary>
+        /// Ejecuta request GET con retry exponencial y timeout.
         /// </summary>
         private async Task<string> ExecuteWithRetry(string url, int retryAttempt = 0)
         {
@@ -175,5 +238,14 @@ namespace Flippy.CardDuelMobile.Networking
     {
         public int Kind; // enum ordinal
         public int Amount;
+    }
+
+    [System.Serializable]
+    public sealed class MatchCompletionRequestDto
+    {
+        public string playerId;
+        public string opponentId;
+        public bool playerWon;
+        public int durationSeconds;
     }
 }
