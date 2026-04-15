@@ -140,7 +140,7 @@ namespace Flippy.CardDuelMobile.UI
             CreateDragGhost(dto, screenPosition);
             RefreshSelectionLabel();
             RefreshAllSlotVisuals();
-            RebuildHandOnly();
+            // Don't RebuildHandOnly here - it destroys the HandCardButton being dragged
         }
 
         public void UpdateDrag(Vector2 screenPosition)
