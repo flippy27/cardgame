@@ -2,127 +2,166 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Networking;
 using Flippy.CardDuelMobile.Core;
 
 namespace Flippy.CardDuelMobile.Networking
 {
     /// <summary>
-    /// Maneja autenticación JWT con CardGameAPI.
-    /// Almacena tokens en PlayerPrefs (simple), puede extenderse a secure storage.
+    /// Autenticación JWT con CardGameAPI (endpoints reales).
+    /// Almacena tokens de forma segura usando SecureTokenStorage.
+    ///
+    /// Endpoints:
+    /// - POST /api/auth/login (Email, Password) -> JWT token + userId
+    /// - POST /api/auth/register (Email, Username, Password) -> JWT token + userId
+    ///
+    /// Tokens válidos 24 horas. Se cargan desde secure storage al iniciar.
     /// </summary>
     public sealed class AuthService
     {
-        private const string TokenKey = "auth_token";
-        private const string RefreshTokenKey = "auth_refresh_token";
-        private const string PlayerIdKey = "auth_player_id";
-        private const string ExpiryKey = "auth_expiry";
-
-        private readonly CardGameApiClient _apiClient;
+        private readonly string _baseUrl;
 
         public string CurrentPlayerId { get; private set; }
+        public string CurrentUserEmail { get; private set; }
         public string CurrentToken { get; private set; }
         public bool IsAuthenticated => !string.IsNullOrWhiteSpace(CurrentToken) && !IsTokenExpired();
 
-        public AuthService(CardGameApiClient apiClient = null)
+        public AuthService(string baseUrl = "http://localhost:5000")
         {
-            _apiClient = apiClient ?? new CardGameApiClient();
-            LoadTokenFromStorage();
+            _baseUrl = baseUrl.TrimEnd('/');
+            LoadTokenFromSecureStorage();
         }
 
         /// <summary>
-        /// Intenta login con playerId y password (mock auth).
+        /// Login con Email y Password.
+        /// Retorna true si es exitoso, false si credenciales inválidas.
         /// </summary>
-        public async Task<bool> Login(string playerId, string password)
+        public async Task<bool> Login(string email, string password)
         {
-            if (string.IsNullOrWhiteSpace(playerId) || string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
-                throw new ValidationException("PlayerId and password required.");
+                throw new ValidationException("Email and password required.");
             }
 
             try
             {
-                // TODO: call /api/auth/login with playerId+password
-                // For now: mock token generation for testing
-                var token = GenerateMockToken(playerId);
-                SetToken(playerId, token, expirySeconds: 3600);
+                var request = new LoginRequest { email = email, password = password };
+                var json = JsonUtility.ToJson(request);
+
+                using var webRequest = UnityWebRequest.Post($"{_baseUrl}/api/auth/login", "application/json");
+                webRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));
+                webRequest.downloadHandler = new DownloadHandlerBuffer();
+                webRequest.timeout = 30;
+
+                var operation = webRequest.SendWebRequest();
+                while (!operation.isDone) await Task.Delay(10);
+
+                if (webRequest.result != UnityWebRequest.Result.Success)
+                {
+                    Debug.LogError($"Login failed: {webRequest.responseCode} - {webRequest.error}");
+                    return false;
+                }
+
+                var response = JsonUtility.FromJson<AuthResponse>(webRequest.downloadHandler.text);
+                if (response == null || string.IsNullOrWhiteSpace(response.token))
+                {
+                    Debug.LogError("Login response invalid");
+                    return false;
+                }
+
+                SetToken(email, response.token, response.userId);
+                Debug.Log($"Login successful: {email}");
                 return true;
             }
             catch (Exception ex)
             {
-                Debug.LogError($"Login failed: {ex.Message}");
+                Debug.LogError($"Login error: {ex.Message}");
                 return false;
             }
         }
 
         /// <summary>
-        /// Logout: limpia tokens.
+        /// Registro con Email, Username y Password.
+        /// Retorna true si es exitoso.
+        /// </summary>
+        public async Task<bool> Register(string email, string username, string password)
+        {
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                throw new ValidationException("Email, username, and password required.");
+            }
+
+            try
+            {
+                var request = new RegisterRequest { email = email, username = username, password = password };
+                var json = JsonUtility.ToJson(request);
+
+                using var webRequest = UnityWebRequest.Post($"{_baseUrl}/api/auth/register", "application/json");
+                webRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));
+                webRequest.downloadHandler = new DownloadHandlerBuffer();
+                webRequest.timeout = 30;
+
+                var operation = webRequest.SendWebRequest();
+                while (!operation.isDone) await Task.Delay(10);
+
+                if (webRequest.result != UnityWebRequest.Result.Success)
+                {
+                    Debug.LogError($"Register failed: {webRequest.responseCode} - {webRequest.error}");
+                    return false;
+                }
+
+                var response = JsonUtility.FromJson<AuthResponse>(webRequest.downloadHandler.text);
+                if (response == null || string.IsNullOrWhiteSpace(response.token))
+                {
+                    Debug.LogError("Register response invalid");
+                    return false;
+                }
+
+                SetToken(email, response.token, response.userId);
+                Debug.Log($"Registration successful: {email}");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Register error: {ex.Message}");
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Logout: limpia tokens locales.
         /// </summary>
         public void Logout()
         {
             ClearTokens();
+            Debug.Log("Logged out");
         }
 
         /// <summary>
-        /// Obtiene el bearer token para headers Authorization.
+        /// Obtiene el Bearer token para headers Authorization.
         /// </summary>
         public string GetAuthorizationHeader()
         {
             return IsAuthenticated ? $"Bearer {CurrentToken}" : null;
         }
 
-        /// <summary>
-        /// Refresca token si está cerca de expirar.
-        /// </summary>
-        public async Task<bool> RefreshTokenIfNeeded()
+        private void SetToken(string email, string token, string userId)
         {
-            if (!IsAuthenticated)
-                return false;
-
-            var expiryStr = PlayerPrefs.GetString(ExpiryKey, "0");
-            if (!long.TryParse(expiryStr, out var expiry))
-                return false;
-
-            var now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-            var secondsUntilExpiry = expiry - now;
-
-            // Si expira en menos de 5 minutos, intentar refresh
-            if (secondsUntilExpiry < 300)
-            {
-                try
-                {
-                    // TODO: call /api/auth/refresh with refresh token
-                    Debug.Log("Token refresh needed (not implemented yet)");
-                    return false;
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError($"Token refresh failed: {ex.Message}");
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        private void SetToken(string playerId, string token, int expirySeconds = 3600)
-        {
-            CurrentPlayerId = playerId;
+            CurrentUserEmail = email;
+            CurrentPlayerId = userId;
             CurrentToken = token;
 
-            var expiry = DateTimeOffset.UtcNow.AddSeconds(expirySeconds).ToUnixTimeSeconds();
-
-            PlayerPrefs.SetString(PlayerIdKey, playerId);
-            PlayerPrefs.SetString(TokenKey, token);
-            PlayerPrefs.SetString(ExpiryKey, expiry.ToString());
-            PlayerPrefs.Save();
+            SecureTokenStorage.SavePlayerId(userId);
+            SecureTokenStorage.SaveToken(token);
+            SecureTokenStorage.SaveTokenExpiry(DateTimeOffset.UtcNow.AddHours(24).ToUnixTimeSeconds());
         }
 
-        private void LoadTokenFromStorage()
+        private void LoadTokenFromSecureStorage()
         {
-            CurrentPlayerId = PlayerPrefs.GetString(PlayerIdKey, "");
-            CurrentToken = PlayerPrefs.GetString(TokenKey, "");
+            CurrentPlayerId = SecureTokenStorage.GetPlayerId();
+            CurrentToken = SecureTokenStorage.GetToken();
 
-            if (IsTokenExpired())
+            if (string.IsNullOrWhiteSpace(CurrentToken) || IsTokenExpired())
             {
                 ClearTokens();
             }
@@ -131,42 +170,40 @@ namespace Flippy.CardDuelMobile.Networking
         private void ClearTokens()
         {
             CurrentPlayerId = "";
+            CurrentUserEmail = "";
             CurrentToken = "";
-            PlayerPrefs.DeleteKey(PlayerIdKey);
-            PlayerPrefs.DeleteKey(TokenKey);
-            PlayerPrefs.DeleteKey(RefreshTokenKey);
-            PlayerPrefs.DeleteKey(ExpiryKey);
-            PlayerPrefs.Save();
+            SecureTokenStorage.DeleteAll();
         }
 
         private bool IsTokenExpired()
         {
-            var expiryStr = PlayerPrefs.GetString(ExpiryKey, "0");
-            if (!long.TryParse(expiryStr, out var expiry))
-                return true;
-
+            var expiry = SecureTokenStorage.GetTokenExpiry();
             var now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             return now >= expiry;
         }
 
-        /// <summary>
-        /// Mock token generation for testing (replace with real auth endpoint).
-        /// </summary>
-        private string GenerateMockToken(string playerId)
+        [System.Serializable]
+        private sealed class LoginRequest
         {
-            // Simple mock JWT-like token: header.payload.signature
-            // Real implementation would call /api/auth/login
-            var header = Base64Encode("{\"alg\":\"HS256\",\"typ\":\"JWT\"}");
-            var now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-            var payload = Base64Encode($"{{\"sub\":\"{playerId}\",\"iat\":{now},\"exp\":{now + 3600}}}");
-            var signature = Base64Encode($"mock_signature_{playerId}");
-            return $"{header}.{payload}.{signature}";
+            public string email;
+            public string password;
         }
 
-        private static string Base64Encode(string text)
+        [System.Serializable]
+        private sealed class RegisterRequest
         {
-            var textBytes = System.Text.Encoding.UTF8.GetBytes(text);
-            return System.Convert.ToBase64String(textBytes).Replace("=", "").Replace("+", "-").Replace("/", "_");
+            public string email;
+            public string username;
+            public string password;
+        }
+
+        [System.Serializable]
+        private sealed class AuthResponse
+        {
+            public string token;
+            public string userId;
+            public string username;
+            public string email;
         }
     }
 }
