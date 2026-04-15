@@ -182,7 +182,9 @@ namespace Flippy.CardDuelMobile.UI
                 targetSlot = RaycastForSlot(UnityEngine.Input.mousePosition);
             }
 
-            Debug.Log($"[Drag] END: dragOverSlot={(_dragOverSlot != null ? _dragOverSlot.slot.ToString() : "NULL")}, targetSlot={targetSlot}, card={(_draggedCard != null ? _draggedCard.displayName : "NULL")}");
+            var slotInfo = _dragOverSlot != null ? _dragOverSlot.slot.ToString() : "NULL";
+            var cardInfo = _draggedCard != null ? _draggedCard.displayName : "NULL";
+            Debug.Log($"[Drag] END: dragOverSlot={slotInfo}, targetSlot={targetSlot}, card={cardInfo}");
 
             if (!_dragDropCommitted && _draggedCard != null && targetSlot != null)
             {
