@@ -217,7 +217,9 @@ namespace Flippy.CardDuelMobile.UI
             Debug.Log($"[Raycast] Position {screenPosition}: found {hits.Count} hits");
             foreach (var hit in hits)
             {
-                Debug.Log($"  - {hit.gameObject.name} ({hit.gameObject.GetComponent<BoardSlotButton>() != null ? "BoardSlot" : "Other"})");
+                var isSlot = hit.gameObject.GetComponent<BoardSlotButton>() != null;
+                var type = isSlot ? "BoardSlot" : "Other";
+                Debug.Log($"  - {hit.gameObject.name} ({type})");
                 var slotButton = hit.gameObject.GetComponent<BoardSlotButton>();
                 if (slotButton != null && slotButton.isLocalSide && CanCardBePlayedTo(_draggedCard, slotButton.slot))
                 {
