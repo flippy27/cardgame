@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using Flippy.CardDuelMobile.Core;
+using Flippy.CardDuelMobile.Data;
 
 namespace Flippy.CardDuelMobile.Networking
 {
