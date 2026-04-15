@@ -161,6 +161,12 @@ namespace Flippy.CardDuelMobile.UI
                     ghostRect.position = screenPosition;
                 }
             }
+
+            // Continuous raycast to find slot under mouse during drag
+            if (_draggedCard != null && _dragSource != null)
+            {
+                _dragOverSlot = RaycastForSlot(screenPosition);
+            }
         }
 
         public void EndDrag()
