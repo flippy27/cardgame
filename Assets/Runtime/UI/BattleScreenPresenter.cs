@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Networking;
@@ -188,7 +189,12 @@ namespace Flippy.CardDuelMobile.UI
             // Fallback: raycast from mouse position if tracking didn't work
             if (targetSlot == null && !_dragDropCommitted && _draggedCard != null)
             {
-                targetSlot = RaycastForSlot(UnityEngine.Input.mousePosition);
+                var mouse = Mouse.current;
+                if (mouse != null)
+                {
+                    var mousePos = mouse.position.ReadValue();
+                    targetSlot = RaycastForSlot(mousePos);
+                }
             }
 
             var slotInfo = _dragOverSlot != null ? _dragOverSlot.slot.ToString() : "NULL";
