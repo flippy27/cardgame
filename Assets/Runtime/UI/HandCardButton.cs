@@ -132,7 +132,7 @@ namespace Flippy.CardDuelMobile.UI
         {
             if (_isDragging && _presenter != null)
             {
-                var mousePos = UnityEngine.Input.mousePosition;
+                var mousePos = (Vector2)UnityEngine.Input.mousePosition;
                 if (mousePos != _lastDragPosition)
                 {
                     _lastDragPosition = mousePos;
