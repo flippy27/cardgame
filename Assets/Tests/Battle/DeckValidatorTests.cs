@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Data;
 using NUnit.Framework;
@@ -32,7 +35,7 @@ namespace Flippy.CardDuelMobile.Tests.Battle
             var result = DeckValidator.Validate(deck, _rules);
 
             Assert.IsFalse(result.IsValid);
-            Assert.Contains("empty", result.Errors[0].ToLower());
+            StringAssert.Contains("empty", result.Errors[0].ToLower());
         }
 
         [Test]

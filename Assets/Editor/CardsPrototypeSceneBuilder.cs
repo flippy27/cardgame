@@ -172,9 +172,8 @@ namespace Flippy.CardDuelMobile.EditorTools
         private static void CreateBootstrap(NetworkManager networkManager, MpsGameSessionService sessionService)
         {
             var bootstrapGo = new GameObject("NetworkBootstrap");
-            var bootstrap = bootstrapGo.AddComponent<NetworkBootstrap>();
-            bootstrap.networkManager = networkManager;
-            bootstrap.sessionService = sessionService;
+            bootstrapGo.AddComponent<NetworkBootstrap>();
+            // NetworkBootstrap will find networkManager and sessionService via FindFirstObjectByType
         }
 
         private static void CreateCoordinator()
