@@ -43,6 +43,18 @@ namespace Flippy.CardDuelMobile.Networking
 
             // Ejemplo: Match history
             await ExampleMatchHistory();
+
+            // Ejemplo: User profile
+            await ExampleUserProfile();
+
+            // Ejemplo: Deck management
+            await ExampleDeckManagement();
+
+            // Ejemplo: Matchmaking
+            await ExampleMatchmaking();
+
+            // Ejemplo: Local cache & offline
+            ExampleLocalCache();
         }
 
         private async Task ExampleBootstrap()
@@ -162,6 +174,148 @@ namespace Flippy.CardDuelMobile.Networking
             {
                 Debug.LogError($"Match history error: {ex.Message}");
             }
+        }
+
+        private async Task ExampleUserProfile()
+        {
+            Debug.Log("=== EXAMPLE: User Profile & Stats ===");
+
+            if (!_gameService.IsAuthenticated)
+            {
+                Debug.LogWarning("Not authenticated, skipping profile example");
+                return;
+            }
+
+            try
+            {
+                var profile = await _gameService.UserService.GetProfile();
+                Debug.Log($"Profile: {profile.DisplayName} (Level {profile.Level})");
+                Debug.Log($"  Faction: {profile.FactionPreference}");
+                Debug.Log($"  XP: {profile.Experience}");
+
+                var stats = await _gameService.UserService.GetStats();
+                Debug.Log($"Stats: {stats.Wins}W-{stats.Losses}L ({stats.WinRate:P})");
+                Debug.Log($"  Current Rating: {stats.CurrentRating}");
+                Debug.Log($"  Highest Rating: {stats.HighestRating}");
+                Debug.Log($"  Ranked Division: {stats.RankedDivision}");
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"Profile error: {ex.Message}");
+            }
+        }
+
+        private async Task ExampleDeckManagement()
+        {
+            Debug.Log("=== EXAMPLE: Deck Management ===");
+
+            if (!_gameService.IsAuthenticated)
+            {
+                Debug.LogWarning("Not authenticated, skipping deck example");
+                return;
+            }
+
+            try
+            {
+                // Cargar mazos existentes
+                var decks = await _gameService.DeckService.LoadDecks();
+                Debug.Log($"Your decks: {decks.Count}");
+                foreach (var deck in decks)
+                {
+                    Debug.Log($"  - {deck.Name}: {deck.CardIds.Length} cards ({deck.WinRate}% WR)");
+                }
+
+                // Crear nuevo mazo (si las cartas son válidas)
+                try
+                {
+                    var newDeck = await _gameService.DeckService.CreateDeck(
+                        name: "Aggro Fire",
+                        description: "Fast burn deck",
+                        cardIds: new[] { "card1", "card2", "card1", "card2" });
+                    Debug.Log($"Created deck: {newDeck.DeckId}");
+                }
+                catch (Core.ValidationException ex)
+                {
+                    Debug.LogWarning($"Cannot create deck: {ex.Message}");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"Deck error: {ex.Message}");
+            }
+        }
+
+        private async Task ExampleMatchmaking()
+        {
+            Debug.Log("=== EXAMPLE: Matchmaking ===");
+
+            if (!_gameService.IsAuthenticated)
+            {
+                Debug.LogWarning("Not authenticated, skipping matchmaking example");
+                return;
+            }
+
+            try
+            {
+                // Unirse a cola casual (sin esperar realmente)
+                var joined = await _gameService.Matchmaking.JoinQueue(MatchmakingService.QueueMode.Casual);
+                if (joined)
+                {
+                    Debug.Log("Joined casual queue");
+
+                    // Obtener estado
+                    var status = await _gameService.Matchmaking.GetStatus();
+                    Debug.Log($"Queue status: {status.PlayersInQueue} players, ~{status.EstimatedWaitSeconds}s wait");
+
+                    // Dejar la cola
+                    await _gameService.Matchmaking.LeaveQueue();
+                    Debug.Log("Left queue");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"Matchmaking error: {ex.Message}");
+            }
+        }
+
+        private void ExampleLocalCache()
+        {
+            Debug.Log("=== EXAMPLE: Local Cache & Offline Support ===");
+
+            // Guardar datos en caché local
+            var playerData = new PlayerProfileDto
+            {
+                PlayerId = "test_player",
+                DisplayName = "CachedPlayer",
+                Level = 10,
+                IsPremium = false
+            };
+
+            _gameService.LocalCache.Set("player_profile", playerData, expiryHours: 24);
+            Debug.Log("Cached player profile");
+
+            // Recuperar del caché
+            var cached = _gameService.LocalCache.Get<PlayerProfileDto>("player_profile");
+            if (cached != null)
+            {
+                Debug.Log($"Retrieved from cache: {cached.DisplayName} (Level {cached.Level})");
+            }
+
+            // Marcar cambios pendientes (offline mode)
+            _gameService.OfflineSync.MarkPending("deck_update_1", "update_data");
+            _gameService.OfflineSync.MarkPending("deck_update_2", "update_data");
+            Debug.Log($"Pending changes: {_gameService.OfflineSync.PendingChanges}");
+
+            // Simular offline -> online
+            _gameService.OfflineSync.SetOnlineStatus(false);
+            Debug.Log($"Going offline (synced: {_gameService.OfflineSync.PendingChanges} pending)");
+
+            _gameService.OfflineSync.SetOnlineStatus(true);
+            Debug.Log("Back online - would sync pending changes here");
+
+            // Estadísticas de caché
+            var (total, expired) = _gameService.LocalCache.GetStats();
+            Debug.Log($"Cache stats: {total} keys, {expired} expired");
         }
     }
 }

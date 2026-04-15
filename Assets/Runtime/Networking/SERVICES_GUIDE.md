@@ -8,11 +8,16 @@ All network communication and API integration is centralized through `GameServic
 
 ```
 GameService (singleton)
-├── CardGameApiClient (HTTP client)
+├── CardGameApiClient (HTTP client + retry/timeout)
 ├── AuthService (JWT tokens)
 ├── CardCatalogCache (card definitions + validation)
 ├── MatchHistoryService (match history tracking)
-└── [User adds] MatchCompletionService (match result handling)
+├── UserService (player profile/stats/achievements)
+├── DeckService (deck CRUD + validation)
+├── MatchmakingService (queue management)
+├── LocalCacheService (offline storage)
+├── OfflineSyncService (pending change tracking)
+└── EloRatingService (rating calculations)
 ```
 
 ## Usage
@@ -225,11 +230,58 @@ Unit tests for all services in `Assets/Tests/Battle/`:
 
 Run in Unity Test Runner window: Window → General → Test Runner
 
+## New Services (Phase 2)
+
+### UserService
+Player profile management:
+- GetProfile(playerId): fetch player profile
+- GetStats(playerId): fetch player statistics
+- UpdateProfile(profile): update profile info
+- GetAchievements(playerId): fetch achievements
+- UnlockAchievement(achievementId): unlock achievement
+
+### DeckService
+Deck management with validation:
+- LoadDecks(playerId): fetch all decks
+- GetDeck(deckId): fetch single deck
+- CreateDeck(name, description, cardIds): create new deck
+- UpdateDeck(deckId, name, description, cardIds): update existing deck
+- DeleteDeck(deckId): delete deck
+- ValidateDeck(cardIds): validate against catalog
+
+### MatchmakingService
+Queue and opponent matching:
+- JoinQueue(mode): join casual or ranked queue
+- LeaveQueue(): leave queue
+- GetStatus(): get queue status (players, wait time, opponent found)
+- CancelSearch(): alias for LeaveQueue()
+
+### LocalCacheService
+Offline data storage:
+- Set<T>(key, value, expiryHours): cache data locally
+- Get<T>(key): retrieve from cache
+- Has(key): check if exists and not expired
+- Delete(key): remove from cache
+- Clear(): clear all cache
+- GetStats(): cache statistics
+
+### OfflineSyncService
+Offline mode support:
+- MarkPending(changeId, data): queue change for sync
+- GetPendingChanges(): retrieve all pending
+- MarkSynced(changeId): mark as sent to server
+- SetOnlineStatus(isOnline): update connection status
+- IsOnline: current online status
+- PendingChanges: count of pending items
+
 ## Known Limitations / TODO
 
-- [ ] Token storage: use secure storage instead of PlayerPrefs
-- [ ] HTTP mocking: add mock server support for offline testing
-- [ ] Retry logic: exponential backoff for failed requests
-- [ ] Timeout handling: configurable request timeouts
-- [ ] Offline mode: cache all data and sync on reconnect
+- [x] Retry logic: exponential backoff for failed requests
+- [x] Timeout handling: configurable request timeouts
+- [x] HTTP mocking: add mock server support for offline testing
+- [x] Offline mode: cache all data and sync on reconnect
+- [ ] Token storage: use secure storage instead of PlayerPrefs (CRITICAL)
+- [ ] Real auth endpoint: implement POST /api/auth/login
+- [ ] Token refresh endpoint: implement POST /api/auth/refresh
 - [ ] Rate limiting: handle 429 responses from API
+- [ ] SignalR integration: real-time match updates
