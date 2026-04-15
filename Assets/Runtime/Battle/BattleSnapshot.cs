@@ -8,6 +8,7 @@ namespace Flippy.CardDuelMobile.Battle
     public sealed class DuelSnapshotDto
     {
         public int snapshotVersion = CardConstants.SnapshotVersion;
+        public string matchId = string.Empty;
         public int localPlayerIndex;
         public int activePlayerIndex;
         public int turnNumber;
@@ -30,10 +31,12 @@ namespace Flippy.CardDuelMobile.Battle
     [Serializable]
     public sealed class PlayerSnapshotDto
     {
+        public string playerId = string.Empty;
         public int playerIndex;
         public int heroHealth;
         public int mana;
         public int maxMana;
+        public int rating = 1000;
         public CardInHandDto[] hand;
         public BoardSlotSnapshotDto[] board;
         public int remainingDeckCount;

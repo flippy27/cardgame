@@ -869,12 +869,16 @@ namespace Flippy.CardDuelMobile.UI
                 var gameService = new GameService();
                 var completionService = new MatchCompletionService(gameService);
 
+                // Use rating from snapshot (or default 1000 if not available)
+                var localRating = local?.rating ?? 1000;
+                var remoteRating = remote?.rating ?? 1000;
+
                 var result = await completionService.CompleteMatch(
                     _matchId,
                     _playerId,
                     _opponentId,
-                    local.rating,
-                    remote.rating,
+                    localRating,
+                    remoteRating,
                     playerWon,
                     durationSeconds);
 
