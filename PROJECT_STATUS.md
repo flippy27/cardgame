@@ -1,7 +1,17 @@
 # CardGame Project Status & Missing Features
 
-**Última actualización:** 2026-04-14  
-**Estado General:** 65% completo (multiplayer funcional, authentication incompleta)
+**Última actualización:** 2026-04-14 (19:45 UTC)  
+**Estado General:** 75% completo (multiplayer + auth funcional, features avanzadas faltantes)
+
+## 🆕 IMPLEMENTADO HOY (Sesión Actual)
+
+✅ **Drag-and-drop de cartas** - Fixed (sin EventSystem, usando Input polling)  
+✅ **Validación de slots** - Invalid slots show visual feedback  
+✅ **SecureTokenStorage** - Keychain/Keystore/XOR encryption  
+✅ **Real Authentication** - POST /api/auth/login + register  
+✅ **Persistent Login** - Tokens saved in secure storage, loaded on startup  
+✅ **MainMenuScreen** - Professional login/menu UI  
+✅ **PROJECT_STATUS.md** - Full feature audit
 
 ---
 
