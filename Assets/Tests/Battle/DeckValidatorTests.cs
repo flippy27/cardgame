@@ -47,7 +47,7 @@ namespace Flippy.CardDuelMobile.Tests.Battle
             var result = DeckValidator.Validate(deck, _rules);
 
             Assert.IsFalse(result.IsValid);
-            Assert.Contains("too small", result.Errors[0].ToLower());
+            StringAssert.Contains("too small", result.Errors[0].ToLower());
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace Flippy.CardDuelMobile.Tests.Battle
             var result = DeckValidator.Validate(deck, _rules);
 
             Assert.IsFalse(result.IsValid);
-            Assert.Contains("too large", result.Errors[0].ToLower());
+            StringAssert.Contains("too large", result.Errors[0].ToLower());
         }
 
         [Test]
@@ -106,7 +106,7 @@ namespace Flippy.CardDuelMobile.Tests.Battle
 
             // Should fail because too small (3 < 20), not because of ids themselves
             Assert.IsFalse(result.IsValid);
-            Assert.Contains("too small", result.Errors[0].ToLower());
+            StringAssert.Contains("too small", result.Errors[0].ToLower());
         }
 
         [Test]
