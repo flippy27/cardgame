@@ -164,10 +164,19 @@ namespace Flippy.CardDuelMobile.UI
                 }
             }
 
-            // Continuous raycast to find slot under mouse during drag
+            // Continuous raycast to find any slot under mouse (for visual feedback)
             if (_draggedCard != null && _dragSource != null)
             {
-                _dragOverSlot = RaycastForSlot(screenPosition);
+                var anySlot = RaycastForAnySlot(screenPosition);
+                if (anySlot != null && anySlot.isLocalSide)
+                {
+                    // Track slot for visual feedback (whether valid or not)
+                    _dragOverSlot = anySlot;
+                }
+                else
+                {
+                    _dragOverSlot = null;
+                }
             }
         }
 
@@ -204,6 +213,29 @@ namespace Flippy.CardDuelMobile.UI
             RebuildHandOnly();
         }
 
+        private BoardSlotButton RaycastForAnySlot(Vector2 screenPosition)
+        {
+            var hits = new List<RaycastResult>();
+            var pointerEventData = new PointerEventData(EventSystem.current)
+            {
+                position = screenPosition
+            };
+
+            EventSystem.current.RaycastAll(pointerEventData, hits);
+
+            // Return first BoardSlotButton found, regardless of validity
+            foreach (var hit in hits)
+            {
+                var slotButton = hit.gameObject.GetComponent<BoardSlotButton>();
+                if (slotButton != null)
+                {
+                    return slotButton;
+                }
+            }
+
+            return null;
+        }
+
         private BoardSlotButton RaycastForSlot(Vector2 screenPosition)
         {
             var hits = new List<RaycastResult>();
@@ -214,21 +246,16 @@ namespace Flippy.CardDuelMobile.UI
 
             EventSystem.current.RaycastAll(pointerEventData, hits);
 
-            Debug.Log($"[Raycast] Position {screenPosition}: found {hits.Count} hits");
+            // Return only valid slots (can play card there)
             foreach (var hit in hits)
             {
-                var isSlot = hit.gameObject.GetComponent<BoardSlotButton>() != null;
-                var type = isSlot ? "BoardSlot" : "Other";
-                Debug.Log($"  - {hit.gameObject.name} ({type})");
                 var slotButton = hit.gameObject.GetComponent<BoardSlotButton>();
                 if (slotButton != null && slotButton.isLocalSide && CanCardBePlayedTo(_draggedCard, slotButton.slot))
                 {
-                    Debug.Log($"  -> MATCH: {slotButton.slot}");
                     return slotButton;
                 }
             }
 
-            Debug.Log($"[Raycast] No valid slot found");
             return null;
         }
 
