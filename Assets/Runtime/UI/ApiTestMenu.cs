@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Flippy.CardDuelMobile.Networking;
 
@@ -88,7 +89,7 @@ namespace Flippy.CardDuelMobile.UI
         private void Update()
         {
             // F10 toggle menu
-            if (UnityEngine.Input.GetKeyDown(KeyCode.F10))
+            if (Keyboard.current != null && Keyboard.current.f10Key.wasPressedThisFrame)
             {
                 ToggleMenu();
             }
