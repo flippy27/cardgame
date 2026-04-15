@@ -98,6 +98,7 @@ namespace Flippy.CardDuelMobile.UI
             var mouse = Mouse.current;
             if (mouse == null)
             {
+                Debug.LogWarning("[Hand] Mouse.current is NULL");
                 return;
             }
 
@@ -124,29 +125,33 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             // Update drag position while mouse held
-            if (_isDragging && mouse.leftButton.isPressed)
+            if (_isDragging)
             {
-                if (mousePos != _lastDragPosition)
+                var isPressed = mouse.leftButton.isPressed;
+                Debug.Log($"[Hand] Update: isDragging=true, isPressed={isPressed}, pos={mousePos}");
+
+                if (isPressed)
                 {
-                    _lastDragPosition = mousePos;
-                    _presenter.UpdateDrag(mousePos);
+                    if (mousePos != _lastDragPosition)
+                    {
+                        _lastDragPosition = mousePos;
+                        _presenter.UpdateDrag(mousePos);
+                    }
                 }
-            }
-
-            // End drag when mouse released
-            if (_isDragging && mouse.leftButton.wasReleasedThisFrame)
-            {
-                _isDragging = false;
-
-                Debug.Log("[Hand] Drag end");
-
-                if (canvasGroup != null)
+                else
                 {
-                    canvasGroup.blocksRaycasts = true;
-                    canvasGroup.alpha = 1f;
-                }
+                    // Mouse released
+                    _isDragging = false;
+                    Debug.Log("[Hand] Drag end");
 
-                _presenter.EndDrag();
+                    if (canvasGroup != null)
+                    {
+                        canvasGroup.blocksRaycasts = true;
+                        canvasGroup.alpha = 1f;
+                    }
+
+                    _presenter.EndDrag();
+                }
             }
         }
 
