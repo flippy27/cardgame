@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.Core;
@@ -163,6 +164,32 @@ namespace Flippy.CardDuelMobile.UI
 
         public void EndDrag()
         {
+            // Manually trigger drop if card is over a valid slot
+            if (!_dragDropCommitted && _draggedCard != null)
+            {
+                var pointerData = new PointerEventData(EventSystem.current)
+                {
+                    position = Input.mousePosition
+                };
+
+                var raycastResults = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(pointerData, raycastResults);
+
+                // Find first BoardSlotButton under mouse
+                foreach (var result in raycastResults)
+                {
+                    var slotButton = result.gameObject.GetComponent<BoardSlotButton>();
+                    if (slotButton != null)
+                    {
+                        TryPlayDraggedCardTo(slotButton.slot, slotButton.CardAnchor);
+                        if (_dragDropCommitted)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+
             if (!_dragDropCommitted)
             {
                 DestroyDragGhostImmediate();
