@@ -8,7 +8,7 @@ namespace Flippy.CardDuelMobile.UI
     /// <summary>
     /// Carta de la mano con click y drag and drop.
     /// </summary>
-    public sealed class HandCardButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
+    public sealed class HandCardButton : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
     {
         public Button button;
         public Image backgroundImage;
@@ -18,8 +18,8 @@ namespace Flippy.CardDuelMobile.UI
         private CardInHandDto _dto;
         private BattleScreenPresenter _presenter;
         private bool _canDrag;
-        private Transform _originalParent;
-        private int _originalSiblingIndex;
+        private bool _isDragging;
+        private Vector2 _lastDragPosition;
 
         public void Bind(CardInHandDto dto, BattleScreenPresenter presenter, bool isSelected, bool canAfford, bool isLocalTurn)
         {
@@ -84,15 +84,18 @@ namespace Flippy.CardDuelMobile.UI
             _presenter?.NotifyCardClicked(_dto);
         }
 
-        public void OnBeginDrag(PointerEventData eventData)
+        public void OnPointerDown(PointerEventData eventData)
         {
             if (!_canDrag || _presenter == null)
             {
                 return;
             }
 
-            // Don't change parent - it breaks EventSystem drag tracking
-            // Just disable raycast blocking so raycasts pass through
+            _isDragging = true;
+            _lastDragPosition = eventData.position;
+
+            Debug.Log($"[Hand] Drag start: {_dto.displayName}");
+
             if (canvasGroup != null)
             {
                 canvasGroup.blocksRaycasts = false;
@@ -102,22 +105,16 @@ namespace Flippy.CardDuelMobile.UI
             _presenter.BeginDrag(_dto, this, eventData.position);
         }
 
-        public void OnDrag(PointerEventData eventData)
+        public void OnPointerUp(PointerEventData eventData)
         {
-            Debug.Log($"[Hand] OnDrag CALLED at {eventData.position}");
-
-            if (!_canDrag || _presenter == null)
+            if (!_isDragging)
             {
-                Debug.LogWarning($"[Hand] OnDrag: canDrag={_canDrag}, presenter={(_presenter != null ? "OK" : "NULL")}");
                 return;
             }
 
-            _presenter.UpdateDrag(eventData.position);
-        }
+            _isDragging = false;
 
-        public void OnEndDrag(PointerEventData eventData)
-        {
-            Debug.Log("[Hand] OnEndDrag");
+            Debug.Log("[Hand] Drag end");
 
             if (canvasGroup != null)
             {
@@ -128,6 +125,19 @@ namespace Flippy.CardDuelMobile.UI
             if (_presenter != null)
             {
                 _presenter.EndDrag();
+            }
+        }
+
+        private void Update()
+        {
+            if (_isDragging && _presenter != null)
+            {
+                var mousePos = UnityEngine.Input.mousePosition;
+                if (mousePos != _lastDragPosition)
+                {
+                    _lastDragPosition = mousePos;
+                    _presenter.UpdateDrag(mousePos);
+                }
             }
         }
     }
