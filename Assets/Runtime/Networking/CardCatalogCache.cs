@@ -107,7 +107,7 @@ namespace Flippy.CardDuelMobile.Networking
 
             if (unknownCards.Any())
             {
-                var result = new DeckValidator.DeckValidationResult { IsValid = false };
+                var result = new DeckValidationResult { IsValid = false };
                 foreach (var unknownId in unknownCards)
                 {
                     result.AddError($"Unknown card: {unknownId}");

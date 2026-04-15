@@ -240,8 +240,8 @@ namespace Flippy.CardDuelMobile.Networking
                 var key = $"pending_{i}";
                 if (_cache.Has(key))
                 {
-                    var data = _cache.Get<dynamic>(key);
-                    pending.Add((key, data?.ToString() ?? ""));
+                    var data = _cache.Get<string>(key);
+                    pending.Add((key, data ?? ""));
                 }
             }
 
