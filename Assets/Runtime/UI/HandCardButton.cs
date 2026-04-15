@@ -18,6 +18,8 @@ namespace Flippy.CardDuelMobile.UI
         private CardInHandDto _dto;
         private BattleScreenPresenter _presenter;
         private bool _canDrag;
+        private Transform _originalParent;
+        private int _originalSiblingIndex;
 
         public void Bind(CardInHandDto dto, BattleScreenPresenter presenter, bool isSelected, bool canAfford, bool isLocalTurn)
         {
@@ -89,6 +91,17 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
+            // Save original position
+            _originalParent = transform.parent;
+            _originalSiblingIndex = transform.GetSiblingIndex();
+
+            // Move to dragLayer to prevent blocking raycast to slots
+            if (_presenter.dragLayer != null)
+            {
+                transform.SetParent(_presenter.dragLayer, false);
+                transform.SetAsLastSibling();
+            }
+
             if (canvasGroup != null)
             {
                 canvasGroup.blocksRaycasts = false;
@@ -110,6 +123,13 @@ namespace Flippy.CardDuelMobile.UI
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            // Return to original position
+            if (_originalParent != null)
+            {
+                transform.SetParent(_originalParent, false);
+                transform.SetSiblingIndex(_originalSiblingIndex);
+            }
+
             if (canvasGroup != null)
             {
                 canvasGroup.blocksRaycasts = true;
