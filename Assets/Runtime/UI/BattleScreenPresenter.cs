@@ -215,21 +215,21 @@ namespace Flippy.CardDuelMobile.UI
 
         private BoardSlotButton RaycastForAnySlot(Vector2 screenPosition)
         {
-            var hits = new List<RaycastResult>();
-            var pointerEventData = new PointerEventData(EventSystem.current)
+            // Check all slots to see which one is under the mouse
+            foreach (var slot in _localSlots.Values)
             {
-                position = screenPosition
-            };
-
-            EventSystem.current.RaycastAll(pointerEventData, hits);
-
-            // Return first BoardSlotButton found, regardless of validity
-            foreach (var hit in hits)
-            {
-                var slotButton = hit.gameObject.GetComponent<BoardSlotButton>();
-                if (slotButton != null)
+                if (slot != null && IsScreenPointOverSlot(slot, screenPosition))
                 {
-                    return slotButton;
+                    return slot;
+                }
+            }
+
+            // Check remote slots too
+            foreach (var slot in _remoteSlots.Values)
+            {
+                if (slot != null && IsScreenPointOverSlot(slot, screenPosition))
+                {
+                    return slot;
                 }
             }
 
@@ -238,25 +238,30 @@ namespace Flippy.CardDuelMobile.UI
 
         private BoardSlotButton RaycastForSlot(Vector2 screenPosition)
         {
-            var hits = new List<RaycastResult>();
-            var pointerEventData = new PointerEventData(EventSystem.current)
+            // Check local slots for valid drop targets
+            foreach (var slot in _localSlots.Values)
             {
-                position = screenPosition
-            };
-
-            EventSystem.current.RaycastAll(pointerEventData, hits);
-
-            // Return only valid slots (can play card there)
-            foreach (var hit in hits)
-            {
-                var slotButton = hit.gameObject.GetComponent<BoardSlotButton>();
-                if (slotButton != null && slotButton.isLocalSide && CanCardBePlayedTo(_draggedCard, slotButton.slot))
+                if (slot != null && slot.isLocalSide && IsScreenPointOverSlot(slot, screenPosition))
                 {
-                    return slotButton;
+                    if (CanCardBePlayedTo(_draggedCard, slot.slot))
+                    {
+                        return slot;
+                    }
                 }
             }
 
             return null;
+        }
+
+        private bool IsScreenPointOverSlot(BoardSlotButton slot, Vector2 screenPosition)
+        {
+            var rect = slot.transform as RectTransform;
+            if (rect == null)
+            {
+                return false;
+            }
+
+            return RectTransformUtility.RectangleContainsScreenPoint(rect, screenPosition);
         }
 
         public void SetDragOverSlot(BoardSlotButton slot)
