@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Flippy.CardDuelMobile.Networking;
+using Flippy.CardDuelMobile.Core;
 
 namespace Flippy.CardDuelMobile.UI
 {
@@ -30,6 +31,11 @@ namespace Flippy.CardDuelMobile.UI
         public Text playerNameText;
         public CanvasGroup menuPanelGroup;
 
+        [Header("Screens")]
+        public LeaderboardScreen leaderboardScreen;
+        public ProfileScreen profileScreen;
+        public GameObject settingsPanel;
+
         [Header("Loading")]
         public CanvasGroup loadingGroup;
         public Text loadingText;
@@ -47,12 +53,12 @@ namespace Flippy.CardDuelMobile.UI
             if (logoutButton != null) logoutButton.onClick.AddListener(HandleLogout);
             if (apiTestButton != null) apiTestButton.onClick.AddListener(HandleApiTest);
 
-            // Placeholder para otros botones
-            if (playButton != null) playButton.onClick.AddListener(() => SetStatus("Play: Not implemented"));
-            if (deckBuilderButton != null) deckBuilderButton.onClick.AddListener(() => SetStatus("Deck Builder: Not implemented"));
-            if (leaderboardButton != null) leaderboardButton.onClick.AddListener(() => SetStatus("Leaderboard: Not implemented"));
-            if (profileButton != null) profileButton.onClick.AddListener(() => SetStatus("Profile: Not implemented"));
-            if (settingsButton != null) settingsButton.onClick.AddListener(() => SetStatus("Settings: Not implemented"));
+            // Menu buttons
+            if (playButton != null) playButton.onClick.AddListener(HandlePlayButtonPressed);
+            if (deckBuilderButton != null) deckBuilderButton.onClick.AddListener(() => SetStatus("Deck Builder: Not implemented yet"));
+            if (leaderboardButton != null) leaderboardButton.onClick.AddListener(HandleLeaderboardButtonPressed);
+            if (profileButton != null) profileButton.onClick.AddListener(HandleProfileButtonPressed);
+            if (settingsButton != null) settingsButton.onClick.AddListener(HandleSettingsButtonPressed);
 
             // Mostrar login o menú según persistencia
             if (_authService.IsAuthenticated)
@@ -196,6 +202,51 @@ namespace Flippy.CardDuelMobile.UI
             // TODO: Abrir pantalla de testing de API
         }
 
+        private void HandlePlayButtonPressed()
+        {
+            SetStatus("Cargando batalla...");
+            SceneBootstrap.LoadBattle();
+        }
+
+        private void HandleLeaderboardButtonPressed()
+        {
+            SetStatus("Abriendo leaderboard...");
+            if (leaderboardScreen != null)
+            {
+                leaderboardScreen.gameObject.SetActive(true);
+            }
+            else
+            {
+                SetStatus("Error: LeaderboardScreen no asignado");
+            }
+        }
+
+        private void HandleProfileButtonPressed()
+        {
+            SetStatus("Abriendo perfil...");
+            if (profileScreen != null)
+            {
+                profileScreen.gameObject.SetActive(true);
+            }
+            else
+            {
+                SetStatus("Error: ProfileScreen no asignado");
+            }
+        }
+
+        private void HandleSettingsButtonPressed()
+        {
+            SetStatus("Abriendo configuración...");
+            if (settingsPanel != null)
+            {
+                settingsPanel.SetActive(!settingsPanel.activeSelf);
+            }
+            else
+            {
+                SetStatus("Error: SettingsPanel no asignado");
+            }
+        }
+
         private void SetStatus(string message)
         {
             if (statusText != null)
@@ -224,6 +275,10 @@ namespace Flippy.CardDuelMobile.UI
             if (registerButton != null) registerButton.onClick.RemoveListener(HandleRegister);
             if (logoutButton != null) logoutButton.onClick.RemoveListener(HandleLogout);
             if (apiTestButton != null) apiTestButton.onClick.RemoveListener(HandleApiTest);
+            if (playButton != null) playButton.onClick.RemoveListener(HandlePlayButtonPressed);
+            if (leaderboardButton != null) leaderboardButton.onClick.RemoveListener(HandleLeaderboardButtonPressed);
+            if (profileButton != null) profileButton.onClick.RemoveListener(HandleProfileButtonPressed);
+            if (settingsButton != null) settingsButton.onClick.RemoveListener(HandleSettingsButtonPressed);
         }
     }
 }
