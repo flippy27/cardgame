@@ -102,7 +102,7 @@ namespace Flippy.CardDuelMobile.Networking
         {
             try
             {
-                using var request = UnityWebRequest.Post(url, "");
+                using var request = new UnityWebRequest(url, UnityWebRequest.kHttpVerbPOST);
                 request.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(jsonBody));
                 request.downloadHandler = new DownloadHandlerBuffer();
                 request.SetRequestHeader("Content-Type", "application/json");
