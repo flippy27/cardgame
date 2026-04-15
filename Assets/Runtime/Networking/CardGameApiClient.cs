@@ -15,6 +15,8 @@ namespace Flippy.CardDuelMobile.Networking
     public sealed class CardGameApiClient
     {
         public string BaseUrl { get; }
+        public int TimeoutSeconds { get; set; } = 30;
+        public int MaxRetries { get; set; } = 3;
 
         public CardGameApiClient(string baseUrl = "http://localhost:5000")
         {
@@ -25,27 +27,12 @@ namespace Flippy.CardDuelMobile.Networking
         }
 
         /// <summary>
-        /// Descarga todas las cartas disponibles desde el API.
+        /// Descarga todas las cartas disponibles desde el API (con retry).
         /// </summary>
         public async Task<List<ServerCardDefinition>> FetchAllCards()
         {
-            using var request = UnityWebRequest.Get($"{BaseUrl}/api/cards");
-            request.downloadHandler = new DownloadHandlerBuffer();
-
-            var operation = request.SendWebRequest();
-            while (!operation.isDone)
-            {
-                await Task.Delay(10);
-            }
-
-            if (request.result != UnityWebRequest.Result.Success)
-            {
-                throw new InvalidOperationException(
-                    $"Failed to fetch cards: {request.responseCode} - {request.error}");
-            }
-
-            var json = request.downloadHandler.text;
-            var dtos = JsonUtility.FromJson<CardListDto>($"{{\"items\":{json}}}");
+            var response = await ExecuteWithRetry($"{BaseUrl}/api/cards");
+            var dtos = JsonUtility.FromJson<CardListDto>($"{{\"items\":{response}}}");
             return dtos.items.ToList();
         }
 
@@ -54,31 +41,19 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public async Task<ServerCardDefinition> FetchCard(string cardId)
         {
-            using var request = UnityWebRequest.Get($"{_baseUrl}/api/cards/{cardId}");
-            request.downloadHandler = new DownloadHandlerBuffer();
-
-            var operation = request.SendWebRequest();
-            while (!operation.isDone)
+            try
             {
-                await Task.Delay(10);
+                var json = await ExecuteWithRetry($"{BaseUrl}/api/cards/{cardId}");
+                return JsonUtility.FromJson<ServerCardDefinition>(json);
             }
-
-            if (request.result != UnityWebRequest.Result.Success)
+            catch (InvalidOperationException ex) when (ex.Message.Contains("404"))
             {
-                if (request.responseCode == 404)
-                {
-                    throw new CardNotFoundException(cardId);
-                }
-                throw new InvalidOperationException(
-                    $"Failed to fetch card '{cardId}': {request.responseCode} - {request.error}");
+                throw new CardNotFoundException(cardId);
             }
-
-            var json = request.downloadHandler.text;
-            return JsonUtility.FromJson<ServerCardDefinition>(json);
         }
 
         /// <summary>
-        /// Busca cartas por nombre o ID.
+        /// Busca cartas por nombre o ID (con retry).
         /// </summary>
         public async Task<List<ServerCardDefinition>> SearchCards(string query)
         {
@@ -88,48 +63,62 @@ namespace Flippy.CardDuelMobile.Networking
             }
 
             var encodedQuery = UnityWebRequest.EscapeURL(query);
-            using var request = UnityWebRequest.Get($"{_baseUrl}/api/cards/search?q={encodedQuery}");
-            request.downloadHandler = new DownloadHandlerBuffer();
-
-            var operation = request.SendWebRequest();
-            while (!operation.isDone)
-            {
-                await Task.Delay(10);
-            }
-
-            if (request.result != UnityWebRequest.Result.Success)
-            {
-                throw new InvalidOperationException(
-                    $"Failed to search cards: {request.responseCode} - {request.error}");
-            }
-
-            var json = request.downloadHandler.text;
-            var dtos = JsonUtility.FromJson<CardListDto>($"{{\"items\":{json}}}");
+            var response = await ExecuteWithRetry($"{BaseUrl}/api/cards/search?q={encodedQuery}");
+            var dtos = JsonUtility.FromJson<CardListDto>($"{{\"items\":{response}}}");
             return dtos.items.ToList();
         }
 
         /// <summary>
-        /// Obtiene estadísticas del catálogo.
+        /// Obtiene estadísticas del catálogo (con retry).
         /// </summary>
         public async Task<CardStatsDto> FetchCardStats()
         {
-            using var request = UnityWebRequest.Get($"{_baseUrl}/api/cards/stats");
-            request.downloadHandler = new DownloadHandlerBuffer();
-
-            var operation = request.SendWebRequest();
-            while (!operation.isDone)
-            {
-                await Task.Delay(10);
-            }
-
-            if (request.result != UnityWebRequest.Result.Success)
-            {
-                throw new InvalidOperationException(
-                    $"Failed to fetch card stats: {request.responseCode} - {request.error}");
-            }
-
-            var json = request.downloadHandler.text;
+            var json = await ExecuteWithRetry($"{BaseUrl}/api/cards/stats");
             return JsonUtility.FromJson<CardStatsDto>(json);
+        }
+
+        /// <summary>
+        /// Ejecuta request con retry exponencial y timeout.
+        /// </summary>
+        private async Task<string> ExecuteWithRetry(string url, int retryAttempt = 0)
+        {
+            try
+            {
+                using var request = UnityWebRequest.Get(url);
+                request.timeout = TimeoutSeconds;
+                request.downloadHandler = new DownloadHandlerBuffer();
+
+                var operation = request.SendWebRequest();
+                while (!operation.isDone)
+                {
+                    await Task.Delay(10);
+                }
+
+                if (request.result != UnityWebRequest.Result.Success)
+                {
+                    var error = $"HTTP {request.responseCode}: {request.error}";
+                    if (retryAttempt < MaxRetries && request.responseCode >= 500)
+                    {
+                        var delay = (int)Math.Pow(2, retryAttempt) * 1000;
+                        await Task.Delay(delay);
+                        return await ExecuteWithRetry(url, retryAttempt + 1);
+                    }
+
+                    throw new InvalidOperationException($"Request failed: {error}");
+                }
+
+                return request.downloadHandler.text;
+            }
+            catch (TaskCanceledException)
+            {
+                if (retryAttempt < MaxRetries)
+                {
+                    var delay = (int)Math.Pow(2, retryAttempt) * 1000;
+                    await Task.Delay(delay);
+                    return await ExecuteWithRetry(url, retryAttempt + 1);
+                }
+                throw new InvalidOperationException($"Request timeout after {MaxRetries} retries");
+            }
         }
 
         // DTO wrappers for JSON serialization

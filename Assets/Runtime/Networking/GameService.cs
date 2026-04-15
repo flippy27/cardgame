@@ -20,6 +20,9 @@ namespace Flippy.CardDuelMobile.Networking
         public AuthService AuthService { get; private set; }
         public CardCatalogCache CardCatalog { get; private set; }
         public MatchHistoryService MatchHistory { get; private set; }
+        public UserService UserService { get; private set; }
+        public DeckService DeckService { get; private set; }
+        public MatchmakingService Matchmaking { get; private set; }
 
         public bool IsReady { get; private set; }
         public bool IsCatalogReady => CardCatalog.IsLoaded;
@@ -46,6 +49,9 @@ namespace Flippy.CardDuelMobile.Networking
                 AuthService = new AuthService(ApiClient);
                 CardCatalog = new CardCatalogCache(ApiClient);
                 MatchHistory = new MatchHistoryService(ApiClient, AuthService);
+                UserService = new UserService(ApiClient, AuthService);
+                DeckService = new DeckService(ApiClient, AuthService, CardCatalog);
+                Matchmaking = new MatchmakingService(ApiClient, AuthService);
 
                 IsReady = true;
                 Debug.Log($"GameService initialized. API: {apiBaseUrl}");
