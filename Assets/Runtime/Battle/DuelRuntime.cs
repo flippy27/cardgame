@@ -91,19 +91,19 @@ namespace Flippy.CardDuelMobile.Battle
 
             if (handEntry.Definition == null)
             {
-                reason = "Card definition missing.";
+                reason = "Card definition is missing (corrupted state).";
                 return false;
             }
 
             if (handEntry.Definition.manaCost > player.Mana)
             {
-                reason = "Not enough mana.";
+                reason = $"Not enough mana (need {handEntry.Definition.manaCost}, have {player.Mana}).";
                 return false;
             }
 
             if (slot == BoardSlot.Front && !handEntry.Definition.canBePlayedInFront)
             {
-                reason = "This card cannot be played in the front slot.";
+                reason = "This card cannot be played in the front row.";
                 return false;
             }
 

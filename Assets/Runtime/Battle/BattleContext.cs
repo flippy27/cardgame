@@ -6,6 +6,7 @@ namespace Flippy.CardDuelMobile.Battle
 {
     /// <summary>
     /// Contexto mutador del duelo para efectos.
+    /// Lanza excepciones en lugar de retornar null.
     /// </summary>
     public sealed class BattleContext
     {
@@ -13,7 +14,7 @@ namespace Flippy.CardDuelMobile.Battle
 
         public BattleContext(DuelState state)
         {
-            _state = state;
+            _state = state ?? throw new ValidationException("DuelState cannot be null.");
         }
 
         /// <summary>
@@ -21,11 +22,17 @@ namespace Flippy.CardDuelMobile.Battle
         /// </summary>
         public DuelPlayerState GetPlayerState(int playerIndex)
         {
-            return _state.GetPlayer(playerIndex);
+            var player = _state.GetPlayer(playerIndex);
+            if (player == null)
+            {
+                throw new InvalidGameStateException($"Player at index {playerIndex} not found.");
+            }
+            return player;
         }
 
         /// <summary>
         /// Busca una carta por runtime id en ambos lados.
+        /// Retorna null si no existe (para flujos que lo esperan).
         /// </summary>
         public CardRuntime FindCard(string runtimeId)
         {
@@ -34,7 +41,7 @@ namespace Flippy.CardDuelMobile.Battle
                 return null;
             }
 
-            foreach (var player in _state.Players)
+            foreach (var player in _state.Players.Where(p => p != null))
             {
                 foreach (var slot in player.Board)
                 {
@@ -49,20 +56,32 @@ namespace Flippy.CardDuelMobile.Battle
         }
 
         /// <summary>
-        /// Hace daño a una carta.
+        /// Busca una carta por runtime id, lanzando excepción si no existe.
+        /// </summary>
+        public CardRuntime GetCard(string runtimeId)
+        {
+            var card = FindCard(runtimeId);
+            if (card == null)
+            {
+                throw new InvalidGameStateException($"Card not found: {runtimeId}.");
+            }
+            return card;
+        }
+
+        /// <summary>
+        /// Hace daño a una carta (sin excepciones, retorna silenciosamente si target no existe).
         /// </summary>
         public void DealDamage(string sourceRuntimeId, string targetRuntimeId, int amount, bool ignoreArmor)
         {
+            if (amount <= 0) return;
+
             var target = FindCard(targetRuntimeId);
-            if (target == null || amount <= 0)
-            {
-                return;
-            }
+            if (target == null) return; // Objetivo no existe, no hacer nada
 
             var pendingDamage = amount;
             if (!ignoreArmor && target.Armor > 0)
             {
-                var absorbed = pendingDamage > target.Armor ? target.Armor : pendingDamage;
+                var absorbed = System.Math.Min(target.Armor, pendingDamage);
                 target.Armor -= absorbed;
                 pendingDamage -= absorbed;
             }
