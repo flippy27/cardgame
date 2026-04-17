@@ -723,7 +723,7 @@ namespace Flippy.CardDuelMobile.UI
 
         private void AnimateCardMovementFromPosition(string cardRuntimeId, BoardSlot fromSlot, BoardSlot toSlot, Vector3 savedFromPosition)
         {
-            Debug.Log($"[AnimateFromPos] >>> Attempting to animate {cardRuntimeId} from {fromSlot} to {toSlot}");
+            Debug.Log($"[AnimateFromPos] >>> Attempting to animate {cardRuntimeId} from {fromSlot} ({savedFromPosition}) to {toSlot}");
 
             // Don't animate recently-dropped card
             if (_lockedSlot == fromSlot)
@@ -754,10 +754,11 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            // Animate from saved position to target anchor position
-            var currentPos = cardWidget.transform.position;
-            Debug.Log($"[AnimateFromPos] SUCCESS: Animating {cardWidget.name} from {currentPos} to {targetAnchor.position}");
-            _animationController.AnimateToAnchor(cardWidget, targetAnchor, 0.25f, null, toSlotButton);
+            // KEY FIX: Animate from SAVED position (where card was) to TARGET position
+            // Card is already in target slot after Rebuild, so we animate it from where it was to where it is now
+            var targetPos = targetAnchor.position;
+            Debug.Log($"[AnimateFromPos] SUCCESS: Animating {cardWidget.name} from saved {savedFromPosition} to {targetPos}");
+            _animationController.AnimateToPosition(cardWidget, targetPos, 0.25f);
         }
 
         private void DetectAndAnimateCardMovements()
