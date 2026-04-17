@@ -478,6 +478,7 @@ namespace Flippy.CardDuelMobile.UI
                         {
                             // Store original world position for returning if drag is cancelled
                             var originalPos = card.transform.position;
+                            Debug.Log($"[AnimateCardToSlot] Preview animation: {cardId} {fromSlot}→{toSlot}, originalPos={originalPos}, targetPos={targetAnchor.position}");
                             _previewedCards[toSlot] = (card, originalPos, slot);
                             _animationController.AnimateToPosition(card, targetAnchor.position, 0.3f);
                         }
@@ -485,16 +486,26 @@ namespace Flippy.CardDuelMobile.UI
                     return;
                 }
             }
+            Debug.LogWarning($"[AnimateCardToSlot] Card {cardId} not found in any slot!");
         }
 
         private void ClearDragPreview()
         {
+            Debug.Log($"[ClearDragPreview] Called. Cards in preview: {_previewedCards.Count}");
+
             // Return preview-animated cards to original positions
-            foreach (var (_, (card, originalPos, _)) in _previewedCards)
+            foreach (var (toSlot, (card, originalPos, fromSlot)) in _previewedCards)
             {
+                Debug.Log($"[ClearDragPreview] Returning card from preview: {fromSlot}→{toSlot}, card={card?.name}, originalPos={originalPos}");
                 if (card != null)
                 {
+                    var currentPos = card.transform.position;
+                    Debug.Log($"[ClearDragPreview] Card current pos: {currentPos}, target: {originalPos}");
                     _animationController.AnimateToPosition(card, originalPos, 0.2f);
+                }
+                else
+                {
+                    Debug.LogWarning($"[ClearDragPreview] Card reference is null for slot {toSlot}!");
                 }
             }
             _previewedCards.Clear();
