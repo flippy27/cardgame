@@ -856,6 +856,13 @@ namespace Flippy.CardDuelMobile.UI
             // (don't animate - snapshot is the source of truth for final positions)
             SnapPreviewCardsToOriginal();
 
+            // Clear placement lock after first snapshot (allows other cards to animate)
+            if (_lockedSlot.HasValue)
+            {
+                Debug.Log($"[BattleScreenPresenter] Clearing lock after snapshot to allow repositioning animations");
+                _lockedSlot = null;
+            }
+
             Rebuild();
             DetectAndAnimateCardMovements();
         }
