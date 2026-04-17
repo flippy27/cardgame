@@ -43,12 +43,19 @@ namespace Flippy.CardDuelMobile.UI
         public TMPro.TextMeshProUGUI turnInfoText;
         public TMPro.TextMeshProUGUI heroInfoText;
         public TMPro.TextMeshProUGUI selectedCardText;
+        public TMPro.TextMeshProUGUI localDeckCountText;
+        public TMPro.TextMeshProUGUI localDeadPileCountText;
+        public TMPro.TextMeshProUGUI remoteDeckCountText;
+        public TMPro.TextMeshProUGUI remoteDeadPileCountText;
         public Button endTurnButton;
 
         [Header("Prefabs")]
         public HandCardButton handCardPrefab;
         public CardViewWidget boardCardPrefab;
-        public CardViewWidget dragGhostPrefab;
+        public GameObject dragGhost3DPrefab;
+
+        [Header("Detail View")]
+        public CardDetailView detailViewInstance;
 
         [Header("Debug")]
         public DebugPanel debugPanel;
@@ -57,7 +64,8 @@ namespace Flippy.CardDuelMobile.UI
         private CardInHandDto _selectedCard;
         private CardInHandDto _draggedCard;
         private HandCardButton _dragSource;
-        private CardViewWidget _dragGhost;
+        private GameObject _dragGhost;
+        private DragGhost3D _dragGhost3D;
         private bool _dragDropCommitted;
         private BoardSlotButton _dragOverSlot;
 
@@ -66,6 +74,7 @@ namespace Flippy.CardDuelMobile.UI
         private string _playerId;
         private string _opponentId;
         private int _matchStartTime;
+        private bool _inDiscardMode;
 
         private readonly List<GameObject> _spawnedHandCards = new();
         private readonly Dictionary<BoardSlot, BoardSlotButton> _localSlots = new();
@@ -125,6 +134,19 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
+            if (_inDiscardMode)
+            {
+                GameLogger.Info("UI", $"Discard mode: {dto.displayName} selected for discard");
+                if (LocalSinglePlayerCoordinator.Instance != null && LocalSinglePlayerCoordinator.Instance.IsActive)
+                {
+                    LocalSinglePlayerCoordinator.Instance.RequestDiscardCard(dto.runtimeCardKey);
+                }
+                _inDiscardMode = false;
+                RefreshAllSlotVisuals();
+                RebuildHandOnly();
+                return;
+            }
+
             if (!CanStartInteractionWithCard(dto))
             {
                 return;
@@ -149,24 +171,49 @@ namespace Flippy.CardDuelMobile.UI
             return CanCardBePlayedTo(_selectedCard, slot);
         }
 
+        public void ShowDetailView(CardInHandDto dto)
+        {
+            if (dto == null || detailViewInstance == null)
+            {
+                return;
+            }
+
+            detailViewInstance.SetCard(dto);
+            detailViewInstance.gameObject.SetActive(true);
+        }
+
+        public void HideDetailView()
+        {
+            if (detailViewInstance != null)
+            {
+                detailViewInstance.gameObject.SetActive(false);
+            }
+        }
+
         public void BeginDrag(CardInHandDto dto, HandCardButton source, Vector2 screenPosition)
         {
-            if (dto == null)
+            Debug.Log($"[BattleScreenPresenter] BeginDrag called for {dto?.displayName}, screenPos={screenPosition}");
+
+            if (dto == null || _inDiscardMode)
             {
+                Debug.Log($"[BattleScreenPresenter] BeginDrag rejected: dto null={dto == null}, inDiscardMode={_inDiscardMode}");
                 return;
             }
 
             if (!CanStartInteractionWithCard(dto))
             {
+                Debug.Log($"[BattleScreenPresenter] BeginDrag rejected: CanStartInteractionWithCard returned false");
                 return;
             }
+
+            HideDetailView();
 
             _selectedCard = dto;
             _draggedCard = dto;
             _dragSource = source;
             _dragDropCommitted = false;
 
-           
+
 
             CreateDragGhost(dto, screenPosition);
             RefreshSelectionLabel();
@@ -176,23 +223,9 @@ namespace Flippy.CardDuelMobile.UI
 
         public void UpdateDrag(Vector2 screenPosition)
         {
-            if (_dragGhost != null)
+            if (_dragGhost3D != null)
             {
-                var ghostRect = _dragGhost.transform as RectTransform;
-                if (ghostRect != null && dragLayer != null)
-                {
-                    // Convert screen position to local position in dragLayer
-                    if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                        dragLayer, screenPosition, null, out var localPos))
-                    {
-                        ghostRect.anchoredPosition = localPos;
-                    }
-                }
-                else if (ghostRect != null)
-                {
-                    // Fallback: use world position if no dragLayer
-                    ghostRect.position = screenPosition;
-                }
+                _dragGhost3D.SetTargetPosition(screenPosition, Camera.main);
             }
 
             // Continuous raycast to find any slot under mouse (for visual feedback)
@@ -297,7 +330,9 @@ namespace Flippy.CardDuelMobile.UI
                 return false;
             }
 
-            return RectTransformUtility.RectangleContainsScreenPoint(rect, screenPosition);
+            var canvas = slot.GetComponentInParent<Canvas>();
+            var cam = canvas != null ? canvas.worldCamera : Camera.main;
+            return RectTransformUtility.RectangleContainsScreenPoint(rect, screenPosition, cam);
         }
 
         public void SetDragOverSlot(BoardSlotButton slot)
@@ -433,6 +468,26 @@ namespace Flippy.CardDuelMobile.UI
                     heroInfoText.text = string.Empty;
                 }
 
+                if (localDeckCountText != null)
+                {
+                    localDeckCountText.text = string.Empty;
+                }
+
+                if (localDeadPileCountText != null)
+                {
+                    localDeadPileCountText.text = string.Empty;
+                }
+
+                if (remoteDeckCountText != null)
+                {
+                    remoteDeckCountText.text = string.Empty;
+                }
+
+                if (remoteDeadPileCountText != null)
+                {
+                    remoteDeadPileCountText.text = string.Empty;
+                }
+
                 if (battleLogText != null)
                 {
                     battleLogText.text = string.Empty;
@@ -471,6 +526,26 @@ namespace Flippy.CardDuelMobile.UI
             if (heroInfoText != null)
             {
                 heroInfoText.text = BuildHeroLine(local, remote);
+            }
+
+            if (localDeckCountText != null)
+            {
+                localDeckCountText.text = $"Deck: {local.remainingDeckCount}";
+            }
+
+            if (localDeadPileCountText != null)
+            {
+                localDeadPileCountText.text = $"Dead: {local.deadCardPileCount}";
+            }
+
+            if (remoteDeckCountText != null)
+            {
+                remoteDeckCountText.text = $"Deck: {remote.remainingDeckCount}";
+            }
+
+            if (remoteDeadPileCountText != null)
+            {
+                remoteDeadPileCountText.text = $"Dead: {remote.deadCardPileCount}";
             }
 
             if (_latestSnapshot.logs != null && battleLogText != null)
@@ -666,6 +741,15 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
+            var local = _latestSnapshot.players[_latestSnapshot.localPlayerIndex];
+            if (local.hand != null && local.hand.Length > Core.CardConstants.MaxHandSize)
+            {
+                GameLogger.Info("UI", $"Hand size {local.hand.Length} exceeds max {Core.CardConstants.MaxHandSize}, entering discard mode");
+                _inDiscardMode = true;
+                RefreshAllSlotVisuals();
+                return;
+            }
+
             DestroyDragGhostImmediate();
             _draggedCard = null;
             _dragSource = null;
@@ -750,6 +834,14 @@ namespace Flippy.CardDuelMobile.UI
         {
             if (selectedCardText == null)
             {
+                return;
+            }
+
+            if (_inDiscardMode)
+            {
+                var localPlayer = _latestSnapshot?.players?[_latestSnapshot.localPlayerIndex];
+                var handCount = localPlayer?.hand?.Length ?? 0;
+                selectedCardText.text = $"DISCARD MODE: {handCount}/{Core.CardConstants.MaxHandSize} cards - Click card to discard";
                 return;
             }
 
@@ -859,31 +951,28 @@ namespace Flippy.CardDuelMobile.UI
         {
             DestroyDragGhostImmediate();
 
-            var prefab = dragGhostPrefab != null ? dragGhostPrefab : boardCardPrefab;
-            if (prefab == null)
+            if (dragGhost3DPrefab == null)
             {
+                Debug.LogError("[BattleScreenPresenter] dragGhost3DPrefab is null!");
                 return;
             }
 
-            var parent = dragLayer != null ? dragLayer : transform as RectTransform;
-            _dragGhost = Instantiate(prefab, parent);
-            _dragGhost.Bind(dto);
-            _dragGhost.transform.position = screenPosition;
+            Debug.Log($"[BattleScreenPresenter] Creating drag ghost at screen pos {screenPosition}");
+            _dragGhost = Instantiate(dragGhost3DPrefab);
+            _dragGhost.transform.position = new Vector3(0, 0, 0); // Reset to origin
+            Debug.Log($"[BattleScreenPresenter] Instantiated ghost: {_dragGhost.name}, pos: {_dragGhost.transform.position}");
 
-            var canvasGroup = _dragGhost.GetComponent<CanvasGroup>();
-            if (canvasGroup == null)
+            _dragGhost3D = _dragGhost.GetComponent<DragGhost3D>();
+            Debug.Log($"[BattleScreenPresenter] DragGhost3D component: {(_dragGhost3D != null ? "found" : "NOT FOUND")}");
+
+            if (_dragGhost3D != null)
             {
-                canvasGroup = _dragGhost.gameObject.AddComponent<CanvasGroup>();
+                _dragGhost3D.SetTargetPosition(screenPosition, Camera.main);
+                Debug.Log($"[BattleScreenPresenter] Ghost position set, now at: {_dragGhost.transform.position}");
             }
-
-            canvasGroup.blocksRaycasts = false;
-            canvasGroup.alpha = 0.92f;
-
-            var rectTransform = _dragGhost.transform as RectTransform;
-            if (rectTransform != null)
+            else
             {
-                rectTransform.localScale = Vector3.one * 0.95f;
-                rectTransform.SetAsLastSibling();
+                Debug.LogError("[BattleScreenPresenter] Ghost created but no DragGhost3D component!");
             }
         }
 
@@ -925,8 +1014,9 @@ namespace Flippy.CardDuelMobile.UI
         {
             if (_dragGhost != null)
             {
-                Destroy(_dragGhost.gameObject);
+                Destroy(_dragGhost);
                 _dragGhost = null;
+                _dragGhost3D = null;
             }
         }
 

@@ -51,6 +51,7 @@ namespace Flippy.CardDuelMobile.Battle
         public int MaxMana;
         public readonly List<CardDefinition> Deck = new();
         public readonly List<HandCardRuntime> Hand = new();
+        public readonly List<CardRuntime> DeadCardPile = new();
         public readonly List<BoardSlotRuntime> Board = new()
         {
             new BoardSlotRuntime{ Slot = BoardSlot.Front },

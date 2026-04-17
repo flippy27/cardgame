@@ -40,6 +40,7 @@ namespace Flippy.CardDuelMobile.Battle
         public CardInHandDto[] hand;
         public BoardSlotSnapshotDto[] board;
         public int remainingDeckCount;
+        public int deadCardPileCount;
     }
 
     [Serializable]

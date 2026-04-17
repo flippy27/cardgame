@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DefaultDuelRules
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Data.DuelRulesProfile
   startingHeroHealth: 20
-  startingMana: 1
+  startingMana: 20
   manaPerTurn: 1
-  maxMana: 10
+  maxMana: 20
   startingHandSize: 4
   drawAtTurnStart: 1

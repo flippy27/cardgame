@@ -126,6 +126,26 @@ namespace Flippy.CardDuelMobile.SinglePlayer
             return false;
         }
 
+        public bool RequestDiscardCard(string runtimeCardKey)
+        {
+            Debug.Log($"[LocalAI] RequestDiscardCard called for {runtimeCardKey}");
+            if (_runtime == null)
+            {
+                Debug.LogWarning("[LocalAI] RequestDiscardCard rejected: runtime is null");
+                return false;
+            }
+
+            if (_runtime.DiscardCard(localPlayerIndex, runtimeCardKey))
+            {
+                Debug.Log("[LocalAI] RequestDiscardCard succeeded, publishing snapshot");
+                PublishSnapshot();
+                return true;
+            }
+
+            Debug.LogWarning("[LocalAI] RequestDiscardCard failed: DiscardCard returned false");
+            return false;
+        }
+
         private void TryStartAiTurnIfNeeded()
         {
             if (_runtime == null || _runtime.State.DuelEnded)
@@ -158,6 +178,16 @@ namespace Flippy.CardDuelMobile.SinglePlayer
                    !_runtime.State.DuelEnded &&
                    _runtime.State.ActivePlayerIndex == aiPlayerIndex)
             {
+                var aiPlayer = _runtime.State.GetPlayer(aiPlayerIndex);
+                if (aiPlayer != null && aiPlayer.Hand.Count > CardConstants.MaxHandSize)
+                {
+                    var cardToDiscard = aiPlayer.Hand[UnityEngine.Random.Range(0, aiPlayer.Hand.Count)];
+                    _runtime.DiscardCard(aiPlayerIndex, cardToDiscard.RuntimeHandKey);
+                    PublishSnapshot();
+                    yield return new WaitForSeconds(aiActionDelay);
+                    continue;
+                }
+
                 var move = _aiAgent.BuildMove(_runtime, aiPlayerIndex, aiDifficulty);
 
                 if (move.IsEndTurn)

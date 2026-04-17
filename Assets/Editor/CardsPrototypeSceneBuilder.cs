@@ -118,7 +118,7 @@ namespace Flippy.CardDuelMobile.EditorTools
             presenter.endTurnButton = presenterRefs.endTurnButton;
             presenter.handCardPrefab = handCardPrefab.GetComponent<HandCardButton>();
             presenter.boardCardPrefab = boardCardPrefab.GetComponent<CardViewWidget>();
-            presenter.dragGhostPrefab = boardCardPrefab.GetComponent<CardViewWidget>();
+            // dragGhost3DPrefab must be assigned manually in inspector (3D GameObject with DragGhost3D script)
 
             var scenePath = CardsEditorPaths.Scenes + "/CardDuelPrototype.unity";
             EditorSceneManager.SaveScene(SceneManager.GetActiveScene(), scenePath);

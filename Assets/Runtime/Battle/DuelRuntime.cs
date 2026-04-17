@@ -182,6 +182,11 @@ namespace Flippy.CardDuelMobile.Battle
                 return false;
             }
 
+            if (active.Hand.Count > CardConstants.MaxHandSize)
+            {
+                return false;
+            }
+
             _state.Logs.Add(new BattleLogEntry
             {
                 type = BattleLogType.Turn,
@@ -203,12 +208,54 @@ namespace Flippy.CardDuelMobile.Battle
 
                 if (_rules.drawAtTurnStart)
                 {
-                    DrawCard(_state.ActivePlayerIndex);
+                    if (!DrawCard(_state.ActivePlayerIndex))
+                    {
+                        _context.DamageHero(_state.ActivePlayerIndex, 1);
+                        _state.Logs.Add(new BattleLogEntry
+                        {
+                            type = BattleLogType.Info,
+                            message = $"Player {_state.ActivePlayerIndex} deck is empty! Takes 1 damage."
+                        });
+                    }
                 }
 
                 _context.ProcessStatusEffects(_state.ActivePlayerIndex);
                 ResolveTurnAbilities(_state.ActivePlayerIndex, AbilityTrigger.OnTurnStart);
             }
+
+            return true;
+        }
+
+        public bool DiscardCard(int playerIndex, string runtimeHandKey)
+        {
+            var player = _state.GetPlayer(playerIndex);
+            if (player == null || player.Hand.Count <= CardConstants.MaxHandSize)
+            {
+                return false;
+            }
+
+            var handCard = player.Hand.FirstOrDefault(x => x.RuntimeHandKey == runtimeHandKey);
+            if (handCard == null)
+            {
+                return false;
+            }
+
+            var cardRuntime = new CardRuntime
+            {
+                RuntimeId = Guid.NewGuid().ToString("N"),
+                CardId = handCard.Definition.cardId,
+                DisplayName = handCard.Definition.displayName,
+                Definition = handCard.Definition
+            };
+
+            player.Hand.Remove(handCard);
+            player.DeadCardPile.Add(cardRuntime);
+
+            _state.Logs.Add(new BattleLogEntry
+            {
+                type = BattleLogType.Info,
+                message = $"{cardRuntime.DisplayName} discarded to dead pile."
+            });
 
             return true;
         }
@@ -252,12 +299,12 @@ namespace Flippy.CardDuelMobile.Battle
             return player;
         }
 
-        private void DrawCard(int playerIndex)
+        private bool DrawCard(int playerIndex)
         {
             var player = _state.GetPlayer(playerIndex);
             if (player == null || player.Deck.Count == 0)
             {
-                return;
+                return false;
             }
 
             var nextCard = player.Deck[0];
@@ -267,6 +314,14 @@ namespace Flippy.CardDuelMobile.Battle
                 RuntimeHandKey = Guid.NewGuid().ToString("N"),
                 Definition = nextCard
             });
+
+            _state.Logs.Add(new BattleLogEntry
+            {
+                type = BattleLogType.Info,
+                message = $"Player {playerIndex} drew a card. Deck: {player.Deck.Count} remaining."
+            });
+
+            return true;
         }
 
         private PlayerSnapshotDto BuildPlayerSnapshot(DuelPlayerState player)
@@ -278,6 +333,7 @@ namespace Flippy.CardDuelMobile.Battle
                 mana = player.Mana,
                 maxMana = player.MaxMana,
                 remainingDeckCount = player.Deck.Count,
+                deadCardPileCount = player.DeadCardPile.Count,
                 hand = player.Hand.Select(card => new CardInHandDto
                 {
                     runtimeCardKey = card.RuntimeHandKey,

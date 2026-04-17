@@ -1324,18 +1324,7 @@ namespace Flippy.CardDuelMobile.Editor
                     presenter.boardCardPrefab = cardViewWidget;
             }
 
-            // Wire DragGhost prefab (drag preview - uses CardViewWidget)
-            var dragGhostPrefab = AssetDatabase.LoadAssetAtPath($"{prefabPath}/DragGhost.prefab", typeof(GameObject)) as GameObject;
-            if (dragGhostPrefab != null)
-            {
-                // DragGhost is a simple visual prefab, create a minimal CardViewWidget wrapper if needed
-                var cardViewWidget = dragGhostPrefab.GetComponent<Flippy.CardDuelMobile.UI.CardViewWidget>();
-                if (cardViewWidget == null)
-                {
-                    cardViewWidget = dragGhostPrefab.AddComponent<Flippy.CardDuelMobile.UI.CardViewWidget>();
-                }
-                presenter.dragGhostPrefab = cardViewWidget;
-            }
+            // DragGhost3D prefab must be assigned manually in inspector (3D GameObject with DragGhost3D script)
 
             EditorUtility.SetDirty(presenter);
         }
