@@ -806,6 +806,9 @@ namespace Flippy.CardDuelMobile.UI
                 DestroyDragGhostImmediate();
             }
 
+            // Clear drag preview BEFORE Rebuild/ApplySnapshot destroys and recreates cards
+            ClearDragPreview();
+
             Rebuild();
             DetectAndAnimateCardMovements();
         }
