@@ -76,6 +76,8 @@ namespace Flippy.CardDuelMobile.UI
         private bool _dragDropCommitted;
         private BoardSlotButton _dragOverSlot;
 
+        private BoardSlot? _lockedSlot;
+
         private bool _matchCompletionHandled;
         private string _matchId;
         private string _playerId;
@@ -89,7 +91,7 @@ namespace Flippy.CardDuelMobile.UI
         private readonly Dictionary<string, BoardSlot> _cardSlotPositions = new();
         private readonly Dictionary<string, (BoardSlot slot, Vector2 anchoredPos)> _cardPreviousStates = new();
         private readonly Dictionary<BoardSlot, Color> _previewSlotColors = new();
-        private readonly Dictionary<BoardSlot, (CardViewWidget card, Vector2 originalAnchoredPos, BoardSlotButton sourceSlot)> _previewedCards = new();
+        private readonly Dictionary<BoardSlot, (CardViewWidget card, Vector3 originalWorldPos, BoardSlotButton sourceSlot)> _previewedCards = new();
         private readonly List<Coroutine> _previewCoroutines = new();
         private bool _subscribed;
 
@@ -474,7 +476,9 @@ namespace Flippy.CardDuelMobile.UI
                         var targetAnchor = targetSlot.CardAnchor as RectTransform;
                         if (targetAnchor != null)
                         {
-                            _previewedCards[toSlot] = (card, Vector2.zero, slot);
+                            // Store original world position for returning if drag is cancelled
+                            var originalPos = card.transform.position;
+                            _previewedCards[toSlot] = (card, originalPos, slot);
                             _animationController.AnimateToPosition(card, targetAnchor.position, 0.3f);
                         }
                     }
@@ -485,12 +489,12 @@ namespace Flippy.CardDuelMobile.UI
 
         private void ClearDragPreview()
         {
-            // Cancel all preview animations
-            foreach (var (_, (card, _, _)) in _previewedCards)
+            // Return preview-animated cards to original positions
+            foreach (var (_, (card, originalPos, _)) in _previewedCards)
             {
                 if (card != null)
                 {
-                    _animationController.SnapToPosition(card, card.transform.position);
+                    _animationController.AnimateToPosition(card, originalPos, 0.2f);
                 }
             }
             _previewedCards.Clear();
@@ -567,6 +571,9 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             GameLogger.Info("UI", "TryPlayDraggedCardTo: card played successfully");
+            // Lock the placed card to its slot so it doesn't get displaced by animations
+            _lockedSlot = slot;
+
             ClearDragPreview();
             _dragDropCommitted = true;
             _selectedCard = null;
@@ -599,6 +606,9 @@ namespace Flippy.CardDuelMobile.UI
             {
                 return;
             }
+
+            // Lock the placed card to its slot so it doesn't get displaced by animations
+            _lockedSlot = slot;
 
             _selectedCard = null;
             RefreshSelectionLabel();
@@ -737,6 +747,13 @@ namespace Flippy.CardDuelMobile.UI
 
         private void AnimateCardMovement(string cardRuntimeId, BoardSlot fromSlot, BoardSlot toSlot, bool isLocalSide)
         {
+            // Don't animate recently-dropped card - it should stay in its placed slot
+            if (_lockedSlot == fromSlot && isLocalSide)
+            {
+                Debug.Log($"[AnimateCardMovement] Card {cardRuntimeId} in locked slot {fromSlot}, skipping animation");
+                return;
+            }
+
             var slots = isLocalSide ? _localSlots : _remoteSlots;
 
             if (!slots.TryGetValue(toSlot, out var toSlotButton))
@@ -791,9 +808,23 @@ namespace Flippy.CardDuelMobile.UI
             DetectAndAnimateCardMovements();
         }
 
+        private void ClearLastDroppedCard()
+        {
+            _lockedSlot = null;
+        }
+
         private void Rebuild()
         {
             Debug.Log($"[BattleScreenPresenter] Rebuild called");
+            // Clear lock when turn changes (new snapshot with different active player)
+            if (_latestSnapshot != null && _lockedSlot.HasValue)
+            {
+                var isNowLocalTurn = _latestSnapshot.matchPhase == MatchPhase.InProgress && _latestSnapshot.activePlayerIndex == _latestSnapshot.localPlayerIndex;
+                if (!isNowLocalTurn)
+                {
+                    ClearLastDroppedCard();
+                }
+            }
             // Panel visibility is handled by UIManager
 
             // Initialize debug panel on first rebuild
@@ -1091,10 +1122,32 @@ namespace Flippy.CardDuelMobile.UI
                 return false;
             }
 
-            // Units can be played in any slot
+            // Units have priority-based slot placement
             if (dto.isUnit)
             {
-                return true;
+                var frontSlot = local.board?.FirstOrDefault(x => x.slot == BoardSlot.Front);
+                var backLeftSlot = local.board?.FirstOrDefault(x => x.slot == BoardSlot.BackLeft);
+                var backRightSlot = local.board?.FirstOrDefault(x => x.slot == BoardSlot.BackRight);
+
+                // Front priority: can only play here if empty
+                if (slot == BoardSlot.Front)
+                {
+                    return frontSlot?.occupied == false;
+                }
+
+                // BackLeft priority: can only play if Front occupied and BackLeft empty
+                if (slot == BoardSlot.BackLeft)
+                {
+                    return frontSlot?.occupied == true && backLeftSlot?.occupied == false;
+                }
+
+                // BackRight priority: can only play if Front and BackLeft occupied, BackRight empty
+                if (slot == BoardSlot.BackRight)
+                {
+                    return frontSlot?.occupied == true && backLeftSlot?.occupied == true && backRightSlot?.occupied == false;
+                }
+
+                return false;
             }
 
             return true;
