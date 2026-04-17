@@ -674,60 +674,89 @@ namespace Flippy.CardDuelMobile.UI
             Debug.Log($"[DetectAndAnimateWithSaved] Called with {savedPositions.Count} saved positions");
 
             if (_latestSnapshot?.players == null || _latestSnapshot.players.Length < 2)
+            {
+                Debug.LogWarning("[DetectAndAnimateWithSaved] Snapshot incomplete, returning");
                 return;
+            }
 
             var local = _latestSnapshot.players[_latestSnapshot.localPlayerIndex];
             if (local.board == null)
+            {
+                Debug.LogWarning("[DetectAndAnimateWithSaved] Local board null, returning");
                 return;
+            }
+
+            Debug.Log($"[DetectAndAnimateWithSaved] Checking {local.board.Length} slots in snapshot");
 
             // For each card in the new snapshot, check if it moved from saved position
             foreach (var slotSnapshot in local.board)
             {
+                Debug.Log($"[DetectAndAnimateWithSaved] Slot {slotSnapshot.slot}: occupied={slotSnapshot.occupied}");
+
                 if (slotSnapshot.occupant == null)
+                {
+                    Debug.Log($"[DetectAndAnimateWithSaved]   → Empty slot");
                     continue;
+                }
 
                 var cardId = slotSnapshot.occupant.runtimeId;
+                Debug.Log($"[DetectAndAnimateWithSaved]   → Card {cardId}");
+
                 if (savedPositions.TryGetValue(cardId, out var savedState))
                 {
                     var oldSlot = savedState.slot;
                     var newSlot = slotSnapshot.slot;
+                    Debug.Log($"[DetectAndAnimateWithSaved]   → Found in saved: {oldSlot}, now in {newSlot}");
 
                     if (oldSlot != newSlot)
                     {
-                        Debug.Log($"[DetectAndAnimateWithSaved] MOVEMENT: {cardId} {oldSlot} → {newSlot}");
+                        Debug.Log($"[DetectAndAnimateWithSaved] >>> MOVEMENT DETECTED: {cardId} {oldSlot} → {newSlot}");
                         AnimateCardMovementFromPosition(cardId, oldSlot, newSlot, savedState.worldPos);
                     }
+                }
+                else
+                {
+                    Debug.Log($"[DetectAndAnimateWithSaved]   → NOT in saved positions (new card)");
                 }
             }
         }
 
         private void AnimateCardMovementFromPosition(string cardRuntimeId, BoardSlot fromSlot, BoardSlot toSlot, Vector3 savedFromPosition)
         {
+            Debug.Log($"[AnimateFromPos] >>> Attempting to animate {cardRuntimeId} from {fromSlot} to {toSlot}");
+
             // Don't animate recently-dropped card
             if (_lockedSlot == fromSlot)
             {
-                Debug.Log($"[AnimateFromPos] Card {cardRuntimeId} in locked slot {fromSlot}, skipping");
+                Debug.Log($"[AnimateFromPos] BLOCKED: Card {cardRuntimeId} in locked slot {fromSlot}, skipping");
                 return;
             }
 
             // Find card in new position (after Rebuild)
             var slots = _localSlots;
             if (!slots.TryGetValue(toSlot, out var toSlotButton))
+            {
+                Debug.LogError($"[AnimateFromPos] ERROR: Slot {toSlot} not found in _localSlots!");
                 return;
+            }
 
             var cardWidget = toSlotButton.GetSpawnedCard();
             if (cardWidget == null)
             {
-                Debug.LogWarning($"[AnimateFromPos] Card not found in {toSlot} after Rebuild!");
+                Debug.LogError($"[AnimateFromPos] ERROR: Card not found in {toSlot} after Rebuild!");
                 return;
             }
 
             var targetAnchor = toSlotButton.CardAnchor as RectTransform;
             if (targetAnchor == null)
+            {
+                Debug.LogError($"[AnimateFromPos] ERROR: targetAnchor is null for {toSlot}");
                 return;
+            }
 
             // Animate from saved position to target anchor position
-            Debug.Log($"[AnimateFromPos] Animating {cardRuntimeId} from {savedFromPosition} to {targetAnchor.position}");
+            var currentPos = cardWidget.transform.position;
+            Debug.Log($"[AnimateFromPos] SUCCESS: Animating {cardWidget.name} from {currentPos} to {targetAnchor.position}");
             _animationController.AnimateToAnchor(cardWidget, targetAnchor, 0.25f, null, toSlotButton);
         }
 
@@ -913,9 +942,11 @@ namespace Flippy.CardDuelMobile.UI
                     if (!string.IsNullOrEmpty(runtimeId))
                     {
                         positionsBeforeUpdate[runtimeId] = (kvp.Key, card.transform.position);
+                        Debug.Log($"[HandleSnapshot] Saved position: {runtimeId} at {kvp.Key} = {card.transform.position}");
                     }
                 }
             }
+            Debug.Log($"[HandleSnapshot] Total saved positions: {positionsBeforeUpdate.Count}");
 
             _latestSnapshot = JsonUtility.FromJson<DuelSnapshotDto>(json);
 
