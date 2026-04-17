@@ -1175,33 +1175,33 @@ namespace Flippy.CardDuelMobile.UI
                 return false;
             }
 
-            // Units must follow STRICT PRIORITY
             if (dto.isUnit)
             {
                 var frontSlot = local.board?.FirstOrDefault(x => x.slot == BoardSlot.Front);
                 var backLeftSlot = local.board?.FirstOrDefault(x => x.slot == BoardSlot.BackLeft);
-                var backRightSlot = local.board?.FirstOrDefault(x => x.slot == BoardSlot.BackRight);
 
-                // Melee ALWAYS to Front (with auto-displacement if occupied)
-                if (slot == BoardSlot.Front)
+                // PRIORITY BLOCKING: any card can be placed anywhere, but slots blocked if higher priority empty
+
+                // If no Top: block Left and Right
+                if (frontSlot?.occupied == false)
                 {
-                    return true; // Always allowed, will auto-displace
+                    if (slot == BoardSlot.BackLeft || slot == BoardSlot.BackRight)
+                    {
+                        return false;
+                    }
                 }
 
-                // Ranged must follow priority: only if higher slots full
-                if (slot == BoardSlot.BackLeft)
+                // If no Left (but Top occupied): block Right
+                if (frontSlot?.occupied == true && backLeftSlot?.occupied == false)
                 {
-                    // Can only place here if Front is FULL
-                    return frontSlot?.occupied == true;
+                    if (slot == BoardSlot.BackRight)
+                    {
+                        return false;
+                    }
                 }
 
-                if (slot == BoardSlot.BackRight)
-                {
-                    // Can only place here if Front AND BackLeft are FULL
-                    return frontSlot?.occupied == true && backLeftSlot?.occupied == true;
-                }
-
-                return false;
+                // Any valid slot is OK
+                return true;
             }
 
             return true;
