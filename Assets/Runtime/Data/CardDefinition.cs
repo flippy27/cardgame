@@ -26,6 +26,7 @@ namespace Flippy.CardDuelMobile.Data
 
         [Header("Gameplay")]
         public TargetSelectorDefinition defaultAttackTargetSelector;
+        public CardSkillDefinition[] skills;
         public AbilityDefinition[] abilities;
 
         [Header("Visuals")]

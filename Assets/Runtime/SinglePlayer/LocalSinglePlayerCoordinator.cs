@@ -15,7 +15,7 @@ namespace Flippy.CardDuelMobile.SinglePlayer
     public sealed class LocalSinglePlayerCoordinator : MonoBehaviour
     {
         [Header("Setup")]
-        public bool autoStartOnStart = true;
+        public bool autoStartOnStart = false;
         public int localPlayerIndex = 0;
         public DuelRulesProfile rulesProfile;
         public DeckDefinition localPlayerDeck;
@@ -35,6 +35,8 @@ namespace Flippy.CardDuelMobile.SinglePlayer
 
         public bool IsActive => _runtime != null;
         public DuelSnapshotDto LatestSnapshot { get; private set; }
+        public DuelRuntime DuelRuntime => _runtime;
+        public DuelState DuelState => _runtime?.State;
 
         private void Awake()
         {
@@ -105,18 +107,22 @@ namespace Flippy.CardDuelMobile.SinglePlayer
         /// </summary>
         public bool RequestEndTurn()
         {
+            Debug.Log("[LocalAI] RequestEndTurn called");
             if (_runtime == null)
             {
+                Debug.LogWarning("[LocalAI] RequestEndTurn rejected: runtime is null");
                 return false;
             }
 
             if (_runtime.TryEndTurn(localPlayerIndex))
             {
+                Debug.Log("[LocalAI] RequestEndTurn succeeded, publishing snapshot");
                 PublishSnapshot();
                 TryStartAiTurnIfNeeded();
                 return true;
             }
 
+            Debug.LogWarning("[LocalAI] RequestEndTurn failed: TryEndTurn returned false");
             return false;
         }
 

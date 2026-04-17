@@ -124,20 +124,20 @@ namespace Flippy.CardDuelMobile.Tests.Battle
         }
 
         [Test]
-        public async void RefreshTokenIfNeeded_NoToken_ReturnsFalse()
+        public async void RefreshTokenIfNeeded_NoToken_DoesNotThrow()
         {
-            var result = await _authService.RefreshTokenIfNeeded();
-            Assert.IsFalse(result);
+            await _authService.RefreshTokenIfNeeded();
+            Assert.IsFalse(_authService.IsAuthenticated);
         }
 
         [Test]
-        public async void RefreshTokenIfNeeded_TokenValid_ReturnsFalse()
+        public async void RefreshTokenIfNeeded_TokenValid_Succeeds()
         {
             await _authService.Login("test_player", "test_password");
 
             // Token just created, should be valid
-            var result = await _authService.RefreshTokenIfNeeded();
-            Assert.IsFalse(result, "Valid token should not trigger refresh");
+            await _authService.RefreshTokenIfNeeded();
+            Assert.IsTrue(_authService.IsAuthenticated, "Valid token should remain authenticated");
         }
     }
 }

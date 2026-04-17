@@ -82,8 +82,8 @@ namespace Flippy.CardDuelMobile.Editor
             loginPanelGo.GetComponent<RectTransform>().sizeDelta = new Vector2(400, 300);
 
             CreateText(loginPanelGo.transform, "Title", "🎮 CardGame", 36, new Color(1, 1, 1, 1), TextAnchor.UpperCenter, new Vector2(0, -50));
-            CreateInputField(loginPanelGo.transform, "PlayerIdInput", "email@example.com", ContentType.EmailAddress, new Vector2(0, -100));
-            CreateInputField(loginPanelGo.transform, "PasswordInput", "password", ContentType.Password, new Vector2(0, -150));
+            CreateInputField(loginPanelGo.transform, "PlayerIdInput", "email@example.com", InputField.ContentType.EmailAddress, new Vector2(0, -100));
+            CreateInputField(loginPanelGo.transform, "PasswordInput", "password", InputField.ContentType.Password, new Vector2(0, -150));
             CreateButton(loginPanelGo.transform, "LoginButton", "Login", new Vector2(-100, -200));
             CreateButton(loginPanelGo.transform, "RegisterButton", "Register", new Vector2(100, -200));
             CreateText(loginPanelGo.transform, "StatusText", "Enter credentials", 14, new Color(1, 1, 1, 1), TextAnchor.MiddleCenter, new Vector2(0, -250));
@@ -259,7 +259,7 @@ namespace Flippy.CardDuelMobile.Editor
             return textGo;
         }
 
-        private static GameObject CreateInputField(Transform parent, string name, string placeholder, ContentType contentType, Vector2 pos)
+        private static GameObject CreateInputField(Transform parent, string name, string placeholder, InputField.ContentType contentType, Vector2 pos)
         {
             var inputGo = new GameObject(name);
             inputGo.transform.SetParent(parent, false);

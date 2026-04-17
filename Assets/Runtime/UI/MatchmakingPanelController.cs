@@ -1,7 +1,9 @@
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using Flippy.CardDuelMobile.Networking;
+using Flippy.CardDuelMobile.Core;
 
 namespace Flippy.CardDuelMobile.UI
 {
@@ -13,8 +15,9 @@ namespace Flippy.CardDuelMobile.UI
         public MpsGameSessionService sessionService;
         public InputField joinCodeField;
         public InputField privateMatchNameField;
-        public Text statusText;
-        public Text joinCodeText;
+        public TextMeshProUGUI statusText;
+        public TextMeshProUGUI joinCodeText;
+        public Button localMatchButton;
         public Button quickMatchButton;
         public Button createPrivateButton;
         public Button joinByCodeButton;
@@ -45,6 +48,7 @@ namespace Flippy.CardDuelMobile.UI
                 sessionService.ErrorRaised += HandleErrorRaised;
             }
 
+            AddListener(localMatchButton, HandleLocalMatch);
             AddListener(quickMatchButton, HandleQuickMatch);
             AddListener(createPrivateButton, HandleCreatePrivate);
             AddListener(joinByCodeButton, HandleJoinByCode);
@@ -64,6 +68,7 @@ namespace Flippy.CardDuelMobile.UI
                 sessionService.ErrorRaised -= HandleErrorRaised;
             }
 
+            RemoveListener(localMatchButton, HandleLocalMatch);
             RemoveListener(quickMatchButton, HandleQuickMatch);
             RemoveListener(createPrivateButton, HandleCreatePrivate);
             RemoveListener(joinByCodeButton, HandleJoinByCode);
@@ -73,9 +78,30 @@ namespace Flippy.CardDuelMobile.UI
             RemoveListener(copyJoinCodeButton, HandleCopyJoinCode);
         }
 
+        private void HandleLocalMatch()
+        {
+            SetStatus("Starting local match...");
+            GameLogger.Info("UI", "Local match selected");
+            if (GameModeManager.Instance != null)
+            {
+                GameModeManager.Instance.SetLocalMode();
+                SetStatus("Local match started");
+            }
+            else
+            {
+                SetStatus("Error: GameModeManager not found");
+            }
+        }
+
         private async void HandleQuickMatch()
         {
             SetStatus("Quick matching...");
+            GameLogger.Info("UI", "Quick match selected");
+            if (GameModeManager.Instance != null)
+            {
+                GameModeManager.Instance.SetOnlineMode();
+                GameLogger.Info("UI", "Switched to online mode");
+            }
             await sessionService.QuickMatchAsync();
         }
 

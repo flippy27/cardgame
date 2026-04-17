@@ -20,6 +20,12 @@ namespace Flippy.CardDuelMobile.Battle
         public BoardSlot CurrentSlot;
         public CardDefinition Definition;
         public bool IsDead => CurrentHealth <= 0;
+
+        // Status effects
+        public int PoisonStacks;
+        public bool Stunned;
+        public bool HasShield;
+        public int EnrageBonus;
     }
 
     [Serializable]
@@ -53,11 +59,19 @@ namespace Flippy.CardDuelMobile.Battle
         };
 
         /// <summary>
+        /// Busca slot por tipo.
+        /// </summary>
+        public BoardSlotRuntime FindSlot(BoardSlot slot)
+        {
+            return Board.FirstOrDefault(x => x.Slot == slot);
+        }
+
+        /// <summary>
         /// Busca ocupante por slot.
         /// </summary>
         public CardRuntime FindOccupant(BoardSlot slot)
         {
-            return Board.FirstOrDefault(x => x.Slot == slot)?.Occupant;
+            return FindSlot(slot)?.Occupant;
         }
 
         /// <summary>
@@ -66,6 +80,47 @@ namespace Flippy.CardDuelMobile.Battle
         public bool IsSlotEmpty(BoardSlot slot)
         {
             return FindOccupant(slot) == null;
+        }
+
+        /// <summary>
+        /// Repositions cards when Front dies.
+        /// BackLeft → Front, BackRight → BackLeft
+        /// </summary>
+        public void Reposition()
+        {
+            var frontSlot = FindSlot(BoardSlot.Front);
+            var backLeftSlot = FindSlot(BoardSlot.BackLeft);
+            var backRightSlot = FindSlot(BoardSlot.BackRight);
+
+            if (frontSlot == null || backLeftSlot == null || backRightSlot == null)
+                return;
+
+            // If Front is empty, shift back cards forward
+            if (frontSlot.Occupant == null)
+            {
+                if (backLeftSlot.Occupant != null)
+                {
+                    frontSlot.Occupant = backLeftSlot.Occupant;
+                    frontSlot.Occupant.CurrentSlot = BoardSlot.Front;
+
+                    if (backRightSlot.Occupant != null)
+                    {
+                        backLeftSlot.Occupant = backRightSlot.Occupant;
+                        backLeftSlot.Occupant.CurrentSlot = BoardSlot.BackLeft;
+                        backRightSlot.Occupant = null;
+                    }
+                    else
+                    {
+                        backLeftSlot.Occupant = null;
+                    }
+                }
+                else if (backRightSlot.Occupant != null)
+                {
+                    frontSlot.Occupant = backRightSlot.Occupant;
+                    frontSlot.Occupant.CurrentSlot = BoardSlot.Front;
+                    backRightSlot.Occupant = null;
+                }
+            }
         }
     }
 
@@ -105,12 +160,14 @@ namespace Flippy.CardDuelMobile.Battle
         public readonly int SourcePlayer;
         public readonly int TargetPlayer;
         public readonly string SourceRuntimeId;
+        public readonly BoardSlot SourceSlot;
 
-        public TargetSelectionRequest(int sourcePlayer, int targetPlayer, string sourceRuntimeId)
+        public TargetSelectionRequest(int sourcePlayer, int targetPlayer, string sourceRuntimeId, BoardSlot sourceSlot)
         {
             SourcePlayer = sourcePlayer;
             TargetPlayer = targetPlayer;
             SourceRuntimeId = sourceRuntimeId;
+            SourceSlot = sourceSlot;
         }
     }
 

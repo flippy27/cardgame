@@ -258,9 +258,7 @@ namespace Flippy.CardDuelMobile.EditorTools
 
             refs.endTurnButton = CreateButton("EndTurnButton", gameplayPanel, font, "End Turn");
             refs.battleLogText = CreateText("BattleLog", gameplayPanel, font, "Battle log...", 16);
-            refs.battleLogText.alignment = TextAnchor.UpperLeft;
-            refs.battleLogText.horizontalOverflow = HorizontalWrapMode.Wrap;
-            refs.battleLogText.verticalOverflow = VerticalWrapMode.Overflow;
+            refs.battleLogText.alignment = TMPro.TextAlignmentOptions.TopLeft;
 
             var dragLayerLayout = dragLayer.gameObject.GetComponent<LayoutElement>();
             if (dragLayerLayout != null)
@@ -590,32 +588,28 @@ namespace Flippy.CardDuelMobile.EditorTools
             layout.flexibleWidth = 1f;
 
             var text = CreateText("Text", go.transform, font, string.Empty, 18);
-            text.alignment = TextAnchor.MiddleLeft;
+            text.alignment = TMPro.TextAlignmentOptions.Left;
             Stretch(text.rectTransform, 10f);
 
             var placeholderText = CreateText("Placeholder", go.transform, font, placeholder, 18);
             placeholderText.color = new Color(1f, 1f, 1f, 0.4f);
-            placeholderText.alignment = TextAnchor.MiddleLeft;
+            placeholderText.alignment = TMPro.TextAlignmentOptions.Left;
             Stretch(placeholderText.rectTransform, 10f);
 
             var field = go.GetComponent<InputField>();
-            field.textComponent = text;
-            field.placeholder = placeholderText;
-
             return field;
         }
 
-        private static Text CreateText(string name, Transform parent, Font font, string content, int size)
+        private static TMPro.TextMeshProUGUI CreateText(string name, Transform parent, Font font, string content, int size)
         {
-            var go = new GameObject(name, typeof(RectTransform), typeof(Text), typeof(LayoutElement));
+            var go = new GameObject(name, typeof(RectTransform), typeof(TMPro.TextMeshProUGUI), typeof(LayoutElement));
             go.transform.SetParent(parent, false);
 
-            var text = go.GetComponent<Text>();
-            text.font = font;
+            var text = go.GetComponent<TMPro.TextMeshProUGUI>();
             text.fontSize = size;
             text.color = Color.white;
             text.text = content;
-            text.alignment = TextAnchor.MiddleCenter;
+            text.alignment = TMPro.TextAlignmentOptions.Center;
 
             var layout = go.GetComponent<LayoutElement>();
             layout.preferredHeight = size + 18f;
@@ -673,8 +667,8 @@ namespace Flippy.CardDuelMobile.EditorTools
         {
             public InputField joinCodeField;
             public InputField privateNameField;
-            public Text statusText;
-            public Text joinCodeText;
+            public TMPro.TextMeshProUGUI statusText;
+            public TMPro.TextMeshProUGUI joinCodeText;
             public Button quickMatchButton;
             public Button createPrivateButton;
             public Button joinByCodeButton;
@@ -692,10 +686,10 @@ namespace Flippy.CardDuelMobile.EditorTools
             public BoardSlotButton remoteFrontSlot;
             public BoardSlotButton remoteBackLeftSlot;
             public BoardSlotButton remoteBackRightSlot;
-            public Text battleLogText;
-            public Text turnInfoText;
-            public Text heroInfoText;
-            public Text selectedCardText;
+            public TMPro.TextMeshProUGUI battleLogText;
+            public TMPro.TextMeshProUGUI turnInfoText;
+            public TMPro.TextMeshProUGUI heroInfoText;
+            public TMPro.TextMeshProUGUI selectedCardText;
             public Button endTurnButton;
         }
     }

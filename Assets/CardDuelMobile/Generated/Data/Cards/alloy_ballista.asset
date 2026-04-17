@@ -24,6 +24,5 @@ MonoBehaviour:
   canBePlayedInFront: 0
   canBePlayedInBack: 1
   defaultAttackTargetSelector: {fileID: 11400000, guid: de921d8279c1d224c80561018b79922d, type: 2}
-  abilities:
-  - {fileID: 11400000, guid: e0e00c45f99fc704fbf50461fc83daaa, type: 2}
+  abilities: []
   visualProfile: {fileID: 11400000, guid: e3a2b7afbcd426441a67f2ea18ca7f4a, type: 2}

@@ -75,7 +75,7 @@ namespace Flippy.CardDuelMobile.UI
 
                 if (isNewOccupant)
                 {
-                    PlaySpawnPulse();
+                    PlaySlideIn();
                 }
             }
             else
@@ -83,7 +83,7 @@ namespace Flippy.CardDuelMobile.UI
                 _currentOccupantRuntimeId = null;
                 if (_spawnedCard != null)
                 {
-                    Destroy(_spawnedCard.gameObject);
+                    PlayDeath(_spawnedCard.transform);
                     _spawnedCard = null;
                 }
             }
@@ -187,7 +187,7 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
-        private void PlaySpawnPulse()
+        private void PlaySlideIn()
         {
             if (_spawnedCard == null)
             {
@@ -199,29 +199,104 @@ namespace Flippy.CardDuelMobile.UI
                 StopCoroutine(_pulseRoutine);
             }
 
-            _pulseRoutine = StartCoroutine(SpawnPulseRoutine(_spawnedCard.transform));
+            _pulseRoutine = StartCoroutine(SlideInRoutine(_spawnedCard.transform));
         }
 
-        private IEnumerator SpawnPulseRoutine(Transform target)
+        private void PlayDeath(Transform target)
+        {
+            if (target == null)
+            {
+                return;
+            }
+
+            if (_pulseRoutine != null)
+            {
+                StopCoroutine(_pulseRoutine);
+            }
+
+            _pulseRoutine = StartCoroutine(DeathRoutine(target));
+        }
+
+        private IEnumerator SlideInRoutine(Transform target)
         {
             var elapsed = 0f;
-            const float duration = 0.18f;
-            var from = Vector3.one * 0.82f;
-            var to = Vector3.one;
-            target.localScale = from;
+            const float duration = 0.25f;
+            var rect = target as RectTransform;
+
+            Vector2 fromPos;
+            if (slot == BoardSlot.Front)
+            {
+                fromPos = new Vector2(0, -200);
+            }
+            else if (slot == BoardSlot.BackLeft)
+            {
+                fromPos = new Vector2(-150, 100);
+            }
+            else
+            {
+                fromPos = new Vector2(150, 100);
+            }
+
+            var toPos = Vector2.zero;
+            var fromScale = Vector3.one * 0.7f;
+            var toScale = Vector3.one;
+
+            if (rect != null)
+            {
+                rect.anchoredPosition = fromPos;
+            }
+            target.localScale = fromScale;
 
             while (elapsed < duration && target != null)
             {
                 elapsed += Time.unscaledDeltaTime;
                 var t = Mathf.Clamp01(elapsed / duration);
-                t = 1f - Mathf.Pow(1f - t, 3f);
-                target.localScale = Vector3.LerpUnclamped(from, to, t);
+                t = Mathf.SmoothStep(0, 1, t);
+
+                if (rect != null)
+                {
+                    rect.anchoredPosition = Vector2.Lerp(fromPos, toPos, t);
+                }
+                target.localScale = Vector3.Lerp(fromScale, toScale, t);
+                yield return null;
+            }
+
+            if (target != null && rect != null)
+            {
+                rect.anchoredPosition = toPos;
+                target.localScale = toScale;
+            }
+
+            _pulseRoutine = null;
+        }
+
+        private IEnumerator DeathRoutine(Transform target)
+        {
+            var elapsed = 0f;
+            const float duration = 0.22f;
+            var startScale = target.localScale;
+            var startAlpha = 1f;
+
+            var canvasGroup = target.GetComponent<CanvasGroup>();
+            if (canvasGroup == null)
+            {
+                canvasGroup = target.gameObject.AddComponent<CanvasGroup>();
+            }
+
+            while (elapsed < duration && target != null)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                var t = Mathf.Clamp01(elapsed / duration);
+                t = Mathf.SmoothStep(0, 1, t);
+
+                target.localScale = Vector3.Lerp(startScale, Vector3.zero, t);
+                canvasGroup.alpha = Mathf.Lerp(startAlpha, 0, t * t);
                 yield return null;
             }
 
             if (target != null)
             {
-                target.localScale = Vector3.one;
+                Destroy(target.gameObject);
             }
 
             _pulseRoutine = null;

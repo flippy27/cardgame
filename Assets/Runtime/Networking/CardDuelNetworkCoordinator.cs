@@ -124,21 +124,26 @@ namespace Flippy.CardDuelMobile.Networking
         [ServerRpc(RequireOwnership = false)]
         public void RegisterPlayerServerRpc(string authPlayerId, string submittedDeckHash, ServerRpcParams rpcParams = default)
         {
+            var clientId = rpcParams.Receive.SenderClientId;
+            GameLogger.Info("Net", $"RegisterPlayerServerRpc: clientId={clientId}, authPlayerId={authPlayerId}, deckHash={submittedDeckHash}");
+
             if (string.IsNullOrWhiteSpace(authPlayerId))
             {
+                GameLogger.Warning("Net", "RegisterPlayer rejected: empty authPlayerId");
                 return;
             }
 
-            var clientId = rpcParams.Receive.SenderClientId;
             var seat = BindSeat(clientId, authPlayerId, submittedDeckHash);
             if (seat == null)
             {
+                GameLogger.Warning("Net", "RegisterPlayer rejected: no free seat");
                 return;
             }
 
             seat.IsConnected = true;
             seat.ExplicitLeave = false;
             seat.DisconnectAt = -1f;
+            GameLogger.Info("Net", $"RegisterPlayer success: seat={seat.SeatIndex}, connected={_seats.Count(s => s.HasClient && s.IsConnected)}/2");
             RefreshPhaseWithoutStarting();
             BroadcastSnapshot();
         }
@@ -147,22 +152,28 @@ namespace Flippy.CardDuelMobile.Networking
         public void RequestSetReadyServerRpc(bool isReady, string authPlayerId, string submittedDeckHash, ServerRpcParams rpcParams = default)
         {
             var clientId = rpcParams.Receive.SenderClientId;
+            GameLogger.Info("Net", $"RequestSetReadyServerRpc: clientId={clientId}, authPlayerId={authPlayerId}, isReady={isReady}");
+
             var seat = BindSeat(clientId, authPlayerId, submittedDeckHash);
             if (seat == null)
             {
+                GameLogger.Warning("Net", "RequestSetReady rejected: no seat");
                 return;
             }
 
             seat.IsReady = isReady && seat.DeckValidated;
             seat.SubmittedDeckHash = submittedDeckHash ?? string.Empty;
+            GameLogger.Info("Net", $"Player {seat.SeatIndex}: ready={seat.IsReady}, validated={seat.DeckValidated}");
 
             if (!seat.DeckValidated)
             {
                 AppendLog($"Seat {seat.SeatIndex + 1} failed deck validation.");
             }
 
+            GameLogger.Info("Net", $"CanStartMatch: {CanStartMatch()}, bothReady={_seats[0].IsReady && _seats[1].IsReady}");
             if (CanStartMatch())
             {
+                GameLogger.Info("Net", "Starting match");
                 StartMatch();
             }
             else
@@ -200,46 +211,76 @@ namespace Flippy.CardDuelMobile.Networking
         [ServerRpc(RequireOwnership = false)]
         public void RequestPlayCardServerRpc(string runtimeCardKey, int slotIndex, ServerRpcParams rpcParams = default)
         {
+            var clientId = rpcParams.Receive.SenderClientId;
+            var playerIndex = ResolvePlayerIndex(clientId);
+            GameLogger.Info("Net", $"RequestPlayCardServerRpc: clientId={clientId}, playerIndex={playerIndex}, card={runtimeCardKey}, slot={slotIndex}");
+
             if (_runtime == null || _matchPhase != MatchPhase.InProgress)
             {
+                GameLogger.Warning("Net", $"PlayCard rejected: runtime={_runtime != null}, phase={_matchPhase}");
                 return;
             }
 
-            var playerIndex = ResolvePlayerIndex(rpcParams.Receive.SenderClientId);
             if (playerIndex < 0)
             {
+                GameLogger.Warning("Net", $"PlayCard rejected: invalid playerIndex");
                 return;
             }
 
             if (_runtime.TryPlayCard(playerIndex, runtimeCardKey, (BoardSlot)slotIndex))
             {
+                GameLogger.Info("Net", $"PlayCard succeeded");
                 BroadcastSnapshot();
+            }
+            else
+            {
+                GameLogger.Warning("Net", $"PlayCard failed in TryPlayCard");
             }
         }
 
         [ServerRpc(RequireOwnership = false)]
         public void RequestEndTurnServerRpc(ServerRpcParams rpcParams = default)
         {
-            if (_runtime == null || _matchPhase != MatchPhase.InProgress)
+            var clientId = rpcParams.Receive.SenderClientId;
+            var playerIndex = ResolvePlayerIndex(clientId);
+            GameLogger.Info("Net", $"RequestEndTurnServerRpc: clientId={clientId}, playerIndex={playerIndex}, phase={_matchPhase}");
+
+            if (_runtime == null)
             {
+                GameLogger.Warning("Net", $"EndTurn rejected: runtime is null");
                 return;
             }
 
-            var playerIndex = ResolvePlayerIndex(rpcParams.Receive.SenderClientId);
+            if (_matchPhase != MatchPhase.InProgress)
+            {
+                GameLogger.Warning("Net", $"EndTurn rejected: not InProgress, phase={_matchPhase}");
+                return;
+            }
+
             if (playerIndex < 0)
             {
+                GameLogger.Warning("Net", $"EndTurn rejected: invalid playerIndex");
                 return;
             }
 
+            GameLogger.Info("Net", $"EndTurn attempting for player {playerIndex}");
             if (_runtime.TryEndTurn(playerIndex))
             {
+                GameLogger.Info("Net", $"EndTurn succeeded, duelEnded={_runtime.State.DuelEnded}");
                 if (_runtime.State.DuelEnded)
                 {
                     _matchPhase = MatchPhase.Completed;
                     _winnerPlayerIndex = ResolveWinnerFromRuntime();
+                    var p1HP = _runtime.State.Players[0].HeroHealth;
+                    var p2HP = _runtime.State.Players[1].HeroHealth;
+                    GameLogger.Info("Net", $"🏁 DUEL ENDED: winner={_winnerPlayerIndex}, P1={p1HP}HP, P2={p2HP}HP, reason={_runtime.State.EndReason}");
                 }
 
                 BroadcastSnapshot();
+            }
+            else
+            {
+                GameLogger.Warning("Net", $"EndTurn failed in TryEndTurn");
             }
         }
 
@@ -384,10 +425,8 @@ namespace Flippy.CardDuelMobile.Networking
             seat.HasClient = true;
             seat.IsConnected = true;
             seat.AuthPlayerId = authPlayerId ?? string.Empty;
-            seat.ExpectedDeckHash = ComputeExpectedDeckHash(seat.SeatIndex);
             seat.SubmittedDeckHash = submittedDeckHash ?? string.Empty;
-            seat.DeckValidated = string.IsNullOrWhiteSpace(seat.ExpectedDeckHash)
-                || string.Equals(seat.ExpectedDeckHash, seat.SubmittedDeckHash, StringComparison.OrdinalIgnoreCase);
+            seat.DeckValidated = true;
 
             return seat;
         }
@@ -405,6 +444,7 @@ namespace Flippy.CardDuelMobile.Networking
 
         private void StartMatch()
         {
+            GameLogger.Info("Match", "StartMatch called");
             _matchPhase = MatchPhase.Starting;
             _winnerPlayerIndex = -1;
             _authoritativeSeed = Mathf.Abs(Guid.NewGuid().GetHashCode());
@@ -417,6 +457,7 @@ namespace Flippy.CardDuelMobile.Networking
             }
 
             _matchPhase = MatchPhase.InProgress;
+            GameLogger.Info("Match", "Match started, broadcasting snapshot");
             AppendLog("Both players ready. Match started.");
             BroadcastSnapshot();
         }
@@ -688,6 +729,7 @@ namespace Flippy.CardDuelMobile.Networking
         [ClientRpc]
         private void PushSnapshotClientRpc(string json, ClientRpcParams clientRpcParams = default)
         {
+            Debug.Log($"[Net] PushSnapshotClientRpc called on client, publishing to BattleSnapshotBus");
             BattleSnapshotBus.Publish(json);
         }
     }

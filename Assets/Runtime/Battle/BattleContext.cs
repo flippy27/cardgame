@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Flippy.CardDuelMobile.Core;
+using Flippy.CardDuelMobile.Data;
 
 namespace Flippy.CardDuelMobile.Battle
 {
@@ -28,6 +29,31 @@ namespace Flippy.CardDuelMobile.Battle
                 throw new InvalidGameStateException($"Player at index {playerIndex} not found.");
             }
             return player;
+        }
+
+        /// <summary>
+        /// Busca taunt target en board enemigo. Retorna null si no hay taunt.
+        /// </summary>
+        public CardRuntime FindTauntTarget(int playerIndex)
+        {
+            var player = GetPlayerState(playerIndex);
+            foreach (var slot in player.Board)
+            {
+                if (slot.Occupant == null) continue;
+
+                var card = slot.Occupant;
+                if (card.Definition?.skills != null)
+                {
+                    foreach (var skill in card.Definition.skills)
+                    {
+                        if (skill != null && skill.skillId == "taunt")
+                        {
+                            return card;
+                        }
+                    }
+                }
+            }
+            return null;
         }
 
         /// <summary>
@@ -70,20 +96,65 @@ namespace Flippy.CardDuelMobile.Battle
 
         /// <summary>
         /// Hace daño a una carta (sin excepciones, retorna silenciosamente si target no existe).
+        /// Applies attacker skills (Trample, Fly check, etc).
         /// </summary>
         public void DealDamage(string sourceRuntimeId, string targetRuntimeId, int amount, bool ignoreArmor)
         {
             if (amount <= 0) return;
 
+            var source = FindCard(sourceRuntimeId);
             var target = FindCard(targetRuntimeId);
-            if (target == null) return; // Objetivo no existe, no hacer nada
+            if (target == null) return;
+
+            var sourceName = source?.DisplayName ?? "Unknown";
+            var sourcePlayer = source != null ? source.OwnerIndex : -1;
+            var targetPlayer = target.OwnerIndex;
+            var hpBefore = target.CurrentHealth;
+
+            // Check defender skills (Fly blocks if attacker doesn't have Fly)
+            if (target.Definition?.skills != null)
+            {
+                foreach (var skill in target.Definition.skills)
+                {
+                    if (skill != null && skill.BlocksDamage(source, target))
+                    {
+                        // Damage blocked - redirect to hero
+                        var logMsg = skill.GetLogMessage(source, target, amount);
+                        if (!string.IsNullOrEmpty(logMsg))
+                        {
+                            _state.Logs.Add(new BattleLogEntry
+                            {
+                                type = BattleLogType.Attack,
+                                message = logMsg
+                            });
+                        }
+                        DamageHero(targetPlayer, amount);
+                        return;
+                    }
+                }
+            }
+
+            // Check attacker skills (Trample ignores armor)
+            var effectiveIgnoreArmor = ignoreArmor;
+            if (source?.Definition?.skills != null)
+            {
+                foreach (var skill in source.Definition.skills)
+                {
+                    if (skill != null && skill.skillId == "trample")
+                    {
+                        effectiveIgnoreArmor = true;
+                    }
+                }
+            }
 
             var pendingDamage = amount;
-            if (!ignoreArmor && target.Armor > 0)
+            var armorAbsorbed = 0;
+
+            if (!effectiveIgnoreArmor && target.Armor > 0)
             {
-                var absorbed = System.Math.Min(target.Armor, pendingDamage);
-                target.Armor -= absorbed;
-                pendingDamage -= absorbed;
+                armorAbsorbed = System.Math.Min(target.Armor, pendingDamage);
+                target.Armor -= armorAbsorbed;
+                pendingDamage -= armorAbsorbed;
             }
 
             if (pendingDamage > 0)
@@ -91,11 +162,108 @@ namespace Flippy.CardDuelMobile.Battle
                 target.CurrentHealth -= pendingDamage;
             }
 
+            var hpAfter = target.CurrentHealth;
+            var skillSuffix = effectiveIgnoreArmor && !ignoreArmor ? " (Trample!)" : "";
             _state.Logs.Add(new BattleLogEntry
             {
                 type = BattleLogType.Attack,
-                message = $"{sourceRuntimeId} hit {target.DisplayName} for {amount}."
+                message = $"[P{sourcePlayer}] {sourceName} (ATK {amount}) → [P{targetPlayer}] {target.DisplayName}: {hpBefore}→{hpAfter}HP" + (armorAbsorbed > 0 ? $" (Armor blocked {armorAbsorbed})" : "") + skillSuffix
             });
+
+            // Apply poison from attacker
+            if (source?.Definition?.skills != null)
+            {
+                foreach (var skill in source.Definition.skills)
+                {
+                    if (skill != null && skill.skillId == "poison")
+                    {
+                        var poisonSkill = skill as Data.PoisonSkill;
+                        if (poisonSkill != null && target != null)
+                        {
+                            target.PoisonStacks += poisonSkill.poisonStacks;
+                            _state.Logs.Add(new BattleLogEntry
+                            {
+                                type = BattleLogType.Attack,
+                                message = $"{target.DisplayName} was poisoned! ({target.PoisonStacks} stacks)"
+                            });
+                        }
+                    }
+                    else if (skill != null && skill.skillId == "stun")
+                    {
+                        if (target != null)
+                        {
+                            target.Stunned = true;
+                            _state.Logs.Add(new BattleLogEntry
+                            {
+                                type = BattleLogType.Attack,
+                                message = $"{target.DisplayName} was stunned!"
+                            });
+                        }
+                    }
+                    else if (skill != null && skill.skillId == "mana_burn")
+                    {
+                        var manaBurnSkill = skill as Data.ManaBurnSkill;
+                        if (manaBurnSkill != null && target != null)
+                        {
+                            var defender = GetPlayerState(targetPlayer);
+                            defender.Mana -= manaBurnSkill.manaCost;
+                            if (defender.Mana < 0) defender.Mana = 0;
+                            _state.Logs.Add(new BattleLogEntry
+                            {
+                                type = BattleLogType.Attack,
+                                message = $"Player {targetPlayer} lost {manaBurnSkill.manaCost} mana!"
+                            });
+                        }
+                    }
+                }
+            }
+
+            // Apply leech from attacker
+            if (source?.Definition?.skills != null && source != null)
+            {
+                foreach (var skill in source.Definition.skills)
+                {
+                    if (skill != null && skill.skillId == "leech")
+                    {
+                        var leechSkill = skill as Data.LeechSkill;
+                        if (leechSkill != null)
+                        {
+                            var healAmount = (pendingDamage * leechSkill.leechPercent) / 100;
+                            if (healAmount > 0)
+                            {
+                                var sourcePlayerState = GetPlayerState(sourcePlayer);
+                                sourcePlayerState.HeroHealth += healAmount;
+                                _state.Logs.Add(new BattleLogEntry
+                                {
+                                    type = BattleLogType.Heal,
+                                    message = $"[P{sourcePlayer}] {sourceName} leeched {healAmount} HP!"
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Apply enrage from defender being hit
+            if (target?.Definition?.skills != null && target != null)
+            {
+                foreach (var skill in target.Definition.skills)
+                {
+                    if (skill != null && skill.skillId == "enrage")
+                    {
+                        var enrageSkill = skill as Data.EnrageSkill;
+                        if (enrageSkill != null)
+                        {
+                            target.EnrageBonus += enrageSkill.bonusPerHit;
+                            _state.Logs.Add(new BattleLogEntry
+                            {
+                                type = BattleLogType.Attack,
+                                message = $"{target.DisplayName} enraged! (+{enrageSkill.bonusPerHit} ATK)"
+                            });
+                        }
+                    }
+                }
+            }
 
             CleanupDeaths();
         }
@@ -167,6 +335,7 @@ namespace Flippy.CardDuelMobile.Battle
                 return;
             }
 
+            var hpBefore = player.HeroHealth;
             player.HeroHealth -= amount;
             if (player.HeroHealth <= 0)
             {
@@ -176,10 +345,17 @@ namespace Flippy.CardDuelMobile.Battle
                     ? DuelEndReason.LocalHeroDefeated
                     : DuelEndReason.EnemyHeroDefeated;
             }
+
+            var hpAfter = player.HeroHealth;
+            _state.Logs.Add(new BattleLogEntry
+            {
+                type = BattleLogType.Attack,
+                message = $"Direct attack to Player {targetPlayerIndex} Hero: {amount} damage dealt. {hpBefore}→{hpAfter}HP"
+            });
         }
 
         /// <summary>
-        /// Remueve cartas muertas del board.
+        /// Remueve cartas muertas del board y reposiciona cartas.
         /// </summary>
         public void CleanupDeaths()
         {
@@ -198,7 +374,44 @@ namespace Flippy.CardDuelMobile.Battle
                         slot.Occupant = null;
                     }
                 }
+
+                player.Reposition();
             }
+        }
+
+        /// <summary>
+        /// Procesa efectos de estado: veneno, aturdimiento, etc.
+        /// Llamado al inicio de cada turno antes de ataques.
+        /// </summary>
+        public void ProcessStatusEffects(int playerIndex)
+        {
+            var player = GetPlayerState(playerIndex);
+            foreach (var slot in player.Board)
+            {
+                if (slot.Occupant == null) continue;
+
+                var card = slot.Occupant;
+
+                // Apply poison damage
+                if (card.PoisonStacks > 0)
+                {
+                    var poisonDamage = card.PoisonStacks;
+                    card.CurrentHealth -= poisonDamage;
+                    _state.Logs.Add(new BattleLogEntry
+                    {
+                        type = BattleLogType.Attack,
+                        message = $"{card.DisplayName} took {poisonDamage} poison damage."
+                    });
+                }
+
+                // Clear stun
+                if (card.Stunned)
+                {
+                    card.Stunned = false;
+                }
+            }
+
+            CleanupDeaths();
         }
     }
 }

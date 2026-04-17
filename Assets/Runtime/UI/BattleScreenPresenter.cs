@@ -39,16 +39,19 @@ namespace Flippy.CardDuelMobile.UI
         public BoardSlotButton remoteBackRightSlot;
 
         [Header("HUD")]
-        public Text battleLogText;
-        public Text turnInfoText;
-        public Text heroInfoText;
-        public Text selectedCardText;
+        public TMPro.TextMeshProUGUI battleLogText;
+        public TMPro.TextMeshProUGUI turnInfoText;
+        public TMPro.TextMeshProUGUI heroInfoText;
+        public TMPro.TextMeshProUGUI selectedCardText;
         public Button endTurnButton;
 
         [Header("Prefabs")]
         public HandCardButton handCardPrefab;
         public CardViewWidget boardCardPrefab;
         public CardViewWidget dragGhostPrefab;
+
+        [Header("Debug")]
+        public DebugPanel debugPanel;
 
         private DuelSnapshotDto _latestSnapshot;
         private CardInHandDto _selectedCard;
@@ -67,13 +70,30 @@ namespace Flippy.CardDuelMobile.UI
         private readonly List<GameObject> _spawnedHandCards = new();
         private readonly Dictionary<BoardSlot, BoardSlotButton> _localSlots = new();
         private readonly Dictionary<BoardSlot, BoardSlotButton> _remoteSlots = new();
+        private bool _subscribed;
 
         public CardViewWidget BoardCardPrefab => boardCardPrefab;
         public bool HasDraggedCard => _draggedCard != null;
 
+        private void Awake()
+        {
+            Debug.Log($"[BattleScreenPresenter] Awake called");
+            if (!_subscribed)
+            {
+                BattleSnapshotBus.SubscribeAndGetLast(HandleSnapshot);
+                _subscribed = true;
+                Debug.Log($"[BattleScreenPresenter] Subscribed to BattleSnapshotBus from Awake");
+            }
+        }
+
         private void OnEnable()
         {
-            BattleSnapshotBus.SnapshotReceived += HandleSnapshot;
+            if (!_subscribed)
+            {
+                BattleSnapshotBus.SubscribeAndGetLast(HandleSnapshot);
+                _subscribed = true;
+                Debug.Log("[BattleScreenPresenter] OnEnable - subscribed to BattleSnapshotBus");
+            }
 
             if (endTurnButton != null)
             {
@@ -87,12 +107,15 @@ namespace Flippy.CardDuelMobile.UI
 
         private void OnDisable()
         {
-            BattleSnapshotBus.SnapshotReceived -= HandleSnapshot;
-
             if (endTurnButton != null)
             {
                 endTurnButton.onClick.RemoveListener(HandleEndTurnPressed);
             }
+        }
+
+        private void OnDestroy()
+        {
+            BattleSnapshotBus.SnapshotReceived -= HandleSnapshot;
         }
 
         public void NotifyCardClicked(CardInHandDto dto)
@@ -143,7 +166,7 @@ namespace Flippy.CardDuelMobile.UI
             _dragSource = source;
             _dragDropCommitted = false;
 
-            Debug.Log($"[Drag] BEGIN: {dto.displayName} at {screenPosition}");
+           
 
             CreateDragGhost(dto, screenPosition);
             RefreshSelectionLabel();
@@ -206,11 +229,11 @@ namespace Flippy.CardDuelMobile.UI
 
             var slotInfo = _dragOverSlot != null ? _dragOverSlot.slot.ToString() : "NULL";
             var cardInfo = _draggedCard != null ? _draggedCard.displayName : "NULL";
-            Debug.Log($"[Drag] END: dragOverSlot={slotInfo}, targetSlot={targetSlot}, card={cardInfo}");
+
 
             if (!_dragDropCommitted && _draggedCard != null && targetSlot != null)
             {
-                Debug.Log($"[Drag] PLAYING: {_draggedCard.displayName} to {targetSlot.slot}");
+                
                 TryPlayDraggedCardTo(targetSlot.slot, targetSlot.CardAnchor);
             }
 
@@ -286,12 +309,15 @@ namespace Flippy.CardDuelMobile.UI
         {
             if (_draggedCard == null)
             {
+                GameLogger.Warning("UI", "TryPlayDraggedCardTo: no dragged card");
                 return;
             }
 
+            GameLogger.Info("UI", $"TryPlayDraggedCardTo: {_draggedCard.displayName} to {slot}");
             var cardToPlay = _draggedCard;
             if (!TryPlayCardToSlot(cardToPlay, slot))
             {
+                GameLogger.Warning("UI", "TryPlayDraggedCardTo: TryPlayCardToSlot failed");
                 DestroyDragGhostImmediate();
                 _draggedCard = null;
                 _dragSource = null;
@@ -300,6 +326,7 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
+            GameLogger.Info("UI", "TryPlayDraggedCardTo: card played successfully");
             _dragDropCommitted = true;
             _selectedCard = null;
             _draggedCard = null;
@@ -345,7 +372,13 @@ namespace Flippy.CardDuelMobile.UI
 
         private void HandleSnapshot(string json)
         {
+            Debug.Log($"[BattleScreenPresenter] HandleSnapshot received, matchPhase will be checked");
             _latestSnapshot = JsonUtility.FromJson<DuelSnapshotDto>(json);
+
+            if (_latestSnapshot != null)
+            {
+                Debug.Log($"[BattleScreenPresenter] Snapshot received: matchPhase={_latestSnapshot.matchPhase}, duelEnded={_latestSnapshot.duelEnded}");
+            }
 
             if (_selectedCard != null && !IsCardStillInLocalHand(_selectedCard.runtimeCardKey))
             {
@@ -364,6 +397,26 @@ namespace Flippy.CardDuelMobile.UI
 
         private void Rebuild()
         {
+            Debug.Log($"[BattleScreenPresenter] Rebuild called");
+            // Panel visibility is handled by UIManager
+
+            // Initialize debug panel on first rebuild
+            if (debugPanel != null && _latestSnapshot != null && _latestSnapshot.players != null && _latestSnapshot.players.Length >= 2)
+            {
+                var coordinator = LocalSinglePlayerCoordinator.Instance;
+                if (coordinator != null && coordinator.DuelRuntime != null)
+                {
+                    debugPanel.Initialize(this, coordinator.DuelRuntime, coordinator.DuelState);
+                }
+            }
+
+            // Rebuild hand as early as possible, even with incomplete snapshots
+            if (_latestSnapshot != null && _latestSnapshot.players != null && _latestSnapshot.players.Length >= 2)
+            {
+                Debug.Log($"[BattleScreenPresenter] Rebuild calling RebuildHandOnly");
+                RebuildHandOnly();
+            }
+
             if (_latestSnapshot == null || _latestSnapshot.players == null || _latestSnapshot.players.Length < 2)
             {
                 ClearHandCards();
@@ -402,8 +455,6 @@ namespace Flippy.CardDuelMobile.UI
                 _matchStartTime = Time.frameCount; // Simple time tracking
             }
 
-            RebuildHandOnly();
-
             var local = _latestSnapshot.players[_latestSnapshot.localPlayerIndex];
             var remote = _latestSnapshot.players[1 - _latestSnapshot.localPlayerIndex];
             var isMatchPlayable = _latestSnapshot.matchPhase == MatchPhase.InProgress && !_latestSnapshot.duelEnded;
@@ -435,6 +486,7 @@ namespace Flippy.CardDuelMobile.UI
             // Handle match completion
             if (_latestSnapshot.duelEnded && !_matchCompletionHandled)
             {
+                GameLogger.Info("UI", $"Match ended: winner={_latestSnapshot.winnerPlayerIndex}, local={_latestSnapshot.localPlayerIndex}");
                 HandleMatchCompletion(local, remote);
             }
 
@@ -447,6 +499,7 @@ namespace Flippy.CardDuelMobile.UI
 
             if (_latestSnapshot == null || _latestSnapshot.players == null || _latestSnapshot.players.Length <= _latestSnapshot.localPlayerIndex)
             {
+                Debug.Log($"[BattleScreenPresenter] RebuildHandOnly early exit: snapshot null={_latestSnapshot == null}, players null={_latestSnapshot?.players == null}");
                 return;
             }
 
@@ -455,8 +508,11 @@ namespace Flippy.CardDuelMobile.UI
                               && _latestSnapshot.activePlayerIndex == _latestSnapshot.localPlayerIndex
                               && !_latestSnapshot.duelEnded;
 
+            Debug.Log($"[BattleScreenPresenter] RebuildHandOnly: localHandRoot={localHandRoot != null}, handCardPrefab={handCardPrefab != null}, hand count={local.hand?.Length ?? 0}");
+
             if (localHandRoot == null || handCardPrefab == null || local.hand == null)
             {
+                Debug.Log($"[BattleScreenPresenter] RebuildHandOnly exit: missing refs");
                 return;
             }
 
@@ -468,6 +524,8 @@ namespace Flippy.CardDuelMobile.UI
                 instance.Bind(handCard, this, isSelected, canAfford, isLocalTurn);
                 _spawnedHandCards.Add(instance.gameObject);
             }
+
+            Debug.Log($"[BattleScreenPresenter] RebuildHandOnly complete: spawned {_spawnedHandCards.Count} cards");
         }
 
         private void ApplyBoardState(
@@ -522,21 +580,36 @@ namespace Flippy.CardDuelMobile.UI
         {
             if (dto == null || !CanCardBePlayedTo(dto, slot))
             {
+                GameLogger.Warning("UI", $"PlayCard rejected: dto={dto != null}, canPlay={dto != null && CanCardBePlayedTo(dto, slot)}");
                 return false;
             }
 
+            var gameModeManager = FindFirstObjectByType<Core.GameModeManager>();
+            var isLocalMode = gameModeManager != null && gameModeManager.IsLocalMode;
+            var hasLocalCoord = LocalSinglePlayerCoordinator.Instance != null;
+            var localActive = hasLocalCoord && LocalSinglePlayerCoordinator.Instance.IsActive;
+
+            GameLogger.Info("UI", $"PlayCard: {dto.displayName} to {slot}, isLocalMode={isLocalMode}, localActive={localActive}, hasNetCoord={CardDuelNetworkCoordinator.Instance != null}");
+
             var played = false;
 
-            if (LocalSinglePlayerCoordinator.Instance != null && LocalSinglePlayerCoordinator.Instance.IsActive)
+            if (isLocalMode && localActive)
             {
+                GameLogger.Info("UI", "PlayCard: Using LocalSinglePlayerCoordinator");
                 played = LocalSinglePlayerCoordinator.Instance.RequestPlayCard(dto.runtimeCardKey, slot);
             }
             else if (CardDuelNetworkCoordinator.Instance != null)
             {
+                GameLogger.Info("UI", "PlayCard: Calling RequestPlayCardServerRpc");
                 CardDuelNetworkCoordinator.Instance.RequestPlayCardServerRpc(dto.runtimeCardKey, (int)slot);
                 played = true;
             }
+            else
+            {
+                GameLogger.Error("UI", "PlayCard: No coordinator found!");
+            }
 
+            GameLogger.Info("UI", $"PlayCard result: {played}");
             return played;
         }
 
@@ -584,24 +657,39 @@ namespace Flippy.CardDuelMobile.UI
 
         private void HandleEndTurnPressed()
         {
+            GameLogger.Info("UI", "End Turn pressed");
+
+            // Validate it's local player's turn
+            if (_latestSnapshot == null || _latestSnapshot.matchPhase != MatchPhase.InProgress || _latestSnapshot.activePlayerIndex != _latestSnapshot.localPlayerIndex)
+            {
+                GameLogger.Warning("UI", "End Turn rejected: not local player's turn");
+                return;
+            }
+
             DestroyDragGhostImmediate();
             _draggedCard = null;
             _dragSource = null;
 
-            if (_latestSnapshot != null && _latestSnapshot.matchPhase != MatchPhase.InProgress)
-            {
-                return;
-            }
+            var gameModeManager = FindFirstObjectByType<Core.GameModeManager>();
+            var isLocalMode = gameModeManager != null && gameModeManager.IsLocalMode;
 
-            if (LocalSinglePlayerCoordinator.Instance != null && LocalSinglePlayerCoordinator.Instance.IsActive)
+            GameLogger.Info("UI", $"End Turn: isLocalMode={isLocalMode}, hasLocalCoordinator={LocalSinglePlayerCoordinator.Instance != null}, isLocalActive={LocalSinglePlayerCoordinator.Instance?.IsActive}");
+
+            if (isLocalMode && LocalSinglePlayerCoordinator.Instance != null && LocalSinglePlayerCoordinator.Instance.IsActive)
             {
+                GameLogger.Info("UI", "End Turn: local mode confirmed, using LocalSinglePlayerCoordinator");
                 LocalSinglePlayerCoordinator.Instance.RequestEndTurn();
                 return;
             }
 
             if (CardDuelNetworkCoordinator.Instance != null)
             {
+                GameLogger.Info("UI", "End Turn: online mode, calling RequestEndTurnServerRpc");
                 CardDuelNetworkCoordinator.Instance.RequestEndTurnServerRpc();
+            }
+            else
+            {
+                GameLogger.Error("UI", "End Turn: CardDuelNetworkCoordinator not found");
             }
         }
 
@@ -725,9 +813,10 @@ namespace Flippy.CardDuelMobile.UI
 
             if (_latestSnapshot.duelEnded)
             {
-                return _latestSnapshot.winnerPlayerIndex == _latestSnapshot.localPlayerIndex
-                    ? "Match ended - Victory"
-                    : "Match ended - Defeat";
+                var isWinner = _latestSnapshot.winnerPlayerIndex == _latestSnapshot.localPlayerIndex;
+                return isWinner
+                    ? $"🎉 VICTORY! ({_latestSnapshot.endReason})"
+                    : $"💀 DEFEAT ({_latestSnapshot.endReason})";
             }
 
             return _latestSnapshot.matchPhase switch

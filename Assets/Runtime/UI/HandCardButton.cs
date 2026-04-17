@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System.Collections;
 using Flippy.CardDuelMobile.Battle;
 
 namespace Flippy.CardDuelMobile.UI
@@ -9,7 +10,7 @@ namespace Flippy.CardDuelMobile.UI
     /// <summary>
     /// Carta de la mano con click y drag and drop.
     /// </summary>
-    public sealed class HandCardButton : MonoBehaviour, IPointerClickHandler
+    public sealed class HandCardButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
     {
         public Button button;
         public Image backgroundImage;
@@ -21,12 +22,17 @@ namespace Flippy.CardDuelMobile.UI
         private bool _canDrag;
         private bool _isDragging;
         private Vector2 _lastDragPosition;
+        private Vector3 _originalScale;
+        private Coroutine _scaleCoroutine;
+        private const float HoverScale = 1.25f;
+        private const float ScaleAnimSpeed = 0.15f;
 
         public void Bind(CardInHandDto dto, BattleScreenPresenter presenter, bool isSelected, bool canAfford, bool isLocalTurn)
         {
             _dto = dto;
             _presenter = presenter;
             _canDrag = isLocalTurn && canAfford;
+            _originalScale = transform.localScale;
 
             if (cardView != null)
             {
@@ -112,7 +118,7 @@ namespace Flippy.CardDuelMobile.UI
                     _isDragging = true;
                     _lastDragPosition = mousePos;
 
-                    Debug.Log($"[Hand] Drag start: {_dto.displayName}");
+                   
 
                     if (canvasGroup != null)
                     {
@@ -128,7 +134,7 @@ namespace Flippy.CardDuelMobile.UI
             if (_isDragging)
             {
                 var isPressed = mouse.leftButton.isPressed;
-                Debug.Log($"[Hand] Update: isDragging=true, isPressed={isPressed}, pos={mousePos}");
+               
 
                 if (isPressed)
                 {
@@ -142,7 +148,7 @@ namespace Flippy.CardDuelMobile.UI
                 {
                     // Mouse released
                     _isDragging = false;
-                    Debug.Log("[Hand] Drag end");
+                   
 
                     if (canvasGroup != null)
                     {
@@ -164,6 +170,30 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             return RectTransformUtility.RectangleContainsScreenPoint(rect, mousePos);
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            if (_scaleCoroutine != null)
+                StopCoroutine(_scaleCoroutine);
+            _scaleCoroutine = StartCoroutine(ScaleTo(Vector3.one * HoverScale));
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            if (_scaleCoroutine != null)
+                StopCoroutine(_scaleCoroutine);
+            _scaleCoroutine = StartCoroutine(ScaleTo(_originalScale));
+        }
+
+        private IEnumerator ScaleTo(Vector3 targetScale)
+        {
+            while (Vector3.Distance(transform.localScale, targetScale) > 0.01f)
+            {
+                transform.localScale = Vector3.Lerp(transform.localScale, targetScale, ScaleAnimSpeed);
+                yield return null;
+            }
+            transform.localScale = targetScale;
         }
     }
 }

@@ -22,7 +22,7 @@ MonoBehaviour:
     - Main Editor|0_deploy
     m_Role: 1
     m_PlayerTag: 
-    m_InitialScene: {fileID: 102900000, guid: b13f6cd622f5ecc488faeba33fe63926, type: 3}
+    m_InitialScene: {fileID: 102900000, guid: 5783334a25ac04d2ea43c60780b9fb82, type: 3}
     PlayerInstanceIndex: 0
   m_EditorInstances:
   - Name: Player 2

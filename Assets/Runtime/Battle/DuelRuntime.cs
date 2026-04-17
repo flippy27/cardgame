@@ -206,6 +206,7 @@ namespace Flippy.CardDuelMobile.Battle
                     DrawCard(_state.ActivePlayerIndex);
                 }
 
+                _context.ProcessStatusEffects(_state.ActivePlayerIndex);
                 ResolveTurnAbilities(_state.ActivePlayerIndex, AbilityTrigger.OnTurnStart);
             }
 
@@ -330,38 +331,88 @@ namespace Flippy.CardDuelMobile.Battle
             var attackerState = _state.GetPlayer(sourcePlayerIndex);
             var defenderIndex = 1 - sourcePlayerIndex;
 
-            foreach (var slot in attackerState.Board)
+            // Attack order: Front → BackLeft → BackRight
+            var attackOrder = new BoardSlot[] { BoardSlot.Front, BoardSlot.BackLeft, BoardSlot.BackRight };
+
+            foreach (var slotType in attackOrder)
             {
-                var attacker = slot.Occupant;
-                if (attacker == null || attacker.IsDead)
+                var slotData = attackerState.FindSlot(slotType);
+                if (slotData == null)
                 {
                     continue;
                 }
 
-                ResolveAbilities(attacker, AbilityTrigger.OnBattlePhase);
+                ExecuteSlotAttack(sourcePlayerIndex, defenderIndex, slotData);
+            }
+        }
 
-                if (attacker.Definition.defaultAttackTargetSelector == null)
+        private void ExecuteSlotAttack(int sourcePlayerIndex, int defenderIndex, BoardSlotRuntime slot)
+        {
+            var attacker = slot.Occupant;
+            if (attacker == null || attacker.IsDead)
+            {
+                return;
+            }
+
+            if (attacker.Stunned)
+            {
+                _state.Logs.Add(new BattleLogEntry
                 {
-                    _context.DamageHero(defenderIndex, attacker.Attack);
-                    continue;
-                }
+                    type = BattleLogType.Attack,
+                    message = $"{attacker.DisplayName} is stunned and cannot attack!"
+                });
+                return;
+            }
 
-                _targetBuffer.Clear();
-                attacker.Definition.defaultAttackTargetSelector.SelectTargets(
-                    _context,
-                    new TargetSelectionRequest(sourcePlayerIndex, defenderIndex, attacker.RuntimeId),
-                    _targetBuffer);
+            ResolveAbilities(attacker, AbilityTrigger.OnBattlePhase);
 
-                if (_targetBuffer.Count == 0)
+            var targetSelector = attacker.Definition.defaultAttackTargetSelector;
+            var attackPower = attacker.Attack + attacker.EnrageBonus;
+
+            // LastStand bonus: double damage if alone
+            var enemyBoard = _state.GetPlayer(defenderIndex);
+            var allyBoard = _state.GetPlayer(sourcePlayerIndex);
+            var alliesOnBoard = 0;
+            foreach (var s in allyBoard.Board)
+            {
+                if (s.Occupant != null && !s.Occupant.IsDead)
                 {
-                    _context.DamageHero(defenderIndex, attacker.Attack);
-                    continue;
+                    alliesOnBoard++;
                 }
-
-                foreach (var targetId in _targetBuffer)
+            }
+            if (alliesOnBoard == 1 && attacker.Definition?.skills != null)
+            {
+                foreach (var skill in attacker.Definition.skills)
                 {
-                    _context.DealDamage(attacker.RuntimeId, targetId, attacker.Attack, ignoreArmor: false);
+                    if (skill != null && skill.skillId == "last_stand")
+                    {
+                        attackPower *= 2;
+                        break;
+                    }
                 }
+            }
+
+            if (targetSelector == null)
+            {
+                _context.DamageHero(defenderIndex, attackPower);
+                return;
+            }
+
+            _targetBuffer.Clear();
+            targetSelector.SelectTargets(
+                _context,
+                new TargetSelectionRequest(sourcePlayerIndex, defenderIndex, attacker.RuntimeId, attacker.CurrentSlot),
+                _targetBuffer);
+
+            if (_targetBuffer.Count == 0)
+            {
+                _context.DamageHero(defenderIndex, attackPower);
+                return;
+            }
+
+            foreach (var targetId in _targetBuffer)
+            {
+                _context.DealDamage(attacker.RuntimeId, targetId, attackPower, ignoreArmor: false);
             }
         }
 
@@ -396,7 +447,7 @@ namespace Flippy.CardDuelMobile.Battle
                 {
                     ability.targetSelector.SelectTargets(
                         _context,
-                        new TargetSelectionRequest(source.OwnerIndex, source.OwnerIndex == 0 ? 1 : 0, source.RuntimeId),
+                        new TargetSelectionRequest(source.OwnerIndex, source.OwnerIndex == 0 ? 1 : 0, source.RuntimeId, source.CurrentSlot),
                         _targetBuffer);
                 }
 

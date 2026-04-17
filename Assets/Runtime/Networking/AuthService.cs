@@ -26,10 +26,11 @@ namespace Flippy.CardDuelMobile.Networking
         public string CurrentToken { get; private set; }
         public bool IsAuthenticated => !string.IsNullOrWhiteSpace(CurrentToken) && !IsTokenExpired();
 
-        public AuthService(string baseUrl = "http://localhost:5000")
+        public AuthService(string baseUrl = null)
         {
-            _baseUrl = baseUrl.TrimEnd('/');
+            _baseUrl = string.IsNullOrWhiteSpace(baseUrl) ? ApiConfig.BaseUrl : baseUrl.TrimEnd('/');
             LoadTokenFromSecureStorage();
+            GameLogger.Debug("Auth", $"Initialized with {_baseUrl}");
         }
 
         /// <summary>
@@ -58,17 +59,15 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public async Task<bool> Login(string email, string password)
         {
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
-            {
-                throw new ValidationException("Email and password required.");
-            }
-
             try
             {
+                RequestValidator.ValidateEmail(email);
+                RequestValidator.ValidatePassword(password);
+
                 var request = new LoginRequest { email = email, password = password };
                 var json = JsonUtility.ToJson(request);
 
-                using var webRequest = UnityWebRequest.PostWwwForm($"{_baseUrl}/api/auth/login", "application/json");
+                using var webRequest = UnityWebRequest.PostWwwForm($"{_baseUrl}/api/v1/auth/login", "application/json");
                 webRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));
                 webRequest.downloadHandler = new DownloadHandlerBuffer();
                 webRequest.timeout = 30;
@@ -78,24 +77,32 @@ namespace Flippy.CardDuelMobile.Networking
 
                 if (webRequest.result != UnityWebRequest.Result.Success)
                 {
-                    Debug.LogError($"Login failed: {webRequest.responseCode} - {webRequest.error}");
+                    var code = ErrorCodeMapper.FromHttpStatus((int)webRequest.responseCode);
+                    GameLogger.Error("Auth", $"Login failed: HTTP {webRequest.responseCode}");
+                    GameEvents.RaiseAuthFailed(code);
                     return false;
                 }
 
                 var response = JsonUtility.FromJson<AuthResponse>(webRequest.downloadHandler.text);
                 if (response == null || string.IsNullOrWhiteSpace(response.token))
                 {
-                    Debug.LogError("Login response invalid");
+                    GameLogger.Error("Auth", "Login response invalid");
                     return false;
                 }
 
                 SetToken(email, response.token, response.userId);
-                Debug.Log($"Login successful: {email}");
+                GameLogger.Info("Auth", $"Login successful: {email}");
+                GameEvents.RaiseConnected();
                 return true;
+            }
+            catch (ValidationException ex)
+            {
+                GameLogger.Warning("Auth", ex.Message);
+                return false;
             }
             catch (Exception ex)
             {
-                Debug.LogError($"Login error: {ex.Message}");
+                GameLogger.Error("Auth", "Login error", ex);
                 return false;
             }
         }

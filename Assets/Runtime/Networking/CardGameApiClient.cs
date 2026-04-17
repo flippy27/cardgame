@@ -15,16 +15,21 @@ namespace Flippy.CardDuelMobile.Networking
     /// </summary>
     public sealed class CardGameApiClient
     {
-        public string BaseUrl { get; }
-        public int TimeoutSeconds { get; set; } = 30;
-        public int MaxRetries { get; set; } = 3;
+        public string BaseUrl { get; private set; }
+        public int TimeoutSeconds { get; set; }
+        public int MaxRetries { get; set; }
+        public int RetryDelayMs { get; set; }
+        private readonly CircuitBreaker _circuitBreaker = new CircuitBreaker(failureThreshold: 5, resetTimeoutSeconds: 60);
 
-        public CardGameApiClient(string baseUrl = "http://localhost:5000")
+        public CardGameApiClient(string baseUrl = null)
         {
-            if (string.IsNullOrWhiteSpace(baseUrl))
-                throw new ValidationException("BaseUrl cannot be empty.");
+            BaseUrl = string.IsNullOrWhiteSpace(baseUrl) ? ApiConfig.BaseUrl : baseUrl.TrimEnd('/');
+            TimeoutSeconds = ApiConfig.TimeoutSeconds;
+            MaxRetries = ApiConfig.MaxRetries;
+            RetryDelayMs = ApiConfig.RetryDelayMs;
 
-            BaseUrl = baseUrl.TrimEnd('/');
+            if (string.IsNullOrWhiteSpace(BaseUrl))
+                throw new ValidationException("BaseUrl cannot be empty. Set via ApiConfig or constructor.");
         }
 
         /// <summary>
@@ -32,9 +37,22 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public async Task<List<ServerCardDefinition>> FetchAllCards()
         {
-            var response = await ExecuteWithRetry($"{BaseUrl}/api/cards");
-            var dtos = JsonUtility.FromJson<CardListDto>($"{{\"items\":{response}}}");
-            return dtos.items.ToList();
+            var response = await ExecuteWithRetry($"{BaseUrl}/api/v1/cards");
+            if (string.IsNullOrWhiteSpace(response) || response == "[]")
+            {
+                Debug.LogWarning("[API] Empty card catalog from server");
+                return new List<ServerCardDefinition>();
+            }
+            try
+            {
+                var dtos = JsonUtility.FromJson<CardListDto>($"{{\"items\":{response}}}");
+                return dtos?.items?.ToList() ?? new List<ServerCardDefinition>();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[API] Parse error: {ex.Message}. Raw: {response.Substring(0, Math.Min(100, response.Length))}");
+                throw new InvalidOperationException($"Failed to parse cards: {ex.Message}", ex);
+            }
         }
 
         /// <summary>
@@ -44,7 +62,7 @@ namespace Flippy.CardDuelMobile.Networking
         {
             try
             {
-                var json = await ExecuteWithRetry($"{BaseUrl}/api/cards/{cardId}");
+                var json = await ExecuteWithRetry($"{BaseUrl}/api/v1/cards/{cardId}");
                 return JsonUtility.FromJson<ServerCardDefinition>(json);
             }
             catch (InvalidOperationException ex) when (ex.Message.Contains("404"))
@@ -64,9 +82,21 @@ namespace Flippy.CardDuelMobile.Networking
             }
 
             var encodedQuery = UnityWebRequest.EscapeURL(query);
-            var response = await ExecuteWithRetry($"{BaseUrl}/api/cards/search?q={encodedQuery}");
-            var dtos = JsonUtility.FromJson<CardListDto>($"{{\"items\":{response}}}");
-            return dtos.items.ToList();
+            var response = await ExecuteWithRetry($"{BaseUrl}/api/v1/cards/search?q={encodedQuery}");
+            if (string.IsNullOrWhiteSpace(response) || response == "[]")
+            {
+                return new List<ServerCardDefinition>();
+            }
+            try
+            {
+                var dtos = JsonUtility.FromJson<CardListDto>($"{{\"items\":{response}}}");
+                return dtos?.items?.ToList() ?? new List<ServerCardDefinition>();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[API] Search parse error: {ex.Message}");
+                throw;
+            }
         }
 
         /// <summary>
@@ -74,7 +104,7 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public async Task<CardStatsDto> FetchCardStats()
         {
-            var json = await ExecuteWithRetry($"{BaseUrl}/api/cards/stats");
+            var json = await ExecuteWithRetry($"{BaseUrl}/api/v1/cards/stats");
             return JsonUtility.FromJson<CardStatsDto>(json);
         }
 
@@ -92,7 +122,7 @@ namespace Flippy.CardDuelMobile.Networking
             };
 
             var json = JsonUtility.ToJson(request);
-            return await ExecutePostWithRetry($"{BaseUrl}/api/matches/{matchId}/complete", json);
+            return await ExecutePostWithRetry($"{BaseUrl}/api/v1/matches/{matchId}/complete", json);
         }
 
         /// <summary>
@@ -141,13 +171,18 @@ namespace Flippy.CardDuelMobile.Networking
             }
         }
 
-        /// <summary>
-        /// Ejecuta request GET con retry exponencial y timeout.
-        /// </summary>
         private async Task<string> ExecuteWithRetry(string url, int retryAttempt = 0)
         {
+            if (_circuitBreaker.IsOpen())
+            {
+                throw new InvalidOperationException($"Circuit breaker OPEN. Server unavailable ({_circuitBreaker.FailureCount} failures)");
+            }
+
+            var startTime = UnityEngine.Time.realtimeSinceStartup;
             try
             {
+                Debug.Log($"[API] GET {url} (attempt {retryAttempt + 1}/{MaxRetries + 1})");
+
                 using var request = UnityWebRequest.Get(url);
                 request.timeout = TimeoutSeconds;
                 request.downloadHandler = new DownloadHandlerBuffer();
@@ -160,28 +195,52 @@ namespace Flippy.CardDuelMobile.Networking
 
                 if (request.result != UnityWebRequest.Result.Success)
                 {
-                    var error = $"HTTP {request.responseCode}: {request.error}";
-                    if (retryAttempt < MaxRetries && request.responseCode >= 500)
+                    var statusCode = request.responseCode;
+                    var errorMsg = request.error ?? "Unknown error";
+                    var duration = (UnityEngine.Time.realtimeSinceStartup - startTime) * 1000f;
+                    Debug.LogWarning($"[API] Request failed: HTTP {statusCode} - {errorMsg} ({duration:F2}ms)");
+                    MetricsCollector.RecordRequest(url, "GET", (int)statusCode, duration);
+                    _circuitBreaker.RecordFailure();
+
+                    if (retryAttempt < MaxRetries && statusCode >= 500)
                     {
-                        var delay = (int)Math.Pow(2, retryAttempt) * 1000;
+                        var delay = (int)Math.Pow(2, retryAttempt) * RetryDelayMs;
+                        Debug.Log($"[API] Retrying in {delay}ms...");
                         await Task.Delay(delay);
                         return await ExecuteWithRetry(url, retryAttempt + 1);
                     }
 
-                    throw new InvalidOperationException($"Request failed: {error}");
+                    if (statusCode == 404)
+                        throw new InvalidOperationException($"Resource not found: {url}");
+
+                    if (statusCode == 401 || statusCode == 403)
+                        throw new UnauthorizedAccessException($"Unauthorized: {url}");
+
+                    throw new InvalidOperationException($"HTTP {statusCode}: {errorMsg}");
                 }
 
+                var durationMs = (UnityEngine.Time.realtimeSinceStartup - startTime) * 1000f;
+                Debug.Log($"[API] Success: {url} ({request.downloadHandler.text.Length} bytes) in {durationMs:F2}ms");
+                _circuitBreaker.RecordSuccess();
+                MetricsCollector.RecordRequest(url, "GET", (int)request.responseCode, durationMs);
                 return request.downloadHandler.text;
             }
             catch (TaskCanceledException)
             {
+                Debug.LogError($"[API] Timeout on {url}");
+                _circuitBreaker.RecordFailure();
                 if (retryAttempt < MaxRetries)
                 {
-                    var delay = (int)Math.Pow(2, retryAttempt) * 1000;
+                    var delay = (int)Math.Pow(2, retryAttempt) * RetryDelayMs;
                     await Task.Delay(delay);
                     return await ExecuteWithRetry(url, retryAttempt + 1);
                 }
-                throw new InvalidOperationException($"Request timeout after {MaxRetries} retries");
+                throw new InvalidOperationException($"Request timeout after {MaxRetries} retries: {url}");
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[API] Unexpected error: {ex.GetType().Name} - {ex.Message}");
+                throw;
             }
         }
 

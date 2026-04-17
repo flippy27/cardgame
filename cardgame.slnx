@@ -1,5 +1,5 @@
 ﻿<Solution>
-  <Project Path="Flippy.CardDuelMobile.Tests.csproj" />
   <Project Path="Flippy.CardDuelMobile.Runtime.csproj" />
+  <Project Path="Flippy.CardDuelMobile.Tests.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>

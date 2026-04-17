@@ -1,0 +1,22 @@
+{
+  "api": {
+    "baseUrl": "http://localhost:5000",
+    "timeoutSeconds": 30,
+    "maxRetries": 3,
+    "retryDelayMs": 500
+  },
+  "game": {
+    "logLevel": "Debug",
+    "enableOfflineMode": true,
+    "cacheTimeSeconds": 3600,
+    "enableMetrics": true
+  },
+  "health": {
+    "pingIntervalSeconds": 30,
+    "maxConsecutiveFailures": 3
+  },
+  "security": {
+    "enableRequestSigning": true,
+    "enableCertPinning": false
+  }
+}
