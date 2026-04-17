@@ -669,6 +669,68 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
+        private void DetectAndAnimateCardMovementsWithSavedPositions(Dictionary<string, (BoardSlot slot, Vector3 worldPos)> savedPositions)
+        {
+            Debug.Log($"[DetectAndAnimateWithSaved] Called with {savedPositions.Count} saved positions");
+
+            if (_latestSnapshot?.players == null || _latestSnapshot.players.Length < 2)
+                return;
+
+            var local = _latestSnapshot.players[_latestSnapshot.localPlayerIndex];
+            if (local.board == null)
+                return;
+
+            // For each card in the new snapshot, check if it moved from saved position
+            foreach (var slotSnapshot in local.board)
+            {
+                if (slotSnapshot.occupant == null)
+                    continue;
+
+                var cardId = slotSnapshot.occupant.runtimeId;
+                if (savedPositions.TryGetValue(cardId, out var savedState))
+                {
+                    var oldSlot = savedState.slot;
+                    var newSlot = slotSnapshot.slot;
+
+                    if (oldSlot != newSlot)
+                    {
+                        Debug.Log($"[DetectAndAnimateWithSaved] MOVEMENT: {cardId} {oldSlot} → {newSlot}");
+                        AnimateCardMovementFromPosition(cardId, oldSlot, newSlot, savedState.worldPos);
+                    }
+                }
+            }
+        }
+
+        private void AnimateCardMovementFromPosition(string cardRuntimeId, BoardSlot fromSlot, BoardSlot toSlot, Vector3 savedFromPosition)
+        {
+            // Don't animate recently-dropped card
+            if (_lockedSlot == fromSlot)
+            {
+                Debug.Log($"[AnimateFromPos] Card {cardRuntimeId} in locked slot {fromSlot}, skipping");
+                return;
+            }
+
+            // Find card in new position (after Rebuild)
+            var slots = _localSlots;
+            if (!slots.TryGetValue(toSlot, out var toSlotButton))
+                return;
+
+            var cardWidget = toSlotButton.GetSpawnedCard();
+            if (cardWidget == null)
+            {
+                Debug.LogWarning($"[AnimateFromPos] Card not found in {toSlot} after Rebuild!");
+                return;
+            }
+
+            var targetAnchor = toSlotButton.CardAnchor as RectTransform;
+            if (targetAnchor == null)
+                return;
+
+            // Animate from saved position to target anchor position
+            Debug.Log($"[AnimateFromPos] Animating {cardRuntimeId} from {savedFromPosition} to {targetAnchor.position}");
+            _animationController.AnimateToAnchor(cardWidget, targetAnchor, 0.25f, null, toSlotButton);
+        }
+
         private void DetectAndAnimateCardMovements()
         {
             Debug.Log("[DetectAndAnimate] Called");
@@ -745,8 +807,14 @@ namespace Flippy.CardDuelMobile.UI
                             movementsToAnimate.Add((cardId, oldSlot, newSlot, false));
                         }
                     }
+                    else
+                    {
+                        Debug.Log($"[DetectAndAnimate] Remote card {cardId} is new (not in previous state)");
+                    }
                 }
             }
+
+            Debug.Log($"[DetectAndAnimate] Remote new positions: {remoteNewPositions.Count}, previous: {_cardSlotPositions.Count}");
 
             // Update card positions for next detection
             _cardSlotPositions.Clear();
@@ -833,6 +901,22 @@ namespace Flippy.CardDuelMobile.UI
         private void HandleSnapshot(string json)
         {
             Debug.Log($"[BattleScreenPresenter] HandleSnapshot received, matchPhase will be checked");
+
+            // SAVE current positions BEFORE parsing new snapshot
+            var positionsBeforeUpdate = new Dictionary<string, (BoardSlot slot, Vector3 worldPos)>();
+            foreach (var kvp in _localSlots)
+            {
+                var card = kvp.Value.GetSpawnedCard();
+                if (card != null)
+                {
+                    var runtimeId = kvp.Value.GetCurrentOccupantRuntimeId();
+                    if (!string.IsNullOrEmpty(runtimeId))
+                    {
+                        positionsBeforeUpdate[runtimeId] = (kvp.Key, card.transform.position);
+                    }
+                }
+            }
+
             _latestSnapshot = JsonUtility.FromJson<DuelSnapshotDto>(json);
 
             if (_latestSnapshot != null)
@@ -853,7 +937,6 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             // Snap preview cards to original positions BEFORE Rebuild destroys them
-            // (don't animate - snapshot is the source of truth for final positions)
             SnapPreviewCardsToOriginal();
 
             // Clear placement lock after first snapshot (allows other cards to animate)
@@ -864,7 +947,10 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             Rebuild();
-            DetectAndAnimateCardMovements();
+
+            // DETECT and ANIMATE movements AFTER Rebuild (cards are in new positions)
+            // Use saved positions as the "from" positions
+            DetectAndAnimateCardMovementsWithSavedPositions(positionsBeforeUpdate);
         }
 
         private void ClearLastDroppedCard()

@@ -20,10 +20,8 @@ MonoBehaviour:
   cardType: 0
   manaCost: 2
   attack: 3
-  health: 2
+  health: 10
   armor: 0
-  canBePlayedInFront: 1
-  canBePlayedInBack: 0
   unitType: 1
   defaultAttackTargetSelector: {fileID: 11400000, guid: 2d57e9739bb40804cb872d26291ea23f, type: 2}
   skills: []
