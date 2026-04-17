@@ -489,11 +489,46 @@ namespace Flippy.CardDuelMobile.UI
             Debug.LogWarning($"[AnimateCardToSlot] Card {cardId} not found in any slot!");
         }
 
+        private void SnapPreviewCardsToOriginal()
+        {
+            Debug.Log($"[SnapPreviewCardsToOriginal] Snapping {_previewedCards.Count} preview cards to original positions");
+
+            // Snap preview-animated cards back to original positions IMMEDIATELY (no animation)
+            // This is called when snapshot arrives and will destroy the cards
+            foreach (var (toSlot, (card, originalPos, fromSlot)) in _previewedCards)
+            {
+                if (card != null)
+                {
+                    var cardRect = card.transform as RectTransform;
+                    if (cardRect != null)
+                    {
+                        cardRect.position = originalPos;
+                        Debug.Log($"[SnapPreviewCardsToOriginal] Snapped {fromSlot}→{toSlot} to {originalPos}");
+                    }
+                }
+            }
+            _previewedCards.Clear();
+
+            // Restore slot colors immediately
+            foreach (var (slot, originalColor) in _previewSlotColors)
+            {
+                if (_localSlots.TryGetValue(slot, out var slotButton))
+                {
+                    var image = slotButton.placeholderImage;
+                    if (image != null)
+                    {
+                        image.color = originalColor;
+                    }
+                }
+            }
+            _previewSlotColors.Clear();
+        }
+
         private void ClearDragPreview()
         {
             Debug.Log($"[ClearDragPreview] Called. Cards in preview: {_previewedCards.Count}");
 
-            // Return preview-animated cards to original positions
+            // Return preview-animated cards to original positions (with animation)
             foreach (var (toSlot, (card, originalPos, fromSlot)) in _previewedCards)
             {
                 Debug.Log($"[ClearDragPreview] Returning card from preview: {fromSlot}→{toSlot}, card={card?.name}, originalPos={originalPos}");
@@ -817,8 +852,9 @@ namespace Flippy.CardDuelMobile.UI
                 DestroyDragGhostImmediate();
             }
 
-            // Clear drag preview BEFORE Rebuild/ApplySnapshot destroys and recreates cards
-            ClearDragPreview();
+            // Snap preview cards to original positions BEFORE Rebuild destroys them
+            // (don't animate - snapshot is the source of truth for final positions)
+            SnapPreviewCardsToOriginal();
 
             Rebuild();
             DetectAndAnimateCardMovements();
