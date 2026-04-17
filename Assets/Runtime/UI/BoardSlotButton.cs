@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.Core;
+using System.Collections.Generic;
 
 namespace Flippy.CardDuelMobile.UI
 {
@@ -64,36 +65,38 @@ namespace Flippy.CardDuelMobile.UI
             _legalForSelectedCard = legalForSelectedCard;
             _isOccupied = snapshot != null && snapshot.occupied && snapshot.occupant != null;
 
+            // NUCLEAR: destroy all children in anchor first
+            if (CardAnchor != null)
+            {
+                var children = new List<Transform>();
+                foreach (Transform child in CardAnchor)
+                {
+                    children.Add(child);
+                }
+                foreach (var child in children)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+            _spawnedCard = null;
+            _currentOccupantRuntimeId = null;
+
+            if (_pulseRoutine != null)
+            {
+                StopCoroutine(_pulseRoutine);
+                _pulseRoutine = null;
+            }
+
             if (_isOccupied)
             {
                 EnsureSpawnedCard();
                 _spawnedCard.Bind(snapshot.occupant);
-
-                var isNewOccupant = _currentOccupantRuntimeId != snapshot.occupant.runtimeId;
-                var hadOccupant = _currentOccupantRuntimeId != null;
                 _currentOccupantRuntimeId = snapshot.occupant.runtimeId;
                 _spawnedCard.gameObject.SetActive(true);
-
-                if (isNewOccupant)
-                {
-                    if (hadOccupant)
-                    {
-                        PlayReplace();
-                    }
-                    else
-                    {
-                        PlaySlideIn();
-                    }
-                }
             }
             else
             {
-                _currentOccupantRuntimeId = null;
-                if (_spawnedCard != null)
-                {
-                    PlayDeath(_spawnedCard.transform);
-                    _spawnedCard = null;
-                }
+                // Slot is empty
             }
 
             var canInteract = isLocalSide && isLocalTurn && hasSelectedCard && legalForSelectedCard && !_isOccupied;
@@ -173,6 +176,23 @@ namespace Flippy.CardDuelMobile.UI
 
         private void EnsureSpawnedCard()
         {
+            // Destroy all children in anchor except our spawned card
+            if (CardAnchor != null)
+            {
+                var children = new List<Transform>();
+                foreach (Transform child in CardAnchor)
+                {
+                    if (_spawnedCard == null || child.gameObject != _spawnedCard.gameObject)
+                    {
+                        children.Add(child);
+                    }
+                }
+                foreach (var child in children)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+
             if (_spawnedCard != null)
             {
                 return;
@@ -389,6 +409,36 @@ namespace Flippy.CardDuelMobile.UI
         public string GetCurrentOccupantRuntimeId()
         {
             return _currentOccupantRuntimeId;
+        }
+
+        /// <summary>
+        /// When a widget is animated into this slot, claim ownership of it.
+        /// </summary>
+        public void ClaimWidget(CardViewWidget widget)
+        {
+            if (widget == null)
+                return;
+
+            // Destroy any other widgets in this anchor
+            var children = new List<Transform>();
+            foreach (Transform child in CardAnchor)
+            {
+                if (child.gameObject != widget.gameObject)
+                {
+                    children.Add(child);
+                }
+            }
+            foreach (var child in children)
+            {
+                Destroy(child.gameObject);
+            }
+
+            _spawnedCard = widget;
+            // Keep the occupant ID in sync
+            if (widget.TryGetComponent<CardViewWidget>(out var cardWidget))
+            {
+                // ID will be set by Bind, this just ensures ownership
+            }
         }
 
         /// <summary>
