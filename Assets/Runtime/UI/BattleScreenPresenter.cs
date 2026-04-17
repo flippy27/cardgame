@@ -1175,29 +1175,19 @@ namespace Flippy.CardDuelMobile.UI
                 return false;
             }
 
-            // Units have priority-based slot placement
+            // Units can always be played (placement will auto-displace cards)
             if (dto.isUnit)
             {
-                var frontSlot = local.board?.FirstOrDefault(x => x.slot == BoardSlot.Front);
-                var backLeftSlot = local.board?.FirstOrDefault(x => x.slot == BoardSlot.BackLeft);
-                var backRightSlot = local.board?.FirstOrDefault(x => x.slot == BoardSlot.BackRight);
-
-                // Front priority: can only play here if empty
+                // Melee must go to Front
                 if (slot == BoardSlot.Front)
                 {
-                    return frontSlot?.occupied == false;
+                    return true;
                 }
 
-                // BackLeft priority: can only play if Front occupied and BackLeft empty
-                if (slot == BoardSlot.BackLeft)
+                // Ranged can go to Back slots
+                if (slot == BoardSlot.BackLeft || slot == BoardSlot.BackRight)
                 {
-                    return frontSlot?.occupied == true && backLeftSlot?.occupied == false;
-                }
-
-                // BackRight priority: can only play if Front and BackLeft occupied, BackRight empty
-                if (slot == BoardSlot.BackRight)
-                {
-                    return frontSlot?.occupied == true && backLeftSlot?.occupied == true && backRightSlot?.occupied == false;
+                    return true;
                 }
 
                 return false;
