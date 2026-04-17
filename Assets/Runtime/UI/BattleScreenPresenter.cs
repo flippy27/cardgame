@@ -10,6 +10,9 @@ using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Networking;
 using Flippy.CardDuelMobile.SinglePlayer;
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
 
 namespace Flippy.CardDuelMobile.UI
 {
@@ -57,6 +60,10 @@ namespace Flippy.CardDuelMobile.UI
         [Header("Detail View")]
         public CardDetailView detailViewInstance;
 
+        [Header("Toast")]
+        public GameObject toastPrefab;
+        public Transform toastContainer;
+
         [Header("Debug")]
         public DebugPanel debugPanel;
 
@@ -79,10 +86,27 @@ namespace Flippy.CardDuelMobile.UI
         private readonly List<GameObject> _spawnedHandCards = new();
         private readonly Dictionary<BoardSlot, BoardSlotButton> _localSlots = new();
         private readonly Dictionary<BoardSlot, BoardSlotButton> _remoteSlots = new();
+        private readonly Dictionary<string, BoardSlot> _cardSlotPositions = new();
+        private readonly Dictionary<string, (BoardSlot slot, Vector2 anchoredPos)> _cardPreviousStates = new();
+        private readonly Dictionary<BoardSlot, Color> _previewSlotColors = new();
         private bool _subscribed;
 
         public CardViewWidget BoardCardPrefab => boardCardPrefab;
         public bool HasDraggedCard => _draggedCard != null;
+
+#if ODIN_INSPECTOR
+        [ShowInInspector, ReadOnly]
+        public Dictionary<string, BoardSlot> DebugCardSlotPositions => _cardSlotPositions;
+
+        [ShowInInspector, ReadOnly]
+        public Dictionary<string, (BoardSlot slot, Vector2 anchoredPos)> DebugCardPreviousStates => _cardPreviousStates;
+#endif
+
+        private void Update()
+        {
+            // Save card world positions every frame so we have previous frame state when snapshot arrives
+            SaveCurrentCardWorldPositions();
+        }
 
         private void Awake()
         {
@@ -107,6 +131,13 @@ namespace Flippy.CardDuelMobile.UI
             if (endTurnButton != null)
             {
                 endTurnButton.onClick.AddListener(HandleEndTurnPressed);
+            }
+
+            // Initialize ToastManager
+            if (ToastManager.Instance != null && toastPrefab != null)
+            {
+                ToastManager.Instance.toastPrefab = toastPrefab;
+                ToastManager.Instance.toastContainer = toastContainer ?? transform;
             }
 
             CacheBoardSlots();
@@ -192,7 +223,7 @@ namespace Flippy.CardDuelMobile.UI
 
         public void BeginDrag(CardInHandDto dto, HandCardButton source, Vector2 screenPosition)
         {
-            Debug.Log($"[BattleScreenPresenter] BeginDrag called for {dto?.displayName}, screenPos={screenPosition}");
+
 
             if (dto == null || _inDiscardMode)
             {
@@ -207,6 +238,7 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             HideDetailView();
+            ClearDragPreview();
 
             _selectedCard = dto;
             _draggedCard = dto;
@@ -275,6 +307,7 @@ namespace Flippy.CardDuelMobile.UI
                 DestroyDragGhostImmediate();
             }
 
+            ClearDragPreview();
             _draggedCard = null;
             _dragSource = null;
             _dragOverSlot = null;
@@ -337,7 +370,99 @@ namespace Flippy.CardDuelMobile.UI
 
         public void SetDragOverSlot(BoardSlotButton slot)
         {
-            _dragOverSlot = slot;
+            if (_dragOverSlot != slot)
+            {
+                ClearDragPreview();
+                _dragOverSlot = slot;
+
+                if (slot != null && _draggedCard != null)
+                {
+                    ShowDragPreview(slot.slot);
+                }
+            }
+        }
+
+        private void ShowDragPreview(BoardSlot targetSlot)
+        {
+            if (_latestSnapshot == null || _draggedCard == null)
+            {
+                return;
+            }
+
+            var local = _latestSnapshot.players[_latestSnapshot.localPlayerIndex];
+
+            // Check if target slot is occupied
+            var targetSnapshot = local.board?.FirstOrDefault(x => x.slot == targetSlot);
+            if (targetSnapshot == null || !targetSnapshot.occupied || targetSnapshot.occupant == null)
+            {
+                return;  // No displacement needed
+            }
+
+            // Compute displacement chain
+            var chain = new List<(BoardSlot slot, BoardCardDto card)>();
+            var currentSlot = targetSlot;
+            var currentCard = targetSnapshot.occupant;
+
+            // Simulate displacement: Front → BackLeft → BackRight
+            if (currentSlot == BoardSlot.Front)
+            {
+                chain.Add((BoardSlot.BackLeft, currentCard));
+                var backLeftSlot = local.board?.FirstOrDefault(x => x.slot == BoardSlot.BackLeft);
+                if (backLeftSlot != null && backLeftSlot.occupied && backLeftSlot.occupant != null)
+                {
+                    currentSlot = BoardSlot.BackLeft;
+                    currentCard = backLeftSlot.occupant;
+                    chain.Add((BoardSlot.BackRight, currentCard));
+                }
+            }
+            else if (currentSlot == BoardSlot.BackLeft)
+            {
+                chain.Add((BoardSlot.BackRight, currentCard));
+            }
+
+            // Highlight slots in the displacement chain with a preview color
+            _previewSlotColors.Clear();
+            foreach (var (slot, card) in chain)
+            {
+                if (_localSlots.TryGetValue(slot, out var slotButton))
+                {
+                    var image = slotButton.placeholderImage;
+                    if (image != null)
+                    {
+                        _previewSlotColors[slot] = image.color;
+                        image.color = Color.yellow * 0.5f;  // Semi-transparent yellow
+                        Debug.Log($"[Preview] {card.displayName} → {slot}");
+                    }
+                }
+            }
+
+            // Highlight target slot differently
+            if (_localSlots.TryGetValue(targetSlot, out var targetSlotButton))
+            {
+                var image = targetSlotButton.placeholderImage;
+                if (image != null && !_previewSlotColors.ContainsKey(targetSlot))
+                {
+                    _previewSlotColors[targetSlot] = image.color;
+                    image.color = Color.green * 0.5f;  // Semi-transparent green for target
+                }
+            }
+        }
+
+        private void ClearDragPreview()
+        {
+            // Restore original colors
+            foreach (var (slot, originalColor) in _previewSlotColors)
+            {
+                if (_localSlots.TryGetValue(slot, out var slotButton))
+                {
+                    var image = slotButton.placeholderImage;
+                    if (image != null)
+                    {
+                        image.color = originalColor;
+                    }
+                }
+            }
+            _previewSlotColors.Clear();
         }
 
         public void TryPlayDraggedCardTo(BoardSlot slot, RectTransform targetAnchor)
@@ -353,6 +478,7 @@ namespace Flippy.CardDuelMobile.UI
             if (!TryPlayCardToSlot(cardToPlay, slot))
             {
                 GameLogger.Warning("UI", "TryPlayDraggedCardTo: TryPlayCardToSlot failed");
+                ClearDragPreview();
                 DestroyDragGhostImmediate();
                 _draggedCard = null;
                 _dragSource = null;
@@ -362,6 +488,7 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             GameLogger.Info("UI", "TryPlayDraggedCardTo: card played successfully");
+            ClearDragPreview();
             _dragDropCommitted = true;
             _selectedCard = null;
             _draggedCard = null;
@@ -405,6 +532,183 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
+        private void DetectAndAnimateCardMovements()
+        {
+            Debug.Log("[DetectAndAnimate] Called");
+            if (_latestSnapshot == null || _latestSnapshot.players == null || _latestSnapshot.players.Length < 2)
+            {
+                Debug.Log("[DetectAndAnimate] Snapshot incomplete, returning");
+                return;
+            }
+
+            Debug.Log($"[DetectAndAnimate] Snapshot OK, previous card positions: {_cardSlotPositions.Count}");
+
+            // Save world positions BEFORE updating slots
+            SaveCurrentCardWorldPositions();
+            Debug.Log($"[DetectAndAnimate] Saved current positions, now have: {_cardPreviousStates.Count}");
+
+            // Detect movements and prepare animation data
+            var movementsToAnimate = new List<(string cardId, BoardSlot fromSlot, BoardSlot toSlot, bool isLocal)>();
+
+            // Check local player board
+            var local = _latestSnapshot.players[_latestSnapshot.localPlayerIndex];
+            var localNewPositions = new Dictionary<string, BoardSlot>();
+            if (local.board != null)
+            {
+                Debug.Log($"[DetectAndAnimate] Local board has {local.board.Length} slots");
+                foreach (var slotSnapshot in local.board)
+                {
+                    if (slotSnapshot.occupant != null && !string.IsNullOrEmpty(slotSnapshot.occupant.runtimeId))
+                    {
+                        localNewPositions[slotSnapshot.occupant.runtimeId] = slotSnapshot.slot;
+                        Debug.Log($"[DetectAndAnimate] Local card {slotSnapshot.occupant.runtimeId} in slot {slotSnapshot.slot}");
+                    }
+                }
+
+                Debug.Log($"[DetectAndAnimate] New positions: {localNewPositions.Count}, previous: {_cardSlotPositions.Count}");
+                foreach (var cardId in localNewPositions.Keys)
+                {
+                    if (_cardSlotPositions.TryGetValue(cardId, out var oldSlot))
+                    {
+                        var newSlot = localNewPositions[cardId];
+                        if (oldSlot != newSlot)
+                        {
+                            Debug.Log($"[DetectAndAnimate] MOVEMENT DETECTED: {cardId} {oldSlot} → {newSlot}");
+                            movementsToAnimate.Add((cardId, oldSlot, newSlot, true));
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log($"[DetectAndAnimate] Card {cardId} is new (not in previous state)");
+                    }
+                }
+            }
+
+            // Check remote player board
+            var remoteNewPositions = new Dictionary<string, BoardSlot>();
+            var remote = _latestSnapshot.players[1 - _latestSnapshot.localPlayerIndex];
+            if (remote.board != null)
+            {
+                foreach (var slotSnapshot in remote.board)
+                {
+                    if (slotSnapshot.occupant != null && !string.IsNullOrEmpty(slotSnapshot.occupant.runtimeId))
+                    {
+                        remoteNewPositions[slotSnapshot.occupant.runtimeId] = slotSnapshot.slot;
+                    }
+                }
+
+                foreach (var cardId in remoteNewPositions.Keys)
+                {
+                    if (_cardSlotPositions.TryGetValue(cardId, out var oldSlot))
+                    {
+                        var newSlot = remoteNewPositions[cardId];
+                        if (oldSlot != newSlot)
+                        {
+                            Debug.Log($"[DetectAndAnimate] MOVEMENT DETECTED (remote): {cardId} {oldSlot} → {newSlot}");
+                            movementsToAnimate.Add((cardId, oldSlot, newSlot, false));
+                        }
+                    }
+                }
+            }
+
+            // Update card positions for next detection
+            _cardSlotPositions.Clear();
+            if (local.board != null)
+            {
+                foreach (var kvp in localNewPositions ?? new Dictionary<string, BoardSlot>())
+                {
+                    _cardSlotPositions[kvp.Key] = kvp.Value;
+                }
+            }
+            foreach (var kvp in remoteNewPositions)
+            {
+                _cardSlotPositions[kvp.Key] = kvp.Value;
+            }
+
+            // Animate all movements
+            Debug.Log($"[DetectAndAnimate] Total movements to animate: {movementsToAnimate.Count}");
+            foreach (var (cardId, fromSlot, toSlot, isLocal) in movementsToAnimate)
+            {
+                Debug.Log($"[DetectAndAnimate] Calling AnimateCardMovement for {cardId}");
+                AnimateCardMovement(cardId, fromSlot, toSlot, isLocal);
+            }
+        }
+
+        private void SaveCurrentCardWorldPositions()
+        {
+            var allSlots = new List<(BoardSlot slot, BoardSlotButton button)>();
+            foreach (var kvp in _localSlots)
+                allSlots.Add((kvp.Key, kvp.Value));
+            foreach (var kvp in _remoteSlots)
+                allSlots.Add((kvp.Key, kvp.Value));
+
+            foreach (var (slot, button) in allSlots)
+            {
+                var card = button.GetSpawnedCard();
+                if (card != null && card.transform is RectTransform cardRect)
+                {
+                    var runtimeId = button.GetCurrentOccupantRuntimeId();
+                    if (!string.IsNullOrEmpty(runtimeId))
+                    {
+                        _cardPreviousStates[runtimeId] = (slot, cardRect.anchoredPosition);
+                    }
+                }
+            }
+        }
+
+        private void AnimateCardMovement(string cardRuntimeId, BoardSlot fromSlot, BoardSlot toSlot, bool isLocalSide)
+        {
+            Debug.Log($"[AnimateCardMovement] START: {cardRuntimeId} {fromSlot} → {toSlot} isLocal={isLocalSide}");
+            var slots = isLocalSide ? _localSlots : _remoteSlots;
+
+            if (!slots.TryGetValue(toSlot, out var toSlotButton) || !slots.TryGetValue(fromSlot, out var fromSlotButton))
+            {
+                Debug.Log($"[AnimateCardMovement] Slot not found");
+                return;
+            }
+
+            // Find card widget by searching all slots (it may have been moved)
+            CardViewWidget cardWidget = null;
+            foreach (var slot in slots.Values)
+            {
+                var card = slot.GetSpawnedCard();
+                if (card != null && card.TryGetComponent<CardViewWidget>(out _))
+                {
+                    // Check if this is our card by comparing position or other means
+                    if (slot.GetCurrentOccupantRuntimeId() == cardRuntimeId)
+                    {
+                        cardWidget = card;
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log($"[AnimateCardMovement] Found cardWidget: {cardWidget}");
+            if (cardWidget == null || !(cardWidget.transform is RectTransform cardRect))
+            {
+                Debug.Log($"[AnimateCardMovement] Card not found or not RectTransform");
+                return;
+            }
+
+            // Get slot rect positions
+            var fromSlotRect = fromSlotButton.GetComponent<RectTransform>();
+            var toSlotRect = toSlotButton.GetComponent<RectTransform>();
+            if (fromSlotRect == null || toSlotRect == null)
+            {
+                Debug.Log($"[AnimateCardMovement] Slot rects NULL");
+                return;
+            }
+
+            var fromPos = fromSlotRect.position;
+            var cardAnchor = toSlotButton.CardAnchor as RectTransform;
+            var toPos = cardAnchor != null ? cardAnchor.position : toSlotRect.position;
+
+            Debug.Log($"[AnimateCardMovement] ANIMATING: {cardRuntimeId} {fromSlot} ({fromPos}) → {toSlot} ({toPos})");
+
+            // Animate to the CardAnchor's world position
+            toSlotButton.PlayWorldPositionTransition(cardWidget.transform, fromPos, toPos);
+        }
+
         private void HandleSnapshot(string json)
         {
             Debug.Log($"[BattleScreenPresenter] HandleSnapshot received, matchPhase will be checked");
@@ -428,6 +732,7 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             Rebuild();
+            DetectAndAnimateCardMovements();
         }
 
         private void Rebuild()
@@ -653,9 +958,23 @@ namespace Flippy.CardDuelMobile.UI
 
         private bool TryPlayCardToSlot(CardInHandDto dto, BoardSlot slot)
         {
-            if (dto == null || !CanCardBePlayedTo(dto, slot))
+            if (dto == null)
             {
-                GameLogger.Warning("UI", $"PlayCard rejected: dto={dto != null}, canPlay={dto != null && CanCardBePlayedTo(dto, slot)}");
+                return false;
+            }
+
+            if (!CanCardBePlayedTo(dto, slot))
+            {
+                if (dto.isUnit)
+                {
+                    var local = _latestSnapshot?.players?[_latestSnapshot.localPlayerIndex];
+                    var occupiedCount = local?.board?.Count(x => x.occupied) ?? 0;
+                    if (occupiedCount >= 3)
+                    {
+                        ToastManager.Instance?.ShowToast("Board is full!");
+                    }
+                }
+                GameLogger.Warning("UI", $"PlayCard rejected: cannot play {dto.displayName} to {slot}");
                 return false;
             }
 
@@ -716,18 +1035,13 @@ namespace Flippy.CardDuelMobile.UI
                 return false;
             }
 
-            if (local.board != null)
+            // Units can be played in any slot
+            if (dto.isUnit)
             {
-                var slotSnapshot = local.board.FirstOrDefault(x => x.slot == slot);
-                if (slotSnapshot != null && slotSnapshot.occupied)
-                {
-                    return false;
-                }
+                return true;
             }
 
-            return slot == BoardSlot.Front
-                ? dto.canBePlayedInFront
-                : dto.canBePlayedInBack;
+            return true;
         }
 
         private void HandleEndTurnPressed()
@@ -882,18 +1196,19 @@ namespace Flippy.CardDuelMobile.UI
                 return string.Empty;
             }
 
-            var parts = new List<string>(2);
-            if (dto.canBePlayedInFront)
+            if (!dto.isUnit)
             {
-                parts.Add("Front");
+                return "Any";
             }
 
-            if (dto.canBePlayedInBack)
+            var type = (Data.UnitType)dto.unitType;
+            return type switch
             {
-                parts.Add("Back");
-            }
-
-            return parts.Count == 0 ? "NoSlot" : string.Join("/", parts);
+                Data.UnitType.Melee => "Front",
+                Data.UnitType.Ranged => "Back",
+                Data.UnitType.Magic => "Back (Diagonal)",
+                _ => "Any"
+            };
         }
 
         private string BuildTurnLine(bool isLocalTurn)
@@ -957,18 +1272,18 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            Debug.Log($"[BattleScreenPresenter] Creating drag ghost at screen pos {screenPosition}");
+
             _dragGhost = Instantiate(dragGhost3DPrefab);
             _dragGhost.transform.position = new Vector3(0, 0, 0); // Reset to origin
-            Debug.Log($"[BattleScreenPresenter] Instantiated ghost: {_dragGhost.name}, pos: {_dragGhost.transform.position}");
+            
 
             _dragGhost3D = _dragGhost.GetComponent<DragGhost3D>();
-            Debug.Log($"[BattleScreenPresenter] DragGhost3D component: {(_dragGhost3D != null ? "found" : "NOT FOUND")}");
+            
 
             if (_dragGhost3D != null)
             {
                 _dragGhost3D.SetTargetPosition(screenPosition, Camera.main);
-                Debug.Log($"[BattleScreenPresenter] Ghost position set, now at: {_dragGhost.transform.position}");
+                
             }
             else
             {

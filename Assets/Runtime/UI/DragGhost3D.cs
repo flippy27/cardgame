@@ -54,7 +54,7 @@ namespace Flippy.CardDuelMobile.UI
             if (_lastPosition == Vector3.zero)
                 _lastPosition = _targetPosition;
 
-            Debug.Log($"[DragGhost3D] Screen: {screenPos}, World: {_targetPosition}");
+            
         }
     }
 }

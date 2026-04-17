@@ -17,12 +17,15 @@ MonoBehaviour:
   description: Aggressive melee.
   faction: 4
   rarity: 0
+  cardType: 0
   manaCost: 2
   attack: 3
   health: 2
   armor: 0
   canBePlayedInFront: 1
   canBePlayedInBack: 0
+  unitType: 1
   defaultAttackTargetSelector: {fileID: 11400000, guid: 2d57e9739bb40804cb872d26291ea23f, type: 2}
+  skills: []
   abilities: []
   visualProfile: {fileID: 11400000, guid: 7e9c35c2a7db2814eb569815053ad8b7, type: 2}

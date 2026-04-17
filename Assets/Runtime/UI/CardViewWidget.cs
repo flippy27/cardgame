@@ -22,6 +22,7 @@ namespace Flippy.CardDuelMobile.UI
         public TMPro.TextMeshProUGUI attackText;
         public TMPro.TextMeshProUGUI healthText;
         public TMPro.TextMeshProUGUI armorText;
+        public TMPro.TextMeshProUGUI unitTypeText;
 
         /// <summary>
         /// Pinta una carta de mano.
@@ -33,6 +34,12 @@ namespace Flippy.CardDuelMobile.UI
             attackText.text = dto.attack.ToString();
             healthText.text = dto.health.ToString();
             armorText.text = string.Empty;
+
+            if (unitTypeText != null && dto.isUnit)
+            {
+                var type = (Data.UnitType)dto.unitType;
+                unitTypeText.text = type == Data.UnitType.Melee ? "MELEE" : "RANGED";
+            }
         }
 
         /// <summary>
@@ -45,6 +52,28 @@ namespace Flippy.CardDuelMobile.UI
             attackText.text = dto.attack.ToString();
             healthText.text = dto.currentHealth.ToString();
             armorText.text = dto.armor > 0 ? dto.armor.ToString() : string.Empty;
+
+            // Show unit type
+            if (unitTypeText != null)
+            {
+                var type = (Data.UnitType)dto.unitType;
+                unitTypeText.text = type == Data.UnitType.Melee ? "MELEE" : "RANGED";
+            }
+
+            // Visual feedback for cards that cannot attack
+            if (frameImage != null)
+            {
+                frameImage.color = dto.canAttack
+                    ? Color.white
+                    : new Color(0.6f, 0.6f, 0.6f, 1f);
+            }
+
+            if (artImage != null)
+            {
+                artImage.color = dto.canAttack
+                    ? Color.white
+                    : new Color(0.7f, 0.7f, 0.7f, 1f);
+            }
         }
     }
 }

@@ -17,12 +17,15 @@ MonoBehaviour:
   description: Frontline beater.
   faction: 0
   rarity: 0
+  cardType: 0
   manaCost: 2
   attack: 3
   health: 3
   armor: 0
   canBePlayedInFront: 1
   canBePlayedInBack: 0
+  unitType: 1
   defaultAttackTargetSelector: {fileID: 11400000, guid: 2d57e9739bb40804cb872d26291ea23f, type: 2}
+  skills: []
   abilities: []
   visualProfile: {fileID: 11400000, guid: 0f583e5aacacafd41b62121572ba6197, type: 2}

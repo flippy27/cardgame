@@ -159,8 +159,8 @@ namespace Flippy.CardDuelMobile.UI
                     inputPos = mouse.position.ReadValue();
                     inputPressed = mouse.leftButton.isPressed;
                     inputPressedThisFrame = mouse.leftButton.wasPressedThisFrame;
-                    if (_inDetailView)
-                        Debug.Log($"[HandCardButton] Mouse, isPressed={inputPressed}");
+                    // if (_inDetailView)
+                    //     Debug.Log($"[HandCardButton] Mouse, isPressed={inputPressed}");
                 }
             }
 
@@ -234,10 +234,10 @@ namespace Flippy.CardDuelMobile.UI
             // Release detail view
             if (_inDetailView)
             {
-                Debug.Log($"[HandCardButton] _inDetailView=true, inputPressed={inputPressed}");
+
                 if (!inputPressed)
                 {
-                    Debug.Log($"[HandCardButton] RELEASING detail view for {_dto.displayName}");
+
                     HideDetailView();
                     _holdTime = 0f;
                 }

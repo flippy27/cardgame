@@ -18,9 +18,7 @@ namespace Flippy.CardDuelMobile.Tests.Battle
             int manaCost = 1,
             int attack = 1,
             int health = 1,
-            int armor = 0,
-            bool canBePlayedInFront = true,
-            bool canBePlayedInBack = true)
+            int armor = 0)
         {
             // Crear instancia vacía sin llamar a ScriptableObject constructor
             var card = new CardDefinition();
@@ -36,8 +34,6 @@ namespace Flippy.CardDuelMobile.Tests.Battle
                 else if (field.Name == nameof(CardDefinition.attack)) field.SetValue(card, attack);
                 else if (field.Name == nameof(CardDefinition.health)) field.SetValue(card, health);
                 else if (field.Name == nameof(CardDefinition.armor)) field.SetValue(card, armor);
-                else if (field.Name == nameof(CardDefinition.canBePlayedInFront)) field.SetValue(card, canBePlayedInFront);
-                else if (field.Name == nameof(CardDefinition.canBePlayedInBack)) field.SetValue(card, canBePlayedInBack);
                 else if (field.Name == nameof(CardDefinition.abilities)) field.SetValue(card, new AbilityDefinition[] { });
             }
 

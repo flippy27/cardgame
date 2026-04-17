@@ -76,12 +76,6 @@ namespace Flippy.CardDuelMobile.Battle
                 return false;
             }
 
-            if (!player.IsSlotEmpty(slot))
-            {
-                reason = "Slot is occupied.";
-                return false;
-            }
-
             var handEntry = player.Hand.FirstOrDefault(x => x.RuntimeHandKey == runtimeCardKey);
             if (handEntry == null)
             {
@@ -95,22 +89,55 @@ namespace Flippy.CardDuelMobile.Battle
                 return false;
             }
 
+            // For Units, allow replacement (slot can be occupied)
+            // For non-units, slot must be empty
+            if (handEntry.Definition.cardType != CardType.Unit && !player.IsSlotEmpty(slot))
+            {
+                reason = "Slot is occupied.";
+                return false;
+            }
+
+            // If slot is occupied (replacement), validate repositioning space
+            if (!player.IsSlotEmpty(slot) && handEntry.Definition.cardType == CardType.Unit)
+            {
+                var isMelee = handEntry.Definition.unitType == UnitType.Melee;
+                if (isMelee && slot == BoardSlot.Front)
+                {
+                    // Front → BackLeft, BackLeft → BackRight
+                    // Need space in BackLeft for the current Front occupant
+                    var backLeft = player.FindSlot(BoardSlot.BackLeft);
+                    if (backLeft != null && backLeft.Occupant != null)
+                    {
+                        // BackLeft is occupied, need space in BackRight
+                        var backRight = player.FindSlot(BoardSlot.BackRight);
+                        if (backRight != null && backRight.Occupant != null)
+                        {
+                            // All slots are full, can't do replacement
+                            reason = "Board is full. No space for replacement.";
+                            return false;
+                        }
+                    }
+                }
+            }
+
             if (handEntry.Definition.manaCost > player.Mana)
             {
                 reason = $"Not enough mana (need {handEntry.Definition.manaCost}, have {player.Mana}).";
                 return false;
             }
 
-            if (slot == BoardSlot.Front && !handEntry.Definition.canBePlayedInFront)
+            // Units can play in any slot, but only attack from designated slots
+            if (handEntry.Definition.cardType == CardType.Unit)
             {
-                reason = "This card cannot be played in the front row.";
-                return false;
-            }
+                // Check board space for replacement
+                var occupiedCount = player.Board.Count(x => x.Occupant != null);
+                if (occupiedCount >= 3)
+                {
+                    reason = "Board is full. No space for more units.";
+                    return false;
+                }
 
-            if ((slot == BoardSlot.BackLeft || slot == BoardSlot.BackRight) && !handEntry.Definition.canBePlayedInBack)
-            {
-                reason = "This card cannot be played in the back row.";
-                return false;
+                return true;
             }
 
             return true;
@@ -157,6 +184,59 @@ namespace Flippy.CardDuelMobile.Battle
             };
 
             var boardSlot = player.Board.First(x => x.Slot == slot);
+
+            // Handle replacement: if slot occupied, shift existing card back
+            if (boardSlot.Occupant != null)
+            {
+                var displacedCard = boardSlot.Occupant;
+
+                if (slot == BoardSlot.Front)
+                {
+                    var backLeftSlot = player.Board.First(x => x.Slot == BoardSlot.BackLeft);
+                    if (backLeftSlot.Occupant == null)
+                    {
+                        backLeftSlot.Occupant = displacedCard;
+                        displacedCard.CurrentSlot = BoardSlot.BackLeft;
+                        _state.Logs.Add(new BattleLogEntry
+                        {
+                            type = BattleLogType.Info,
+                            message = $"{displacedCard.DisplayName} moved to BackLeft (replacement)."
+                        });
+                    }
+                    else
+                    {
+                        var backRightSlot = player.Board.First(x => x.Slot == BoardSlot.BackRight);
+                        if (backRightSlot.Occupant == null)
+                        {
+                            var oldBackLeft = backLeftSlot.Occupant;
+                            backRightSlot.Occupant = oldBackLeft;
+                            oldBackLeft.CurrentSlot = BoardSlot.BackRight;
+                            backLeftSlot.Occupant = displacedCard;
+                            displacedCard.CurrentSlot = BoardSlot.BackLeft;
+                            _state.Logs.Add(new BattleLogEntry
+                            {
+                                type = BattleLogType.Info,
+                                message = $"{displacedCard.DisplayName} moved to BackLeft, {oldBackLeft.DisplayName} moved to BackRight (replacement chain)."
+                            });
+                        }
+                    }
+                }
+                else if (slot == BoardSlot.BackLeft)
+                {
+                    var backRightSlot = player.Board.First(x => x.Slot == BoardSlot.BackRight);
+                    if (backRightSlot.Occupant == null)
+                    {
+                        backRightSlot.Occupant = displacedCard;
+                        displacedCard.CurrentSlot = BoardSlot.BackRight;
+                        _state.Logs.Add(new BattleLogEntry
+                        {
+                            type = BattleLogType.Info,
+                            message = $"{displacedCard.DisplayName} moved to BackRight (replacement)."
+                        });
+                    }
+                }
+            }
+
             boardSlot.Occupant = cardRuntime;
 
             _state.Logs.Add(new BattleLogEntry
@@ -342,8 +422,8 @@ namespace Flippy.CardDuelMobile.Battle
                     manaCost = card.Definition.manaCost,
                     attack = card.Definition.attack,
                     health = card.Definition.health,
-                    canBePlayedInFront = card.Definition.canBePlayedInFront,
-                    canBePlayedInBack = card.Definition.canBePlayedInBack
+                    isUnit = card.Definition.cardType == CardType.Unit,
+                    unitType = (int)card.Definition.unitType
                 }).ToArray(),
                 board = player.Board.Select(slot => new BoardSlotSnapshotDto
                 {
@@ -359,7 +439,9 @@ namespace Flippy.CardDuelMobile.Battle
                         currentHealth = slot.Occupant.CurrentHealth,
                         maxHealth = slot.Occupant.MaxHealth,
                         armor = slot.Occupant.Armor,
-                        slot = slot.Occupant.CurrentSlot
+                        slot = slot.Occupant.CurrentSlot,
+                        canAttack = DetermineCanAttack(slot.Occupant),
+                        unitType = slot.Occupant.Definition != null ? (int)slot.Occupant.Definition.unitType : 0
                     }
                 }).ToArray()
             };
@@ -418,6 +500,32 @@ namespace Flippy.CardDuelMobile.Battle
                     message = $"{attacker.DisplayName} is stunned and cannot attack!"
                 });
                 return;
+            }
+
+            // Check if card can attack from current slot
+            if (attacker.Definition != null && attacker.Definition.cardType == CardType.Unit)
+            {
+                var isRanged = attacker.Definition.unitType == UnitType.Ranged;
+                bool canAttack = false;
+
+                if (slot.Slot == BoardSlot.Front && !isRanged)
+                {
+                    canAttack = true;
+                }
+                else if ((slot.Slot == BoardSlot.BackLeft || slot.Slot == BoardSlot.BackRight) && isRanged)
+                {
+                    canAttack = true;
+                }
+
+                if (!canAttack)
+                {
+                    _state.Logs.Add(new BattleLogEntry
+                    {
+                        type = BattleLogType.Attack,
+                        message = $"{attacker.DisplayName} cannot attack from this position."
+                    });
+                    return;
+                }
             }
 
             ResolveAbilities(attacker, AbilityTrigger.OnBattlePhase);
@@ -520,6 +628,25 @@ namespace Flippy.CardDuelMobile.Battle
                     ability.Resolve(_context, new EffectExecution(source.OwnerIndex, targetPlayer, source.RuntimeId, targetId));
                 }
             }
+        }
+
+        private bool DetermineCanAttack(CardRuntime card)
+        {
+            if (card == null || card.Definition == null)
+                return false;
+
+            if (card.Definition.cardType != CardType.Unit)
+                return false;
+
+            var unitType = card.Definition.unitType;
+
+            if (card.CurrentSlot == BoardSlot.Front)
+                return unitType == UnitType.Melee;
+
+            if (card.CurrentSlot == BoardSlot.BackLeft || card.CurrentSlot == BoardSlot.BackRight)
+                return unitType == UnitType.Ranged || unitType == UnitType.Magic;
+
+            return false;
         }
     }
 }

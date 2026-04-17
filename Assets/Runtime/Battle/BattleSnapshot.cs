@@ -52,8 +52,8 @@ namespace Flippy.CardDuelMobile.Battle
         public int manaCost;
         public int attack;
         public int health;
-        public bool canBePlayedInFront;
-        public bool canBePlayedInBack;
+        public bool isUnit;
+        public int unitType; // 0=Melee, 1=Ranged, 2=Magic
     }
 
     [Serializable]
@@ -76,5 +76,7 @@ namespace Flippy.CardDuelMobile.Battle
         public int maxHealth;
         public int armor;
         public BoardSlot slot;
+        public bool canAttack;
+        public int unitType; // 0=Melee, 1=Ranged
     }
 }

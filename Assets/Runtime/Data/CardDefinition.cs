@@ -15,14 +15,16 @@ namespace Flippy.CardDuelMobile.Data
         [TextArea] public string description;
         public CardFaction faction = CardFaction.Ember;
         public CardRarity rarity = CardRarity.Common;
+        public CardType cardType = CardType.Unit;
 
         [Header("Stats")]
         public int manaCost = 1;
         public int attack = 1;
         public int health = 1;
         public int armor;
-        public bool canBePlayedInFront = true;
-        public bool canBePlayedInBack = true;
+
+        [Header("Unit (for Units only)")]
+        public UnitType unitType = UnitType.Melee;
 
         [Header("Gameplay")]
         public TargetSelectorDefinition defaultAttackTargetSelector;

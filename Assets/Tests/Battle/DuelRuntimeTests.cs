@@ -196,36 +196,41 @@ namespace Flippy.CardDuelMobile.Tests.Battle
         }
 
         [Test]
-        public void GetLegalPlaySlots_ReturnsSlotsCardCanBePlayedIn()
+        public void GetLegalPlaySlots_UnitCanPlayInAnySlot()
         {
-            var frontOnlyCard = BattleTestHelpers.CreateTestCard("front", "Front", canBePlayedInFront: true, canBePlayedInBack: false);
+            var unitCard = BattleTestHelpers.CreateTestCard("unit", "Unit");
+            unitCard.cardType = CardType.Unit;
             var player = _duel.State.GetPlayer(0);
             player.Hand.Clear();
-            player.Hand.Add(new HandCardRuntime { RuntimeHandKey = "front_key", Definition = frontOnlyCard });
+            player.Hand.Add(new HandCardRuntime { RuntimeHandKey = "unit_key", Definition = unitCard });
             player.Mana = 10;
 
             var slots = new List<BoardSlot>();
-            _duel.GetLegalPlaySlots(0, "front_key", slots);
+            _duel.GetLegalPlaySlots(0, "unit_key", slots);
 
-            Assert.AreEqual(1, slots.Count);
-            Assert.AreEqual(BoardSlot.Front, slots[0]);
+            Assert.AreEqual(3, slots.Count);
+            Assert.Contains(BoardSlot.Front, slots);
+            Assert.Contains(BoardSlot.BackLeft, slots);
+            Assert.Contains(BoardSlot.BackRight, slots);
         }
 
         [Test]
-        public void GetLegalPlaySlots_OccupiedSlotExcluded()
+        public void GetLegalPlaySlots_FullBoardBlocked()
         {
-            var backOnlyCard = BattleTestHelpers.CreateTestCard("back", "Back", canBePlayedInFront: false, canBePlayedInBack: true);
+            var unitCard = BattleTestHelpers.CreateTestCard("unit", "Unit");
+            unitCard.cardType = CardType.Unit;
             var player = _duel.State.GetPlayer(0);
             player.Hand.Clear();
-            player.Hand.Add(new HandCardRuntime { RuntimeHandKey = "back_key", Definition = backOnlyCard });
+            player.Hand.Add(new HandCardRuntime { RuntimeHandKey = "unit_key", Definition = unitCard });
             player.Mana = 10;
-            player.Board[1].Occupant = new CardRuntime { RuntimeId = "occupied" };
+            player.Board[0].Occupant = new CardRuntime { RuntimeId = "occ1" };
+            player.Board[1].Occupant = new CardRuntime { RuntimeId = "occ2" };
+            player.Board[2].Occupant = new CardRuntime { RuntimeId = "occ3" };
 
             var slots = new List<BoardSlot>();
-            _duel.GetLegalPlaySlots(0, "back_key", slots);
+            _duel.GetLegalPlaySlots(0, "unit_key", slots);
 
-            Assert.AreEqual(1, slots.Count);
-            Assert.AreEqual(BoardSlot.BackRight, slots[0], "BackLeft is occupied, only BackRight available");
+            Assert.AreEqual(0, slots.Count, "Full board should block all plays");
         }
     }
 }

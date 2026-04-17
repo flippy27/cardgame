@@ -122,6 +122,13 @@ namespace Flippy.CardDuelMobile.Battle
                     backRightSlot.Occupant = null;
                 }
             }
+            // If Front occupied but BackLeft empty, shift BackRight to BackLeft
+            else if (backLeftSlot.Occupant == null && backRightSlot.Occupant != null)
+            {
+                backLeftSlot.Occupant = backRightSlot.Occupant;
+                backLeftSlot.Occupant.CurrentSlot = BoardSlot.BackLeft;
+                backRightSlot.Occupant = null;
+            }
         }
     }
 

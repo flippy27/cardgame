@@ -234,8 +234,6 @@ namespace Flippy.CardDuelMobile.EditorTools
                 card.attack = seed.atk;
                 card.health = seed.hp;
                 card.armor = seed.armor;
-                card.canBePlayedInFront = seed.front;
-                card.canBePlayedInBack = seed.back;
                 card.defaultAttackTargetSelector = selectors[seed.attackSelector];
                 card.visualProfile = visuals[seed.visual];
 

@@ -70,12 +70,20 @@ namespace Flippy.CardDuelMobile.UI
                 _spawnedCard.Bind(snapshot.occupant);
 
                 var isNewOccupant = _currentOccupantRuntimeId != snapshot.occupant.runtimeId;
+                var hadOccupant = _currentOccupantRuntimeId != null;
                 _currentOccupantRuntimeId = snapshot.occupant.runtimeId;
                 _spawnedCard.gameObject.SetActive(true);
 
                 if (isNewOccupant)
                 {
-                    PlaySlideIn();
+                    if (hadOccupant)
+                    {
+                        PlayReplace();
+                    }
+                    else
+                    {
+                        PlaySlideIn();
+                    }
                 }
             }
             else
@@ -202,6 +210,21 @@ namespace Flippy.CardDuelMobile.UI
             _pulseRoutine = StartCoroutine(SlideInRoutine(_spawnedCard.transform));
         }
 
+        private void PlayReplace()
+        {
+            if (_spawnedCard == null)
+            {
+                return;
+            }
+
+            if (_pulseRoutine != null)
+            {
+                StopCoroutine(_pulseRoutine);
+            }
+
+            _pulseRoutine = StartCoroutine(ReplaceRoutine(_spawnedCard.transform));
+        }
+
         private void PlayDeath(Transform target)
         {
             if (target == null)
@@ -270,6 +293,48 @@ namespace Flippy.CardDuelMobile.UI
             _pulseRoutine = null;
         }
 
+        private IEnumerator ReplaceRoutine(Transform target)
+        {
+            var elapsed = 0f;
+            const float duration = 0.15f;
+            var rect = target as RectTransform;
+            var startScale = target.localScale;
+            var startPos = rect != null ? rect.anchoredPosition : Vector2.zero;
+
+            // Shake and scale effect for replacement
+            if (rect != null)
+            {
+                rect.anchoredPosition = startPos;
+            }
+            target.localScale = startScale;
+
+            while (elapsed < duration && target != null)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                var t = Mathf.Clamp01(elapsed / duration);
+
+                // Shake effect
+                float shake = Mathf.Sin(t * Mathf.PI * 4) * (1 - t) * 8f;
+                if (rect != null)
+                {
+                    rect.anchoredPosition = startPos + new Vector2(shake, 0);
+                }
+
+                // Scale pulse
+                var scale = Mathf.Lerp(1f, 1.05f, Mathf.Sin(t * Mathf.PI) * 0.5f + 0.5f);
+                target.localScale = startScale * scale;
+                yield return null;
+            }
+
+            if (target != null && rect != null)
+            {
+                rect.anchoredPosition = startPos;
+                target.localScale = startScale;
+            }
+
+            _pulseRoutine = null;
+        }
+
         private IEnumerator DeathRoutine(Transform target)
         {
             var elapsed = 0f;
@@ -297,6 +362,116 @@ namespace Flippy.CardDuelMobile.UI
             if (target != null)
             {
                 Destroy(target.gameObject);
+            }
+
+            _pulseRoutine = null;
+        }
+
+        /// <summary>
+        /// Animate card from current position to new slot position.
+        /// Used when cards are displaced by replacement.
+        /// </summary>
+        public void PlaySlotTransition(Transform target, RectTransform sourceSlotRect)
+        {
+            if (_pulseRoutine != null)
+            {
+                StopCoroutine(_pulseRoutine);
+            }
+
+            _pulseRoutine = StartCoroutine(SlotToSlotRoutine(target, sourceSlotRect));
+        }
+
+        public CardViewWidget GetSpawnedCard()
+        {
+            return _spawnedCard;
+        }
+
+        public string GetCurrentOccupantRuntimeId()
+        {
+            return _currentOccupantRuntimeId;
+        }
+
+        /// <summary>
+        /// Animate card from world position to current position.
+        /// </summary>
+        public void PlayWorldPositionTransition(Transform target, Vector3 fromWorldPos, Vector3? toWorldPos = null)
+        {
+            if (_pulseRoutine != null)
+            {
+                StopCoroutine(_pulseRoutine);
+            }
+
+            _pulseRoutine = StartCoroutine(WorldPositionTransitionRoutine(target, fromWorldPos, toWorldPos));
+        }
+
+        private IEnumerator WorldPositionTransitionRoutine(Transform target, Vector3 fromWorldPos, Vector3? toWorldPos = null)
+        {
+            var elapsed = 0f;
+            const float duration = 0.25f;
+            var finalPos = toWorldPos ?? target.position;
+            var rect = target as RectTransform;
+
+            Debug.Log($"[BoardSlotButton] Animating {target.name} from {fromWorldPos} to {finalPos}");
+
+            while (elapsed < duration && target != null)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                var t = Mathf.Clamp01(elapsed / duration);
+                t = Mathf.SmoothStep(0, 1, t);
+
+                target.position = Vector3.Lerp(fromWorldPos, finalPos, t);
+                yield return null;
+            }
+
+            if (target != null)
+            {
+                target.position = finalPos;
+                if (rect != null)
+                {
+                    rect.localScale = Vector3.one;
+                }
+                var canvasGroup = target.GetComponent<CanvasGroup>();
+                if (canvasGroup != null)
+                {
+                    canvasGroup.alpha = 1f;
+                }
+            }
+
+            _pulseRoutine = null;
+        }
+
+        private IEnumerator SlotToSlotRoutine(Transform target, RectTransform sourceSlotRect)
+        {
+            var elapsed = 0f;
+            const float duration = 0.25f;
+            var rect = target as RectTransform;
+
+            if (rect == null || sourceSlotRect == null)
+                yield break;
+
+            // Current position (at source slot)
+            var fromPos = sourceSlotRect.anchoredPosition;
+            // Target position (at this slot, local 0,0)
+            var toPos = Vector2.zero;
+
+            var startScale = target.localScale;
+
+            while (elapsed < duration && target != null)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                var t = Mathf.Clamp01(elapsed / duration);
+                t = Mathf.SmoothStep(0, 1, t);
+
+                if (rect != null)
+                {
+                    rect.anchoredPosition = Vector2.Lerp(fromPos, toPos, t);
+                }
+                yield return null;
+            }
+
+            if (target != null && rect != null)
+            {
+                rect.anchoredPosition = toPos;
             }
 
             _pulseRoutine = null;

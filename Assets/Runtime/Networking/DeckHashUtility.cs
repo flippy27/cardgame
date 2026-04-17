@@ -27,8 +27,7 @@ namespace Flippy.CardDuelMobile.Networking
                     .Append(card.manaCost).Append(':')
                     .Append(card.attack).Append(':')
                     .Append(card.health).Append(':')
-                    .Append(card.canBePlayedInFront ? '1' : '0').Append(':')
-                    .Append(card.canBePlayedInBack ? '1' : '0')
+                    .Append((int)card.unitType)
                     .Append(';');
             }
 

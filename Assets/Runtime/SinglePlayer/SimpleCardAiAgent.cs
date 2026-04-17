@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.Core;
+using Flippy.CardDuelMobile.Data;
 
 namespace Flippy.CardDuelMobile.SinglePlayer
 {
@@ -178,15 +179,19 @@ namespace Flippy.CardDuelMobile.SinglePlayer
             score += definition.armor * 0.8f;
             score += definition.manaCost * 0.45f;
 
-            if (slot == BoardSlot.Front)
+            if (definition.cardType == CardType.Unit)
             {
-                score += definition.canBePlayedInFront && !definition.canBePlayedInBack ? 2.5f : 0.4f;
-                score += definition.health * 0.6f;
-            }
-            else
-            {
-                score += definition.canBePlayedInBack && !definition.canBePlayedInFront ? 2.5f : 0.4f;
-                score += definition.attack * 0.5f;
+                var isMelee = definition.unitType == UnitType.Melee;
+                if (slot == BoardSlot.Front)
+                {
+                    score += isMelee ? 2.5f : 0.4f;
+                    score += definition.health * 0.6f;
+                }
+                else
+                {
+                    score += !isMelee ? 2.5f : 0.4f;
+                    score += definition.attack * 0.5f;
+                }
             }
 
             if (definition.abilities != null)
