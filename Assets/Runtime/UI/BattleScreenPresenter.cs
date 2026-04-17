@@ -573,6 +573,7 @@ namespace Flippy.CardDuelMobile.UI
             GameLogger.Info("UI", "TryPlayDraggedCardTo: card played successfully");
             // Lock the placed card to its slot so it doesn't get displaced by animations
             _lockedSlot = slot;
+            Debug.Log($"[BattleScreenPresenter] Locked card to slot {slot}");
 
             ClearDragPreview();
             _dragDropCommitted = true;
@@ -609,6 +610,7 @@ namespace Flippy.CardDuelMobile.UI
 
             // Lock the placed card to its slot so it doesn't get displaced by animations
             _lockedSlot = slot;
+            Debug.Log($"[BattleScreenPresenter] Locked card to slot {slot} (click-to-play)");
 
             _selectedCard = null;
             RefreshSelectionLabel();
@@ -810,6 +812,7 @@ namespace Flippy.CardDuelMobile.UI
 
         private void ClearLastDroppedCard()
         {
+            Debug.Log($"[BattleScreenPresenter] Cleared card lock from {_lockedSlot}");
             _lockedSlot = null;
         }
 
