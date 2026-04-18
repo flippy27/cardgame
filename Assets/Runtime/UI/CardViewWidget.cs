@@ -24,6 +24,10 @@ namespace Flippy.CardDuelMobile.UI
         public TMPro.TextMeshProUGUI armorText;
         public TMPro.TextMeshProUGUI unitTypeText;
 
+        // Attack status indicators
+        public Image cooldownIcon;
+        public Image canAttackIcon;
+
         /// <summary>
         /// Pinta una carta de mano.
         /// </summary>
@@ -74,6 +78,26 @@ namespace Flippy.CardDuelMobile.UI
                     ? Color.white
                     : new Color(0.7f, 0.7f, 0.7f, 1f);
             }
+        }
+
+        /// <summary>
+        /// Actualiza iconos de estado de ataque.
+        /// </summary>
+        public void UpdateAttackIndicators(bool hasCooldown, bool canAttack)
+        {
+            if (cooldownIcon != null)
+                cooldownIcon.gameObject.SetActive(hasCooldown);
+
+            if (canAttackIcon != null)
+                canAttackIcon.gameObject.SetActive(canAttack);
+        }
+
+        /// <summary>
+        /// Oculta todos los iconos de ataque.
+        /// </summary>
+        public void HideAttackIndicators()
+        {
+            UpdateAttackIndicators(false, false);
         }
     }
 }

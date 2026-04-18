@@ -24,8 +24,6 @@ namespace Flippy.CardDuelMobile.UI
         public TMPro.TextMeshProUGUI labelTextTMP;
         public RectTransform cardAnchor;
         public Image hoverGlowImage;
-        public Image cooldownIcon;
-        public Image canAttackIcon;
 
         private BattleScreenPresenter _presenter;
         private CardViewWidget _spawnedCard;
@@ -598,13 +596,13 @@ namespace Flippy.CardDuelMobile.UI
 
         private void UpdateAttackIndicators()
         {
-            if (_currentOccupant == null)
+            if (_currentOccupant == null || _spawnedCard == null)
             {
                 HideAttackIndicators();
                 return;
             }
 
-            // Cargar definición de la carta para ver sus habilidades
+            // Cargar definición de la carta
             var cardDef = Data.CardRegistry.GetCard(_currentOccupant.cardId);
             if (cardDef == null || cardDef.cardType != Data.CardType.Unit)
             {
@@ -612,18 +610,14 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            // Cooldown: no disponible en snapshots (siempre 0 después de aplicar snapshot)
-            if (cooldownIcon != null)
-            {
-                cooldownIcon.gameObject.SetActive(false);
-            }
+            // Check if card still has cooldown
+            bool hasCooldown = _currentOccupant.turnsUntilCanAttack > 0;
 
-            // CanAttack: si el tipo de unidad puede atacar desde esta posición
-            if (canAttackIcon != null)
-            {
-                bool canAttack = CanAttackFromSlot(cardDef.unitType, slot);
-                canAttackIcon.gameObject.SetActive(canAttack);
-            }
+            // Determinar si puede atacar desde esta posición
+            bool canAttack = !hasCooldown && CanAttackFromSlot(cardDef.unitType, slot);
+
+            // Mostrar indicadores en la carta
+            _spawnedCard.UpdateAttackIndicators(hasCooldown, canAttack);
         }
 
         private bool CanAttackFromSlot(Data.UnitType unitType, BoardSlot slotPos)
@@ -641,10 +635,8 @@ namespace Flippy.CardDuelMobile.UI
 
         private void HideAttackIndicators()
         {
-            if (cooldownIcon != null)
-                cooldownIcon.gameObject.SetActive(false);
-            if (canAttackIcon != null)
-                canAttackIcon.gameObject.SetActive(false);
+            if (_spawnedCard != null)
+                _spawnedCard.HideAttackIndicators();
         }
     }
 }

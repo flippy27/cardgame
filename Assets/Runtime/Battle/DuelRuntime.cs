@@ -538,7 +538,8 @@ namespace Flippy.CardDuelMobile.Battle
                         armor = slot.Occupant.Armor,
                         slot = slot.Occupant.CurrentSlot,
                         canAttack = DetermineCanAttack(slot.Occupant),
-                        unitType = slot.Occupant.Definition != null ? (int)slot.Occupant.Definition.unitType : 0
+                        unitType = slot.Occupant.Definition != null ? (int)slot.Occupant.Definition.unitType : 0,
+                        turnsUntilCanAttack = slot.Occupant.TurnsUntilCanAttack
                     }
                 }).ToArray()
             };

@@ -78,5 +78,6 @@ namespace Flippy.CardDuelMobile.Battle
         public BoardSlot slot;
         public bool canAttack;
         public int unitType; // 0=Melee, 1=Ranged
+        public int turnsUntilCanAttack;
     }
 }
