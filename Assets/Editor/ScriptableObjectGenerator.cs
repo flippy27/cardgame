@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Flippy.CardDuelMobile.Data;
 using Flippy.CardDuelMobile.Core;
 
@@ -25,8 +26,71 @@ namespace Flippy.CardDuelMobile.Editor
             GenerateAbilities();
             GenerateCards();
             GenerateDecks();
+            GenerateCardCatalog();
             AssetDatabase.Refresh();
             EditorUtility.DisplayDialog("Success", "All assets generated successfully!", "OK");
+        }
+
+        [MenuItem("Tools/Data/Generate All + Refresh Everything")]
+        public static void GenerateAllAndRefreshEverything()
+        {
+            Debug.Log("[ScriptableObjectGenerator] Starting FULL refresh (abilities, cards, decks, icons, catalogs)");
+
+            // Generate from JSON
+            GenerateAbilities();
+            GenerateCards();
+            GenerateDecks();
+
+            // Generate visual assets
+            SkillIconGenerator.GenerateAllSkillIcons();
+            SkillIconGenerator.CreateSkillIconDefinition();
+
+            // Generate catalogs
+            GenerateCardCatalog();
+
+            // Final refresh
+            AssetDatabase.Refresh();
+            EditorUtility.DisplayDialog("Success", "ALL assets refreshed successfully!", "OK");
+        }
+
+        [MenuItem("Tools/Data/Generate Card Catalog")]
+        public static void GenerateCardCatalog()
+        {
+            Debug.Log("[ScriptableObjectGenerator] Generating CardCatalog");
+
+            // Find all CardDefinition assets
+            var cardAssets = new Dictionary<string, CardDefinition>();
+            LoadCardAssets(cardAssets);
+
+            if (cardAssets.Count == 0)
+            {
+                Debug.LogWarning("[ScriptableObjectGenerator] No CardDefinition assets found");
+                return;
+            }
+
+            // Ensure Resources directory exists
+            EnsureDirectoryExists("Assets/Resources");
+
+            // Create or load CardCatalog in Resources folder
+            string catalogPath = "Assets/Resources/CardCatalog.asset";
+            CardCatalog catalog = AssetDatabase.LoadAssetAtPath<CardCatalog>(catalogPath);
+
+            if (catalog == null)
+            {
+                catalog = ScriptableObject.CreateInstance<CardCatalog>();
+                AssetDatabase.CreateAsset(catalog, catalogPath);
+                Debug.Log($"[ScriptableObjectGenerator] Created CardCatalog asset at {catalogPath}");
+            }
+
+            // Populate with all cards (sorted by cardId for consistency)
+            var sortedCards = cardAssets.Values.OrderBy(c => c.cardId).ToList();
+            catalog.cards = sortedCards.ToArray();
+
+            EditorUtility.SetDirty(catalog);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            Debug.Log($"[ScriptableObjectGenerator] CardCatalog populated with {catalog.cards.Length} cards at {catalogPath}");
         }
 
         [MenuItem("Tools/Data/Generate Abilities")]
@@ -210,6 +274,12 @@ namespace Flippy.CardDuelMobile.Editor
                     effect = heroEffect;
                     break;
 
+                case "HasteEffectDefinition":
+                    var hasteEffect = ScriptableObject.CreateInstance<HasteEffectDefinition>();
+                    hasteEffect.name = $"Effect_{index}_{effectData.effectType}";
+                    effect = hasteEffect;
+                    break;
+
                 default:
                     Debug.LogWarning($"[ScriptableObjectGenerator] Unknown effect type: {effectData.effectType}");
                     return null;
@@ -272,6 +342,9 @@ namespace Flippy.CardDuelMobile.Editor
                 }
                 card.abilities = abilitiesList.ToArray();
             }
+
+            // Set turns until can attack
+            card.turnsUntilCanAttack = cardData.turnsUntilCanAttack;
 
             AssetDatabase.CreateAsset(card, assetPath);
             Debug.Log($"[ScriptableObjectGenerator] Created card asset: {assetPath}");
@@ -407,6 +480,7 @@ namespace Flippy.CardDuelMobile.Editor
         public int armor;
         public string unitType;
         public string[] abilities;
+        public int turnsUntilCanAttack = 1;
     }
 
     [System.Serializable]

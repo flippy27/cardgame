@@ -29,6 +29,8 @@ namespace Flippy.CardDuelMobile.Data
         [Header("Gameplay")]
         public TargetSelectorDefinition defaultAttackTargetSelector;
         public AbilityDefinition[] abilities;
+        [Tooltip("Turns until this card can attack after being played (1 = can't attack same turn)")]
+        public int turnsUntilCanAttack = 1;
 
         [Header("Visuals")]
         public CardVisualProfile visualProfile;

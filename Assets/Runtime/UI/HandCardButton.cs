@@ -30,7 +30,7 @@ namespace Flippy.CardDuelMobile.UI
         [Header("Drag")]
         public float dragMinDistance = 15f;
 
-        private CardInHandDto _dto;
+        public CardInHandDto _dto;
         private BattleScreenPresenter _presenter;
         private bool _canDrag;
         private bool _isDragging;

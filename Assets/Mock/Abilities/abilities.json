@@ -175,7 +175,11 @@
       "description": "Can attack immediately when played",
       "trigger": "OnPlay",
       "skillType": "Utility",
-      "effects": []
+      "effects": [
+        {
+          "effectType": "HasteEffectDefinition"
+        }
+      ]
     },
     {
       "abilityId": "lifelink",

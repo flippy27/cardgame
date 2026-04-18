@@ -24,6 +24,8 @@ namespace Flippy.CardDuelMobile.UI
         public TMPro.TextMeshProUGUI labelTextTMP;
         public RectTransform cardAnchor;
         public Image hoverGlowImage;
+        public Image cooldownIcon;
+        public Image canAttackIcon;
 
         private BattleScreenPresenter _presenter;
         private CardViewWidget _spawnedCard;
@@ -34,6 +36,7 @@ namespace Flippy.CardDuelMobile.UI
         private bool _hasDrag;
         private bool _isOccupied;
         private Coroutine _pulseRoutine;
+        private BoardCardDto _currentOccupant;
 
         public RectTransform CardAnchor => cardAnchor != null ? cardAnchor : transform as RectTransform;
 
@@ -92,11 +95,17 @@ namespace Flippy.CardDuelMobile.UI
                 EnsureSpawnedCard();
                 _spawnedCard.Bind(snapshot.occupant);
                 _currentOccupantRuntimeId = snapshot.occupant.runtimeId;
+                _currentOccupant = snapshot.occupant;
                 _spawnedCard.gameObject.SetActive(true);
+
+                // Update attack indicators
+                UpdateAttackIndicators();
             }
             else
             {
                 // Slot is empty
+                _currentOccupant = null;
+                HideAttackIndicators();
             }
 
             var canInteract = isLocalSide && isLocalTurn && hasSelectedCard && legalForSelectedCard && !_isOccupied;
@@ -166,7 +175,20 @@ namespace Flippy.CardDuelMobile.UI
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (_presenter == null || !isLocalSide)
+            if (_presenter == null)
+            {
+                return;
+            }
+
+            // Si hay carta en este slot, mostrar detail view
+            if (_isOccupied && _currentOccupant != null)
+            {
+                _presenter.ShowDetailView(_currentOccupant);
+                return;
+            }
+
+            // Si no hay carta y es lado local, intentar jugar
+            if (!isLocalSide)
             {
                 return;
             }
@@ -572,6 +594,57 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             return _legalForSelectedCard ? $"{sideName} {slotName}\nDrop Here" : $"{sideName} {slotName}\nInvalid";
+        }
+
+        private void UpdateAttackIndicators()
+        {
+            if (_currentOccupant == null)
+            {
+                HideAttackIndicators();
+                return;
+            }
+
+            // Cargar definición de la carta para ver sus habilidades
+            var cardDef = Data.CardRegistry.GetCard(_currentOccupant.cardId);
+            if (cardDef == null || cardDef.cardType != Data.CardType.Unit)
+            {
+                HideAttackIndicators();
+                return;
+            }
+
+            // Cooldown: no disponible en snapshots (siempre 0 después de aplicar snapshot)
+            if (cooldownIcon != null)
+            {
+                cooldownIcon.gameObject.SetActive(false);
+            }
+
+            // CanAttack: si el tipo de unidad puede atacar desde esta posición
+            if (canAttackIcon != null)
+            {
+                bool canAttack = CanAttackFromSlot(cardDef.unitType, slot);
+                canAttackIcon.gameObject.SetActive(canAttack);
+            }
+        }
+
+        private bool CanAttackFromSlot(Data.UnitType unitType, BoardSlot slotPos)
+        {
+            // Melee: ataca solo desde Front
+            if (slotPos == BoardSlot.Front)
+                return unitType == Data.UnitType.Melee;
+
+            // Ranged/Magic: atacan desde Back slots
+            if (slotPos == BoardSlot.BackLeft || slotPos == BoardSlot.BackRight)
+                return unitType == Data.UnitType.Ranged || unitType == Data.UnitType.Magic;
+
+            return false;
+        }
+
+        private void HideAttackIndicators()
+        {
+            if (cooldownIcon != null)
+                cooldownIcon.gameObject.SetActive(false);
+            if (canAttackIcon != null)
+                canAttackIcon.gameObject.SetActive(false);
         }
     }
 }

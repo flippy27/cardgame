@@ -23,7 +23,8 @@ namespace Flippy.CardDuelMobile.Battle
             _rules = rules;
             _context = new BattleContext(_state);
 
-            // Initialize skill system
+            // Initialize registries
+            CardRegistry.Initialize();
             SkillRegistry.Initialize();
         }
 
@@ -185,7 +186,8 @@ namespace Flippy.CardDuelMobile.Battle
                 MaxHealth = handEntry.Definition.health,
                 Armor = handEntry.Definition.armor,
                 CurrentSlot = slot,
-                Definition = handEntry.Definition
+                Definition = handEntry.Definition,
+                TurnsUntilCanAttack = handEntry.Definition.turnsUntilCanAttack
             };
 
             // Initialize skills
@@ -710,6 +712,10 @@ namespace Flippy.CardDuelMobile.Battle
                 return false;
 
             if (card.Definition.cardType != CardType.Unit)
+                return false;
+
+            // Check if card has waited long enough to attack
+            if (card.TurnsUntilCanAttack > 0)
                 return false;
 
             var unitType = card.Definition.unitType;

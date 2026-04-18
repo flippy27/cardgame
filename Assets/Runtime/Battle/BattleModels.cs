@@ -29,6 +29,9 @@ namespace Flippy.CardDuelMobile.Battle
         public bool Stunned;
         public bool HasShield;
         public int EnrageBonus;
+
+        // Timing
+        public int TurnsUntilCanAttack = 1; // Default: can't attack same turn played
     }
 
     [Serializable]

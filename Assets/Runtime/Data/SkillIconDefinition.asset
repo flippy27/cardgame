@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf9b80e163954d62b69351a5814bb82, type: 3}
+  m_Name: SkillIconDefinition
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Data.SkillIconDefinition
+  skillIcons:
+  - skillId: regenerate
+    icon: {fileID: 2800000, guid: a1974679aa63949a488d1cfe41ceb744, type: 3}
+  - skillId: shield
+    icon: {fileID: 2800000, guid: b59a5afc73f884b3ea48c46252b7ea33, type: 3}
+  - skillId: taunt
+    icon: {fileID: 2800000, guid: 3830c7d6386a7434cb0089d4728cf337, type: 3}
+  - skillId: dodge
+    icon: {fileID: 2800000, guid: 84adb5d66f3c140e28935a458263c919, type: 3}
+  - skillId: evasion
+    icon: {fileID: 2800000, guid: b2c63972e466f4d33a6730375f04abf1, type: 3}
+  - skillId: reflection
+    icon: {fileID: 2800000, guid: 79959a6aef1684dd5aa1744cbe2a6fdc, type: 3}
+  - skillId: fly
+    icon: {fileID: 2800000, guid: 5920a73cc32424784a46f891895336e0, type: 3}
+  - skillId: trample
+    icon: {fileID: 2800000, guid: 392fa0dd967fd4f62ac8b5ab43e6f03c, type: 3}
+  - skillId: cleave
+    icon: {fileID: 2800000, guid: 4f5c165ec67d743ce96b323785248662, type: 3}
+  - skillId: poison
+    icon: {fileID: 2800000, guid: 7fa21e877c3224a9eb77a804c78387e5, type: 3}
+  - skillId: stun
+    icon: {fileID: 2800000, guid: 9fe6e9233bf5843a1932ff6732343106, type: 3}
+  - skillId: execute
+    icon: {fileID: 2800000, guid: f001b7ba3a4e040ecbdc1a314a7be425, type: 3}
+  - skillId: ricochet
+    icon: {fileID: 2800000, guid: 599c4698a272c457d9f41332e315fadd, type: 3}
+  - skillId: leech
+    icon: {fileID: 2800000, guid: 4f0470458461f415184484e37c2917e9, type: 3}
+  - skillId: enrage
+    icon: {fileID: 2800000, guid: d035d91209c5e43889764634df1e41fd, type: 3}
+  - skillId: mana_burn
+    icon: {fileID: 2800000, guid: 98562f32d6b10439d9c03fedd81750ee, type: 3}
+  - skillId: last_stand
+    icon: {fileID: 2800000, guid: 4f0400b710ff34b7fa41c5c71c72db9a, type: 3}
+  - skillId: charge
+    icon: {fileID: 2800000, guid: 5b95e3a1a456644f7a09b15d3b985f7c, type: 3}
+  - skillId: haste
+    icon: {fileID: 2800000, guid: 3d07dc5de525d41849eabe0f3b5736f5, type: 3}
+  - skillId: lifelink
+    icon: {fileID: 2800000, guid: b6ca569dfaa3f41c3bd73f44b10e522a, type: 3}

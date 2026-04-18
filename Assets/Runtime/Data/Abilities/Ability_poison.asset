@@ -18,8 +18,8 @@ MonoBehaviour:
   trigger: 3
   targetSelector: {fileID: 0}
   effects:
-  - {fileID: 1611909369986450734}
---- !u!114 &1611909369986450734
+  - {fileID: 5887871340997669048}
+--- !u!114 &5887871340997669048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

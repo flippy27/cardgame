@@ -278,7 +278,8 @@
       "health": 1,
       "armor": 0,
       "unitType": "Melee",
-      "abilities": ["haste"]
+      "abilities": ["haste"],
+      "turnsUntilCanAttack": 0
     },
     {
       "cardId": "lifelink_creature",

@@ -224,6 +224,17 @@ namespace Flippy.CardDuelMobile.UI
             detailViewInstance.gameObject.SetActive(true);
         }
 
+        public void ShowDetailView(BoardCardDto dto)
+        {
+            if (dto == null || detailViewInstance == null)
+            {
+                return;
+            }
+
+            detailViewInstance.SetCard(dto);
+            detailViewInstance.gameObject.SetActive(true);
+        }
+
         public void HideDetailView()
         {
             if (detailViewInstance != null)

@@ -1056,6 +1056,108 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1 &168756985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 168756986}
+  - component: {fileID: 168756988}
+  - component: {fileID: 168756989}
+  - component: {fileID: 168756987}
+  m_Layer: 0
+  m_Name: CooldownIndicatorImg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &168756986
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168756985}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1662091406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -517.17, y: 25.991}
+  m_SizeDelta: {x: 121.78, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &168756987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168756985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!222 &168756988
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168756985}
+  m_CullTransparentMesh: 1
+--- !u!114 &168756989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168756985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.49056602, g: 0.17354931, b: 0.46338964, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &171144817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1343,7 @@ GameObject:
   - component: {fileID: 238408299}
   - component: {fileID: 238408301}
   - component: {fileID: 238408300}
+  - component: {fileID: 238408304}
   m_Layer: 0
   m_Name: CardDetailViewPrefab
   m_TagString: Untagged
@@ -1261,6 +1364,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.CardDetailView
   cardViewWidget: {fileID: 0}
+  skillDisplay: {fileID: 0}
+  cooldownIcon: {fileID: 168756989}
+  canAttackIcon: {fileID: 712720599}
 --- !u!114 &238408300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1331,6 +1437,22 @@ RectTransform:
   m_AnchoredPosition: {x: -1.94, y: -22.29}
   m_SizeDelta: {x: 1196.12, y: 1754.76}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &238408304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238408298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc5982813da54b129a6eacc64cca210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.CardSkillDisplay
+  skillIconContainer: {fileID: 278515891}
+  skillIconPrefab: {fileID: 5424676672585082580, guid: c63f4bbd2fab84dd69e7fb55086ac731, type: 3}
+  skillIcons: {fileID: 11400000, guid: 904b5109bc88d4e30898d9a0fe4644c0, type: 2}
+  maxSkillsDisplayed: 3
 --- !u!1 &243447827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,6 +1589,108 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243447827}
+  m_CullTransparentMesh: 1
+--- !u!1 &278515890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278515891}
+  - component: {fileID: 278515894}
+  - component: {fileID: 278515893}
+  - component: {fileID: 278515892}
+  m_Layer: 0
+  m_Name: SkillIconContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &278515891
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278515890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1662091406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -62.42, y: -496}
+  m_SizeDelta: {x: 830.12, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &278515892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278515890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &278515893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278515890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &278515894
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278515890}
   m_CullTransparentMesh: 1
 --- !u!1 &286048349
 GameObject:
@@ -1611,6 +1835,8 @@ MonoBehaviour:
   labelTextTMP: {fileID: 1291445502}
   cardAnchor: {fileID: 1463381715}
   hoverGlowImage: {fileID: 151021811}
+  cooldownIcon: {fileID: 0}
+  canAttackIcon: {fileID: 0}
 --- !u!1 &399654110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2576,6 +2802,8 @@ MonoBehaviour:
   labelTextTMP: {fileID: 509407867}
   cardAnchor: {fileID: 1645860592}
   hoverGlowImage: {fileID: 1371088290}
+  cooldownIcon: {fileID: 0}
+  canAttackIcon: {fileID: 0}
 --- !u!224 &539817436
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3312,6 +3540,110 @@ MonoBehaviour:
   labelTextTMP: {fileID: 1020671301}
   cardAnchor: {fileID: 977204001}
   hoverGlowImage: {fileID: 654283764}
+  cooldownIcon: {fileID: 0}
+  canAttackIcon: {fileID: 0}
+--- !u!1 &712720598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 712720602}
+  - component: {fileID: 712720601}
+  - component: {fileID: 712720599}
+  - component: {fileID: 712720600}
+  m_Layer: 0
+  m_Name: CanAttackIndicatorImg(top-top, range - range)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &712720599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712720598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.17254905, g: 0.49019608, b: 0.19840322, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &712720600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712720598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!222 &712720601
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712720598}
+  m_CullTransparentMesh: 1
+--- !u!224 &712720602
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712720598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1662091406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -517.17, y: -81}
+  m_SizeDelta: {x: 121.78, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &731833713
 GameObject:
   m_ObjectHideFlags: 0
@@ -3893,8 +4225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Networking.CardDuelNetworkCoordinator
   ShowTopMostFoldoutHeaderGroup: 1
   rulesProfile: {fileID: 11400000, guid: 1fde81dd3935ccd4ba9af7796ca14aad, type: 2}
-  deckPlayerA: {fileID: 11400000, guid: 72e6813897fcb4f3a9129ddcfc58d1ba, type: 2}
-  deckPlayerB: {fileID: 11400000, guid: 5372a66c083c346008b2f20e1f53b9c6, type: 2}
+  deckPlayerA: {fileID: 0}
+  deckPlayerB: {fileID: 0}
   disconnectGraceSeconds: 20
   requireBothPlayersReady: 1
 --- !u!4 &919382225
@@ -4497,8 +4829,8 @@ MonoBehaviour:
   autoStartOnStart: 0
   localPlayerIndex: 0
   rulesProfile: {fileID: 11400000, guid: 1fde81dd3935ccd4ba9af7796ca14aad, type: 2}
-  localPlayerDeck: {fileID: 11400000, guid: 5372a66c083c346008b2f20e1f53b9c6, type: 2}
-  enemyDeck: {fileID: 11400000, guid: 0844781b16b804d86a7bd5d1940d49f3, type: 2}
+  localPlayerDeck: {fileID: 11400000, guid: 72e6813897fcb4f3a9129ddcfc58d1ba, type: 2}
+  enemyDeck: {fileID: 11400000, guid: 5372a66c083c346008b2f20e1f53b9c6, type: 2}
   aiDifficulty: 1
   aiFirstActionDelay: 0.45
   aiActionDelay: 0.35
@@ -5991,6 +6323,8 @@ MonoBehaviour:
   labelTextTMP: {fileID: 1770174683}
   cardAnchor: {fileID: 1693709610}
   hoverGlowImage: {fileID: 859358746}
+  cooldownIcon: {fileID: 0}
+  canAttackIcon: {fileID: 0}
 --- !u!1 &1523297097
 GameObject:
   m_ObjectHideFlags: 0
@@ -6547,6 +6881,9 @@ RectTransform:
   - {fileID: 108152325}
   - {fileID: 171144818}
   - {fileID: 1854262515}
+  - {fileID: 278515891}
+  - {fileID: 168756986}
+  - {fileID: 712720602}
   m_Father: {fileID: 238408303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7239,6 +7576,8 @@ MonoBehaviour:
   labelTextTMP: {fileID: 1350229894}
   cardAnchor: {fileID: 629656467}
   hoverGlowImage: {fileID: 1790753471}
+  cooldownIcon: {fileID: 0}
+  canAttackIcon: {fileID: 0}
 --- !u!224 &1781915949
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8215,6 +8554,8 @@ MonoBehaviour:
   labelTextTMP: {fileID: 243447829}
   cardAnchor: {fileID: 232747857}
   hoverGlowImage: {fileID: 72294100}
+  cooldownIcon: {fileID: 0}
+  canAttackIcon: {fileID: 0}
 --- !u!1 &1971045646
 GameObject:
   m_ObjectHideFlags: 0
