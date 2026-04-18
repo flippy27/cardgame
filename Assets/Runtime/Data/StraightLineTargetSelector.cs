@@ -6,9 +6,9 @@ using Flippy.CardDuelMobile.Core;
 namespace Flippy.CardDuelMobile.Data
 {
     /// <summary>
-    /// Straight-line attack selector: each position attacks its mirror position.
-    /// Front → Front, BackLeft → BackLeft, BackRight → BackRight
-    /// Falls back to Front if target slot empty.
+    /// Straight-line target selector: attacks same slot as attacker.
+    /// If target slot empty, targets Front slot.
+    /// If both empty, returns no target (hero takes damage).
     /// </summary>
     [CreateAssetMenu(menuName = "Cards/Target Selector/Straight Line", fileName = "TS_StraightLine")]
     public sealed class StraightLineTargetSelector : TargetSelectorDefinition
@@ -16,34 +16,35 @@ namespace Flippy.CardDuelMobile.Data
         public override void SelectTargets(BattleContext context, TargetSelectionRequest request, List<string> results)
         {
             results.Clear();
-            var enemy = context.GetPlayerState(request.TargetPlayer);
-            if (enemy == null)
+            
+            if (string.IsNullOrEmpty(request.SourceRuntimeId))
+                return;
+
+            var source = context.FindCard(request.SourceRuntimeId);
+            if (source == null)
+                return;
+
+            var targetPlayer = context.GetPlayerState(request.TargetPlayer);
+            if (targetPlayer == null)
+                return;
+
+            // Try same slot as attacker
+            var slotRuntime = targetPlayer.FindSlot(source.CurrentSlot);
+            if (slotRuntime?.Occupant != null)
             {
+                results.Add(slotRuntime.Occupant.RuntimeId);
                 return;
             }
 
-            // Check for taunt target first
-            var tauntTarget = context.FindTauntTarget(request.TargetPlayer);
-            if (tauntTarget != null)
+            // Fall back to Front
+            var frontSlot = targetPlayer.FindSlot(BoardSlot.Front);
+            if (frontSlot?.Occupant != null)
             {
-                results.Add(tauntTarget.RuntimeId);
+                results.Add(frontSlot.Occupant.RuntimeId);
                 return;
             }
 
-            // Try to hit same slot
-            var target = enemy.FindOccupant(request.SourceSlot);
-            if (target != null)
-            {
-                results.Add(target.RuntimeId);
-                return;
-            }
-
-            // Fallback to Front if source slot empty
-            target = enemy.FindOccupant(BoardSlot.Front);
-            if (target != null)
-            {
-                results.Add(target.RuntimeId);
-            }
+            // No target - hero takes damage (results stays empty)
         }
     }
 }

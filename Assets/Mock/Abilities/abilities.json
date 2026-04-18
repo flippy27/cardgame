@@ -1,0 +1,189 @@
+{
+  "abilities": [
+    {
+      "abilityId": "regenerate",
+      "displayName": "Regenerate",
+      "description": "Heals 1 HP at end of turn",
+      "trigger": "OnTurnEnd",
+      "skillType": "Defensive",
+      "effects": [
+        {
+          "effectType": "HealEffectDefinition",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "abilityId": "shield",
+      "displayName": "Shield",
+      "description": "Absorbs one full attack",
+      "trigger": "OnBattlePhase",
+      "skillType": "Defensive",
+      "effects": [
+        {
+          "effectType": "GainArmorEffectDefinition",
+          "amount": 999
+        }
+      ]
+    },
+    {
+      "abilityId": "taunt",
+      "displayName": "Taunt",
+      "description": "All enemy attacks must target this card",
+      "trigger": "OnBattlePhase",
+      "skillType": "Defensive",
+      "effects": []
+    },
+    {
+      "abilityId": "dodge",
+      "displayName": "Dodge",
+      "description": "Ranged attacks cannot target this card",
+      "trigger": "OnBattlePhase",
+      "skillType": "Defensive",
+      "effects": []
+    },
+    {
+      "abilityId": "evasion",
+      "displayName": "Evasion",
+      "description": "X% chance to dodge attacks",
+      "trigger": "OnBattlePhase",
+      "skillType": "Defensive",
+      "effects": []
+    },
+    {
+      "abilityId": "reflection",
+      "displayName": "Reflection",
+      "description": "Reflects X% damage back to attacker",
+      "trigger": "OnBattlePhase",
+      "skillType": "Defensive",
+      "effects": []
+    },
+    {
+      "abilityId": "fly",
+      "displayName": "Fly",
+      "description": "Only flying units can attack this card",
+      "trigger": "OnBattlePhase",
+      "skillType": "Defensive",
+      "effects": []
+    },
+    {
+      "abilityId": "trample",
+      "displayName": "Trample",
+      "description": "Ignores armor when attacking",
+      "trigger": "OnBattlePhase",
+      "skillType": "Offensive",
+      "effects": []
+    },
+    {
+      "abilityId": "cleave",
+      "displayName": "Cleave",
+      "description": "Hits all enemies in same row",
+      "trigger": "OnBattlePhase",
+      "skillType": "Offensive",
+      "effects": []
+    },
+    {
+      "abilityId": "poison",
+      "displayName": "Poison",
+      "description": "Applies 1 poison stack per turn",
+      "trigger": "OnBattlePhase",
+      "skillType": "Offensive",
+      "effects": [
+        {
+          "effectType": "DamageEffectDefinition",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "abilityId": "stun",
+      "displayName": "Stun",
+      "description": "Target skips next attack",
+      "trigger": "OnBattlePhase",
+      "skillType": "Offensive",
+      "effects": []
+    },
+    {
+      "abilityId": "execute",
+      "displayName": "Execute",
+      "description": "Bonus damage proportional to missing health",
+      "trigger": "OnBattlePhase",
+      "skillType": "Offensive",
+      "effects": []
+    },
+    {
+      "abilityId": "ricochet",
+      "displayName": "Ricochet",
+      "description": "After kill, excess damage hits adjacent card",
+      "trigger": "OnBattlePhase",
+      "skillType": "Offensive",
+      "effects": []
+    },
+    {
+      "abilityId": "leech",
+      "displayName": "Leech",
+      "description": "Heals hero equal to 50% damage dealt",
+      "trigger": "OnBattlePhase",
+      "skillType": "Offensive",
+      "effects": []
+    },
+    {
+      "abilityId": "enrage",
+      "displayName": "Enrage",
+      "description": "Gains +1 ATK when damaged",
+      "trigger": "OnDamaged",
+      "skillType": "Offensive",
+      "effects": [
+        {
+          "effectType": "BuffAttackEffectDefinition",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "abilityId": "mana_burn",
+      "displayName": "Mana Burn",
+      "description": "Costs enemy 1 mana when attacking",
+      "trigger": "OnBattlePhase",
+      "skillType": "Offensive",
+      "effects": []
+    },
+    {
+      "abilityId": "last_stand",
+      "displayName": "Last Stand",
+      "description": "If alone on board, deal double damage",
+      "trigger": "OnBattlePhase",
+      "skillType": "Synergy",
+      "effects": [
+        {
+          "effectType": "BuffAttackEffectDefinition",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "abilityId": "charge",
+      "displayName": "Charge",
+      "description": "Can attack turn it's played",
+      "trigger": "OnPlay",
+      "skillType": "Synergy",
+      "effects": []
+    },
+    {
+      "abilityId": "haste",
+      "displayName": "Haste",
+      "description": "Can attack immediately when played",
+      "trigger": "OnPlay",
+      "skillType": "Utility",
+      "effects": []
+    },
+    {
+      "abilityId": "lifelink",
+      "displayName": "Lifelink",
+      "description": "Heals hero equal to damage dealt",
+      "trigger": "OnBattlePhase",
+      "skillType": "Utility",
+      "effects": []
+    }
+  ]
+}

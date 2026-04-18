@@ -21,6 +21,9 @@ namespace Flippy.CardDuelMobile.Battle
         public CardDefinition Definition;
         public bool IsDead => CurrentHealth <= 0;
 
+        // Attack selector (determined by unitType or skills)
+        public TargetSelectorDefinition EffectiveAttackSelector;
+
         // Status effects
         public int PoisonStacks;
         public bool Stunned;

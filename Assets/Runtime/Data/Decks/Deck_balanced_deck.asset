@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06954f623c832604f82644a46a9eed4c, type: 3}
+  m_Name: Deck_balanced_deck
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Data.DeckDefinition
+  deckId: balanced_deck
+  displayName: Balanced Builder
+  description: Mix of offense, defense, and utility
+  deckType: Balanced
+  faction: 0
+  cards:
+  - card: {fileID: 11400000, guid: ed7728948f504409483cd179f3bd82d7, type: 2}
+    quantity: 2
+  - card: {fileID: 11400000, guid: 9864cbf5474064996a6d0d58546f4143, type: 2}
+    quantity: 3
+  - card: {fileID: 11400000, guid: 004880fb800d0485f851f1633ef57866, type: 2}
+    quantity: 2
+  - card: {fileID: 11400000, guid: 77fbd2f47dc7e4cba83d664cc2e3cb61, type: 2}
+    quantity: 2

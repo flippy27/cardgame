@@ -30,7 +30,7 @@ namespace Flippy.CardDuelMobile.Tests.Battle
         [Test]
         public void Validate_EmptyDeck_Fails()
         {
-            var deck = new DeckDefinition { cards = new CardDefinition[] { } };
+            var deck = new DeckDefinition { cards = new DeckDefinition.DeckCard[] { } };
 
             var result = DeckValidator.Validate(deck, _rules);
 

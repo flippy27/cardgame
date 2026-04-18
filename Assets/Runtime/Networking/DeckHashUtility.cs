@@ -20,14 +20,16 @@ namespace Flippy.CardDuelMobile.Networking
             var builder = new StringBuilder();
             builder.Append(deck.deckId).Append('|');
 
-            foreach (var card in deck.cards.Where(card => card != null))
+            foreach (var deckCard in deck.cards.Where(card => card != null && card.card != null))
             {
+                var card = deckCard.card;
                 builder
                     .Append(card.cardId).Append(':')
                     .Append(card.manaCost).Append(':')
                     .Append(card.attack).Append(':')
                     .Append(card.health).Append(':')
-                    .Append((int)card.unitType)
+                    .Append((int)card.unitType).Append(':')
+                    .Append(deckCard.quantity)
                     .Append(';');
             }
 

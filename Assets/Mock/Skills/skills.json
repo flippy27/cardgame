@@ -1,0 +1,84 @@
+{
+  "skills": [
+    {
+      "skillId": "armor",
+      "displayName": "Armor",
+      "description": "Absorbs incoming damage before health is reduced",
+      "skillType": "Defensive",
+      "properties": {
+        "armorAmount": 5
+      }
+    },
+    {
+      "skillId": "shield",
+      "displayName": "Shield",
+      "description": "Absorbs one full attack (divine shield)",
+      "skillType": "Defensive",
+      "properties": {}
+    },
+    {
+      "skillId": "fly",
+      "displayName": "Fly",
+      "description": "Only flying units can attack this card",
+      "skillType": "Modifier",
+      "properties": {}
+    },
+    {
+      "skillId": "trample",
+      "displayName": "Trample",
+      "description": "Ignores armor when attacking",
+      "skillType": "Modifier",
+      "properties": {}
+    },
+    {
+      "skillId": "poison",
+      "displayName": "Poison",
+      "description": "Applies poison stacks: X damage per turn",
+      "skillType": "Offensive",
+      "properties": {
+        "poisonStacks": 1
+      }
+    },
+    {
+      "skillId": "stun",
+      "displayName": "Stun",
+      "description": "Target skips next attack",
+      "skillType": "Offensive",
+      "properties": {}
+    },
+    {
+      "skillId": "leech",
+      "displayName": "Leech",
+      "description": "Heals hero equal to damage dealt",
+      "skillType": "Offensive",
+      "properties": {
+        "leechPercent": 50
+      }
+    },
+    {
+      "skillId": "enrage",
+      "displayName": "Enrage",
+      "description": "Gains +1 ATK when damaged",
+      "skillType": "Offensive",
+      "properties": {
+        "bonusPerHit": 1
+      }
+    },
+    {
+      "skillId": "regenerate",
+      "displayName": "Regenerate",
+      "description": "Heals X HP at end of turn",
+      "skillType": "Utility",
+      "properties": {
+        "healAmount": 1
+      }
+    },
+    {
+      "skillId": "taunt",
+      "displayName": "Taunt",
+      "description": "All enemy attacks must target this card if alive",
+      "skillType": "Utility",
+      "properties": {}
+    }
+  ]
+}

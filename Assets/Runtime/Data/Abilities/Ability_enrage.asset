@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7400dc6030929840b0c7c5b81c7c849, type: 3}
+  m_Name: Ability_enrage
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Data.AbilityDefinition
+  abilityId: enrage
+  displayName: Enrage
+  description: Gains +1 ATK when damaged
+  trigger: 4
+  targetSelector: {fileID: 0}
+  effects:
+  - {fileID: 6501806919404079985}
+--- !u!114 &6501806919404079985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fe5592b90ec4e4199a44ed0e82af61, type: 3}
+  m_Name: Effect_0_BuffAttackEffectDefinition
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Data.BuffAttackEffectDefinition
+  designerNotes: 
+  amount: 1

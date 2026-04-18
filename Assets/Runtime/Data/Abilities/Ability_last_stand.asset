@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7400dc6030929840b0c7c5b81c7c849, type: 3}
+  m_Name: Ability_last_stand
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Data.AbilityDefinition
+  abilityId: last_stand
+  displayName: Last Stand
+  description: If alone on board, deal double damage
+  trigger: 3
+  targetSelector: {fileID: 0}
+  effects:
+  - {fileID: 8223101202365375836}
+--- !u!114 &8223101202365375836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fe5592b90ec4e4199a44ed0e82af61, type: 3}
+  m_Name: Effect_0_BuffAttackEffectDefinition
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Data.BuffAttackEffectDefinition
+  designerNotes: 
+  amount: 1

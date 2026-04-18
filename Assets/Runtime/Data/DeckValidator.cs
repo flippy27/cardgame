@@ -74,14 +74,14 @@ namespace Flippy.CardDuelMobile.Data
 
             // Count copies per card
             var cardCounts = new Dictionary<string, int>();
-            foreach (var card in deck.cards.Where(c => c != null))
+            foreach (var deckCard in deck.cards.Where(c => c != null && c.card != null))
             {
-                var key = card.cardId;
+                var key = deckCard.card.cardId;
                 if (!cardCounts.ContainsKey(key))
                 {
                     cardCounts[key] = 0;
                 }
-                cardCounts[key]++;
+                cardCounts[key] += deckCard.quantity;
             }
 
             // Copy limits
@@ -95,12 +95,12 @@ namespace Flippy.CardDuelMobile.Data
             if (cardLookup != null)
             {
                 var legendaryCount = 0;
-                foreach (var card in deck.cards.Where(c => c != null))
+                foreach (var deckCard in deck.cards.Where(c => c != null && c.card != null))
                 {
-                    var def = cardLookup(card.cardId);
+                    var def = cardLookup(deckCard.card.cardId);
                     if (def != null && def.rarity == Core.CardRarity.Legendary)
                     {
-                        legendaryCount++;
+                        legendaryCount += deckCard.quantity;
                     }
                 }
 

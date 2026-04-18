@@ -1,0 +1,129 @@
+{
+  "decks": [
+    {
+      "deckId": "defensive_deck",
+      "displayName": "Defensive Fortress",
+      "description": "Focus on shields, armor, and tanking damage",
+      "deckType": "Defensive",
+      "faction": "Celestial",
+      "cards": [
+        {
+          "cardId": "shielded_guardian",
+          "quantity": 3
+        },
+        {
+          "cardId": "regenerating_warrior",
+          "quantity": 3
+        },
+        {
+          "cardId": "taunt_bearer",
+          "quantity": 2
+        },
+        {
+          "cardId": "basic_soldier",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "deckId": "aggressive_deck",
+      "displayName": "Aggressive Assault",
+      "description": "Focused on damage and finishing fast",
+      "deckType": "Aggressive",
+      "faction": "Ember",
+      "cards": [
+        {
+          "cardId": "trampling_beast",
+          "quantity": 3
+        },
+        {
+          "cardId": "cleaving_knight",
+          "quantity": 2
+        },
+        {
+          "cardId": "charging_cavalry",
+          "quantity": 3
+        },
+        {
+          "cardId": "enraged_berserker",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "deckId": "control_deck",
+      "displayName": "Control Master",
+      "description": "Stop enemy plans with stuns and disables",
+      "deckType": "Control",
+      "faction": "Shadow",
+      "cards": [
+        {
+          "cardId": "poisoner",
+          "quantity": 3
+        },
+        {
+          "cardId": "stunning_mage",
+          "quantity": 3
+        },
+        {
+          "cardId": "mana_drainer",
+          "quantity": 2
+        },
+        {
+          "cardId": "executioner",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "deckId": "balanced_deck",
+      "displayName": "Balanced Builder",
+      "description": "Mix of offense, defense, and utility",
+      "deckType": "Balanced",
+      "faction": "Nature",
+      "cards": [
+        {
+          "cardId": "ricochet_archer",
+          "quantity": 2
+        },
+        {
+          "cardId": "evasive_scout",
+          "quantity": 3
+        },
+        {
+          "cardId": "charging_cavalry",
+          "quantity": 2
+        },
+        {
+          "cardId": "regenerating_warrior",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "deckId": "synergy_deck",
+      "displayName": "Synergy Combo",
+      "description": "Multiple abilities that work together",
+      "deckType": "Synergy",
+      "faction": "Celestial",
+      "cards": [
+        {
+          "cardId": "multi_skill_champion",
+          "quantity": 2
+        },
+        {
+          "cardId": "last_stand_hero",
+          "quantity": 2
+        },
+        {
+          "cardId": "leeching_vampire",
+          "quantity": 2
+        },
+        {
+          "cardId": "reflecting_mage",
+          "quantity": 2
+        }
+      ]
+    }
+  ]
+}

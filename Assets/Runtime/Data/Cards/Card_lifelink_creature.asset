@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059bcad5aaabf3a4d97c0b7aef8f7e71, type: 3}
+  m_Name: Card_lifelink_creature
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Data.CardDefinition
+  cardId: lifelink_creature
+  displayName: Lifelink Creature
+  description: All damage heals hero
+  faction: 0
+  rarity: 0
+  cardType: 0
+  manaCost: 2
+  attack: 1
+  health: 2
+  armor: 0
+  unitType: 0
+  defaultAttackTargetSelector: {fileID: 0}
+  abilities:
+  - {fileID: 11400000, guid: 4d3e25cdc92d34316a18d4356ec81896, type: 2}
+  visualProfile: {fileID: 0}

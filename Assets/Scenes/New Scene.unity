@@ -406,7 +406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -216, y: 917.22}
+  m_AnchoredPosition: {x: -216, y: 1722}
   m_SizeDelta: {x: 377.4315, y: 160.8135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &72294098
@@ -519,7 +519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.65}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -303}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &108152324
@@ -763,7 +763,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -320.7395, y: 0, z: 0, w: -326.7913}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -793,8 +793,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: -100}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: -287.14, y: -235.21002}
+  m_SizeDelta: {x: 519.72, y: 470.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &151021809
 GameObject:
@@ -2019,8 +2019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -739, y: -353}
-  m_SizeDelta: {x: 404.9451, y: 186.5838}
+  m_AnchoredPosition: {x: -739, y: -301.07}
+  m_SizeDelta: {x: 404.95, y: 82.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &469136808
 GameObject:
@@ -3553,7 +3553,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 2.1666946}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3583,8 +3583,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -377, y: -2509}
-  m_SizeDelta: {x: 404.9451, y: 186.5838}
+  m_AnchoredPosition: {x: -721, y: -2898}
+  m_SizeDelta: {x: 404.95, y: 93.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &750972594
 GameObject:
@@ -3621,7 +3621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.65}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -333}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &836167451
@@ -3758,8 +3758,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -120, y: -40}
-  m_SizeDelta: {x: 200, y: 60}
+  m_AnchoredPosition: {x: -739, y: -1576}
+  m_SizeDelta: {x: 349.57, y: 111.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &859358744
 GameObject:
@@ -3893,8 +3893,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Networking.CardDuelNetworkCoordinator
   ShowTopMostFoldoutHeaderGroup: 1
   rulesProfile: {fileID: 11400000, guid: 1fde81dd3935ccd4ba9af7796ca14aad, type: 2}
-  deckPlayerA: {fileID: 11400000, guid: 8e1dd4ea62a46e941a1a699fd3dff9ad, type: 2}
-  deckPlayerB: {fileID: 11400000, guid: 25aac9c262995da4e9d11163180215ca, type: 2}
+  deckPlayerA: {fileID: 11400000, guid: 72e6813897fcb4f3a9129ddcfc58d1ba, type: 2}
+  deckPlayerB: {fileID: 11400000, guid: 5372a66c083c346008b2f20e1f53b9c6, type: 2}
   disconnectGraceSeconds: 20
   requireBothPlayersReady: 1
 --- !u!4 &919382225
@@ -4497,8 +4497,8 @@ MonoBehaviour:
   autoStartOnStart: 0
   localPlayerIndex: 0
   rulesProfile: {fileID: 11400000, guid: 1fde81dd3935ccd4ba9af7796ca14aad, type: 2}
-  localPlayerDeck: {fileID: 11400000, guid: 8e1dd4ea62a46e941a1a699fd3dff9ad, type: 2}
-  enemyDeck: {fileID: 11400000, guid: 25aac9c262995da4e9d11163180215ca, type: 2}
+  localPlayerDeck: {fileID: 11400000, guid: 5372a66c083c346008b2f20e1f53b9c6, type: 2}
+  enemyDeck: {fileID: 11400000, guid: 0844781b16b804d86a7bd5d1940d49f3, type: 2}
   aiDifficulty: 1
   aiFirstActionDelay: 0.45
   aiActionDelay: 0.35
@@ -7689,8 +7689,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -313, y: -353}
-  m_SizeDelta: {x: 404.9451, y: 186.5838}
+  m_AnchoredPosition: {x: -739, y: -395}
+  m_SizeDelta: {x: 404.95, y: 82.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1854262514
 GameObject:
@@ -8390,7 +8390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: card
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8486,8 +8486,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: 0.9001465}
-  m_SizeDelta: {x: 250, y: 50}
+  m_AnchoredPosition: {x: -1224, y: -89.01697}
+  m_SizeDelta: {x: 623.28, y: 121.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1998909151
 GameObject:
@@ -8623,8 +8623,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 120, y: -40}
-  m_SizeDelta: {x: 200, y: 60}
+  m_AnchoredPosition: {x: -749.21, y: -1670}
+  m_SizeDelta: {x: 421.58, y: 108.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2009573911
 GameObject:
@@ -9188,8 +9188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -721, y: -2509}
-  m_SizeDelta: {x: 404.9451, y: 186.5838}
+  m_AnchoredPosition: {x: -721, y: -2765.2}
+  m_SizeDelta: {x: 404.95, y: 82.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

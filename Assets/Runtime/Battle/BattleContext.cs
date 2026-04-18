@@ -33,26 +33,11 @@ namespace Flippy.CardDuelMobile.Battle
 
         /// <summary>
         /// Busca taunt target en board enemigo. Retorna null si no hay taunt.
+        /// TODO: Implement via TauntEffect in ISkillEffect pipeline
         /// </summary>
         public CardRuntime FindTauntTarget(int playerIndex)
         {
-            var player = GetPlayerState(playerIndex);
-            foreach (var slot in player.Board)
-            {
-                if (slot.Occupant == null) continue;
-
-                var card = slot.Occupant;
-                if (card.Definition?.skills != null)
-                {
-                    foreach (var skill in card.Definition.skills)
-                    {
-                        if (skill != null && skill.skillId == "taunt")
-                        {
-                            return card;
-                        }
-                    }
-                }
-            }
+            // Taunt is now handled via TauntEffect in ISkillEffect pipeline
             return null;
         }
 
@@ -96,7 +81,7 @@ namespace Flippy.CardDuelMobile.Battle
 
         /// <summary>
         /// Hace daño a una carta (sin excepciones, retorna silenciosamente si target no existe).
-        /// Applies attacker skills (Trample, Fly check, etc).
+        /// Skills are processed in SkillPipeline (AttackExecutionPhase) before DealDamage is called.
         /// </summary>
         public void DealDamage(string sourceRuntimeId, string targetRuntimeId, int amount, bool ignoreArmor)
         {
@@ -111,43 +96,12 @@ namespace Flippy.CardDuelMobile.Battle
             var targetPlayer = target.OwnerIndex;
             var hpBefore = target.CurrentHealth;
 
-            // Check defender skills (Fly blocks if attacker doesn't have Fly)
-            if (target.Definition?.skills != null)
-            {
-                foreach (var skill in target.Definition.skills)
-                {
-                    if (skill != null && skill.BlocksDamage(source, target))
-                    {
-                        // Damage blocked - redirect to hero
-                        var logMsg = skill.GetLogMessage(source, target, amount);
-                        if (!string.IsNullOrEmpty(logMsg))
-                        {
-                            _state.Logs.Add(new BattleLogEntry
-                            {
-                                type = BattleLogType.Attack,
-                                message = logMsg
-                            });
-                        }
-                        DamageHero(targetPlayer, amount);
-                        return;
-                    }
-                }
-            }
-
-            // Check attacker skills (Trample ignores armor)
+            // Damage modification and blocking handled in SkillPipeline (AttackExecutionPhase)
+            var modifiedDamage = amount;
             var effectiveIgnoreArmor = ignoreArmor;
-            if (source?.Definition?.skills != null)
-            {
-                foreach (var skill in source.Definition.skills)
-                {
-                    if (skill != null && skill.skillId == "trample")
-                    {
-                        effectiveIgnoreArmor = true;
-                    }
-                }
-            }
 
-            var pendingDamage = amount;
+            // Calculate armor absorption
+            var pendingDamage = modifiedDamage;
             var armorAbsorbed = 0;
 
             if (!effectiveIgnoreArmor && target.Armor > 0)
@@ -170,100 +124,11 @@ namespace Flippy.CardDuelMobile.Battle
                 message = $"[P{sourcePlayer}] {sourceName} (ATK {amount}) → [P{targetPlayer}] {target.DisplayName}: {hpBefore}→{hpAfter}HP" + (armorAbsorbed > 0 ? $" (Armor blocked {armorAbsorbed})" : "") + skillSuffix
             });
 
-            // Apply poison from attacker
-            if (source?.Definition?.skills != null)
-            {
-                foreach (var skill in source.Definition.skills)
-                {
-                    if (skill != null && skill.skillId == "poison")
-                    {
-                        var poisonSkill = skill as Data.PoisonSkill;
-                        if (poisonSkill != null && target != null)
-                        {
-                            target.PoisonStacks += poisonSkill.poisonStacks;
-                            _state.Logs.Add(new BattleLogEntry
-                            {
-                                type = BattleLogType.Attack,
-                                message = $"{target.DisplayName} was poisoned! ({target.PoisonStacks} stacks)"
-                            });
-                        }
-                    }
-                    else if (skill != null && skill.skillId == "stun")
-                    {
-                        if (target != null)
-                        {
-                            target.Stunned = true;
-                            _state.Logs.Add(new BattleLogEntry
-                            {
-                                type = BattleLogType.Attack,
-                                message = $"{target.DisplayName} was stunned!"
-                            });
-                        }
-                    }
-                    else if (skill != null && skill.skillId == "mana_burn")
-                    {
-                        var manaBurnSkill = skill as Data.ManaBurnSkill;
-                        if (manaBurnSkill != null && target != null)
-                        {
-                            var defender = GetPlayerState(targetPlayer);
-                            defender.Mana -= manaBurnSkill.manaCost;
-                            if (defender.Mana < 0) defender.Mana = 0;
-                            _state.Logs.Add(new BattleLogEntry
-                            {
-                                type = BattleLogType.Attack,
-                                message = $"Player {targetPlayer} lost {manaBurnSkill.manaCost} mana!"
-                            });
-                        }
-                    }
-                }
-            }
+            // All skill effects (poison, stun, mana_burn, leech, enrage, etc) are now handled
+            // by ISkillEffect implementations in SkillPipeline (AttackExecutionPhase)
 
-            // Apply leech from attacker
-            if (source?.Definition?.skills != null && source != null)
-            {
-                foreach (var skill in source.Definition.skills)
-                {
-                    if (skill != null && skill.skillId == "leech")
-                    {
-                        var leechSkill = skill as Data.LeechSkill;
-                        if (leechSkill != null)
-                        {
-                            var healAmount = (pendingDamage * leechSkill.leechPercent) / 100;
-                            if (healAmount > 0)
-                            {
-                                var sourcePlayerState = GetPlayerState(sourcePlayer);
-                                sourcePlayerState.HeroHealth += healAmount;
-                                _state.Logs.Add(new BattleLogEntry
-                                {
-                                    type = BattleLogType.Heal,
-                                    message = $"[P{sourcePlayer}] {sourceName} leeched {healAmount} HP!"
-                                });
-                            }
-                        }
-                    }
-                }
-            }
-
-            // Apply enrage from defender being hit
-            if (target?.Definition?.skills != null && target != null)
-            {
-                foreach (var skill in target.Definition.skills)
-                {
-                    if (skill != null && skill.skillId == "enrage")
-                    {
-                        var enrageSkill = skill as Data.EnrageSkill;
-                        if (enrageSkill != null)
-                        {
-                            target.EnrageBonus += enrageSkill.bonusPerHit;
-                            _state.Logs.Add(new BattleLogEntry
-                            {
-                                type = BattleLogType.Attack,
-                                message = $"{target.DisplayName} enraged! (+{enrageSkill.bonusPerHit} ATK)"
-                            });
-                        }
-                    }
-                }
-            }
+            // Execute OnDamaged abilities
+            ExecuteDamagedAbilities(target.RuntimeId);
 
             CleanupDeaths();
         }
@@ -365,6 +230,9 @@ namespace Flippy.CardDuelMobile.Battle
                 {
                     if (slot.Occupant != null && slot.Occupant.IsDead)
                     {
+                        // Execute OnDeath abilities before removing the card
+                        ExecuteDeathAbilities(slot.Occupant.RuntimeId);
+
                         _state.Logs.Add(new BattleLogEntry
                         {
                             type = BattleLogType.Death,
@@ -412,6 +280,121 @@ namespace Flippy.CardDuelMobile.Battle
             }
 
             CleanupDeaths();
+        }
+
+        /// <summary>
+        /// Ejecuta todas las abilities con trigger OnTurnStart para un jugador.
+        /// </summary>
+        public void ExecuteTurnStartAbilities(int playerIndex)
+        {
+            var player = GetPlayerState(playerIndex);
+            foreach (var slot in player.Board)
+            {
+                if (slot.Occupant == null) continue;
+                ExecuteAbilitiesForCard(slot.Occupant, AbilityTrigger.OnTurnStart);
+            }
+        }
+
+        /// <summary>
+        /// Ejecuta todas las abilities con trigger OnTurnEnd para un jugador.
+        /// </summary>
+        public void ExecuteTurnEndAbilities(int playerIndex)
+        {
+            var player = GetPlayerState(playerIndex);
+            foreach (var slot in player.Board)
+            {
+                if (slot.Occupant == null) continue;
+                ExecuteAbilitiesForCard(slot.Occupant, AbilityTrigger.OnTurnEnd);
+            }
+        }
+
+        /// <summary>
+        /// Ejecuta todas las abilities con trigger OnBattlePhase para un jugador.
+        /// </summary>
+        public void ExecuteBattlePhaseAbilities(int playerIndex)
+        {
+            var player = GetPlayerState(playerIndex);
+            foreach (var slot in player.Board)
+            {
+                if (slot.Occupant == null) continue;
+                ExecuteAbilitiesForCard(slot.Occupant, AbilityTrigger.OnBattlePhase);
+            }
+        }
+
+        /// <summary>
+        /// Ejecuta todas las abilities con trigger OnDamaged para una carta.
+        /// </summary>
+        public void ExecuteDamagedAbilities(string cardRuntimeId)
+        {
+            var card = FindCard(cardRuntimeId);
+            if (card != null)
+            {
+                ExecuteAbilitiesForCard(card, AbilityTrigger.OnDamaged);
+            }
+        }
+
+        /// <summary>
+        /// Ejecuta todas las abilities con trigger OnDeath para una carta.
+        /// </summary>
+        public void ExecuteDeathAbilities(string cardRuntimeId)
+        {
+            var card = FindCard(cardRuntimeId);
+            if (card != null)
+            {
+                ExecuteAbilitiesForCard(card, AbilityTrigger.OnDeath);
+            }
+        }
+
+        /// <summary>
+        /// Ejecuta todas las abilities de una carta que coincidan con el trigger.
+        /// </summary>
+        private void ExecuteAbilitiesForCard(CardRuntime card, AbilityTrigger trigger)
+        {
+            if (card?.Definition?.abilities == null)
+                return;
+
+            foreach (var ability in card.Definition.abilities)
+            {
+                if (ability != null && ability.trigger == trigger)
+                {
+                    ExecuteAbility(card, ability);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Ejecuta una ability específica resolviendo targets y efectos.
+        /// </summary>
+        private void ExecuteAbility(CardRuntime source, AbilityDefinition ability)
+        {
+            if (ability.targetSelector == null || ability.effects == null)
+                return;
+
+            // Select targets
+            var targets = new List<string>();
+            var targetRequest = new TargetSelectionRequest(
+                source.OwnerIndex,
+                1 - source.OwnerIndex,
+                source.RuntimeId,
+                source.CurrentSlot
+            );
+            ability.targetSelector.SelectTargets(this, targetRequest, targets);
+
+            // Resolve effects on each target
+            foreach (var targetId in targets)
+            {
+                var target = FindCard(targetId);
+                if (target == null) continue;
+
+                var execution = new EffectExecution(
+                    source.OwnerIndex,
+                    target.OwnerIndex,
+                    source.RuntimeId,
+                    target.RuntimeId
+                );
+
+                ability.Resolve(this, execution);
+            }
         }
     }
 }

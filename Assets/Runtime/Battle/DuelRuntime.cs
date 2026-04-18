@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Data;
+using Flippy.CardDuelMobile.Battle.Skills;
 
 namespace Flippy.CardDuelMobile.Battle
 {
@@ -20,6 +22,9 @@ namespace Flippy.CardDuelMobile.Battle
         {
             _rules = rules;
             _context = new BattleContext(_state);
+
+            // Initialize skill system
+            SkillRegistry.Initialize();
         }
 
         /// <summary>
@@ -183,6 +188,9 @@ namespace Flippy.CardDuelMobile.Battle
                 Definition = handEntry.Definition
             };
 
+            // Initialize skills
+            InitializeCardSkills(cardRuntime);
+
             var boardSlot = player.Board.First(x => x.Slot == slot);
 
             // Handle replacement: if slot occupied, shift existing card back
@@ -249,6 +257,84 @@ namespace Flippy.CardDuelMobile.Battle
             return true;
         }
 
+        private bool CanAttackFromPosition(CardRuntime attacker, BoardSlot slot)
+        {
+            if (attacker?.Definition == null)
+                return true; // Default allow if not a unit
+
+            if (attacker.Definition.cardType != CardType.Unit)
+                return true; // Non-units can always attack
+
+            var unitType = attacker.Definition.unitType;
+
+            return unitType switch
+            {
+                UnitType.Melee => slot == BoardSlot.Front,
+                UnitType.Ranged => slot == BoardSlot.BackLeft || slot == BoardSlot.BackRight,
+                UnitType.Magic => slot == BoardSlot.BackLeft || slot == BoardSlot.BackRight,
+                _ => true
+            };
+        }
+
+        private void ApplyStraightLineTargetSelection(BattleContext context, int sourcePlayer, int targetPlayer, CardRuntime attacker, List<string> outTargets)
+        {
+            outTargets.Clear();
+
+            var enemy = context.GetPlayerState(targetPlayer);
+            if (enemy == null || attacker == null)
+                return;
+
+            // Try same slot as attacker
+            var slotRuntime = enemy.FindSlot(attacker.CurrentSlot);
+            if (slotRuntime?.Occupant != null)
+            {
+                outTargets.Add(slotRuntime.Occupant.RuntimeId);
+                return;
+            }
+
+            // Fall back to Front
+            var frontSlot = enemy.FindSlot(BoardSlot.Front);
+            if (frontSlot?.Occupant != null)
+            {
+                outTargets.Add(frontSlot.Occupant.RuntimeId);
+                return;
+            }
+
+            // No target - hero takes damage (outTargets stays empty)
+        }
+
+        private void InitializeCardSkills(CardRuntime card)
+        {
+            if (card?.Definition == null) return;
+
+            // Assign effective attack selector based on unitType
+            AssignEffectiveSelector(card);
+
+            // Skill initialization moved to ISkillEffect + SkillRegistry system
+            // No per-card initialization needed for new pipeline
+        }
+
+        private void AssignEffectiveSelector(CardRuntime card)
+        {
+            // Use custom selector if defined
+            if (card.Definition?.defaultAttackTargetSelector != null)
+            {
+                card.EffectiveAttackSelector = card.Definition.defaultAttackTargetSelector;
+                return;
+            }
+
+            // Otherwise, assign based on unitType
+            var unitType = card.Definition?.unitType ?? UnitType.Melee;
+
+            card.EffectiveAttackSelector = unitType switch
+            {
+                UnitType.Melee => ScriptableObject.CreateInstance<MeleeAttackSelector>(),
+                UnitType.Ranged => ScriptableObject.CreateInstance<RangedAttackSelector>(),
+                UnitType.Magic => ScriptableObject.CreateInstance<MagicAttackSelector>(),
+                _ => ScriptableObject.CreateInstance<MeleeAttackSelector>()
+            };
+        }
+
         public bool TryEndTurn(int playerIndex)
         {
             if (_state.DuelEnded || _state.ActivePlayerIndex != playerIndex)
@@ -274,8 +360,10 @@ namespace Flippy.CardDuelMobile.Battle
             });
 
             ResolveTurnAbilities(playerIndex, AbilityTrigger.OnTurnEnd);
-            ExecuteBattlePhase(playerIndex);
-            _context.CleanupDeaths();
+
+            // Use new BattlePhaseManager for clean attack execution
+            var phaseManager = new Flippy.CardDuelMobile.Battle.Phases.BattlePhaseManager();
+            phaseManager.ExecuteTurn(_context, playerIndex);
 
             if (!_state.DuelEnded)
             {
@@ -367,11 +455,18 @@ namespace Flippy.CardDuelMobile.Battle
             if (deck != null && deck.cards != null)
             {
                 var source = deck.cards.Where(c => c != null).ToList();
-                var random = new Random(seed == 0 ? 17 + playerIndex : seed);
+                var random = new System.Random(seed == 0 ? 17 + playerIndex : seed);
                 while (source.Count > 0)
                 {
-                    var pick = random.Next(0, source.Count);
-                    player.Deck.Add(source[pick]);
+                    var pick = random.Next(source.Count);
+                    var deckCard = source[pick];
+                    if (deckCard?.card != null)
+                    {
+                        for (int i = 0; i < deckCard.quantity; i++)
+                        {
+                            player.Deck.Add(deckCard.card);
+                        }
+                    }
                     source.RemoveAt(pick);
                 }
             }
@@ -502,35 +597,21 @@ namespace Flippy.CardDuelMobile.Battle
                 return;
             }
 
-            // Check if card can attack from current slot
-            if (attacker.Definition != null && attacker.Definition.cardType == CardType.Unit)
+            // Validate card can attack from current position based on unitType
+            if (!CanAttackFromPosition(attacker, slot.Slot))
             {
-                var isRanged = attacker.Definition.unitType == UnitType.Ranged;
-                bool canAttack = false;
-
-                if (slot.Slot == BoardSlot.Front && !isRanged)
+                _state.Logs.Add(new BattleLogEntry
                 {
-                    canAttack = true;
-                }
-                else if ((slot.Slot == BoardSlot.BackLeft || slot.Slot == BoardSlot.BackRight) && isRanged)
-                {
-                    canAttack = true;
-                }
-
-                if (!canAttack)
-                {
-                    _state.Logs.Add(new BattleLogEntry
-                    {
-                        type = BattleLogType.Attack,
-                        message = $"{attacker.DisplayName} cannot attack from this position."
-                    });
-                    return;
-                }
+                    type = BattleLogType.Attack,
+                    message = $"{attacker.DisplayName} cannot attack from {slot.Slot}."
+                });
+                return;
             }
 
             ResolveAbilities(attacker, AbilityTrigger.OnBattlePhase);
 
-            var targetSelector = attacker.Definition.defaultAttackTargetSelector;
+            // Use effective attack selector (based on unitType or custom)
+            var targetSelector = attacker.EffectiveAttackSelector;
             var attackPower = attacker.Attack + attacker.EnrageBonus;
 
             // LastStand bonus: double damage if alone
@@ -544,29 +625,22 @@ namespace Flippy.CardDuelMobile.Battle
                     alliesOnBoard++;
                 }
             }
-            if (alliesOnBoard == 1 && attacker.Definition?.skills != null)
-            {
-                foreach (var skill in attacker.Definition.skills)
-                {
-                    if (skill != null && skill.skillId == "last_stand")
-                    {
-                        attackPower *= 2;
-                        break;
-                    }
-                }
-            }
+            // LastStand bonus damage handled via ISkillEffect in SkillPipeline
+
+            _targetBuffer.Clear();
 
             if (targetSelector == null)
             {
-                _context.DamageHero(defenderIndex, attackPower);
-                return;
+                // Use StraightLineTargetSelector as default
+                ApplyStraightLineTargetSelection(_context, sourcePlayerIndex, defenderIndex, attacker, _targetBuffer);
             }
-
-            _targetBuffer.Clear();
-            targetSelector.SelectTargets(
-                _context,
-                new TargetSelectionRequest(sourcePlayerIndex, defenderIndex, attacker.RuntimeId, attacker.CurrentSlot),
-                _targetBuffer);
+            else
+            {
+                targetSelector.SelectTargets(
+                    _context,
+                    new TargetSelectionRequest(sourcePlayerIndex, defenderIndex, attacker.RuntimeId, attacker.CurrentSlot),
+                    _targetBuffer);
+            }
 
             if (_targetBuffer.Count == 0)
             {

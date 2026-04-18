@@ -284,11 +284,22 @@ namespace Flippy.CardDuelMobile.EditorTools
             deckA.displayName = "Prototype Deck A";
             deckA.cards = new[]
             {
-                Find(cards, "ember_vanguard"), Find(cards, "ember_archer"), Find(cards, "ember_archer"), Find(cards, "ember_burnseer"),
-                Find(cards, "tidal_priest"), Find(cards, "tidal_lancer"), Find(cards, "tidal_sniper"), Find(cards, "grove_guardian"),
-                Find(cards, "grove_shaper"), Find(cards, "grove_raincaller"), Find(cards, "alloy_bulwark"), Find(cards, "alloy_hoplite"),
-                Find(cards, "void_stalker"), Find(cards, "void_magus"), Find(cards, "tidal_waveblade"), Find(cards, "grove_myr"),
-                Find(cards, "ember_colossus"), Find(cards, "grove_myr"), Find(cards, "ember_vanguard"), Find(cards, "void_stalker")
+                new DeckDefinition.DeckCard { card = Find(cards, "ember_vanguard"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "ember_archer"), quantity = 2 },
+                new DeckDefinition.DeckCard { card = Find(cards, "ember_burnseer"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "tidal_priest"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "tidal_lancer"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "tidal_sniper"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "grove_guardian"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "grove_shaper"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "grove_raincaller"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "alloy_bulwark"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "alloy_hoplite"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "void_stalker"), quantity = 2 },
+                new DeckDefinition.DeckCard { card = Find(cards, "void_magus"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "tidal_waveblade"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "grove_myr"), quantity = 2 },
+                new DeckDefinition.DeckCard { card = Find(cards, "ember_colossus"), quantity = 1 }
             };
             EditorUtility.SetDirty(deckA);
 
@@ -297,11 +308,24 @@ namespace Flippy.CardDuelMobile.EditorTools
             deckB.displayName = "Prototype Deck B";
             deckB.cards = new[]
             {
-                Find(cards, "void_caller"), Find(cards, "void_stalker"), Find(cards, "void_magus"), Find(cards, "alloy_ballista"),
-                Find(cards, "alloy_bulwark"), Find(cards, "alloy_hoplite"), Find(cards, "tidal_priest"), Find(cards, "tidal_lancer"),
-                Find(cards, "tidal_sniper"), Find(cards, "ember_archer"), Find(cards, "ember_vanguard"), Find(cards, "ember_burnseer"),
-                Find(cards, "grove_guardian"), Find(cards, "grove_raincaller"), Find(cards, "grove_shaper"), Find(cards, "grove_myr"),
-                Find(cards, "ember_colossus"), Find(cards, "tidal_waveblade"), Find(cards, "void_stalker"), Find(cards, "alloy_hoplite")
+                new DeckDefinition.DeckCard { card = Find(cards, "void_caller"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "void_stalker"), quantity = 2 },
+                new DeckDefinition.DeckCard { card = Find(cards, "void_magus"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "alloy_ballista"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "alloy_bulwark"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "alloy_hoplite"), quantity = 2 },
+                new DeckDefinition.DeckCard { card = Find(cards, "tidal_priest"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "tidal_lancer"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "tidal_sniper"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "ember_archer"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "ember_vanguard"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "ember_burnseer"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "grove_guardian"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "grove_raincaller"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "grove_shaper"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "grove_myr"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "ember_colossus"), quantity = 1 },
+                new DeckDefinition.DeckCard { card = Find(cards, "tidal_waveblade"), quantity = 1 }
             };
             EditorUtility.SetDirty(deckB);
         }
