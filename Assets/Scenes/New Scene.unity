@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aac467bb654fc743a403ab43f39970e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Networking.NetworkBootstrap
-  apiBaseUrl: http://localhost:5000
+  apiBaseUrl: http://localhost
   autoBootstrapGameService: 1
   networkManager: {fileID: 1404931260}
   sessionService: {fileID: 1899842150}
@@ -1835,8 +1835,6 @@ MonoBehaviour:
   labelTextTMP: {fileID: 1291445502}
   cardAnchor: {fileID: 1463381715}
   hoverGlowImage: {fileID: 151021811}
-  cooldownIcon: {fileID: 0}
-  canAttackIcon: {fileID: 0}
 --- !u!1 &399654110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,8 +2800,6 @@ MonoBehaviour:
   labelTextTMP: {fileID: 509407867}
   cardAnchor: {fileID: 1645860592}
   hoverGlowImage: {fileID: 1371088290}
-  cooldownIcon: {fileID: 0}
-  canAttackIcon: {fileID: 0}
 --- !u!224 &539817436
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3540,8 +3536,6 @@ MonoBehaviour:
   labelTextTMP: {fileID: 1020671301}
   cardAnchor: {fileID: 977204001}
   hoverGlowImage: {fileID: 654283764}
-  cooldownIcon: {fileID: 0}
-  canAttackIcon: {fileID: 0}
 --- !u!1 &712720598
 GameObject:
   m_ObjectHideFlags: 0
@@ -4225,8 +4219,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.Networking.CardDuelNetworkCoordinator
   ShowTopMostFoldoutHeaderGroup: 1
   rulesProfile: {fileID: 11400000, guid: 1fde81dd3935ccd4ba9af7796ca14aad, type: 2}
-  deckPlayerA: {fileID: 0}
-  deckPlayerB: {fileID: 0}
+  deckPlayerA: {fileID: 11400000, guid: 72e6813897fcb4f3a9129ddcfc58d1ba, type: 2}
+  deckPlayerB: {fileID: 11400000, guid: 5372a66c083c346008b2f20e1f53b9c6, type: 2}
   disconnectGraceSeconds: 20
   requireBothPlayersReady: 1
 --- !u!4 &919382225
@@ -6323,8 +6317,6 @@ MonoBehaviour:
   labelTextTMP: {fileID: 1770174683}
   cardAnchor: {fileID: 1693709610}
   hoverGlowImage: {fileID: 859358746}
-  cooldownIcon: {fileID: 0}
-  canAttackIcon: {fileID: 0}
 --- !u!1 &1523297097
 GameObject:
   m_ObjectHideFlags: 0
@@ -6911,6 +6903,8 @@ MonoBehaviour:
   healthText: {fileID: 171144819}
   armorText: {fileID: 1854262516}
   unitTypeText: {fileID: 1829372591}
+  cooldownIcon: {fileID: 0}
+  canAttackIcon: {fileID: 0}
 --- !u!114 &1662091408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7576,8 +7570,6 @@ MonoBehaviour:
   labelTextTMP: {fileID: 1350229894}
   cardAnchor: {fileID: 629656467}
   hoverGlowImage: {fileID: 1790753471}
-  cooldownIcon: {fileID: 0}
-  canAttackIcon: {fileID: 0}
 --- !u!224 &1781915949
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8554,8 +8546,6 @@ MonoBehaviour:
   labelTextTMP: {fileID: 243447829}
   cardAnchor: {fileID: 232747857}
   hoverGlowImage: {fileID: 72294100}
-  cooldownIcon: {fileID: 0}
-  canAttackIcon: {fileID: 0}
 --- !u!1 &1971045646
 GameObject:
   m_ObjectHideFlags: 0

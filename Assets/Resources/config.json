@@ -1,6 +1,6 @@
 {
   "api": {
-    "baseUrl": "http://localhost:5000",
+    "baseUrl": "http://localhost",
     "timeoutSeconds": 30,
     "maxRetries": 3,
     "retryDelayMs": 500

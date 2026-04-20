@@ -1,6 +1,6 @@
 ﻿<Solution>
-  <Project Path="Flippy.CardDuelMobile.Tests.csproj" />
   <Project Path="Flippy.CardDuelMobile.Runtime.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="Flippy.CardDuelMobile.Tests.csproj" />
   <Project Path="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" />
 </Solution>

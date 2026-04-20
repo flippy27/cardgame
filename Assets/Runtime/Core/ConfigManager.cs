@@ -14,7 +14,9 @@ namespace Flippy.CardDuelMobile.Core
     [System.Serializable]
     public class ApiSettings
     {
-        public string baseUrl = "http://localhost:5000";
+        // NOTE: These defaults are used only if config.json is missing or invalid.
+        // Always load from config.json in production builds.
+        public string baseUrl = ""; // Will use ApiConfig.BaseUrl as fallback
         public int timeoutSeconds = 30;
         public int maxRetries = 3;
         public int retryDelayMs = 500;
@@ -69,7 +71,16 @@ namespace Flippy.CardDuelMobile.Core
             }
         }
 
-        public static string GetApiBaseUrl() => _config?.api?.baseUrl ?? "http://localhost:5000";
+        public static string GetApiBaseUrl()
+        {
+            var url = _config?.api?.baseUrl;
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                GameLogger.Warning("Config", "No baseUrl in config, using ApiConfig default");
+                return ApiConfig.BaseUrl;
+            }
+            return url;
+        }
         public static int GetApiTimeout() => _config?.api?.timeoutSeconds ?? 30;
         public static int GetMaxRetries() => _config?.api?.maxRetries ?? 3;
         public static LogLevel GetLogLevel()

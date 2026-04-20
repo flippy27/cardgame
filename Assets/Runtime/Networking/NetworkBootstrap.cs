@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 using Unity.Netcode;
+using Flippy.CardDuelMobile.Core;
 
 namespace Flippy.CardDuelMobile.Networking
 {
@@ -10,7 +11,6 @@ namespace Flippy.CardDuelMobile.Networking
     /// </summary>
     public sealed class NetworkBootstrap : MonoBehaviour
     {
-        [SerializeField] private string apiBaseUrl = "http://localhost:5000";
         [SerializeField] private bool autoBootstrapGameService = true;
         [SerializeField] private NetworkManager networkManager;
         [SerializeField] private MpsGameSessionService sessionService;

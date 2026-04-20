@@ -268,7 +268,223 @@ if (gameService.OfflineSync.IsOnline) {
 ## Testing
 
 ### Unit Tests
-All services have comprehensive unit tests in `Assets/Tests/Battle/`:
+All services have comprehensive unit # API Integration Documentation
+
+**Last Updated:** 2026-04-18  
+**Scope:** Integrate HTTP REST API with Netcode-based card game  
+**Status:** Planning phase, docs ready for implementation
+
+---
+
+## 🚀 Quick Start
+
+**Architecture:** Netcode (real-time) + HTTP API (persistent storage)
+
+1. **Read first:** `ARCHITECTURE_CLARIFICATION.md` — understand separation of concerns
+2. **Share with backend:** `api_stuff/missing.md` — what API needs to fix
+3. **Implement:** Follow `IMPLEMENTATION_TASKS.md` Phase 1-4
+4. **Reference:** `HTTP_VERSIONING_STRATEGY.md` for polling & versioning
+
+---
+
+## 📁 Documents Overview
+
+### Understanding
+- **ARCHITECTURE_CLARIFICATION.md** ⭐ START HERE
+  - Clear separation: Netcode vs. HTTP API
+  - What goes where and why
+  - HTTP patterns (polling, versioning, consistency)
+
+- **HTTP_VERSIONING_STRATEGY.md**
+  - API versioning (v1 → v2)
+  - Schema versioning (breaking changes)
+  - Polling intervals & optimization
+  - Stale data detection
+
+### Implementation
+- **IMPLEMENTATION_TASKS.md**
+  - Phase 1: Checkpoint service (periodic saves every 30s)
+  - Phase 2: Reconnection service (crash recovery)
+  - Phase 3: Leaderboard UI
+  - Phase 4: Polish & error handling
+  - Detailed code examples and checklist
+
+- **API_INTEGRATION_PLAN.md** (detailed reference)
+  - Complete API endpoint inventory
+  - 5-phase implementation plan
+  - File-by-file changes
+  - Success criteria
+
+- **API_QUICK_REFERENCE.md** (one-page cheat sheet)
+  - What API has vs. missing
+  - Data flow diagram
+  - Quick timeline
+
+### For Backend Team
+- **api_stuff/missing.md** 📢
+  - 14 issues found (critical, medium, low)
+  - What needs fixing before game can integrate
+  - Questions for API owner
+
+---
+
+## 🎮 Architecture Summary
+
+```
+Player plays card
+    ↓
+Netcode broadcasts (real-time, all clients see instantly)
+    ↓
+(Every 30 seconds)
+    ↓
+MatchCheckpointService saves snapshot to API (async, fire-and-forget)
+    ↓
+Match ends
+    ↓
+POST final result + ratings to API
+    ↓
+API updates match history & ratings
+```
+
+### Netcode (Real-Time Authority)
+✅ Card plays, board updates, turn execution  
+✅ Sub-100ms latency, all clients sync instantly  
+✅ Handles all gameplay logic  
+✅ Authoritative source during match  
+
+### HTTP API (Durable Storage)
+✅ Periodic checkpoints (every 30s)  
+✅ Match completion & ratings  
+✅ State recovery after crash  
+✅ Leaderboards & player profiles  
+✅ Match history  
+
+---
+
+## 📋 Implementation Roadmap
+
+### Week 1: Foundation
+- Backend: Add reconnect endpoint, snapshot versioning
+- Game: Create MatchCheckpointService, update CardGameApiClient
+- **Result:** Checkpoints working
+
+### Week 2: Recovery
+- Game: Create ReconnectionService, update GameBootstrap
+- **Result:** Crash recovery working
+
+### Week 3: Features
+- Game: Create LeaderboardService & UI screens
+- **Result:** Leaderboards visible
+
+### Week 4: Polish
+- Game: JWT refresh, error handling, offline detection
+- **Result:** Production-ready
+
+---
+
+## 🎯 Success Criteria
+
+✅ Netcode controls gameplay (API never blocks)  
+✅ Checkpoints fire-and-forget (no gameplay lag)  
+✅ Crash recovery works (restore from checkpoint)  
+✅ Leaderboards functional (top 100, polled)  
+✅ No data loss (all moves logged via Netcode + API)  
+✅ Versioning clear (handle schema changes)  
+
+---
+
+## 📝 Before Talking to Backend
+
+1. Read `ARCHITECTURE_CLARIFICATION.md`
+2. Review `api_stuff/missing.md`
+3. Ask questions from `HTTP_VERSIONING_STRATEGY.md`
+
+## 🔧 Before Starting Code
+
+1. Backend provides: reconnect endpoint, checkpoint clarity, MatchSnapshot schema
+2. Game team decides: local storage (PlayerPrefs vs. secure), offline policy, acceptable data loss
+
+---
+
+## 📚 Document Legend
+
+| Doc | Length | Purpose | Read When |
+|-----|--------|---------|-----------|
+| ARCHITECTURE_CLARIFICATION.md | 15 min | Understand design | First thing, with backend |
+| IMPLEMENTATION_TASKS.md | 20 min | Detailed tasks | Ready to code |
+| HTTP_VERSIONING_STRATEGY.md | 15 min | Polling & versions | Before implementation |
+| API_INTEGRATION_PLAN.md | 30 min | Full scope (detailed) | Reference, detailed questions |
+| API_QUICK_REFERENCE.md | 5 min | One-page summary | Quick lookup |
+| api_stuff/missing.md | 10 min | API issues | Share with backend |
+| README.md (this) | 5 min | Overview | Navigation |
+
+---
+
+## 🚨 Critical Points
+
+⚠️ **Netcode is real-time authority** — API never makes gameplay decisions  
+⚠️ **Checkpoints are durability only** — not game-state sync  
+⚠️ **API calls are async fire-and-forget** — don't wait for responses  
+⚠️ **Polling has intervals** — leaderboard 30s, stats 5m, reconnect exponential backoff  
+⚠️ **Schema versioning needed** — handle breaking changes without crashing  
+
+---
+
+## 📞 Quick Answers
+
+**Q: Won't HTTP ruin real-time gameplay?**  
+A: No. Netcode handles real-time. API only saves snapshots async (doesn't block).
+
+**Q: What if I crash at turn 50?**  
+A: Restore checkpoint from turn ~48, catch up via Netcode = consistent.
+
+**Q: What if network drops?**  
+A: Netcode drops but checkpoint still saves every 30s. Auto-forfeit after 5m offline.
+
+**Q: How much battery does polling drain?**  
+A: Only when screen visible. Leaderboard: 30s interval = minimal.
+
+**Q: What if checkpoint is stale?**  
+A: Snapshot has timestamp. Reject if >5m old, use if <30s.
+
+---
+
+## 📂 File Structure
+
+```
+Assets/Runtime/Networking/
+├── README.md ← You are here
+├── ARCHITECTURE_CLARIFICATION.md ← Start here
+├── IMPLEMENTATION_TASKS.md
+├── API_INTEGRATION_PLAN.md
+├── API_QUICK_REFERENCE.md
+├── HTTP_VERSIONING_STRATEGY.md
+│
+├── api_stuff/
+│   └── missing.md ← Share with backend
+│
+├── [TO CREATE]
+├── MatchCheckpointService.cs
+├── ReconnectionService.cs
+├── LeaderboardService.cs
+│
+└── [TO MODIFY]
+    ├── CardGameApiClient.cs
+    ├── LocalCacheService.cs
+    ├── GameBootstrap.cs
+    └── GameService.cs
+
+Assets/Runtime/UI/
+└── [TO CREATE]
+    ├── LeaderboardScreen.cs
+    └── ProfileScreen.cs
+```
+
+---
+
+**Status:** Documentation complete, ready for implementation  
+**Next:** Read ARCHITECTURE_CLARIFICATION.md
+s in `Assets/Tests/Battle/`:
 
 - `CardGameApiClientTests` (basic HTTP operations)
 - `AuthServiceTests` (authentication)
@@ -280,7 +496,223 @@ All services have comprehensive unit tests in `Assets/Tests/Battle/`:
 - `MatchCompletionServiceTests` (match results)
 
 ### Integration Tests
-`IntegrationTests.cs` tests full workflows:
+`IntegrationTests.cs` # API Integration Documentation
+
+**Last Updated:** 2026-04-18  
+**Scope:** Integrate HTTP REST API with Netcode-based card game  
+**Status:** Planning phase, docs ready for implementation
+
+---
+
+## 🚀 Quick Start
+
+**Architecture:** Netcode (real-time) + HTTP API (persistent storage)
+
+1. **Read first:** `ARCHITECTURE_CLARIFICATION.md` — understand separation of concerns
+2. **Share with backend:** `api_stuff/missing.md` — what API needs to fix
+3. **Implement:** Follow `IMPLEMENTATION_TASKS.md` Phase 1-4
+4. **Reference:** `HTTP_VERSIONING_STRATEGY.md` for polling & versioning
+
+---
+
+## 📁 Documents Overview
+
+### Understanding
+- **ARCHITECTURE_CLARIFICATION.md** ⭐ START HERE
+  - Clear separation: Netcode vs. HTTP API
+  - What goes where and why
+  - HTTP patterns (polling, versioning, consistency)
+
+- **HTTP_VERSIONING_STRATEGY.md**
+  - API versioning (v1 → v2)
+  - Schema versioning (breaking changes)
+  - Polling intervals & optimization
+  - Stale data detection
+
+### Implementation
+- **IMPLEMENTATION_TASKS.md**
+  - Phase 1: Checkpoint service (periodic saves every 30s)
+  - Phase 2: Reconnection service (crash recovery)
+  - Phase 3: Leaderboard UI
+  - Phase 4: Polish & error handling
+  - Detailed code examples and checklist
+
+- **API_INTEGRATION_PLAN.md** (detailed reference)
+  - Complete API endpoint inventory
+  - 5-phase implementation plan
+  - File-by-file changes
+  - Success criteria
+
+- **API_QUICK_REFERENCE.md** (one-page cheat sheet)
+  - What API has vs. missing
+  - Data flow diagram
+  - Quick timeline
+
+### For Backend Team
+- **api_stuff/missing.md** 📢
+  - 14 issues found (critical, medium, low)
+  - What needs fixing before game can integrate
+  - Questions for API owner
+
+---
+
+## 🎮 Architecture Summary
+
+```
+Player plays card
+    ↓
+Netcode broadcasts (real-time, all clients see instantly)
+    ↓
+(Every 30 seconds)
+    ↓
+MatchCheckpointService saves snapshot to API (async, fire-and-forget)
+    ↓
+Match ends
+    ↓
+POST final result + ratings to API
+    ↓
+API updates match history & ratings
+```
+
+### Netcode (Real-Time Authority)
+✅ Card plays, board updates, turn execution  
+✅ Sub-100ms latency, all clients sync instantly  
+✅ Handles all gameplay logic  
+✅ Authoritative source during match  
+
+### HTTP API (Durable Storage)
+✅ Periodic checkpoints (every 30s)  
+✅ Match completion & ratings  
+✅ State recovery after crash  
+✅ Leaderboards & player profiles  
+✅ Match history  
+
+---
+
+## 📋 Implementation Roadmap
+
+### Week 1: Foundation
+- Backend: Add reconnect endpoint, snapshot versioning
+- Game: Create MatchCheckpointService, update CardGameApiClient
+- **Result:** Checkpoints working
+
+### Week 2: Recovery
+- Game: Create ReconnectionService, update GameBootstrap
+- **Result:** Crash recovery working
+
+### Week 3: Features
+- Game: Create LeaderboardService & UI screens
+- **Result:** Leaderboards visible
+
+### Week 4: Polish
+- Game: JWT refresh, error handling, offline detection
+- **Result:** Production-ready
+
+---
+
+## 🎯 Success Criteria
+
+✅ Netcode controls gameplay (API never blocks)  
+✅ Checkpoints fire-and-forget (no gameplay lag)  
+✅ Crash recovery works (restore from checkpoint)  
+✅ Leaderboards functional (top 100, polled)  
+✅ No data loss (all moves logged via Netcode + API)  
+✅ Versioning clear (handle schema changes)  
+
+---
+
+## 📝 Before Talking to Backend
+
+1. Read `ARCHITECTURE_CLARIFICATION.md`
+2. Review `api_stuff/missing.md`
+3. Ask questions from `HTTP_VERSIONING_STRATEGY.md`
+
+## 🔧 Before Starting Code
+
+1. Backend provides: reconnect endpoint, checkpoint clarity, MatchSnapshot schema
+2. Game team decides: local storage (PlayerPrefs vs. secure), offline policy, acceptable data loss
+
+---
+
+## 📚 Document Legend
+
+| Doc | Length | Purpose | Read When |
+|-----|--------|---------|-----------|
+| ARCHITECTURE_CLARIFICATION.md | 15 min | Understand design | First thing, with backend |
+| IMPLEMENTATION_TASKS.md | 20 min | Detailed tasks | Ready to code |
+| HTTP_VERSIONING_STRATEGY.md | 15 min | Polling & versions | Before implementation |
+| API_INTEGRATION_PLAN.md | 30 min | Full scope (detailed) | Reference, detailed questions |
+| API_QUICK_REFERENCE.md | 5 min | One-page summary | Quick lookup |
+| api_stuff/missing.md | 10 min | API issues | Share with backend |
+| README.md (this) | 5 min | Overview | Navigation |
+
+---
+
+## 🚨 Critical Points
+
+⚠️ **Netcode is real-time authority** — API never makes gameplay decisions  
+⚠️ **Checkpoints are durability only** — not game-state sync  
+⚠️ **API calls are async fire-and-forget** — don't wait for responses  
+⚠️ **Polling has intervals** — leaderboard 30s, stats 5m, reconnect exponential backoff  
+⚠️ **Schema versioning needed** — handle breaking changes without crashing  
+
+---
+
+## 📞 Quick Answers
+
+**Q: Won't HTTP ruin real-time gameplay?**  
+A: No. Netcode handles real-time. API only saves snapshots async (doesn't block).
+
+**Q: What if I crash at turn 50?**  
+A: Restore checkpoint from turn ~48, catch up via Netcode = consistent.
+
+**Q: What if network drops?**  
+A: Netcode drops but checkpoint still saves every 30s. Auto-forfeit after 5m offline.
+
+**Q: How much battery does polling drain?**  
+A: Only when screen visible. Leaderboard: 30s interval = minimal.
+
+**Q: What if checkpoint is stale?**  
+A: Snapshot has timestamp. Reject if >5m old, use if <30s.
+
+---
+
+## 📂 File Structure
+
+```
+Assets/Runtime/Networking/
+├── README.md ← You are here
+├── ARCHITECTURE_CLARIFICATION.md ← Start here
+├── IMPLEMENTATION_TASKS.md
+├── API_INTEGRATION_PLAN.md
+├── API_QUICK_REFERENCE.md
+├── HTTP_VERSIONING_STRATEGY.md
+│
+├── api_stuff/
+│   └── missing.md ← Share with backend
+│
+├── [TO CREATE]
+├── MatchCheckpointService.cs
+├── ReconnectionService.cs
+├── LeaderboardService.cs
+│
+└── [TO MODIFY]
+    ├── CardGameApiClient.cs
+    ├── LocalCacheService.cs
+    ├── GameBootstrap.cs
+    └── GameService.cs
+
+Assets/Runtime/UI/
+└── [TO CREATE]
+    ├── LeaderboardScreen.cs
+    └── ProfileScreen.cs
+```
+
+---
+
+**Status:** Documentation complete, ready for implementation  
+**Next:** Read ARCHITECTURE_CLARIFICATION.md
+s full workflows:
 - Bootstrap → Load catalog
 - Login → Authenticate
 - Deck validation
@@ -288,10 +720,442 @@ All services have comprehensive unit tests in `Assets/Tests/Battle/`:
 - Offline mode
 
 ### Mock Server
-`FakeHttpServer.cs` provides mock API responses for testing without real backend:
+`FakeHttpServer.cs` provides mock API responses for # API Integration Documentation
+
+**Last Updated:** 2026-04-18  
+**Scope:** Integrate HTTP REST API with Netcode-based card game  
+**Status:** Planning phase, docs ready for implementation
+
+---
+
+## 🚀 Quick Start
+
+**Architecture:** Netcode (real-time) + HTTP API (persistent storage)
+
+1. **Read first:** `ARCHITECTURE_CLARIFICATION.md` — understand separation of concerns
+2. **Share with backend:** `api_stuff/missing.md` — what API needs to fix
+3. **Implement:** Follow `IMPLEMENTATION_TASKS.md` Phase 1-4
+4. **Reference:** `HTTP_VERSIONING_STRATEGY.md` for polling & versioning
+
+---
+
+## 📁 Documents Overview
+
+### Understanding
+- **ARCHITECTURE_CLARIFICATION.md** ⭐ START HERE
+  - Clear separation: Netcode vs. HTTP API
+  - What goes where and why
+  - HTTP patterns (polling, versioning, consistency)
+
+- **HTTP_VERSIONING_STRATEGY.md**
+  - API versioning (v1 → v2)
+  - Schema versioning (breaking changes)
+  - Polling intervals & optimization
+  - Stale data detection
+
+### Implementation
+- **IMPLEMENTATION_TASKS.md**
+  - Phase 1: Checkpoint service (periodic saves every 30s)
+  - Phase 2: Reconnection service (crash recovery)
+  - Phase 3: Leaderboard UI
+  - Phase 4: Polish & error handling
+  - Detailed code examples and checklist
+
+- **API_INTEGRATION_PLAN.md** (detailed reference)
+  - Complete API endpoint inventory
+  - 5-phase implementation plan
+  - File-by-file changes
+  - Success criteria
+
+- **API_QUICK_REFERENCE.md** (one-page cheat sheet)
+  - What API has vs. missing
+  - Data flow diagram
+  - Quick timeline
+
+### For Backend Team
+- **api_stuff/missing.md** 📢
+  - 14 issues found (critical, medium, low)
+  - What needs fixing before game can integrate
+  - Questions for API owner
+
+---
+
+## 🎮 Architecture Summary
+
+```
+Player plays card
+    ↓
+Netcode broadcasts (real-time, all clients see instantly)
+    ↓
+(Every 30 seconds)
+    ↓
+MatchCheckpointService saves snapshot to API (async, fire-and-forget)
+    ↓
+Match ends
+    ↓
+POST final result + ratings to API
+    ↓
+API updates match history & ratings
+```
+
+### Netcode (Real-Time Authority)
+✅ Card plays, board updates, turn execution  
+✅ Sub-100ms latency, all clients sync instantly  
+✅ Handles all gameplay logic  
+✅ Authoritative source during match  
+
+### HTTP API (Durable Storage)
+✅ Periodic checkpoints (every 30s)  
+✅ Match completion & ratings  
+✅ State recovery after crash  
+✅ Leaderboards & player profiles  
+✅ Match history  
+
+---
+
+## 📋 Implementation Roadmap
+
+### Week 1: Foundation
+- Backend: Add reconnect endpoint, snapshot versioning
+- Game: Create MatchCheckpointService, update CardGameApiClient
+- **Result:** Checkpoints working
+
+### Week 2: Recovery
+- Game: Create ReconnectionService, update GameBootstrap
+- **Result:** Crash recovery working
+
+### Week 3: Features
+- Game: Create LeaderboardService & UI screens
+- **Result:** Leaderboards visible
+
+### Week 4: Polish
+- Game: JWT refresh, error handling, offline detection
+- **Result:** Production-ready
+
+---
+
+## 🎯 Success Criteria
+
+✅ Netcode controls gameplay (API never blocks)  
+✅ Checkpoints fire-and-forget (no gameplay lag)  
+✅ Crash recovery works (restore from checkpoint)  
+✅ Leaderboards functional (top 100, polled)  
+✅ No data loss (all moves logged via Netcode + API)  
+✅ Versioning clear (handle schema changes)  
+
+---
+
+## 📝 Before Talking to Backend
+
+1. Read `ARCHITECTURE_CLARIFICATION.md`
+2. Review `api_stuff/missing.md`
+3. Ask questions from `HTTP_VERSIONING_STRATEGY.md`
+
+## 🔧 Before Starting Code
+
+1. Backend provides: reconnect endpoint, checkpoint clarity, MatchSnapshot schema
+2. Game team decides: local storage (PlayerPrefs vs. secure), offline policy, acceptable data loss
+
+---
+
+## 📚 Document Legend
+
+| Doc | Length | Purpose | Read When |
+|-----|--------|---------|-----------|
+| ARCHITECTURE_CLARIFICATION.md | 15 min | Understand design | First thing, with backend |
+| IMPLEMENTATION_TASKS.md | 20 min | Detailed tasks | Ready to code |
+| HTTP_VERSIONING_STRATEGY.md | 15 min | Polling & versions | Before implementation |
+| API_INTEGRATION_PLAN.md | 30 min | Full scope (detailed) | Reference, detailed questions |
+| API_QUICK_REFERENCE.md | 5 min | One-page summary | Quick lookup |
+| api_stuff/missing.md | 10 min | API issues | Share with backend |
+| README.md (this) | 5 min | Overview | Navigation |
+
+---
+
+## 🚨 Critical Points
+
+⚠️ **Netcode is real-time authority** — API never makes gameplay decisions  
+⚠️ **Checkpoints are durability only** — not game-state sync  
+⚠️ **API calls are async fire-and-forget** — don't wait for responses  
+⚠️ **Polling has intervals** — leaderboard 30s, stats 5m, reconnect exponential backoff  
+⚠️ **Schema versioning needed** — handle breaking changes without crashing  
+
+---
+
+## 📞 Quick Answers
+
+**Q: Won't HTTP ruin real-time gameplay?**  
+A: No. Netcode handles real-time. API only saves snapshots async (doesn't block).
+
+**Q: What if I crash at turn 50?**  
+A: Restore checkpoint from turn ~48, catch up via Netcode = consistent.
+
+**Q: What if network drops?**  
+A: Netcode drops but checkpoint still saves every 30s. Auto-forfeit after 5m offline.
+
+**Q: How much battery does polling drain?**  
+A: Only when screen visible. Leaderboard: 30s interval = minimal.
+
+**Q: What if checkpoint is stale?**  
+A: Snapshot has timestamp. Reject if >5m old, use if <30s.
+
+---
+
+## 📂 File Structure
+
+```
+Assets/Runtime/Networking/
+├── README.md ← You are here
+├── ARCHITECTURE_CLARIFICATION.md ← Start here
+├── IMPLEMENTATION_TASKS.md
+├── API_INTEGRATION_PLAN.md
+├── API_QUICK_REFERENCE.md
+├── HTTP_VERSIONING_STRATEGY.md
+│
+├── api_stuff/
+│   └── missing.md ← Share with backend
+│
+├── [TO CREATE]
+├── MatchCheckpointService.cs
+├── ReconnectionService.cs
+├── LeaderboardService.cs
+│
+└── [TO MODIFY]
+    ├── CardGameApiClient.cs
+    ├── LocalCacheService.cs
+    ├── GameBootstrap.cs
+    └── GameService.cs
+
+Assets/Runtime/UI/
+└── [TO CREATE]
+    ├── LeaderboardScreen.cs
+    └── ProfileScreen.cs
+```
+
+---
+
+**Status:** Documentation complete, ready for implementation  
+**Next:** Read ARCHITECTURE_CLARIFICATION.md
+ing without real backend:
 
 ```csharp
-// In tests
+// In # API Integration Documentation
+
+**Last Updated:** 2026-04-18  
+**Scope:** Integrate HTTP REST API with Netcode-based card game  
+**Status:** Planning phase, docs ready for implementation
+
+---
+
+## 🚀 Quick Start
+
+**Architecture:** Netcode (real-time) + HTTP API (persistent storage)
+
+1. **Read first:** `ARCHITECTURE_CLARIFICATION.md` — understand separation of concerns
+2. **Share with backend:** `api_stuff/missing.md` — what API needs to fix
+3. **Implement:** Follow `IMPLEMENTATION_TASKS.md` Phase 1-4
+4. **Reference:** `HTTP_VERSIONING_STRATEGY.md` for polling & versioning
+
+---
+
+## 📁 Documents Overview
+
+### Understanding
+- **ARCHITECTURE_CLARIFICATION.md** ⭐ START HERE
+  - Clear separation: Netcode vs. HTTP API
+  - What goes where and why
+  - HTTP patterns (polling, versioning, consistency)
+
+- **HTTP_VERSIONING_STRATEGY.md**
+  - API versioning (v1 → v2)
+  - Schema versioning (breaking changes)
+  - Polling intervals & optimization
+  - Stale data detection
+
+### Implementation
+- **IMPLEMENTATION_TASKS.md**
+  - Phase 1: Checkpoint service (periodic saves every 30s)
+  - Phase 2: Reconnection service (crash recovery)
+  - Phase 3: Leaderboard UI
+  - Phase 4: Polish & error handling
+  - Detailed code examples and checklist
+
+- **API_INTEGRATION_PLAN.md** (detailed reference)
+  - Complete API endpoint inventory
+  - 5-phase implementation plan
+  - File-by-file changes
+  - Success criteria
+
+- **API_QUICK_REFERENCE.md** (one-page cheat sheet)
+  - What API has vs. missing
+  - Data flow diagram
+  - Quick timeline
+
+### For Backend Team
+- **api_stuff/missing.md** 📢
+  - 14 issues found (critical, medium, low)
+  - What needs fixing before game can integrate
+  - Questions for API owner
+
+---
+
+## 🎮 Architecture Summary
+
+```
+Player plays card
+    ↓
+Netcode broadcasts (real-time, all clients see instantly)
+    ↓
+(Every 30 seconds)
+    ↓
+MatchCheckpointService saves snapshot to API (async, fire-and-forget)
+    ↓
+Match ends
+    ↓
+POST final result + ratings to API
+    ↓
+API updates match history & ratings
+```
+
+### Netcode (Real-Time Authority)
+✅ Card plays, board updates, turn execution  
+✅ Sub-100ms latency, all clients sync instantly  
+✅ Handles all gameplay logic  
+✅ Authoritative source during match  
+
+### HTTP API (Durable Storage)
+✅ Periodic checkpoints (every 30s)  
+✅ Match completion & ratings  
+✅ State recovery after crash  
+✅ Leaderboards & player profiles  
+✅ Match history  
+
+---
+
+## 📋 Implementation Roadmap
+
+### Week 1: Foundation
+- Backend: Add reconnect endpoint, snapshot versioning
+- Game: Create MatchCheckpointService, update CardGameApiClient
+- **Result:** Checkpoints working
+
+### Week 2: Recovery
+- Game: Create ReconnectionService, update GameBootstrap
+- **Result:** Crash recovery working
+
+### Week 3: Features
+- Game: Create LeaderboardService & UI screens
+- **Result:** Leaderboards visible
+
+### Week 4: Polish
+- Game: JWT refresh, error handling, offline detection
+- **Result:** Production-ready
+
+---
+
+## 🎯 Success Criteria
+
+✅ Netcode controls gameplay (API never blocks)  
+✅ Checkpoints fire-and-forget (no gameplay lag)  
+✅ Crash recovery works (restore from checkpoint)  
+✅ Leaderboards functional (top 100, polled)  
+✅ No data loss (all moves logged via Netcode + API)  
+✅ Versioning clear (handle schema changes)  
+
+---
+
+## 📝 Before Talking to Backend
+
+1. Read `ARCHITECTURE_CLARIFICATION.md`
+2. Review `api_stuff/missing.md`
+3. Ask questions from `HTTP_VERSIONING_STRATEGY.md`
+
+## 🔧 Before Starting Code
+
+1. Backend provides: reconnect endpoint, checkpoint clarity, MatchSnapshot schema
+2. Game team decides: local storage (PlayerPrefs vs. secure), offline policy, acceptable data loss
+
+---
+
+## 📚 Document Legend
+
+| Doc | Length | Purpose | Read When |
+|-----|--------|---------|-----------|
+| ARCHITECTURE_CLARIFICATION.md | 15 min | Understand design | First thing, with backend |
+| IMPLEMENTATION_TASKS.md | 20 min | Detailed tasks | Ready to code |
+| HTTP_VERSIONING_STRATEGY.md | 15 min | Polling & versions | Before implementation |
+| API_INTEGRATION_PLAN.md | 30 min | Full scope (detailed) | Reference, detailed questions |
+| API_QUICK_REFERENCE.md | 5 min | One-page summary | Quick lookup |
+| api_stuff/missing.md | 10 min | API issues | Share with backend |
+| README.md (this) | 5 min | Overview | Navigation |
+
+---
+
+## 🚨 Critical Points
+
+⚠️ **Netcode is real-time authority** — API never makes gameplay decisions  
+⚠️ **Checkpoints are durability only** — not game-state sync  
+⚠️ **API calls are async fire-and-forget** — don't wait for responses  
+⚠️ **Polling has intervals** — leaderboard 30s, stats 5m, reconnect exponential backoff  
+⚠️ **Schema versioning needed** — handle breaking changes without crashing  
+
+---
+
+## 📞 Quick Answers
+
+**Q: Won't HTTP ruin real-time gameplay?**  
+A: No. Netcode handles real-time. API only saves snapshots async (doesn't block).
+
+**Q: What if I crash at turn 50?**  
+A: Restore checkpoint from turn ~48, catch up via Netcode = consistent.
+
+**Q: What if network drops?**  
+A: Netcode drops but checkpoint still saves every 30s. Auto-forfeit after 5m offline.
+
+**Q: How much battery does polling drain?**  
+A: Only when screen visible. Leaderboard: 30s interval = minimal.
+
+**Q: What if checkpoint is stale?**  
+A: Snapshot has timestamp. Reject if >5m old, use if <30s.
+
+---
+
+## 📂 File Structure
+
+```
+Assets/Runtime/Networking/
+├── README.md ← You are here
+├── ARCHITECTURE_CLARIFICATION.md ← Start here
+├── IMPLEMENTATION_TASKS.md
+├── API_INTEGRATION_PLAN.md
+├── API_QUICK_REFERENCE.md
+├── HTTP_VERSIONING_STRATEGY.md
+│
+├── api_stuff/
+│   └── missing.md ← Share with backend
+│
+├── [TO CREATE]
+├── MatchCheckpointService.cs
+├── ReconnectionService.cs
+├── LeaderboardService.cs
+│
+└── [TO MODIFY]
+    ├── CardGameApiClient.cs
+    ├── LocalCacheService.cs
+    ├── GameBootstrap.cs
+    └── GameService.cs
+
+Assets/Runtime/UI/
+└── [TO CREATE]
+    ├── LeaderboardScreen.cs
+    └── ProfileScreen.cs
+```
+
+---
+
+**Status:** Documentation complete, ready for implementation  
+**Next:** Read ARCHITECTURE_CLARIFICATION.md
+s
 FakeHttpServerExtensions.InitializeFakeServer();
 var client = new CardGameApiClient("http://localhost:5000");
 // Requests automatically intercepted with fake responses
@@ -456,7 +1320,223 @@ Assets/Tests/Battle/
 When adding new services:
 1. Extend GameService with new property
 2. Initialize in InitializeServices()
-3. Create service tests
+3. Create service # API Integration Documentation
+
+**Last Updated:** 2026-04-18  
+**Scope:** Integrate HTTP REST API with Netcode-based card game  
+**Status:** Planning phase, docs ready for implementation
+
+---
+
+## 🚀 Quick Start
+
+**Architecture:** Netcode (real-time) + HTTP API (persistent storage)
+
+1. **Read first:** `ARCHITECTURE_CLARIFICATION.md` — understand separation of concerns
+2. **Share with backend:** `api_stuff/missing.md` — what API needs to fix
+3. **Implement:** Follow `IMPLEMENTATION_TASKS.md` Phase 1-4
+4. **Reference:** `HTTP_VERSIONING_STRATEGY.md` for polling & versioning
+
+---
+
+## 📁 Documents Overview
+
+### Understanding
+- **ARCHITECTURE_CLARIFICATION.md** ⭐ START HERE
+  - Clear separation: Netcode vs. HTTP API
+  - What goes where and why
+  - HTTP patterns (polling, versioning, consistency)
+
+- **HTTP_VERSIONING_STRATEGY.md**
+  - API versioning (v1 → v2)
+  - Schema versioning (breaking changes)
+  - Polling intervals & optimization
+  - Stale data detection
+
+### Implementation
+- **IMPLEMENTATION_TASKS.md**
+  - Phase 1: Checkpoint service (periodic saves every 30s)
+  - Phase 2: Reconnection service (crash recovery)
+  - Phase 3: Leaderboard UI
+  - Phase 4: Polish & error handling
+  - Detailed code examples and checklist
+
+- **API_INTEGRATION_PLAN.md** (detailed reference)
+  - Complete API endpoint inventory
+  - 5-phase implementation plan
+  - File-by-file changes
+  - Success criteria
+
+- **API_QUICK_REFERENCE.md** (one-page cheat sheet)
+  - What API has vs. missing
+  - Data flow diagram
+  - Quick timeline
+
+### For Backend Team
+- **api_stuff/missing.md** 📢
+  - 14 issues found (critical, medium, low)
+  - What needs fixing before game can integrate
+  - Questions for API owner
+
+---
+
+## 🎮 Architecture Summary
+
+```
+Player plays card
+    ↓
+Netcode broadcasts (real-time, all clients see instantly)
+    ↓
+(Every 30 seconds)
+    ↓
+MatchCheckpointService saves snapshot to API (async, fire-and-forget)
+    ↓
+Match ends
+    ↓
+POST final result + ratings to API
+    ↓
+API updates match history & ratings
+```
+
+### Netcode (Real-Time Authority)
+✅ Card plays, board updates, turn execution  
+✅ Sub-100ms latency, all clients sync instantly  
+✅ Handles all gameplay logic  
+✅ Authoritative source during match  
+
+### HTTP API (Durable Storage)
+✅ Periodic checkpoints (every 30s)  
+✅ Match completion & ratings  
+✅ State recovery after crash  
+✅ Leaderboards & player profiles  
+✅ Match history  
+
+---
+
+## 📋 Implementation Roadmap
+
+### Week 1: Foundation
+- Backend: Add reconnect endpoint, snapshot versioning
+- Game: Create MatchCheckpointService, update CardGameApiClient
+- **Result:** Checkpoints working
+
+### Week 2: Recovery
+- Game: Create ReconnectionService, update GameBootstrap
+- **Result:** Crash recovery working
+
+### Week 3: Features
+- Game: Create LeaderboardService & UI screens
+- **Result:** Leaderboards visible
+
+### Week 4: Polish
+- Game: JWT refresh, error handling, offline detection
+- **Result:** Production-ready
+
+---
+
+## 🎯 Success Criteria
+
+✅ Netcode controls gameplay (API never blocks)  
+✅ Checkpoints fire-and-forget (no gameplay lag)  
+✅ Crash recovery works (restore from checkpoint)  
+✅ Leaderboards functional (top 100, polled)  
+✅ No data loss (all moves logged via Netcode + API)  
+✅ Versioning clear (handle schema changes)  
+
+---
+
+## 📝 Before Talking to Backend
+
+1. Read `ARCHITECTURE_CLARIFICATION.md`
+2. Review `api_stuff/missing.md`
+3. Ask questions from `HTTP_VERSIONING_STRATEGY.md`
+
+## 🔧 Before Starting Code
+
+1. Backend provides: reconnect endpoint, checkpoint clarity, MatchSnapshot schema
+2. Game team decides: local storage (PlayerPrefs vs. secure), offline policy, acceptable data loss
+
+---
+
+## 📚 Document Legend
+
+| Doc | Length | Purpose | Read When |
+|-----|--------|---------|-----------|
+| ARCHITECTURE_CLARIFICATION.md | 15 min | Understand design | First thing, with backend |
+| IMPLEMENTATION_TASKS.md | 20 min | Detailed tasks | Ready to code |
+| HTTP_VERSIONING_STRATEGY.md | 15 min | Polling & versions | Before implementation |
+| API_INTEGRATION_PLAN.md | 30 min | Full scope (detailed) | Reference, detailed questions |
+| API_QUICK_REFERENCE.md | 5 min | One-page summary | Quick lookup |
+| api_stuff/missing.md | 10 min | API issues | Share with backend |
+| README.md (this) | 5 min | Overview | Navigation |
+
+---
+
+## 🚨 Critical Points
+
+⚠️ **Netcode is real-time authority** — API never makes gameplay decisions  
+⚠️ **Checkpoints are durability only** — not game-state sync  
+⚠️ **API calls are async fire-and-forget** — don't wait for responses  
+⚠️ **Polling has intervals** — leaderboard 30s, stats 5m, reconnect exponential backoff  
+⚠️ **Schema versioning needed** — handle breaking changes without crashing  
+
+---
+
+## 📞 Quick Answers
+
+**Q: Won't HTTP ruin real-time gameplay?**  
+A: No. Netcode handles real-time. API only saves snapshots async (doesn't block).
+
+**Q: What if I crash at turn 50?**  
+A: Restore checkpoint from turn ~48, catch up via Netcode = consistent.
+
+**Q: What if network drops?**  
+A: Netcode drops but checkpoint still saves every 30s. Auto-forfeit after 5m offline.
+
+**Q: How much battery does polling drain?**  
+A: Only when screen visible. Leaderboard: 30s interval = minimal.
+
+**Q: What if checkpoint is stale?**  
+A: Snapshot has timestamp. Reject if >5m old, use if <30s.
+
+---
+
+## 📂 File Structure
+
+```
+Assets/Runtime/Networking/
+├── README.md ← You are here
+├── ARCHITECTURE_CLARIFICATION.md ← Start here
+├── IMPLEMENTATION_TASKS.md
+├── API_INTEGRATION_PLAN.md
+├── API_QUICK_REFERENCE.md
+├── HTTP_VERSIONING_STRATEGY.md
+│
+├── api_stuff/
+│   └── missing.md ← Share with backend
+│
+├── [TO CREATE]
+├── MatchCheckpointService.cs
+├── ReconnectionService.cs
+├── LeaderboardService.cs
+│
+└── [TO MODIFY]
+    ├── CardGameApiClient.cs
+    ├── LocalCacheService.cs
+    ├── GameBootstrap.cs
+    └── GameService.cs
+
+Assets/Runtime/UI/
+└── [TO CREATE]
+    ├── LeaderboardScreen.cs
+    └── ProfileScreen.cs
+```
+
+---
+
+**Status:** Documentation complete, ready for implementation  
+**Next:** Read ARCHITECTURE_CLARIFICATION.md
+s
 4. Update SERVICES_GUIDE.md
 5. Add example in GameServiceExample.cs
 6. Commit with descriptive message

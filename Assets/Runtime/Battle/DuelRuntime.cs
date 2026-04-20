@@ -4,7 +4,8 @@ using System.Linq;
 using UnityEngine;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Data;
-using Flippy.CardDuelMobile.Battle.Skills;
+using Flippy.CardDuelMobile.Battle.Abilities;
+using AbilityTriggerEnum = Flippy.CardDuelMobile.Battle.Abilities.AbilityTrigger;
 
 namespace Flippy.CardDuelMobile.Battle
 {
@@ -25,7 +26,7 @@ namespace Flippy.CardDuelMobile.Battle
 
             // Initialize registries
             CardRegistry.Initialize();
-            SkillRegistry.Initialize();
+            AbilityRegistry.Initialize();
         }
 
         /// <summary>
@@ -255,7 +256,7 @@ namespace Flippy.CardDuelMobile.Battle
                 message = $"{cardRuntime.DisplayName} entered {slot}."
             });
 
-            ResolveAbilities(cardRuntime, AbilityTrigger.OnPlay);
+            ResolveAbilities(cardRuntime, AbilityTriggerEnum.OnCardInitialize);
             return true;
         }
 
@@ -312,7 +313,7 @@ namespace Flippy.CardDuelMobile.Battle
             // Assign effective attack selector based on unitType
             AssignEffectiveSelector(card);
 
-            // Skill initialization moved to ISkillEffect + SkillRegistry system
+            // Skill initialization moved to IAbilityEffect + AbilityRegistry system
             // No per-card initialization needed for new pipeline
         }
 
@@ -361,7 +362,7 @@ namespace Flippy.CardDuelMobile.Battle
                 message = $"Player {playerIndex} ended turn."
             });
 
-            ResolveTurnAbilities(playerIndex, AbilityTrigger.OnTurnEnd);
+            ResolveTurnAbilities(playerIndex, AbilityTriggerEnum.OnTurnEnd);
 
             // Use new BattlePhaseManager for clean attack execution
             var phaseManager = new Flippy.CardDuelMobile.Battle.Phases.BattlePhaseManager();
@@ -390,7 +391,7 @@ namespace Flippy.CardDuelMobile.Battle
                 }
 
                 _context.ProcessStatusEffects(_state.ActivePlayerIndex);
-                ResolveTurnAbilities(_state.ActivePlayerIndex, AbilityTrigger.OnTurnStart);
+                ResolveTurnAbilities(_state.ActivePlayerIndex, AbilityTriggerEnum.OnTurnStart);
             }
 
             return true;
@@ -611,7 +612,7 @@ namespace Flippy.CardDuelMobile.Battle
                 return;
             }
 
-            ResolveAbilities(attacker, AbilityTrigger.OnBattlePhase);
+            ResolveAbilities(attacker, AbilityTriggerEnum.OnBattlePhaseStart);
 
             // Use effective attack selector (based on unitType or custom)
             var targetSelector = attacker.EffectiveAttackSelector;
@@ -628,7 +629,7 @@ namespace Flippy.CardDuelMobile.Battle
                     alliesOnBoard++;
                 }
             }
-            // LastStand bonus damage handled via ISkillEffect in SkillPipeline
+            // LastStand bonus damage handled via IAbilityEffect in AbilityPipeline
 
             _targetBuffer.Clear();
 
@@ -657,7 +658,7 @@ namespace Flippy.CardDuelMobile.Battle
             }
         }
 
-        private void ResolveTurnAbilities(int playerIndex, AbilityTrigger trigger)
+        private void ResolveTurnAbilities(int playerIndex, AbilityTriggerEnum trigger)
         {
             var player = _state.GetPlayer(playerIndex);
             foreach (var slot in player.Board)
@@ -669,7 +670,7 @@ namespace Flippy.CardDuelMobile.Battle
             }
         }
 
-        private void ResolveAbilities(CardRuntime source, AbilityTrigger trigger)
+        private void ResolveAbilities(CardRuntime source, AbilityTriggerEnum trigger)
         {
             if (source == null || source.Definition == null || source.Definition.abilities == null)
             {

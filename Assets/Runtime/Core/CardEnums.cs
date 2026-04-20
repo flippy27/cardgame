@@ -36,19 +36,6 @@ namespace Flippy.CardDuelMobile.Core
     }
 
     /// <summary>
-    /// Trigger en que una habilidad se ejecuta.
-    /// </summary>
-    public enum AbilityTrigger
-    {
-        OnPlay = 0,
-        OnTurnStart = 1,
-        OnTurnEnd = 2,
-        OnBattlePhase = 3,
-        OnDamaged = 4,
-        OnDeath = 5
-    }
-
-    /// <summary>
     /// Tipo de objetivo de un efecto.
     /// </summary>
     public enum TargetSide

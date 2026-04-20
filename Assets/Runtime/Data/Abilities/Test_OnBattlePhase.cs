@@ -1,3 +1,5 @@
+using Flippy.CardDuelMobile.Battle.Abilities;
+using AbilityTriggerEnum = Flippy.CardDuelMobile.Battle.Abilities.AbilityTrigger;
 using UnityEngine;
 using Flippy.CardDuelMobile.Core;
 
@@ -9,7 +11,7 @@ namespace Flippy.CardDuelMobile.Data
         public string abilityId = "test_on_battle_phase";
         public string displayName = "Test: ATK Buff on Battle Phase";
         public string description = "Gains +1 ATK during battle phase";
-        public AbilityTrigger trigger = AbilityTrigger.OnBattlePhase;
+        public AbilityTriggerEnum trigger = AbilityTriggerEnum.OnBattlePhaseStart; 
         public TargetSelectorDefinition targetSelector;
         public EffectDefinition[] effects;
     }

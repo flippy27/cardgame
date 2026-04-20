@@ -1,5 +1,7 @@
-using Flippy.CardDuelMobile.Battle.Skills;
 using Flippy.CardDuelMobile.Core;
+using Flippy.CardDuelMobile.Battle;
+using Flippy.CardDuelMobile.Battle.Abilities;
+using AbilityTriggerEnum = Flippy.CardDuelMobile.Battle.Abilities.AbilityTrigger;
 
 namespace Flippy.CardDuelMobile.Battle.Phases
 {
@@ -36,17 +38,17 @@ namespace Flippy.CardDuelMobile.Battle.Phases
 
         private void ExecuteCardAttack(BattleContext context, CardRuntime attacker, int sourcePlayerIndex, int defenderIndex)
         {
-            var pipeline = new SkillPipeline();
+            var pipeline = new AbilityPipeline();
 
             // 1. Validate attack
-            var validationContext = new SkillContext(attacker, null, context, SkillTrigger.OnValidateAttack);
+            var validationContext = new AbilityContext(attacker, null, context, AbilityTrigger.OnValidateAttack);
             validationContext = pipeline.Execute(validationContext);
 
             if (!validationContext.IsValidAttack)
                 return;
 
             // 2. Select targets
-            var selectionContext = new SkillContext(attacker, null, context, SkillTrigger.OnSelectTarget);
+            var selectionContext = new AbilityContext(attacker, null, context, AbilityTrigger.OnSelectTarget);
             var targets = new System.Collections.Generic.List<string>();
 
             // Use effective selector to find targets
@@ -92,7 +94,7 @@ namespace Flippy.CardDuelMobile.Battle.Phases
             // 3. Apply damage to each target
             foreach (var target in selectionContext.TargetList)
             {
-                var damageContext = new SkillContext(attacker, target, context, SkillTrigger.OnDamageCalculation);
+                var damageContext = new AbilityContext(attacker, target, context, AbilityTrigger.OnDamageCalculation);
                 damageContext.BaseDamage = attacker.Attack + attacker.EnrageBonus;
                 damageContext.TargetList.Add(target);
                 damageContext = pipeline.Execute(damageContext);
@@ -100,6 +102,13 @@ namespace Flippy.CardDuelMobile.Battle.Phases
                 // If pipeline didn't set FinalDamage, use BaseDamage
                 var finalDamage = damageContext.FinalDamage > 0 ? damageContext.FinalDamage : damageContext.BaseDamage;
                 context.DealDamage(attacker.RuntimeId, target.RuntimeId, finalDamage, false);
+
+                // 4. Apply post-damage effects (poison, stun, leech, reflection, etc)
+                var postDamageContext = new AbilityContext(attacker, target, context, AbilityTrigger.OnDamageDealt);
+                postDamageContext.BaseDamage = attacker.Attack + attacker.EnrageBonus;
+                postDamageContext.FinalDamage = finalDamage;
+                postDamageContext.TargetList.Add(target);
+                pipeline.Execute(postDamageContext);
             }
         }
     }

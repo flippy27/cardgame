@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Data;
+using Flippy.CardDuelMobile.Networking.ApiClients;
 
 namespace Flippy.CardDuelMobile.Networking
 {
@@ -44,8 +45,17 @@ namespace Flippy.CardDuelMobile.Networking
             try
             {
                 var cards = await _apiClient.FetchAllCards();
-                _cache = cards.ToDictionary(c => c.CardId, c => c, StringComparer.OrdinalIgnoreCase);
+
+                // Filter out cards with null/empty cardId
+                var validCards = cards.Where(c => !string.IsNullOrWhiteSpace(c.cardId)).ToList();
+                if (validCards.Count < cards.Count)
+                {
+                    Debug.LogWarning($"[Catalog] Filtered {cards.Count - validCards.Count} cards with null/empty cardId");
+                }
+
+                _cache = validCards.ToDictionary(c => c.cardId, c => c, StringComparer.OrdinalIgnoreCase);
                 _isLoaded = true;
+                Debug.Log($"[Catalog] Loaded {_cache.Count} valid cards");
             }
             catch (Exception ex)
             {
@@ -139,7 +149,7 @@ namespace Flippy.CardDuelMobile.Networking
 
             return (
                 _cache.Count,
-                _cache.Values.Count(c => c.Abilities != null && c.Abilities.Length > 0)
+                _cache.Values.Count(c => c.abilities != null && c.abilities.Length > 0)
             );
         }
     }

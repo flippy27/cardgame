@@ -67,10 +67,14 @@
  * 4. Add test for enum value parity (values match for same semantics)
  */
 
+using Flippy.CardDuelMobile.Battle.Abilities;
+using AbilityTriggerEnum = Flippy.CardDuelMobile.Battle.Abilities.AbilityTrigger;
+
 namespace Flippy.CardDuelMobile.Core
 {
     /// <summary>
     /// Runtime helper for enum conversions to/from API.
+    /// Maps Battle.Abilities.AbilityTrigger to server-compatible format.
     /// </summary>
     public static class ApiEnumMapping
     {
@@ -78,15 +82,15 @@ namespace Flippy.CardDuelMobile.Core
         /// Convert client AbilityTrigger to API-compatible format.
         /// Returns -1 if trigger is not supported by API.
         /// </summary>
-        public static int TriggerToApi(AbilityTrigger trigger)
+        public static int TriggerToApi(AbilityTriggerEnum trigger)
         {
             return trigger switch
             {
-                AbilityTrigger.OnPlay => 0,
-                AbilityTrigger.OnTurnStart => 1,
-                AbilityTrigger.OnTurnEnd => 2,
-                AbilityTrigger.OnBattlePhase => 3,
-                // OnDamaged, OnDeath not in API
+                AbilityTriggerEnum.OnCardInitialize => 0,
+                AbilityTriggerEnum.OnTurnStart => 1,
+                AbilityTriggerEnum.OnTurnEnd => 2,
+                AbilityTriggerEnum.OnBattlePhaseStart => 3,
+                // Pipeline triggers (validate, select, damage calculation, etc.) not in API
                 _ => -1
             };
         }
@@ -94,22 +98,22 @@ namespace Flippy.CardDuelMobile.Core
         /// <summary>
         /// Convert API TriggerKind to client AbilityTrigger.
         /// </summary>
-        public static AbilityTrigger TriggerFromApi(int apiTrigger)
+        public static AbilityTriggerEnum TriggerFromApi(int apiTrigger)
         {
             return apiTrigger switch
             {
-                0 => AbilityTrigger.OnPlay,
-                1 => AbilityTrigger.OnTurnStart,
-                2 => AbilityTrigger.OnTurnEnd,
-                3 => AbilityTrigger.OnBattlePhase,
-                _ => AbilityTrigger.OnPlay // default
+                0 => AbilityTriggerEnum.OnCardInitialize,
+                1 => AbilityTriggerEnum.OnTurnStart,
+                2 => AbilityTriggerEnum.OnTurnEnd,
+                3 => AbilityTriggerEnum.OnBattlePhaseStart,
+                _ => AbilityTriggerEnum.OnCardInitialize // default
             };
         }
 
         /// <summary>
         /// Check if trigger is supported by server API.
         /// </summary>
-        public static bool IsTriggerApiSupported(AbilityTrigger trigger)
+        public static bool IsTriggerApiSupported(AbilityTriggerEnum trigger)
         {
             return TriggerToApi(trigger) >= 0;
         }

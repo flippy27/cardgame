@@ -1,6 +1,8 @@
 using UnityEngine;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Battle;
+using Flippy.CardDuelMobile.Battle.Abilities;
+using AbilityTriggerEnum = Flippy.CardDuelMobile.Battle.Abilities.AbilityTrigger;
 
 namespace Flippy.CardDuelMobile.Data
 {
@@ -13,7 +15,7 @@ namespace Flippy.CardDuelMobile.Data
         public string abilityId = "ability";
         public string displayName = "Ability";
         [TextArea] public string description;
-        public AbilityTrigger trigger = AbilityTrigger.OnBattlePhase;
+        public AbilityTriggerEnum trigger = AbilityTriggerEnum.OnBattlePhaseStart;
         public TargetSelectorDefinition targetSelector;
         public EffectDefinition[] effects;
 

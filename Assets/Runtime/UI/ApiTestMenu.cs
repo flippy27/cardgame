@@ -242,7 +242,7 @@ namespace Flippy.CardDuelMobile.UI
                 Log($"✅ Obtenidas {cards.Count} cartas");
                 foreach (var card in cards.Take(5))
                 {
-                    Log($"   - {card.CardId}: {card.DisplayName} ({card.ManaCost} mana)");
+                    Log($"   - {card.cardId}: {card.displayName} ({card.manaCost} mana)");
                 }
                 if (cards.Count > 5)
                     Log($"   ... y {cards.Count - 5} más");
@@ -270,7 +270,7 @@ namespace Flippy.CardDuelMobile.UI
                 Log($"✅ Encontradas {results.Count} cartas");
                 foreach (var card in results.Take(5))
                 {
-                    Log($"   - {card.DisplayName}");
+                    Log($"   - {card.displayName}");
                 }
             }
             catch (Exception ex)

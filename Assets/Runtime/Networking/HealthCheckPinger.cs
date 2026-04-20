@@ -34,11 +34,10 @@ namespace Flippy.CardDuelMobile.Networking
 
         private IEnumerator Ping()
         {
-            using var req = UnityWebRequest.Get(_healthUrl);
-            req.timeout = 5;
-            yield return req.SendWebRequest();
+            var task = HttpClientHelper.GetAsync(_healthUrl);
+            yield return new WaitUntil(() => task.IsCompleted);
 
-            if (req.result == UnityWebRequest.Result.Success)
+            try
             {
                 Debug.Log("[Health] Server OK");
                 _failureCount = 0;
@@ -48,10 +47,10 @@ namespace Flippy.CardDuelMobile.Networking
                     GameEvents.RaiseConnected();
                 }
             }
-            else
+            catch
             {
                 _failureCount++;
-                Debug.LogWarning($"[Health] Ping failed ({_failureCount}/{_maxFailures}): {req.error}");
+                Debug.LogWarning($"[Health] Ping failed ({_failureCount}/{_maxFailures})");
 
                 if (_failureCount >= _maxFailures && _isHealthy)
                 {

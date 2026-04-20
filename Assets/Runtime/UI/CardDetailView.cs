@@ -10,7 +10,7 @@ namespace Flippy.CardDuelMobile.UI
     public class CardDetailView : MonoBehaviour, IDragHandler
     {
         public CardViewWidget cardViewWidget;
-        public CardSkillDisplay skillDisplay;
+        public CardAbilityDisplay skillDisplay;
         public Image cooldownIcon;
         public Image canAttackIcon;
 
@@ -26,7 +26,7 @@ namespace Flippy.CardDuelMobile.UI
             if (cardViewWidget == null)
                 cardViewWidget = GetComponentInChildren<CardViewWidget>();
             if (skillDisplay == null)
-                skillDisplay = GetComponentInChildren<CardSkillDisplay>();
+                skillDisplay = GetComponentInChildren<CardAbilityDisplay>();
 
             // Auto-find attack icons
             if (cooldownIcon == null || canAttackIcon == null)

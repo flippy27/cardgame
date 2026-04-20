@@ -12,6 +12,9 @@ namespace Flippy.CardDuelMobile.Core
         public static event Action OnMatchStarted;
         public static event Action OnMatchEnded;
 
+        public static event Action Connected { add => OnConnected += value; remove => OnConnected -= value; }
+        public static event Action Disconnected { add => OnDisconnected += value; remove => OnDisconnected -= value; }
+
         public static void RaiseConnected()
         {
             UnityEngine.Debug.Log("[Events] Connected");

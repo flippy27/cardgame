@@ -230,6 +230,15 @@ namespace Flippy.CardDuelMobile.Networking
             if (_runtime.TryPlayCard(playerIndex, runtimeCardKey, (BoardSlot)slotIndex))
             {
                 GameLogger.Info("Net", $"PlayCard succeeded");
+
+                // Log action to API (non-blocking)
+                if (MatchActionService.Instance != null)
+                {
+                    var card = _runtime.State.GetPlayer(playerIndex).Hand.Find(c => c.RuntimeHandKey == runtimeCardKey);
+                    var manaCost = card?.Definition?.manaCost ?? 0;
+                    MatchActionService.Instance.LogCardPlay(card?.Definition?.cardId ?? "unknown", (int)slotIndex, manaCost);
+                }
+
                 BroadcastSnapshot();
             }
             else
@@ -267,6 +276,13 @@ namespace Flippy.CardDuelMobile.Networking
             if (_runtime.TryEndTurn(playerIndex))
             {
                 GameLogger.Info("Net", $"EndTurn succeeded, duelEnded={_runtime.State.DuelEnded}");
+
+                // Log action to API (non-blocking)
+                if (MatchActionService.Instance != null)
+                {
+                    MatchActionService.Instance.LogEndTurn(_runtime.State.TurnNumber);
+                }
+
                 if (_runtime.State.DuelEnded)
                 {
                     _matchPhase = MatchPhase.Completed;
@@ -459,6 +475,20 @@ namespace Flippy.CardDuelMobile.Networking
             _matchPhase = MatchPhase.InProgress;
             GameLogger.Info("Match", "Match started, broadcasting snapshot");
             AppendLog("Both players ready. Match started.");
+
+            // Initialize action logging and checkpointing (non-blocking)
+            var matchId = $"match-{Guid.NewGuid()}"; // TODO: use actual match ID from server
+            if (MatchActionService.Instance != null)
+            {
+                var playerId = _seats[0].AuthPlayerId; // Local player
+                MatchActionService.Instance.InitializeMatch(matchId, playerId);
+            }
+            if (MatchCheckpointService.Instance != null)
+            {
+                var playerId = _seats[0].AuthPlayerId;
+                MatchCheckpointService.Instance.InitializeMatch(matchId, playerId, _runtime, localPlayerIndex: 0);
+            }
+
             BroadcastSnapshot();
         }
 

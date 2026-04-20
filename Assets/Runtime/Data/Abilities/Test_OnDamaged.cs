@@ -1,3 +1,5 @@
+using Flippy.CardDuelMobile.Battle.Abilities;
+using AbilityTriggerEnum = Flippy.CardDuelMobile.Battle.Abilities.AbilityTrigger;
 using UnityEngine;
 using Flippy.CardDuelMobile.Core;
 
@@ -9,7 +11,7 @@ namespace Flippy.CardDuelMobile.Data
         public string abilityId = "test_on_damaged";
         public string displayName = "Test: Shield on Damaged";
         public string description = "Gains +1 Armor when damaged";
-        public AbilityTrigger trigger = AbilityTrigger.OnDamaged;
+        public AbilityTriggerEnum trigger = AbilityTriggerEnum.OnDamageReceived;
         public TargetSelectorDefinition targetSelector;
         public EffectDefinition[] effects;
     }

@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using Flippy.CardDuelMobile.Data;
 using Flippy.CardDuelMobile.Core;
+using Flippy.CardDuelMobile.Battle.Abilities;
+using CardAbilityDef = Flippy.CardDuelMobile.Data.AbilityDefinition;
 
 namespace Flippy.CardDuelMobile.Editor
 {
@@ -148,7 +150,7 @@ namespace Flippy.CardDuelMobile.Editor
             EnsureDirectoryExists(OUTPUT_CARDS_PATH);
 
             // Load all ability assets for reference
-            var abilityAssets = new Dictionary<string, AbilityDefinition>();
+            var abilityAssets = new Dictionary<string, CardAbilityDef>();
             LoadAbilityAssets(abilityAssets);
 
             foreach (var cardData in cardsData.cards)
@@ -198,7 +200,7 @@ namespace Flippy.CardDuelMobile.Editor
         {
             string assetPath = Path.Combine(OUTPUT_ABILITIES_PATH, $"Ability_{abilityData.abilityId}.asset");
 
-            AbilityDefinition ability = ScriptableObject.CreateInstance<AbilityDefinition>();
+            CardAbilityDef ability = ScriptableObject.CreateInstance<CardAbilityDef>();
             ability.abilityId = abilityData.abilityId;
             ability.displayName = abilityData.displayName;
             ability.description = abilityData.description;
@@ -288,7 +290,7 @@ namespace Flippy.CardDuelMobile.Editor
             return effect;
         }
 
-        private static void CreateCardAsset(CardJsonData cardData, Dictionary<string, AbilityDefinition> abilityAssets)
+        private static void CreateCardAsset(CardJsonData cardData, Dictionary<string, CardAbilityDef> abilityAssets)
         {
             string assetPath = Path.Combine(OUTPUT_CARDS_PATH, $"Card_{cardData.cardId}.asset");
 
@@ -328,7 +330,7 @@ namespace Flippy.CardDuelMobile.Editor
             // Wire up abilities
             if (cardData.abilities != null && cardData.abilities.Length > 0)
             {
-                var abilitiesList = new List<AbilityDefinition>();
+                var abilitiesList = new List<CardAbilityDef>();
                 foreach (var abilityId in cardData.abilities)
                 {
                     if (abilityAssets.TryGetValue(abilityId, out var abilityAsset))
@@ -350,7 +352,7 @@ namespace Flippy.CardDuelMobile.Editor
             Debug.Log($"[ScriptableObjectGenerator] Created card asset: {assetPath}");
         }
 
-        private static void LoadAbilityAssets(Dictionary<string, AbilityDefinition> abilityAssets)
+        private static void LoadAbilityAssets(Dictionary<string, CardAbilityDef> abilityAssets)
         {
             EnsureDirectoryExists(OUTPUT_ABILITIES_PATH);
             var guids = AssetDatabase.FindAssets("t:AbilityDefinition", new[] { OUTPUT_ABILITIES_PATH });
@@ -358,7 +360,7 @@ namespace Flippy.CardDuelMobile.Editor
             foreach (var guid in guids)
             {
                 string assetPath = AssetDatabase.GUIDToAssetPath(guid);
-                var ability = AssetDatabase.LoadAssetAtPath<AbilityDefinition>(assetPath);
+                var ability = AssetDatabase.LoadAssetAtPath<CardAbilityDef>(assetPath);
                 if (ability != null && !string.IsNullOrEmpty(ability.abilityId))
                 {
                     abilityAssets[ability.abilityId] = ability;

@@ -22,6 +22,8 @@ namespace Flippy.CardDuelMobile.Core
             return (T)service;
         }
 
+        public static T Get<T>() where T : class => Resolve<T>();
+
         public static bool TryResolve<T>(out T service) where T : class
         {
             if (_services.TryGetValue(typeof(T), out var svc))

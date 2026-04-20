@@ -4,6 +4,9 @@ using UnityEngine;
 using Flippy.CardDuelMobile.Data;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Networking;
+using Flippy.CardDuelMobile.Battle.Abilities;
+using AbilityTriggerEnum = Flippy.CardDuelMobile.Battle.Abilities.AbilityTrigger;
+using CardAbilityDef = Flippy.CardDuelMobile.Data.AbilityDefinition;
 
 namespace Flippy.CardDuelMobile.EditorTools
 {
@@ -146,11 +149,11 @@ namespace Flippy.CardDuelMobile.EditorTools
             return result;
         }
 
-        private static Dictionary<string, AbilityDefinition> GenerateAbilities(
+        private static Dictionary<string, CardAbilityDef> GenerateAbilities(
             Dictionary<string, TargetSelectorDefinition> selectors,
             Dictionary<string, EffectDefinition> effects)
         {
-            var result = new Dictionary<string, AbilityDefinition>();
+            var result = new Dictionary<string, CardAbilityDef>();
 
             result["BattleHeal"] = MakeAbility(
                 "AB_BattleHeal",
@@ -162,7 +165,7 @@ namespace Flippy.CardDuelMobile.EditorTools
             result["BattleArmor"] = MakeAbility(
                 "AB_BattleArmor",
                 "Armor Up",
-                AbilityTrigger.OnPlay,
+                AbilityTrigger.OnCardInitialize,
                 null,
                 effects["Armor2"]);
 
@@ -176,7 +179,7 @@ namespace Flippy.CardDuelMobile.EditorTools
             result["SplashFront"] = MakeAbility(
                 "AB_SplashFront",
                 "Volley",
-                AbilityTrigger.OnBattlePhase,
+                AbilityTrigger.OnBattlePhaseStart,
                 selectors["AllEnemies"],
                 effects["Damage1"]);
 
@@ -193,7 +196,7 @@ namespace Flippy.CardDuelMobile.EditorTools
         private static void GenerateCards(
             Dictionary<string, CardVisualProfile> visuals,
             Dictionary<string, TargetSelectorDefinition> selectors,
-            Dictionary<string, AbilityDefinition> abilities)
+            Dictionary<string, CardAbilityDef> abilities)
         {
             var seeds = new[]
             {
@@ -239,7 +242,7 @@ namespace Flippy.CardDuelMobile.EditorTools
 
                 if (seed.abilities != null && seed.abilities.Length > 0)
                 {
-                    var mapped = new List<AbilityDefinition>();
+                    var mapped = new List<CardAbilityDef>();
                     foreach (var abilityKey in seed.abilities)
                     {
                         if (abilities.TryGetValue(abilityKey, out var ability))
@@ -330,9 +333,9 @@ namespace Flippy.CardDuelMobile.EditorTools
             EditorUtility.SetDirty(deckB);
         }
 
-        private static AbilityDefinition MakeAbility(string fileName, string displayName, AbilityTrigger trigger, TargetSelectorDefinition selector, params EffectDefinition[] effects)
+        private static CardAbilityDef MakeAbility(string fileName, string displayName, AbilityTriggerEnum trigger, TargetSelectorDefinition selector, params EffectDefinition[] effects)
         {
-            var ability = CreateOrLoadAsset<AbilityDefinition>($"{CardsEditorPaths.Abilities}/{fileName}.asset");
+            var ability = CreateOrLoadAsset<CardAbilityDef>($"{CardsEditorPaths.Abilities}/{fileName}.asset");
             ability.abilityId = fileName;
             ability.displayName = displayName;
             ability.trigger = trigger;

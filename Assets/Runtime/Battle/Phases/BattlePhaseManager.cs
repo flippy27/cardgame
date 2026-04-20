@@ -1,3 +1,5 @@
+using Flippy.CardDuelMobile.Core;
+using Flippy.CardDuelMobile.Battle;
 using System.Collections.Generic;
 
 namespace Flippy.CardDuelMobile.Battle.Phases

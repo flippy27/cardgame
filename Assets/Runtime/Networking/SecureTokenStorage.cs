@@ -18,6 +18,7 @@ namespace Flippy.CardDuelMobile.Networking
         private const string TokenKey = "auth_token_secure";
         private const string RefreshTokenKey = "auth_refresh_token_secure";
         private const string PlayerIdKey = "auth_player_id";
+        private const string EmailKey = "auth_email";
         private const string ExpiryKey = "auth_expiry";
         private const string EncryptionKey = "CardGameSecureKey2026"; // Para XOR fallback
 
@@ -118,6 +119,22 @@ namespace Flippy.CardDuelMobile.Networking
         }
 
         /// <summary>
+        /// Guarda el email del usuario.
+        /// </summary>
+        public static void SaveEmail(string email)
+        {
+            PlayerPrefs.SetString(EmailKey, email ?? "");
+        }
+
+        /// <summary>
+        /// Obtiene el email del usuario.
+        /// </summary>
+        public static string GetEmail()
+        {
+            return PlayerPrefs.GetString(EmailKey, "");
+        }
+
+        /// <summary>
         /// Guarda el timestamp de expiración del token.
         /// </summary>
         public static void SaveTokenExpiry(long expiryUnixSeconds)
@@ -142,7 +159,13 @@ namespace Flippy.CardDuelMobile.Networking
             DeleteToken();
             DeleteRefreshToken();
             DeletePlayerId();
+            DeleteEmail();
             DeleteExpiry();
+        }
+
+        private static void DeleteEmail()
+        {
+            PlayerPrefs.DeleteKey(EmailKey);
         }
 
         private static void DeleteToken()

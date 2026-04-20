@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Data;
+using Flippy.CardDuelMobile.Battle.Abilities;
+using AbilityTriggerEnum = Flippy.CardDuelMobile.Battle.Abilities.AbilityTrigger;
+using CardAbilityDef = Flippy.CardDuelMobile.Data.AbilityDefinition;
 
 namespace Flippy.CardDuelMobile.Battle
 {
@@ -19,7 +22,7 @@ namespace Flippy.CardDuelMobile.Battle
         }
 
         /// <summary>
-        /// Obtiene estado de jugador por índice.
+        /// Obtiene estado de jugador por índice. Lanza excepción si no existe.
         /// </summary>
         public DuelPlayerState GetPlayerState(int playerIndex)
         {
@@ -32,12 +35,20 @@ namespace Flippy.CardDuelMobile.Battle
         }
 
         /// <summary>
+        /// Obtiene estado de jugador sin excepciones. Retorna null si no existe.
+        /// </summary>
+        public DuelPlayerState TryGetPlayerState(int playerIndex)
+        {
+            return _state.GetPlayer(playerIndex);
+        }
+
+        /// <summary>
         /// Busca taunt target en board enemigo. Retorna null si no hay taunt.
-        /// TODO: Implement via TauntEffect in ISkillEffect pipeline
+        /// TODO: Implement via TauntEffect in IAbilityEffect pipeline
         /// </summary>
         public CardRuntime FindTauntTarget(int playerIndex)
         {
-            // Taunt is now handled via TauntEffect in ISkillEffect pipeline
+            // Taunt is now handled via TauntEffect in IAbilityEffect pipeline
             return null;
         }
 
@@ -81,7 +92,7 @@ namespace Flippy.CardDuelMobile.Battle
 
         /// <summary>
         /// Hace daño a una carta (sin excepciones, retorna silenciosamente si target no existe).
-        /// Skills are processed in SkillPipeline (AttackExecutionPhase) before DealDamage is called.
+        /// Skills are processed in AbilityPipeline (AttackExecutionPhase) before DealDamage is called.
         /// </summary>
         public void DealDamage(string sourceRuntimeId, string targetRuntimeId, int amount, bool ignoreArmor)
         {
@@ -96,7 +107,7 @@ namespace Flippy.CardDuelMobile.Battle
             var targetPlayer = target.OwnerIndex;
             var hpBefore = target.CurrentHealth;
 
-            // Damage modification and blocking handled in SkillPipeline (AttackExecutionPhase)
+            // Damage modification and blocking handled in AbilityPipeline (AttackExecutionPhase)
             var modifiedDamage = amount;
             var effectiveIgnoreArmor = ignoreArmor;
 
@@ -125,7 +136,7 @@ namespace Flippy.CardDuelMobile.Battle
             });
 
             // All skill effects (poison, stun, mana_burn, leech, enrage, etc) are now handled
-            // by ISkillEffect implementations in SkillPipeline (AttackExecutionPhase)
+            // by IAbilityEffect implementations in AbilityPipeline (AttackExecutionPhase)
 
             // Execute OnDamaged abilities
             ExecuteDamagedAbilities(target.RuntimeId);
@@ -291,7 +302,7 @@ namespace Flippy.CardDuelMobile.Battle
             foreach (var slot in player.Board)
             {
                 if (slot.Occupant == null) continue;
-                ExecuteAbilitiesForCard(slot.Occupant, AbilityTrigger.OnTurnStart);
+                ExecuteAbilitiesForCard(slot.Occupant, AbilityTriggerEnum.OnTurnStart);
             }
         }
 
@@ -304,7 +315,7 @@ namespace Flippy.CardDuelMobile.Battle
             foreach (var slot in player.Board)
             {
                 if (slot.Occupant == null) continue;
-                ExecuteAbilitiesForCard(slot.Occupant, AbilityTrigger.OnTurnEnd);
+                ExecuteAbilitiesForCard(slot.Occupant, AbilityTriggerEnum.OnTurnEnd);
             }
         }
 
@@ -317,7 +328,7 @@ namespace Flippy.CardDuelMobile.Battle
             foreach (var slot in player.Board)
             {
                 if (slot.Occupant == null) continue;
-                ExecuteAbilitiesForCard(slot.Occupant, AbilityTrigger.OnBattlePhase);
+                ExecuteAbilitiesForCard(slot.Occupant, AbilityTriggerEnum.OnBattlePhaseStart);
             }
         }
 
@@ -329,7 +340,7 @@ namespace Flippy.CardDuelMobile.Battle
             var card = FindCard(cardRuntimeId);
             if (card != null)
             {
-                ExecuteAbilitiesForCard(card, AbilityTrigger.OnDamaged);
+                ExecuteAbilitiesForCard(card, AbilityTriggerEnum.OnDamageReceived);
             }
         }
 
@@ -341,14 +352,14 @@ namespace Flippy.CardDuelMobile.Battle
             var card = FindCard(cardRuntimeId);
             if (card != null)
             {
-                ExecuteAbilitiesForCard(card, AbilityTrigger.OnDeath);
+                ExecuteAbilitiesForCard(card, AbilityTriggerEnum.OnCardKilled);
             }
         }
 
         /// <summary>
         /// Ejecuta todas las abilities de una carta que coincidan con el trigger.
         /// </summary>
-        private void ExecuteAbilitiesForCard(CardRuntime card, AbilityTrigger trigger)
+        private void ExecuteAbilitiesForCard(CardRuntime card, AbilityTriggerEnum trigger)
         {
             if (card?.Definition?.abilities == null)
                 return;
@@ -365,7 +376,7 @@ namespace Flippy.CardDuelMobile.Battle
         /// <summary>
         /// Ejecuta una ability específica resolviendo targets y efectos.
         /// </summary>
-        private void ExecuteAbility(CardRuntime source, AbilityDefinition ability)
+        private void ExecuteAbility(CardRuntime source, CardAbilityDef ability)
         {
             if (ability.targetSelector == null || ability.effects == null)
                 return;

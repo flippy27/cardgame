@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Data;
+using Flippy.CardDuelMobile.Networking.ApiClients;
 
 namespace Flippy.CardDuelMobile.Networking
 {
@@ -12,8 +13,6 @@ namespace Flippy.CardDuelMobile.Networking
     /// </summary>
     public sealed class GameService : MonoBehaviour
     {
-        [SerializeField] private string apiBaseUrl = "http://localhost:5000";
-
         public static GameService Instance { get; private set; }
 
         public CardGameApiClient ApiClient { get; private set; }
@@ -21,7 +20,6 @@ namespace Flippy.CardDuelMobile.Networking
         public CardCatalogCache CardCatalog { get; private set; }
         public MatchHistoryService MatchHistory { get; private set; }
         public UserService UserService { get; private set; }
-        public DeckService DeckService { get; private set; }
         public MatchmakingService Matchmaking { get; private set; }
         public LocalCacheService LocalCache { get; private set; }
         public OfflineSyncService OfflineSync { get; private set; }
@@ -47,13 +45,22 @@ namespace Flippy.CardDuelMobile.Networking
         {
             try
             {
+                var apiBaseUrl = ConfigManager.GetApiBaseUrl();
+
                 ApiClient = new CardGameApiClient(apiBaseUrl);
                 AuthService = new AuthService(apiBaseUrl);
                 CardCatalog = new CardCatalogCache(ApiClient);
-                MatchHistory = new MatchHistoryService(ApiClient, AuthService);
-                UserService = new UserService(ApiClient, AuthService);
-                DeckService = new DeckService(ApiClient, AuthService, CardCatalog);
-                Matchmaking = new MatchmakingService(ApiClient, AuthService);
+                ServiceLocator.Register(CardCatalog);
+
+                var userApiClient = new UserApiClient(apiBaseUrl);
+                UserService = new UserService(userApiClient, AuthService);
+
+                var matchHistoryApiClient = new MatchHistoryApiClient(apiBaseUrl);
+                MatchHistory = new MatchHistoryService(matchHistoryApiClient, AuthService);
+
+                var matchmakingApiClient = new MatchmakingApiClient(apiBaseUrl);
+                Matchmaking = new MatchmakingService(matchmakingApiClient, AuthService);
+
                 LocalCache = new LocalCacheService();
                 OfflineSync = new OfflineSyncService(LocalCache, ApiClient);
 
