@@ -43,12 +43,10 @@ namespace Flippy.CardDuelMobile.Battle
         }
 
         /// <summary>
-        /// Busca taunt target en board enemigo. Retorna null si no hay taunt.
-        /// TODO: Implement via TauntEffect in IAbilityEffect pipeline
+        /// Taunt is handled via TauntEffect in IAbilityEffect pipeline.
         /// </summary>
         public CardRuntime FindTauntTarget(int playerIndex)
         {
-            // Taunt is now handled via TauntEffect in IAbilityEffect pipeline
             return null;
         }
 

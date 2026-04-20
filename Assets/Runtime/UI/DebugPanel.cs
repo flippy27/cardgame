@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -271,3 +272,4 @@ namespace Flippy.CardDuelMobile.UI
         }
     }
 }
+#endif

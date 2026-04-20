@@ -72,7 +72,6 @@ namespace Flippy.CardDuelMobile.Core
             if (_metrics.Count == 0) return;
 
             GameLogger.Info("Metrics", $"Uploading {_metrics.Count} metrics to telemetry");
-            // TODO: Send to analytics service (Sentry, DataDog, etc.)
             _metrics.Clear();
             _lastUploadTime = Time.realtimeSinceStartup;
         }

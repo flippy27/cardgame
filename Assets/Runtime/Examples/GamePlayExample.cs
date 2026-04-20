@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using System.Threading.Tasks;
 using Flippy.CardDuelMobile.Core;
@@ -86,3 +87,4 @@ namespace Flippy.CardDuelMobile.Examples
         }
     }
 }
+#endif
