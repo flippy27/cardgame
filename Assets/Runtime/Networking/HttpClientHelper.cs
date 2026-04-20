@@ -13,6 +13,15 @@ namespace Flippy.CardDuelMobile.Networking
     /// </summary>
     public static class HttpClientHelper
     {
+        // Allow insecure connections for local development
+        private class LocalhostCertificateHandler : CertificateHandler
+        {
+            protected override bool ValidateCertificate(byte[] certificateData)
+            {
+                return true;
+            }
+        }
+
         private static CircuitBreaker _circuitBreaker = new CircuitBreaker(failureThreshold: 5, resetTimeoutSeconds: 60);
 
         public static int TimeoutSeconds { get; set; } = 30;
@@ -65,6 +74,7 @@ namespace Flippy.CardDuelMobile.Networking
 
                 using var request = new UnityWebRequest(url, method);
                 request.downloadHandler = new DownloadHandlerBuffer();
+                request.certificateHandler = new LocalhostCertificateHandler();
 
                 // Add request body if provided (for PUT, PATCH, etc.)
                 if (!string.IsNullOrEmpty(jsonBody))
@@ -78,6 +88,11 @@ namespace Flippy.CardDuelMobile.Networking
                 if (!string.IsNullOrWhiteSpace(token))
                 {
                     request.SetRequestHeader("Authorization", $"Bearer {token}");
+                    Debug.Log($"[HTTP] Authorization header added: Bearer {token.Substring(0, Math.Min(20, token.Length))}...");
+                }
+                else
+                {
+                    Debug.LogWarning($"[HTTP] No token available");
                 }
 
                 request.timeout = TimeoutSeconds;
@@ -92,8 +107,14 @@ namespace Flippy.CardDuelMobile.Networking
                 {
                     var statusCode = request.responseCode;
                     var errorMsg = request.error ?? "Unknown error";
+                    var responseText = request.downloadHandler?.text ?? "";
 
                     Debug.LogError($"[HTTP] {method} failed: HTTP {statusCode} - {errorMsg}");
+                    if (statusCode == 401)
+                    {
+                        Debug.LogError($"[HTTP] 401 Unauthorized. Token sent: {!string.IsNullOrEmpty(SecureTokenStorage.GetToken())}");
+                        Debug.LogError($"[HTTP] Response body: {responseText}");
+                    }
                     _circuitBreaker.RecordFailure();
 
                     if (statusCode == 401 || statusCode == 403)
@@ -147,6 +168,7 @@ namespace Flippy.CardDuelMobile.Networking
                 using var request = new UnityWebRequest(url, UnityWebRequest.kHttpVerbPOST);
                 request.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(jsonBody));
                 request.downloadHandler = new DownloadHandlerBuffer();
+                request.certificateHandler = new LocalhostCertificateHandler();
                 request.SetRequestHeader("Content-Type", "application/json");
 
                 // Add authorization header if token available
@@ -154,6 +176,11 @@ namespace Flippy.CardDuelMobile.Networking
                 if (!string.IsNullOrWhiteSpace(token))
                 {
                     request.SetRequestHeader("Authorization", $"Bearer {token}");
+                    Debug.Log($"[HTTP] Authorization header added: Bearer {token.Substring(0, Math.Min(20, token.Length))}...");
+                }
+                else
+                {
+                    Debug.LogWarning($"[HTTP] No token available");
                 }
 
                 request.timeout = TimeoutSeconds;
@@ -168,8 +195,14 @@ namespace Flippy.CardDuelMobile.Networking
                 {
                     var statusCode = request.responseCode;
                     var errorMsg = request.error ?? "Unknown error";
+                    var responseText = request.downloadHandler?.text ?? "";
 
                     Debug.LogError($"[HTTP] POST failed: HTTP {statusCode} - {errorMsg}");
+                    if (statusCode == 401)
+                    {
+                        Debug.LogError($"[HTTP] 401 Unauthorized. Token sent: {!string.IsNullOrEmpty(SecureTokenStorage.GetToken())}");
+                        Debug.LogError($"[HTTP] Response body: {responseText}");
+                    }
                     _circuitBreaker.RecordFailure();
 
                     if (statusCode == 401 || statusCode == 403)

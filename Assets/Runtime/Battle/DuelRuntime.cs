@@ -447,34 +447,62 @@ namespace Flippy.CardDuelMobile.Battle
 
         private DuelPlayerState BuildPlayerState(int playerIndex, DeckDefinition deck, int seed)
         {
-            var player = new DuelPlayerState
+            try
             {
-                PlayerIndex = playerIndex,
-                HeroHealth = _rules.startingHeroHealth,
-                MaxMana = _rules.startingMana,
-                Mana = _rules.startingMana
-            };
-
-            if (deck != null && deck.cards != null)
-            {
-                var source = deck.cards.Where(c => c != null).ToList();
-                var random = new System.Random(seed == 0 ? 17 + playerIndex : seed);
-                while (source.Count > 0)
+                var player = new DuelPlayerState
                 {
-                    var pick = random.Next(source.Count);
-                    var deckCard = source[pick];
-                    if (deckCard?.card != null)
+                    PlayerIndex = playerIndex,
+                    HeroHealth = _rules.startingHeroHealth,
+                    MaxMana = _rules.startingMana,
+                    Mana = _rules.startingMana
+                };
+
+                if (deck != null && deck.cards != null && deck.cards.Length > 0)
+                {
+                    var source = deck.cards.Where(c => c != null && c.card != null).ToList();
+                    if (source.Count > 0)
                     {
-                        for (int i = 0; i < deckCard.quantity; i++)
+                        var random = new System.Random(seed == 0 ? 17 + playerIndex : seed);
+                        while (source.Count > 0)
                         {
-                            player.Deck.Add(deckCard.card);
+                            var pick = random.Next(source.Count);
+                            var deckCard = source[pick];
+                            if (deckCard != null && deckCard.card != null && deckCard.quantity > 0)
+                            {
+                                for (int i = 0; i < deckCard.quantity; i++)
+                                {
+                                    player.Deck.Add(deckCard.card);
+                                }
+                            }
+                            source.RemoveAt(pick);
                         }
                     }
-                    source.RemoveAt(pick);
                 }
-            }
+                else if (deck == null)
+                {
+                    Debug.LogWarning($"[DuelRuntime] Player {playerIndex} has null deck");
+                }
+                else if (deck.cards == null)
+                {
+                    Debug.LogWarning($"[DuelRuntime] Player {playerIndex} deck has null cards array");
+                }
 
-            return player;
+                Debug.Log($"[DuelRuntime] Player {playerIndex} deck built with {player.Deck.Count} cards");
+                return player;
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"[DuelRuntime] BuildPlayerState failed for player {playerIndex}: {ex.Message}\n{ex.StackTrace}");
+                // Return empty player state so game can continue
+                var emptyPlayer = new DuelPlayerState
+                {
+                    PlayerIndex = playerIndex,
+                    HeroHealth = _rules.startingHeroHealth,
+                    MaxMana = _rules.startingMana,
+                    Mana = _rules.startingMana
+                };
+                return emptyPlayer;
+            }
         }
 
         private bool DrawCard(int playerIndex)

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Data;
+using static Flippy.CardDuelMobile.Core.DuelEndReason;
+using static Flippy.CardDuelMobile.Core.MatchPhase;
 
 namespace Flippy.CardDuelMobile.Battle
 {
@@ -143,6 +145,7 @@ namespace Flippy.CardDuelMobile.Battle
     {
         public BattleLogType type;
         public string message;
+        public System.DateTime timestamp;
     }
 
     [Serializable]

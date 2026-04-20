@@ -30,11 +30,13 @@ namespace Flippy.CardDuelMobile.Networking
         {
             if (IsInitialized)
             {
+                Debug.Log("[MpsGameSessionService] Already initialized");
                 return;
             }
 
             try
             {
+                Debug.Log("[MpsGameSessionService] Initializing UnityServices...");
                 var options = new InitializationOptions();
                 if (!string.IsNullOrWhiteSpace(environmentName))
                 {
@@ -42,16 +44,21 @@ namespace Flippy.CardDuelMobile.Networking
                 }
 
                 await UnityServices.InitializeAsync(options);
+                Debug.Log("[MpsGameSessionService] UnityServices initialized");
 
                 if (!AuthenticationService.Instance.IsSignedIn)
                 {
+                    Debug.Log("[MpsGameSessionService] Signing in anonymously...");
                     await AuthenticationService.Instance.SignInAnonymouslyAsync();
+                    Debug.Log("[MpsGameSessionService] Signed in");
                 }
 
                 IsInitialized = true;
+                Debug.Log("[MpsGameSessionService] Ready");
             }
             catch (Exception exception)
             {
+                Debug.LogError($"[MpsGameSessionService] Init failed: {exception.Message}\n{exception.StackTrace}");
                 ErrorRaised?.Invoke(exception.Message);
                 throw;
             }
@@ -59,21 +66,27 @@ namespace Flippy.CardDuelMobile.Networking
 
         public async Task QuickMatchAsync()
         {
+            Debug.Log("[MpsGameSessionService] QuickMatchAsync started");
             await EnsureInitializedAsync();
 
             try
             {
+                Debug.Log("[MpsGameSessionService] Building QuickJoin options...");
                 var quickJoin = new QuickJoinOptions
                 {
-                    CreateSession = matchmakerConfig != null && matchmakerConfig.createSessionIfQuickJoinFails,
+                    CreateSession = matchmakerConfig == null || matchmakerConfig.createSessionIfQuickJoinFails,
                     Timeout = TimeSpan.FromSeconds(matchmakerConfig != null ? matchmakerConfig.quickJoinTimeoutSeconds : 5f)
                 };
 
+                Debug.Log($"[MpsGameSessionService] Calling MatchmakeSessionAsync (createIfFails={quickJoin.CreateSession}, timeout={quickJoin.Timeout.TotalSeconds}s)...");
                 CurrentSession = await MultiplayerService.Instance.MatchmakeSessionAsync(quickJoin, BuildBaseSessionOptions(false));
+                Debug.Log($"[MpsGameSessionService] Got session: {CurrentSession?.Name}");
                 WireSession(CurrentSession);
+                Debug.Log("[MpsGameSessionService] Session wired");
             }
             catch (Exception exception)
             {
+                Debug.LogError($"[MpsGameSessionService] QuickMatch failed: {exception.Message}\n{exception.StackTrace}");
                 ErrorRaised?.Invoke(exception.Message);
             }
         }

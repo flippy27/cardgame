@@ -559,6 +559,8 @@ GameObject:
   - component: {fileID: 188100837}
   - component: {fileID: 188100839}
   - component: {fileID: 188100838}
+  - component: {fileID: 188100840}
+  - component: {fileID: 188100841}
   m_Layer: 0
   m_Name: Debug Panel
   m_TagString: Untagged
@@ -623,6 +625,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188100836}
   m_CullTransparentMesh: 1
+--- !u!114 &188100840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188100836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8871b3ec376242beae9dcf9e4084b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.DebugPanel
+--- !u!225 &188100841
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188100836}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &195901525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1112,7 @@ MonoBehaviour:
   endTurnButton: {fileID: 147048371}
   boardCardPrefab: {fileID: 6883590961288053840, guid: 6f85dbf44447147e795bbbff7b8ac20f, type: 3}
   boardCardPlayedPrefab: {fileID: 2256093238488591113, guid: d82198fc1ed2c43a182a92cdcc26ce6f, type: 3}
+  debugPanel: {fileID: 188100840}
 --- !u!4 &510609625
 Transform:
   m_ObjectHideFlags: 0

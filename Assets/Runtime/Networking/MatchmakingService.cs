@@ -6,14 +6,14 @@ using Flippy.CardDuelMobile.Networking.ApiClients;
 
 namespace Flippy.CardDuelMobile.Networking
 {
+    /// <summary>
+    /// Service for starting/joining matches via API.
+    /// Handles matchmaking and initializes MatchHttpCoordinator.
+    /// </summary>
     public sealed class MatchmakingService
     {
         private readonly MatchmakingApiClient _apiClient;
         private readonly AuthService _authService;
-
-        public bool IsSearching { get; private set; }
-        public MatchmakingApiClient.QueueMode CurrentMode { get; private set; }
-        public int TimeInQueue { get; private set; }
 
         public MatchmakingService(MatchmakingApiClient apiClient, AuthService authService)
         {
@@ -21,77 +21,114 @@ namespace Flippy.CardDuelMobile.Networking
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
         }
 
-        public async Task<bool> JoinQueue(MatchmakingApiClient.QueueMode mode)
+        /// <summary>
+        /// Queue for casual match.
+        /// </summary>
+        public async Task<MatchReservation> QueueCasual(string deckId)
         {
             if (!_authService.IsAuthenticated)
-                throw new InvalidGameStateException("Not authenticated. Login first.");
-
-            if (IsSearching)
             {
-                Debug.LogWarning("Already in queue");
-                return false;
+                throw new InvalidOperationException("Not authenticated");
             }
 
             try
             {
-                await _apiClient.JoinQueue(mode);
-                IsSearching = true;
-                CurrentMode = mode;
-                TimeInQueue = 0;
-                Debug.Log($"Joined {mode} queue");
-                return true;
+                GameLogger.Info("Matchmaking", "Queuing for casual match");
+                var response = await _apiClient.QueueForMatch(
+                    _authService.CurrentPlayerId,
+                    deckId,
+                    MatchmakingApiClient.QueueMode.Casual,
+                    1000 // default rating
+                );
+
+                return MapDto(response);
             }
             catch (Exception ex)
             {
-                Debug.LogError($"Failed to join queue: {ex.Message}");
-                return false;
-            }
-        }
-
-        public async Task<bool> LeaveQueue()
-        {
-            if (!IsSearching)
-            {
-                Debug.LogWarning("Not in queue");
-                return false;
-            }
-
-            try
-            {
-                await _apiClient.LeaveQueue();
-                IsSearching = false;
-                TimeInQueue = 0;
-                Debug.Log("Left queue");
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError($"Failed to leave queue: {ex.Message}");
-                return false;
-            }
-        }
-
-        public async Task<MatchmakingApiClient.MatchmakingStatusDto> GetStatus()
-        {
-            if (!_authService.IsAuthenticated)
-                throw new InvalidGameStateException("Not authenticated. Login first.");
-
-            try
-            {
-                var status = await _apiClient.GetStatus();
-                TimeInQueue = status.TimeInQueueSeconds;
-                return status;
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError($"Failed to get queue status: {ex.Message}");
+                GameLogger.Error("Matchmaking", $"QueueCasual failed: {ex.Message}");
                 throw;
             }
         }
 
-        public async Task<bool> CancelSearch()
+        /// <summary>
+        /// Create private match.
+        /// </summary>
+        public async Task<MatchReservation> CreatePrivate(string deckId, string matchName)
         {
-            return await LeaveQueue();
+            if (!_authService.IsAuthenticated)
+            {
+                throw new InvalidOperationException("Not authenticated");
+            }
+
+            try
+            {
+                GameLogger.Info("Matchmaking", $"Creating private match: {matchName}");
+                var response = await _apiClient.CreatePrivateMatch(
+                    _authService.CurrentPlayerId,
+                    deckId,
+                    matchName
+                );
+
+                return MapDto(response);
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Error("Matchmaking", $"CreatePrivate failed: {ex.Message}");
+                throw;
+            }
         }
+
+        /// <summary>
+        /// Join private match by room code.
+        /// </summary>
+        public async Task<MatchReservation> JoinPrivate(string deckId, string roomCode)
+        {
+            if (!_authService.IsAuthenticated)
+            {
+                throw new InvalidOperationException("Not authenticated");
+            }
+
+            try
+            {
+                GameLogger.Info("Matchmaking", $"Joining private match: {roomCode}");
+                var response = await _apiClient.JoinPrivateMatch(
+                    _authService.CurrentPlayerId,
+                    deckId,
+                    roomCode
+                );
+
+                return MapDto(response);
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Error("Matchmaking", $"JoinPrivate failed: {ex.Message}");
+                throw;
+            }
+        }
+
+        private MatchReservation MapDto(MatchmakingApiClient.MatchReservationDto dto)
+        {
+            return new MatchReservation
+            {
+                MatchId = dto.matchId,
+                RoomCode = dto.roomCode,
+                ReconnectToken = dto.reconnectToken,
+                SeatIndex = dto.seatIndex,
+                Mode = (MatchmakingApiClient.QueueMode)dto.mode,
+                WaitingForOpponent = dto.waitingForOpponent,
+                Status = dto.status
+            };
+        }
+    }
+
+    public sealed class MatchReservation
+    {
+        public string MatchId { get; set; }
+        public string RoomCode { get; set; }
+        public string ReconnectToken { get; set; }
+        public int SeatIndex { get; set; }
+        public MatchmakingApiClient.QueueMode Mode { get; set; }
+        public bool WaitingForOpponent { get; set; }
+        public string Status { get; set; }
     }
 }

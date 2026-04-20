@@ -46,30 +46,42 @@ namespace Flippy.CardDuelMobile.Networking
             try
             {
                 var apiBaseUrl = ConfigManager.GetApiBaseUrl();
+                Debug.Log($"[Networking.GameService] Initializing with API: {apiBaseUrl}");
 
                 ApiClient = new CardGameApiClient(apiBaseUrl);
+                Debug.Log("[Networking.GameService] ApiClient created");
+
                 AuthService = new AuthService(apiBaseUrl);
+                Debug.Log("[Networking.GameService] AuthService created");
+
                 CardCatalog = new CardCatalogCache(ApiClient);
                 ServiceLocator.Register(CardCatalog);
+                Debug.Log("[Networking.GameService] CardCatalog created");
 
                 var userApiClient = new UserApiClient(apiBaseUrl);
                 UserService = new UserService(userApiClient, AuthService);
+                Debug.Log("[Networking.GameService] UserService created");
 
                 var matchHistoryApiClient = new MatchHistoryApiClient(apiBaseUrl);
                 MatchHistory = new MatchHistoryService(matchHistoryApiClient, AuthService);
+                Debug.Log("[Networking.GameService] MatchHistoryService created");
 
                 var matchmakingApiClient = new MatchmakingApiClient(apiBaseUrl);
                 Matchmaking = new MatchmakingService(matchmakingApiClient, AuthService);
+                Debug.Log("[Networking.GameService] MatchmakingService created");
 
                 LocalCache = new LocalCacheService();
+                Debug.Log("[Networking.GameService] LocalCache created");
+
                 OfflineSync = new OfflineSyncService(LocalCache, ApiClient);
+                Debug.Log("[Networking.GameService] OfflineSync created");
 
                 IsReady = true;
-                Debug.Log($"GameService initialized. API: {apiBaseUrl}");
+                Debug.Log($"[Networking.GameService] Ready. API: {apiBaseUrl}");
             }
             catch (Exception ex)
             {
-                Debug.LogError($"Failed to initialize GameService: {ex.Message}");
+                Debug.LogError($"[Networking.GameService] Failed to initialize: {ex.Message}\n{ex.StackTrace}");
                 IsReady = false;
             }
         }

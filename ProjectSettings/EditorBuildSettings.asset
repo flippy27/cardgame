@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/CardDuelPrototype.unity
     guid: b13f6cd622f5ecc488faeba33fe63926
   - enabled: 1
-    path: Assets/Scenes/New Scene.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 5783334a25ac04d2ea43c60780b9fb82
   - enabled: 1
     path: Assets/Scenes/MainGame.unity

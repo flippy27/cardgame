@@ -10,7 +10,8 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         public enum QueueMode
         {
             Casual = 0,
-            Ranked = 1
+            Ranked = 1,
+            Private = 2
         }
 
         private readonly string _baseUrl;
@@ -20,33 +21,76 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             _baseUrl = string.IsNullOrWhiteSpace(baseUrl) ? ApiConfig.BaseUrl : baseUrl.TrimEnd('/');
         }
 
-        public async Task JoinQueue(QueueMode mode)
+        /// <summary>
+        /// Queue for a match (Casual or Ranked). Auth token auto-added from SecureTokenStorage.
+        /// POST /api/v1/matchmaking/queue
+        /// </summary>
+        public async Task<MatchReservationDto> QueueForMatch(string playerId, string deckId, QueueMode mode, int rating)
         {
-            var modeStr = mode == QueueMode.Casual ? "casual" : "ranked";
-            await HttpClientHelper.PostAsync($"{_baseUrl}/api/v1/matchmaking/queue?mode={modeStr}", "{}");
+            try
+            {
+                var url = $"{_baseUrl}/api/v1/matchmaking/queue";
+                var request = JsonUtility.ToJson(new { playerId, deckId, mode = (int)mode, rating });
+                var response = await HttpClientHelper.PostAsync(url, request);
+                return JsonUtility.FromJson<MatchReservationDto>(response);
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Error("MatchmakingApiClient", $"QueueForMatch failed: {ex.Message}");
+                throw;
+            }
         }
 
-        public async Task LeaveQueue()
+        /// <summary>
+        /// Create private match. Auth token auto-added from SecureTokenStorage.
+        /// POST /api/v1/matchmaking/private
+        /// </summary>
+        public async Task<MatchReservationDto> CreatePrivateMatch(string playerId, string deckId, string matchName)
         {
-            await HttpClientHelper.DeleteAsync($"{_baseUrl}/api/v1/matchmaking/queue");
+            try
+            {
+                var url = $"{_baseUrl}/api/v1/matchmaking/private";
+                var request = JsonUtility.ToJson(new { playerId, deckId, matchName });
+                var response = await HttpClientHelper.PostAsync(url, request);
+                return JsonUtility.FromJson<MatchReservationDto>(response);
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Error("MatchmakingApiClient", $"CreatePrivateMatch failed: {ex.Message}");
+                throw;
+            }
         }
 
-        public async Task<MatchmakingStatusDto> GetStatus()
+        /// <summary>
+        /// Join private match by code. Auth token auto-added from SecureTokenStorage.
+        /// POST /api/v1/matchmaking/private/join
+        /// </summary>
+        public async Task<MatchReservationDto> JoinPrivateMatch(string playerId, string deckId, string roomCode)
         {
-            var json = await HttpClientHelper.GetAsync($"{_baseUrl}/api/v1/matchmaking/status");
-            return JsonUtility.FromJson<MatchmakingStatusDto>(json);
+            try
+            {
+                var url = $"{_baseUrl}/api/v1/matchmaking/private/join";
+                var request = JsonUtility.ToJson(new { playerId, deckId, roomCode });
+                var response = await HttpClientHelper.PostAsync(url, request);
+                return JsonUtility.FromJson<MatchReservationDto>(response);
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Error("MatchmakingApiClient", $"JoinPrivateMatch failed: {ex.Message}");
+                throw;
+            }
         }
 
         [System.Serializable]
-        public sealed class MatchmakingStatusDto
+        public sealed class MatchReservationDto
         {
-            public bool IsSearching;
-            public int QueueMode;
-            public int TimeInQueueSeconds;
-            public int EstimatedWaitSeconds;
-            public int PlayersInQueue;
-            public string OpponentId;
-            public string MatchId;
+            public string matchId;
+            public string roomCode;
+            public string reconnectToken;
+            public int seatIndex;
+            public int mode; // QueueMode
+            public bool waitingForOpponent;
+            public string status;
         }
     }
 }

@@ -159,14 +159,26 @@ namespace Flippy.CardDuelMobile.UI
 
         private void Start()
         {
-            // Si estamos en local mode pero el match no está iniciado, iniciarlo
-            if (GameModeManager.Instance != null && GameModeManager.Instance.IsLocalMode)
+            bool isLocal = GameModeManager.Instance != null && GameModeManager.Instance.IsLocalMode;
+
+            if (isLocal)
             {
+                // Local mode: start match via LocalSinglePlayerCoordinator
                 var coordinator = LocalSinglePlayerCoordinator.Instance;
                 if (coordinator != null && !coordinator.IsActive)
                 {
                     Debug.Log("[GameplayPresenter3D] Starting local match from MainGame");
                     coordinator.StartMatch();
+                }
+            }
+            else
+            {
+                // Multiplayer mode: initialize debug panel with network coordinator
+                var netCoordinator = CardDuelNetworkCoordinator.Instance;
+                if (debugPanel != null && netCoordinator != null)
+                {
+                    debugPanel.Initialize(netCoordinator.DuelRuntime, netCoordinator.DuelState, hand3DManager, board3DManager);
+                    Debug.Log("[GameplayPresenter3D] Initialized debug panel for multiplayer");
                 }
             }
         }
@@ -198,13 +210,24 @@ namespace Flippy.CardDuelMobile.UI
 
             _latestSnapshot = snapshot;
 
-            // Initialize debug panel on first snapshot
+            // Initialize debug panel on first snapshot if not already done
             if (debugPanel != null && snapshot.players != null && snapshot.players.Length >= 2)
             {
-                var coordinator = LocalSinglePlayerCoordinator.Instance;
-                if (coordinator != null && coordinator.DuelRuntime != null)
+                if (GameModeManager.Instance.IsLocalMode)
                 {
-                    debugPanel.Initialize(null, coordinator.DuelRuntime, coordinator.DuelState, hand3DManager, board3DManager);
+                    var coordinator = LocalSinglePlayerCoordinator.Instance;
+                    if (coordinator != null && coordinator.DuelRuntime != null)
+                    {
+                        debugPanel.Initialize(coordinator.DuelRuntime, coordinator.DuelState, hand3DManager, board3DManager);
+                    }
+                }
+                else
+                {
+                    var netCoordinator = CardDuelNetworkCoordinator.Instance;
+                    if (netCoordinator != null && netCoordinator.DuelRuntime != null)
+                    {
+                        debugPanel.Initialize(netCoordinator.DuelRuntime, netCoordinator.DuelState, hand3DManager, board3DManager);
+                    }
                 }
             }
 
@@ -522,34 +545,80 @@ namespace Flippy.CardDuelMobile.UI
         public void RequestPlayCard(string runtimeCardKey, BoardSlot targetSlot)
         {
             Debug.Log($"[GameplayPresenter3D] RequestPlayCard: {runtimeCardKey} → {targetSlot}");
-            var coordinator = LocalSinglePlayerCoordinator.Instance;
-            if (coordinator == null)
-            {
-                Debug.LogError("[GameplayPresenter3D] LocalSinglePlayerCoordinator.Instance is null!");
-                return;
-            }
 
-            bool success = coordinator.RequestPlayCard(runtimeCardKey, targetSlot);
-            Debug.Log($"[GameplayPresenter3D] RequestPlayCard result: {success}");
-            if (success)
+            if (GameModeManager.Instance.IsLocalMode)
             {
-                hud3D?.Log($"Played card to {targetSlot}");
+                var coordinator = LocalSinglePlayerCoordinator.Instance;
+                if (coordinator == null)
+                {
+                    Debug.LogError("[GameplayPresenter3D] LocalSinglePlayerCoordinator.Instance is null!");
+                    return;
+                }
+
+                bool success = coordinator.RequestPlayCard(runtimeCardKey, targetSlot);
+                Debug.Log($"[GameplayPresenter3D] RequestPlayCard result: {success}");
+                if (success)
+                {
+                    hud3D?.Log($"Played card to {targetSlot}");
+                }
+                else
+                {
+                    Debug.LogWarning("[GameplayPresenter3D] coordinator.RequestPlayCard returned false");
+                }
             }
             else
             {
-                Debug.LogWarning("[GameplayPresenter3D] coordinator.RequestPlayCard returned false");
+                var coordinator = MatchCoordinatorFactory.Instance.GetCoordinator();
+                if (coordinator != null)
+                {
+                    coordinator.RequestPlayCard(runtimeCardKey, (int)targetSlot);
+                    hud3D?.Log($"Played card to {targetSlot}");
+                }
+                else
+                {
+                    var netCoordinator = CardDuelNetworkCoordinator.Instance;
+                    if (netCoordinator == null)
+                    {
+                        Debug.LogError("[GameplayPresenter3D] No coordinator found!");
+                        return;
+                    }
+
+                    netCoordinator.RequestPlayCardServerRpc(runtimeCardKey, (int)targetSlot);
+                    hud3D?.Log($"Played card to {targetSlot}");
+                }
             }
         }
 
         public void RequestEndTurn()
         {
-            var coordinator = LocalSinglePlayerCoordinator.Instance;
-            if (coordinator != null)
+            if (GameModeManager.Instance.IsLocalMode)
             {
-                bool success = coordinator.RequestEndTurn();
-                if (success)
+                var coordinator = LocalSinglePlayerCoordinator.Instance;
+                if (coordinator != null)
                 {
+                    bool success = coordinator.RequestEndTurn();
+                    if (success)
+                    {
+                        hud3D?.Log("Turn ended");
+                    }
+                }
+            }
+            else
+            {
+                var coordinator = MatchCoordinatorFactory.Instance.GetCoordinator();
+                if (coordinator != null)
+                {
+                    coordinator.RequestEndTurn();
                     hud3D?.Log("Turn ended");
+                }
+                else
+                {
+                    var netCoordinator = CardDuelNetworkCoordinator.Instance;
+                    if (netCoordinator != null)
+                    {
+                        netCoordinator.RequestEndTurnServerRpc();
+                        hud3D?.Log("Turn ended");
+                    }
                 }
             }
         }

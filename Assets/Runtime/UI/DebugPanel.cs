@@ -2,68 +2,206 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.Core;
+using Flippy.CardDuelMobile.Data;
 
 namespace Flippy.CardDuelMobile.UI
 {
     /// <summary>
     /// Debug menu for modifying game state at runtime.
     /// Toggle with Cmd+T (Mac) or Ctrl+T (Windows)
+    /// Entirely code-generated UI.
     /// </summary>
     public sealed class DebugPanel : MonoBehaviour
     {
-        [SerializeField] private CanvasGroup canvasGroup;
-        [SerializeField] private Button closeButton;
-        [SerializeField] private Transform contentRoot;
+        private Canvas _canvas;
+        private CanvasGroup _canvasGroup;
+        private bool _isVisible;
 
-        private BattleScreenPresenter _presenter;
         private DuelRuntime _duelRuntime;
         private DuelState _duelState;
         private Hand3DManager _hand3DManager;
         private Board3DManager _board3DManager;
-        private bool _isVisible;
 
         private void Awake()
         {
-            if (canvasGroup == null)
-            {
-                canvasGroup = GetComponent<CanvasGroup>();
-            }
-
-            if (closeButton != null)
-            {
-                closeButton.onClick.AddListener(Toggle);
-            }
-
-            gameObject.SetActive(false);
+            gameObject.name = "DebugPanel";
+            gameObject.SetActive(true);
+            CreateUI();
         }
 
         private void Update()
         {
-            KeyCode modKey = Application.platform == RuntimePlatform.OSXEditor ? KeyCode.LeftCommand : KeyCode.LeftControl;
-            if (UnityEngine.Input.GetKeyDown(KeyCode.T) && UnityEngine.Input.GetKey(modKey))
+            var keyboard = Keyboard.current;
+            if (keyboard == null) return;
+
+            bool isMac = Application.platform == RuntimePlatform.OSXEditor;
+            bool modPressed = isMac ?
+                (keyboard.leftMetaKey.isPressed || keyboard.rightMetaKey.isPressed) :
+                (keyboard.leftCtrlKey.isPressed || keyboard.rightCtrlKey.isPressed);
+
+            if (keyboard.tKey.wasPressedThisFrame && modPressed)
             {
                 Toggle();
             }
         }
 
-        public void Initialize(BattleScreenPresenter presenter, DuelRuntime duelRuntime, DuelState duelState, Hand3DManager hand3D = null, Board3DManager board3D = null)
+        public void Initialize(DuelRuntime duelRuntime, DuelState duelState, Hand3DManager hand3D = null, Board3DManager board3D = null)
         {
-            _presenter = presenter;
             _duelRuntime = duelRuntime;
             _duelState = duelState;
             _hand3DManager = hand3D;
             _board3DManager = board3D;
-            gameObject.SetActive(true);
+        }
+
+        private void CreateUI()
+        {
+            // Create Canvas
+            _canvas = gameObject.AddComponent<Canvas>();
+            _canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            _canvas.sortingOrder = 9999;
+
+            var canvasScaler = gameObject.AddComponent<CanvasScaler>();
+            canvasScaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            canvasScaler.referenceResolution = new Vector2(1920, 1080);
+
+            _canvasGroup = gameObject.AddComponent<CanvasGroup>();
+            _canvasGroup.alpha = 0f;
+            _canvasGroup.blocksRaycasts = false;
+            _canvasGroup.interactable = false;
+
+            // Create Panel background
+            var panelGo = new GameObject("Panel");
+            panelGo.transform.SetParent(transform);
+            var panelRect = panelGo.AddComponent<RectTransform>();
+            panelRect.anchoredPosition = Vector2.zero;
+            panelRect.sizeDelta = new Vector2(400, 600);
+            panelRect.anchorMin = Vector2.zero;
+            panelRect.anchorMax = Vector2.zero;
+
+            var panelImage = panelGo.AddComponent<Image>();
+            panelImage.color = new Color(0.1f, 0.1f, 0.1f, 0.9f);
+
+            var panelLayout = panelGo.AddComponent<LayoutElement>();
+            panelLayout.preferredWidth = 400;
+            panelLayout.preferredHeight = 600;
+
+            // Create scroll view for buttons
+            var scrollGo = new GameObject("ScrollView");
+            scrollGo.transform.SetParent(panelGo.transform);
+            var scrollRect = scrollGo.AddComponent<RectTransform>();
+            scrollRect.anchoredPosition = Vector2.zero;
+            scrollRect.sizeDelta = new Vector2(-20, -60);
+            scrollRect.offsetMin = new Vector2(10, 10);
+            scrollRect.offsetMax = new Vector2(-10, -50);
+
+            var scrollComp = scrollGo.AddComponent<ScrollRect>();
+            scrollComp.vertical = true;
+            scrollComp.horizontal = false;
+
+            var scrollImage = scrollGo.AddComponent<Image>();
+            scrollImage.color = new Color(0.05f, 0.05f, 0.05f, 1f);
+
+            // Create content area
+            var contentGo = new GameObject("Content");
+            contentGo.transform.SetParent(scrollGo.transform);
+            var contentRect = contentGo.AddComponent<RectTransform>();
+            contentRect.anchoredPosition = Vector2.zero;
+            contentRect.sizeDelta = new Vector2(360, 0);
+
+            var contentLayout = contentGo.AddComponent<VerticalLayoutGroup>();
+            contentLayout.childForceExpandHeight = false;
+            contentLayout.childForceExpandWidth = true;
+            contentLayout.spacing = 5;
+            contentLayout.padding = new RectOffset(5, 5, 5, 5);
+
+            var contentFitter = contentGo.AddComponent<LayoutElement>();
+            contentFitter.preferredWidth = 360;
+
+            scrollComp.content = contentRect;
+
+            // Add close button at top
+            AddCloseButton(panelGo);
+
+            // Add debug buttons
+            AddButton(contentGo, "Draw Card (Local)", () => new DebugGameManager().DrawCardForLocalPlayer());
+            AddButton(contentGo, "Draw Card (Enemy)", () => new DebugGameManager().DrawCardForEnemy());
+            AddButton(contentGo, "Add 10 HP (Local)", () => new DebugGameManager().ModifyLocalPlayerHP(10));
+            AddButton(contentGo, "Kill Local Front", () => new DebugGameManager().KillLocalCardAt(BoardSlot.Front));
+            AddButton(contentGo, "Kill Enemy Front", () => new DebugGameManager().KillEnemyCardAt(BoardSlot.Front));
+            AddButton(contentGo, "Clear Local Board", () => new DebugGameManager().ClearLocalBoard());
+            AddButton(contentGo, "Clear Enemy Board", () => new DebugGameManager().ClearEnemyBoard());
+            AddButton(contentGo, "Print State", () => new DebugGameManager().PrintGameState());
+            AddButton(contentGo, "End Local Turn", () => new DebugGameManager().EndLocalPlayerTurn());
+
+            // Rebuild layout
+            LayoutRebuilder.ForceRebuildLayoutImmediate(contentRect);
+        }
+
+        private void AddCloseButton(GameObject parent)
+        {
+            var btnGo = new GameObject("CloseButton");
+            btnGo.transform.SetParent(parent.transform);
+            var btnRect = btnGo.AddComponent<RectTransform>();
+            btnRect.anchoredPosition = Vector2.zero;
+            btnRect.sizeDelta = new Vector2(-20, 40);
+            btnRect.offsetMin = new Vector2(10, -50);
+            btnRect.offsetMax = new Vector2(-10, -10);
+
+            var btnImage = btnGo.AddComponent<Image>();
+            btnImage.color = new Color(0.2f, 0.2f, 0.2f, 1f);
+
+            var btn = btnGo.AddComponent<Button>();
+            btn.onClick.AddListener(Toggle);
+
+            var txtGo = new GameObject("Text");
+            txtGo.transform.SetParent(btnGo.transform);
+            var txtRect = txtGo.AddComponent<RectTransform>();
+            txtRect.anchoredPosition = Vector2.zero;
+            txtRect.sizeDelta = Vector2.zero;
+
+            var txt = txtGo.AddComponent<TextMeshProUGUI>();
+            txt.text = "Close";
+            txt.alignment = TextAlignmentOptions.Center;
+            txt.fontSize = 20;
+        }
+
+        private void AddButton(GameObject parent, string label, System.Action onClick)
+        {
+            var btnGo = new GameObject("Btn_" + label);
+            btnGo.transform.SetParent(parent.transform);
+            var btnRect = btnGo.AddComponent<RectTransform>();
+            btnRect.sizeDelta = new Vector2(-10, 40);
+
+            var btnImage = btnGo.AddComponent<Image>();
+            btnImage.color = new Color(0.3f, 0.3f, 0.5f, 1f);
+
+            var btn = btnGo.AddComponent<Button>();
+            btn.onClick.AddListener(() => onClick?.Invoke());
+
+            var layoutElem = btnGo.AddComponent<LayoutElement>();
+            layoutElem.preferredHeight = 40;
+
+            var txtGo = new GameObject("Text");
+            txtGo.transform.SetParent(btnGo.transform);
+            var txtRect = txtGo.AddComponent<RectTransform>();
+            txtRect.anchoredPosition = Vector2.zero;
+            txtRect.sizeDelta = Vector2.zero;
+
+            var txt = txtGo.AddComponent<TextMeshProUGUI>();
+            txt.text = label;
+            txt.alignment = TextAlignmentOptions.Center;
+            txt.fontSize = 16;
         }
 
         public void Toggle()
         {
             _isVisible = !_isVisible;
-            canvasGroup.alpha = _isVisible ? 1f : 0f;
-            canvasGroup.blocksRaycasts = _isVisible;
-            canvasGroup.interactable = _isVisible;
+            _canvasGroup.alpha = _isVisible ? 1f : 0f;
+            _canvasGroup.blocksRaycasts = _isVisible;
+            _canvasGroup.interactable = _isVisible;
         }
 
         public void ModifyPlayerHP(int playerIndex, int amount)
@@ -252,12 +390,13 @@ namespace Flippy.CardDuelMobile.UI
             {
                 var cardDef = player.Deck[0];
                 player.Deck.RemoveAt(0);
-                player.Hand.Add(cardDef);
+                player.Hand.Add(new HandCardRuntime
+                {
+                    RuntimeHandKey = System.Guid.NewGuid().ToString("N"),
+                    Definition = cardDef
+                });
                 Debug.Log($"[DEBUG] Drew {cardDef.displayName} to Player {playerIndex} hand");
             }
-
-            if (_presenter != null)
-                _presenter.OnGameStateUpdated();
         }
 
         public void RemoveCardFromHand(int playerIndex, int handIndex)
@@ -272,15 +411,12 @@ namespace Flippy.CardDuelMobile.UI
 
             var card = player.Hand[handIndex];
             player.Hand.RemoveAt(handIndex);
-            Debug.Log($"[DEBUG] Removed {card.displayName} from Player {playerIndex} hand");
-
-            if (_presenter != null)
-                _presenter.OnGameStateUpdated();
+            Debug.Log($"[DEBUG] Removed {card.Definition.displayName} from Player {playerIndex} hand");
         }
 
         public void RemoveCardFromBoardWithAnimation(int playerIndex, BoardSlot slot)
         {
-            if (_duelState == null || _presenter == null) return;
+            if (_duelState == null) return;
             var player = _duelState.GetPlayer(playerIndex);
             if (player == null)
             {
@@ -297,9 +433,6 @@ namespace Flippy.CardDuelMobile.UI
 
             card.CurrentHealth = 0;
             Debug.Log($"[DEBUG] Killed {card.DisplayName} at {slot} with animation");
-
-            if (_presenter != null)
-                _presenter.OnGameStateUpdated();
         }
 
         public void PrintGameState()

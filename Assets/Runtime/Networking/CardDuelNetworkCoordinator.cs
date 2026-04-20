@@ -33,6 +33,9 @@ namespace Flippy.CardDuelMobile.Networking
 
         public static CardDuelNetworkCoordinator Instance { get; private set; }
 
+        public DuelRuntime DuelRuntime => _runtime;
+        public DuelState DuelState => _runtime?.State;
+
         private sealed class SeatState
         {
             public SeatState(int seatIndex)
@@ -66,6 +69,12 @@ namespace Flippy.CardDuelMobile.Networking
             }
 
             TickDisconnectGrace();
+
+            // Broadcast snapshots during active gameplay
+            if (_matchPhase == MatchPhase.InProgress && _runtime != null)
+            {
+                BroadcastSnapshot();
+            }
         }
 
         public override void OnDestroy()
@@ -465,7 +474,32 @@ namespace Flippy.CardDuelMobile.Networking
             _winnerPlayerIndex = -1;
             _authoritativeSeed = Mathf.Abs(Guid.NewGuid().GetHashCode());
             _runtime = new DuelRuntime(rulesProfile);
-            _runtime.StartGame(deckPlayerA, deckPlayerB, _authoritativeSeed);
+
+            // Create test decks if not assigned
+            var deckA = deckPlayerA;
+            var deckB = deckPlayerB;
+
+            if (deckA == null)
+            {
+                deckA = CreateTestDeck("TestDeckA");
+                if (deckA == null)
+                {
+                    GameLogger.Error("Match", "Failed to create test deck A");
+                    return;
+                }
+            }
+
+            if (deckB == null)
+            {
+                deckB = CreateTestDeck("TestDeckB");
+                if (deckB == null)
+                {
+                    GameLogger.Error("Match", "Failed to create test deck B");
+                    return;
+                }
+            }
+
+            _runtime.StartGame(deckA, deckB, _authoritativeSeed);
 
             foreach (var seat in _seats)
             {
@@ -475,6 +509,12 @@ namespace Flippy.CardDuelMobile.Networking
             _matchPhase = MatchPhase.InProgress;
             GameLogger.Info("Match", "Match started, broadcasting snapshot");
             AppendLog("Both players ready. Match started.");
+
+            // Load MainGame scene for multiplayer
+            if (GameModeManager.Instance != null && !GameModeManager.Instance.IsLocalMode)
+            {
+                SceneBootstrap.LoadMainGame();
+            }
 
             // Initialize action logging and checkpointing (non-blocking)
             var matchId = $"match-{Guid.NewGuid()}"; // TODO: use actual match ID from server
@@ -608,6 +648,70 @@ namespace Flippy.CardDuelMobile.Networking
                     new BoardSlotSnapshotDto{ slot = BoardSlot.BackRight, occupied = false }
                 }
             };
+        }
+
+        private static DeckDefinition CreateTestDeck(string name)
+        {
+            try
+            {
+                var deck = ScriptableObject.CreateInstance<DeckDefinition>();
+                deck.name = name;
+                deck.displayName = name;
+                deck.deckId = name.ToLower();
+
+                UnitType[] unitTypes = { UnitType.Melee, UnitType.Ranged, UnitType.Magic };
+                var cards = new List<DeckDefinition.DeckCard>(20);
+
+                // Create 20 test cards with variety
+                for (int i = 0; i < 20; i++)
+                {
+                    var unitType = unitTypes[i % unitTypes.Length];
+
+                    var cardDef = ScriptableObject.CreateInstance<CardDefinition>();
+                    if (cardDef == null)
+                    {
+                        Debug.LogError($"[CreateTestDeck] Failed to create CardDefinition #{i}");
+                        continue;
+                    }
+
+                    cardDef.name = $"TestCard_{i}";
+                    cardDef.cardId = $"test_{unitType}_{i}";
+                    cardDef.displayName = $"Test {unitType} {i + 1}";
+                    cardDef.cardType = CardType.Unit;
+                    cardDef.unitType = unitType;
+                    cardDef.manaCost = Mathf.Max(1, 1 + (i % 5));
+                    cardDef.attack = Mathf.Max(1, 1 + (i % 4));
+                    cardDef.health = Mathf.Max(1, 2 + (i % 4));
+                    cardDef.description = $"Test {unitType}";
+                    cardDef.turnsUntilCanAttack = 1;
+
+                    var deckCard = new DeckDefinition.DeckCard();
+                    if (deckCard == null)
+                    {
+                        Debug.LogError($"[CreateTestDeck] Failed to create DeckCard #{i}");
+                        continue;
+                    }
+
+                    deckCard.card = cardDef;
+                    deckCard.quantity = 1;
+                    cards.Add(deckCard);
+                }
+
+                if (cards.Count == 0)
+                {
+                    Debug.LogError("[CreateTestDeck] No cards created!");
+                    return null;
+                }
+
+                deck.cards = cards.ToArray();
+                Debug.Log($"[CreateTestDeck] Created deck '{name}' with {deck.cards.Length} cards");
+                return deck;
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"[CreateTestDeck] Failed to create test deck: {ex.Message}\n{ex.StackTrace}");
+                return null;
+            }
         }
 
         private int ResolvePlayerIndex(ulong clientId)

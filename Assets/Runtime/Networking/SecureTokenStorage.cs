@@ -108,6 +108,7 @@ namespace Flippy.CardDuelMobile.Networking
         public static void SavePlayerId(string playerId)
         {
             PlayerPrefs.SetString(PlayerIdKey, playerId ?? "");
+            PlayerPrefs.Save();
         }
 
         /// <summary>
@@ -124,6 +125,7 @@ namespace Flippy.CardDuelMobile.Networking
         public static void SaveEmail(string email)
         {
             PlayerPrefs.SetString(EmailKey, email ?? "");
+            PlayerPrefs.Save();
         }
 
         /// <summary>
@@ -140,6 +142,7 @@ namespace Flippy.CardDuelMobile.Networking
         public static void SaveTokenExpiry(long expiryUnixSeconds)
         {
             PlayerPrefs.SetString(ExpiryKey, expiryUnixSeconds.ToString());
+            PlayerPrefs.Save();
         }
 
         /// <summary>
@@ -209,6 +212,7 @@ namespace Flippy.CardDuelMobile.Networking
         {
             var encrypted = EncryptXor(value);
             PlayerPrefs.SetString(key, encrypted);
+            PlayerPrefs.Save();
             Debug.LogWarning($"[SecureTokenStorage] Usando XOR encryption (inseguro). Use Keychain en iOS o Keystore en Android.");
         }
 
@@ -254,6 +258,7 @@ namespace Flippy.CardDuelMobile.Networking
             // Placeholder: se implementaría con plugin nativo o AndroidX Security
             Debug.LogWarning($"[SecureTokenStorage] Android Keystore no implementado, usando PlayerPrefs fallback");
             PlayerPrefs.SetString(key, value);
+            PlayerPrefs.Save();
         }
 
         private static string GetFromAndroidKeystore(string key)
