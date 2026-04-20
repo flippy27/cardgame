@@ -49,6 +49,31 @@ namespace Flippy.CardDuelMobile.SinglePlayer
             {
                 StartMatch();
             }
+
+            // Auto-load missing decks/rules if not assigned
+            TryAutoLoadDefaults();
+        }
+
+        private void TryAutoLoadDefaults()
+        {
+            if (rulesProfile == null)
+            {
+                var found = Resources.Load<DuelRulesProfile>("DuelRulesProfile");
+                if (found) rulesProfile = found;
+            }
+
+            if (localPlayerDeck == null)
+            {
+                var found = Resources.LoadAll<DeckDefinition>("Decks");
+                if (found.Length > 0) localPlayerDeck = found[0];
+            }
+
+            if (enemyDeck == null)
+            {
+                var found = Resources.LoadAll<DeckDefinition>("Decks");
+                if (found.Length > 1) enemyDeck = found[1];
+                else if (found.Length > 0) enemyDeck = found[0];
+            }
         }
 
         private void OnDestroy()

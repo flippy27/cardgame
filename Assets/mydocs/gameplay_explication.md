@@ -27,3 +27,23 @@ if there are no cards in play, any card thats played can only be placed at top (
 - a card is placed on top, top will go left, left will go right
 - (top has a card already) a card is placed on left, left will go right
 
+--- 
+#Animations (all animations in this section are a fast slerp)
+following the above rules about priority and what not
+animations should go the same way
+scenarios
+no cards in either of the 3 slots (slots left and right are blocked)
+place card on top 
+
+1 card is on top
+- can just place card on left
+- can place card on top, when hover on top of the previous card, previous card moves to the left slot 
+
+1 card is on top and 1 card is on left
+- can just place on right
+- can place on left and previous left card moves right
+- can place on top and previous top card goes left, previous left goes right
+
+when card is moved away (and not placed) every card should go back where it was previously animated-ly
+
+if the movement is too fast, animations should cancel and just animate back (no teleporting)

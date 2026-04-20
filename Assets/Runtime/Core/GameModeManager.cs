@@ -1,19 +1,22 @@
 using UnityEngine;
-using Flippy.CardDuelMobile.Networking;
 using Flippy.CardDuelMobile.SinglePlayer;
+using Flippy.CardDuelMobile.Networking;
 
 namespace Flippy.CardDuelMobile.Core
 {
+    /// <summary>
+    /// Gestiona el modo de juego actual (local vs online con Netcode).
+    /// Activa/desactiva coordinadores según el modo.
+    /// </summary>
     public class GameModeManager : MonoBehaviour
     {
         public static GameModeManager Instance { get; private set; }
 
-        private CardDuelNetworkCoordinator _networkCoordinator;
-        private LocalSinglePlayerCoordinator _localCoordinator;
-        private bool _isLocalMode;
+        [SerializeField] private bool _isLocalMode = true;
+        private LocalSinglePlayerCoordinator _localCoord;
+        private NetworkBootstrap _networkBootstrap;
 
         public bool IsLocalMode => _isLocalMode;
-        public bool IsOnlineMode => !_isLocalMode;
 
         private void Awake()
         {
@@ -22,66 +25,50 @@ namespace Flippy.CardDuelMobile.Core
                 Destroy(gameObject);
                 return;
             }
+
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         private void Start()
         {
-            _networkCoordinator = FindFirstObjectByType<CardDuelNetworkCoordinator>();
-            _localCoordinator = FindFirstObjectByType<LocalSinglePlayerCoordinator>();
+            _localCoord = FindFirstObjectByType<LocalSinglePlayerCoordinator>();
+            _networkBootstrap = FindFirstObjectByType<NetworkBootstrap>();
 
-            SetOnlineMode();
+            // Activate appropriate coordinator based on mode
+            ApplyMode();
         }
 
+        /// <summary>
+        /// Activa modo local (AI vs Player, sin Netcode).
+        /// </summary>
         public void SetLocalMode()
         {
-            GameLogger.Info("GameMode", "Switching to LOCAL mode");
             _isLocalMode = true;
-
-            // Disable network first
-            if (_networkCoordinator != null)
-            {
-                _networkCoordinator.enabled = false;
-                GameLogger.Info("GameMode", "Disabled CardDuelNetworkCoordinator");
-            }
-
-            // Enable and start local
-            if (_localCoordinator != null)
-            {
-                _localCoordinator.enabled = true;
-                if (!_localCoordinator.IsActive)
-                {
-                    _localCoordinator.StartMatch();
-                    GameLogger.Info("GameMode", "Started LocalSinglePlayerCoordinator match");
-                }
-                else
-                {
-                    GameLogger.Info("GameMode", "LocalSinglePlayerCoordinator already active");
-                }
-            }
+            ApplyMode();
+            GameLogger.Info("GameMode", "Switched to LOCAL mode");
         }
 
+        /// <summary>
+        /// Activa modo online (Multiplayer con Netcode for GameObjects).
+        /// </summary>
         public void SetOnlineMode()
         {
-            GameLogger.Info("GameMode", "Switching to ONLINE mode");
             _isLocalMode = false;
+            ApplyMode();
+            GameLogger.Info("GameMode", "Switched to ONLINE mode");
+        }
 
-            // Disable local and reset it
-            if (_localCoordinator != null)
+        private void ApplyMode()
+        {
+            if (_localCoord != null)
             {
-                GameLogger.Info("GameMode", "Stopping LocalSinglePlayerCoordinator");
-                _localCoordinator.enabled = false;
-                _localCoordinator.gameObject.SetActive(false);
-                _localCoordinator.gameObject.SetActive(true);
-                _localCoordinator.enabled = false;
-                GameLogger.Info("GameMode", "Disabled and reset LocalSinglePlayerCoordinator");
+                _localCoord.gameObject.SetActive(_isLocalMode);
             }
 
-            // Enable network
-            if (_networkCoordinator != null)
+            if (_networkBootstrap != null)
             {
-                _networkCoordinator.enabled = true;
-                GameLogger.Info("GameMode", "Enabled CardDuelNetworkCoordinator");
+                _networkBootstrap.gameObject.SetActive(!_isLocalMode);
             }
         }
     }

@@ -18,6 +18,7 @@ namespace Flippy.CardDuelMobile.Core
         public static string LoginSceneName = "LoginScene";
         public static string BattleSceneName = "BattleScene";
         public static string MenuSceneName = "MenuScene";
+        public static string MainGameSceneName = "MainGame";
 
         private AuthService _authService;
 
@@ -82,6 +83,14 @@ namespace Flippy.CardDuelMobile.Core
         public static void LoadMenu()
         {
             LoadScene(MenuSceneName);
+        }
+
+        /// <summary>
+        /// Navega a gameplay 3D.
+        /// </summary>
+        public static void LoadMainGame()
+        {
+            LoadScene(MainGameSceneName);
         }
 
         /// <summary>

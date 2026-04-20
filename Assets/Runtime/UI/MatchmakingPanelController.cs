@@ -82,15 +82,8 @@ namespace Flippy.CardDuelMobile.UI
         {
             SetStatus("Starting local match...");
             GameLogger.Info("UI", "Local match selected");
-            if (GameModeManager.Instance != null)
-            {
-                GameModeManager.Instance.SetLocalMode();
-                SetStatus("Local match started");
-            }
-            else
-            {
-                SetStatus("Error: GameModeManager not found");
-            }
+            GameModeManager.Instance?.SetLocalMode();
+            SceneBootstrap.LoadMainGame();
         }
 
         private async void HandleQuickMatch()
