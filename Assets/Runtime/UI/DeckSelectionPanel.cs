@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Flippy.CardDuelMobile.Core;
-using Flippy.CardDuelMobile.Data;
 using Flippy.CardDuelMobile.Networking;
 using Flippy.CardDuelMobile.Networking.ApiClients;
 
@@ -25,12 +24,12 @@ namespace Flippy.CardDuelMobile.UI
         [SerializeField] private TextMeshProUGUI cardCountText;
         [SerializeField] private CanvasGroup loadingSpinner;
 
-        private List<DeckDefinition> _availableDecks = new();
-        private DeckDefinition _selectedDeck;
+        private List<DeckDto> _availableDecks = new();
+        private DeckDto _selectedDeck;
         private AuthService _authService;
         private CardApiClient _cardApiClient;
 
-        public event Action<DeckDefinition> OnDeckSelected;
+        public event Action<DeckDto> OnDeckSelected;
         public event Action OnBackPressed;
 
         private void Awake()
@@ -108,7 +107,7 @@ namespace Flippy.CardDuelMobile.UI
             GameLogger.Info("DeckSelection", $"Populated deck list with {_availableDecks.Count} items");
         }
 
-        private void SelectDeck(DeckDefinition deck)
+        private void SelectDeck(DeckDto deck)
         {
             _selectedDeck = deck;
 
@@ -117,7 +116,7 @@ namespace Flippy.CardDuelMobile.UI
                 selectedDeckNameText.text = deck.displayName;
 
             if (cardCountText != null)
-                cardCountText.text = $"{deck.GetTotalCards()} cards";
+                cardCountText.text = $"{GetCardCount(deck)} cards";
 
             // Enable play button
             if (playButton != null)
@@ -133,6 +132,11 @@ namespace Flippy.CardDuelMobile.UI
             {
                 GameLogger.Warning("DeckSelection", "No deck selected");
                 return;
+            }
+
+            if (GamePlayStateManager.Instance != null)
+            {
+                GamePlayStateManager.Instance.SetSelectedDeck(_selectedDeck.deckId, _selectedDeck.cardIds ?? new List<string>());
             }
 
             GameLogger.Info("DeckSelection", $"Starting matchmaking with deck: {_selectedDeck.deckId}");
@@ -160,7 +164,12 @@ namespace Flippy.CardDuelMobile.UI
             // TODO: Show error dialog to user
         }
 
-        public DeckDefinition GetSelectedDeck() => _selectedDeck;
+        public DeckDto GetSelectedDeck() => _selectedDeck;
+
+        private static int GetCardCount(DeckDto deck)
+        {
+            return deck?.cardIds?.Count ?? 0;
+        }
     }
 
     /// <summary>
@@ -173,10 +182,10 @@ namespace Flippy.CardDuelMobile.UI
         [SerializeField] private Button selectButton;
         [SerializeField] private Image highlightImage;
 
-        private DeckDefinition _deckData;
+        private DeckDto _deckData;
         private Action _onSelected;
 
-        public void Initialize(DeckDefinition deck, Action onSelected)
+        public void Initialize(DeckDto deck, Action onSelected)
         {
             _deckData = deck;
             _onSelected = onSelected;
@@ -185,7 +194,7 @@ namespace Flippy.CardDuelMobile.UI
                 nameText.text = deck.displayName;
 
             if (cardCountText != null)
-                cardCountText.text = $"{deck.GetTotalCards()} cards";
+                cardCountText.text = $"{(deck.cardIds?.Count ?? 0)} cards";
 
             if (selectButton != null)
                 selectButton.onClick.AddListener(OnSelectClicked);

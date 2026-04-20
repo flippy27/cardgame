@@ -17,6 +17,15 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
     }
 
     [System.Serializable]
+    public sealed class DeckUpsertRequestDto
+    {
+        public string playerId;
+        public string deckId;
+        public string displayName;
+        public List<string> cardIds;
+    }
+
+    [System.Serializable]
     public sealed class ServerCardDefinition
     {
         public string cardId;
@@ -37,18 +46,24 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         public string userId;
         public string username;
         public string email;
-        public int level;
         public int rating;
+        public int wins;
+        public int losses;
+        public string createdAt;
+        public string lastLoginAt;
     }
 
     [System.Serializable]
     public sealed class UserStatsDto
     {
-        public int totalMatches;
+        public string userId;
+        public string username;
+        public int totalGames;
         public int wins;
         public int losses;
         public float winRate;
         public int rating;
+        public string region;
     }
 
     [System.Serializable]
@@ -80,5 +95,69 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         public int pageSize;
         public int totalCount;
         public List<LeaderboardDto> entries;
+    }
+
+    [System.Serializable]
+    public sealed class QueueForMatchRequestDto
+    {
+        public string playerId;
+        public string deckId;
+        public int mode;
+        public int rating;
+    }
+
+    [System.Serializable]
+    public sealed class CreatePrivateMatchRequestDto
+    {
+        public string playerId;
+        public string deckId;
+        public string matchName;
+    }
+
+    [System.Serializable]
+    public sealed class JoinPrivateMatchRequestDto
+    {
+        public string playerId;
+        public string deckId;
+        public string roomCode;
+    }
+
+    [System.Serializable]
+    public sealed class ConnectMatchRequestDto
+    {
+        public string playerId;
+        public string matchId;
+        public string reconnectToken;
+    }
+
+    [System.Serializable]
+    public sealed class SetReadyRequestDto
+    {
+        public string matchId;
+        public string playerId;
+        public bool isReady;
+    }
+
+    [System.Serializable]
+    public sealed class PlayCardRequestDto
+    {
+        public string matchId;
+        public string playerId;
+        public string runtimeHandKey;
+        public int slotIndex;
+    }
+
+    [System.Serializable]
+    public sealed class EndTurnRequestDto
+    {
+        public string matchId;
+        public string playerId;
+    }
+
+    [System.Serializable]
+    public sealed class ForfeitRequestDto
+    {
+        public string matchId;
+        public string playerId;
     }
 }

@@ -110,7 +110,9 @@ namespace Flippy.CardDuelMobile.Networking.Examples
 
             bool connected = await _signalRCoordinator.ConnectAsync(
                 reservation.MatchId,
-                _authService.CurrentPlayerId
+                _authService.CurrentPlayerId,
+                reservation.ReconnectToken,
+                reservation.SeatIndex
             );
 
             if (!connected)

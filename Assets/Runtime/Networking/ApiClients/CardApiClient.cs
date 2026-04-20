@@ -115,18 +115,26 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             if (string.IsNullOrWhiteSpace(playerId))
                 throw new ValidationException("PlayerId cannot be empty");
 
-            var json = JsonUtility.ToJson(deck);
-            var response = await HttpClientHelper.PostAsync($"{_baseUrl}/api/v1/decks/{playerId}", json);
-            return JsonUtility.FromJson<DeckDto>(response);
+            var request = new DeckUpsertRequestDto
+            {
+                playerId = playerId,
+                deckId = deck.deckId,
+                displayName = string.IsNullOrWhiteSpace(deck.displayName) ? deck.deckName : deck.displayName,
+                cardIds = deck.cardIds ?? new List<string>()
+            };
+
+            var json = JsonUtility.ToJson(request);
+            await HttpClientHelper.PutAsync($"{_baseUrl}/api/v1/decks", json);
+            return deck;
         }
 
         public async Task<List<LeaderboardDto>> FetchLeaderboard()
         {
-            var response = await HttpClientHelper.GetAsync($"{_baseUrl}/api/v1/leaderboard");
+            var response = await HttpClientHelper.GetAsync($"{_baseUrl}/api/v1/users/leaderboard");
             try
             {
-                var dtos = JsonUtility.FromJson<LeaderboardListDto>($"{{\"items\":{response}}}");
-                return dtos?.items?.ToList() ?? new List<LeaderboardDto>();
+                var page = JsonUtility.FromJson<LeaderboardPageDto>(response);
+                return page?.entries ?? new List<LeaderboardDto>();
             }
             catch (Exception ex)
             {
@@ -147,19 +155,5 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             public DeckDto[] items;
         }
 
-        [System.Serializable]
-        private sealed class LeaderboardListDto
-        {
-            public LeaderboardDto[] items;
-        }
-
-        [System.Serializable]
-        public sealed class LeaderboardDto
-        {
-            public string userId;
-            public string username;
-            public int rank;
-            public int wins;
-        }
     }
 }

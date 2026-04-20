@@ -47,7 +47,12 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             try
             {
                 var url = $"{_baseUrl}/api/v1/matches/{matchId}/ready";
-                var request = JsonUtility.ToJson(new { matchId, playerId, isReady });
+                var request = JsonUtility.ToJson(new SetReadyRequestDto
+                {
+                    matchId = matchId,
+                    playerId = playerId,
+                    isReady = isReady
+                });
                 var response = await HttpClientHelper.PostAsync(url, request);
                 return JsonUtility.FromJson<MatchSnapshot>(response);
             }
@@ -67,7 +72,13 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             try
             {
                 var url = $"{_baseUrl}/api/v1/matches/{matchId}/play";
-                var request = JsonUtility.ToJson(new { matchId, playerId, runtimeHandKey, slotIndex });
+                var request = JsonUtility.ToJson(new PlayCardRequestDto
+                {
+                    matchId = matchId,
+                    playerId = playerId,
+                    runtimeHandKey = runtimeHandKey,
+                    slotIndex = slotIndex
+                });
                 var response = await HttpClientHelper.PostAsync(url, request);
                 return JsonUtility.FromJson<MatchSnapshot>(response);
             }
@@ -87,7 +98,11 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             try
             {
                 var url = $"{_baseUrl}/api/v1/matches/{matchId}/end-turn";
-                var request = JsonUtility.ToJson(new { matchId, playerId });
+                var request = JsonUtility.ToJson(new EndTurnRequestDto
+                {
+                    matchId = matchId,
+                    playerId = playerId
+                });
                 var response = await HttpClientHelper.PostAsync(url, request);
                 return JsonUtility.FromJson<MatchSnapshot>(response);
             }
@@ -107,7 +122,11 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             try
             {
                 var url = $"{_baseUrl}/api/v1/matches/{matchId}/forfeit";
-                var request = JsonUtility.ToJson(new { matchId, playerId });
+                var request = JsonUtility.ToJson(new ForfeitRequestDto
+                {
+                    matchId = matchId,
+                    playerId = playerId
+                });
                 var response = await HttpClientHelper.PostAsync(url, request);
                 return JsonUtility.FromJson<MatchSnapshot>(response);
             }

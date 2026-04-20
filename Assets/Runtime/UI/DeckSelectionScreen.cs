@@ -138,6 +138,12 @@ namespace Flippy.CardDuelMobile.UI
             SelectedDeckId = _selectedDeckId;
             GameLogger.Info("DeckSelection", $"Selected deck: {_selectedDeckId}");
 
+            var selectedDeck = _playerDecks.Find(d => d.deckId == _selectedDeckId);
+            if (selectedDeck != null && GamePlayStateManager.Instance != null)
+            {
+                GamePlayStateManager.Instance.SetSelectedDeck(selectedDeck.deckId, selectedDeck.cardIds);
+            }
+
             // Load game scene or trigger matchmaking
             // This depends on your game flow - you might load a matchmaking scene
             // or directly start the game

@@ -37,7 +37,9 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public IMatchCoordinator GetCoordinator()
         {
-            if (_preferredType == CoordinatorType.SignalR && MatchSignalRCoordinator.Instance != null)
+            if (_preferredType == CoordinatorType.SignalR &&
+                MatchSignalRCoordinator.Instance != null &&
+                MatchSignalRCoordinator.Instance.IsConnected)
             {
                 CurrentType = CoordinatorType.SignalR;
                 return MatchSignalRCoordinator.Instance;
@@ -56,7 +58,7 @@ namespace Flippy.CardDuelMobile.Networking
         /// <summary>
         /// Check if SignalR is available.
         /// </summary>
-        public bool IsSignalRAvailable => MatchSignalRCoordinator.Instance != null;
+        public bool IsSignalRAvailable => MatchSignalRCoordinator.Instance != null && MatchSignalRCoordinator.Instance.IsConnected;
 
         /// <summary>
         /// Check if HTTP is available.

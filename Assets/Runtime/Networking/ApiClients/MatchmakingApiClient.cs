@@ -30,7 +30,13 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             try
             {
                 var url = $"{_baseUrl}/api/v1/matchmaking/queue";
-                var request = JsonUtility.ToJson(new { playerId, deckId, mode = (int)mode, rating });
+                var request = JsonUtility.ToJson(new QueueForMatchRequestDto
+                {
+                    playerId = playerId,
+                    deckId = deckId,
+                    mode = (int)mode,
+                    rating = rating
+                });
                 var response = await HttpClientHelper.PostAsync(url, request);
                 return JsonUtility.FromJson<MatchReservationDto>(response);
             }
@@ -50,7 +56,12 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             try
             {
                 var url = $"{_baseUrl}/api/v1/matchmaking/private";
-                var request = JsonUtility.ToJson(new { playerId, deckId, matchName });
+                var request = JsonUtility.ToJson(new CreatePrivateMatchRequestDto
+                {
+                    playerId = playerId,
+                    deckId = deckId,
+                    matchName = matchName
+                });
                 var response = await HttpClientHelper.PostAsync(url, request);
                 return JsonUtility.FromJson<MatchReservationDto>(response);
             }
@@ -70,7 +81,12 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             try
             {
                 var url = $"{_baseUrl}/api/v1/matchmaking/private/join";
-                var request = JsonUtility.ToJson(new { playerId, deckId, roomCode });
+                var request = JsonUtility.ToJson(new JoinPrivateMatchRequestDto
+                {
+                    playerId = playerId,
+                    deckId = deckId,
+                    roomCode = roomCode
+                });
                 var response = await HttpClientHelper.PostAsync(url, request);
                 return JsonUtility.FromJson<MatchReservationDto>(response);
             }

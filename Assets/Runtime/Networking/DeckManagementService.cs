@@ -182,7 +182,7 @@ namespace Flippy.CardDuelMobile.Networking
         /// <summary>
         /// Valida que un deck tenga al menos el mínimo de cartas requeridas.
         /// </summary>
-        public bool IsValidDeck(List<string> cardIds, int minCards = 1, int maxCards = 100)
+        public bool IsValidDeck(List<string> cardIds, int minCards = 20, int maxCards = 60)
         {
             if (cardIds == null)
                 return false;
