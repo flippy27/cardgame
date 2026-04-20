@@ -1,70 +1,76 @@
 using UnityEngine;
+using TMPro;
 using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.Core;
 
 namespace Flippy.CardDuelMobile.UI
 {
-    /// <summary>
-    /// Representa un slot individual en el board 3D.
-    /// </summary>
-    public class Board3DSlot : MonoBehaviour
+    public class Card3DPlayed : MonoBehaviour, ICardDisplay
     {
-        public int PlayerIndex { get; set; }
-        public BoardSlot Slot { get; set; }
+        public BoardCardDto CardData { get; private set; }
+        public int PlayerIndex { get; private set; }
 
-        [SerializeField] private Renderer _visualRenderer;
-        [SerializeField] private Collider _visualCollider;
+        [SerializeField] private Renderer _meshRenderer;
+        [SerializeField] private TextMeshProUGUI _statsText;
+        [SerializeField] private Collider _meshCollider;
 
-        private Renderer _renderer;
-        private Material _defaultMaterial;
-        private Material _highlightMaterial;
+        private Material _cardMaterial;
 
-        public void Initialize(Material defaultMat, float size)
+        public void Initialize(BoardCardDto card, int playerIndex)
         {
-            if (_visualRenderer == null)
+            CardData = card;
+            PlayerIndex = playerIndex;
+
+            if (_meshRenderer == null)
             {
-                Debug.LogError("[Board3DSlot] Visual renderer not assigned in inspector!");
+                Debug.LogError("[Card3DPlayed] Mesh renderer not assigned!");
                 return;
             }
 
-            _renderer = _visualRenderer;
-            _defaultMaterial = new Material(defaultMat ?? new Material(Shader.Find("Standard")));
-            _defaultMaterial.color = new Color(0.3f, 0.3f, 0.4f, 0.8f);
-
-            _highlightMaterial = new Material(_defaultMaterial);
-            _highlightMaterial.color = new Color(0.0f, 1.0f, 0.5f, 0.9f);
-
-            _renderer.material = _defaultMaterial;
-
-            if (_visualCollider != null)
+            if (_statsText == null)
             {
-                _visualCollider.enabled = true;
-                _visualCollider.isTrigger = false;
+                Debug.LogError("[Card3DPlayed] Stats text not assigned!");
+                return;
+            }
+
+            _cardMaterial = new Material(Shader.Find("Standard"));
+            _cardMaterial.color = new Color(0.1f, 0.1f, 0.15f, 0.9f);
+            _meshRenderer.material = _cardMaterial;
+
+            if (_meshCollider != null)
+            {
+                _meshCollider.enabled = true;
+                _meshCollider.isTrigger = false;
+            }
+
+            _statsText.text = FormatStats(card);
+            _statsText.alignment = TextAlignmentOptions.Center;
+            _statsText.fontSize = 0.5f;
+            _statsText.color = Color.white;
+            _statsText.outlineWidth = 0.2f;
+            _statsText.outlineColor = Color.black;
+
+            GameLogger.Info("Card3DPlayed", $"Initialized {card.displayName}");
+        }
+
+        private string FormatStats(BoardCardDto card)
+        {
+            return $"<b>{card.displayName}</b>\n\n{card.attack} ATK\n{card.currentHealth}/{card.maxHealth} HP";
+        }
+
+        public void UpdateStatsDisplay()
+        {
+            if (_statsText != null && CardData != null)
+            {
+                _statsText.text = FormatStats(CardData);
             }
         }
 
-        public void SetHighlight(bool highlight)
+        public void SetColor(Color color)
         {
-            if (_renderer != null)
+            if (_cardMaterial != null)
             {
-                _renderer.material = highlight ? _highlightMaterial : _defaultMaterial;
-            }
-        }
-
-        public void SetGlow(bool glow)
-        {
-            if (_renderer != null && _defaultMaterial != null)
-            {
-                if (glow)
-                {
-                    _defaultMaterial.color = new Color(0.5f, 0.5f, 0.3f, 0.9f);
-                    _defaultMaterial.SetFloat("_Emission", 0.5f);
-                }
-                else
-                {
-                    _defaultMaterial.color = new Color(0.3f, 0.3f, 0.4f, 0.8f);
-                    _defaultMaterial.SetFloat("_Emission", 0f);
-                }
+                _cardMaterial.color = color;
             }
         }
 
@@ -135,11 +141,11 @@ namespace Flippy.CardDuelMobile.UI
                 elapsed += Time.deltaTime;
                 var t = Mathf.Clamp01(elapsed / duration);
 
-                if (_renderer != null)
+                if (_cardMaterial != null)
                 {
-                    var color = _defaultMaterial.color;
+                    var color = _cardMaterial.color;
                     color.a = Mathf.Lerp(0.9f, 0f, t);
-                    _defaultMaterial.color = color;
+                    _cardMaterial.color = color;
                 }
 
                 transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, t);

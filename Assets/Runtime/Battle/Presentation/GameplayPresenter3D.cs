@@ -2,10 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using System.Linq;
 using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.SinglePlayer;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Networking;
+using Flippy.CardDuelMobile.UI;
 using UnityEngine.Serialization;
 
 namespace Flippy.CardDuelMobile.UI
@@ -22,6 +24,8 @@ namespace Flippy.CardDuelMobile.UI
         [SerializeField] private DragHandler3D dragHandler;
         [SerializeField] private EndTurnButton3D endTurnButton;
         [SerializeField] public GameObject boardCardPrefab;
+        [SerializeField] public GameObject boardCardPlayedPrefab;
+        [SerializeField] private DebugPanel debugPanel;
 
         public Board3DManager Board3DManager
         {
@@ -57,6 +61,10 @@ namespace Flippy.CardDuelMobile.UI
         private DuelSnapshotDto _previousSnapshot;
         private bool _subscribed;
         private int _lastLogCount;
+
+        // Preview displacement
+        private Dictionary<ICardDisplay, Vector3> _originalCardPositions = new();
+        private System.Collections.IEnumerator _previewAnimCoroutine;
 
         public static GameplayPresenter3D Instance { get; private set; }
 
@@ -141,6 +149,12 @@ namespace Flippy.CardDuelMobile.UI
                 board3DManager.Initialize();
             if (hand3DManager != null)
                 hand3DManager.Initialize();
+
+            // Debug panel
+            if (debugPanel == null)
+            {
+                debugPanel = FindFirstObjectByType<DebugPanel>();
+            }
         }
 
         private void Start()
@@ -184,11 +198,24 @@ namespace Flippy.CardDuelMobile.UI
 
             _latestSnapshot = snapshot;
 
+            // Initialize debug panel on first snapshot
+            if (debugPanel != null && snapshot.players != null && snapshot.players.Length >= 2)
+            {
+                var coordinator = LocalSinglePlayerCoordinator.Instance;
+                if (coordinator != null && coordinator.DuelRuntime != null)
+                {
+                    debugPanel.Initialize(null, coordinator.DuelRuntime, coordinator.DuelState, hand3DManager, board3DManager);
+                }
+            }
+
             // Procesar nuevos logs para detectar ataques
             ProcessAttackLogs(snapshot);
 
             // Actualizar board: mostrar cartas
             UpdateBoard(snapshot);
+
+            // Clear preview positions after board update (cards moved to final positions)
+            ClearPreviewPositions();
 
             // Detectar y animar reposicionamiento
             DetectAndAnimateRepositioning(snapshot);
@@ -233,8 +260,8 @@ namespace Flippy.CardDuelMobile.UI
                             string defenderName = afterArrow.Split(':')[0].Split('→')[0].Trim();
 
                             // Buscar las cartas en el board
-                            Card3DView attacker = FindCardByName(attackerName);
-                            Card3DView defender = FindCardByName(defenderName);
+                            ICardDisplay attacker = FindCardByName(attackerName);
+                            ICardDisplay defender = FindCardByName(defenderName);
 
                             if (attacker != null && defender != null)
                             {
@@ -248,7 +275,7 @@ namespace Flippy.CardDuelMobile.UI
             _lastLogCount = snapshot.logs.Count;
         }
 
-        private Card3DView FindCardByName(string displayName)
+        private ICardDisplay FindCardByName(string displayName)
         {
             if (_latestSnapshot?.players == null)
                 return null;
@@ -263,11 +290,11 @@ namespace Flippy.CardDuelMobile.UI
                 {
                     if (slotSnapshot.occupied && slotSnapshot.occupant != null && slotSnapshot.occupant.displayName == displayName)
                     {
-                        // Buscar la Card3DView correspondiente en el board manager
-                        var cardView = board3DManager.GetCardInSlot(playerIndex, slotSnapshot.slot);
-                        if (cardView != null && cardView.CardData.displayName == displayName)
+                        // Buscar la ICardDisplay correspondiente en el board manager
+                        var cardDisplay = board3DManager.GetCardInSlot(playerIndex, slotSnapshot.slot);
+                        if (cardDisplay != null && cardDisplay.CardData.displayName == displayName)
                         {
-                            return cardView;
+                            return cardDisplay;
                         }
                     }
                 }
@@ -303,69 +330,103 @@ namespace Flippy.CardDuelMobile.UI
             if (snapshot?.players == null || snapshot.players.Length < 2)
                 return;
 
-            // Actualizar ambos lados del board
             for (int playerIndex = 0; playerIndex < 2; playerIndex++)
             {
                 var playerSnapshot = snapshot.players[playerIndex];
                 if (playerSnapshot?.board == null)
                     continue;
 
-                // Para cada slot del jugador
+                // Build maps to track card movement by runtimeId
+                var currentCards = new Dictionary<string, (BoardSlot slot, ICardDisplay view)>();
+                var snapshotCards = new Dictionary<string, (BoardSlot slot, BoardCardDto data)>();
+
+                // Map current board state
+                foreach (var slot in System.Enum.GetValues(typeof(BoardSlot)) as BoardSlot[])
+                {
+                    var card = board3DManager.GetCardInSlot(playerIndex, slot);
+                    if (card != null && card.CardData != null)
+                    {
+                        currentCards[card.CardData.runtimeId] = (slot, card);
+                    }
+                }
+
+                // Map snapshot state
                 foreach (var boardCard in playerSnapshot.board)
                 {
-                    var slot = boardCard.slot;
-                    var existing = board3DManager.GetCardInSlot(playerIndex, slot);
-
                     if (boardCard.occupied && boardCard.occupant != null)
                     {
-                        // Card existe en snapshot
-                        if (existing == null)
+                        snapshotCards[boardCard.occupant.runtimeId] = (boardCard.slot, boardCard.occupant);
+                    }
+                }
+
+                // Debug: log snapshot vs current state
+                Debug.Log($"[UpdateBoard] P{playerIndex} Snapshot cards: {string.Join(", ", snapshotCards.Select(x => $"{x.Value.slot}={x.Value.data.displayName}(ID:{x.Key.Substring(0,8)})").ToList())}");
+                Debug.Log($"[UpdateBoard] P{playerIndex} Current cards:  {string.Join(", ", currentCards.Select(x => $"{x.Value.slot}={x.Value.view.CardData.displayName}(ID:{x.Key.Substring(0,8)})").ToList())}");
+
+                // Process snapshot cards
+                foreach (var entry in snapshotCards)
+                {
+                    var runtimeId = entry.Key;
+                    var snapshotSlot = entry.Value.slot;
+                    var snapshotData = entry.Value.data;
+
+                    if (currentCards.TryGetValue(runtimeId, out var current))
+                    {
+                        var currentSlot = current.slot;
+                        var currentView = current.view;
+
+                        // Card exists, check if moved
+                        if (currentSlot != snapshotSlot)
                         {
-                            CreateBoardCard(boardCard.occupant, playerIndex, slot);
-                            Debug.Log($"[GameplayPresenter3D] Created card {boardCard.occupant.displayName} at P{playerIndex} {slot}");
-                        }
-                        else if (existing.CardData.runtimeId != boardCard.occupant.runtimeId)
-                        {
-                            // Card cambió, reemplazar
-                            board3DManager.ClearSlot(playerIndex, slot);
-                            CreateBoardCard(boardCard.occupant, playerIndex, slot);
+                            // Reparent to new slot (keep world position)
+                            Debug.Log($"[UpdateBoard] Moving {snapshotData.displayName} {currentSlot}→{snapshotSlot}");
+                            ReparentCardToSlot(currentView, playerIndex, currentSlot, snapshotSlot);
+                            Debug.Log($"[GameplayPresenter3D] Moved card {snapshotData.displayName} P{playerIndex} {currentSlot}→{snapshotSlot}");
                         }
                         else
                         {
-                            // Update stats - detectar si murió
-                            var oldHP = existing.CardData.currentHealth;
-                            var newHP = boardCard.occupant.currentHealth;
+                            // Update stats
+                            var oldHP = currentView.CardData.currentHealth;
+                            var newHP = snapshotData.currentHealth;
 
-                            existing.CardData.currentHealth = newHP;
-                            existing.UpdateStatsDisplay();
+                            currentView.CardData.currentHealth = newHP;
+                            currentView.UpdateStatsDisplay();
 
-                            // Animar daño
                             if (newHP < oldHP && newHP > 0)
                             {
-                                // Daño (flash)
-                                existing.SetColor(Color.red);
-                                StartCoroutine(ResetCardColor(existing, 0.2f));
+                                currentView.SetColor(Color.red);
+                                StartCoroutine(ResetCardColor(currentView, 0.2f));
                             }
                             else if (newHP <= 0)
                             {
-                                // Muerte
-                                existing.AnimateDeath();
-                                board3DManager.ClearSlot(playerIndex, slot);
+                                currentView.AnimateDeath();
+                                board3DManager.ClearSlot(playerIndex, snapshotSlot);
                             }
                         }
                     }
                     else
                     {
-                        // Slot vacío - detectar si carta murió
-                        if (existing != null)
+                        // New card
+                        Debug.Log($"[UpdateBoard] Card NOT in currentCards: {snapshotData.displayName} (ID:{runtimeId.Substring(0,8)}) → creating at {snapshotSlot}");
+                        CreateBoardCard(snapshotData, playerIndex, snapshotSlot);
+                        Debug.Log($"[GameplayPresenter3D] Created card {snapshotData.displayName} at P{playerIndex} {snapshotSlot}");
+                    }
+                }
+
+                // Detect deaths (cards no longer in snapshot)
+                foreach (var entry in currentCards)
+                {
+                    var runtimeId = entry.Key;
+                    var currentSlot = entry.Value.slot;
+                    var currentView = entry.Value.view;
+
+                    if (!snapshotCards.ContainsKey(runtimeId))
+                    {
+                        if (currentView.CardData.currentHealth > 0)
                         {
-                            // Animar muerte si no fue hecha ya
-                            if (existing.CardData.currentHealth > 0)
-                            {
-                                existing.AnimateDeath();
-                            }
-                            board3DManager.ClearSlot(playerIndex, slot);
+                            currentView.AnimateDeath();
                         }
+                        board3DManager.ClearSlot(playerIndex, currentSlot);
                     }
                 }
             }
@@ -493,7 +554,7 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
-        private System.Collections.IEnumerator ResetCardColor(Card3DView card, float delay)
+        private System.Collections.IEnumerator ResetCardColor(ICardDisplay card, float delay)
         {
             yield return new WaitForSeconds(delay);
             if (card != null)
@@ -549,16 +610,12 @@ namespace Flippy.CardDuelMobile.UI
                             var card = board3DManager.GetCardInSlot(playerIndex, current.slot);
                             if (card != null)
                             {
-                                // Obtener la posición del slot anterior
-                                var prevSlot = board3DManager.GetSlot(playerIndex, prev.slot);
                                 var currSlot = board3DManager.GetSlot(playerIndex, current.slot);
-
-                                if (prevSlot != null && currSlot != null)
+                                if (currSlot != null)
                                 {
-                                    var startPos = prevSlot.transform.position;
+                                    var startPos = card.GetTransform().position;
                                     var endPos = currSlot.transform.position;
 
-                                    // Animar movimiento
                                     StartCoroutine(AnimateCardMovement(card, startPos, endPos, 0.4f));
                                     hud3D?.Log($"{current.card.displayName} repositioned to {current.slot}");
                                 }
@@ -571,36 +628,215 @@ namespace Flippy.CardDuelMobile.UI
             _previousSnapshot = snapshot;
         }
 
-        private void CreateBoardCard(BoardCardDto cardData, int playerIndex, BoardSlot slot)
+        public void SaveOriginalCardPositions(int playerIndex)
         {
-            GameObject cardGo;
+            _originalCardPositions.Clear();
 
-            if (boardCardPrefab != null)
+            // Get actual board state from board manager (not snapshot - avoids stale data)
+            foreach (var slot in System.Enum.GetValues(typeof(BoardSlot)) as BoardSlot[])
             {
-                cardGo = Instantiate(boardCardPrefab);
-                cardGo.name = $"Card3D_{cardData.runtimeId}";
+                var card = board3DManager.GetCardInSlot(playerIndex, slot);
+                if (card != null && card.CardData != null)
+                {
+                    _originalCardPositions[card] = card.GetTransform().position;
+                    Debug.Log($"[GameplayPresenter3D] Saved original position for {card.CardData.displayName} at {slot}");
+                }
+            }
+
+            Debug.Log($"[GameplayPresenter3D] Saved {_originalCardPositions.Count} original card positions");
+        }
+
+        public void PreviewCardDisplacement(int playerIndex, BoardSlot targetSlot)
+        {
+            if (_originalCardPositions.Count == 0)
+                return;
+
+            // Stop current animation
+            if (_previewAnimCoroutine != null)
+                StopCoroutine(_previewAnimCoroutine);
+
+            // Snap cards back to originals before new preview
+            foreach (var card in _originalCardPositions.Keys)
+            {
+                if (card != null)
+                    card.GetTransform().position = _originalCardPositions[card];
+            }
+
+            // Calculate displacement (uses board manager state, not snapshot)
+            var displacements = CalculateDisplacementsFromBoardManager(playerIndex, targetSlot);
+
+            // Animate to preview positions
+            _previewAnimCoroutine = AnimateDisplacements(displacements, 0.3f);
+            StartCoroutine(_previewAnimCoroutine);
+        }
+
+        public void CancelCardDisplacement(int playerIndex)
+        {
+            if (_previewAnimCoroutine != null)
+                StopCoroutine(_previewAnimCoroutine);
+
+            // Animate back to original positions
+            if (_originalCardPositions.Count > 0)
+            {
+                _previewAnimCoroutine = AnimateRestorePositions(0.3f);
+                StartCoroutine(_previewAnimCoroutine);
+            }
+        }
+
+        public void ClearPreviewPositions()
+        {
+            if (_previewAnimCoroutine != null)
+                StopCoroutine(_previewAnimCoroutine);
+
+            _originalCardPositions.Clear();
+            Debug.Log("[GameplayPresenter3D] Cleared preview positions");
+        }
+
+        private Dictionary<ICardDisplay, Vector3> CalculateDisplacementsFromBoardManager(int playerIndex, BoardSlot targetSlot)
+        {
+            var displacements = new Dictionary<ICardDisplay, Vector3>();
+
+            // Get current board state from board manager (not snapshot - avoids stale data)
+            var frontCard = board3DManager.GetCardInSlot(playerIndex, BoardSlot.Front);
+            var leftCard = board3DManager.GetCardInSlot(playerIndex, BoardSlot.BackLeft);
+            var rightCard = board3DManager.GetCardInSlot(playerIndex, BoardSlot.BackRight);
+
+            Debug.Log($"[CalcDisp] targetSlot={targetSlot}, Front={frontCard?.CardData.displayName}({frontCard!=null}), Left={leftCard?.CardData.displayName}({leftCard!=null}), Right={rightCard?.CardData.displayName}({rightCard!=null})");
+            Debug.Log($"[CalcDisp] Condition check: targetSlot==Front? {targetSlot == BoardSlot.Front}, frontCard!=null? {frontCard!=null}");
+
+            // Calculate shifts based on target slot
+            if (targetSlot == BoardSlot.Front && frontCard != null)
+            {
+                Debug.Log($"[CalcDisp] ✓ ENTERING: Placing on Front (Front occupied)");
+                // Place at Front: Front→Left, Left→Right
+                var leftSlot = board3DManager.GetSlot(playerIndex, BoardSlot.BackLeft);
+                if (leftSlot != null)
+                {
+                    displacements[frontCard] = leftSlot.transform.position;
+                    Debug.Log($"[CalcDisp] ✓ Front {frontCard.CardData.displayName} → Left");
+                }
+
+                if (leftCard != null)
+                {
+                    var rightSlot = board3DManager.GetSlot(playerIndex, BoardSlot.BackRight);
+                    if (rightSlot != null)
+                    {
+                        displacements[leftCard] = rightSlot.transform.position;
+                        Debug.Log($"[CalcDisp] ✓ Left {leftCard.CardData.displayName} → Right");
+                    }
+                }
+            }
+            else if (targetSlot == BoardSlot.BackLeft && leftCard != null)
+            {
+                Debug.Log($"[CalcDisp] ✓ ENTERING: Placing on BackLeft (Left occupied)");
+                // Place at Left: Left→Right
+                var rightSlot = board3DManager.GetSlot(playerIndex, BoardSlot.BackRight);
+                if (rightSlot != null)
+                {
+                    displacements[leftCard] = rightSlot.transform.position;
+                    Debug.Log($"[CalcDisp] ✓ Left {leftCard.CardData.displayName} → Right");
+                }
             }
             else
             {
-                cardGo = new GameObject($"Card3D_{cardData.runtimeId}");
-                cardGo.AddComponent<Card3DView>();
+                Debug.Log($"[CalcDisp] ✗ NO CONDITION: targetSlot={targetSlot}, frontCard={frontCard}, leftCard={leftCard}");
             }
 
-            cardGo.transform.SetParent(transform);
-
-            var cardView = cardGo.GetComponent<Card3DView>();
-            if (cardView == null)
-                cardView = cardGo.AddComponent<Card3DView>();
-
-            cardView.Initialize(cardData, playerIndex);
-
-            if (cardGo.GetComponent<CardTooltip>() == null)
-                cardGo.AddComponent<CardTooltip>();
-
-            board3DManager.SetCardInSlot(playerIndex, slot, cardView);
+            Debug.Log($"[CalcDisp] RESULT: {displacements.Count} displacements");
+            return displacements;
         }
 
-        private System.Collections.IEnumerator AnimateCardMovement(Card3DView card, Vector3 startPos, Vector3 endPos, float duration)
+        private System.Collections.IEnumerator AnimateDisplacements(Dictionary<ICardDisplay, Vector3> displacements, float duration)
+        {
+            float elapsed = 0f;
+            var startPositions = new Dictionary<ICardDisplay, Vector3>();
+
+            foreach (var card in displacements.Keys)
+            {
+                startPositions[card] = card.GetTransform().position;
+            }
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+                t = 1f - Mathf.Pow(1f - t, 3f); // Ease-out cubic
+
+                foreach (var card in displacements.Keys)
+                {
+                    if (card != null)
+                        card.GetTransform().position = Vector3.Lerp(startPositions[card], displacements[card], t);
+                }
+
+                yield return null;
+            }
+
+            foreach (var card in displacements.Keys)
+            {
+                if (card != null)
+                    card.GetTransform().position = displacements[card];
+            }
+        }
+
+        private System.Collections.IEnumerator AnimateRestorePositions(float duration)
+        {
+            float elapsed = 0f;
+            var startPositions = new Dictionary<ICardDisplay, Vector3>();
+
+            // Save start positions
+            foreach (var card in _originalCardPositions.Keys)
+            {
+                if (card != null)
+                    startPositions[card] = card.GetTransform().position;
+            }
+
+            while (elapsed < duration && _originalCardPositions.Count > 0)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+                t = 1f - Mathf.Pow(1f - t, 3f); // Ease-out cubic
+
+                foreach (var card in _originalCardPositions.Keys)
+                {
+                    if (card != null)
+                    {
+                        // Lerp from saved start position to original
+                        card.GetTransform().position = Vector3.Lerp(startPositions[card], _originalCardPositions[card], t);
+                    }
+                }
+
+                yield return null;
+            }
+
+            // Snap to original positions
+            foreach (var card in _originalCardPositions.Keys)
+            {
+                if (card != null)
+                    card.GetTransform().position = _originalCardPositions[card];
+            }
+        }
+
+        private void ReparentCardToSlot(ICardDisplay cardView, int playerIndex, BoardSlot oldSlot, BoardSlot newSlot)
+        {
+            board3DManager.MoveCardBetweenSlots(playerIndex, oldSlot, newSlot, cardView);
+        }
+
+        private void CreateBoardCard(BoardCardDto cardData, int playerIndex, BoardSlot slot)
+        {
+            var cardGo = Instantiate(boardCardPlayedPrefab ?? boardCardPrefab);
+            cardGo.name = $"Card3D_{cardData.runtimeId}";
+            cardGo.transform.SetParent(transform);
+
+            var cardPlayed = cardGo.GetComponent<Card3DPlayed>();
+            if (cardPlayed == null)
+                cardPlayed = cardGo.AddComponent<Card3DPlayed>();
+
+            cardPlayed.Initialize(cardData, playerIndex);
+
+            board3DManager.SetCardInSlot(playerIndex, slot, cardPlayed);
+        }
+
+        private System.Collections.IEnumerator AnimateCardMovement(ICardDisplay card, Vector3 startPos, Vector3 endPos, float duration)
         {
             if (card == null)
                 yield break;
@@ -613,12 +849,12 @@ namespace Flippy.CardDuelMobile.UI
 
                 // Ease-out cubic
                 float easeT = 1f - Mathf.Pow(1f - t, 3f);
-                card.transform.position = Vector3.Lerp(startPos, endPos, easeT);
+                card.GetTransform().position = Vector3.Lerp(startPos, endPos, easeT);
 
                 yield return null;
             }
 
-            card.transform.position = endPos;
+            card.GetTransform().position = endPos;
         }
     }
 }

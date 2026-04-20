@@ -9,13 +9,13 @@ namespace Flippy.CardDuelMobile.UI
     /// </summary>
     public class AttackEffectSystem : MonoBehaviour
     {
-        public static void PlayAttackEffect(Card3DView attacker, Card3DView defender)
+        public static void PlayAttackEffect(ICardDisplay attacker, ICardDisplay defender)
         {
             if (attacker == null || defender == null)
                 return;
 
             // Crear línea visual
-            DrawAttackLine(attacker.transform.position, defender.transform.position);
+            DrawAttackLine(attacker.GetTransform().position, defender.GetTransform().position);
 
             // Flash rojo en defender
             defender.SetColor(Color.red);
@@ -46,7 +46,7 @@ namespace Flippy.CardDuelMobile.UI
             Object.Destroy(lineGo, 0.3f);
         }
 
-        private static System.Collections.IEnumerator ResetColorCoroutine(Card3DView card, float delay)
+        private static System.Collections.IEnumerator ResetColorCoroutine(ICardDisplay card, float delay)
         {
             yield return new WaitForSeconds(delay);
             if (card != null)

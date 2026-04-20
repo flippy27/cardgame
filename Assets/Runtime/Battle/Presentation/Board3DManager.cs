@@ -21,7 +21,7 @@ namespace Flippy.CardDuelMobile.UI
         [SerializeField] public Board3DSlot slotLocalBackRight;
 
         private Dictionary<(int playerIndex, BoardSlot slot), Board3DSlot> _slots = new();
-        private Dictionary<(int playerIndex, BoardSlot slot), Card3DView> _cardViews = new();
+        private Dictionary<(int playerIndex, BoardSlot slot), ICardDisplay> _cardViews = new();
         private bool _initialized = false;
 
         public void Initialize()
@@ -70,9 +70,27 @@ namespace Flippy.CardDuelMobile.UI
             return slotComponent;
         }
 
-        public void SetCardInSlot(int playerIndex, BoardSlot slot, Card3DView cardView)
+        public void SetCardInSlot(int playerIndex, BoardSlot slot, ICardDisplay cardView)
         {
             var key = (playerIndex, slot);
+
+            // Remove card from any other slots it might be in
+            if (cardView != null)
+            {
+                var slots = System.Enum.GetValues(typeof(BoardSlot)) as BoardSlot[];
+                foreach (var otherSlot in slots)
+                {
+                    var otherKey = (playerIndex, otherSlot);
+                    if (otherKey != key && _cardViews.TryGetValue(otherKey, out var existingCard))
+                    {
+                        if (existingCard == cardView)
+                        {
+                            _cardViews.Remove(otherKey);
+                        }
+                    }
+                }
+            }
+
             _cardViews[key] = cardView;
 
             if (cardView != null)
@@ -83,16 +101,17 @@ namespace Flippy.CardDuelMobile.UI
                     return;
                 }
 
-                cardView.transform.SetParent(slotComponent.transform);
-                cardView.transform.localPosition = Vector3.zero;
-                cardView.transform.localRotation = Quaternion.identity;
-                cardView.transform.localScale = Vector3.one;
+                var cardTransform = (cardView as MonoBehaviour).transform;
+                cardTransform.SetParent(slotComponent.transform);
+                cardTransform.localPosition = Vector3.zero;
+                cardTransform.localRotation = Quaternion.identity;
+                cardTransform.localScale = Vector3.one;
 
-                Debug.Log($"[Board3DManager] Card {cardView.CardData.displayName} placed in slot P{playerIndex} {slot}");
+                Debug.Log($"[Board3DManager] Card placed in slot P{playerIndex} {slot}");
             }
         }
 
-        public Card3DView GetCardInSlot(int playerIndex, BoardSlot slot)
+        public ICardDisplay GetCardInSlot(int playerIndex, BoardSlot slot)
         {
             _cardViews.TryGetValue((playerIndex, slot), out var card);
             return card;
@@ -104,9 +123,39 @@ namespace Flippy.CardDuelMobile.UI
             if (_cardViews.ContainsKey(key))
             {
                 if (_cardViews[key] != null)
-                    Destroy(_cardViews[key].gameObject);
+                    Destroy(_cardViews[key].GetGameObject());
                 _cardViews.Remove(key);
             }
+        }
+
+        public void MoveCardBetweenSlots(int playerIndex, BoardSlot fromSlot, BoardSlot toSlot, ICardDisplay cardView)
+        {
+            if (cardView == null)
+                return;
+
+            var toSlotComponent = GetSlot(playerIndex, toSlot);
+            if (toSlotComponent == null)
+            {
+                Debug.LogError($"[Board3DManager] Target slot not found P{playerIndex} {toSlot}");
+                return;
+            }
+
+            // Remove cardView from ALL slots (don't assume it's at fromSlot)
+            var slots = System.Enum.GetValues(typeof(BoardSlot)) as BoardSlot[];
+            foreach (var slot in slots)
+            {
+                var key = (playerIndex, slot);
+                if (_cardViews.TryGetValue(key, out var existing) && existing == cardView)
+                {
+                    _cardViews.Remove(key);
+                    break;
+                }
+            }
+
+            var toKey = (playerIndex, toSlot);
+            var cardTransform = (cardView as MonoBehaviour).transform;
+            cardTransform.SetParent(toSlotComponent.transform, worldPositionStays: true);
+            _cardViews[toKey] = cardView;
         }
 
         public void HighlightSlot(int playerIndex, BoardSlot slot, bool highlight)

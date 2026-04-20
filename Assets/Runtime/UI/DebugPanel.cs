@@ -9,7 +9,7 @@ namespace Flippy.CardDuelMobile.UI
 {
     /// <summary>
     /// Debug menu for modifying game state at runtime.
-    /// Toggle with Ctrl+D
+    /// Toggle with Cmd+T (Mac) or Ctrl+T (Windows)
     /// </summary>
     public sealed class DebugPanel : MonoBehaviour
     {
@@ -20,6 +20,8 @@ namespace Flippy.CardDuelMobile.UI
         private BattleScreenPresenter _presenter;
         private DuelRuntime _duelRuntime;
         private DuelState _duelState;
+        private Hand3DManager _hand3DManager;
+        private Board3DManager _board3DManager;
         private bool _isVisible;
 
         private void Awake()
@@ -39,17 +41,20 @@ namespace Flippy.CardDuelMobile.UI
 
         private void Update()
         {
-            if (UnityEngine.Input.GetKeyDown(KeyCode.D) && UnityEngine.Input.GetKey(KeyCode.LeftControl))
+            KeyCode modKey = Application.platform == RuntimePlatform.OSXEditor ? KeyCode.LeftCommand : KeyCode.LeftControl;
+            if (UnityEngine.Input.GetKeyDown(KeyCode.T) && UnityEngine.Input.GetKey(modKey))
             {
                 Toggle();
             }
         }
 
-        public void Initialize(BattleScreenPresenter presenter, DuelRuntime duelRuntime, DuelState duelState)
+        public void Initialize(BattleScreenPresenter presenter, DuelRuntime duelRuntime, DuelState duelState, Hand3DManager hand3D = null, Board3DManager board3D = null)
         {
             _presenter = presenter;
             _duelRuntime = duelRuntime;
             _duelState = duelState;
+            _hand3DManager = hand3D;
+            _board3DManager = board3D;
             gameObject.SetActive(true);
         }
 
@@ -231,6 +236,70 @@ namespace Flippy.CardDuelMobile.UI
                 _duelRuntime.TryEndTurn(playerIndex);
                 Debug.Log($"[DEBUG] Player {playerIndex} ended turn");
             }
+        }
+
+        public void DrawCardsToHand(int playerIndex, int count)
+        {
+            if (_duelState == null) return;
+            var player = _duelState.GetPlayer(playerIndex);
+            if (player == null || player.Deck.Count == 0)
+            {
+                Debug.Log($"[DEBUG] Player {playerIndex} deck is empty");
+                return;
+            }
+
+            for (int i = 0; i < count && player.Deck.Count > 0; i++)
+            {
+                var cardDef = player.Deck[0];
+                player.Deck.RemoveAt(0);
+                player.Hand.Add(cardDef);
+                Debug.Log($"[DEBUG] Drew {cardDef.displayName} to Player {playerIndex} hand");
+            }
+
+            if (_presenter != null)
+                _presenter.OnGameStateUpdated();
+        }
+
+        public void RemoveCardFromHand(int playerIndex, int handIndex)
+        {
+            if (_duelState == null) return;
+            var player = _duelState.GetPlayer(playerIndex);
+            if (player == null || handIndex < 0 || handIndex >= player.Hand.Count)
+            {
+                Debug.Log($"[DEBUG] Invalid hand index {handIndex} for Player {playerIndex}");
+                return;
+            }
+
+            var card = player.Hand[handIndex];
+            player.Hand.RemoveAt(handIndex);
+            Debug.Log($"[DEBUG] Removed {card.displayName} from Player {playerIndex} hand");
+
+            if (_presenter != null)
+                _presenter.OnGameStateUpdated();
+        }
+
+        public void RemoveCardFromBoardWithAnimation(int playerIndex, BoardSlot slot)
+        {
+            if (_duelState == null || _presenter == null) return;
+            var player = _duelState.GetPlayer(playerIndex);
+            if (player == null)
+            {
+                Debug.Log($"[DEBUG] Player {playerIndex} not found");
+                return;
+            }
+
+            var card = player.FindOccupant(slot);
+            if (card == null)
+            {
+                Debug.Log($"[DEBUG] No card at {slot} for Player {playerIndex}");
+                return;
+            }
+
+            card.CurrentHealth = 0;
+            Debug.Log($"[DEBUG] Killed {card.DisplayName} at {slot} with animation");
+
+            if (_presenter != null)
+                _presenter.OnGameStateUpdated();
         }
 
         public void PrintGameState()

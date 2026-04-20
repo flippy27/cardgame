@@ -5,11 +5,7 @@ using Flippy.CardDuelMobile.Core;
 
 namespace Flippy.CardDuelMobile.UI
 {
-    /// <summary>
-    /// Representación visual 3D de una carta.
-    /// Quad + Canvas 2D para stats.
-    /// </summary>
-    public class Card3DView : MonoBehaviour
+    public class Card3DView : MonoBehaviour, ICardDisplay
     {
         public BoardCardDto CardData { get; private set; }
         public int PlayerIndex { get; private set; }

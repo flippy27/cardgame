@@ -285,14 +285,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6c44dda0d4349fbafc05f927f5d8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.Board3DManager
-  enemyBoardHeight: 3
-  localBoardHeight: -3
-  frontZOffset: 0
-  sideXOffset: 2
-  cardSpacing: 2.5
-  slotMaterial: {fileID: 2100000, guid: de776cdd7dbb5496c926c92f27ccd8cf, type: 2}
-  slotHighlightMaterial: {fileID: 2100000, guid: c4358b6f5d54945e38edbc360a7c747f, type: 2}
-  slotSize: 0.8
+  slotEnemyFront: {fileID: 2140582309}
+  slotEnemyBackLeft: {fileID: 1140377549}
+  slotEnemyBackRight: {fileID: 1651205083}
+  slotLocalFront: {fileID: 440130231}
+  slotLocalBackLeft: {fileID: 1543739593}
+  slotLocalBackRight: {fileID: 820387967}
 --- !u!4 &26233283
 Transform:
   m_ObjectHideFlags: 0
@@ -550,6 +548,81 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+--- !u!1 &188100836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 188100837}
+  - component: {fileID: 188100839}
+  - component: {fileID: 188100838}
+  m_Layer: 0
+  m_Name: Debug Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &188100837
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188100836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1606608349}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &188100838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188100836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &188100839
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188100836}
+  m_CullTransparentMesh: 1
 --- !u!1 &195901525
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +1048,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0872ed914b9604d72acda2120b52b350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.Board3DSlot
+  _visualRenderer: {fileID: 0}
+  _visualCollider: {fileID: 0}
 --- !u!1 &510609623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1084,8 @@ MonoBehaviour:
   hud3D: {fileID: 1606608350}
   dragHandler: {fileID: 2060842758}
   endTurnButton: {fileID: 147048371}
-  boardCardPrefab: {fileID: 2256093238488591113, guid: 2ff0ac85364d54f00900f4771c0f47c7, type: 3}
+  boardCardPrefab: {fileID: 6883590961288053840, guid: 6f85dbf44447147e795bbbff7b8ac20f, type: 3}
+  boardCardPlayedPrefab: {fileID: 2256093238488591113, guid: d82198fc1ed2c43a182a92cdcc26ce6f, type: 3}
 --- !u!4 &510609625
 Transform:
   m_ObjectHideFlags: 0
@@ -1182,6 +1258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0872ed914b9604d72acda2120b52b350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.Board3DSlot
+  _visualRenderer: {fileID: 0}
+  _visualCollider: {fileID: 0}
 --- !u!1 &859548129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,7 +1818,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.Hand3DManager
   arcRadius: 5
   arcHeight: -2
+  arcAngle: 60
+  arcDepth: 1
   cardSpacing: 0.5
+  debugArcMode: 1
+  handCardPrefab: {fileID: 2256093238488591113, guid: 2ff0ac85364d54f00900f4771c0f47c7, type: 3}
 --- !u!4 &1036976611
 Transform:
   m_ObjectHideFlags: 0
@@ -1801,6 +1883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0872ed914b9604d72acda2120b52b350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.Board3DSlot
+  _visualRenderer: {fileID: 0}
+  _visualCollider: {fileID: 0}
 --- !u!1 &1522449557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,6 +2087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0872ed914b9604d72acda2120b52b350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.Board3DSlot
+  _visualRenderer: {fileID: 0}
+  _visualCollider: {fileID: 0}
 --- !u!1 &1567080178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,6 +2239,7 @@ RectTransform:
   - {fileID: 1890564720}
   - {fileID: 147048375}
   - {fileID: 341991877}
+  - {fileID: 188100837}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2422,6 +2509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0872ed914b9604d72acda2120b52b350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.Board3DSlot
+  _visualRenderer: {fileID: 0}
+  _visualCollider: {fileID: 0}
 --- !u!1 &1678661262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,6 +3290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0872ed914b9604d72acda2120b52b350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.Board3DSlot
+  _visualRenderer: {fileID: 0}
+  _visualCollider: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

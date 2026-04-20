@@ -40,6 +40,7 @@ namespace Flippy.CardDuelMobile.UI
         private Board3DSlot _hoveredSlot;
         private GameObject _dragGhostInstance;
         private DragGhost3D _dragGhost;
+        private float _lastHoveredDistance;
 
         private void Start()
         {
@@ -92,11 +93,23 @@ namespace Flippy.CardDuelMobile.UI
                     _dragDistance = 0;
                     _isDragging = true;
 
+                    // Save original board card positions for preview restore
+                    if (presenter != null)
+                    {
+                        presenter.SaveOriginalCardPositions(0);
+                    }
+
                     // Spawn drag ghost
                     if (dragGhost3DPrefab != null)
                     {
                         _dragGhostInstance = Instantiate(dragGhost3DPrefab);
                         _dragGhost = _dragGhostInstance.GetComponent<DragGhost3D>();
+
+                        // Disable collider so raycast passes through to slots
+                        var collider = _dragGhostInstance.GetComponent<Collider>();
+                        if (collider != null)
+                            collider.enabled = false;
+
                         _dragGhost.SetTargetPosition(Mouse.current.position.ReadValue(), mainCamera);
                         Debug.Log($"[DragHandler3D] Spawned drag ghost for {cardView.CardData.displayName}");
                     }
@@ -126,27 +139,38 @@ namespace Flippy.CardDuelMobile.UI
                 _dragDistance = Vector3.Distance(_dragStartPos, ghostWorldPos);
             }
 
-            // Detectar slot hovereado (skip drag ghost)
-            var hits = Physics.RaycastAll(ray, 100f);
-            foreach (var hit in hits)
+            // Detectar slot hovereado (ortho camera - single raycast for closest hit only, skip drag ghost)
+            RaycastHit hit;
+            Board3DSlot detectedSlot = null;
+
+            // First try: raycast and skip drag ghost if we hit it
+            if (Physics.Raycast(ray, out hit, 100f))
             {
-                // Skip drag ghost
                 if (_dragGhostInstance != null && hit.collider.gameObject == _dragGhostInstance)
-                    continue;
-
-                var slot = hit.collider.GetComponentInParent<Board3DSlot>();
-                if (slot == null)
-                    slot = hit.collider.GetComponent<Board3DSlot>();
-
-                if (slot != null && slot.PlayerIndex == 0) // Solo slots locales
                 {
-                    Debug.Log($"[DragHandler3D] Found slot: {slot.Slot} (P{slot.PlayerIndex})");
-                    SetHoveredSlot(slot);
-                    return;
+                    // Hit drag ghost, raycast again with layer mask excluding it
+                    int dragGhostLayer = _dragGhostInstance.layer;
+                    int layerMask = ~(1 << dragGhostLayer);
+                    if (Physics.Raycast(ray, out hit, 100f, layerMask))
+                    {
+                        var slot = hit.collider.GetComponentInParent<Board3DSlot>();
+                        if (slot == null)
+                            slot = hit.collider.GetComponent<Board3DSlot>();
+                        if (slot != null && slot.PlayerIndex == 0)
+                            detectedSlot = slot;
+                    }
+                }
+                else
+                {
+                    var slot = hit.collider.GetComponentInParent<Board3DSlot>();
+                    if (slot == null)
+                        slot = hit.collider.GetComponent<Board3DSlot>();
+                    if (slot != null && slot.PlayerIndex == 0)
+                        detectedSlot = slot;
                 }
             }
 
-            SetHoveredSlot(null);
+            SetHoveredSlot(detectedSlot);
         }
 
         private void EndDrag()
@@ -174,6 +198,7 @@ namespace Flippy.CardDuelMobile.UI
             // Limpiar
             _draggedCard = null;
             _isDragging = false;
+
             SetHoveredSlot(null);
         }
 
@@ -274,7 +299,23 @@ namespace Flippy.CardDuelMobile.UI
                 _hoveredSlot = slot;
 
                 if (_hoveredSlot != null)
+                {
                     _hoveredSlot.SetHighlight(true);
+
+                    // Preview card displacement
+                    if (presenter != null && _hoveredSlot.PlayerIndex == 0)
+                    {
+                        presenter.PreviewCardDisplacement(0, _hoveredSlot.Slot);
+                    }
+                }
+                else
+                {
+                    // Cancel preview
+                    if (presenter != null)
+                    {
+                        presenter.CancelCardDisplacement(0);
+                    }
+                }
             }
         }
     }
