@@ -26,7 +26,7 @@ namespace Flippy.CardDuelMobile.Core
     public static class MatchStateMachine
     {
         public static event Action<MatchState> OnStateChanged;
-        public static event Action<string> OnPlayerReady;
+        public static event Action<string, bool> OnPlayerReady;
         public static event Action<string> OnPlayerDisconnected;
         public static event Action<string> OnCanReconnect;
 
@@ -60,7 +60,7 @@ namespace Flippy.CardDuelMobile.Core
                 _currentMatch.player2Ready = ready;
 
             GameLogger.Info("Match", $"{playerId} ready: {ready}");
-            OnPlayerReady?.Invoke(playerId);
+            OnPlayerReady?.Invoke(playerId, ready);
 
             if (_currentMatch.player1Ready && _currentMatch.player2Ready)
             {

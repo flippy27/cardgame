@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Flippy.CardDuelMobile.Networking.ApiClients;
 
 namespace Flippy.CardDuelMobile.Core
 {
@@ -20,6 +21,8 @@ namespace Flippy.CardDuelMobile.Core
         [SerializeField] private string matchId;
         [SerializeField] private string currentPlayerId;
         [SerializeField] private string opponentPlayerId;
+        [SerializeField] private string currentRulesetId;
+        private GameRulesDto _currentRules;
 
         private void Awake()
         {
@@ -71,6 +74,25 @@ namespace Flippy.CardDuelMobile.Core
         }
 
         /// <summary>
+        /// Cachea las reglas efectivas del match actual (fuente backend).
+        /// </summary>
+        public void SetMatchRules(string rulesetId, GameRulesDto rules)
+        {
+            currentRulesetId = rulesetId;
+            _currentRules = rules;
+
+            if (rules != null)
+            {
+                GameLogger.Info("PlayState", $"Rules cached: {rules.displayName} ({rules.rulesetId})");
+            }
+        }
+
+        public (string rulesetId, GameRulesDto rules) GetMatchRules()
+        {
+            return (currentRulesetId, _currentRules);
+        }
+
+        /// <summary>
         /// Limpia todo el estado (ej: al volver al menú).
         /// </summary>
         public void Reset()
@@ -80,6 +102,8 @@ namespace Flippy.CardDuelMobile.Core
             matchId = null;
             currentPlayerId = null;
             opponentPlayerId = null;
+            currentRulesetId = null;
+            _currentRules = null;
             GameLogger.Info("PlayState", "State cleared");
         }
 

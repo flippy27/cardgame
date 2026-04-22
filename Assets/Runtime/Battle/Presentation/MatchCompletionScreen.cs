@@ -20,11 +20,18 @@ namespace Flippy.CardDuelMobile.UI
             if (canvasGroup == null)
                 canvasGroup = GetComponent<CanvasGroup>();
 
+            if (canvasGroup == null)
+                canvasGroup = gameObject.AddComponent<CanvasGroup>();
+
             if (canvasGroup != null)
             {
                 canvasGroup.alpha = 0;
+                canvasGroup.interactable = false;
                 canvasGroup.blocksRaycasts = false;
             }
+
+            DisableRaycast(resultText);
+            DisableRaycast(statsText);
 
             if (menuButton != null)
             {
@@ -58,6 +65,7 @@ namespace Flippy.CardDuelMobile.UI
             if (canvasGroup != null)
             {
                 canvasGroup.alpha = 1;
+                canvasGroup.interactable = true;
                 canvasGroup.blocksRaycasts = true;
             }
 
@@ -74,6 +82,14 @@ namespace Flippy.CardDuelMobile.UI
             if (menuButton != null)
             {
                 menuButton.onClick.RemoveListener(OnMenuClicked);
+            }
+        }
+
+        private static void DisableRaycast(TextMeshProUGUI text)
+        {
+            if (text != null)
+            {
+                text.raycastTarget = false;
             }
         }
     }

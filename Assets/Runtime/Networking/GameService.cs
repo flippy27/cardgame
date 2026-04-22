@@ -48,14 +48,32 @@ namespace Flippy.CardDuelMobile.Networking
                 var apiBaseUrl = ConfigManager.GetApiBaseUrl();
                 Debug.Log($"[Networking.GameService] Initializing with API: {apiBaseUrl}");
 
-                ApiClient = new CardGameApiClient(apiBaseUrl);
+                if (!ServiceLocator.TryResolve<CardGameApiClient>(out var sharedApiClient))
+                {
+                    sharedApiClient = new CardGameApiClient(apiBaseUrl);
+                    ServiceLocator.Register(sharedApiClient);
+                }
+
+                ApiClient = sharedApiClient;
                 Debug.Log("[Networking.GameService] ApiClient created");
 
-                AuthService = new AuthService(apiBaseUrl);
+                if (!ServiceLocator.TryResolve<AuthService>(out var sharedAuthService))
+                {
+                    sharedAuthService = new AuthService(apiBaseUrl);
+                    ServiceLocator.Register(sharedAuthService);
+                }
+
+                AuthService = sharedAuthService;
+                ApiClient.SetAuthService(AuthService);
                 Debug.Log("[Networking.GameService] AuthService created");
 
-                CardCatalog = new CardCatalogCache(ApiClient);
-                ServiceLocator.Register(CardCatalog);
+                if (!ServiceLocator.TryResolve<CardCatalogCache>(out var sharedCatalog))
+                {
+                    sharedCatalog = new CardCatalogCache(ApiClient);
+                    ServiceLocator.Register(sharedCatalog);
+                }
+
+                CardCatalog = sharedCatalog;
                 Debug.Log("[Networking.GameService] CardCatalog created");
 
                 var userApiClient = new UserApiClient(apiBaseUrl);

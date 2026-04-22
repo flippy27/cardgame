@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Flippy.CardDuelMobile.SinglePlayer;
 using Flippy.CardDuelMobile.Networking;
 
@@ -32,11 +33,18 @@ namespace Flippy.CardDuelMobile.Core
 
         private void Start()
         {
-            _localCoord = FindFirstObjectByType<LocalSinglePlayerCoordinator>();
-            _networkBootstrap = FindFirstObjectByType<NetworkBootstrap>();
-
-            // Activate appropriate coordinator based on mode
+            RefreshSceneReferences();
             ApplyMode();
+        }
+
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += HandleSceneLoaded;
+        }
+
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= HandleSceneLoaded;
         }
 
         /// <summary>
@@ -57,6 +65,18 @@ namespace Flippy.CardDuelMobile.Core
             _isLocalMode = false;
             ApplyMode();
             GameLogger.Info("GameMode", "Switched to ONLINE mode");
+        }
+
+        private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            RefreshSceneReferences();
+            ApplyMode();
+        }
+
+        private void RefreshSceneReferences()
+        {
+            _localCoord = FindFirstObjectByType<LocalSinglePlayerCoordinator>();
+            _networkBootstrap = FindFirstObjectByType<NetworkBootstrap>();
         }
 
         private void ApplyMode()

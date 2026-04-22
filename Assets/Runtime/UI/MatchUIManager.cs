@@ -94,9 +94,9 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
-        private void OnPlayerReady(string playerId)
+        private void OnPlayerReady(string playerId, bool ready)
         {
-            GameLogger.Info("UI", $"Player {playerId} ready");
+            GameLogger.Info("UI", $"Player {playerId} ready={ready}");
         }
 
         private void OnPlayerDisconnected(string playerId)

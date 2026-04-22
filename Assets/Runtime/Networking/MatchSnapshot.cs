@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Flippy.CardDuelMobile.Networking.ApiClients;
 
 namespace Flippy.CardDuelMobile.Networking
 {
@@ -13,9 +14,13 @@ namespace Flippy.CardDuelMobile.Networking
         public string matchId;
         public string roomCode;
         public int mode; // QueueMode: Casual=0, Ranked=1, Private=2
+        public string rulesetId;
+        public GameRulesDto rules;
         public int phase; // MatchPhase: WaitingForPlayers=0, WaitingForReady=1, InProgress=2, Completed=3, Abandoned=4
-        public int localSeatIndex;
-        public int activeSeatIndex;
+        public int localSeatIndex = -1;
+        public int activeSeatIndex = -1;
+        public string activePlayerId;
+        public bool isLocalPlayersTurn;
         public int turnNumber;
         public int connectedPlayers;
         public int? winnerSeatIndex;

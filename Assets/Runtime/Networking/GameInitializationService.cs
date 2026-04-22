@@ -51,6 +51,12 @@ namespace Flippy.CardDuelMobile.Networking
             if (_initialized)
                 return;
 
+            if (!ServiceLocator.TryResolve<AuthService>(out var authService) || !authService.IsAuthenticated)
+            {
+                GameLogger.Debug("Init", "Skipping initialization until a valid authenticated session is available");
+                return;
+            }
+
             GameLogger.Info("Init", "User authenticated, initializing game data");
 
             // Wait for services to be registered

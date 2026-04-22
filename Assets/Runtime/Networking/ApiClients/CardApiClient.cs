@@ -110,6 +110,32 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             }
         }
 
+        public async Task<List<ServerCardDefinition>> FetchCardsByDeck(string playerId, string deckId)
+        {
+            if (string.IsNullOrWhiteSpace(playerId))
+                throw new ValidationException("PlayerId cannot be empty");
+
+            if (string.IsNullOrWhiteSpace(deckId))
+                throw new ValidationException("DeckId cannot be empty");
+
+            var encodedPlayerId = UnityWebRequest.EscapeURL(playerId);
+            var encodedDeckId = UnityWebRequest.EscapeURL(deckId);
+            var response = await HttpClientHelper.GetAsync($"{_baseUrl}/api/v1/cards/by-deck?playerid={encodedPlayerId}&deckid={encodedDeckId}");
+            if (string.IsNullOrWhiteSpace(response) || response == "[]")
+                return new List<ServerCardDefinition>();
+
+            try
+            {
+                var dtos = JsonUtility.FromJson<CardListDto>($"{{\"items\":{response}}}");
+                return dtos?.items?.ToList() ?? new List<ServerCardDefinition>();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[API] Cards-by-deck parse error: {ex.Message}");
+                throw;
+            }
+        }
+
         public async Task<DeckDto> UpsertDeck(string playerId, DeckDto deck)
         {
             if (string.IsNullOrWhiteSpace(playerId))

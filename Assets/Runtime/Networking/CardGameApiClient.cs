@@ -61,6 +61,11 @@ namespace Flippy.CardDuelMobile.Networking
             return await _deckApi.FetchPlayerDecks(playerId);
         }
 
+        public async Task<List<ServerCardDefinition>> FetchCardsByDeckAsync(string playerId, string deckId)
+        {
+            return await _cardApi.FetchCardsByDeck(playerId, deckId);
+        }
+
         public async Task<DeckDto> UpsertDeckAsync(string playerId, DeckDto deck)
         {
             return await _deckApi.UpsertDeck(playerId, deck);

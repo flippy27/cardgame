@@ -39,6 +39,25 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         }
 
         /// <summary>
+        /// Get persisted rules snapshot for a match from DB.
+        /// GET /api/v1/matches/{matchId}/rules/{playerId}
+        /// </summary>
+        public async Task<GameRulesDto> GetMatchRules(string matchId, string playerId)
+        {
+            try
+            {
+                var url = $"{_baseUrl}/api/v1/matches/{matchId}/rules/{playerId}";
+                var response = await HttpClientHelper.GetAsync(url);
+                return JsonUtility.FromJson<GameRulesDto>(response);
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Error("MatchplayApiClient", $"GetMatchRules failed: {ex.Message}");
+                throw;
+            }
+        }
+
+        /// <summary>
         /// Set ready status (auth token auto-added from SecureTokenStorage).
         /// POST /api/v1/matches/{matchId}/ready
         /// </summary>

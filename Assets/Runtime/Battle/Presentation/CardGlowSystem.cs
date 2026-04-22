@@ -14,7 +14,10 @@ namespace Flippy.CardDuelMobile.UI
             if (cardView == null || snapshot == null)
                 return;
 
-            bool isLocalTurn = snapshot.activePlayerIndex == snapshot.localPlayerIndex;
+            var isInProgress = snapshot.matchPhase == Flippy.CardDuelMobile.Core.MatchPhase.InProgress && !snapshot.duelEnded;
+            bool isLocalTurn = isInProgress &&
+                               (snapshot.isLocalPlayersTurn ||
+                                snapshot.activePlayerIndex == snapshot.localPlayerIndex);
             bool isLocalCard = cardView.PlayerIndex == snapshot.localPlayerIndex;
 
             if (isLocalTurn && isLocalCard)

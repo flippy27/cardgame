@@ -15,6 +15,14 @@ namespace Flippy.CardDuelMobile.Networking
     /// </summary>
     public static class SecureTokenStorage
     {
+        private static readonly object CacheLock = new();
+        private static bool _cacheLoaded;
+        private static string _cachedToken;
+        private static string _cachedRefreshToken;
+        private static string _cachedPlayerId;
+        private static string _cachedEmail;
+        private static long _cachedExpiry;
+
         private const string TokenKey = "auth_token_secure";
         private const string RefreshTokenKey = "auth_refresh_token_secure";
         private const string PlayerIdKey = "auth_player_id";
@@ -44,6 +52,12 @@ namespace Flippy.CardDuelMobile.Networking
                 return;
             }
 
+            lock (CacheLock)
+            {
+                _cachedToken = token;
+                _cacheLoaded = true;
+            }
+
 #if UNITY_IOS && !UNITY_EDITOR
             SetKeychainValue(TokenKey, token);
 #elif UNITY_ANDROID && !UNITY_EDITOR
@@ -59,13 +73,12 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public static string GetToken()
         {
-#if UNITY_IOS && !UNITY_EDITOR
-            return GetKeychainValue(TokenKey) ?? "";
-#elif UNITY_ANDROID && !UNITY_EDITOR
-            return GetFromAndroidKeystore(TokenKey) ?? "";
-#else
-            return GetFromPlayerPrefsEncrypted(TokenKey) ?? "";
-#endif
+            EnsureCacheLoaded();
+
+            lock (CacheLock)
+            {
+                return _cachedToken ?? "";
+            }
         }
 
         /// <summary>
@@ -77,6 +90,12 @@ namespace Flippy.CardDuelMobile.Networking
             {
                 DeleteRefreshToken();
                 return;
+            }
+
+            lock (CacheLock)
+            {
+                _cachedRefreshToken = refreshToken;
+                _cacheLoaded = true;
             }
 
 #if UNITY_IOS && !UNITY_EDITOR
@@ -93,13 +112,12 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public static string GetRefreshToken()
         {
-#if UNITY_IOS && !UNITY_EDITOR
-            return GetKeychainValue(RefreshTokenKey) ?? "";
-#elif UNITY_ANDROID && !UNITY_EDITOR
-            return GetFromAndroidKeystore(RefreshTokenKey) ?? "";
-#else
-            return GetFromPlayerPrefsEncrypted(RefreshTokenKey) ?? "";
-#endif
+            EnsureCacheLoaded();
+
+            lock (CacheLock)
+            {
+                return _cachedRefreshToken ?? "";
+            }
         }
 
         /// <summary>
@@ -107,6 +125,12 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public static void SavePlayerId(string playerId)
         {
+            lock (CacheLock)
+            {
+                _cachedPlayerId = playerId ?? "";
+                _cacheLoaded = true;
+            }
+
             PlayerPrefs.SetString(PlayerIdKey, playerId ?? "");
             PlayerPrefs.Save();
         }
@@ -116,7 +140,11 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public static string GetPlayerId()
         {
-            return PlayerPrefs.GetString(PlayerIdKey, "");
+            EnsureCacheLoaded();
+            lock (CacheLock)
+            {
+                return _cachedPlayerId ?? "";
+            }
         }
 
         /// <summary>
@@ -124,6 +152,12 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public static void SaveEmail(string email)
         {
+            lock (CacheLock)
+            {
+                _cachedEmail = email ?? "";
+                _cacheLoaded = true;
+            }
+
             PlayerPrefs.SetString(EmailKey, email ?? "");
             PlayerPrefs.Save();
         }
@@ -133,7 +167,11 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public static string GetEmail()
         {
-            return PlayerPrefs.GetString(EmailKey, "");
+            EnsureCacheLoaded();
+            lock (CacheLock)
+            {
+                return _cachedEmail ?? "";
+            }
         }
 
         /// <summary>
@@ -141,6 +179,12 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public static void SaveTokenExpiry(long expiryUnixSeconds)
         {
+            lock (CacheLock)
+            {
+                _cachedExpiry = expiryUnixSeconds;
+                _cacheLoaded = true;
+            }
+
             PlayerPrefs.SetString(ExpiryKey, expiryUnixSeconds.ToString());
             PlayerPrefs.Save();
         }
@@ -150,8 +194,11 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public static long GetTokenExpiry()
         {
-            var expiry = PlayerPrefs.GetString(ExpiryKey, "0");
-            return long.TryParse(expiry, out var result) ? result : 0;
+            EnsureCacheLoaded();
+            lock (CacheLock)
+            {
+                return _cachedExpiry;
+            }
         }
 
         /// <summary>
@@ -159,6 +206,7 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public static void DeleteAll()
         {
+            ClearCache();
             DeleteToken();
             DeleteRefreshToken();
             DeletePlayerId();
@@ -166,13 +214,65 @@ namespace Flippy.CardDuelMobile.Networking
             DeleteExpiry();
         }
 
+        private static void EnsureCacheLoaded()
+        {
+            lock (CacheLock)
+            {
+                if (_cacheLoaded)
+                {
+                    return;
+                }
+
+#if UNITY_IOS && !UNITY_EDITOR
+                _cachedToken = GetKeychainValue(TokenKey) ?? "";
+                _cachedRefreshToken = GetKeychainValue(RefreshTokenKey) ?? "";
+#elif UNITY_ANDROID && !UNITY_EDITOR
+                _cachedToken = GetFromAndroidKeystore(TokenKey) ?? "";
+                _cachedRefreshToken = GetFromAndroidKeystore(RefreshTokenKey) ?? "";
+#else
+                _cachedToken = GetFromPlayerPrefsEncrypted(TokenKey) ?? "";
+                _cachedRefreshToken = GetFromPlayerPrefsEncrypted(RefreshTokenKey) ?? "";
+#endif
+                _cachedPlayerId = PlayerPrefs.GetString(PlayerIdKey, "");
+                _cachedEmail = PlayerPrefs.GetString(EmailKey, "");
+                var expiry = PlayerPrefs.GetString(ExpiryKey, "0");
+                _cachedExpiry = long.TryParse(expiry, out var result) ? result : 0;
+                _cacheLoaded = true;
+            }
+        }
+
+        private static void ClearCache()
+        {
+            lock (CacheLock)
+            {
+                _cachedToken = "";
+                _cachedRefreshToken = "";
+                _cachedPlayerId = "";
+                _cachedEmail = "";
+                _cachedExpiry = 0;
+                _cacheLoaded = true;
+            }
+        }
+
         private static void DeleteEmail()
         {
+            lock (CacheLock)
+            {
+                _cachedEmail = "";
+                _cacheLoaded = true;
+            }
+
             PlayerPrefs.DeleteKey(EmailKey);
         }
 
         private static void DeleteToken()
         {
+            lock (CacheLock)
+            {
+                _cachedToken = "";
+                _cacheLoaded = true;
+            }
+
 #if UNITY_IOS && !UNITY_EDITOR
             DeleteKeychainValue(TokenKey);
 #elif UNITY_ANDROID && !UNITY_EDITOR
@@ -184,6 +284,12 @@ namespace Flippy.CardDuelMobile.Networking
 
         private static void DeleteRefreshToken()
         {
+            lock (CacheLock)
+            {
+                _cachedRefreshToken = "";
+                _cacheLoaded = true;
+            }
+
 #if UNITY_IOS && !UNITY_EDITOR
             DeleteKeychainValue(RefreshTokenKey);
 #elif UNITY_ANDROID && !UNITY_EDITOR
@@ -195,11 +301,23 @@ namespace Flippy.CardDuelMobile.Networking
 
         private static void DeletePlayerId()
         {
+            lock (CacheLock)
+            {
+                _cachedPlayerId = "";
+                _cacheLoaded = true;
+            }
+
             PlayerPrefs.DeleteKey(PlayerIdKey);
         }
 
         private static void DeleteExpiry()
         {
+            lock (CacheLock)
+            {
+                _cachedExpiry = 0;
+                _cacheLoaded = true;
+            }
+
             PlayerPrefs.DeleteKey(ExpiryKey);
         }
 

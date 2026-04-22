@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Flippy.CardDuelMobile.Core;
+using Flippy.CardDuelMobile.Networking.ApiClients;
 
 namespace Flippy.CardDuelMobile.Battle
 {
@@ -9,8 +10,13 @@ namespace Flippy.CardDuelMobile.Battle
     {
         public int snapshotVersion = CardConstants.SnapshotVersion;
         public string matchId = string.Empty;
+        public string rulesetId = string.Empty;
+        public string rulesetName = string.Empty;
+        public GameRulesDto rules;
         public int localPlayerIndex;
         public int activePlayerIndex;
+        public string activePlayerId = string.Empty;
+        public bool isLocalPlayersTurn;
         public int turnNumber;
         public bool duelEnded;
         public DuelEndReason endReason;
@@ -22,6 +28,8 @@ namespace Flippy.CardDuelMobile.Battle
         public int connectedPlayers;
         public int winnerPlayerIndex = -1;
         public int matchSeed;
+        public int localHeroMaxHealth = 20;
+        public int remoteHeroMaxHealth = 20;
         public float reconnectGraceRemainingSeconds;
         public string statusMessage;
         public PlayerSnapshotDto[] players;

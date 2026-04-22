@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,9 @@ using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Networking;
 using Flippy.CardDuelMobile.UI;
 using UnityEngine.Serialization;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem.UI;
+#endif
 
 namespace Flippy.CardDuelMobile.UI
 {
@@ -74,6 +78,7 @@ namespace Flippy.CardDuelMobile.UI
         {
             Debug.Log("[GameplayPresenter3D] Awake");
             Instance = this;
+            EnsureEventSystem();
 
             // Board manager
             bool boardManagerCreated = false;
@@ -144,6 +149,11 @@ namespace Flippy.CardDuelMobile.UI
                 }
             }
 
+            if (endTurnButton != null)
+            {
+                endTurnButton.Presenter = this;
+            }
+
             // Always initialize managers (idempotent)
             if (board3DManager != null)
                 board3DManager.Initialize();
@@ -155,6 +165,23 @@ namespace Flippy.CardDuelMobile.UI
             {
                 debugPanel = FindFirstObjectByType<DebugPanel>();
             }
+        }
+
+        private void EnsureEventSystem()
+        {
+            if (FindFirstObjectByType<EventSystem>() != null)
+            {
+                return;
+            }
+
+            var eventSystemObject = new GameObject("EventSystem");
+            eventSystemObject.AddComponent<EventSystem>();
+#if ENABLE_INPUT_SYSTEM
+            eventSystemObject.AddComponent<InputSystemUIInputModule>();
+#else
+            eventSystemObject.AddComponent<StandaloneInputModule>();
+#endif
+            Debug.Log("[GameplayPresenter3D] Created EventSystem for MainGame UI.");
         }
 
         private void Start()
@@ -477,16 +504,20 @@ namespace Flippy.CardDuelMobile.UI
 
             if (local != null)
             {
-                // Hero max health es constante (20 según reglas)
-                hud3D.UpdateLocalHeroInfo(local.heroHealth, 20, local.mana, local.maxMana);
+                var localHeroMaxHealth = Mathf.Max(1, snapshot.localHeroMaxHealth);
+                hud3D.UpdateLocalHeroInfo(local.heroHealth, localHeroMaxHealth, local.mana, local.maxMana);
             }
 
             if (remote != null)
             {
-                hud3D.UpdateRemoteHeroInfo(remote.heroHealth, 20, remote.mana, remote.maxMana);
+                var remoteHeroMaxHealth = Mathf.Max(1, snapshot.remoteHeroMaxHealth);
+                hud3D.UpdateRemoteHeroInfo(remote.heroHealth, remoteHeroMaxHealth, remote.mana, remote.maxMana);
             }
 
-            bool isLocalTurn = snapshot.activePlayerIndex == snapshot.localPlayerIndex;
+            var isInProgress = snapshot.matchPhase == MatchPhase.InProgress && !snapshot.duelEnded;
+            bool isLocalTurn = isInProgress &&
+                               (snapshot.isLocalPlayersTurn ||
+                                snapshot.activePlayerIndex == snapshot.localPlayerIndex);
             hud3D.UpdateTurnInfo(snapshot.turnNumber, snapshot.activePlayerIndex, isLocalTurn);
 
             // Actualizar botón End Turn
@@ -591,6 +622,21 @@ namespace Flippy.CardDuelMobile.UI
 
         public void RequestEndTurn()
         {
+            Debug.Log("[GameplayPresenter3D] RequestEndTurn invoked");
+
+            if (_latestSnapshot != null)
+            {
+                var isInProgress = _latestSnapshot.matchPhase == MatchPhase.InProgress && !_latestSnapshot.duelEnded;
+                var isLocalTurn = isInProgress &&
+                                  (_latestSnapshot.isLocalPlayersTurn ||
+                                   _latestSnapshot.activePlayerIndex == _latestSnapshot.localPlayerIndex);
+                if (!isLocalTurn)
+                {
+                    Debug.LogWarning("[GameplayPresenter3D] RequestEndTurn blocked: it is not the local player's turn.");
+                    return;
+                }
+            }
+
             if (GameModeManager.Instance.IsLocalMode)
             {
                 var coordinator = LocalSinglePlayerCoordinator.Instance;
@@ -608,6 +654,8 @@ namespace Flippy.CardDuelMobile.UI
                 var coordinator = MatchCoordinatorFactory.Instance.GetCoordinator();
                 if (coordinator != null)
                 {
+                    endTurnButton?.SetEnabled(false);
+                    Debug.Log($"[GameplayPresenter3D] Sending EndTurn via {MatchCoordinatorFactory.Instance.CurrentType}");
                     coordinator.RequestEndTurn();
                     hud3D?.Log("Turn ended");
                 }
@@ -616,8 +664,14 @@ namespace Flippy.CardDuelMobile.UI
                     var netCoordinator = CardDuelNetworkCoordinator.Instance;
                     if (netCoordinator != null)
                     {
+                        endTurnButton?.SetEnabled(false);
+                        Debug.Log("[GameplayPresenter3D] Sending EndTurn via legacy CardDuelNetworkCoordinator");
                         netCoordinator.RequestEndTurnServerRpc();
                         hud3D?.Log("Turn ended");
+                    }
+                    else
+                    {
+                        Debug.LogError("[GameplayPresenter3D] No coordinator available for EndTurn.");
                     }
                 }
             }

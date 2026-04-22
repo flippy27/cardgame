@@ -110,10 +110,13 @@ namespace Flippy.CardDuelMobile.Networking
                     var responseText = request.downloadHandler?.text ?? "";
 
                     Debug.LogError($"[HTTP] {method} failed: HTTP {statusCode} - {errorMsg}");
+                    if (!string.IsNullOrWhiteSpace(responseText))
+                    {
+                        Debug.LogError($"[HTTP] Response body: {responseText}");
+                    }
                     if (statusCode == 401)
                     {
                         Debug.LogError($"[HTTP] 401 Unauthorized. Token sent: {!string.IsNullOrEmpty(SecureTokenStorage.GetToken())}");
-                        Debug.LogError($"[HTTP] Response body: {responseText}");
                     }
                     _circuitBreaker.RecordFailure();
 
@@ -148,7 +151,7 @@ namespace Flippy.CardDuelMobile.Networking
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[HTTP] Unexpected error on {method} {url}: {ex.GetType().Name} - {ex.Message}");
+                Debug.LogError($"[HTTP] Unexpected error on {method} {url}: {ex.GetType().Name} - {ex.Message} jsonbody: {jsonBody}");
                 throw;
             }
         }
@@ -197,11 +200,14 @@ namespace Flippy.CardDuelMobile.Networking
                     var errorMsg = request.error ?? "Unknown error";
                     var responseText = request.downloadHandler?.text ?? "";
 
-                    Debug.LogError($"[HTTP] POST failed: HTTP {statusCode} - {errorMsg}");
+                    Debug.LogError($"[HTTP] POST failed: HTTP {statusCode} - {errorMsg} - url: {url} jsonbody: {jsonBody}");
+                    if (!string.IsNullOrWhiteSpace(responseText))
+                    {
+                        Debug.LogError($"[HTTP] Response body: {responseText}");
+                    }
                     if (statusCode == 401)
                     {
                         Debug.LogError($"[HTTP] 401 Unauthorized. Token sent: {!string.IsNullOrEmpty(SecureTokenStorage.GetToken())}");
-                        Debug.LogError($"[HTTP] Response body: {responseText}");
                     }
                     _circuitBreaker.RecordFailure();
 

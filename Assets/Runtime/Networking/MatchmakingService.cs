@@ -116,7 +116,9 @@ namespace Flippy.CardDuelMobile.Networking
                 SeatIndex = dto.seatIndex,
                 Mode = (MatchmakingApiClient.QueueMode)dto.mode,
                 WaitingForOpponent = dto.waitingForOpponent,
-                Status = dto.status
+                Status = dto.status,
+                RulesetId = dto.rulesetId,
+                Rules = dto.rules
             };
         }
     }
@@ -130,5 +132,7 @@ namespace Flippy.CardDuelMobile.Networking
         public MatchmakingApiClient.QueueMode Mode { get; set; }
         public bool WaitingForOpponent { get; set; }
         public string Status { get; set; }
+        public string RulesetId { get; set; }
+        public GameRulesDto Rules { get; set; }
     }
 }

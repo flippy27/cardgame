@@ -86,8 +86,25 @@ namespace Flippy.CardDuelMobile.Core
                 GameLogger.Info("Bootstrap", "Created GameInitializationService");
             }
 
+            // 8. Ensure gameplay state persists across scene transitions
+            var playState = FindFirstObjectByType<GamePlayStateManager>();
+            if (playState == null)
+            {
+                var playStateGo = new GameObject("GamePlayStateManager");
+                playState = playStateGo.AddComponent<GamePlayStateManager>();
+                GameLogger.Info("Bootstrap", "Created GamePlayStateManager");
+            }
+
+            // 9. Ensure scene navigation/bootstrap lifecycle is active
+            var sceneBootstrap = FindFirstObjectByType<SceneBootstrap>();
+            if (sceneBootstrap == null)
+            {
+                var sceneBootstrapGo = new GameObject("SceneBootstrap");
+                sceneBootstrap = sceneBootstrapGo.AddComponent<SceneBootstrap>();
+                GameLogger.Info("Bootstrap", "Created SceneBootstrap");
+            }
+
             GameLogger.Info("Bootstrap", "Game initialized successfully");
-            GameEvents.RaiseConnected();
 
             _initialized = true;
         }

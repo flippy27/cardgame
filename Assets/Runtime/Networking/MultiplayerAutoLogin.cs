@@ -1,6 +1,9 @@
 using System.Threading.Tasks;
+using System;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using Flippy.CardDuelMobile.Core;
+using Flippy.CardDuelMobile.UI;
 
 namespace Flippy.CardDuelMobile.Networking
 {
@@ -21,15 +24,15 @@ namespace Flippy.CardDuelMobile.Networking
             if (!Application.isEditor)
                 return;
 
-            var domainId = System.AppDomain.CurrentDomain.Id;
-            GameLogger.Info("MultiplayerAutoLogin", $"AppDomain {domainId} starting auto-login");
+            var playerInstanceName = ResolvePlayerInstanceName();
+            GameLogger.Info("MultiplayerAutoLogin", $"Instance '{playerInstanceName}' starting auto-login");
 
             var autoLoginGo = new GameObject("MultiplayerAutoLogin");
             var autoLogin = autoLoginGo.AddComponent<MultiplayerAutoLogin>();
-            autoLogin.StartAutoLogin(domainId);
+            autoLogin.StartAutoLogin(playerInstanceName);
         }
 
-        private async void StartAutoLogin(int instanceId)
+        private async void StartAutoLogin(string instanceName)
         {
             // Espera a que GameService esté listo
             int retries = 0;
@@ -46,35 +49,65 @@ namespace Flippy.CardDuelMobile.Networking
                 return;
             }
 
+            ResetLocalSessionState(instanceName);
+
             // Auto-login con el usuario correspondiente a esta instancia
-            var email = $"player{GetPlayerName(instanceId)}@flippy.com";
+            var email = $"player{GetPlayerName(instanceName)}@flippy.com";
             var password = "123456";
 
-            GameLogger.Info("MultiplayerAutoLogin", $"Instance {instanceId} logging in as {email}");
+            GameLogger.Info("MultiplayerAutoLogin", $"Instance '{instanceName}' logging in as {email}");
 
             var success = await GameService.Instance.Login(email, password);
 
             if (success)
             {
-                GameLogger.Info("MultiplayerAutoLogin", $"Instance {instanceId} logged in successfully");
+                GameLogger.Info("MultiplayerAutoLogin", $"Instance '{instanceName}' logged in successfully");
             }
             else
             {
-                GameLogger.Error("MultiplayerAutoLogin", $"Instance {instanceId} login failed");
+                GameLogger.Error("MultiplayerAutoLogin", $"Instance '{instanceName}' login failed");
             }
 
             Destroy(gameObject);
         }
 
-        private static string GetPlayerName(int domainId)
+        private static void ResetLocalSessionState(string instanceName)
         {
-            // AppDomain mapping (each AppDomain is a separate player):
-            // AppDomain 1 → playerone@flippy.com
-            // AppDomain 2 → playertwo@flippy.com
-            // AppDomain 3 → playerthree@flippy.com
-            // Etc.
+            try
+            {
+                var previousPlayerId = GameService.Instance.AuthService?.CurrentPlayerId;
+                if (!string.IsNullOrWhiteSpace(previousPlayerId))
+                {
+                    GameLogger.Warning("MultiplayerAutoLogin", $"Instance '{instanceName}' clearing stale session for player '{previousPlayerId}' before auto-login.");
+                }
 
-            return domainId switch
+                GameService.Instance.Logout();
+                GamePlayStateManager.Instance?.Reset();
+                MatchStateMachine.EndMatch();
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Warning("MultiplayerAutoLogin", $"Instance '{instanceName}' could not fully reset state before auto-login: {ex.Message}");
+            }
+        }
+
+        private static string ResolvePlayerInstanceName()
+        {
+            var arguments = Environment.GetCommandLineArgs();
+            var nameIndex = Array.IndexOf(arguments, "-name");
+            if (nameIndex >= 0 && nameIndex + 1 < arguments.Length && !string.IsNullOrWhiteSpace(arguments[nameIndex + 1]))
+            {
+                return arguments[nameIndex + 1];
+            }
+
+            GameLogger.Warning("MultiplayerAutoLogin", $"No '-name' launch argument found. Arguments: {string.Join(" ", arguments)}");
+            return "Player1";
+        }
+
+        private static string GetPlayerName(string instanceName)
+        {
+            var playerNumber = ExtractPlayerNumber(instanceName);
+            return playerNumber switch
             {
                 1 => "one",
                 2 => "two",
@@ -86,8 +119,24 @@ namespace Flippy.CardDuelMobile.Networking
                 8 => "eight",
                 9 => "nine",
                 10 => "ten",
-                _ => throw new System.InvalidOperationException($"AppDomain {domainId} not mapped. Add more cases in GetPlayerName().")
+                _ => throw new InvalidOperationException($"Instance '{instanceName}' not mapped. Add more cases in GetPlayerName().")
             };
+        }
+
+        private static int ExtractPlayerNumber(string instanceName)
+        {
+            if (string.IsNullOrWhiteSpace(instanceName))
+            {
+                return 1;
+            }
+
+            var match = Regex.Match(instanceName, @"(\d+)");
+            if (match.Success && int.TryParse(match.Groups[1].Value, out var playerNumber))
+            {
+                return playerNumber;
+            }
+
+            return instanceName.Trim().Equals("Player", StringComparison.OrdinalIgnoreCase) ? 1 : -1;
         }
     }
 }

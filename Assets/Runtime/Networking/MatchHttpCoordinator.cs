@@ -28,7 +28,9 @@ namespace Flippy.CardDuelMobile.Networking
         private MatchplayApiClient _apiClient;
         private MatchSnapshot _currentSnapshot;
         private MatchSnapshot _lastProcessedSnapshot;
+        private string _lastPublishedSnapshotJson;
         private bool _isPolling;
+        private bool _rulesSyncInFlight;
 
         public static MatchHttpCoordinator Instance { get; private set; }
         public MatchSnapshot CurrentSnapshot => _currentSnapshot;
@@ -163,6 +165,7 @@ namespace Flippy.CardDuelMobile.Networking
         public void StopPolling()
         {
             _isPolling = false;
+            _rulesSyncInFlight = false;
             GameLogger.Info("MatchHttp", "Stopped polling");
         }
 
@@ -197,6 +200,14 @@ namespace Flippy.CardDuelMobile.Networking
             }
 
             _currentSnapshot = snapshot;
+            SyncRulesState(snapshot);
+            var resolvedSeatIndex = SnapshotConverter.ResolveLocalSeatIndex(snapshot, seatIndex);
+            if (resolvedSeatIndex is 0 or 1)
+            {
+                seatIndex = resolvedSeatIndex;
+            }
+            var snapshotJson = JsonUtility.ToJson(snapshot);
+            var hasMeaningfulSnapshotChange = !string.Equals(_lastPublishedSnapshotJson, snapshotJson, StringComparison.Ordinal);
 
             // Detect changes and notify
             if (_lastProcessedSnapshot == null ||
@@ -207,11 +218,77 @@ namespace Flippy.CardDuelMobile.Networking
                 GameLogger.Info("MatchHttp", $"Snapshot changed: phase={snapshot.phase}, turn={snapshot.turnNumber}, active={snapshot.activeSeatIndex}");
                 SnapshotChanged?.Invoke(snapshot);
                 _lastProcessedSnapshot = snapshot;
+            }
 
-                // Convert to DuelSnapshotDto and broadcast to BattleSnapshotBus
-                var duelSnapshot = SnapshotConverter.Convert(snapshot, seatIndex);
-                var json = JsonUtility.ToJson(duelSnapshot);
-                BattleSnapshotBus.Publish(json);
+            if (!hasMeaningfulSnapshotChange)
+            {
+                return;
+            }
+
+            _lastPublishedSnapshotJson = snapshotJson;
+
+            // Convert to DuelSnapshotDto and broadcast to BattleSnapshotBus
+            var duelSnapshot = SnapshotConverter.Convert(snapshot, seatIndex);
+            var json = JsonUtility.ToJson(duelSnapshot);
+            BattleSnapshotBus.Publish(json);
+
+            if (snapshot.rules == null && !_rulesSyncInFlight)
+            {
+                _ = TryFetchPersistedRulesAsync(snapshot.matchId);
+            }
+        }
+
+        private void SyncRulesState(MatchSnapshot snapshot)
+        {
+            if (snapshot == null)
+            {
+                return;
+            }
+
+            var resolvedRulesetId = !string.IsNullOrWhiteSpace(snapshot.rulesetId)
+                ? snapshot.rulesetId
+                : snapshot.rules?.rulesetId;
+
+            if (!string.IsNullOrWhiteSpace(resolvedRulesetId) || snapshot.rules != null)
+            {
+                GamePlayStateManager.Instance?.SetMatchRules(resolvedRulesetId, snapshot.rules);
+            }
+        }
+
+        private async System.Threading.Tasks.Task TryFetchPersistedRulesAsync(string snapshotMatchId)
+        {
+            if (_rulesSyncInFlight || string.IsNullOrWhiteSpace(snapshotMatchId))
+            {
+                return;
+            }
+
+            _rulesSyncInFlight = true;
+            try
+            {
+                var rules = await _apiClient.GetMatchRules(snapshotMatchId, playerId);
+                if (rules == null || _currentSnapshot == null || !string.Equals(_currentSnapshot.matchId, snapshotMatchId, StringComparison.Ordinal))
+                {
+                    return;
+                }
+
+                _currentSnapshot.rules = rules;
+                if (string.IsNullOrWhiteSpace(_currentSnapshot.rulesetId))
+                {
+                    _currentSnapshot.rulesetId = rules.rulesetId;
+                }
+
+                SyncRulesState(_currentSnapshot);
+                var duelSnapshot = SnapshotConverter.Convert(_currentSnapshot, seatIndex);
+                BattleSnapshotBus.Publish(JsonUtility.ToJson(duelSnapshot));
+                SnapshotChanged?.Invoke(_currentSnapshot);
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Warning("MatchHttp", $"Could not fetch persisted match rules: {ex.Message}");
+            }
+            finally
+            {
+                _rulesSyncInFlight = false;
             }
         }
     }

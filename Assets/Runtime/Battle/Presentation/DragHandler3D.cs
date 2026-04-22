@@ -215,29 +215,33 @@ namespace Flippy.CardDuelMobile.UI
 
             // Validar: turno local
             var snapshot = GameplayPresenter3D.GetLatestSnapshot();
-            if (snapshot == null || snapshot.activePlayerIndex != snapshot.localPlayerIndex)
+            if (snapshot == null)
+            {
+                Debug.LogWarning("[DragHandler3D] Snapshot unavailable; cannot play card.");
+                return;
+            }
+
+            var isInProgress = snapshot.matchPhase == MatchPhase.InProgress && !snapshot.duelEnded;
+            var isLocalTurn = isInProgress &&
+                              (snapshot.isLocalPlayersTurn ||
+                               snapshot.activePlayerIndex == snapshot.localPlayerIndex);
+            if (!isLocalTurn)
             {
                 Debug.LogWarning("[DragHandler3D] No es turno del jugador local");
                 return;
             }
 
-            // Validar: mana suficiente
             var localPlayer = snapshot.players[snapshot.localPlayerIndex];
-            if (localPlayer != null && _draggedCard.CardData.runtimeId != null)
+            if (localPlayer == null)
             {
-                // Buscar carta en mano para obtener mana cost
-                var handCard = localPlayer.hand?.FirstOrDefault(c => c.runtimeCardKey == _draggedCard.CardData.runtimeId);
-                if (handCard != null && localPlayer.mana < handCard.manaCost)
-                {
-                    Debug.LogWarning($"[DragHandler3D] Mana insuficiente: {localPlayer.mana} < {handCard.manaCost}");
-                    return;
-                }
+                Debug.LogWarning("[DragHandler3D] Local player snapshot missing.");
+                return;
             }
 
-            // Validar: slot válido según reglas
-            if (!IsSlotValidForPlay(targetSlot, snapshot))
+            var handCard = localPlayer.hand?.FirstOrDefault(c => c.runtimeCardKey == _draggedCard.CardData.runtimeId);
+            if (handCard == null)
             {
-                Debug.LogWarning($"[DragHandler3D] Slot {targetSlot} no válido para jugar");
+                Debug.LogWarning("[DragHandler3D] Card is not present in the latest local hand snapshot.");
                 return;
             }
 
@@ -247,46 +251,8 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            Debug.Log($"[DragHandler3D] ✓ Playing {_draggedCard.CardData.displayName} (ID: {_draggedCard.CardData.runtimeId}) to {targetSlot}");
+            Debug.Log($"[DragHandler3D] Playing {_draggedCard.CardData.displayName} (ID: {_draggedCard.CardData.runtimeId}) to {targetSlot}");
             presenter.RequestPlayCard(_draggedCard.CardData.runtimeId, targetSlot);
-        }
-
-        private bool IsSlotValidForPlay(BoardSlot targetSlot, DuelSnapshotDto snapshot)
-        {
-            var localPlayer = snapshot.players[snapshot.localPlayerIndex];
-            if (localPlayer?.board == null)
-                return false;
-
-            // Obtener estado actual del board
-            var boardCards = new System.Collections.Generic.Dictionary<BoardSlot, bool>();
-            foreach (var slot in localPlayer.board)
-            {
-                boardCards[slot.slot] = slot.occupied;
-            }
-
-            // Reglas según gameplay_explication.md:
-            // - Sin cartas: solo Front
-            // - Front ocupado, Left vacío: Front (shift) o Left
-            // - Front y Left ocupados, Right vacío: Front (shift), Left (shift), o Right
-            // - Todo ocupado: invalid
-
-            if (!boardCards[BoardSlot.Front])
-            {
-                return targetSlot == BoardSlot.Front;
-            }
-
-            if (!boardCards[BoardSlot.BackLeft])
-            {
-                return targetSlot == BoardSlot.Front || targetSlot == BoardSlot.BackLeft;
-            }
-
-            if (!boardCards[BoardSlot.BackRight])
-            {
-                return targetSlot == BoardSlot.Front || targetSlot == BoardSlot.BackLeft || targetSlot == BoardSlot.BackRight;
-            }
-
-            // Todo ocupado, no puedes jugar
-            return false;
         }
 
         private void SetHoveredSlot(Board3DSlot slot)

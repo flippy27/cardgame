@@ -107,6 +107,9 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             public int mode; // QueueMode
             public bool waitingForOpponent;
             public string status;
+            public string rulesetId;
+            public GameRulesDto rules;
         }
+
     }
 }

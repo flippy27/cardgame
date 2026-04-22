@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace Flippy.CardDuelMobile.UI
 {
@@ -12,6 +13,14 @@ namespace Flippy.CardDuelMobile.UI
         [SerializeField] private TextMeshProUGUI remoteHeroInfoText;
         [SerializeField] private TextMeshProUGUI turnInfoText;
         [SerializeField] private TextMeshProUGUI battleLogText;
+
+        private void Awake()
+        {
+            DisableRaycast(localHeroInfoText);
+            DisableRaycast(remoteHeroInfoText);
+            DisableRaycast(turnInfoText);
+            DisableRaycast(battleLogText);
+        }
 
         public TextMeshProUGUI LocalHeroInfoText
         {
@@ -95,6 +104,14 @@ namespace Flippy.CardDuelMobile.UI
             if (battleLogText != null)
             {
                 battleLogText.text = "";
+            }
+        }
+
+        private static void DisableRaycast(Graphic graphic)
+        {
+            if (graphic != null)
+            {
+                graphic.raycastTarget = false;
             }
         }
     }

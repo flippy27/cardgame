@@ -56,18 +56,21 @@ namespace Flippy.CardDuelMobile.Core
             {
                 GameLogger.Warning("Config", "config.json not found, using defaults");
                 _config = new AppSettings();
+                SyncApiConfigBaseUrl();
                 return;
             }
 
             try
             {
                 _config = JsonUtility.FromJson<AppSettings>(json.text);
+                SyncApiConfigBaseUrl();
                 GameLogger.Info("Config", "Loaded config from Resources/config.json");
             }
             catch (System.Exception ex)
             {
                 GameLogger.Error("Config", "Failed to parse config", ex);
                 _config = new AppSettings();
+                SyncApiConfigBaseUrl();
             }
         }
 
@@ -79,6 +82,12 @@ namespace Flippy.CardDuelMobile.Core
                 GameLogger.Warning("Config", "No baseUrl in config, using ApiConfig default");
                 return ApiConfig.BaseUrl;
             }
+
+            if (!string.Equals(ApiConfig.BaseUrl, url.TrimEnd('/'), System.StringComparison.Ordinal))
+            {
+                ApiConfig.SetUrl(url);
+            }
+
             return url;
         }
         public static int GetApiTimeout() => _config?.api?.timeoutSeconds ?? 30;
@@ -90,5 +99,14 @@ namespace Flippy.CardDuelMobile.Core
         }
         public static bool IsOfflineModeEnabled() => _config?.game?.enableOfflineMode ?? true;
         public static int GetCacheTTL() => _config?.game?.cacheTimeSeconds ?? 3600;
+
+        private static void SyncApiConfigBaseUrl()
+        {
+            var url = _config?.api?.baseUrl;
+            if (!string.IsNullOrWhiteSpace(url))
+            {
+                ApiConfig.SetUrl(url);
+            }
+        }
     }
 }

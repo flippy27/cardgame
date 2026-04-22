@@ -35,6 +35,7 @@ namespace Flippy.CardDuelMobile.Networking
         private readonly Dictionary<string, TaskCompletionSource<MatchSnapshot>> _pendingInvocations = new();
 
         private MatchHttpCoordinator _httpCoordinator;
+        private MatchplayApiClient _matchplayApiClient;
         private ClientWebSocket _webSocket;
         private CancellationTokenSource _connectionCts;
         private Task _receiveLoopTask;
@@ -42,6 +43,8 @@ namespace Flippy.CardDuelMobile.Networking
         private TaskCompletionSource<bool> _handshakeCompletionSource;
         private int _invocationCounter;
         private bool _usingHttpFallback;
+        private bool _endTurnInFlight;
+        private bool _rulesSyncInFlight;
         private MatchSnapshot _currentSnapshot;
 
         public static MatchSignalRCoordinator Instance { get; private set; }
@@ -133,12 +136,13 @@ namespace Flippy.CardDuelMobile.Networking
                 }
 
                 EnsureSignalRConnected();
-                await InvokeAsync("SetReady", new SetReadyRequestDto
+                var snapshot = await InvokeAsync("SetReady", new SetReadyRequestDto
                 {
                     matchId = matchId,
                     playerId = playerId,
                     isReady = isReady
                 });
+                EnqueueSnapshotProcessing(snapshot);
             }
             catch (Exception ex)
             {
@@ -157,13 +161,14 @@ namespace Flippy.CardDuelMobile.Networking
                 }
 
                 EnsureSignalRConnected();
-                await InvokeAsync("PlayCard", new PlayCardRequestDto
+                var snapshot = await InvokeAsync("PlayCard", new PlayCardRequestDto
                 {
                     matchId = matchId,
                     playerId = playerId,
                     runtimeHandKey = runtimeHandKey,
                     slotIndex = slotIndex
                 });
+                EnqueueSnapshotProcessing(snapshot);
             }
             catch (Exception ex)
             {
@@ -173,6 +178,13 @@ namespace Flippy.CardDuelMobile.Networking
 
         public async Task EndTurnAsync()
         {
+            if (_endTurnInFlight)
+            {
+                GameLogger.Warning("SignalR", "EndTurn ignored because another EndTurn request is still in flight.");
+                return;
+            }
+
+            _endTurnInFlight = true;
             try
             {
                 if (_usingHttpFallback && _httpCoordinator != null)
@@ -181,16 +193,33 @@ namespace Flippy.CardDuelMobile.Networking
                     return;
                 }
 
+                ValidateEndTurnState();
+                LogEndTurnContext("signalr");
                 EnsureSignalRConnected();
-                await InvokeAsync("EndTurn", new EndTurnRequestDto
+                var snapshot = await InvokeAsync("EndTurn", new EndTurnRequestDto
                 {
                     matchId = matchId,
                     playerId = playerId
                 });
+                EnqueueSnapshotProcessing(snapshot);
             }
             catch (Exception ex)
             {
+                if (ShouldRetryEndTurnOverHttp(ex) && await TryEndTurnViaHttpAsync(ex))
+                {
+                    return;
+                }
+
+                if (await TryResyncAfterEndTurnFailureAsync(ex))
+                {
+                    return;
+                }
+
                 ReportActionError("EndTurn", ex);
+            }
+            finally
+            {
+                _endTurnInFlight = false;
             }
         }
 
@@ -205,11 +234,12 @@ namespace Flippy.CardDuelMobile.Networking
                 }
 
                 EnsureSignalRConnected();
-                await InvokeAsync("Forfeit", new ForfeitRequestDto
+                var snapshot = await InvokeAsync("Forfeit", new ForfeitRequestDto
                 {
                     matchId = matchId,
                     playerId = playerId
                 });
+                EnqueueSnapshotProcessing(snapshot);
             }
             catch (Exception ex)
             {
@@ -222,6 +252,7 @@ namespace Flippy.CardDuelMobile.Networking
             await StopHttpFallbackAsync();
             await StopSignalRAsync();
             _currentSnapshot = null;
+            _rulesSyncInFlight = false;
         }
 
         void IMatchCoordinator.RequestPlayCard(string runtimeCardKey, int slotIndex)
@@ -269,10 +300,7 @@ namespace Flippy.CardDuelMobile.Networking
                 reconnectToken = reconnectToken
             });
 
-            if (_currentSnapshot == null && snapshot != null)
-            {
-                EnqueueOnMainThread(() => ProcessSnapshot(snapshot));
-            }
+            EnqueueSnapshotProcessing(snapshot);
         }
 
         private async Task<MatchSnapshot> InvokeAsync(string target, object payload)
@@ -608,13 +636,18 @@ namespace Flippy.CardDuelMobile.Networking
             }
 
             _currentSnapshot = snapshot;
+            SyncRulesState(snapshot);
 
-            if (snapshot.localSeatIndex >= 0)
+            var resolvedSeatIndex = SnapshotConverter.ResolveLocalSeatIndex(snapshot, seatIndex);
+            if (resolvedSeatIndex is 0 or 1)
             {
-                seatIndex = snapshot.localSeatIndex;
+                seatIndex = resolvedSeatIndex;
             }
 
-            GameLogger.Info("SignalR", $"Snapshot received: phase={snapshot.phase}, turn={snapshot.turnNumber}, localSeat={seatIndex}");
+            var isLocalPlayersTurn = SnapshotConverter.ResolveLocalPlayersTurn(snapshot, seatIndex);
+            GameLogger.Info(
+                "SignalR",
+                $"Snapshot received: phase={snapshot.phase}, turn={snapshot.turnNumber}, localSeat={seatIndex}, snapshotLocalSeat={snapshot.localSeatIndex}, activeSeat={snapshot.activeSeatIndex}, activePlayer={snapshot.activePlayerId}, localTurn={isLocalPlayersTurn}");
 
             var duelSnapshot = SnapshotConverter.Convert(snapshot, seatIndex);
             if (duelSnapshot != null)
@@ -624,6 +657,21 @@ namespace Flippy.CardDuelMobile.Networking
             }
 
             SnapshotChanged?.Invoke(snapshot);
+
+            if (snapshot.rules == null && !_rulesSyncInFlight)
+            {
+                _ = TryFetchPersistedRulesAsync(snapshot.matchId);
+            }
+        }
+
+        private void EnqueueSnapshotProcessing(MatchSnapshot snapshot)
+        {
+            if (snapshot == null)
+            {
+                return;
+            }
+
+            EnqueueOnMainThread(() => ProcessSnapshot(snapshot));
         }
 
         private void OnHttpSnapshotChanged(MatchSnapshot snapshot)
@@ -659,6 +707,207 @@ namespace Flippy.CardDuelMobile.Networking
         {
             GameLogger.Error("SignalR", $"{actionName} failed: {ex.Message}");
             ErrorOccurred?.Invoke($"{actionName} error: {ex.Message}");
+        }
+
+        private void ValidateEndTurnState()
+        {
+            if (_currentSnapshot == null)
+            {
+                return;
+            }
+
+            if (_currentSnapshot.phase != 2)
+            {
+                throw new InvalidOperationException($"Cannot end turn while match phase is {_currentSnapshot.phase}.");
+            }
+
+            var localSeat = ResolveLocalSeatIndex();
+            var isLocalPlayersTurn = SnapshotConverter.ResolveLocalPlayersTurn(_currentSnapshot, localSeat);
+            if (!isLocalPlayersTurn)
+            {
+                throw new InvalidOperationException("Cannot end turn because it is not the local player's turn.");
+            }
+        }
+
+        private void LogEndTurnContext(string transport)
+        {
+            if (_currentSnapshot == null)
+            {
+                GameLogger.Info("SignalR", $"EndTurn context ({transport}): snapshot unavailable, match={matchId}, player={playerId}");
+                return;
+            }
+
+            var localSeat = ResolveLocalSeatIndex();
+            GameLogger.Info(
+                "SignalR",
+                $"EndTurn context ({transport}): match={matchId}, player={playerId}, localSeat={localSeat}, snapshotLocalSeat={_currentSnapshot.localSeatIndex}, activeSeat={_currentSnapshot.activeSeatIndex}, isLocalPlayersTurn={_currentSnapshot.isLocalPlayersTurn}, phase={_currentSnapshot.phase}, turn={_currentSnapshot.turnNumber}");
+        }
+
+        private async Task<bool> TryEndTurnViaHttpAsync(Exception signalrException)
+        {
+            if (_usingHttpFallback)
+            {
+                return false;
+            }
+
+            try
+            {
+                EnsureMatchplayApiClient();
+                LogEndTurnContext("http-retry");
+                GameLogger.Warning("SignalR", $"EndTurn via SignalR failed ({signalrException.Message}). Retrying over HTTP.");
+                var snapshot = await _matchplayApiClient.EndTurn(matchId, playerId);
+                if (snapshot == null)
+                {
+                    return false;
+                }
+
+                EnqueueSnapshotProcessing(snapshot);
+                GameLogger.Info("SignalR", "EndTurn succeeded via HTTP retry.");
+                return true;
+            }
+            catch (Exception httpException)
+            {
+                GameLogger.Error("SignalR", $"EndTurn HTTP retry failed: {httpException.Message}");
+                return false;
+            }
+        }
+
+        private void EnsureMatchplayApiClient()
+        {
+            if (_matchplayApiClient == null)
+            {
+                _matchplayApiClient = new MatchplayApiClient(ConfigManager.GetApiBaseUrl());
+            }
+        }
+
+        private async Task<bool> TryResyncAfterEndTurnFailureAsync(Exception signalrException)
+        {
+            try
+            {
+                EnsureMatchplayApiClient();
+                var snapshot = await _matchplayApiClient.GetSnapshot(matchId, playerId);
+                if (snapshot == null)
+                {
+                    return false;
+                }
+
+                EnqueueSnapshotProcessing(snapshot);
+
+                var localSeat = SnapshotConverter.ResolveLocalSeatIndex(snapshot, seatIndex);
+                var isLocalPlayersTurn = SnapshotConverter.ResolveLocalPlayersTurn(snapshot, localSeat);
+
+                if (snapshot.phase == 2 && !isLocalPlayersTurn)
+                {
+                    GameLogger.Info("SignalR", $"EndTurn reported '{signalrException.Message}', but snapshot is now on opponent turn. Treating action as applied.");
+                    return true;
+                }
+            }
+            catch (Exception resyncException)
+            {
+                GameLogger.Warning("SignalR", $"Snapshot resync after EndTurn failure did not complete: {resyncException.Message}");
+            }
+
+            return false;
+        }
+
+        private int ResolveLocalSeatIndex()
+        {
+            var resolvedSeatIndex = SnapshotConverter.ResolveLocalSeatIndex(_currentSnapshot, seatIndex);
+            if (resolvedSeatIndex is 0 or 1)
+            {
+                seatIndex = resolvedSeatIndex;
+            }
+
+            return resolvedSeatIndex;
+        }
+
+        private static bool ShouldRetryEndTurnOverHttp(Exception ex)
+        {
+            if (ex is TimeoutException)
+            {
+                return true;
+            }
+
+            var message = ex.Message ?? string.Empty;
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                return false;
+            }
+
+            // Retry only for transport/connectivity failures.
+            return message.Contains("timed out", StringComparison.OrdinalIgnoreCase) ||
+                   message.Contains("not connected", StringComparison.OrdinalIgnoreCase) ||
+                   message.Contains("socket", StringComparison.OrdinalIgnoreCase) ||
+                   message.Contains("closed", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private void SyncRulesState(MatchSnapshot snapshot)
+        {
+            if (snapshot == null)
+            {
+                return;
+            }
+
+            var resolvedRulesetId = !string.IsNullOrWhiteSpace(snapshot.rulesetId)
+                ? snapshot.rulesetId
+                : snapshot.rules?.rulesetId;
+
+            if (!string.IsNullOrWhiteSpace(resolvedRulesetId) || snapshot.rules != null)
+            {
+                GamePlayStateManager.Instance?.SetMatchRules(resolvedRulesetId, snapshot.rules);
+            }
+        }
+
+        private async Task TryFetchPersistedRulesAsync(string snapshotMatchId)
+        {
+            if (_rulesSyncInFlight || string.IsNullOrWhiteSpace(snapshotMatchId))
+            {
+                return;
+            }
+
+            _rulesSyncInFlight = true;
+            try
+            {
+                EnsureMatchplayApiClient();
+                var fetchedRules = await _matchplayApiClient.GetMatchRules(snapshotMatchId, playerId);
+                if (fetchedRules == null)
+                {
+                    return;
+                }
+
+                EnqueueOnMainThread(() =>
+                {
+                    if (_currentSnapshot == null ||
+                        !string.Equals(_currentSnapshot.matchId, snapshotMatchId, StringComparison.Ordinal))
+                    {
+                        return;
+                    }
+
+                    _currentSnapshot.rules = fetchedRules;
+                    if (string.IsNullOrWhiteSpace(_currentSnapshot.rulesetId))
+                    {
+                        _currentSnapshot.rulesetId = fetchedRules.rulesetId;
+                    }
+
+                    SyncRulesState(_currentSnapshot);
+
+                    var duelSnapshot = SnapshotConverter.Convert(_currentSnapshot, seatIndex);
+                    if (duelSnapshot != null)
+                    {
+                        BattleSnapshotBus.Publish(JsonUtility.ToJson(duelSnapshot));
+                    }
+
+                    SnapshotChanged?.Invoke(_currentSnapshot);
+                });
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Warning("SignalR", $"Could not fetch persisted match rules: {ex.Message}");
+            }
+            finally
+            {
+                _rulesSyncInFlight = false;
+            }
         }
 
         private void EnqueueOnMainThread(Action action)
