@@ -64,9 +64,12 @@ namespace Flippy.CardDuelMobile.UI
 
                 if (_playerDecks.Count == 0)
                 {
-                    ShowStatus("No decks found. Create a new deck to play.", isError: true);
+                    ShowStatus("No decks found. Redirecting to collection...", isError: false);
                     if (playButton != null)
                         playButton.interactable = false;
+                    // Player has no deck — send them to the collection/deck-building screen
+                    await Task.Delay(800); // brief message visibility
+                    SceneBootstrap.LoadDeckBuilding();
                     return;
                 }
 
@@ -159,8 +162,7 @@ namespace Flippy.CardDuelMobile.UI
 
         private void OnCreateDeckButtonClicked()
         {
-            // TODO: Open deck builder screen
-            ShowStatus("Deck builder not yet implemented", isError: false);
+            SceneBootstrap.LoadDeckBuilding();
         }
 
         private void ShowStatus(string message, bool isError = false)

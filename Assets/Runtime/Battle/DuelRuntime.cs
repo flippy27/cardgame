@@ -6,6 +6,7 @@ using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Data;
 using Flippy.CardDuelMobile.Battle.Abilities;
 using AbilityTriggerEnum = Flippy.CardDuelMobile.Battle.Abilities.AbilityTrigger;
+using DataAbilityDefinition = Flippy.CardDuelMobile.Data.AbilityDefinition;
 
 namespace Flippy.CardDuelMobile.Battle
 {
@@ -597,7 +598,7 @@ namespace Flippy.CardDuelMobile.Battle
             };
         }
 
-        private static CardAbilityDto[] ConvertAbilities(AbilityDefinition[] abilities)
+        private static CardAbilityDto[] ConvertAbilities(DataAbilityDefinition[] abilities)
         {
             if (abilities == null || abilities.Length == 0)
             {

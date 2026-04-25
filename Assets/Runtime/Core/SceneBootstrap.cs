@@ -17,6 +17,7 @@ namespace Flippy.CardDuelMobile.Core
         public static string BattleSceneName = "MainGame";
         public static string MenuSceneName = "MainMenu";
         public static string MainGameSceneName = "MainGame";
+        public static string DeckBuildingSceneName = "DeckBuildingScene";
 
         private AuthService _authService;
 
@@ -67,6 +68,11 @@ namespace Flippy.CardDuelMobile.Core
         public static void LoadMainGame()
         {
             LoadScene(MainGameSceneName);
+        }
+
+        public static void LoadDeckBuilding()
+        {
+            LoadScene(DeckBuildingSceneName);
         }
 
         public static void LoadLoginAndLogout()

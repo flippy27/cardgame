@@ -1,6 +1,7 @@
 using UnityEngine;
 using Flippy.CardDuelMobile.Services;
 using Flippy.CardDuelMobile.Networking;
+using Flippy.CardDuelMobile.Networking.ApiClients;
 using Flippy.CardDuelMobile.UI;
 
 namespace Flippy.CardDuelMobile.Core
@@ -44,6 +45,19 @@ namespace Flippy.CardDuelMobile.Core
 
             var leaderboardService = new LeaderboardService(apiClient, authService);
             ServiceLocator.Register<LeaderboardService>(leaderboardService);
+
+            // DeckBuilding scene services (inventory, player cards, crafting)
+            var inventoryApiClient = new InventoryApiClient(apiBaseUrl);
+            var inventoryService = new InventoryService(inventoryApiClient, authService);
+            ServiceLocator.Register<InventoryService>(inventoryService);
+
+            var playerCardsApiClient = new PlayerCardsApiClient(apiBaseUrl);
+            var collectionService = new PlayerCardCollectionService(playerCardsApiClient, authService);
+            ServiceLocator.Register<PlayerCardCollectionService>(collectionService);
+
+            var craftingApiClient = new CraftingApiClient(apiBaseUrl);
+            var craftingService = new CraftingService(craftingApiClient, authService);
+            ServiceLocator.Register<CraftingService>(craftingService);
 
             // 3. Start background tasks
             var healthPinger = new GameObject("HealthCheckPinger").AddComponent<HealthCheckPinger>();
