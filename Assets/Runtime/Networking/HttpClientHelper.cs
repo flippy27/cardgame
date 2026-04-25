@@ -126,6 +126,12 @@ namespace Flippy.CardDuelMobile.Networking
                     if (statusCode == 404)
                         throw new InvalidOperationException($"Resource not found: {url}");
 
+                    if (!string.IsNullOrWhiteSpace(responseText) &&
+                        GameplayActionErrorParser.TryParse(responseText, out var gameplayError))
+                    {
+                        throw new GameplayActionException(gameplayError.code, gameplayError.message, (int)statusCode);
+                    }
+
                     if (statusCode >= 500 && retryAttempt < MaxRetries)
                     {
                         var delay = (int)Math.Pow(2, retryAttempt) * RetryDelayMs;
@@ -216,6 +222,12 @@ namespace Flippy.CardDuelMobile.Networking
 
                     if (statusCode == 404)
                         throw new InvalidOperationException($"Resource not found: {url}");
+
+                    if (!string.IsNullOrWhiteSpace(responseText) &&
+                        GameplayActionErrorParser.TryParse(responseText, out var gameplayError))
+                    {
+                        throw new GameplayActionException(gameplayError.code, gameplayError.message, (int)statusCode);
+                    }
 
                     if (statusCode >= 500 && retryAttempt < MaxRetries)
                     {

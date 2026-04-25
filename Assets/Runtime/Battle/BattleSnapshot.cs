@@ -34,6 +34,7 @@ namespace Flippy.CardDuelMobile.Battle
         public string statusMessage;
         public PlayerSnapshotDto[] players;
         public List<BattleLogEntry> logs;
+        public BattleEventDto[] battleEvents;
     }
 
     [Serializable]
@@ -60,8 +61,11 @@ namespace Flippy.CardDuelMobile.Battle
         public int manaCost;
         public int attack;
         public int health;
+        public int armor;
         public bool isUnit;
         public int unitType; // 0=Melee, 1=Ranged, 2=Magic
+        public string attackDeliveryType;
+        public CardAbilityDto[] abilities;
     }
 
     [Serializable]
@@ -78,6 +82,10 @@ namespace Flippy.CardDuelMobile.Battle
         public string runtimeId;
         public string cardId;
         public string displayName;
+        public int manaCost;
+        public int attackMotionLevel;
+        public int attackShakeLevel;
+        public string attackDeliveryType;
         public int ownerIndex;
         public int attack;
         public int currentHealth;
@@ -87,5 +95,71 @@ namespace Flippy.CardDuelMobile.Battle
         public bool canAttack;
         public int unitType; // 0=Melee, 1=Ranged
         public int turnsUntilCanAttack;
+        public StatusEffectDto[] statusEffects;
+        public CardAbilityDto[] abilities;
+    }
+
+    [Serializable]
+    public sealed class BattleEventDto
+    {
+        public string eventId = string.Empty;
+        public int sequence = -1;
+        public string kind = string.Empty;
+
+        // Seat indexes are converted to visual player indexes by SnapshotConverter.
+        public int sourceSeatIndex = -1;
+        public int targetSeatIndex = -1;
+        public int serverSourceSeatIndex = -1;
+        public int serverTargetSeatIndex = -1;
+
+        public string sourceRuntimeId = string.Empty;
+        public string targetRuntimeId = string.Empty;
+        public string abilityId = string.Empty;
+        public int effectKind = -1;
+        public int amount;
+        public int secondaryAmount;
+        public int hpBefore;
+        public int hpAfter;
+        public int armorBefore;
+        public int armorAfter;
+        public int statusKind = -1;
+        public int durationTurns;
+        public string message = string.Empty;
+    }
+
+    [Serializable]
+    public sealed class StatusEffectDto
+    {
+        public int kind = -1;
+        public int amount;
+        public int remainingTurns;
+        public string sourceRuntimeId = string.Empty;
+        public string abilityId = string.Empty;
+    }
+
+    [Serializable]
+    public sealed class CardAbilityDto
+    {
+        public string abilityId = string.Empty;
+        public string displayName = string.Empty;
+        public int skillType = -1;
+        public int triggerKind = -1;
+        public int targetSelectorKind = -1;
+        public string animationCueId = string.Empty;
+        public string conditionsJson = string.Empty;
+        public string metadataJson = string.Empty;
+        public CardEffectDto[] effects;
+    }
+
+    [Serializable]
+    public sealed class CardEffectDto
+    {
+        public int effectKind = -1;
+        public int amount;
+        public int secondaryAmount;
+        public int durationTurns;
+        public int targetSelectorKindOverride = -1;
+        public int sequence;
+        public string metadataJson = string.Empty;
     }
 }

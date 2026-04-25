@@ -18,6 +18,8 @@ namespace Flippy.CardDuelMobile.Battle
         private readonly DuelState _state = new();
         private readonly BattleContext _context;
         private readonly List<string> _targetBuffer = new();
+        private const string LocalSinglePlayerId = "local-player";
+        private const string LocalAiPlayerId = "local-ai";
 
         public DuelRuntime(DuelRulesProfile rules)
         {
@@ -39,9 +41,10 @@ namespace Flippy.CardDuelMobile.Battle
         /// </summary>
         public void StartGame(DeckDefinition deckA, DeckDefinition deckB, int seed = 0)
         {
-            _state.Players[0] = BuildPlayerState(0, deckA, seed ^ 0x51A7);
-            _state.Players[1] = BuildPlayerState(1, deckB, seed ^ 0x8CC1);
-            _state.ActivePlayerIndex = 0;
+            var resolvedSeed = seed != 0 ? seed : Guid.NewGuid().GetHashCode();
+            _state.Players[0] = BuildPlayerState(0, deckA, resolvedSeed ^ 0x51A7);
+            _state.Players[1] = BuildPlayerState(1, deckB, resolvedSeed ^ 0x8CC1);
+            _state.ActivePlayerIndex = Mathf.Abs(resolvedSeed) % 2;
             _state.TurnNumber = 1;
             _state.DuelEnded = false;
             _state.EndReason = DuelEndReason.None;
@@ -56,7 +59,7 @@ namespace Flippy.CardDuelMobile.Battle
             _state.Logs.Add(new BattleLogEntry
             {
                 type = BattleLogType.Info,
-                message = $"Duel started with seed {seed}."
+                message = $"Duel started with seed {resolvedSeed}. Player {_state.ActivePlayerIndex} starts."
             });
         }
 
@@ -433,15 +436,20 @@ namespace Flippy.CardDuelMobile.Battle
 
         public DuelSnapshotDto CreateSnapshot(int localPlayerIndex)
         {
+            var players = _state.Players.Select(BuildPlayerSnapshot).ToArray();
             return new DuelSnapshotDto
             {
                 localPlayerIndex = localPlayerIndex,
                 activePlayerIndex = _state.ActivePlayerIndex,
+                activePlayerId = _state.ActivePlayerIndex == localPlayerIndex ? LocalSinglePlayerId : LocalAiPlayerId,
+                isLocalPlayersTurn = _state.ActivePlayerIndex == localPlayerIndex,
                 turnNumber = _state.TurnNumber,
                 duelEnded = _state.DuelEnded,
                 endReason = _state.EndReason,
-                logs = BuildRecentLogs(12),
-                players = _state.Players.Select(BuildPlayerSnapshot).ToArray()
+                // Keep a larger rolling window so the presenter can reconstruct
+                // slower, readable battle sequences without losing early attacks.
+                logs = BuildRecentLogs(40),
+                players = players
             };
         }
 
@@ -534,6 +542,7 @@ namespace Flippy.CardDuelMobile.Battle
         {
             return new PlayerSnapshotDto
             {
+                playerId = player.PlayerIndex == 0 ? LocalSinglePlayerId : LocalAiPlayerId,
                 playerIndex = player.PlayerIndex,
                 heroHealth = player.HeroHealth,
                 mana = player.Mana,
@@ -548,8 +557,14 @@ namespace Flippy.CardDuelMobile.Battle
                     manaCost = card.Definition.manaCost,
                     attack = card.Definition.attack,
                     health = card.Definition.health,
+                    armor = card.Definition.armor,
                     isUnit = card.Definition.cardType == CardType.Unit,
-                    unitType = (int)card.Definition.unitType
+                    unitType = (int)card.Definition.unitType,
+                    attackDeliveryType = AttackPresentationResolver.ResolveDeliveryType(
+                        card.Definition,
+                        BoardSlot.Front,
+                        card.Definition != null ? (int)card.Definition.unitType : 0),
+                    abilities = ConvertAbilities(card.Definition.abilities)
                 }).ToArray(),
                 board = player.Board.Select(slot => new BoardSlotSnapshotDto
                 {
@@ -560,6 +575,13 @@ namespace Flippy.CardDuelMobile.Battle
                         runtimeId = slot.Occupant.RuntimeId,
                         cardId = slot.Occupant.CardId,
                         displayName = slot.Occupant.DisplayName,
+                        manaCost = slot.Occupant.Definition != null ? slot.Occupant.Definition.manaCost : 0,
+                        attackMotionLevel = AttackPresentationResolver.ResolveMotionLevel(slot.Occupant.Definition, slot.Occupant.Attack),
+                        attackShakeLevel = AttackPresentationResolver.ResolveShakeLevel(slot.Occupant.Definition, slot.Occupant.Attack),
+                        attackDeliveryType = AttackPresentationResolver.ResolveDeliveryType(
+                            slot.Occupant.Definition,
+                            slot.Occupant.CurrentSlot,
+                            slot.Occupant.Definition != null ? (int)slot.Occupant.Definition.unitType : 0),
                         ownerIndex = slot.Occupant.OwnerIndex,
                         attack = slot.Occupant.Attack,
                         currentHealth = slot.Occupant.CurrentHealth,
@@ -568,10 +590,31 @@ namespace Flippy.CardDuelMobile.Battle
                         slot = slot.Occupant.CurrentSlot,
                         canAttack = DetermineCanAttack(slot.Occupant),
                         unitType = slot.Occupant.Definition != null ? (int)slot.Occupant.Definition.unitType : 0,
-                        turnsUntilCanAttack = slot.Occupant.TurnsUntilCanAttack
+                        turnsUntilCanAttack = slot.Occupant.TurnsUntilCanAttack,
+                        abilities = ConvertAbilities(slot.Occupant.Definition?.abilities)
                     }
                 }).ToArray()
             };
+        }
+
+        private static CardAbilityDto[] ConvertAbilities(AbilityDefinition[] abilities)
+        {
+            if (abilities == null || abilities.Length == 0)
+            {
+                return Array.Empty<CardAbilityDto>();
+            }
+
+            return abilities
+                .Where(ability => ability != null)
+                .Select(ability => new CardAbilityDto
+                {
+                    abilityId = ability.abilityId,
+                    displayName = string.IsNullOrWhiteSpace(ability.displayName) ? ability.abilityId : ability.displayName,
+                    triggerKind = (int)ability.trigger,
+                    skillType = -1,
+                    animationCueId = ability.abilityId
+                })
+                .ToArray();
         }
 
         private List<BattleLogEntry> BuildRecentLogs(int count)

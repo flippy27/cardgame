@@ -1,0 +1,30 @@
+Card Duel Unity Battle Phase Playback
+UTC: 2026-04-25T19:44:33.5721377Z
+MatchId: 09f7ab937025488292ee0e8b3ce166aa
+Turn: 10
+ActivePlayerIndex: 0
+ActivePlayerId: 6c646037-69b0-4350-a98e-d09f77806192
+IsLocalPlayersTurn: True
+Ruleset: Default Rules (11fd524f-49f9-4ffe-b0e3-1ffc06233cad)
+
+Presentation Events
+seq=12 id=evt-000012 kind=skill_begin/SkillBegin srcP=0 src=2056753ff50d4d80a7119034d5a906e6:Alloy Forest Archer #1 targetP=-1 target=: ability=shield effect=0 status=0 amount=0 hp=0->0 armor=0->0 msg=Alloy Forest Archer #1 used Shield.
+seq=13 id=evt-000013 kind=armor_gain/ArmorGain srcP=0 src=2056753ff50d4d80a7119034d5a906e6:Alloy Forest Archer #1 targetP=0 target=2056753ff50d4d80a7119034d5a906e6:Alloy Forest Archer #1 ability=shield effect=2 status=0 amount=10 hp=6->6 armor=1->11 msg=Alloy Forest Archer #1 gained 10 armor.
+
+Raw Structured Battle Events In Snapshot
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=0 targetVisual=-1 target= ability=armor effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Void Sky Drake #91 used Armor.
+seq=2 id=evt-000002 kind=armor_gain serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=1 targetVisual=0 target=6a2fc8a73663406f95dcc53bbef62e79 ability=armor effect=2 status=0 amount=5 hp=3->3 armor=0->5 message=Void Sky Drake #91 gained 5 armor.
+seq=3 id=evt-000003 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=0 targetVisual=-1 target= ability=fly effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Void Sky Drake #91 used Fly.
+seq=4 id=evt-000004 kind=card_attack serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=5 hp=0->0 armor=0->0 message=Void Sky Drake #91 attacked the enemy hero.
+seq=5 id=evt-000005 kind=hero_damage serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=0 targetVisual=1 target= ability= effect=0 status=0 amount=5 hp=20->15 armor=0->0 message=Seat 1 hero took 5 damage.
+seq=6 id=evt-000006 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=18f2e2003be74a778cf6703d0c21f2b4 serverTargetSeat=0 targetVisual=-1 target= ability=armor effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Armor.
+seq=7 id=evt-000007 kind=armor_gain serverSrcSeat=1 srcVisual=0 src=18f2e2003be74a778cf6703d0c21f2b4 serverTargetSeat=1 targetVisual=0 target=18f2e2003be74a778cf6703d0c21f2b4 ability=armor effect=2 status=0 amount=5 hp=4->4 armor=0->5 message=Grove Storm Caller #164 gained 5 armor.
+seq=8 id=evt-000008 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=18f2e2003be74a778cf6703d0c21f2b4 serverTargetSeat=0 targetVisual=-1 target= ability=stun effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Stun.
+seq=9 id=evt-000009 kind=attack_not_ready serverSrcSeat=1 srcVisual=0 src=18f2e2003be74a778cf6703d0c21f2b4 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 is not ready to attack.
+seq=10 id=evt-000010 kind=card_attack serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=5 hp=0->0 armor=0->0 message=Void Sky Drake #91 attacked the enemy hero.
+seq=11 id=evt-000011 kind=hero_damage serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=0 targetVisual=1 target= ability= effect=0 status=0 amount=5 hp=15->10 armor=0->0 message=Seat 1 hero took 5 damage.
+seq=12 id=evt-000012 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=2056753ff50d4d80a7119034d5a906e6 serverTargetSeat=0 targetVisual=-1 target= ability=shield effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Forest Archer #1 used Shield.
+seq=13 id=evt-000013 kind=armor_gain serverSrcSeat=1 srcVisual=0 src=2056753ff50d4d80a7119034d5a906e6 serverTargetSeat=1 targetVisual=0 target=2056753ff50d4d80a7119034d5a906e6 ability=shield effect=2 status=0 amount=10 hp=6->6 armor=1->11 message=Alloy Forest Archer #1 gained 10 armor.
+
+New Raw Logs Fallback Window
+Info: Alloy Forest Archer #1 entered Front.

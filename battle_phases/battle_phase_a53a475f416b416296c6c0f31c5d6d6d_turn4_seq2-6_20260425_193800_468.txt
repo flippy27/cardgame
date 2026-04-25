@@ -1,0 +1,27 @@
+Card Duel Unity Battle Phase Playback
+UTC: 2026-04-25T19:38:00.4689201Z
+MatchId: a53a475f416b416296c6c0f31c5d6d6d
+Turn: 4
+ActivePlayerIndex: 0
+ActivePlayerId: 6c646037-69b0-4350-a98e-d09f77806192
+IsLocalPlayersTurn: True
+Ruleset: Default Rules (11fd524f-49f9-4ffe-b0e3-1ffc06233cad)
+
+Presentation Events
+seq=2 id=evt-000002 kind=skill_begin/SkillBegin srcP=1 src=ddfacb4cd50b4a26a0a123c3ed33cc46: targetP=-1 target=: ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 msg=Tidal Inferno Beast #38 used Poison.
+seq=3 id=evt-000003 kind=card_attack/CardAttack srcP=1 src=ddfacb4cd50b4a26a0a123c3ed33cc46: targetP=1 target=ddfacb4cd50b4a26a0a123c3ed33cc46: ability= effect=0 status=0 amount=6 hp=0->0 armor=0->0 msg=Tidal Inferno Beast #38 attacked Tidal Inferno Beast #38.
+seq=4 id=evt-000004 kind=card_damage/CardAttack srcP=1 src=ddfacb4cd50b4a26a0a123c3ed33cc46: targetP=1 target=ddfacb4cd50b4a26a0a123c3ed33cc46: ability= effect=0 status=0 amount=6 hp=4->-1 armor=1->0 msg=Tidal Inferno Beast #38 took 6 damage.
+seq=5 id=evt-000005 kind=death/Death srcP=-1 src=: targetP=1 target=ddfacb4cd50b4a26a0a123c3ed33cc46: ability= effect=0 status=0 amount=0 hp=-1->-1 armor=0->0 msg=Tidal Inferno Beast #38 died.
+seq=6 id=evt-000006 kind=status_applied/StatusApplied srcP=1 src=ddfacb4cd50b4a26a0a123c3ed33cc46: targetP=1 target=ddfacb4cd50b4a26a0a123c3ed33cc46: ability=poison effect=0 status=0 amount=1 hp=0->0 armor=0->0 msg=Poison applied to Tidal Inferno Beast #38.
+
+Raw Structured Battle Events In Snapshot
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=0 srcVisual=1 src=ddfacb4cd50b4a26a0a123c3ed33cc46 serverTargetSeat=0 targetVisual=-1 target= ability=fly effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Tidal Inferno Beast #38 used Fly.
+seq=2 id=evt-000002 kind=skill_begin serverSrcSeat=0 srcVisual=1 src=ddfacb4cd50b4a26a0a123c3ed33cc46 serverTargetSeat=0 targetVisual=-1 target= ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Tidal Inferno Beast #38 used Poison.
+seq=3 id=evt-000003 kind=card_attack serverSrcSeat=0 srcVisual=1 src=ddfacb4cd50b4a26a0a123c3ed33cc46 serverTargetSeat=0 targetVisual=1 target=ddfacb4cd50b4a26a0a123c3ed33cc46 ability= effect=0 status=0 amount=6 hp=0->0 armor=0->0 message=Tidal Inferno Beast #38 attacked Tidal Inferno Beast #38.
+seq=4 id=evt-000004 kind=card_damage serverSrcSeat=0 srcVisual=1 src=ddfacb4cd50b4a26a0a123c3ed33cc46 serverTargetSeat=0 targetVisual=1 target=ddfacb4cd50b4a26a0a123c3ed33cc46 ability= effect=0 status=0 amount=6 hp=4->-1 armor=1->0 message=Tidal Inferno Beast #38 took 6 damage.
+seq=5 id=evt-000005 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=1 target=ddfacb4cd50b4a26a0a123c3ed33cc46 ability= effect=0 status=0 amount=0 hp=-1->-1 armor=0->0 message=Tidal Inferno Beast #38 died.
+seq=6 id=evt-000006 kind=status_applied serverSrcSeat=0 srcVisual=1 src=ddfacb4cd50b4a26a0a123c3ed33cc46 serverTargetSeat=0 targetVisual=1 target=ddfacb4cd50b4a26a0a123c3ed33cc46 ability=poison effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Poison applied to Tidal Inferno Beast #38.
+
+New Raw Logs Fallback Window
+Info: ddfacb4cd50b4a26a0a123c3ed33cc46 hit Tidal Inferno Beast #38 for 6.
+Info: Tidal Inferno Beast #38 died.

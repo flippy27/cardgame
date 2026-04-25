@@ -101,7 +101,7 @@ Arrastra clips a AudioManager desde `Assets/Generated/3DBattle/`
 | **GameplayPresenter3D** | Orquesta todo (suscribe a snapshots, actualiza UI) |
 | **HUD3D** | Muestra HP, mana, turn info, battle log |
 | **EndTurnButton3D** | Botón para terminar turno |
-| **CardTooltip** | Tooltip al hover sobre cartas |
+| **CardDetailOverlayUI** | Vista ampliada/inspeccion de cartas al mantener presionado |
 | **AudioManager** | Reproduce sonidos de eventos |
 | **GameModeManager** | Gestiona modo de juego (local/online) |
 
@@ -117,7 +117,7 @@ Todos estos scripts deben existir en el proyecto:
 - ✅ DragHandler3D.cs
 - ✅ HUD3D.cs
 - ✅ EndTurnButton3D.cs
-- ✅ CardTooltip.cs
+- ✅ CardDetailOverlayUI.cs
 - ✅ AttackEffectSystem.cs
 - ✅ AudioManager.cs
 - ✅ MatchCompletionScreen.cs

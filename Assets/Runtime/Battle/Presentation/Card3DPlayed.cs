@@ -1,5 +1,6 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.Core;
 
@@ -7,63 +8,110 @@ namespace Flippy.CardDuelMobile.UI
 {
     public class Card3DPlayed : MonoBehaviour, ICardDisplay
     {
+        [Header("References")]
+        [SerializeField] private Renderer meshRenderer;
+        [SerializeField] private Collider meshCollider;
+        [SerializeField] private CardSurfaceVisualRenderer visualRenderer;
+        [SerializeField] private TextMeshProUGUI nameText;
+        [SerializeField] private TextMeshProUGUI attackText;
+        [SerializeField] private TextMeshProUGUI healthText;
+        [SerializeField] private TextMeshProUGUI armorText;
+        [SerializeField] private GameObject armorRoot;
+        [SerializeField] private Image attackTypeImage;
+        [SerializeField] private GameObject attackTypeRoot;
+        [SerializeField] private Sprite meleeAttackTypeSprite;
+        [SerializeField] private Sprite rangedAttackTypeSprite;
+        [SerializeField] private Sprite magicAttackTypeSprite;
+        [SerializeField] private TextMeshProUGUI statsText;
+
+        [Header("Runtime Icon Groups")]
+        [SerializeField] private CardIconGroup abilityIconGroup;
+        [SerializeField] private CardIconGroup statusIconGroup;
+
+        [Header("Legacy Ability Icon Slots")]
+        [SerializeField] private CardStateIconSlot[] abilityIconSlots;
+
+        [Header("Legacy Buff/Debuff Icon Slots")]
+        [SerializeField] private CardStateIconSlot[] statusIconSlots;
+
+        [Header("Legacy State Icons")]
+        [SerializeField] private CardStateIconSlot[] stateIconSlots;
+
+        [Header("Colors")]
+        [SerializeField] private Color baseColor = new Color(0.1f, 0.1f, 0.15f, 0.9f);
+
         public BoardCardDto CardData { get; private set; }
         public int PlayerIndex { get; private set; }
 
-        [SerializeField] private Renderer _meshRenderer;
-        [SerializeField] private TextMeshProUGUI _statsText;
-        [SerializeField] private Collider _meshCollider;
-
         private Material _cardMaterial;
+
+        private void Awake()
+        {
+            AutoAssignReferences();
+            EnsureRuntimeMaterial();
+        }
+
+        private void Reset()
+        {
+            AutoAssignReferences();
+        }
+
+        private void OnValidate()
+        {
+            AutoAssignReferences();
+        }
 
         public void Initialize(BoardCardDto card, int playerIndex)
         {
             CardData = card;
             PlayerIndex = playerIndex;
 
-            if (_meshRenderer == null)
+            AutoAssignReferences();
+            EnsureRuntimeMaterial();
+
+            if (meshCollider != null)
             {
-                Debug.LogError("[Card3DPlayed] Mesh renderer not assigned!");
-                return;
+                meshCollider.enabled = true;
+                meshCollider.isTrigger = false;
             }
 
-            if (_statsText == null)
-            {
-                Debug.LogError("[Card3DPlayed] Stats text not assigned!");
-                return;
-            }
-
-            _cardMaterial = new Material(Shader.Find("Standard"));
-            _cardMaterial.color = new Color(0.1f, 0.1f, 0.15f, 0.9f);
-            _meshRenderer.material = _cardMaterial;
-
-            if (_meshCollider != null)
-            {
-                _meshCollider.enabled = true;
-                _meshCollider.isTrigger = false;
-            }
-
-            _statsText.text = FormatStats(card);
-            _statsText.alignment = TextAlignmentOptions.Center;
-            _statsText.fontSize = 0.5f;
-            _statsText.color = Color.white;
-            _statsText.outlineWidth = 0.2f;
-            _statsText.outlineColor = Color.black;
+            UpdateStatsDisplay();
+            visualRenderer?.ApplyCard(card.cardId, "played");
 
             GameLogger.Info("Card3DPlayed", $"Initialized {card.displayName}");
         }
 
-        private string FormatStats(BoardCardDto card)
-        {
-            return $"<b>{card.displayName}</b>\n\n{card.attack} ATK\n{card.currentHealth}/{card.maxHealth} HP";
-        }
-
         public void UpdateStatsDisplay()
         {
-            if (_statsText != null && CardData != null)
+            if (CardData == null)
             {
-                _statsText.text = FormatStats(CardData);
+                return;
             }
+
+            CardVisualCommon.ApplyCardTexts(
+                CardData,
+                nameText,
+                null,
+                null,
+                attackText,
+                healthText,
+                armorText,
+                armorRoot,
+                statsText);
+            CardVisualCommon.ApplyAttackTypeIcon(
+                CardData,
+                attackTypeImage,
+                attackTypeRoot,
+                meleeAttackTypeSprite,
+                rangedAttackTypeSprite,
+                magicAttackTypeSprite);
+            CardVisualCommon.ApplyAbilityIcons(CardData, abilityIconGroup, abilityIconSlots);
+            CardVisualCommon.ApplyStatusIcons(CardData, statusIconGroup, statusIconSlots != null && statusIconSlots.Length > 0 ? statusIconSlots : stateIconSlots);
+        }
+
+        public void SetStateIcons(CardStateVisualData[] states)
+        {
+            CardVisualCommon.ApplyStateIcons(statusIconGroup, stateIconSlots, states);
         }
 
         public void SetColor(Color color)
@@ -72,6 +120,11 @@ namespace Flippy.CardDuelMobile.UI
             {
                 _cardMaterial.color = color;
             }
+        }
+
+        public void ResetColor()
+        {
+            SetColor(baseColor);
         }
 
         public void AnimateDrop(Vector3 targetPos, float duration = 0.3f)
@@ -87,6 +140,108 @@ namespace Flippy.CardDuelMobile.UI
         public void AnimateDeath(float duration = 0.5f)
         {
             StartCoroutine(AnimateDeathCoroutine(duration));
+        }
+
+        private void AutoAssignReferences()
+        {
+            if (meshRenderer == null || !meshRenderer.gameObject.activeSelf)
+            {
+                meshRenderer = FindPreferredRenderer();
+            }
+
+            if (meshCollider == null || !meshCollider.gameObject.activeSelf)
+            {
+                meshCollider = FindPreferredCollider();
+            }
+
+            if (statsText == null)
+            {
+                statsText = GetComponentInChildren<TextMeshProUGUI>(true);
+            }
+
+            attackTypeImage ??= FindImageByName("attacktype", "delivery", "range", "combat");
+            if (attackTypeRoot == null && attackTypeImage != null)
+            {
+                attackTypeRoot = attackTypeImage.gameObject;
+            }
+
+            if (visualRenderer == null)
+            {
+                visualRenderer = GetComponent<CardSurfaceVisualRenderer>() ?? GetComponentInChildren<CardSurfaceVisualRenderer>(true);
+            }
+
+            if (visualRenderer == null && Application.isPlaying)
+            {
+                visualRenderer = gameObject.AddComponent<CardSurfaceVisualRenderer>();
+            }
+
+            if (visualRenderer != null && meshRenderer != null)
+            {
+                visualRenderer.EnsureDefaultMaterialBinding(meshRenderer, "played");
+            }
+        }
+
+        private void EnsureRuntimeMaterial()
+        {
+            if (meshRenderer == null || _cardMaterial != null)
+            {
+                return;
+            }
+
+            var sourceMaterial = meshRenderer.sharedMaterial != null
+                ? meshRenderer.sharedMaterial
+                : new Material(Shader.Find("Standard"));
+
+            _cardMaterial = new Material(sourceMaterial)
+            {
+                color = baseColor
+            };
+            meshRenderer.material = _cardMaterial;
+        }
+
+        private Renderer FindPreferredRenderer()
+        {
+            var renderers = GetComponentsInChildren<Renderer>(true);
+            foreach (var candidate in renderers)
+            {
+                if (candidate.gameObject.activeSelf)
+                {
+                    return candidate;
+                }
+            }
+
+            return renderers.Length > 0 ? renderers[0] : null;
+        }
+
+        private Collider FindPreferredCollider()
+        {
+            var colliders = GetComponentsInChildren<Collider>(true);
+            foreach (var candidate in colliders)
+            {
+                if (candidate.gameObject.activeSelf)
+                {
+                    return candidate;
+                }
+            }
+
+            return colliders.Length > 0 ? colliders[0] : null;
+        }
+
+        private Image FindImageByName(params string[] keywords)
+        {
+            foreach (var image in GetComponentsInChildren<Image>(true))
+            {
+                var objectName = image.gameObject.name.ToLowerInvariant();
+                foreach (var keyword in keywords)
+                {
+                    if (objectName.Contains(keyword))
+                    {
+                        return image;
+                    }
+                }
+            }
+
+            return null;
         }
 
         private System.Collections.IEnumerator AnimateDropCoroutine(Vector3 targetPos, float duration)
@@ -144,7 +299,7 @@ namespace Flippy.CardDuelMobile.UI
                 if (_cardMaterial != null)
                 {
                     var color = _cardMaterial.color;
-                    color.a = Mathf.Lerp(0.9f, 0f, t);
+                    color.a = Mathf.Lerp(baseColor.a, 0f, t);
                     _cardMaterial.color = color;
                 }
 

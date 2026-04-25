@@ -264,7 +264,10 @@ namespace Flippy.CardDuelMobile.UI
                 await coordinator.SetReadyAsync(desiredReady);
 
                 var updatedSnapshot = coordinator.CurrentSnapshot;
-                var updatedLocalSeat = updatedSnapshot != null ? GetSeat(updatedSnapshot, updatedSnapshot.localSeatIndex) : null;
+                var updatedLocalSeatIndex = updatedSnapshot != null
+                    ? SnapshotConverter.ResolveLocalSeatIndex(updatedSnapshot, updatedSnapshot.localSeatIndex)
+                    : -1;
+                var updatedLocalSeat = updatedSnapshot != null ? GetSeat(updatedSnapshot, updatedLocalSeatIndex) : null;
                 var confirmedReady = updatedLocalSeat?.ready ?? _localReady;
 
                 if (updatedSnapshot == null)
@@ -618,7 +621,8 @@ namespace Flippy.CardDuelMobile.UI
             _currentRulesetName = snapshot.rules?.displayName ?? _currentRulesetName;
             _waitingForOpponent = snapshot.connectedPlayers < 2 || snapshot.phase == 0;
             _connectedPlayers = snapshot.connectedPlayers;
-            _localReady = GetSeat(snapshot, snapshot.localSeatIndex)?.ready ?? false;
+            var resolvedLocalSeatIndex = SnapshotConverter.ResolveLocalSeatIndex(snapshot, snapshot.localSeatIndex);
+            _localReady = GetSeat(snapshot, resolvedLocalSeatIndex)?.ready ?? false;
             _readyRequestInFlight = false;
 
             RefreshJoinCodeText();
@@ -645,7 +649,7 @@ namespace Flippy.CardDuelMobile.UI
         private void HandleConnectionLost()
         {
             SetStatus("Connection lost. Trying fallback...");
-            MatchStateMachine.PlayerDisconnected(RemotePlayerPlaceholderId);
+            MatchStateMachine.PlayerDisconnected(MatchStateMachine.CurrentMatch?.player2Id ?? RemotePlayerPlaceholderId);
             RefreshButtonVisibility();
         }
 
@@ -656,11 +660,15 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            var localSeat = GetSeat(snapshot, snapshot.localSeatIndex);
-            var remoteSeat = GetSeat(snapshot, snapshot.localSeatIndex == 0 ? 1 : 0);
+            var resolvedLocalSeatIndex = SnapshotConverter.ResolveLocalSeatIndex(snapshot, snapshot.localSeatIndex);
+            var localSeat = GetSeat(snapshot, resolvedLocalSeatIndex);
+            var remoteSeatIndex = resolvedLocalSeatIndex == 0 ? 1 : resolvedLocalSeatIndex == 1 ? 0 : -1;
+            var remoteSeat = GetSeat(snapshot, remoteSeatIndex);
             var localReady = localSeat?.ready ?? false;
             var remoteReady = remoteSeat?.ready ?? false;
             var remoteConnected = remoteSeat?.connected ?? false;
+            var localPlayerId = SnapshotConverter.ResolveLocalPlayerId(snapshot, resolvedLocalSeatIndex) ?? _authService.CurrentPlayerId;
+            var remotePlayerId = SnapshotConverter.ResolveRemotePlayerId(snapshot, resolvedLocalSeatIndex) ?? RemotePlayerPlaceholderId;
             var resolvedRulesetId = !string.IsNullOrWhiteSpace(snapshot.rulesetId)
                 ? snapshot.rulesetId
                 : snapshot.rules?.rulesetId;
@@ -669,11 +677,15 @@ namespace Flippy.CardDuelMobile.UI
             if (MatchStateMachine.CurrentMatch == null ||
                 !string.Equals(MatchStateMachine.CurrentMatch.matchId, snapshot.matchId, StringComparison.Ordinal))
             {
-                MatchStateMachine.InitializeMatch(snapshot.matchId, _authService.CurrentPlayerId, RemotePlayerPlaceholderId);
+                MatchStateMachine.InitializeMatch(snapshot.matchId, localPlayerId, remotePlayerId);
+            }
+            else
+            {
+                MatchStateMachine.SyncPlayerIds(localPlayerId, remotePlayerId);
             }
 
-            MatchStateMachine.SetPlayerReady(_authService.CurrentPlayerId, localReady);
-            MatchStateMachine.SetPlayerReady(RemotePlayerPlaceholderId, remoteReady);
+            MatchStateMachine.SetPlayerReady(localPlayerId, localReady);
+            MatchStateMachine.SetPlayerReady(remotePlayerId, remoteReady);
 
             if (snapshot.phase == 2)
             {
@@ -681,7 +693,7 @@ namespace Flippy.CardDuelMobile.UI
             }
             else if (snapshot.phase != 0 && !remoteConnected && snapshot.connectedPlayers < 2)
             {
-                MatchStateMachine.PlayerDisconnected(RemotePlayerPlaceholderId);
+                MatchStateMachine.PlayerDisconnected(remotePlayerId);
             }
             else if (remoteConnected && MatchStateMachine.CurrentState == MatchState.PlayerDisconnected)
             {
@@ -701,7 +713,7 @@ namespace Flippy.CardDuelMobile.UI
 
                 if (GamePlayStateManager.Instance != null)
                 {
-                    GamePlayStateManager.Instance.SetMatchInfo(snapshot.matchId, _authService.CurrentPlayerId, RemotePlayerPlaceholderId);
+                    GamePlayStateManager.Instance.SetMatchInfo(snapshot.matchId, localPlayerId, remotePlayerId);
                 }
 
                 SceneBootstrap.LoadMainGame();
@@ -724,7 +736,7 @@ namespace Flippy.CardDuelMobile.UI
             {
                 1 => _localReady ? "Waiting for the other player..." : "Connected. Press Ready.",
                 2 => $"Match in progress. Turn {snapshot.turnNumber}.",
-                3 => snapshot.winnerSeatIndex == snapshot.localSeatIndex ? "Victory!" : "Match completed.",
+                3 => snapshot.winnerSeatIndex == SnapshotConverter.ResolveLocalSeatIndex(snapshot, snapshot.localSeatIndex) ? "Victory!" : "Match completed.",
                 4 => "Match abandoned.",
                 _ => "Connected."
             };

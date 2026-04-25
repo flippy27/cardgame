@@ -1,0 +1,20 @@
+Card Duel Unity Battle Phase Playback
+UTC: 2026-04-25T19:28:42.3102951Z
+MatchId: eb57e343a919472cb3d089a7522080cb
+Turn: 3
+ActivePlayerIndex: 1
+ActivePlayerId: c6e7d90f-eda8-4c2a-9991-996d85617a68
+IsLocalPlayersTurn: False
+Ruleset: Default Rules (11fd524f-49f9-4ffe-b0e3-1ffc06233cad)
+
+Presentation Events
+seq=3 id=evt-000003 kind=card_attack/CardAttack srcP=0 src=b298239331e04ac5b6ef83aa176bc4a2:Alloy Undead Knight #45 targetP=1 target=: ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 msg=Alloy Undead Knight #45 attacked the enemy hero.
+seq=4 id=evt-000004 kind=hero_damage/HeroAttack srcP=0 src=b298239331e04ac5b6ef83aa176bc4a2:Alloy Undead Knight #45 targetP=1 target=: ability= effect=0 status=0 amount=1 hp=20->19 armor=0->0 msg=Seat 1 hero took 1 damage.
+
+Raw Structured Battle Events In Snapshot
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=b298239331e04ac5b6ef83aa176bc4a2 serverTargetSeat=0 targetVisual=-1 target= ability=stun effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 used Stun.
+seq=2 id=evt-000002 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=b298239331e04ac5b6ef83aa176bc4a2 serverTargetSeat=0 targetVisual=-1 target= ability=taunt effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 used Taunt.
+seq=3 id=evt-000003 kind=card_attack serverSrcSeat=1 srcVisual=0 src=b298239331e04ac5b6ef83aa176bc4a2 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 attacked the enemy hero.
+seq=4 id=evt-000004 kind=hero_damage serverSrcSeat=1 srcVisual=0 src=b298239331e04ac5b6ef83aa176bc4a2 serverTargetSeat=0 targetVisual=1 target= ability= effect=0 status=0 amount=1 hp=20->19 armor=0->0 message=Seat 1 hero took 1 damage.
+
+New Raw Logs Fallback Window

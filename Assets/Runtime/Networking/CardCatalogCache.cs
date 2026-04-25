@@ -17,6 +17,7 @@ namespace Flippy.CardDuelMobile.Networking
     {
         private readonly CardGameApiClient _apiClient;
         private Dictionary<string, ServerCardDefinition> _cache;
+        private readonly Dictionary<string, Task<ServerCardDefinition>> _detailLoads;
         private bool _isLoading;
         private bool _isLoaded;
         private Exception _loadError;
@@ -29,6 +30,7 @@ namespace Flippy.CardDuelMobile.Networking
         {
             _apiClient = apiClient ?? new CardGameApiClient();
             _cache = new Dictionary<string, ServerCardDefinition>(StringComparer.OrdinalIgnoreCase);
+            _detailLoads = new Dictionary<string, Task<ServerCardDefinition>>(StringComparer.OrdinalIgnoreCase);
         }
 
         /// <summary>
@@ -74,14 +76,53 @@ namespace Flippy.CardDuelMobile.Networking
         /// </summary>
         public ServerCardDefinition GetCard(string cardId)
         {
-            if (!_isLoaded)
+            return TryGetCard(cardId, out var card) ? card : null;
+        }
+
+        public bool TryGetCard(string cardId, out ServerCardDefinition card)
+        {
+            card = null;
+            if (!_isLoaded || string.IsNullOrWhiteSpace(cardId))
             {
-                Debug.LogWarning("Catalog not loaded. Call LoadCatalog() first.");
+                return false;
+            }
+
+            return _cache.TryGetValue(cardId, out card);
+        }
+
+        public async Task<ServerCardDefinition> EnsureCardDetailsLoaded(string cardId)
+        {
+            if (!_isLoaded || string.IsNullOrWhiteSpace(cardId))
+            {
                 return null;
             }
 
-            _cache.TryGetValue(cardId, out var card);
-            return card;
+            if (_cache.TryGetValue(cardId, out var cachedCard) && HasDetailedPresentation(cachedCard))
+            {
+                return cachedCard;
+            }
+
+            Task<ServerCardDefinition> detailTask;
+            lock (_detailLoads)
+            {
+                if (!_detailLoads.TryGetValue(cardId, out detailTask))
+                {
+                    detailTask = LoadCardDetailsInternal(cardId);
+                    _detailLoads[cardId] = detailTask;
+                }
+            }
+
+            try
+            {
+                return await detailTask;
+            }
+            finally
+            {
+                lock (_detailLoads)
+                {
+                    _detailLoads.Remove(cardId);
+                }
+            }
         }
 
         /// <summary>
@@ -137,6 +178,10 @@ namespace Flippy.CardDuelMobile.Networking
             _isLoaded = false;
             _isLoading = false;
             _loadError = null;
+            lock (_detailLoads)
+            {
+                _detailLoads.Clear();
+            }
         }
 
         /// <summary>
@@ -151,6 +196,33 @@ namespace Flippy.CardDuelMobile.Networking
                 _cache.Count,
                 _cache.Values.Count(c => c.abilities != null && c.abilities.Length > 0)
             );
+        }
+
+        private async Task<ServerCardDefinition> LoadCardDetailsInternal(string cardId)
+        {
+            try
+            {
+                var detailedCard = await _apiClient.FetchCard(cardId);
+                if (detailedCard == null || string.IsNullOrWhiteSpace(detailedCard.cardId))
+                {
+                    return GetCard(cardId);
+                }
+
+                _cache[detailedCard.cardId] = detailedCard;
+                return detailedCard;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"[Catalog] Could not load detailed card '{cardId}': {ex.Message}");
+                return GetCard(cardId);
+            }
+        }
+
+        private static bool HasDetailedPresentation(ServerCardDefinition card)
+        {
+            return card != null &&
+                   card.visualProfiles != null &&
+                   card.visualProfiles.Length > 0;
         }
     }
 }

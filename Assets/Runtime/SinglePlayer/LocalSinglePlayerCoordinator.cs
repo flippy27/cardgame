@@ -1,9 +1,14 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Data;
 using Flippy.CardDuelMobile.Networking;
+using Flippy.CardDuelMobile.Networking.ApiClients;
 
 namespace Flippy.CardDuelMobile.SinglePlayer
 {
@@ -21,6 +26,12 @@ namespace Flippy.CardDuelMobile.SinglePlayer
         public DeckDefinition localPlayerDeck;
         public DeckDefinition enemyDeck;
 
+        [Header("Server Decks")]
+        [SerializeField] private bool useServerDecks = true;
+        [SerializeField] private bool allowInspectorDeckFallback;
+        [SerializeField] private string aiDeckAccountEmail = "playertwo@flippy.com";
+        [SerializeField] private string aiDeckAccountPassword = "123456";
+
         [Header("AI")]
         public AiDifficulty aiDifficulty = AiDifficulty.Medium;
         public float aiFirstActionDelay = 0.45f;
@@ -30,6 +41,13 @@ namespace Flippy.CardDuelMobile.SinglePlayer
         private readonly SimpleCardAiAgent _aiAgent = new();
         private DuelRuntime _runtime;
         private Coroutine _aiRoutine;
+        private bool _startingMatch;
+        private string _currentMatchId = "local-ai-match";
+        private string _localPlayerId = LocalSinglePlayerId;
+        private string _aiPlayerId = LocalAiPlayerId;
+        private const string LocalSinglePlayerMatchIdPrefix = "local-ai-match";
+        private const string LocalSinglePlayerId = "local-player";
+        private const string LocalAiPlayerId = "local-ai";
 
         public static LocalSinglePlayerCoordinator Instance { get; private set; }
 
@@ -45,13 +63,12 @@ namespace Flippy.CardDuelMobile.SinglePlayer
 
         private void Start()
         {
+            TryAutoLoadDefaults();
+
             if (autoStartOnStart)
             {
                 StartMatch();
             }
-
-            // Auto-load missing decks/rules if not assigned
-            TryAutoLoadDefaults();
         }
 
         private void TryAutoLoadDefaults()
@@ -87,25 +104,287 @@ namespace Flippy.CardDuelMobile.SinglePlayer
         /// <summary>
         /// Reinicia la partida local completa.
         /// </summary>
-        public void StartMatch()
+        public async void StartMatch()
         {
-            if (rulesProfile == null || localPlayerDeck == null || enemyDeck == null)
+            if (_startingMatch)
             {
-                Debug.LogWarning("LocalSinglePlayerCoordinator requires rules and both decks.");
                 return;
             }
 
-            if (_aiRoutine != null)
+            _startingMatch = true;
+            try
             {
-                StopCoroutine(_aiRoutine);
-                _aiRoutine = null;
+                TryAutoLoadDefaults();
+
+                if (useServerDecks)
+                {
+                    var loaded = await TryLoadServerDecksAsync();
+                    if (!loaded && !allowInspectorDeckFallback)
+                    {
+                        Debug.LogError("[LocalAI] Could not load real server decks. Local AI match will not start because fallback decks are disabled.");
+                        return;
+                    }
+                }
+
+                if (rulesProfile == null || localPlayerDeck == null || enemyDeck == null)
+                {
+                    Debug.LogWarning("LocalSinglePlayerCoordinator requires rules and both decks.");
+                    return;
+                }
+
+                if (_aiRoutine != null)
+                {
+                    StopCoroutine(_aiRoutine);
+                    _aiRoutine = null;
+                }
+
+                _currentMatchId = $"{LocalSinglePlayerMatchIdPrefix}-{DateTime.UtcNow:yyyyMMddHHmmssfff}";
+                _runtime = new DuelRuntime(rulesProfile);
+                _runtime.StartGame(localPlayerDeck, enemyDeck);
+                GamePlayStateManager.Instance?.SetMatchInfo(_currentMatchId, _localPlayerId, _aiPlayerId);
+
+                PublishSnapshot();
+                TryStartAiTurnIfNeeded();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[LocalAI] Failed to start local AI match: {ex.Message}");
+            }
+            finally
+            {
+                _startingMatch = false;
+            }
+        }
+
+        private async Task<bool> TryLoadServerDecksAsync()
+        {
+            if (!ServiceLocator.TryResolve<CardGameApiClient>(out var apiClient))
+            {
+                apiClient = new CardGameApiClient(ConfigManager.GetApiBaseUrl());
             }
 
-            _runtime = new DuelRuntime(rulesProfile);
-            _runtime.StartGame(localPlayerDeck, enemyDeck);
+            if (!ServiceLocator.TryResolve<AuthService>(out var authService) || !authService.IsAuthenticated)
+            {
+                Debug.LogError("[LocalAI] Cannot load local player's server deck: no authenticated player.");
+                return false;
+            }
 
-            PublishSnapshot();
-            TryStartAiTurnIfNeeded();
+            _localPlayerId = authService.CurrentPlayerId;
+            localPlayerDeck = await FetchFirstServerDeckAsCurrentSessionAsync(apiClient, _localPlayerId, "Local Player");
+            enemyDeck = await FetchFirstServerDeckAsAccountAsync(apiClient, aiDeckAccountEmail, aiDeckAccountPassword, "AI");
+
+            return localPlayerDeck != null && enemyDeck != null;
+        }
+
+        private async Task<DeckDefinition> FetchFirstServerDeckAsCurrentSessionAsync(CardGameApiClient apiClient, string playerId, string label)
+        {
+            if (string.IsNullOrWhiteSpace(playerId))
+            {
+                Debug.LogError($"[LocalAI] {label} player id is missing.");
+                return null;
+            }
+
+            return await FetchFirstServerDeckForPlayerAsync(apiClient, playerId, label);
+        }
+
+        private async Task<DeckDefinition> FetchFirstServerDeckAsAccountAsync(CardGameApiClient apiClient, string email, string password, string label)
+        {
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            {
+                Debug.LogError($"[LocalAI] {label} account credentials are missing.");
+                return null;
+            }
+
+            var backupToken = SecureTokenStorage.GetToken();
+            var backupPlayerId = SecureTokenStorage.GetPlayerId();
+            var backupEmail = SecureTokenStorage.GetEmail();
+            var backupExpiry = SecureTokenStorage.GetTokenExpiry();
+
+            try
+            {
+                // Login as the AI account without leaking the local player's bearer token into auth.
+                SecureTokenStorage.SaveToken(null);
+                SecureTokenStorage.SavePlayerId(string.Empty);
+                SecureTokenStorage.SaveEmail(string.Empty);
+                SecureTokenStorage.SaveTokenExpiry(0);
+
+                var authClient = new AuthApiClient(ConfigManager.GetApiBaseUrl());
+                var auth = await authClient.Login(email, password);
+                if (auth == null || string.IsNullOrWhiteSpace(auth.token) || string.IsNullOrWhiteSpace(auth.resolvedUserId))
+                {
+                    Debug.LogError($"[LocalAI] Could not login {label} account '{email}'.");
+                    return null;
+                }
+
+                _aiPlayerId = auth.resolvedUserId;
+                SecureTokenStorage.SaveToken(auth.token);
+                SecureTokenStorage.SavePlayerId(auth.resolvedUserId);
+                SecureTokenStorage.SaveEmail(email);
+                SecureTokenStorage.SaveTokenExpiry(DateTimeOffset.UtcNow.AddHours(24).ToUnixTimeSeconds());
+
+                return await FetchFirstServerDeckForPlayerAsync(apiClient, auth.resolvedUserId, label);
+            }
+            finally
+            {
+                RestoreSecureSession(backupToken, backupPlayerId, backupEmail, backupExpiry);
+            }
+        }
+
+        private async Task<DeckDefinition> FetchFirstServerDeckForPlayerAsync(CardGameApiClient apiClient, string playerId, string label)
+        {
+            var decks = await apiClient.FetchPlayerDecksAsync(playerId);
+            var deck = decks?
+                .Where(item => item != null && !string.IsNullOrWhiteSpace(item.deckId))
+                .OrderByDescending(item => item.isActive)
+                .FirstOrDefault();
+
+            if (deck == null)
+            {
+                Debug.LogError($"[LocalAI] {label} player '{playerId}' has no server decks.");
+                return null;
+            }
+
+            var cards = await apiClient.FetchCardsByDeckAsync(playerId, deck.deckId);
+            if ((cards == null || cards.Count == 0) && deck.cardIds != null && deck.cardIds.Count > 0)
+            {
+                cards = await FetchCardsOneByOneAsync(apiClient, deck.cardIds);
+            }
+
+            if (cards == null || cards.Count == 0)
+            {
+                Debug.LogError($"[LocalAI] {label} deck '{deck.deckId}' resolved to 0 cards.");
+                return null;
+            }
+
+            var runtimeDeck = BuildRuntimeDeck(deck, cards);
+            Debug.Log($"[LocalAI] Loaded {label} server deck '{runtimeDeck.displayName}' ({runtimeDeck.deckId}) with {runtimeDeck.GetTotalCards()} cards for player '{playerId}'.");
+            return runtimeDeck;
+        }
+
+        private static async Task<List<ServerCardDefinition>> FetchCardsOneByOneAsync(CardGameApiClient apiClient, IEnumerable<string> cardIds)
+        {
+            var results = new List<ServerCardDefinition>();
+            foreach (var cardId in cardIds)
+            {
+                if (string.IsNullOrWhiteSpace(cardId))
+                {
+                    continue;
+                }
+
+                try
+                {
+                    var card = await apiClient.FetchCard(cardId);
+                    if (card != null)
+                    {
+                        results.Add(card);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogWarning($"[LocalAI] Could not fetch card '{cardId}' for local AI deck: {ex.Message}");
+                }
+            }
+
+            return results;
+        }
+
+        private static DeckDefinition BuildRuntimeDeck(DeckDto deck, List<ServerCardDefinition> cards)
+        {
+            var runtimeDeck = ScriptableObject.CreateInstance<DeckDefinition>();
+            runtimeDeck.hideFlags = HideFlags.DontSave;
+            runtimeDeck.deckId = deck.deckId;
+            runtimeDeck.displayName = string.IsNullOrWhiteSpace(deck.displayName) ? deck.deckName : deck.displayName;
+            runtimeDeck.description = deck.description;
+            runtimeDeck.deckType = "Server";
+            runtimeDeck.cards = cards
+                .Where(card => card != null && !string.IsNullOrWhiteSpace(card.cardId))
+                .Select(card => new DeckDefinition.DeckCard
+                {
+                    card = BuildRuntimeCard(card),
+                    quantity = 1
+                })
+                .ToArray();
+
+            return runtimeDeck;
+        }
+
+        private static CardDefinition BuildRuntimeCard(ServerCardDefinition serverCard)
+        {
+            var card = ScriptableObject.CreateInstance<CardDefinition>();
+            card.hideFlags = HideFlags.DontSave;
+            card.cardId = serverCard.cardId;
+            card.displayName = FirstNonEmpty(serverCard.displayName, serverCard.name, serverCard.cardId);
+            card.description = serverCard.description;
+            card.manaCost = serverCard.manaCost;
+            card.attack = serverCard.attack;
+            card.health = serverCard.health;
+            card.armor = serverCard.armor;
+            card.cardType = ParseEnum(serverCard.cardType, CardType.Unit);
+            card.rarity = ParseEnum(serverCard.rarity, CardRarity.Common);
+            card.unitType = ParseUnitType(serverCard.unitType);
+            card.attackMotionLevel = serverCard.battlePresentation?.attackMotionLevel ?? 0;
+            card.attackShakeLevel = serverCard.battlePresentation?.attackShakeLevel ?? 0;
+            card.attackDeliveryType = FirstNonEmpty(serverCard.attackDeliveryType, serverCard.battlePresentation?.attackDeliveryType);
+            card.abilities = BuildRuntimeAbilities(serverCard.abilities);
+            return card;
+        }
+
+        private static AbilityDefinition[] BuildRuntimeAbilities(CardAbilityDto[] abilities)
+        {
+            if (abilities == null || abilities.Length == 0)
+            {
+                return Array.Empty<AbilityDefinition>();
+            }
+
+            return abilities
+                .Where(ability => ability != null && !string.IsNullOrWhiteSpace(ability.abilityId))
+                .Select(ability =>
+                {
+                    var definition = ScriptableObject.CreateInstance<AbilityDefinition>();
+                    definition.hideFlags = HideFlags.DontSave;
+                    definition.abilityId = ability.abilityId;
+                    definition.displayName = FirstNonEmpty(ability.displayName, ability.abilityId);
+                    return definition;
+                })
+                .ToArray();
+        }
+
+        private static UnitType ParseUnitType(int unitType)
+        {
+            return unitType switch
+            {
+                1 => UnitType.Ranged,
+                2 => UnitType.Magic,
+                _ => UnitType.Melee
+            };
+        }
+
+        private static TEnum ParseEnum<TEnum>(string value, TEnum fallback) where TEnum : struct
+        {
+            return !string.IsNullOrWhiteSpace(value) && Enum.TryParse(value, true, out TEnum parsed)
+                ? parsed
+                : fallback;
+        }
+
+        private static string FirstNonEmpty(params string[] values)
+        {
+            foreach (var value in values)
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    return value;
+                }
+            }
+
+            return string.Empty;
+        }
+
+        private static void RestoreSecureSession(string token, string playerId, string email, long expiry)
+        {
+            SecureTokenStorage.SaveToken(token);
+            SecureTokenStorage.SavePlayerId(playerId);
+            SecureTokenStorage.SaveEmail(email);
+            SecureTokenStorage.SaveTokenExpiry(expiry);
         }
 
         /// <summary>
@@ -262,6 +541,22 @@ namespace Flippy.CardDuelMobile.SinglePlayer
             snapshot.matchPhase = _runtime.State.DuelEnded
                 ? MatchPhase.Completed
                 : MatchPhase.InProgress;
+            snapshot.matchId = _currentMatchId;
+            snapshot.activePlayerId = snapshot.activePlayerIndex == localPlayerIndex ? _localPlayerId : _aiPlayerId;
+            snapshot.isLocalPlayersTurn = snapshot.activePlayerIndex == localPlayerIndex;
+            if (snapshot.players != null)
+            {
+                if (localPlayerIndex >= 0 && localPlayerIndex < snapshot.players.Length)
+                {
+                    snapshot.players[localPlayerIndex].playerId = _localPlayerId;
+                }
+
+                var aiPlayerIndex = 1 - localPlayerIndex;
+                if (aiPlayerIndex >= 0 && aiPlayerIndex < snapshot.players.Length)
+                {
+                    snapshot.players[aiPlayerIndex].playerId = _aiPlayerId;
+                }
+            }
 
             snapshot.localPlayerReady = true;
             snapshot.remotePlayerReady = true;

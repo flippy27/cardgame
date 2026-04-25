@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Flippy.CardDuelMobile.Battle;
 
 namespace Flippy.CardDuelMobile.Networking.ApiClients
 {
@@ -122,9 +123,45 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         public int manaCost;
         public int attack;
         public int health;
+        public int armor;
+        public int unitType = -1;
         public string cardType;
         public string rarity;
-        public string[] abilities;
+        public string attackDeliveryType;
+        public CardAbilityDto[] abilities;
+        public CardBattlePresentationDto battlePresentation;
+        public CardVisualProfileDto[] visualProfiles;
+    }
+
+    [System.Serializable]
+    public sealed class CardBattlePresentationDto
+    {
+        public int attackMotionLevel;
+        public int attackShakeLevel;
+        public string attackDeliveryType;
+        public string impactFxId;
+        public string attackAudioCueId;
+        public string metadataJson;
+    }
+
+    [System.Serializable]
+    public sealed class CardVisualProfileDto
+    {
+        public string profileKey;
+        public string displayName;
+        public bool isDefault;
+        public CardVisualLayerDto[] layers;
+    }
+
+    [System.Serializable]
+    public sealed class CardVisualLayerDto
+    {
+        public string surface;
+        public string layer;
+        public string sourceKind;
+        public string assetRef;
+        public int sortOrder;
+        public string metadataJson;
     }
 
     [System.Serializable]

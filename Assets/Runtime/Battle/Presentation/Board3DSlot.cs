@@ -18,6 +18,7 @@ namespace Flippy.CardDuelMobile.UI
         private Renderer _renderer;
         private Material _defaultMaterial;
         private Material _highlightMaterial;
+        private Coroutine _pulseCoroutine;
 
         public void Initialize(Material defaultMat, float size)
         {
@@ -81,6 +82,21 @@ namespace Flippy.CardDuelMobile.UI
         public void AnimateDeath(float duration = 0.5f)
         {
             StartCoroutine(AnimateDeathCoroutine(duration));
+        }
+
+        public void PulseImpact(Color pulseColor, float intensity, float duration)
+        {
+            if (_renderer == null || duration <= 0f)
+            {
+                return;
+            }
+
+            if (_pulseCoroutine != null)
+            {
+                StopCoroutine(_pulseCoroutine);
+            }
+
+            _pulseCoroutine = StartCoroutine(PulseImpactCoroutine(pulseColor, intensity, duration));
         }
 
         private System.Collections.IEnumerator AnimateDropCoroutine(Vector3 targetPos, float duration)
@@ -148,6 +164,48 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             Destroy(gameObject);
+        }
+
+        private System.Collections.IEnumerator PulseImpactCoroutine(Color pulseColor, float intensity, float duration)
+        {
+            var material = _renderer.material;
+            if (material == null)
+            {
+                yield break;
+            }
+
+            var originalColor = material.color;
+            var hasEmissionColor = material.HasProperty("_EmissionColor");
+            var originalEmission = hasEmissionColor ? material.GetColor("_EmissionColor") : Color.black;
+
+            if (hasEmissionColor)
+            {
+                material.EnableKeyword("_EMISSION");
+            }
+
+            var elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                var t = Mathf.Clamp01(elapsed / duration);
+                var envelope = Mathf.Sin(t * Mathf.PI);
+                material.color = Color.Lerp(originalColor, pulseColor, envelope * 0.45f);
+
+                if (hasEmissionColor)
+                {
+                    material.SetColor("_EmissionColor", pulseColor * (intensity * envelope));
+                }
+
+                yield return null;
+            }
+
+            material.color = originalColor;
+            if (hasEmissionColor)
+            {
+                material.SetColor("_EmissionColor", originalEmission);
+            }
+
+            _pulseCoroutine = null;
         }
     }
 }

@@ -94,7 +94,7 @@ namespace Flippy.CardDuelMobile.Networking
             catch (Exception ex)
             {
                 GameLogger.Error("MatchHttp", $"SetReady failed: {ex.Message}");
-                ErrorOccurred?.Invoke(ex.Message);
+                HandleGameplayActionError("SetReady", ex);
             }
         }
 
@@ -113,7 +113,7 @@ namespace Flippy.CardDuelMobile.Networking
             catch (Exception ex)
             {
                 GameLogger.Error("MatchHttp", $"PlayCard failed: {ex.Message}");
-                ErrorOccurred?.Invoke(ex.Message);
+                HandleGameplayActionError("PlayCard", ex);
             }
         }
 
@@ -132,7 +132,7 @@ namespace Flippy.CardDuelMobile.Networking
             catch (Exception ex)
             {
                 GameLogger.Error("MatchHttp", $"EndTurn failed: {ex.Message}");
-                ErrorOccurred?.Invoke(ex.Message);
+                HandleGameplayActionError("EndTurn", ex);
             }
         }
 
@@ -151,7 +151,7 @@ namespace Flippy.CardDuelMobile.Networking
             catch (Exception ex)
             {
                 GameLogger.Error("MatchHttp", $"Forfeit failed: {ex.Message}");
-                ErrorOccurred?.Invoke(ex.Message);
+                HandleGameplayActionError("Forfeit", ex);
             }
         }
 
@@ -201,6 +201,7 @@ namespace Flippy.CardDuelMobile.Networking
 
             _currentSnapshot = snapshot;
             SyncRulesState(snapshot);
+            SyncMatchIdentity(snapshot);
             var resolvedSeatIndex = SnapshotConverter.ResolveLocalSeatIndex(snapshot, seatIndex);
             if (resolvedSeatIndex is 0 or 1)
             {
@@ -213,7 +214,9 @@ namespace Flippy.CardDuelMobile.Networking
             if (_lastProcessedSnapshot == null ||
                 _lastProcessedSnapshot.phase != snapshot.phase ||
                 _lastProcessedSnapshot.turnNumber != snapshot.turnNumber ||
-                _lastProcessedSnapshot.activeSeatIndex != snapshot.activeSeatIndex)
+                _lastProcessedSnapshot.activeSeatIndex != snapshot.activeSeatIndex ||
+                !string.Equals(_lastProcessedSnapshot.activePlayerId, snapshot.activePlayerId, StringComparison.Ordinal) ||
+                _lastProcessedSnapshot.isLocalPlayersTurn != snapshot.isLocalPlayersTurn)
             {
                 GameLogger.Info("MatchHttp", $"Snapshot changed: phase={snapshot.phase}, turn={snapshot.turnNumber}, active={snapshot.activeSeatIndex}");
                 SnapshotChanged?.Invoke(snapshot);
@@ -255,6 +258,19 @@ namespace Flippy.CardDuelMobile.Networking
             }
         }
 
+        private void SyncMatchIdentity(MatchSnapshot snapshot)
+        {
+            if (snapshot == null || GamePlayStateManager.Instance == null)
+            {
+                return;
+            }
+
+            var resolvedSeatIndex = SnapshotConverter.ResolveLocalSeatIndex(snapshot, seatIndex);
+            var localPlayerId = SnapshotConverter.ResolveLocalPlayerId(snapshot, resolvedSeatIndex) ?? playerId;
+            var remotePlayerId = SnapshotConverter.ResolveRemotePlayerId(snapshot, resolvedSeatIndex);
+            GamePlayStateManager.Instance.SetMatchInfo(snapshot.matchId, localPlayerId, remotePlayerId);
+        }
+
         private async System.Threading.Tasks.Task TryFetchPersistedRulesAsync(string snapshotMatchId)
         {
             if (_rulesSyncInFlight || string.IsNullOrWhiteSpace(snapshotMatchId))
@@ -289,6 +305,35 @@ namespace Flippy.CardDuelMobile.Networking
             finally
             {
                 _rulesSyncInFlight = false;
+            }
+        }
+
+        private void HandleGameplayActionError(string actionName, Exception ex)
+        {
+            if (GameplayActionErrorParser.ShouldRefreshSnapshot(ex))
+            {
+                _ = TryRefreshSnapshotAfterGameplayErrorAsync(actionName);
+            }
+
+            ErrorOccurred?.Invoke(GameplayActionErrorParser.ToUserMessage(ex, actionName));
+        }
+
+        private async System.Threading.Tasks.Task TryRefreshSnapshotAfterGameplayErrorAsync(string actionName)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(matchId) || string.IsNullOrWhiteSpace(playerId))
+                {
+                    return;
+                }
+
+                var snapshot = await _apiClient.GetSnapshot(matchId, playerId);
+                ProcessSnapshot(snapshot);
+                GameLogger.Info("MatchHttp", $"{actionName}: snapshot refreshed after gameplay error.");
+            }
+            catch (Exception refreshException)
+            {
+                GameLogger.Warning("MatchHttp", $"{actionName}: could not refresh snapshot after gameplay error: {refreshException.Message}");
             }
         }
     }

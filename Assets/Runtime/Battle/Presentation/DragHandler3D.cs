@@ -1,14 +1,14 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.Core;
-using System.Linq;
 
 namespace Flippy.CardDuelMobile.UI
 {
     /// <summary>
-    /// Maneja drag & drop en 3D usando raycast.
-    /// Detecta cartas en mano, slots válidos, valida drops.
+    /// Handles local hand dragging plus card inspection for both hand and board cards.
+    /// Uses the new Input System and supports mouse + touch.
     /// </summary>
     public class DragHandler3D : MonoBehaviour
     {
@@ -16,7 +16,18 @@ namespace Flippy.CardDuelMobile.UI
         [SerializeField] private Board3DManager board3DManager;
         [SerializeField] private Camera mainCamera;
         [SerializeField] private GameplayPresenter3D presenter;
+        [SerializeField] private CardDetailOverlayUI cardDetailOverlay;
         public GameObject dragGhost3DPrefab;
+
+        [Header("Drag")]
+        public float dragMinDistance = 0.5f;
+        public float dragMinScreenDistance = 24f;
+        public float quickDragStartScreenDistance = 24f;
+        public float detailToDragUpwardDistance = 80f;
+
+        [Header("Inspect")]
+        public float inspectHoldDelay = 0.35f;
+        public float inspectMovementThreshold = 16f;
 
         public Hand3DManager Hand3DManager
         {
@@ -30,163 +41,242 @@ namespace Flippy.CardDuelMobile.UI
             set => board3DManager = value;
         }
 
-        [Header("Drag")]
-        public float dragMinDistance = 0.5f;
-
         private Card3DView _draggedCard;
-        private Vector3 _dragStartPos;
+        private Vector3 _dragStartWorldPos;
+        private Vector2 _dragStartScreenPos;
         private float _dragDistance;
+        private float _dragScreenDistance;
         private bool _isDragging;
         private Board3DSlot _hoveredSlot;
         private GameObject _dragGhostInstance;
         private DragGhost3D _dragGhost;
-        private float _lastHoveredDistance;
+
+        private ICardDisplay _hoveredCard;
+        private ICardDisplay _inspectCandidate;
+        private Vector2 _inspectAnchorScreenPos;
+        private float _inspectAnchorTime;
+        private Card3DView _pressedHandCard;
+        private Vector2 _pressStartScreenPos;
+        private Vector2 _detailInteractionStartScreenPos;
 
         private void Start()
         {
-            if (mainCamera == null)
-                mainCamera = Camera.main;
+            EnsureReferences();
         }
 
         private void Update()
         {
-            HandleMouseInput();
+            EnsureReferences();
+
+            if (!TryGetPointerState(out var pointerState))
+            {
+                if (_isDragging)
+                {
+                    EndDrag();
+                }
+                else
+                {
+                    ClearHoverState();
+                    ResetInspectCandidate();
+                }
+
+                return;
+            }
+
+            if (_isDragging)
+            {
+                UpdateDragging(pointerState);
+                return;
+            }
+
+            var hoveredCard = RaycastCard(pointerState.screenPosition);
+            UpdateHoveredCard(hoveredCard, pointerState);
+
+            if (pointerState.pressedThisFrame)
+            {
+                HandlePointerPressed(pointerState, hoveredCard);
+            }
+
+            if (pointerState.isPressed)
+            {
+                HandlePointerHeld(pointerState, hoveredCard);
+            }
+            else
+            {
+                HandlePointerIdle(pointerState, hoveredCard);
+            }
+
+            if (pointerState.releasedThisFrame)
+            {
+                HandlePointerReleased(pointerState, hoveredCard);
+            }
         }
 
-        private void HandleMouseInput()
+        private void HandlePointerPressed(PointerState pointerState, ICardDisplay hoveredCard)
         {
-            var mouse = Mouse.current;
-            if (mouse == null)
+            if (cardDetailOverlay != null &&
+                cardDetailOverlay.IsVisible &&
+                hoveredCard == null)
+            {
+                cardDetailOverlay.Hide();
+            }
+
+            _pressStartScreenPos = pointerState.screenPosition;
+            _detailInteractionStartScreenPos = pointerState.screenPosition;
+            _pressedHandCard = hoveredCard as Card3DView;
+
+            if (hoveredCard == null)
+            {
+                ResetInspectCandidate();
+            }
+            else if (_inspectCandidate != hoveredCard)
+            {
+                StartInspectCandidate(hoveredCard, pointerState.screenPosition);
+            }
+        }
+
+        private void HandlePointerHeld(PointerState pointerState, ICardDisplay hoveredCard)
+        {
+            if (TryBeginDragFromDetail(pointerState))
+            {
                 return;
-
-            // Mouse pressed
-            if (mouse.leftButton.wasPressedThisFrame)
-            {
-                TryStartDrag();
             }
 
-            // Mouse moved
-            if (mouse.leftButton.isPressed && _isDragging)
+            if (_pressedHandCard != null &&
+                (cardDetailOverlay == null || !cardDetailOverlay.IsVisible) &&
+                Vector2.Distance(pointerState.screenPosition, _pressStartScreenPos) >= quickDragStartScreenDistance)
             {
-                UpdateDrag();
+                BeginDrag(_pressedHandCard, pointerState.screenPosition);
+                return;
             }
 
-            // Mouse released
-            if (mouse.leftButton.wasReleasedThisFrame && _isDragging)
+            UpdateInspectCandidate(pointerState, hoveredCard, requiresPressed: true);
+        }
+
+        private void HandlePointerIdle(PointerState pointerState, ICardDisplay hoveredCard)
+        {
+            ResetInspectCandidate();
+
+            if (cardDetailOverlay != null && cardDetailOverlay.IsVisible)
+            {
+                cardDetailOverlay.Hide();
+            }
+        }
+
+        private void HandlePointerReleased(PointerState pointerState, ICardDisplay hoveredCard)
+        {
+            _pressedHandCard = null;
+            ResetInspectCandidate();
+
+            if (cardDetailOverlay != null && cardDetailOverlay.IsVisible)
+            {
+                cardDetailOverlay.Hide();
+            }
+
+            if (pointerState.usingTouch && hoveredCard == null)
+            {
+                ClearHoverState();
+            }
+        }
+
+        private void UpdateDragging(PointerState pointerState)
+        {
+            if (pointerState.isPressed)
+            {
+                UpdateDrag(pointerState.screenPosition);
+            }
+
+            if (pointerState.releasedThisFrame || !pointerState.isPressed)
             {
                 EndDrag();
             }
         }
 
-        private void TryStartDrag()
+        private void BeginDrag(Card3DView cardView, Vector2 screenPosition)
         {
-            var ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-
-            // Raycast para cartas
-            if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+            if (cardView == null)
             {
-                var cardView = hit.collider.GetComponentInParent<Card3DView>();
-                if (cardView != null && cardView.PlayerIndex == 0) // Solo cartas locales (mano)
-                {
-                    _draggedCard = cardView;
-                    _dragStartPos = hit.point;
-                    _dragDistance = 0;
-                    _isDragging = true;
-
-                    // Save original board card positions for preview restore
-                    if (presenter != null)
-                    {
-                        presenter.SaveOriginalCardPositions(0);
-                    }
-
-                    // Spawn drag ghost
-                    if (dragGhost3DPrefab != null)
-                    {
-                        _dragGhostInstance = Instantiate(dragGhost3DPrefab);
-                        _dragGhost = _dragGhostInstance.GetComponent<DragGhost3D>();
-
-                        // Disable collider so raycast passes through to slots
-                        var collider = _dragGhostInstance.GetComponent<Collider>();
-                        if (collider != null)
-                            collider.enabled = false;
-
-                        _dragGhost.SetTargetPosition(Mouse.current.position.ReadValue(), mainCamera);
-                        Debug.Log($"[DragHandler3D] Spawned drag ghost for {cardView.CardData.displayName}");
-                    }
-                    else
-                    {
-                        Debug.LogWarning("[DragHandler3D] DragGhost3DPrefab not assigned!");
-                    }
-
-                    Debug.Log($"[DragHandler3D] Started dragging {cardView.CardData.displayName}");
-                }
+                return;
             }
+
+            if (cardDetailOverlay != null && cardDetailOverlay.IsShowing(cardView))
+            {
+                cardDetailOverlay.Hide();
+            }
+
+            _draggedCard = cardView;
+            _dragStartWorldPos = cardView.transform.position;
+            _dragStartScreenPos = screenPosition;
+            _dragDistance = 0f;
+            _dragScreenDistance = 0f;
+            _isDragging = true;
+            _pressedHandCard = null;
+            ResetInspectCandidate();
+
+            presenter?.SaveOriginalCardPositions(0);
+            SpawnDragGhost(screenPosition, cardView);
+            UpdateDrag(screenPosition);
+
+            Debug.Log($"[DragHandler3D] Started dragging {cardView.CardData.displayName}");
         }
 
-        private void UpdateDrag()
+        private bool TryBeginDragFromDetail(PointerState pointerState)
+        {
+            if (cardDetailOverlay == null || !cardDetailOverlay.IsVisible)
+            {
+                return false;
+            }
+
+            var handCard = cardDetailOverlay.CurrentHandCardSource;
+            if (handCard == null)
+            {
+                return false;
+            }
+
+            var upwardDelta = pointerState.screenPosition.y - _detailInteractionStartScreenPos.y;
+            if (upwardDelta < detailToDragUpwardDistance)
+            {
+                return false;
+            }
+
+            BeginDrag(handCard, pointerState.screenPosition);
+            return true;
+        }
+
+        private void UpdateDrag(Vector2 screenPosition)
         {
             if (_draggedCard == null)
+            {
                 return;
+            }
 
-            var mousePos = Mouse.current.position.ReadValue();
-            var ray = mainCamera.ScreenPointToRay(mousePos);
+            _dragScreenDistance = Vector2.Distance(_dragStartScreenPos, screenPosition);
 
-            // Update drag ghost position
             if (_dragGhost != null)
             {
-                _dragGhost.SetTargetPosition(mousePos, mainCamera);
+                _dragGhost.SetTargetPosition(screenPosition, mainCamera);
                 var ghostWorldPos = _dragGhostInstance.transform.position;
-                _dragDistance = Vector3.Distance(_dragStartPos, ghostWorldPos);
+                _dragDistance = Vector3.Distance(_dragStartWorldPos, ghostWorldPos);
             }
 
-            // Detectar slot hovereado (ortho camera - single raycast for closest hit only, skip drag ghost)
-            RaycastHit hit;
-            Board3DSlot detectedSlot = null;
-
-            // First try: raycast and skip drag ghost if we hit it
-            if (Physics.Raycast(ray, out hit, 100f))
-            {
-                if (_dragGhostInstance != null && hit.collider.gameObject == _dragGhostInstance)
-                {
-                    // Hit drag ghost, raycast again with layer mask excluding it
-                    int dragGhostLayer = _dragGhostInstance.layer;
-                    int layerMask = ~(1 << dragGhostLayer);
-                    if (Physics.Raycast(ray, out hit, 100f, layerMask))
-                    {
-                        var slot = hit.collider.GetComponentInParent<Board3DSlot>();
-                        if (slot == null)
-                            slot = hit.collider.GetComponent<Board3DSlot>();
-                        if (slot != null && slot.PlayerIndex == 0)
-                            detectedSlot = slot;
-                    }
-                }
-                else
-                {
-                    var slot = hit.collider.GetComponentInParent<Board3DSlot>();
-                    if (slot == null)
-                        slot = hit.collider.GetComponent<Board3DSlot>();
-                    if (slot != null && slot.PlayerIndex == 0)
-                        detectedSlot = slot;
-                }
-            }
-
-            SetHoveredSlot(detectedSlot);
+            SetHoveredSlot(RaycastBoardSlot(screenPosition));
         }
 
         private void EndDrag()
         {
             if (_draggedCard == null)
+            {
                 return;
+            }
 
-            Debug.Log($"[DragHandler3D] EndDrag - Distance: {_dragDistance}, HoveredSlot: {_hoveredSlot?.Slot}");
+            Debug.Log($"[DragHandler3D] EndDrag - WorldDistance: {_dragDistance}, ScreenDistance: {_dragScreenDistance}, HoveredSlot: {_hoveredSlot?.Slot}");
 
-            // Si moved enough y hovering slot válido, intentar jugar
-            if (_dragDistance >= dragMinDistance && _hoveredSlot != null)
+            if ((_dragDistance >= dragMinDistance || _dragScreenDistance >= dragMinScreenDistance) &&
+                _hoveredSlot != null)
             {
                 TryPlayCard();
             }
 
-            // Destroy drag ghost
             if (_dragGhostInstance != null)
             {
                 Destroy(_dragGhostInstance);
@@ -195,10 +285,8 @@ namespace Flippy.CardDuelMobile.UI
                 Debug.Log("[DragHandler3D] Drag ghost destroyed");
             }
 
-            // Limpiar
             _draggedCard = null;
             _isDragging = false;
-
             SetHoveredSlot(null);
         }
 
@@ -211,9 +299,8 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             var targetSlot = _hoveredSlot.Slot;
-            Debug.Log($"[DragHandler3D] TryPlayCard: {_draggedCard.CardData.displayName} → {targetSlot}");
+            Debug.Log($"[DragHandler3D] TryPlayCard: {_draggedCard.CardData.displayName} -> {targetSlot}");
 
-            // Validar: turno local
             var snapshot = GameplayPresenter3D.GetLatestSnapshot();
             if (snapshot == null)
             {
@@ -221,10 +308,7 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            var isInProgress = snapshot.matchPhase == MatchPhase.InProgress && !snapshot.duelEnded;
-            var isLocalTurn = isInProgress &&
-                              (snapshot.isLocalPlayersTurn ||
-                               snapshot.activePlayerIndex == snapshot.localPlayerIndex);
+            var isLocalTurn = SnapshotTurnAuthority.IsLocalTurn(snapshot);
             if (!isLocalTurn)
             {
                 Debug.LogWarning("[DragHandler3D] No es turno del jugador local");
@@ -255,34 +339,340 @@ namespace Flippy.CardDuelMobile.UI
             presenter.RequestPlayCard(_draggedCard.CardData.runtimeId, targetSlot);
         }
 
+        private void UpdateHoveredCard(ICardDisplay hoveredCard, PointerState pointerState)
+        {
+            _hoveredCard = hoveredCard;
+
+            if (pointerState.usingTouch && !pointerState.isPressed)
+            {
+                hand3DManager?.ClearHoveredCard();
+                return;
+            }
+
+            hand3DManager?.SetHoveredCard(hoveredCard as Card3DView);
+        }
+
+        private void ClearHoverState()
+        {
+            _hoveredCard = null;
+            hand3DManager?.ClearHoveredCard();
+        }
+
+        private void UpdateInspectCandidate(PointerState pointerState, ICardDisplay hoveredCard, bool requiresPressed)
+        {
+            var canInspect = hoveredCard != null &&
+                             (!requiresPressed || pointerState.isPressed) &&
+                             (!pointerState.usingTouch || pointerState.isPressed);
+
+            if (!canInspect)
+            {
+                ResetInspectCandidate();
+                return;
+            }
+
+            if (cardDetailOverlay != null &&
+                cardDetailOverlay.IsVisible &&
+                pointerState.isPressed &&
+                hoveredCard != null &&
+                !cardDetailOverlay.IsShowing(hoveredCard))
+            {
+                ShowDetail(hoveredCard, pointerState.screenPosition);
+                StartInspectCandidate(hoveredCard, pointerState.screenPosition);
+                return;
+            }
+
+            if (_inspectCandidate != hoveredCard ||
+                Vector2.Distance(pointerState.screenPosition, _inspectAnchorScreenPos) > inspectMovementThreshold)
+            {
+                StartInspectCandidate(hoveredCard, pointerState.screenPosition);
+                return;
+            }
+
+            if (cardDetailOverlay == null ||
+                cardDetailOverlay.IsShowing(hoveredCard) ||
+                Time.unscaledTime - _inspectAnchorTime < inspectHoldDelay)
+            {
+                return;
+            }
+
+            ShowDetail(hoveredCard, pointerState.screenPosition);
+        }
+
+        private void StartInspectCandidate(ICardDisplay hoveredCard, Vector2 screenPosition)
+        {
+            _inspectCandidate = hoveredCard;
+            _inspectAnchorScreenPos = screenPosition;
+            _inspectAnchorTime = Time.unscaledTime;
+        }
+
+        private void ResetInspectCandidate()
+        {
+            _inspectCandidate = null;
+            _inspectAnchorScreenPos = Vector2.zero;
+            _inspectAnchorTime = 0f;
+        }
+
+        private void ShowDetail(ICardDisplay cardDisplay, Vector2 screenPosition)
+        {
+            if (cardDetailOverlay == null || cardDisplay?.CardData == null)
+            {
+                return;
+            }
+
+            cardDetailOverlay.Show(cardDisplay, BuildOwnerLabel(cardDisplay));
+            _detailInteractionStartScreenPos = screenPosition;
+        }
+
+        private static string BuildOwnerLabel(ICardDisplay cardDisplay)
+        {
+            if (cardDisplay is Card3DView)
+            {
+                return "Your hand";
+            }
+
+            return cardDisplay.PlayerIndex == 0 ? "Your board" : "Opponent board";
+        }
+
+        private ICardDisplay RaycastCard(Vector2 screenPosition)
+        {
+            if (mainCamera == null)
+            {
+                return null;
+            }
+
+            var ray = mainCamera.ScreenPointToRay(screenPosition);
+            if (!Physics.Raycast(ray, out var hit, 100f))
+            {
+                return null;
+            }
+
+            var handCard = hit.collider.GetComponentInParent<Card3DView>();
+            if (handCard != null)
+            {
+                return handCard;
+            }
+
+            return hit.collider.GetComponentInParent<Card3DPlayed>();
+        }
+
+        private Board3DSlot RaycastBoardSlot(Vector2 screenPosition)
+        {
+            if (mainCamera == null)
+            {
+                return null;
+            }
+
+            var ray = mainCamera.ScreenPointToRay(screenPosition);
+            if (!Physics.Raycast(ray, out var hit, 100f))
+            {
+                return null;
+            }
+
+            if (_dragGhostInstance != null && hit.collider.gameObject == _dragGhostInstance)
+            {
+                var dragGhostLayer = _dragGhostInstance.layer;
+                var layerMask = ~(1 << dragGhostLayer);
+                if (!Physics.Raycast(ray, out hit, 100f, layerMask))
+                {
+                    return null;
+                }
+            }
+
+            var slot = hit.collider.GetComponentInParent<Board3DSlot>() ?? hit.collider.GetComponent<Board3DSlot>();
+            return slot != null && slot.PlayerIndex == 0 ? slot : null;
+        }
+
+        private void SpawnDragGhost(Vector2 screenPosition, Card3DView sourceCard)
+        {
+            _dragGhostInstance = CreateDragGhostFromSourceCard(sourceCard);
+            if (_dragGhostInstance == null && dragGhost3DPrefab != null)
+            {
+                _dragGhostInstance = Instantiate(dragGhost3DPrefab);
+            }
+
+            if (_dragGhostInstance == null)
+            {
+                Debug.LogWarning("[DragHandler3D] Unable to create drag ghost.");
+                return;
+            }
+
+            _dragGhost = _dragGhostInstance.GetComponent<DragGhost3D>();
+            if (_dragGhost == null)
+            {
+                _dragGhost = _dragGhostInstance.AddComponent<DragGhost3D>();
+            }
+
+            foreach (var collider in _dragGhostInstance.GetComponentsInChildren<Collider>(true))
+            {
+                collider.enabled = false;
+            }
+
+            _dragGhost.SetTargetPosition(screenPosition, mainCamera);
+            Debug.Log($"[DragHandler3D] Spawned drag ghost for {sourceCard?.CardData?.displayName ?? _dragGhostInstance.name}");
+        }
+
+        private GameObject CreateDragGhostFromSourceCard(Card3DView sourceCard)
+        {
+            if (sourceCard == null)
+            {
+                return null;
+            }
+
+            var ghost = Instantiate(sourceCard.gameObject);
+            ghost.name = $"DragGhost_{sourceCard.CardData?.displayName ?? sourceCard.name}";
+
+            var clonedCardView = ghost.GetComponent<Card3DView>();
+            if (clonedCardView != null && sourceCard.CardData != null)
+            {
+                clonedCardView.Initialize(CloneBoardCardData(sourceCard.CardData), sourceCard.PlayerIndex);
+            }
+
+            return ghost;
+        }
+
+        private static BoardCardDto CloneBoardCardData(BoardCardDto sourceCard)
+        {
+            if (sourceCard == null)
+            {
+                return null;
+            }
+
+            return new BoardCardDto
+            {
+                runtimeId = sourceCard.runtimeId,
+                cardId = sourceCard.cardId,
+                displayName = sourceCard.displayName,
+                manaCost = sourceCard.manaCost,
+                attackMotionLevel = sourceCard.attackMotionLevel,
+                attackShakeLevel = sourceCard.attackShakeLevel,
+                attackDeliveryType = sourceCard.attackDeliveryType,
+                ownerIndex = sourceCard.ownerIndex,
+                attack = sourceCard.attack,
+                currentHealth = sourceCard.currentHealth,
+                maxHealth = sourceCard.maxHealth,
+                armor = sourceCard.armor,
+                slot = sourceCard.slot,
+                canAttack = sourceCard.canAttack,
+                unitType = sourceCard.unitType,
+                turnsUntilCanAttack = sourceCard.turnsUntilCanAttack,
+                statusEffects = sourceCard.statusEffects,
+                abilities = sourceCard.abilities
+            };
+        }
+
         private void SetHoveredSlot(Board3DSlot slot)
         {
-            if (_hoveredSlot != slot)
+            if (_hoveredSlot == slot)
             {
-                if (_hoveredSlot != null)
-                    _hoveredSlot.SetHighlight(false);
+                return;
+            }
 
-                _hoveredSlot = slot;
+            if (_hoveredSlot != null)
+            {
+                _hoveredSlot.SetHighlight(false);
+            }
 
-                if (_hoveredSlot != null)
+            _hoveredSlot = slot;
+
+            if (_hoveredSlot != null)
+            {
+                _hoveredSlot.SetHighlight(true);
+
+                if (presenter != null && _hoveredSlot.PlayerIndex == 0)
                 {
-                    _hoveredSlot.SetHighlight(true);
-
-                    // Preview card displacement
-                    if (presenter != null && _hoveredSlot.PlayerIndex == 0)
-                    {
-                        presenter.PreviewCardDisplacement(0, _hoveredSlot.Slot);
-                    }
+                    presenter.PreviewCardDisplacement(0, _hoveredSlot.Slot);
                 }
-                else
+            }
+            else if (presenter != null)
+            {
+                presenter.CancelCardDisplacement(0);
+            }
+        }
+
+        private void EnsureReferences()
+        {
+            if (mainCamera == null)
+            {
+                mainCamera = Camera.main;
+            }
+
+            if (presenter == null)
+            {
+                presenter = GameplayPresenter3D.Instance ?? FindFirstObjectByType<GameplayPresenter3D>();
+            }
+
+            if (hand3DManager == null)
+            {
+                hand3DManager = FindFirstObjectByType<Hand3DManager>();
+            }
+
+            if (board3DManager == null)
+            {
+                board3DManager = FindFirstObjectByType<Board3DManager>();
+            }
+
+            if (cardDetailOverlay == null)
+            {
+                var overlays = Resources.FindObjectsOfTypeAll<CardDetailOverlayUI>();
+                if (overlays != null)
                 {
-                    // Cancel preview
-                    if (presenter != null)
+                    foreach (var overlay in overlays)
                     {
-                        presenter.CancelCardDisplacement(0);
+                        if (overlay != null && overlay.gameObject.scene.IsValid())
+                        {
+                            cardDetailOverlay = overlay;
+                            break;
+                        }
                     }
                 }
             }
+        }
+
+        private static bool TryGetPointerState(out PointerState pointerState)
+        {
+            var touchscreen = Touchscreen.current;
+            if (touchscreen != null)
+            {
+                var touch = touchscreen.primaryTouch;
+                if (touch.press.isPressed || touch.press.wasPressedThisFrame || touch.press.wasReleasedThisFrame)
+                {
+                    pointerState = new PointerState
+                    {
+                        screenPosition = touch.position.ReadValue(),
+                        pressedThisFrame = touch.press.wasPressedThisFrame,
+                        releasedThisFrame = touch.press.wasReleasedThisFrame,
+                        isPressed = touch.press.isPressed,
+                        usingTouch = true
+                    };
+                    return true;
+                }
+            }
+
+            var mouse = Mouse.current;
+            if (mouse != null)
+            {
+                pointerState = new PointerState
+                {
+                    screenPosition = mouse.position.ReadValue(),
+                    pressedThisFrame = mouse.leftButton.wasPressedThisFrame,
+                    releasedThisFrame = mouse.leftButton.wasReleasedThisFrame,
+                    isPressed = mouse.leftButton.isPressed,
+                    usingTouch = false
+                };
+                return true;
+            }
+
+            pointerState = default;
+            return false;
+        }
+
+        private struct PointerState
+        {
+            public Vector2 screenPosition;
+            public bool pressedThisFrame;
+            public bool releasedThisFrame;
+            public bool isPressed;
+            public bool usingTouch;
         }
     }
 }

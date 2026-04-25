@@ -34,5 +34,13 @@ namespace Flippy.CardDuelMobile.Data
 
         [Header("Visuals")]
         public CardVisualProfile visualProfile;
+
+        [Header("Attack Feel")]
+        [Tooltip("0 = auto-resolve from attack stat. 1-5 = explicit projectile motion preset.")]
+        [Range(0, 5)] public int attackMotionLevel;
+        [Tooltip("0 = auto-resolve from attack stat. 1-5 = explicit camera shake preset.")]
+        [Range(0, 5)] public int attackShakeLevel;
+        [Tooltip("Optional explicit delivery type: melee, projectile, beam, arc. Empty = auto.")]
+        public string attackDeliveryType;
     }
 }

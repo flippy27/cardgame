@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 61793281126643025}
   - component: {fileID: 2577314799756544029}
   - component: {fileID: -5901991864807541116}
+  - component: {fileID: -3298027236056884357}
   m_Layer: 0
   m_Name: DragGhost3DPrefab
   m_TagString: Untagged
@@ -125,8 +126,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a8ec04e1cf0049abb3d1bcccb21cfdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.DragGhost3D
-  heightOffset: 0
-  bobSpeed: 0
-  bobAmount: 0
-  rotationSpeed: 0
   cameraDistance: 10
+  velocitySensitivity: 5
+  maxTiltAmount: 30
+  rotationSmoothing: 0.15
+--- !u!114 &-3298027236056884357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596671842547866096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2824f8d1a9034a4fa983fd28fbf799d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.CardSurfaceVisualRenderer
+  defaultSurface: hand
+  requestedProfileKey: 
+  fetchDetailedCardData: 1
+  clearBindingsWhenMissing: 0
+  layerBindings: []

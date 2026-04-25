@@ -8,6 +8,7 @@ namespace Flippy.CardDuelMobile.UI
         public float cameraDistance = 1.5f;
 
         [Header("Velocity Tilt")]
+        public bool enableVelocityTilt = false;
         public float velocitySensitivity = 5f;
         public float maxTiltAmount = 30f;
         public float rotationSmoothing = 0.15f;
@@ -15,10 +16,28 @@ namespace Flippy.CardDuelMobile.UI
         private Vector3 _targetPosition;
         private Vector3 _lastPosition;
         private Vector3 _currentTiltRotation;
+        private Card3DView _cardView;
+
+        private void Awake()
+        {
+            _cardView = GetComponent<Card3DView>() ?? GetComponentInChildren<Card3DView>(true);
+        }
 
         private void Update()
         {
             transform.position = _targetPosition;
+
+            if (!enableVelocityTilt)
+            {
+                transform.rotation = Quaternion.identity;
+                _lastPosition = _targetPosition;
+                if (_cardView != null)
+                {
+                    _cardView.SetStatsOverlayRotation(Quaternion.identity);
+                }
+
+                return;
+            }
 
             // Calculate velocity
             Vector3 velocity = (_targetPosition - _lastPosition) / Time.deltaTime;
@@ -34,6 +53,11 @@ namespace Flippy.CardDuelMobile.UI
             // Smooth rotation transition
             _currentTiltRotation = Vector3.Lerp(_currentTiltRotation, targetTilt, rotationSmoothing);
             transform.rotation = Quaternion.Euler(_currentTiltRotation);
+
+            if (_cardView != null)
+            {
+                _cardView.SetStatsOverlayRotation(Quaternion.Inverse(transform.localRotation));
+            }
         }
 
         public void SetTargetPosition(Vector3 screenPos, Camera cam)

@@ -128,6 +128,11 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
+        public void RemoveCardReference(int playerIndex, BoardSlot slot)
+        {
+            _cardViews.Remove((playerIndex, slot));
+        }
+
         public void MoveCardBetweenSlots(int playerIndex, BoardSlot fromSlot, BoardSlot toSlot, ICardDisplay cardView)
         {
             if (cardView == null)

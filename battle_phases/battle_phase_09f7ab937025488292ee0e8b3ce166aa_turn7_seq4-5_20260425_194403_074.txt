@@ -1,0 +1,21 @@
+Card Duel Unity Battle Phase Playback
+UTC: 2026-04-25T19:44:03.0745142Z
+MatchId: 09f7ab937025488292ee0e8b3ce166aa
+Turn: 7
+ActivePlayerIndex: 1
+ActivePlayerId: c6e7d90f-eda8-4c2a-9991-996d85617a68
+IsLocalPlayersTurn: False
+Ruleset: Default Rules (11fd524f-49f9-4ffe-b0e3-1ffc06233cad)
+
+Presentation Events
+seq=4 id=evt-000004 kind=card_attack/CardAttack srcP=0 src=6a2fc8a73663406f95dcc53bbef62e79:Void Sky Drake #91 targetP=1 target=: ability= effect=0 status=0 amount=5 hp=0->0 armor=0->0 msg=Void Sky Drake #91 attacked the enemy hero.
+seq=5 id=evt-000005 kind=hero_damage/HeroAttack srcP=0 src=6a2fc8a73663406f95dcc53bbef62e79:Void Sky Drake #91 targetP=1 target=: ability= effect=0 status=0 amount=5 hp=20->15 armor=0->0 msg=Seat 1 hero took 5 damage.
+
+Raw Structured Battle Events In Snapshot
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=0 targetVisual=-1 target= ability=armor effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Void Sky Drake #91 used Armor.
+seq=2 id=evt-000002 kind=armor_gain serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=1 targetVisual=0 target=6a2fc8a73663406f95dcc53bbef62e79 ability=armor effect=2 status=0 amount=5 hp=3->3 armor=0->5 message=Void Sky Drake #91 gained 5 armor.
+seq=3 id=evt-000003 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=0 targetVisual=-1 target= ability=fly effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Void Sky Drake #91 used Fly.
+seq=4 id=evt-000004 kind=card_attack serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=5 hp=0->0 armor=0->0 message=Void Sky Drake #91 attacked the enemy hero.
+seq=5 id=evt-000005 kind=hero_damage serverSrcSeat=1 srcVisual=0 src=6a2fc8a73663406f95dcc53bbef62e79 serverTargetSeat=0 targetVisual=1 target= ability= effect=0 status=0 amount=5 hp=20->15 armor=0->0 message=Seat 1 hero took 5 damage.
+
+New Raw Logs Fallback Window

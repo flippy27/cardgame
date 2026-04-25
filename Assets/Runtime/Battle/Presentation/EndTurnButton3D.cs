@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using Flippy.CardDuelMobile.Battle;
 
 namespace Flippy.CardDuelMobile.UI
 {
@@ -104,11 +105,7 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            var isInProgress = snapshot.matchPhase == Flippy.CardDuelMobile.Core.MatchPhase.InProgress && !snapshot.duelEnded;
-            var isLocalTurn = isInProgress &&
-                              (snapshot.isLocalPlayersTurn ||
-                               snapshot.activePlayerIndex == snapshot.localPlayerIndex);
-            SetEnabled(isLocalTurn);
+            SetEnabled(SnapshotTurnAuthority.IsLocalTurn(snapshot));
         }
     }
 }

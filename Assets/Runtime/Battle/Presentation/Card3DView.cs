@@ -1,5 +1,6 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 using Flippy.CardDuelMobile.Battle;
 using Flippy.CardDuelMobile.Core;
 
@@ -7,86 +8,109 @@ namespace Flippy.CardDuelMobile.UI
 {
     public class Card3DView : MonoBehaviour, ICardDisplay
     {
+        [Header("References")]
+        [SerializeField] private Renderer meshRenderer;
+        [SerializeField] private Collider interactionCollider;
+        [SerializeField] private Transform uprightOverlayRoot;
+        [SerializeField] private CardSurfaceVisualRenderer visualRenderer;
+        [SerializeField] private TextMeshProUGUI nameText;
+        [SerializeField] private TextMeshProUGUI costText;
+        [SerializeField] private GameObject costRoot;
+        [SerializeField] private TextMeshProUGUI attackText;
+        [SerializeField] private TextMeshProUGUI healthText;
+        [SerializeField] private TextMeshProUGUI armorText;
+        [SerializeField] private GameObject armorRoot;
+        [SerializeField] private TextMeshProUGUI descriptionText;
+        [SerializeField] private Image attackTypeImage;
+        [SerializeField] private GameObject attackTypeRoot;
+        [SerializeField] private Sprite meleeAttackTypeSprite;
+        [SerializeField] private Sprite rangedAttackTypeSprite;
+        [SerializeField] private Sprite magicAttackTypeSprite;
+        [SerializeField] private TextMeshProUGUI legacyStatsText;
+
+        [Header("Runtime Icon Groups")]
+        [SerializeField] private CardIconGroup abilityIconGroup;
+
+        [Header("Legacy Ability Icon Slots")]
+        [SerializeField] private CardStateIconSlot[] abilityIconSlots;
+
+        [Header("Colors")]
+        [SerializeField] private Color baseColor = new Color(0.1f, 0.1f, 0.15f, 0.9f);
+
         public BoardCardDto CardData { get; private set; }
         public int PlayerIndex { get; private set; }
 
         private Material _cardMaterial;
-        private TextMeshProUGUI _statsText;
-        private GameObject _meshObject;
+
+        private void Awake()
+        {
+            AutoAssignReferences();
+            EnsureRuntimeMaterial();
+        }
+
+        private void Reset()
+        {
+            AutoAssignReferences();
+        }
+
+        private void OnValidate()
+        {
+            AutoAssignReferences();
+        }
 
         public void Initialize(BoardCardDto card, int playerIndex)
         {
             CardData = card;
             PlayerIndex = playerIndex;
 
-            // Crear quad visual
-            _meshObject = GameObject.CreatePrimitive(PrimitiveType.Quad);
-            _meshObject.name = "CardMesh";
-            _meshObject.transform.SetParent(transform);
-            _meshObject.transform.localPosition = Vector3.zero;
-            _meshObject.transform.localScale = new Vector3(0.8f, 1f, 1f);
-            _meshObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            AutoAssignReferences();
+            EnsureRuntimeMaterial();
 
-            // Quitar collider
-            var collider = _meshObject.GetComponent<Collider>();
-            if (collider != null)
-                collider.enabled = false;
-
-            // Material
-            var renderer = _meshObject.GetComponent<Renderer>();
-            if (renderer != null)
+            if (interactionCollider != null)
             {
-                _cardMaterial = new Material(Shader.Find("Standard"));
-                _cardMaterial.color = new Color(0.1f, 0.1f, 0.15f, 0.9f);
-                renderer.material = _cardMaterial;
+                interactionCollider.enabled = true;
+                interactionCollider.isTrigger = false;
             }
 
-            // Canvas 2D para stats
-            var canvasGo = new GameObject("StatsOverlay");
-            canvasGo.transform.SetParent(transform);
-            canvasGo.transform.localPosition = Vector3.forward * 0.01f;
-            canvasGo.transform.localScale = Vector3.one * 0.01f;
-
-            var canvas = canvasGo.AddComponent<Canvas>();
-            canvas.renderMode = RenderMode.WorldSpace;
-
-            var canvasRect = canvasGo.GetComponent<RectTransform>();
-            canvasRect.sizeDelta = new Vector2(200, 150);
-
-            // Text
-            var textGo = new GameObject("Stats");
-            textGo.transform.SetParent(canvasGo.transform);
-            textGo.transform.localPosition = Vector3.zero;
-
-            _statsText = textGo.AddComponent<TextMeshProUGUI>();
-            _statsText.text = FormatStats(card);
-            _statsText.alignment = TextAlignmentOptions.Center;
-            _statsText.fontSize = 0.5f;
-            _statsText.color = Color.white;
-            _statsText.outlineWidth = 0.2f;
-            _statsText.outlineColor = Color.black;
-
-            var textRect = textGo.GetComponent<RectTransform>();
-            textRect.sizeDelta = new Vector2(200, 150);
-
-            // Collider para raycast (en el quad)
-            var qCollider = _meshObject.GetComponent<Collider>();
-            if (qCollider != null)
-                qCollider.enabled = true;
+            UpdateStatsDisplay();
+            visualRenderer?.ApplyCard(card.cardId, "hand");
 
             GameLogger.Info("Card3D", $"Initialized {card.displayName}");
         }
 
-        private string FormatStats(BoardCardDto card)
-        {
-            return $"<b>{card.displayName}</b>\n\n{card.attack} ATK\n{card.currentHealth}/{card.maxHealth} HP";
-        }
-
         public void UpdateStatsDisplay()
         {
-            if (_statsText != null && CardData != null)
+            if (CardData == null)
             {
-                _statsText.text = FormatStats(CardData);
+                return;
+            }
+
+            CardVisualCommon.ApplyCardTexts(
+                CardData,
+                nameText,
+                costText,
+                costRoot,
+                attackText,
+                healthText,
+                armorText,
+                armorRoot,
+                legacyStatsText);
+            CardVisualCommon.ApplyDescriptionText(CardData, descriptionText);
+            CardVisualCommon.ApplyAttackTypeIcon(
+                CardData,
+                attackTypeImage,
+                attackTypeRoot,
+                meleeAttackTypeSprite,
+                rangedAttackTypeSprite,
+                magicAttackTypeSprite);
+            CardVisualCommon.ApplyAbilityIcons(CardData, abilityIconGroup, abilityIconSlots);
+        }
+
+        public void SetStatsOverlayRotation(Quaternion rotation)
+        {
+            if (uprightOverlayRoot != null)
+            {
+                uprightOverlayRoot.localRotation = rotation;
             }
         }
 
@@ -96,6 +120,11 @@ namespace Flippy.CardDuelMobile.UI
             {
                 _cardMaterial.color = color;
             }
+        }
+
+        public void ResetColor()
+        {
+            SetColor(baseColor);
         }
 
         public void AnimateDrop(Vector3 targetPos, float duration = 0.3f)
@@ -111,6 +140,136 @@ namespace Flippy.CardDuelMobile.UI
         public void AnimateDeath(float duration = 0.5f)
         {
             StartCoroutine(AnimateDeathCoroutine(duration));
+        }
+
+        private void AutoAssignReferences()
+        {
+            if (meshRenderer == null || !meshRenderer.gameObject.activeSelf)
+            {
+                meshRenderer = FindPreferredRenderer();
+            }
+
+            if (interactionCollider == null || !interactionCollider.gameObject.activeSelf)
+            {
+                interactionCollider = FindPreferredCollider();
+            }
+
+            if (uprightOverlayRoot == null)
+            {
+                var overlay = transform.Find("StatsOverlay");
+                if (overlay != null)
+                {
+                    uprightOverlayRoot = overlay;
+                }
+            }
+
+            if (legacyStatsText == null)
+            {
+                legacyStatsText = GetComponentInChildren<TextMeshProUGUI>(true);
+            }
+
+            descriptionText ??= FindTextByName("description", "body", "rules", "ability");
+            attackTypeImage ??= FindImageByName("attacktype", "delivery", "range", "combat");
+
+            if (attackTypeRoot == null && attackTypeImage != null)
+            {
+                attackTypeRoot = attackTypeImage.gameObject;
+            }
+
+            if (visualRenderer == null)
+            {
+                visualRenderer = GetComponent<CardSurfaceVisualRenderer>() ?? GetComponentInChildren<CardSurfaceVisualRenderer>(true);
+            }
+
+            if (visualRenderer == null && Application.isPlaying)
+            {
+                visualRenderer = gameObject.AddComponent<CardSurfaceVisualRenderer>();
+            }
+
+            if (visualRenderer != null && meshRenderer != null)
+            {
+                visualRenderer.EnsureDefaultMaterialBinding(meshRenderer, "hand");
+            }
+        }
+
+        private void EnsureRuntimeMaterial()
+        {
+            if (meshRenderer == null || _cardMaterial != null)
+            {
+                return;
+            }
+
+            var sourceMaterial = meshRenderer.sharedMaterial != null
+                ? meshRenderer.sharedMaterial
+                : new Material(Shader.Find("Standard"));
+
+            _cardMaterial = new Material(sourceMaterial)
+            {
+                color = baseColor
+            };
+            meshRenderer.material = _cardMaterial;
+        }
+
+        private Renderer FindPreferredRenderer()
+        {
+            var renderers = GetComponentsInChildren<Renderer>(true);
+            foreach (var candidate in renderers)
+            {
+                if (candidate.gameObject.activeSelf)
+                {
+                    return candidate;
+                }
+            }
+
+            return renderers.Length > 0 ? renderers[0] : null;
+        }
+
+        private Collider FindPreferredCollider()
+        {
+            var colliders = GetComponentsInChildren<Collider>(true);
+            foreach (var candidate in colliders)
+            {
+                if (candidate.gameObject.activeSelf)
+                {
+                    return candidate;
+                }
+            }
+
+            return colliders.Length > 0 ? colliders[0] : null;
+        }
+
+        private TextMeshProUGUI FindTextByName(params string[] keywords)
+        {
+            foreach (var text in GetComponentsInChildren<TextMeshProUGUI>(true))
+            {
+                var objectName = text.gameObject.name.ToLowerInvariant();
+                foreach (var keyword in keywords)
+                {
+                    if (objectName.Contains(keyword))
+                    {
+                        return text;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        private Image FindImageByName(params string[] keywords)
+        {
+            foreach (var image in GetComponentsInChildren<Image>(true))
+            {
+                var objectName = image.gameObject.name.ToLowerInvariant();
+                foreach (var keyword in keywords)
+                {
+                    if (objectName.Contains(keyword))
+                    {
+                        return image;
+                    }
+                }
+            }
+
+            return null;
         }
 
         private System.Collections.IEnumerator AnimateDropCoroutine(Vector3 targetPos, float duration)
@@ -168,7 +327,7 @@ namespace Flippy.CardDuelMobile.UI
                 if (_cardMaterial != null)
                 {
                     var color = _cardMaterial.color;
-                    color.a = Mathf.Lerp(0.9f, 0f, t);
+                    color.a = Mathf.Lerp(baseColor.a, 0f, t);
                     _cardMaterial.color = color;
                 }
 

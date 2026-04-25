@@ -12,7 +12,7 @@ namespace Flippy.CardDuelMobile.Core
             if (service == null)
                 throw new ArgumentNullException(nameof(service));
             _services[typeof(T)] = service;
-            GameLogger.Debug("DI", $"Registered {typeof(T).Name}");
+            //GameLogger.Debug("DI", $"Registered {typeof(T).Name}");
         }
 
         public static T Resolve<T>() where T : class

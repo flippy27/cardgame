@@ -20,7 +20,7 @@ namespace Flippy.CardDuelMobile.Core
             ConfigManager.LoadConfig();
             GameLogger.SetLogLevel(ConfigManager.GetLogLevel());
             var apiBaseUrl = ConfigManager.GetApiBaseUrl();
-            GameLogger.Info("Bootstrap", $"API Base URL: {apiBaseUrl}");
+            //GameLogger.Info("Bootstrap", $"API Base URL: {apiBaseUrl}");
 
             // 2. Register services in DI (with config from ConfigManager)
             var apiClient = new CardGameApiClient(apiBaseUrl);

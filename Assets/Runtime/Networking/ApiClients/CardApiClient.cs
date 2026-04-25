@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 using Flippy.CardDuelMobile.Core;
+using Codice.Client.BaseCommands.WkStatus.Printers;
 
 namespace Flippy.CardDuelMobile.Networking.ApiClients
 {
@@ -95,6 +96,7 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
                 throw new ValidationException("PlayerId cannot be empty");
 
             var response = await HttpClientHelper.GetAsync($"{_baseUrl}/api/v1/decks/{playerId}");
+            Debug.Log($"deck response_{response}");
             if (string.IsNullOrWhiteSpace(response) || response == "[]")
                 return new List<DeckDto>();
 

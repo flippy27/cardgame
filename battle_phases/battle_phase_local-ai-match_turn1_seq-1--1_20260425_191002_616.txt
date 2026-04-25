@@ -1,0 +1,16 @@
+Card Duel Unity Battle Phase Playback
+UTC: 2026-04-25T19:10:02.6162426Z
+MatchId: local-ai-match
+Turn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: local-player
+IsLocalPlayersTurn: True
+Ruleset:  ()
+
+Presentation Events
+seq=-1 id= kind=/Info srcP=-1 src=: targetP=-1 target=: ability= effect=-1 status=-1 amount=0 hp=0->0 armor=0->0 msg=Charging Cavalry entered Front.
+
+Raw Structured Battle Events In Snapshot
+
+New Raw Logs Fallback Window
+Summon: Charging Cavalry entered Front.

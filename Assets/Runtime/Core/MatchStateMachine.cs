@@ -50,6 +50,17 @@ namespace Flippy.CardDuelMobile.Core
             ChangeState(MatchState.WaitingForPlayer2);
         }
 
+        public static void SyncPlayerIds(string player1Id, string player2Id)
+        {
+            if (_currentMatch == null)
+            {
+                return;
+            }
+
+            _currentMatch.player1Id = player1Id;
+            _currentMatch.player2Id = player2Id;
+        }
+
         public static void SetPlayerReady(string playerId, bool ready)
         {
             if (_currentMatch == null) return;

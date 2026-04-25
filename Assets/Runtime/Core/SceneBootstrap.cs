@@ -50,7 +50,7 @@ namespace Flippy.CardDuelMobile.Core
 
         public static void LoadScene(string sceneName)
         {
-            Debug.Log($"[SceneBootstrap] Loading scene: {sceneName}");
+            //Debug.Log($"[SceneBootstrap] Loading scene: {sceneName}");
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
 

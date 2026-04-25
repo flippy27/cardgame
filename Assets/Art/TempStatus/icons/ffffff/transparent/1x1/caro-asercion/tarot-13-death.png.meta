@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 4f7687f1c67beda42803fc81fa74440b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7711715860775807911
+    second: tarot-13-death_0
+  - first:
+      213: 6015904326383463338
+    second: tarot-13-death_1
+  - first:
+      213: -447301684237354445
+    second: tarot-13-death_2
+  - first:
+      213: 6950319243574469252
+    second: tarot-13-death_3
+  - first:
+      213: -5328457944820943215
+    second: tarot-13-death_4
+  - first:
+      213: 8363772803692155560
+    second: tarot-13-death_5
+  - first:
+      213: -4964036541905900663
+    second: tarot-13-death_6
+  - first:
+      213: -1241409796253577069
+    second: tarot-13-death_7
+  - first:
+      213: 1726249226027273427
+    second: tarot-13-death_8
+  - first:
+      213: 4778951679566144709
+    second: tarot-13-death_9
+  - first:
+      213: -3160140399302642260
+    second: tarot-13-death_10
+  - first:
+      213: 7135848357906036367
+    second: tarot-13-death_11
+  - first:
+      213: 7502145815886154748
+    second: tarot-13-death_12
+  - first:
+      213: 1118733293918442941
+    second: tarot-13-death_13
+  - first:
+      213: -3061480503395623137
+    second: tarot-13-death_14
+  - first:
+      213: 8949574040033676572
+    second: tarot-13-death_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tarot-13-death_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 438
+        width: 63
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95456b5784b7af490800000000000000
+      internalID: -7711715860775807911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 281
+        width: 109
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab62d87c19cc7350800000000000000
+      internalID: 6015904326383463338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 376
+        width: 98
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a3993fc7ddac9f0800000000000000
+      internalID: -447301684237354445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_3
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 240
+        width: 245
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48261d4178e747060800000000000000
+      internalID: 6950319243574469252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 299
+        width: 59
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 196f6560bb38d06b0800000000000000
+      internalID: -5328457944820943215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_5
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 221
+        width: 70
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a2d4224d07121470800000000000000
+      internalID: 8363772803692155560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_6
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 176
+        width: 83
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98be3a3d0133c1bb0800000000000000
+      internalID: -4964036541905900663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_7
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 157
+        width: 45
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3909d991e50a5cee0800000000000000
+      internalID: -1241409796253577069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_8
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 209
+        width: 58
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dc0627668ed4f710800000000000000
+      internalID: 1726249226027273427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_9
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 85
+        width: 113
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c4eb4b8b3f325240800000000000000
+      internalID: 4778951679566144709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_10
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 68
+        width: 102
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca5743bcc0de424d0800000000000000
+      internalID: -3160140399302642260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_11
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 70
+        width: 106
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f863b003640a70360800000000000000
+      internalID: 7135848357906036367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_12
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 143
+        width: 93
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfbc3191fd9fc1860800000000000000
+      internalID: 7502145815886154748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_13
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 97
+        width: 50
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db55966e00a868f00800000000000000
+      internalID: 1118733293918442941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_14
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 26
+        width: 89
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fd15cd3bf6385d0800000000000000
+      internalID: -3061480503395623137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tarot-13-death_15
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 26
+        width: 151
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1dc34b2c26433c70800000000000000
+      internalID: 8949574040033676572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tarot-13-death_0: -7711715860775807911
+      tarot-13-death_1: 6015904326383463338
+      tarot-13-death_10: -3160140399302642260
+      tarot-13-death_11: 7135848357906036367
+      tarot-13-death_12: 7502145815886154748
+      tarot-13-death_13: 1118733293918442941
+      tarot-13-death_14: -3061480503395623137
+      tarot-13-death_15: 8949574040033676572
+      tarot-13-death_2: -447301684237354445
+      tarot-13-death_3: 6950319243574469252
+      tarot-13-death_4: -5328457944820943215
+      tarot-13-death_5: 8363772803692155560
+      tarot-13-death_6: -4964036541905900663
+      tarot-13-death_7: -1241409796253577069
+      tarot-13-death_8: 1726249226027273427
+      tarot-13-death_9: 4778951679566144709
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

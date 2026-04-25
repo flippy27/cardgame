@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Flippy.CardDuelMobile.Networking.ApiClients;
@@ -59,10 +60,18 @@ namespace Flippy.CardDuelMobile.Core
         /// </summary>
         public void SetMatchInfo(string matchId, string playerId, string opponentId)
         {
+            var hasChanged =
+                !string.Equals(this.matchId, matchId, StringComparison.Ordinal) ||
+                !string.Equals(currentPlayerId, playerId, StringComparison.Ordinal) ||
+                !string.Equals(opponentPlayerId, opponentId, StringComparison.Ordinal);
+
             this.matchId = matchId;
             currentPlayerId = playerId;
             opponentPlayerId = opponentId;
-            GameLogger.Info("PlayState", $"Match info set: {matchId}");
+            if (hasChanged)
+            {
+                GameLogger.Info("PlayState", $"Match info set: {matchId}");
+            }
         }
 
         /// <summary>

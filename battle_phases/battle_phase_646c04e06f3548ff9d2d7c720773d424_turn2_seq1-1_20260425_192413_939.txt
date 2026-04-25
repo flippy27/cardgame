@@ -1,0 +1,17 @@
+Card Duel Unity Battle Phase Playback
+UTC: 2026-04-25T19:24:13.9459417Z
+MatchId: 646c04e06f3548ff9d2d7c720773d424
+Turn: 2
+ActivePlayerIndex: 0
+ActivePlayerId: 6c646037-69b0-4350-a98e-d09f77806192
+IsLocalPlayersTurn: True
+Ruleset: Default Rules (11fd524f-49f9-4ffe-b0e3-1ffc06233cad)
+
+Presentation Events
+seq=1 id=evt-000001 kind=skill_begin/SkillBegin srcP=0 src=8b7c4045c4004941bef68427521b9a94:Alloy Blessed Monk #40 targetP=-1 target=: ability=taunt effect=0 status=0 amount=0 hp=0->0 armor=0->0 msg=Alloy Blessed Monk #40 used Taunt.
+
+Raw Structured Battle Events In Snapshot
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=8b7c4045c4004941bef68427521b9a94 serverTargetSeat=0 targetVisual=-1 target= ability=taunt effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Blessed Monk #40 used Taunt.
+
+New Raw Logs Fallback Window
+Info: Alloy Blessed Monk #40 entered Front.
