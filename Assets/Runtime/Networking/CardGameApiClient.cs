@@ -61,27 +61,41 @@ namespace Flippy.CardDuelMobile.Networking
             return await _deckApi.FetchPlayerDecks(playerId);
         }
 
+        public async Task<DeckDto> GetPlayerDeckAsync(string playerId, string deckId)
+        {
+            return await _deckApi.GetPlayerDeck(playerId, deckId);
+        }
+
+        public async Task<DeckDto> UpsertDeckAsync(string playerId, string deckId, string displayName, List<string> cardIds)
+        {
+            return await _deckApi.UpsertDeck(playerId, deckId, displayName, cardIds);
+        }
+
+        public async Task DeleteDeckAsync(string playerId, string deckId)
+        {
+            // No bulk-delete endpoint; delete all cards is handled via upsert with empty list
+            await UpsertDeckAsync(playerId, deckId, null, new List<string>());
+        }
+
+        public async Task AddCardToDeckAsync(string playerId, string deckId, string cardId)
+        {
+            await _deckApi.AddCardToDeck(playerId, deckId, cardId);
+        }
+
+        public async Task RemoveCardFromDeckAsync(string playerId, string deckId, string entryId)
+        {
+            await _deckApi.RemoveCardFromDeck(playerId, deckId, entryId);
+        }
+
         public async Task<List<ServerCardDefinition>> FetchCardsByDeckAsync(string playerId, string deckId)
         {
             return await _cardApi.FetchCardsByDeck(playerId, deckId);
         }
 
-        public async Task<DeckDto> UpsertDeckAsync(string playerId, DeckDto deck)
+        // Legacy overload kept for compatibility
+        public async Task<bool> UpsertDeckLegacyAsync(string playerId, string deckId, string displayName, List<string> cardIds)
         {
-            return await _deckApi.UpsertDeck(playerId, deck);
-        }
-
-        public async Task<bool> UpsertDeckAsync(string playerId, string deckId, string displayName, List<string> cardIds)
-        {
-            var deck = new DeckDto
-            {
-                deckId = deckId,
-                playerId = playerId,
-                displayName = displayName,
-                deckName = displayName,
-                cardIds = cardIds
-            };
-            await _deckApi.UpsertDeck(playerId, deck);
+            await _deckApi.UpsertDeck(playerId, deckId, displayName, cardIds);
             return true;
         }
 
@@ -190,22 +204,68 @@ namespace Flippy.CardDuelMobile.Networking
             _baseUrl = string.IsNullOrWhiteSpace(baseUrl) ? ApiConfig.BaseUrl : baseUrl.TrimEnd('/');
         }
 
+        // GET /api/v1/decks/catalog
         public async Task<List<DeckDto>> FetchCatalog()
         {
-            var cardApi = new CardApiClient(_baseUrl);
-            return await cardApi.FetchDecksCatalog();
+            var response = await HttpClientHelper.GetAsync($"{_baseUrl}/api/v1/decks/catalog");
+            return ParseDeckList(response, "FetchCatalog");
         }
 
+        // GET /api/v1/decks/{playerId}
         public async Task<List<DeckDto>> FetchPlayerDecks(string playerId)
         {
-            var cardApi = new CardApiClient(_baseUrl);
-            return await cardApi.FetchPlayerDecks(playerId);
+            var response = await HttpClientHelper.GetAsync($"{_baseUrl}/api/v1/decks/{playerId}");
+            return ParseDeckList(response, "FetchPlayerDecks");
         }
 
-        public async Task<DeckDto> UpsertDeck(string playerId, DeckDto deck)
+        // GET /api/v1/decks/{playerId}/{deckId}
+        public async Task<DeckDto> GetPlayerDeck(string playerId, string deckId)
         {
-            var cardApi = new CardApiClient(_baseUrl);
-            return await cardApi.UpsertDeck(playerId, deck);
+            var response = await HttpClientHelper.GetAsync($"{_baseUrl}/api/v1/decks/{playerId}/{deckId}");
+            return string.IsNullOrWhiteSpace(response) ? null : JsonUtility.FromJson<DeckDto>(response);
         }
+
+        // PUT /api/v1/decks — upsert (create or replace)
+        public async Task<DeckDto> UpsertDeck(string playerId, string deckId, string displayName, List<string> cardIds)
+        {
+            var req = new DeckUpsertReqDto { playerId = playerId, deckId = deckId, displayName = displayName, cardIds = cardIds };
+            var json = JsonUtility.ToJson(req);
+            var response = await HttpClientHelper.PutAsync($"{_baseUrl}/api/v1/decks", json);
+            return string.IsNullOrWhiteSpace(response) ? null : JsonUtility.FromJson<DeckDto>(response);
+        }
+
+        // POST /api/v1/decks/{playerId}/{deckId}/cards
+        public async Task AddCardToDeck(string playerId, string deckId, string cardId)
+        {
+            var req = new AddCardReqDto { cardId = cardId };
+            var json = JsonUtility.ToJson(req);
+            await HttpClientHelper.PostAsync($"{_baseUrl}/api/v1/decks/{playerId}/{deckId}/cards", json);
+        }
+
+        // DELETE /api/v1/decks/{playerId}/{deckId}/cards/{entryId}
+        public async Task RemoveCardFromDeck(string playerId, string deckId, string entryId)
+        {
+            await HttpClientHelper.DeleteAsync($"{_baseUrl}/api/v1/decks/{playerId}/{deckId}/cards/{entryId}");
+        }
+
+        private List<DeckDto> ParseDeckList(string response, string caller)
+        {
+            if (string.IsNullOrWhiteSpace(response) || response == "[]")
+                return new List<DeckDto>();
+            try
+            {
+                var w = JsonUtility.FromJson<DeckListWrapper>($"{{\"items\":{response}}}");
+                return w?.items?.ToList() ?? new List<DeckDto>();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[DeckApi] {caller} parse error: {ex.Message}");
+                throw;
+            }
+        }
+
+        [Serializable] private sealed class DeckListWrapper { public DeckDto[] items; }
+        [Serializable] private sealed class DeckUpsertReqDto { public string playerId; public string deckId; public string displayName; public List<string> cardIds; }
+        [Serializable] private sealed class AddCardReqDto { public string cardId; }
     }
 }

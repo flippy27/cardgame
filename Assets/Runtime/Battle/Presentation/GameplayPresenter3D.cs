@@ -668,17 +668,9 @@ namespace Flippy.CardDuelMobile.UI
         private void ApplySnapshotState(DuelSnapshotDto snapshot, bool animateReposition)
         {
             _latestSnapshot = snapshot;
-            UpdateBoard(snapshot);
-            ClearPreviewPositions();
-
-            if (animateReposition)
-            {
-                DetectAndAnimateRepositioning(snapshot);
-            }
-            else
-            {
-                _previousSnapshot = snapshot;
-            }
+            ClearPreviewPositions();           // stop preview/restore before reading positions
+            UpdateBoard(snapshot, animateReposition);
+            _previousSnapshot = snapshot;
 
             UpdateLocalHand(snapshot);
             UpdateHUD(snapshot);
@@ -1828,9 +1820,9 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
-        private void UpdateBoard(DuelSnapshotDto snapshot)
+        private void UpdateBoard(DuelSnapshotDto snapshot, bool animateSlotChanges = false)
         {
-            if (UpdateBoardAuthoritative(snapshot))
+            if (UpdateBoardAuthoritative(snapshot, animateSlotChanges))
             {
                 return;
             }
@@ -1942,7 +1934,7 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
-        private bool UpdateBoardAuthoritative(DuelSnapshotDto snapshot)
+        private bool UpdateBoardAuthoritative(DuelSnapshotDto snapshot, bool animateSlotChanges = false)
         {
             if (snapshot?.players == null || snapshot.players.Length < 2)
             {
@@ -1997,7 +1989,22 @@ namespace Flippy.CardDuelMobile.UI
                     if (current.slot != snapshotSlot)
                     {
                         Debug.Log($"[UpdateBoard] Moving {snapshotData.displayName} {current.slot}->{snapshotSlot}");
+                        var hasTransform = current.view.TryGetTransform(out var cardTransform);
+                        var startPos = hasTransform ? cardTransform.position : Vector3.zero;
                         ReparentCardToSlot(current.view, playerIndex, current.slot, snapshotSlot);
+                        var targetSlotComp = board3DManager.GetSlot(playerIndex, snapshotSlot);
+                        if (targetSlotComp != null && hasTransform)
+                        {
+                            if (animateSlotChanges)
+                            {
+                                StartCoroutine(AnimateCardMovement(current.view, startPos, targetSlotComp.transform.position, 0.35f));
+                            }
+                            else
+                            {
+                                // Snap immediately (post-battle sequence, AnimateVisualRepositionForPlayer already ran)
+                                cardTransform.position = targetSlotComp.transform.position;
+                            }
+                        }
                         Debug.Log($"[GameplayPresenter3D] Moved card {snapshotData.displayName} P{playerIndex} {current.slot}->{snapshotSlot}");
                     }
 

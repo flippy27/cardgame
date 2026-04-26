@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using Flippy.CardDuelMobile.Core;
@@ -9,15 +8,19 @@ using Flippy.CardDuelMobile.Networking.ApiClients;
 namespace Flippy.CardDuelMobile.Networking
 {
     /// <summary>
-    /// Gestiona decks del jugador: obtener, crear, actualizar.
+    /// Manages player decks via server API. The server is authoritative for all deck state.
     /// </summary>
     public sealed class DeckManagementService
     {
         private readonly CardGameApiClient _apiClient;
         private readonly AuthService _authService;
-        private Dictionary<string, DeckDto> _playerDecks = new();
-        private DateTimeOffset _lastDecksFetch = DateTimeOffset.MinValue;
-        private const int CACHE_MINUTES = 30;
+        private List<DeckDto> _cachedDecks;
+        private DateTimeOffset _lastFetch = DateTimeOffset.MinValue;
+        private const int CacheMinutes = 5;
+
+        public const int MinCards = 20;
+        public const int MaxCards = 60;
+        public const int MaxCopiesPerCard = 3;
 
         public DeckManagementService(CardGameApiClient apiClient, AuthService authService)
         {
@@ -25,11 +28,7 @@ namespace Flippy.CardDuelMobile.Networking
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
         }
 
-        /// <summary>
-        /// Obtiene los decks del jugador autenticado.
-        /// Cachea por 30 minutos.
-        /// </summary>
-        public async Task<List<DeckDto>> GetPlayerDecksAsync()
+        public async Task<List<DeckDto>> GetPlayerDecksAsync(bool forceRefresh = false)
         {
             if (!_authService.IsAuthenticated)
             {
@@ -37,98 +36,94 @@ namespace Flippy.CardDuelMobile.Networking
                 return new List<DeckDto>();
             }
 
-            var playerId = _authService.CurrentPlayerId;
             var now = DateTimeOffset.UtcNow;
-
-            // Return cached if fresh
-            if (_playerDecks.Count > 0 && (now - _lastDecksFetch).TotalMinutes < CACHE_MINUTES)
+            if (!forceRefresh && _cachedDecks != null && (now - _lastFetch).TotalMinutes < CacheMinutes)
             {
-                Debug.Log($"[Decks] Returned {_playerDecks.Count} cached decks");
-                return new List<DeckDto>(_playerDecks.Values);
+                return new List<DeckDto>(_cachedDecks);
             }
 
             try
             {
-                var decks = await _apiClient.FetchPlayerDecksAsync(playerId);
-                _playerDecks.Clear();
-
-                foreach (var deck in decks)
-                {
-                    _playerDecks[deck.deckId] = deck;
-                }
-
-                _lastDecksFetch = now;
-                Debug.Log($"[Decks] Fetched {_playerDecks.Count} decks from server");
-                return new List<DeckDto>(_playerDecks.Values);
+                _cachedDecks = await _apiClient.FetchPlayerDecksAsync(_authService.CurrentPlayerId);
+                _lastFetch = now;
+                Debug.Log($"[Decks] Fetched {_cachedDecks.Count} decks");
+                return new List<DeckDto>(_cachedDecks);
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[Decks] Failed to fetch decks: {ex.Message}");
-                return new List<DeckDto>();
+                Debug.LogError($"[Decks] FetchPlayerDecks failed: {ex.Message}");
+                return _cachedDecks ?? new List<DeckDto>();
             }
         }
 
-        /// <summary>
-        /// Obtiene un deck específico por ID.
-        /// </summary>
-        public DeckDto GetDeck(string deckId)
-        {
-            if (string.IsNullOrWhiteSpace(deckId))
-                return null;
-
-            _playerDecks.TryGetValue(deckId, out var deck);
-            return deck;
-        }
-
-        /// <summary>
-        /// Crea un nuevo deck.
-        /// </summary>
-        public async Task<bool> CreateDeckAsync(string displayName, List<string> cardIds)
+        public async Task<DeckDto> CreateDeckAsync(string displayName, List<string> cardIds)
         {
             if (!_authService.IsAuthenticated)
             {
                 Debug.LogError("[Decks] Not authenticated");
-                return false;
+                return null;
             }
 
             if (string.IsNullOrWhiteSpace(displayName))
             {
-                Debug.LogError("[Decks] DisplayName cannot be empty");
-                return false;
+                Debug.LogError("[Decks] displayName required");
+                return null;
             }
 
-            if (cardIds == null || cardIds.Count == 0)
+            if (!ValidateCardList(cardIds, out var msg))
             {
-                Debug.LogError("[Decks] Deck must contain at least one card");
-                return false;
+                Debug.LogError($"[Decks] Invalid deck: {msg}");
+                return null;
             }
-
-            var playerId = _authService.CurrentPlayerId;
-            var deckId = $"deck_{Guid.NewGuid().ToString().Substring(0, 8)}";
 
             try
             {
-                var success = await _apiClient.UpsertDeckAsync(playerId, deckId, displayName, cardIds);
-                if (success)
-                {
-                    // Invalidate cache to fetch fresh decks
-                    _playerDecks.Clear();
-                    _lastDecksFetch = DateTimeOffset.MinValue;
-                    Debug.Log($"[Decks] Created deck '{displayName}' ({deckId})");
-                }
-                return success;
+                // New deck: deckId = null → server assigns one; use upsert endpoint
+                var result = await _apiClient.UpsertDeckAsync(_authService.CurrentPlayerId, null, displayName, cardIds);
+                InvalidateCache();
+                return result;
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[Decks] Failed to create deck: {ex.Message}");
-                return false;
+                Debug.LogError($"[Decks] CreateDeck failed: {ex.Message}");
+                throw;
             }
         }
 
-        /// <summary>
-        /// Actualiza un deck existente.
-        /// </summary>
-        public async Task<bool> UpdateDeckAsync(string deckId, string displayName, List<string> cardIds)
+        public async Task<DeckDto> UpdateDeckAsync(string deckId, string displayName, List<string> cardIds)
+        {
+            if (!_authService.IsAuthenticated)
+            {
+                Debug.LogError("[Decks] Not authenticated");
+                return null;
+            }
+
+            if (string.IsNullOrWhiteSpace(deckId))
+            {
+                Debug.LogError("[Decks] deckId required");
+                return null;
+            }
+
+            if (!ValidateCardList(cardIds, out var msg))
+            {
+                Debug.LogError($"[Decks] Invalid deck: {msg}");
+                return null;
+            }
+
+            try
+            {
+                var result = await _apiClient.UpsertDeckAsync(_authService.CurrentPlayerId, deckId, displayName, cardIds);
+                InvalidateCache();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[Decks] UpdateDeck failed: {ex.Message}");
+                throw;
+            }
+        }
+
+        public async Task<bool> DeleteDeckAsync(string deckId)
         {
             if (!_authService.IsAuthenticated)
             {
@@ -136,59 +131,57 @@ namespace Flippy.CardDuelMobile.Networking
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(deckId) || string.IsNullOrWhiteSpace(displayName))
-            {
-                Debug.LogError("[Decks] DeckId and DisplayName cannot be empty");
-                return false;
-            }
-
-            if (cardIds == null || cardIds.Count == 0)
-            {
-                Debug.LogError("[Decks] Deck must contain at least one card");
-                return false;
-            }
-
-            var playerId = _authService.CurrentPlayerId;
-
             try
             {
-                var success = await _apiClient.UpsertDeckAsync(playerId, deckId, displayName, cardIds);
-                if (success)
-                {
-                    // Invalidate cache
-                    _playerDecks.Clear();
-                    _lastDecksFetch = DateTimeOffset.MinValue;
-                    Debug.Log($"[Decks] Updated deck '{displayName}'");
-                }
-                return success;
+                await _apiClient.DeleteDeckAsync(_authService.CurrentPlayerId, deckId);
+                InvalidateCache();
+                return true;
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[Decks] Failed to update deck: {ex.Message}");
+                Debug.LogError($"[Decks] DeleteDeck failed: {ex.Message}");
                 return false;
             }
         }
 
-        /// <summary>
-        /// Limpia la caché (ej: al logout).
-        /// </summary>
-        public void ClearCache()
+        public void InvalidateCache()
         {
-            _playerDecks.Clear();
-            _lastDecksFetch = DateTimeOffset.MinValue;
-            Debug.Log("[Decks] Cache cleared");
+            _cachedDecks = null;
+            _lastFetch = DateTimeOffset.MinValue;
         }
 
-        /// <summary>
-        /// Valida que un deck tenga al menos el mínimo de cartas requeridas.
-        /// </summary>
-        public bool IsValidDeck(List<string> cardIds, int minCards = 20, int maxCards = 60)
-        {
-            if (cardIds == null)
-                return false;
+        // Alias kept for callers that use the old name
+        public void ClearCache() => InvalidateCache();
 
-            var count = cardIds.Count;
-            return count >= minCards && count <= maxCards;
+        /// <summary>Validates card count and max-copies-per-card rules.</summary>
+        public bool ValidateCardList(List<string> cardIds, out string errorMessage)
+        {
+            if (cardIds == null || cardIds.Count < MinCards)
+            {
+                errorMessage = $"Deck needs at least {MinCards} cards (has {cardIds?.Count ?? 0})";
+                return false;
+            }
+            if (cardIds.Count > MaxCards)
+            {
+                errorMessage = $"Deck can have at most {MaxCards} cards";
+                return false;
+            }
+
+            var counts = new Dictionary<string, int>();
+            foreach (var id in cardIds)
+            {
+                if (string.IsNullOrWhiteSpace(id)) continue;
+                counts.TryGetValue(id, out var n);
+                counts[id] = n + 1;
+                if (counts[id] > MaxCopiesPerCard)
+                {
+                    errorMessage = $"Card '{id}' exceeds max {MaxCopiesPerCard} copies";
+                    return false;
+                }
+            }
+
+            errorMessage = null;
+            return true;
         }
     }
 }

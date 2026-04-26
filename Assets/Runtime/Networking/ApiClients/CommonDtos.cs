@@ -93,8 +93,10 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
     [System.Serializable]
     public sealed class DeckDto
     {
+        public string id;           // server DB UUID
         public string deckId;
-        public string playerId;
+        public string userId;       // server field name
+        public string playerId;     // legacy/compat
         public string deckName;
         public string displayName;
         public string description;
@@ -102,6 +104,9 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         public long createdAt;
         public long updatedAt;
         public bool isActive;
+
+        public string Name => !string.IsNullOrWhiteSpace(displayName) ? displayName : deckName;
+        public int CardCount => cardIds?.Count ?? 0;
     }
 
     [System.Serializable]

@@ -73,6 +73,8 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
         [Header("Actions")]
         [SerializeField] private Button craftCardsButton;
+        [SerializeField] private Button deckManagementButton;
+        [SerializeField] private Button cardCatalogButton;
 
         [Header("Feedback")]
         [SerializeField] private TextMeshProUGUI statusText;
@@ -81,6 +83,8 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         [Header("Panels")]
         [SerializeField] private CraftingPanel craftingPanel;
         [SerializeField] private CardDetailPanel cardDetailPanel;
+        [SerializeField] private DeckListPanel deckListPanel;
+        [SerializeField] private CardCatalogPanel cardCatalogPanel;
 
         // ---- Services ----
         private PlayerCardCollectionService _collectionService;
@@ -112,6 +116,8 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         {
             if (backButton != null) backButton.onClick.AddListener(OnBack);
             if (craftCardsButton != null) craftCardsButton.onClick.AddListener(OnCraftClicked);
+            if (deckManagementButton != null) deckManagementButton.onClick.AddListener(OnDecksClicked);
+            if (cardCatalogButton != null) cardCatalogButton.onClick.AddListener(OnCatalogClicked);
             if (prevPageButton != null) prevPageButton.onClick.AddListener(OnPrevPage);
             if (nextPageButton != null) nextPageButton.onClick.AddListener(OnNextPage);
             if (clearFiltersButton != null) clearFiltersButton.onClick.AddListener(OnClearFilters);
@@ -131,6 +137,14 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             {
                 cardDetailPanel.Hide();
                 cardDetailPanel.OnUpgradeSuccess += OnInventoryOrCollectionChanged;
+            }
+            if (deckListPanel != null)
+            {
+                deckListPanel.Hide();
+            }
+            if (cardCatalogPanel != null)
+            {
+                cardCatalogPanel.Hide();
             }
         }
 
@@ -269,6 +283,8 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         // ---- Actions ----
 
         private void OnCraftClicked() => craftingPanel?.Show();
+        private void OnDecksClicked() => deckListPanel?.Show();
+        private void OnCatalogClicked() => cardCatalogPanel?.Show();
 
         private void OnCardSelected(PlayerCardsApiClient.PlayerCardSummaryEntryDto entry)
         {

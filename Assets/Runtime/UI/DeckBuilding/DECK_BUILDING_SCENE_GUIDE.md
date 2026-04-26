@@ -21,6 +21,10 @@ Canvas
     LoadingOverlay
     CraftingPanel        -> CraftingPanel, starts inactive
     CardDetailPanel      -> CardDetailPanel, starts inactive
+    DeckListPanel        -> DeckListPanel, starts inactive
+      DeckEditPanel      -> DeckEditPanel, starts inactive (child of DeckListPanel)
+        CardCatalogPanel -> CardCatalogPanel, starts inactive (child of DeckEditPanel)
+    CardCatalogPanel2    -> CardCatalogPanel (browse mode), starts inactive
 ```
 
 ## CardCollectionScreen
@@ -28,22 +32,26 @@ Canvas
 Wire these references:
 
 ```text
-dustAmountText       Header/DustBadge/DustAmountText
-backButton           Header/BackButton
-searchField          FilterBar/SearchField
-rarityDropdown       FilterBar/RarityDropdown
-factionDropdown      FilterBar/FactionDropdown
-clearFiltersButton   FilterBar/ClearFiltersButton
-cardGridContent      CollectionScrollView/Viewport/Content
-cardItemPrefab       CardCollectionItem_Prefab
-prevPageButton       Pagination/PrevButton
-nextPageButton       Pagination/NextButton
-pageLabel            Pagination/PageLabel
-craftCardsButton     ActionBar/CraftCardsButton
-statusText           StatusText
-loadingOverlay       LoadingOverlay
-craftingPanel        CraftingPanel component
-cardDetailPanel      CardDetailPanel component
+dustAmountText         Header/DustBadge/DustAmountText
+backButton             Header/BackButton
+searchField            FilterBar/SearchField
+rarityDropdown         FilterBar/RarityDropdown
+factionDropdown        FilterBar/FactionDropdown
+clearFiltersButton     FilterBar/ClearFiltersButton
+cardGridContent        CollectionScrollView/Viewport/Content
+cardItemPrefab         CardCollectionItem_Prefab
+prevPageButton         Pagination/PrevButton
+nextPageButton         Pagination/NextButton
+pageLabel              Pagination/PageLabel
+craftCardsButton       ActionBar/CraftCardsButton
+deckManagementButton   ActionBar/DecksButton
+cardCatalogButton      ActionBar/CatalogButton
+statusText             StatusText
+loadingOverlay         LoadingOverlay
+craftingPanel          CraftingPanel component
+cardDetailPanel        CardDetailPanel component
+deckListPanel          DeckListPanel component
+cardCatalogPanel       CardCatalogPanel component (browse mode)
 ```
 
 Data used here:

@@ -106,7 +106,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
                 BindCard(card);
                 BuildUpgradeHistory(card.upgrades);
-                BuildUpgradeOptionsPlaceholder();
+                BuildUpgradeOptions(playerCardId);
             }
             catch (Exception ex)
             {
@@ -176,27 +176,79 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             }
         }
 
-        private void BuildUpgradeOptionsPlaceholder()
+        private void BuildUpgradeOptions(string playerCardId)
         {
             ClearChildren(upgradeOptionsContainer);
 
-            if (upgradeOptionItemPrefab != null && upgradeOptionsContainer != null)
+            if (upgradeOptionItemPrefab == null || upgradeOptionsContainer == null) return;
+
+            // Pre-defined upgrade types that use the generic POST upgrade endpoint.
+            // When a dedicated upgrade-options GET endpoint is available, replace these with server data.
+            var options = new[]
+            {
+                ("Attack Bonus (+1)",   "attack_bonus",  1, (string)null),
+                ("Health Bonus (+5)",   "health_bonus",  5, (string)null),
+                ("Armor Bonus (+2)",    "armor_bonus",   2, (string)null),
+                ("Level Up",            "level_up",      0, (string)null),
+            };
+
+            foreach (var (title, kind, intVal, strVal) in options)
             {
                 var go = Instantiate(upgradeOptionItemPrefab, upgradeOptionsContainer);
                 var item = go.GetComponent<UpgradeOptionItem>();
-                if (item != null)
+                if (item == null) continue;
+
+                var capturedKind = kind;
+                var capturedInt  = intVal;
+                var capturedStr  = strVal;
+                var capturedId   = playerCardId;
+
+                item.BindServerOption(
+                    title,
+                    $"Apply {title} to this card via server.",
+                    "Server-authoritative cost",
+                    canApply: true,
+                    onApply: () => ApplyUpgrade(capturedId, capturedKind, capturedInt, capturedStr));
+            }
+        }
+
+        private async void ApplyUpgrade(string playerCardId, string upgradeKind, int intValue, string stringValue)
+        {
+            SetLoading(true);
+            ShowStatus("Applying upgrade...");
+
+            try
+            {
+                var request = new PlayerCardsApiClient.ApplyUpgradeRequestDto
                 {
-                    item.BindUnavailable(
-                        "Server upgrade options pending",
-                        "The client no longer computes upgrade costs. Add a backend endpoint that returns available upgrades and atomic costs.");
-                    return;
+                    upgradeKind = upgradeKind,
+                    intValue    = intValue,
+                    stringValue = stringValue ?? string.Empty,
+                    appliedBy   = "player",
+                    note        = string.Empty
+                };
+
+                var (success, message, updated) = await _collectionService.ApplyUpgradeAsync(playerCardId, request);
+
+                if (success && updated != null)
+                {
+                    ShowStatus("Upgrade applied!");
+                    BindCard(updated);
+                    BuildUpgradeHistory(updated.upgrades);
+                    BuildUpgradeOptions(playerCardId);
+                    OnUpgradeSuccess?.Invoke();
+                }
+                else
+                {
+                    ShowStatus(message ?? "Upgrade failed.");
                 }
             }
-
-            SpawnTextRow(
-                upgradeOptionsContainer,
-                upgradeHistoryRowPrefab,
-                "Upgrade options require a backend endpoint. No client-side UpgradeConfig is used.");
+            catch (Exception ex)
+            {
+                ShowStatus($"Error: {ex.Message}");
+                Debug.LogError($"[CardDetail] ApplyUpgrade failed: {ex}");
+            }
+            finally { SetLoading(false); }
         }
 
         private static string FormatUpgradeLabel(PlayerCardsApiClient.PlayerCardUpgradeDto upgrade)
