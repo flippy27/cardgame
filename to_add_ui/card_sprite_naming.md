@@ -1,76 +1,94 @@
-# Card Sprite Naming And Asset Refs
+# Card Sprite Asset Refs
 
-Los sprites no se arrastran directo a cada carta para abilities/statuses. Se registran una vez en `CardVisualAssetResolver`, y los `Card Icon Group` de las cartas los piden en runtime por nombre.
+Unity does not invent visual asset paths anymore.
 
-El resolver ahora esta separado por listas para que el inspector no quede como una lista eterna:
+Everything visual comes from backend fields such as:
 
-- `Frame Assets`: frames de carta, por ejemplo `frames/common-hand`.
-- `Art Assets`: artes de cartas, por ejemplo `art/ember_0032`.
-- `Attack Icon Assets`: iconos de tipo de ataque, por ejemplo `icons/attack/melee`.
-- `Skill Icon Assets`: iconos de habilidades impresas/visibles, por ejemplo `icons/skills/poison`.
-- `Status Icon Assets`: iconos de buffs/debuffs/status activos, por ejemplo `icons/statuses/poisoned`.
-- `Misc Assets`: assets futuros o especiales que no calzan aun en una categoria.
-- `Legacy Asset Entries`: lista vieja migrada desde `assetEntries`; mantenla por compatibilidad y mueve entradas a las listas nuevas cuando te convenga.
+```text
+visualProfiles.layers[].assetRef
+ability.iconAssetRef
+status.iconAssetRef
+metadataJson.iconAssetRef
+metadataJson.assetRef
+```
 
-## Visual profile layers
+The exact string sent by the backend must be registered in `CardVisualAssetResolver`.
 
-`visualProfiles.layers[].assetRef` is resolved exactly first through all `CardVisualAssetResolver` lists, then through `Resources.Load`.
+## Resolver Lists
 
-Recommended names:
+Use the categorized lists only to keep the inspector tidy:
 
-- `frames/common-hand`
-- `frames/common-played`
-- `frames/rare-hand`
-- `frames/rare-played`
-- `art/ember_0032`
-- `art/tidal_0024`
-- `icons/attack/melee`
-- `icons/attack/ranged`
-- `icons/attack/magic`
+```text
+Frame Assets
+Art Assets
+Attack Icon Assets
+Skill Icon Assets
+Status Icon Assets
+Misc Assets
+Legacy Asset Entries
+```
 
-## Skill icons
+All lists are searched as one dictionary. The category does not change the key.
 
-Skill icons are resolved from `abilityId` or `animationCueId`.
+Example:
 
-These icons are rendered by `Card Icon Group` assigned to `Ability Icon Group` in `Card3DView`, `Card3DPlayed`, or `CardDetailOverlayUI`.
+```text
+assetRef = cards/grove/dragon_slayer/art
+sprite   = your sprite
+```
 
-Recommended names:
+If backend sends `cards/grove/dragon_slayer/art`, Unity uses that exact entry. If backend sends anything else, Unity shows the magenta missing-asset placeholder.
 
-- `icons/skills/poison`
-- `icons/skills/stun`
-- `icons/skills/shield`
-- `icons/skills/fly`
-- `icons/skills/trample`
-- `icons/skills/leech`
-- `icons/skills/enrage`
-- `icons/skills/regenerate_left`
-- `icons/skills/haste`
+## No Client Naming Assumptions
 
-## Buff/debuff status icons
+These old behaviors were removed:
 
-Statuses are not the same as the skill that created them. For example, `poison` is the ability, `poisoned` is the active debuff icon.
+```text
+Resources.Load fallback
+icons/skills/{abilityId}
+icons/statuses/{statusName}
+automatic status names for icons
+```
 
-These icons are rendered by `Card Icon Group` assigned to `Status Icon Group` in `Card3DPlayed` or `CardDetailOverlayUI`.
+You can still choose names like `icons/skills/poison`, but only because the backend sends exactly that string.
 
-Recommended names:
+## Recommended Backend Shape
 
-- `icons/statuses/poisoned`
-- `icons/statuses/stunned`
-- `icons/statuses/shielded`
-- `icons/statuses/enrage_cooldown`
-
-## Resolver fallback order
-
-For an ability id like `poison`, Unity checks:
-
-- `icons/skills/poison`
-- `skills/poison`
-- `icons/poison`
-- `poison`
-
-For a status like `poisoned`, Unity checks:
-
-- `icons/statuses/poisoned`
-- `statuses/poisoned`
-- `icons/poisoned`
-- `poisoned`
+```json
+{
+  "visualProfiles": [
+    {
+      "profileKey": "default",
+      "isDefault": true,
+      "layers": [
+        {
+          "surface": "hand",
+          "layer": "frame",
+          "assetRef": "frames/common-hand",
+          "sortOrder": 0
+        },
+        {
+          "surface": "hand",
+          "layer": "art",
+          "assetRef": "art/grove_0007",
+          "sortOrder": 10
+        }
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "abilityId": "poison",
+      "displayName": "Poison",
+      "iconAssetRef": "icons/skills/poison"
+    }
+  ],
+  "statusEffects": [
+    {
+      "kind": 0,
+      "abilityId": "poison",
+      "iconAssetRef": "icons/statuses/poisoned"
+    }
+  ]
+}
+```

@@ -562,8 +562,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8278743574070574187}
+  m_Children: []
   m_Father: {fileID: 576841196553207546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -865,114 +864,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5cb76b67eec46c0b99e0edec28d846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.UI.DeckBuilding.CraftingRecipeItem
-  cardNameText: {fileID: 0}
-  rarityText: {fileID: 0}
-  costContainer: {fileID: 0}
-  costChipPrefab: {fileID: 0}
-  affordabilityText: {fileID: 0}
-  craftButton: {fileID: 0}
-  craftButtonText: {fileID: 0}
+  cardNameText: {fileID: 9178017093985323151}
+  rarityText: {fileID: 8881716882882358506}
+  costContainer: {fileID: 253987786303687085}
+  costChipPrefab: {fileID: 7547690597255832492, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
+  affordabilityText: {fileID: 5242032716019934071}
+  craftButton: {fileID: 6476263504510034082}
+  craftButtonText: {fileID: 6984354969051037622}
   canAffordColor: {r: 0.2, g: 0.8, b: 0.2, a: 1}
   cannotAffordColor: {r: 0.9, g: 0.3, b: 0.3, a: 1}
---- !u!1001 &8565674112875023284
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 253987786303687085}
-    m_Modifications:
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7547690597255832492, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-      propertyPath: m_Name
-      value: CostChip
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
---- !u!224 &8278743574070574187 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 304945512571402207, guid: c6342ab3beb4a4462adf5379ec77814b, type: 3}
-  m_PrefabInstance: {fileID: 8565674112875023284}
-  m_PrefabAsset: {fileID: 0}

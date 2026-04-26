@@ -1,0 +1,3031 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-04-25T23:51:40.9436697Z
+LastUpdatedUtc: 2026-04-26T00:18:58.2829372Z
+MatchId: 769bab26953e43ed89148876e107e0b7
+CurrentTurn: 15
+ActivePlayerIndex: 1
+ActivePlayerId: c6e7d90f-eda8-4c2a-9991-996d85617a68
+IsLocalPlayersTurn: False
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (11fd524f-49f9-4ffe-b0e3-1ffc06233cad)
+
+Human Timeline
+001. seq=-1 /Info: Grove Dragon Slayer #7 entered Front.
+002. seq=1 attack_position_blocked/Info: Grove Dragon Slayer #7 cannot attack from Front.
+003. seq=2 skill_begin/SkillBegin: Grove Storm Caller #164 used Armor.
+004. seq=3 Grove Storm Caller #164#13bef278 gains armor 5. Armor 0->5. Grove Storm Caller #164 gained 5 armor.
+005. seq=4 skill_begin/SkillBegin: Grove Storm Caller #164 used Stun.
+006. seq=5 skill_begin/SkillBegin: Alloy Undead Knight #45 used Stun.
+007. seq=6 skill_begin/SkillBegin: Alloy Undead Knight #45 used Taunt.
+008. seq=7 Alloy Undead Knight #45#289aa4f1 skipped. Alloy Undead Knight #45 is not ready to attack.
+009. seq=8 Grove Storm Caller #164#13bef278 skipped. Grove Storm Caller #164 is not ready to attack.
+010. seq=9 attack_position_blocked/Info: Grove Dragon Slayer #7 cannot attack from Front.
+011. seq=10 P0 Alloy Undead Knight #45#289aa4f1 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 0->0, Armor 0->0. Alloy Undead Knight #45 attacked Grove Dragon Slayer #7.
+012. seq=11 P0 Alloy Undead Knight #45#289aa4f1 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 5->4, Armor 0->0. Grove Dragon Slayer #7 took 1 damage.
+013. seq=12 status 1 applied to Grove Dragon Slayer #7#d0380ebf for 1 turns by Alloy Undead Knight #45#289aa4f1. Stun applied to Grove Dragon Slayer #7.
+014. seq=13 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+015. seq=14 P0 Grove Storm Caller #164#13bef278 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dragon Slayer #7.
+016. seq=15 P0 Grove Storm Caller #164#13bef278 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 4->3, Armor 0->0. Grove Dragon Slayer #7 took 1 damage.
+017. seq=16 Grove Storm Caller #164#13bef278 heals 1. HP 4->5. Grove Storm Caller #164 healed 1.
+018. seq=17 status 1 applied to Grove Dragon Slayer #7#d0380ebf for 1 turns by Grove Storm Caller #164#13bef278. Stun applied to Grove Dragon Slayer #7.
+019. seq=-1 /Info: Grove Dark Sorcerer #125 entered BackLeft.
+020. seq=18 skill_begin/SkillBegin: Grove Dark Sorcerer #125 used Regenerate.
+021. seq=19 Grove Dark Sorcerer #125#8cd14023 heals 1. HP 4->5. Grove Dark Sorcerer #125 healed 1.
+022. seq=20 Alloy Undead Knight #45#289aa4f1 skipped. Grove Dragon Slayer #7 skipped its attack due to Stun.
+023. seq=21 Grove Dark Sorcerer #125#8cd14023 skipped. Grove Dark Sorcerer #125 is not ready to attack.
+024. seq=22 P0 Alloy Undead Knight #45#289aa4f1 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 0->0, Armor 0->0. Alloy Undead Knight #45 attacked Grove Dragon Slayer #7.
+025. seq=23 P0 Alloy Undead Knight #45#289aa4f1 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 3->2, Armor 0->0. Grove Dragon Slayer #7 took 1 damage.
+026. seq=24 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+027. seq=25 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dark Sorcerer #125.
+028. seq=26 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 5->5, Armor 1->0. Grove Dark Sorcerer #125 took 1 damage.
+029. seq=27 skill_begin/SkillBegin: Grove Dark Sorcerer #125 used Regenerate.
+030. seq=28 Grove Dark Sorcerer #125#8cd14023 heals 1. HP 5->6. Grove Dark Sorcerer #125 healed 1.
+031. seq=29 attack_position_blocked/Info: Grove Dragon Slayer #7 cannot attack from Front.
+032. seq=30 attack_position_blocked/Info: Grove Dark Sorcerer #125 cannot attack from BackLeft.
+033. seq=31 skill_begin/SkillBegin: Grove Storm Caller #164 used Armor.
+034. seq=32 Grove Storm Caller #164#34c775ca gains armor 5. Armor 0->5. Grove Storm Caller #164 gained 5 armor.
+035. seq=33 skill_begin/SkillBegin: Grove Storm Caller #164 used Stun.
+036. seq=34 Grove Storm Caller #164#34c775ca skipped. Grove Storm Caller #164 is not ready to attack.
+037. seq=35 attack_position_blocked/Info: Alloy Undead Knight #45 cannot attack from BackLeft.
+038. seq=36 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+039. seq=37 P0 Grove Storm Caller #164#13bef278 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dragon Slayer #7.
+040. seq=38 P0 Grove Storm Caller #164#13bef278 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 2->1, Armor 0->0. Grove Dragon Slayer #7 took 1 damage.
+041. seq=39 Grove Storm Caller #164#13bef278 heals 1. HP 5->6. Grove Storm Caller #164 healed 1.
+042. seq=40 skill_begin/SkillBegin: Grove Dark Sorcerer #125 used Regenerate.
+043. seq=41 Grove Dark Sorcerer #125#8cd14023 heals 1. HP 6->7. Grove Dark Sorcerer #125 healed 1.
+044. seq=42 attack_position_blocked/Info: Grove Dragon Slayer #7 cannot attack from Front.
+045. seq=43 attack_position_blocked/Info: Grove Dark Sorcerer #125 cannot attack from BackLeft.
+046. seq=44 attack_position_blocked/Info: Grove Storm Caller #164 cannot attack from Front.
+047. seq=45 attack_position_blocked/Info: Alloy Undead Knight #45 cannot attack from BackLeft.
+048. seq=46 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+049. seq=47 P0 Grove Storm Caller #164#13bef278 attacks P1 for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dragon Slayer #7.
+050. seq=48 P0 Grove Storm Caller #164#13bef278 attacks P1 for 1. HP 1->0, Armor 0->0. Grove Dragon Slayer #7 took 1 damage.
+051. seq=49 P1 dies. Grove Dragon Slayer #7 died.
+052. seq=50 Grove Storm Caller #164#13bef278 heals 1. HP 6->7. Grove Storm Caller #164 healed 1.
+053. seq=-1 /Info: Tidal Inferno Beast #24 entered Front.
+054. seq=51 skill_begin/SkillBegin: Alloy Blessed Monk #118 used Shield.
+055. seq=52 Alloy Blessed Monk #118#3d49195d gains armor 10. Armor 2->12. Alloy Blessed Monk #118 gained 10 armor.
+056. seq=53 skill_begin/SkillBegin: Grove Dark Sorcerer #125 used Regenerate.
+057. seq=54 Grove Dark Sorcerer #125#8cd14023 heals 1. HP 7->8. Grove Dark Sorcerer #125 healed 1.
+058. seq=55 attack_position_blocked/Info: Alloy Blessed Monk #118 cannot attack from Front.
+059. seq=56 Tidal Inferno Beast #24#32d60fda skipped. Tidal Inferno Beast #24 is not ready to attack.
+060. seq=57 attack_position_blocked/Info: Grove Dark Sorcerer #125 cannot attack from BackRight.
+061. seq=58 attack_position_blocked/Info: Grove Storm Caller #164 cannot attack from Front.
+062. seq=59 attack_position_blocked/Info: Alloy Undead Knight #45 cannot attack from BackLeft.
+063. seq=60 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+064. seq=61 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dark Sorcerer #125.
+065. seq=62 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 8->7, Armor 0->0. Grove Dark Sorcerer #125 took 1 damage.
+066. seq=63 Grove Storm Caller #164#13bef278 heals 1. HP 7->8. Grove Storm Caller #164 healed 1.
+067. seq=64 skill_begin/SkillBegin: Tidal Inferno Beast #24 used Enrage.
+068. seq=65 skill_begin/SkillBegin: Grove Dark Sorcerer #125 used Regenerate.
+069. seq=66 Grove Dark Sorcerer #125#8cd14023 heals 1. HP 7->8. Grove Dark Sorcerer #125 healed 1.
+070. seq=67 attack_position_blocked/Info: Alloy Blessed Monk #118 cannot attack from Front.
+071. seq=68 attack_position_blocked/Info: Tidal Inferno Beast #24 cannot attack from BackLeft.
+072. seq=69 attack_position_blocked/Info: Grove Dark Sorcerer #125 cannot attack from BackRight.
+073. seq=70 attack_position_blocked/Info: Grove Storm Caller #164 cannot attack from Front.
+074. seq=71 attack_position_blocked/Info: Alloy Undead Knight #45 cannot attack from BackLeft.
+075. seq=72 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+076. seq=73 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dark Sorcerer #125.
+077. seq=74 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 8->7, Armor 0->0. Grove Dark Sorcerer #125 took 1 damage.
+078. seq=75 Grove Storm Caller #164#13bef278 heals 1. HP 8->9. Grove Storm Caller #164 healed 1.
+079. seq=76 skill_begin/SkillBegin: Tidal Inferno Beast #24 used Enrage.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-04-25T23:51:40.9451764Z | Turn 1 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=1/1 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=76 | P1 id=c6e7d90f hp=20 mana=1/1 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=16
+   Events: none
+-- Step 2 | UTC 2026-04-25T23:53:35.0267021Z | Turn 1 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=1/1 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=76 | P1 id=c6e7d90f hp=20 mana=0/1 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=16
+   - seq=-1 /Info: Grove Dragon Slayer #7 entered Front.
+-- Step 3 | UTC 2026-04-25T23:53:35.0404508Z | Turn 2 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=2/2 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=5 deck=75 | P1 id=c6e7d90f hp=20 mana=0/1 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=16
+   - seq=1 attack_position_blocked/Info: Grove Dragon Slayer #7 cannot attack from Front.
+-- Step 4 | UTC 2026-04-25T23:53:49.8055338Z | Turn 2 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=1/2 board=[Front:Grove Storm Caller #164#13bef278 hp=4/4 armor=5 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=75 | P1 id=c6e7d90f hp=20 mana=0/1 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=16
+   - seq=2 skill_begin/SkillBegin: Grove Storm Caller #164 used Armor.
+   - seq=3 Grove Storm Caller #164#13bef278 gains armor 5. Armor 0->5. Grove Storm Caller #164 gained 5 armor.
+   - seq=4 skill_begin/SkillBegin: Grove Storm Caller #164 used Stun.
+-- Step 5 | UTC 2026-04-25T23:54:11.8853334Z | Turn 2 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=0/2 board=[Front:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Grove Storm Caller #164#13bef278 hp=4/4 armor=5 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=75 | P1 id=c6e7d90f hp=20 mana=0/1 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=16
+   - seq=5 skill_begin/SkillBegin: Alloy Undead Knight #45 used Stun.
+   - seq=6 skill_begin/SkillBegin: Alloy Undead Knight #45 used Taunt.
+-- Step 6 | UTC 2026-04-25T23:58:20.4750443Z | Turn 3 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=0/2 board=[Front:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Grove Storm Caller #164#13bef278 hp=4/4 armor=5 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=75 | P1 id=c6e7d90f hp=20 mana=2/2 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=15
+   - seq=7 Alloy Undead Knight #45#289aa4f1 skipped. Alloy Undead Knight #45 is not ready to attack.
+   - seq=8 Grove Storm Caller #164#13bef278 skipped. Grove Storm Caller #164 is not ready to attack.
+-- Step 7 | UTC 2026-04-25T23:58:41.2554525Z | Turn 4 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=3/3 board=[Front:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Grove Storm Caller #164#13bef278 hp=4/4 armor=5 unitType=1 delivery=projectile, BackRight:empty] hand=4 deck=74 | P1 id=c6e7d90f hp=20 mana=2/2 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=15
+   - seq=9 attack_position_blocked/Info: Grove Dragon Slayer #7 cannot attack from Front.
+-- Step 8 | UTC 2026-04-26T00:01:27.8118470Z | Turn 5 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=3/3 board=[Front:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Grove Storm Caller #164#13bef278 hp=5/4 armor=5 unitType=1 delivery=projectile, BackRight:empty] hand=4 deck=74 | P1 id=c6e7d90f hp=20 mana=3/3 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=3/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=14
+   - seq=10 P0 Alloy Undead Knight #45#289aa4f1 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 0->0, Armor 0->0. Alloy Undead Knight #45 attacked Grove Dragon Slayer #7.
+   - seq=11 P0 Alloy Undead Knight #45#289aa4f1 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 5->4, Armor 0->0. Grove Dragon Slayer #7 took 1 damage.
+   - seq=12 status 1 applied to Grove Dragon Slayer #7#d0380ebf for 1 turns by Alloy Undead Knight #45#289aa4f1. Stun applied to Grove Dragon Slayer #7.
+   - seq=13 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+   - seq=14 P0 Grove Storm Caller #164#13bef278 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dragon Slayer #7.
+   - seq=15 P0 Grove Storm Caller #164#13bef278 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 4->3, Armor 0->0. Grove Dragon Slayer #7 took 1 damage.
+   - seq=16 Grove Storm Caller #164#13bef278 heals 1. HP 4->5. Grove Storm Caller #164 healed 1.
+   - seq=17 status 1 applied to Grove Dragon Slayer #7#d0380ebf for 1 turns by Grove Storm Caller #164#13bef278. Stun applied to Grove Dragon Slayer #7.
+-- Step 9 | UTC 2026-04-26T00:03:12.7714388Z | Turn 5 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=3/3 board=[Front:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Grove Storm Caller #164#13bef278 hp=5/4 armor=5 unitType=1 delivery=projectile, BackRight:empty] hand=4 deck=74 | P1 id=c6e7d90f hp=20 mana=1/3 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=3/5 armor=0 unitType=0 delivery=melee, BackLeft:Grove Dark Sorcerer #125#8cd14023 hp=4/4 armor=1 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=14
+   - seq=-1 /Info: Grove Dark Sorcerer #125 entered BackLeft.
+-- Step 10 | UTC 2026-04-26T00:03:12.7815050Z | Turn 6 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=4/4 board=[Front:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Grove Storm Caller #164#13bef278 hp=5/4 armor=5 unitType=1 delivery=projectile, BackRight:empty] hand=5 deck=73 | P1 id=c6e7d90f hp=20 mana=1/3 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=3/5 armor=0 unitType=0 delivery=melee, BackLeft:Grove Dark Sorcerer #125#8cd14023 hp=5/4 armor=1 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=14
+   - seq=18 skill_begin/SkillBegin: Grove Dark Sorcerer #125 used Regenerate.
+   - seq=19 Grove Dark Sorcerer #125#8cd14023 heals 1. HP 4->5. Grove Dark Sorcerer #125 healed 1.
+   - seq=20 Alloy Undead Knight #45#289aa4f1 skipped. Grove Dragon Slayer #7 skipped its attack due to Stun.
+   - seq=21 Grove Dark Sorcerer #125#8cd14023 skipped. Grove Dark Sorcerer #125 is not ready to attack.
+-- Step 11 | UTC 2026-04-26T00:04:05.9063014Z | Turn 7 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=4/4 board=[Front:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Grove Storm Caller #164#13bef278 hp=5/4 armor=5 unitType=1 delivery=projectile, BackRight:empty] hand=5 deck=73 | P1 id=c6e7d90f hp=20 mana=4/4 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=2/5 armor=0 unitType=0 delivery=melee, BackLeft:Grove Dark Sorcerer #125#8cd14023 hp=5/4 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=13
+   - seq=22 P0 Alloy Undead Knight #45#289aa4f1 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 0->0, Armor 0->0. Alloy Undead Knight #45 attacked Grove Dragon Slayer #7.
+   - seq=23 P0 Alloy Undead Knight #45#289aa4f1 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 3->2, Armor 0->0. Grove Dragon Slayer #7 took 1 damage.
+   - seq=24 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+   - seq=25 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dark Sorcerer #125.
+   - seq=26 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 5->5, Armor 1->0. Grove Dark Sorcerer #125 took 1 damage.
+-- Step 12 | UTC 2026-04-26T00:05:48.6988724Z | Turn 8 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=5/5 board=[Front:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Grove Storm Caller #164#13bef278 hp=5/4 armor=5 unitType=1 delivery=projectile, BackRight:empty] hand=6 deck=72 | P1 id=c6e7d90f hp=20 mana=4/4 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=2/5 armor=0 unitType=0 delivery=melee, BackLeft:Grove Dark Sorcerer #125#8cd14023 hp=6/4 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=13
+   - seq=27 skill_begin/SkillBegin: Grove Dark Sorcerer #125 used Regenerate.
+   - seq=28 Grove Dark Sorcerer #125#8cd14023 heals 1. HP 5->6. Grove Dark Sorcerer #125 healed 1.
+   - seq=29 attack_position_blocked/Info: Grove Dragon Slayer #7 cannot attack from Front.
+   - seq=30 attack_position_blocked/Info: Grove Dark Sorcerer #125 cannot attack from BackLeft.
+-- Step 13 | UTC 2026-04-26T00:05:51.6663504Z | Turn 8 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=4/5 board=[Front:Grove Storm Caller #164#34c775ca hp=4/4 armor=5 unitType=1 delivery=projectile, BackLeft:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Grove Storm Caller #164#13bef278 hp=5/4 armor=5 unitType=1 delivery=projectile] hand=5 deck=72 | P1 id=c6e7d90f hp=20 mana=4/4 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=2/5 armor=0 unitType=0 delivery=melee, BackLeft:Grove Dark Sorcerer #125#8cd14023 hp=6/4 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=13
+   - seq=31 skill_begin/SkillBegin: Grove Storm Caller #164 used Armor.
+   - seq=32 Grove Storm Caller #164#34c775ca gains armor 5. Armor 0->5. Grove Storm Caller #164 gained 5 armor.
+   - seq=33 skill_begin/SkillBegin: Grove Storm Caller #164 used Stun.
+-- Step 14 | UTC 2026-04-26T00:05:53.8307523Z | Turn 9 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=4/5 board=[Front:Grove Storm Caller #164#34c775ca hp=4/4 armor=5 unitType=1 delivery=projectile, BackLeft:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Grove Storm Caller #164#13bef278 hp=6/4 armor=5 unitType=1 delivery=projectile] hand=5 deck=72 | P1 id=c6e7d90f hp=20 mana=5/5 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=1/5 armor=0 unitType=0 delivery=melee, BackLeft:Grove Dark Sorcerer #125#8cd14023 hp=6/4 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=12
+   - seq=34 Grove Storm Caller #164#34c775ca skipped. Grove Storm Caller #164 is not ready to attack.
+   - seq=35 attack_position_blocked/Info: Alloy Undead Knight #45 cannot attack from BackLeft.
+   - seq=36 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+   - seq=37 P0 Grove Storm Caller #164#13bef278 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dragon Slayer #7.
+   - seq=38 P0 Grove Storm Caller #164#13bef278 attacks Grove Dragon Slayer #7#d0380ebf for 1. HP 2->1, Armor 0->0. Grove Dragon Slayer #7 took 1 damage.
+   - seq=39 Grove Storm Caller #164#13bef278 heals 1. HP 5->6. Grove Storm Caller #164 healed 1.
+-- Step 15 | UTC 2026-04-26T00:06:06.5711003Z | Turn 10 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=6/6 board=[Front:Grove Storm Caller #164#34c775ca hp=4/4 armor=5 unitType=1 delivery=projectile, BackLeft:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Grove Storm Caller #164#13bef278 hp=6/4 armor=5 unitType=1 delivery=projectile] hand=6 deck=71 | P1 id=c6e7d90f hp=20 mana=5/5 board=[Front:Grove Dragon Slayer #7#d0380ebf hp=1/5 armor=0 unitType=0 delivery=melee, BackLeft:Grove Dark Sorcerer #125#8cd14023 hp=7/4 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=12
+   - seq=40 skill_begin/SkillBegin: Grove Dark Sorcerer #125 used Regenerate.
+   - seq=41 Grove Dark Sorcerer #125#8cd14023 heals 1. HP 6->7. Grove Dark Sorcerer #125 healed 1.
+   - seq=42 attack_position_blocked/Info: Grove Dragon Slayer #7 cannot attack from Front.
+   - seq=43 attack_position_blocked/Info: Grove Dark Sorcerer #125 cannot attack from BackLeft.
+-- Step 16 | UTC 2026-04-26T00:06:11.0349821Z | Turn 11 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=6/6 board=[Front:Grove Storm Caller #164#34c775ca hp=4/4 armor=5 unitType=1 delivery=projectile, BackLeft:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Grove Storm Caller #164#13bef278 hp=7/4 armor=5 unitType=1 delivery=projectile] hand=6 deck=71 | P1 id=c6e7d90f hp=20 mana=6/6 board=[Front:Grove Dark Sorcerer #125#8cd14023 hp=7/4 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=11
+   - seq=44 attack_position_blocked/Info: Grove Storm Caller #164 cannot attack from Front.
+   - seq=45 attack_position_blocked/Info: Alloy Undead Knight #45 cannot attack from BackLeft.
+   - seq=46 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+   - seq=47 P0 Grove Storm Caller #164#13bef278 attacks P1 for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dragon Slayer #7.
+   - seq=48 P0 Grove Storm Caller #164#13bef278 attacks P1 for 1. HP 1->0, Armor 0->0. Grove Dragon Slayer #7 took 1 damage.
+   - seq=49 P1 dies. Grove Dragon Slayer #7 died.
+   - seq=50 Grove Storm Caller #164#13bef278 heals 1. HP 6->7. Grove Storm Caller #164 healed 1.
+-- Step 17 | UTC 2026-04-26T00:07:14.7072615Z | Turn 11 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=6/6 board=[Front:Grove Storm Caller #164#34c775ca hp=4/4 armor=5 unitType=1 delivery=projectile, BackLeft:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Grove Storm Caller #164#13bef278 hp=7/4 armor=5 unitType=1 delivery=projectile] hand=6 deck=71 | P1 id=c6e7d90f hp=20 mana=2/6 board=[Front:Tidal Inferno Beast #24#32d60fda hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Grove Dark Sorcerer #125#8cd14023 hp=7/4 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=11
+   - seq=-1 /Info: Tidal Inferno Beast #24 entered Front.
+-- Step 18 | UTC 2026-04-26T00:07:14.7178419Z | Turn 11 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=6/6 board=[Front:Grove Storm Caller #164#34c775ca hp=4/4 armor=5 unitType=1 delivery=projectile, BackLeft:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Grove Storm Caller #164#13bef278 hp=7/4 armor=5 unitType=1 delivery=projectile] hand=6 deck=71 | P1 id=c6e7d90f hp=20 mana=0/6 board=[Front:Alloy Blessed Monk #118#3d49195d hp=1/1 armor=12 unitType=0 delivery=melee, BackLeft:Tidal Inferno Beast #24#32d60fda hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:Grove Dark Sorcerer #125#8cd14023 hp=7/4 armor=0 unitType=0 delivery=melee] hand=0 deck=11
+   - seq=51 skill_begin/SkillBegin: Alloy Blessed Monk #118 used Shield.
+   - seq=52 Alloy Blessed Monk #118#3d49195d gains armor 10. Armor 2->12. Alloy Blessed Monk #118 gained 10 armor.
+-- Step 19 | UTC 2026-04-26T00:07:14.9550810Z | Turn 12 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=7/7 board=[Front:Grove Storm Caller #164#34c775ca hp=4/4 armor=5 unitType=1 delivery=projectile, BackLeft:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Grove Storm Caller #164#13bef278 hp=7/4 armor=5 unitType=1 delivery=projectile] hand=7 deck=70 | P1 id=c6e7d90f hp=20 mana=0/6 board=[Front:Alloy Blessed Monk #118#3d49195d hp=1/1 armor=12 unitType=0 delivery=melee, BackLeft:Tidal Inferno Beast #24#32d60fda hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:Grove Dark Sorcerer #125#8cd14023 hp=8/4 armor=0 unitType=0 delivery=melee] hand=0 deck=11
+   - seq=53 skill_begin/SkillBegin: Grove Dark Sorcerer #125 used Regenerate.
+   - seq=54 Grove Dark Sorcerer #125#8cd14023 heals 1. HP 7->8. Grove Dark Sorcerer #125 healed 1.
+   - seq=55 attack_position_blocked/Info: Alloy Blessed Monk #118 cannot attack from Front.
+   - seq=56 Tidal Inferno Beast #24#32d60fda skipped. Tidal Inferno Beast #24 is not ready to attack.
+   - seq=57 attack_position_blocked/Info: Grove Dark Sorcerer #125 cannot attack from BackRight.
+-- Step 20 | UTC 2026-04-26T00:07:18.2337196Z | Turn 13 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=7/7 board=[Front:Grove Storm Caller #164#34c775ca hp=4/4 armor=5 unitType=1 delivery=projectile, BackLeft:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Grove Storm Caller #164#13bef278 hp=8/4 armor=5 unitType=1 delivery=projectile] hand=7 deck=70 | P1 id=c6e7d90f hp=20 mana=7/7 board=[Front:Alloy Blessed Monk #118#3d49195d hp=1/1 armor=12 unitType=0 delivery=melee, BackLeft:Tidal Inferno Beast #24#32d60fda hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:Grove Dark Sorcerer #125#8cd14023 hp=7/4 armor=0 unitType=0 delivery=melee] hand=0 deck=10
+   - seq=58 attack_position_blocked/Info: Grove Storm Caller #164 cannot attack from Front.
+   - seq=59 attack_position_blocked/Info: Alloy Undead Knight #45 cannot attack from BackLeft.
+   - seq=60 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+   - seq=61 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dark Sorcerer #125.
+   - seq=62 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 8->7, Armor 0->0. Grove Dark Sorcerer #125 took 1 damage.
+   - seq=63 Grove Storm Caller #164#13bef278 heals 1. HP 7->8. Grove Storm Caller #164 healed 1.
+   - seq=64 skill_begin/SkillBegin: Tidal Inferno Beast #24 used Enrage.
+-- Step 21 | UTC 2026-04-26T00:07:36.2293154Z | Turn 14 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=8/8 board=[Front:Grove Storm Caller #164#34c775ca hp=4/4 armor=5 unitType=1 delivery=projectile, BackLeft:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Grove Storm Caller #164#13bef278 hp=8/4 armor=5 unitType=1 delivery=projectile] hand=8 deck=69 | P1 id=c6e7d90f hp=20 mana=7/7 board=[Front:Alloy Blessed Monk #118#3d49195d hp=1/1 armor=12 unitType=0 delivery=melee, BackLeft:Tidal Inferno Beast #24#32d60fda hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:Grove Dark Sorcerer #125#8cd14023 hp=8/4 armor=0 unitType=0 delivery=melee] hand=0 deck=10
+   - seq=65 skill_begin/SkillBegin: Grove Dark Sorcerer #125 used Regenerate.
+   - seq=66 Grove Dark Sorcerer #125#8cd14023 heals 1. HP 7->8. Grove Dark Sorcerer #125 healed 1.
+   - seq=67 attack_position_blocked/Info: Alloy Blessed Monk #118 cannot attack from Front.
+   - seq=68 attack_position_blocked/Info: Tidal Inferno Beast #24 cannot attack from BackLeft.
+   - seq=69 attack_position_blocked/Info: Grove Dark Sorcerer #125 cannot attack from BackRight.
+-- Step 22 | UTC 2026-04-26T00:07:51.8340315Z | Turn 15 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=8/8 board=[Front:Grove Storm Caller #164#34c775ca hp=4/4 armor=5 unitType=1 delivery=projectile, BackLeft:Alloy Undead Knight #45#289aa4f1 hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Grove Storm Caller #164#13bef278 hp=9/4 armor=5 unitType=1 delivery=projectile] hand=8 deck=69 | P1 id=c6e7d90f hp=20 mana=8/8 board=[Front:Alloy Blessed Monk #118#3d49195d hp=1/1 armor=12 unitType=0 delivery=melee, BackLeft:Tidal Inferno Beast #24#32d60fda hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:Grove Dark Sorcerer #125#8cd14023 hp=7/4 armor=0 unitType=0 delivery=melee] hand=0 deck=9
+   - seq=70 attack_position_blocked/Info: Grove Storm Caller #164 cannot attack from Front.
+   - seq=71 attack_position_blocked/Info: Alloy Undead Knight #45 cannot attack from BackLeft.
+   - seq=72 skill_begin/SkillBegin: Grove Storm Caller #164 used Leech.
+   - seq=73 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 0->0, Armor 0->0. Grove Storm Caller #164 attacked Grove Dark Sorcerer #125.
+   - seq=74 P0 Grove Storm Caller #164#13bef278 attacks Grove Dark Sorcerer #125#8cd14023 for 1. HP 8->7, Armor 0->0. Grove Dark Sorcerer #125 took 1 damage.
+   - seq=75 Grove Storm Caller #164#13bef278 heals 1. HP 8->9. Grove Storm Caller #164 healed 1.
+   - seq=76 skill_begin/SkillBegin: Tidal Inferno Beast #24 used Enrage.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=attack_position_blocked serverSrcSeat=0 srcVisual=1 src=d0380ebfa75c4c62bc75f1f9a73447dc serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dragon Slayer #7 cannot attack from Front.
+seq=2 id=evt-000002 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=-1 target= ability=armor effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Armor.
+seq=3 id=evt-000003 kind=armor_gain serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=1 targetVisual=0 target=13bef2780fd24334a66e31de0e13a385 ability=armor effect=2 status=0 amount=5 hp=4->4 armor=0->5 message=Grove Storm Caller #164 gained 5 armor.
+seq=4 id=evt-000004 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=-1 target= ability=stun effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Stun.
+seq=5 id=evt-000005 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=-1 target= ability=stun effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 used Stun.
+seq=6 id=evt-000006 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=-1 target= ability=taunt effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 used Taunt.
+seq=7 id=evt-000007 kind=attack_not_ready serverSrcSeat=1 srcVisual=0 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 is not ready to attack.
+seq=8 id=evt-000008 kind=attack_not_ready serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 is not ready to attack.
+seq=9 id=evt-000009 kind=attack_position_blocked serverSrcSeat=0 srcVisual=1 src=d0380ebfa75c4c62bc75f1f9a73447dc serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dragon Slayer #7 cannot attack from Front.
+seq=10 id=evt-000010 kind=card_attack serverSrcSeat=1 srcVisual=0 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 attacked Grove Dragon Slayer #7.
+seq=11 id=evt-000011 kind=card_damage serverSrcSeat=1 srcVisual=0 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability= effect=0 status=0 amount=1 hp=5->4 armor=0->0 message=Grove Dragon Slayer #7 took 1 damage.
+seq=12 id=evt-000012 kind=status_applied serverSrcSeat=0 srcVisual=1 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability=stun effect=0 status=1 amount=0 hp=0->0 armor=0->0 message=Stun applied to Grove Dragon Slayer #7.
+seq=13 id=evt-000013 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=-1 target= ability=leech effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Leech.
+seq=14 id=evt-000014 kind=card_attack serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Grove Storm Caller #164 attacked Grove Dragon Slayer #7.
+seq=15 id=evt-000015 kind=card_damage serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability= effect=0 status=0 amount=1 hp=4->3 armor=0->0 message=Grove Dragon Slayer #7 took 1 damage.
+seq=16 id=evt-000016 kind=heal serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=1 targetVisual=0 target=13bef2780fd24334a66e31de0e13a385 ability=leech effect=1 status=0 amount=1 hp=4->5 armor=5->5 message=Grove Storm Caller #164 healed 1.
+seq=17 id=evt-000017 kind=status_applied serverSrcSeat=0 srcVisual=1 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability=stun effect=0 status=1 amount=0 hp=0->0 armor=0->0 message=Stun applied to Grove Dragon Slayer #7.
+seq=18 id=evt-000018 kind=skill_begin serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dark Sorcerer #125 used Regenerate.
+seq=19 id=evt-000019 kind=heal serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=1 target=8cd14023bc58411cba6f3545773d9c9e ability=regenerate effect=1 status=0 amount=1 hp=4->5 armor=1->1 message=Grove Dark Sorcerer #125 healed 1.
+seq=20 id=evt-000020 kind=stun_skip serverSrcSeat=0 srcVisual=1 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability=stun effect=0 status=1 amount=0 hp=0->0 armor=0->0 message=Grove Dragon Slayer #7 skipped its attack due to Stun.
+seq=21 id=evt-000021 kind=attack_not_ready serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dark Sorcerer #125 is not ready to attack.
+seq=22 id=evt-000022 kind=card_attack serverSrcSeat=1 srcVisual=0 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 attacked Grove Dragon Slayer #7.
+seq=23 id=evt-000023 kind=card_damage serverSrcSeat=1 srcVisual=0 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability= effect=0 status=0 amount=1 hp=3->2 armor=0->0 message=Grove Dragon Slayer #7 took 1 damage.
+seq=24 id=evt-000024 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=-1 target= ability=leech effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Leech.
+seq=25 id=evt-000025 kind=card_attack serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=8cd14023bc58411cba6f3545773d9c9e ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Grove Storm Caller #164 attacked Grove Dark Sorcerer #125.
+seq=26 id=evt-000026 kind=card_damage serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=8cd14023bc58411cba6f3545773d9c9e ability= effect=0 status=0 amount=1 hp=5->5 armor=1->0 message=Grove Dark Sorcerer #125 took 1 damage.
+seq=27 id=evt-000027 kind=skill_begin serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dark Sorcerer #125 used Regenerate.
+seq=28 id=evt-000028 kind=heal serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=1 target=8cd14023bc58411cba6f3545773d9c9e ability=regenerate effect=1 status=0 amount=1 hp=5->6 armor=0->0 message=Grove Dark Sorcerer #125 healed 1.
+seq=29 id=evt-000029 kind=attack_position_blocked serverSrcSeat=0 srcVisual=1 src=d0380ebfa75c4c62bc75f1f9a73447dc serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dragon Slayer #7 cannot attack from Front.
+seq=30 id=evt-000030 kind=attack_position_blocked serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dark Sorcerer #125 cannot attack from BackLeft.
+seq=31 id=evt-000031 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=34c775cab58b4f15af2426c4d5f6c644 serverTargetSeat=0 targetVisual=-1 target= ability=armor effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Armor.
+seq=32 id=evt-000032 kind=armor_gain serverSrcSeat=1 srcVisual=0 src=34c775cab58b4f15af2426c4d5f6c644 serverTargetSeat=1 targetVisual=0 target=34c775cab58b4f15af2426c4d5f6c644 ability=armor effect=2 status=0 amount=5 hp=4->4 armor=0->5 message=Grove Storm Caller #164 gained 5 armor.
+seq=33 id=evt-000033 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=34c775cab58b4f15af2426c4d5f6c644 serverTargetSeat=0 targetVisual=-1 target= ability=stun effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Stun.
+seq=34 id=evt-000034 kind=attack_not_ready serverSrcSeat=1 srcVisual=0 src=34c775cab58b4f15af2426c4d5f6c644 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 is not ready to attack.
+seq=35 id=evt-000035 kind=attack_position_blocked serverSrcSeat=1 srcVisual=0 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 cannot attack from BackLeft.
+seq=36 id=evt-000036 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=-1 target= ability=leech effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Leech.
+seq=37 id=evt-000037 kind=card_attack serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Grove Storm Caller #164 attacked Grove Dragon Slayer #7.
+seq=38 id=evt-000038 kind=card_damage serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability= effect=0 status=0 amount=1 hp=2->1 armor=0->0 message=Grove Dragon Slayer #7 took 1 damage.
+seq=39 id=evt-000039 kind=heal serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=1 targetVisual=0 target=13bef2780fd24334a66e31de0e13a385 ability=leech effect=1 status=0 amount=1 hp=5->6 armor=5->5 message=Grove Storm Caller #164 healed 1.
+seq=40 id=evt-000040 kind=skill_begin serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dark Sorcerer #125 used Regenerate.
+seq=41 id=evt-000041 kind=heal serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=1 target=8cd14023bc58411cba6f3545773d9c9e ability=regenerate effect=1 status=0 amount=1 hp=6->7 armor=0->0 message=Grove Dark Sorcerer #125 healed 1.
+seq=42 id=evt-000042 kind=attack_position_blocked serverSrcSeat=0 srcVisual=1 src=d0380ebfa75c4c62bc75f1f9a73447dc serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dragon Slayer #7 cannot attack from Front.
+seq=43 id=evt-000043 kind=attack_position_blocked serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dark Sorcerer #125 cannot attack from BackLeft.
+seq=44 id=evt-000044 kind=attack_position_blocked serverSrcSeat=1 srcVisual=0 src=34c775cab58b4f15af2426c4d5f6c644 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 cannot attack from Front.
+seq=45 id=evt-000045 kind=attack_position_blocked serverSrcSeat=1 srcVisual=0 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 cannot attack from BackLeft.
+seq=46 id=evt-000046 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=-1 target= ability=leech effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Leech.
+seq=47 id=evt-000047 kind=card_attack serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Grove Storm Caller #164 attacked Grove Dragon Slayer #7.
+seq=48 id=evt-000048 kind=card_damage serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability= effect=0 status=0 amount=1 hp=1->0 armor=0->0 message=Grove Dragon Slayer #7 took 1 damage.
+seq=49 id=evt-000049 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=1 target=d0380ebfa75c4c62bc75f1f9a73447dc ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dragon Slayer #7 died.
+seq=50 id=evt-000050 kind=heal serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=1 targetVisual=0 target=13bef2780fd24334a66e31de0e13a385 ability=leech effect=1 status=0 amount=1 hp=6->7 armor=5->5 message=Grove Storm Caller #164 healed 1.
+seq=51 id=evt-000051 kind=skill_begin serverSrcSeat=0 srcVisual=1 src=3d49195d8a84428dae2461c96d14f56b serverTargetSeat=0 targetVisual=-1 target= ability=shield effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Blessed Monk #118 used Shield.
+seq=52 id=evt-000052 kind=armor_gain serverSrcSeat=0 srcVisual=1 src=3d49195d8a84428dae2461c96d14f56b serverTargetSeat=0 targetVisual=1 target=3d49195d8a84428dae2461c96d14f56b ability=shield effect=2 status=0 amount=10 hp=1->1 armor=2->12 message=Alloy Blessed Monk #118 gained 10 armor.
+seq=53 id=evt-000053 kind=skill_begin serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dark Sorcerer #125 used Regenerate.
+seq=54 id=evt-000054 kind=heal serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=1 target=8cd14023bc58411cba6f3545773d9c9e ability=regenerate effect=1 status=0 amount=1 hp=7->8 armor=0->0 message=Grove Dark Sorcerer #125 healed 1.
+seq=55 id=evt-000055 kind=attack_position_blocked serverSrcSeat=0 srcVisual=1 src=3d49195d8a84428dae2461c96d14f56b serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Blessed Monk #118 cannot attack from Front.
+seq=56 id=evt-000056 kind=attack_not_ready serverSrcSeat=0 srcVisual=1 src=32d60fda91674b5a84fb66ae3762df2a serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Tidal Inferno Beast #24 is not ready to attack.
+seq=57 id=evt-000057 kind=attack_position_blocked serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dark Sorcerer #125 cannot attack from BackRight.
+seq=58 id=evt-000058 kind=attack_position_blocked serverSrcSeat=1 srcVisual=0 src=34c775cab58b4f15af2426c4d5f6c644 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 cannot attack from Front.
+seq=59 id=evt-000059 kind=attack_position_blocked serverSrcSeat=1 srcVisual=0 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 cannot attack from BackLeft.
+seq=60 id=evt-000060 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=-1 target= ability=leech effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Leech.
+seq=61 id=evt-000061 kind=card_attack serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=8cd14023bc58411cba6f3545773d9c9e ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Grove Storm Caller #164 attacked Grove Dark Sorcerer #125.
+seq=62 id=evt-000062 kind=card_damage serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=8cd14023bc58411cba6f3545773d9c9e ability= effect=0 status=0 amount=1 hp=8->7 armor=0->0 message=Grove Dark Sorcerer #125 took 1 damage.
+seq=63 id=evt-000063 kind=heal serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=1 targetVisual=0 target=13bef2780fd24334a66e31de0e13a385 ability=leech effect=1 status=0 amount=1 hp=7->8 armor=5->5 message=Grove Storm Caller #164 healed 1.
+seq=64 id=evt-000064 kind=skill_begin serverSrcSeat=0 srcVisual=1 src=32d60fda91674b5a84fb66ae3762df2a serverTargetSeat=0 targetVisual=-1 target= ability=enrage effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Tidal Inferno Beast #24 used Enrage.
+seq=65 id=evt-000065 kind=skill_begin serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dark Sorcerer #125 used Regenerate.
+seq=66 id=evt-000066 kind=heal serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=1 target=8cd14023bc58411cba6f3545773d9c9e ability=regenerate effect=1 status=0 amount=1 hp=7->8 armor=0->0 message=Grove Dark Sorcerer #125 healed 1.
+seq=67 id=evt-000067 kind=attack_position_blocked serverSrcSeat=0 srcVisual=1 src=3d49195d8a84428dae2461c96d14f56b serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Blessed Monk #118 cannot attack from Front.
+seq=68 id=evt-000068 kind=attack_position_blocked serverSrcSeat=0 srcVisual=1 src=32d60fda91674b5a84fb66ae3762df2a serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Tidal Inferno Beast #24 cannot attack from BackLeft.
+seq=69 id=evt-000069 kind=attack_position_blocked serverSrcSeat=0 srcVisual=1 src=8cd14023bc58411cba6f3545773d9c9e serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Dark Sorcerer #125 cannot attack from BackRight.
+seq=70 id=evt-000070 kind=attack_position_blocked serverSrcSeat=1 srcVisual=0 src=34c775cab58b4f15af2426c4d5f6c644 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 cannot attack from Front.
+seq=71 id=evt-000071 kind=attack_position_blocked serverSrcSeat=1 srcVisual=0 src=289aa4f1c20647028721254c4727f7f6 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 cannot attack from BackLeft.
+seq=72 id=evt-000072 kind=skill_begin serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=-1 target= ability=leech effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Grove Storm Caller #164 used Leech.
+seq=73 id=evt-000073 kind=card_attack serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=8cd14023bc58411cba6f3545773d9c9e ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Grove Storm Caller #164 attacked Grove Dark Sorcerer #125.
+seq=74 id=evt-000074 kind=card_damage serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=0 targetVisual=1 target=8cd14023bc58411cba6f3545773d9c9e ability= effect=0 status=0 amount=1 hp=8->7 armor=0->0 message=Grove Dark Sorcerer #125 took 1 damage.
+seq=75 id=evt-000075 kind=heal serverSrcSeat=1 srcVisual=0 src=13bef2780fd24334a66e31de0e13a385 serverTargetSeat=1 targetVisual=0 target=13bef2780fd24334a66e31de0e13a385 ability=leech effect=1 status=0 amount=1 hp=8->9 armor=5->5 message=Grove Storm Caller #164 healed 1.
+seq=76 id=evt-000076 kind=skill_begin serverSrcSeat=0 srcVisual=1 src=32d60fda91674b5a84fb66ae3762df2a serverTargetSeat=0 targetVisual=-1 target= ability=enrage effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Tidal Inferno Beast #24 used Enrage.
+
+Raw Logs Seen By Unity
+turn=1 Info: Grove Dragon Slayer #7 entered Front.
+turn=2 Info: Grove Storm Caller #164 entered Front.
+turn=2 Info: Alloy Undead Knight #45 entered Front.
+turn=5 Info: 289aa4f1c20647028721254c4727f7f6 hit Grove Dragon Slayer #7 for 1.
+turn=5 Info: 13bef2780fd24334a66e31de0e13a385 hit Grove Dragon Slayer #7 for 1.
+turn=5 Info: Grove Storm Caller #164 healed 1.
+turn=5 Info: Grove Dark Sorcerer #125 entered BackLeft.
+turn=6 Info: Grove Dark Sorcerer #125 healed 1.
+turn=7 Info: 13bef2780fd24334a66e31de0e13a385 hit Grove Dark Sorcerer #125 for 1.
+turn=11 Info: Grove Dragon Slayer #7 died.
+turn=11 Info: Tidal Inferno Beast #24 entered Front.
+turn=11 Info: Alloy Blessed Monk #118 entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "769bab26953e43ed89148876e107e0b7",
+    "rulesetId": "11fd524f-49f9-4ffe-b0e3-1ffc06233cad",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "11fd524f-49f9-4ffe-b0e3-1ffc06233cad",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset used for casual, ranked, and private matches unless another ruleset is selected.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 1,
+        "maxMana": 10,
+        "manaGrantedPerTurn": 1,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 1,
+    "activePlayerId": "c6e7d90f-eda8-4c2a-9991-996d85617a68",
+    "isLocalPlayersTurn": false,
+    "turnNumber": 15,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 202827824,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Opponent's turn.",
+    "players": [
+        {
+            "playerId": "6c646037-69b0-4350-a98e-d09f77806192",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 8,
+            "maxMana": 8,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "65c2e430e2004888a6a4b8bcb4b2d459",
+                    "cardId": "alloy_0008",
+                    "displayName": "Alloy Shadow Assassin #8",
+                    "manaCost": 4,
+                    "attack": 5,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "stun",
+                            "displayName": "Stun",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 4,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 0,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "trample",
+                            "displayName": "Trample",
+                            "skillType": 3,
+                            "triggerKind": 3,
+                            "targetSelectorKind": 3,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 0,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "shield",
+                            "displayName": "Shield",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 2,
+                                    "amount": 10,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "6c4cd8a5997e46cfa7b076e56606cc75",
+                    "cardId": "grove_0083",
+                    "displayName": "Grove Ocean Leviathan #83",
+                    "manaCost": 6,
+                    "attack": 6,
+                    "health": 6,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "poison",
+                            "displayName": "Poison",
+                            "skillType": 3,
+                            "triggerKind": 3,
+                            "targetSelectorKind": 4,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 0,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "regenerate",
+                            "displayName": "Regenerate",
+                            "skillType": 3,
+                            "triggerKind": 2,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "e8cafdf636cd46aabcf699059ad52658",
+                    "cardId": "grove_0083",
+                    "displayName": "Grove Ocean Leviathan #83",
+                    "manaCost": 6,
+                    "attack": 6,
+                    "health": 6,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "poison",
+                            "displayName": "Poison",
+                            "skillType": 3,
+                            "triggerKind": 3,
+                            "targetSelectorKind": 4,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 0,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "regenerate",
+                            "displayName": "Regenerate",
+                            "skillType": 3,
+                            "triggerKind": 2,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "3f0fa53fd0554e40b00e84d2d6e4b5e5",
+                    "cardId": "void_0091",
+                    "displayName": "Void Sky Drake #91",
+                    "manaCost": 4,
+                    "attack": 5,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "armor",
+                            "displayName": "Armor",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 2,
+                                    "amount": 5,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "fly",
+                            "displayName": "Fly",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "f0a9b81d6c494bb29002c776d1bdec7e",
+                    "cardId": "alloy_0040",
+                    "displayName": "Alloy Blessed Monk #40",
+                    "manaCost": 1,
+                    "attack": 4,
+                    "health": 5,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "trample",
+                            "displayName": "Trample",
+                            "skillType": 3,
+                            "triggerKind": 3,
+                            "targetSelectorKind": 3,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 0,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "enrage",
+                            "displayName": "Enrage",
+                            "skillType": 3,
+                            "triggerKind": 1,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "90f9009401fc45abab0e7daa8382125a",
+                    "cardId": "alloy_0048",
+                    "displayName": "Alloy Fire Knight #48",
+                    "manaCost": 4,
+                    "attack": 5,
+                    "health": 7,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "9a50279955c34b0f90d07fb690df8a83",
+                    "cardId": "void_0091",
+                    "displayName": "Void Sky Drake #91",
+                    "manaCost": 4,
+                    "attack": 5,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "armor",
+                            "displayName": "Armor",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 2,
+                                    "amount": 5,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "fly",
+                            "displayName": "Fly",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "e54c40a988c14fce80998a339eb42520",
+                    "cardId": "alloy_0026",
+                    "displayName": "Alloy Holy Priest #26",
+                    "manaCost": 5,
+                    "attack": 2,
+                    "health": 5,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "fly",
+                            "displayName": "Fly",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "34c775cab58b4f15af2426c4d5f6c644",
+                        "cardId": "sergio",
+                        "displayName": "Grove Storm Caller #164",
+                        "manaCost": 1,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 5,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "armor",
+                                "displayName": "Armor",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 2,
+                                        "amount": 5,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "stun",
+                                "displayName": "Stun",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 4,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 0,
+                                        "amount": 3,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "leech",
+                                "displayName": "Leech",
+                                "skillType": 3,
+                                "triggerKind": 3,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "289aa4f1c20647028721254c4727f7f6",
+                        "cardId": "alloy_0045",
+                        "displayName": "Alloy Undead Knight #45",
+                        "manaCost": 1,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "stun",
+                                "displayName": "Stun",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 4,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 0,
+                                        "amount": 3,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 3,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "13bef2780fd24334a66e31de0e13a385",
+                        "cardId": "sergio",
+                        "displayName": "Grove Storm Caller #164",
+                        "manaCost": 1,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 9,
+                        "maxHealth": 4,
+                        "armor": 5,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "armor",
+                                "displayName": "Armor",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 2,
+                                        "amount": 5,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "stun",
+                                "displayName": "Stun",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 4,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 0,
+                                        "amount": 3,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "leech",
+                                "displayName": "Leech",
+                                "skillType": 3,
+                                "triggerKind": 3,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 69,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "c6e7d90f-eda8-4c2a-9991-996d85617a68",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 8,
+            "maxMana": 8,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "3d49195d8a84428dae2461c96d14f56b",
+                        "cardId": "alloy_0118",
+                        "displayName": "Alloy Blessed Monk #118",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 1,
+                        "maxHealth": 1,
+                        "armor": 12,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "shield",
+                                "displayName": "Shield",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 2,
+                                        "amount": 10,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "leech",
+                                "displayName": "Leech",
+                                "skillType": 3,
+                                "triggerKind": 3,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "32d60fda91674b5a84fb66ae3762df2a",
+                        "cardId": "tidal_0024",
+                        "displayName": "Tidal Inferno Beast #24",
+                        "manaCost": 4,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "enrage",
+                                "displayName": "Enrage",
+                                "skillType": 3,
+                                "triggerKind": 1,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 3,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "8cd14023bc58411cba6f3545773d9c9e",
+                        "cardId": "grove_0125",
+                        "displayName": "Grove Dark Sorcerer #125",
+                        "manaCost": 2,
+                        "attackMotionLevel": 5,
+                        "attackShakeLevel": 5,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 5,
+                        "currentHealth": 7,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate",
+                                "displayName": "Regenerate",
+                                "skillType": 3,
+                                "triggerKind": 2,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 1,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "leech",
+                                "displayName": "Leech",
+                                "skillType": 3,
+                                "triggerKind": 3,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 9,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Grove Dark Sorcerer #125 entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Grove Dark Sorcerer #125 healed 1."
+        },
+        {
+            "type": 0,
+            "message": "289aa4f1c20647028721254c4727f7f6 hit Grove Dragon Slayer #7 for 1."
+        },
+        {
+            "type": 0,
+            "message": "13bef2780fd24334a66e31de0e13a385 hit Grove Dark Sorcerer #125 for 1."
+        },
+        {
+            "type": 0,
+            "message": "Grove Dark Sorcerer #125 healed 1."
+        },
+        {
+            "type": 0,
+            "message": "Grove Storm Caller #164 entered Front."
+        },
+        {
+            "type": 0,
+            "message": "13bef2780fd24334a66e31de0e13a385 hit Grove Dragon Slayer #7 for 1."
+        },
+        {
+            "type": 0,
+            "message": "Grove Storm Caller #164 healed 1."
+        },
+        {
+            "type": 0,
+            "message": "Grove Dark Sorcerer #125 healed 1."
+        },
+        {
+            "type": 0,
+            "message": "13bef2780fd24334a66e31de0e13a385 hit Grove Dragon Slayer #7 for 1."
+        },
+        {
+            "type": 0,
+            "message": "Grove Dragon Slayer #7 died."
+        },
+        {
+            "type": 0,
+            "message": "Grove Storm Caller #164 healed 1."
+        },
+        {
+            "type": 0,
+            "message": "Tidal Inferno Beast #24 entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Alloy Blessed Monk #118 entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Grove Dark Sorcerer #125 healed 1."
+        },
+        {
+            "type": 0,
+            "message": "13bef2780fd24334a66e31de0e13a385 hit Grove Dark Sorcerer #125 for 1."
+        },
+        {
+            "type": 0,
+            "message": "Grove Storm Caller #164 healed 1."
+        },
+        {
+            "type": 0,
+            "message": "Grove Dark Sorcerer #125 healed 1."
+        },
+        {
+            "type": 0,
+            "message": "13bef2780fd24334a66e31de0e13a385 hit Grove Dark Sorcerer #125 for 1."
+        },
+        {
+            "type": 0,
+            "message": "Grove Storm Caller #164 healed 1."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dragon Slayer #7 cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "",
+            "abilityId": "armor",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 used Armor."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "armor_gain",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "abilityId": "armor",
+            "effectKind": 2,
+            "amount": 5,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 gained 5 armor."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "",
+            "abilityId": "stun",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 used Stun."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "",
+            "abilityId": "stun",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 used Stun."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "",
+            "abilityId": "taunt",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 used Taunt."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 is not ready to attack."
+        },
+        {
+            "eventId": "evt-000008",
+            "sequence": 8,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 is not ready to attack."
+        },
+        {
+            "eventId": "evt-000009",
+            "sequence": 9,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dragon Slayer #7 cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000010",
+            "sequence": 10,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 attacked Grove Dragon Slayer #7."
+        },
+        {
+            "eventId": "evt-000011",
+            "sequence": 11,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 5,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dragon Slayer #7 took 1 damage."
+        },
+        {
+            "eventId": "evt-000012",
+            "sequence": 12,
+            "kind": "status_applied",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "stun",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 1,
+            "durationTurns": 1,
+            "message": "Stun applied to Grove Dragon Slayer #7."
+        },
+        {
+            "eventId": "evt-000013",
+            "sequence": 13,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "",
+            "abilityId": "leech",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 used Leech."
+        },
+        {
+            "eventId": "evt-000014",
+            "sequence": 14,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 attacked Grove Dragon Slayer #7."
+        },
+        {
+            "eventId": "evt-000015",
+            "sequence": 15,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dragon Slayer #7 took 1 damage."
+        },
+        {
+            "eventId": "evt-000016",
+            "sequence": 16,
+            "kind": "heal",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "abilityId": "leech",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 5,
+            "armorBefore": 5,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 healed 1."
+        },
+        {
+            "eventId": "evt-000017",
+            "sequence": 17,
+            "kind": "status_applied",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "stun",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 1,
+            "durationTurns": 1,
+            "message": "Stun applied to Grove Dragon Slayer #7."
+        },
+        {
+            "eventId": "evt-000018",
+            "sequence": 18,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 used Regenerate."
+        },
+        {
+            "eventId": "evt-000019",
+            "sequence": 19,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 5,
+            "armorBefore": 1,
+            "armorAfter": 1,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 healed 1."
+        },
+        {
+            "eventId": "evt-000020",
+            "sequence": 20,
+            "kind": "stun_skip",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "stun",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 1,
+            "durationTurns": 0,
+            "message": "Grove Dragon Slayer #7 skipped its attack due to Stun."
+        },
+        {
+            "eventId": "evt-000021",
+            "sequence": 21,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 is not ready to attack."
+        },
+        {
+            "eventId": "evt-000022",
+            "sequence": 22,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 attacked Grove Dragon Slayer #7."
+        },
+        {
+            "eventId": "evt-000023",
+            "sequence": 23,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dragon Slayer #7 took 1 damage."
+        },
+        {
+            "eventId": "evt-000024",
+            "sequence": 24,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "",
+            "abilityId": "leech",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 used Leech."
+        },
+        {
+            "eventId": "evt-000025",
+            "sequence": 25,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 attacked Grove Dark Sorcerer #125."
+        },
+        {
+            "eventId": "evt-000026",
+            "sequence": 26,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 5,
+            "hpAfter": 5,
+            "armorBefore": 1,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 took 1 damage."
+        },
+        {
+            "eventId": "evt-000027",
+            "sequence": 27,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 used Regenerate."
+        },
+        {
+            "eventId": "evt-000028",
+            "sequence": 28,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 5,
+            "hpAfter": 6,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 healed 1."
+        },
+        {
+            "eventId": "evt-000029",
+            "sequence": 29,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dragon Slayer #7 cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000030",
+            "sequence": 30,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 cannot attack from BackLeft."
+        },
+        {
+            "eventId": "evt-000031",
+            "sequence": 31,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "34c775cab58b4f15af2426c4d5f6c644",
+            "targetRuntimeId": "",
+            "abilityId": "armor",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 used Armor."
+        },
+        {
+            "eventId": "evt-000032",
+            "sequence": 32,
+            "kind": "armor_gain",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "34c775cab58b4f15af2426c4d5f6c644",
+            "targetRuntimeId": "34c775cab58b4f15af2426c4d5f6c644",
+            "abilityId": "armor",
+            "effectKind": 2,
+            "amount": 5,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 gained 5 armor."
+        },
+        {
+            "eventId": "evt-000033",
+            "sequence": 33,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "34c775cab58b4f15af2426c4d5f6c644",
+            "targetRuntimeId": "",
+            "abilityId": "stun",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 used Stun."
+        },
+        {
+            "eventId": "evt-000034",
+            "sequence": 34,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "34c775cab58b4f15af2426c4d5f6c644",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 is not ready to attack."
+        },
+        {
+            "eventId": "evt-000035",
+            "sequence": 35,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 cannot attack from BackLeft."
+        },
+        {
+            "eventId": "evt-000036",
+            "sequence": 36,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "",
+            "abilityId": "leech",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 used Leech."
+        },
+        {
+            "eventId": "evt-000037",
+            "sequence": 37,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 attacked Grove Dragon Slayer #7."
+        },
+        {
+            "eventId": "evt-000038",
+            "sequence": 38,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dragon Slayer #7 took 1 damage."
+        },
+        {
+            "eventId": "evt-000039",
+            "sequence": 39,
+            "kind": "heal",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "abilityId": "leech",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 5,
+            "hpAfter": 6,
+            "armorBefore": 5,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 healed 1."
+        },
+        {
+            "eventId": "evt-000040",
+            "sequence": 40,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 used Regenerate."
+        },
+        {
+            "eventId": "evt-000041",
+            "sequence": 41,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 6,
+            "hpAfter": 7,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 healed 1."
+        },
+        {
+            "eventId": "evt-000042",
+            "sequence": 42,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dragon Slayer #7 cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000043",
+            "sequence": 43,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 cannot attack from BackLeft."
+        },
+        {
+            "eventId": "evt-000044",
+            "sequence": 44,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "34c775cab58b4f15af2426c4d5f6c644",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000045",
+            "sequence": 45,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 cannot attack from BackLeft."
+        },
+        {
+            "eventId": "evt-000046",
+            "sequence": 46,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "",
+            "abilityId": "leech",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 used Leech."
+        },
+        {
+            "eventId": "evt-000047",
+            "sequence": 47,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 attacked Grove Dragon Slayer #7."
+        },
+        {
+            "eventId": "evt-000048",
+            "sequence": 48,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dragon Slayer #7 took 1 damage."
+        },
+        {
+            "eventId": "evt-000049",
+            "sequence": 49,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "d0380ebfa75c4c62bc75f1f9a73447dc",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dragon Slayer #7 died."
+        },
+        {
+            "eventId": "evt-000050",
+            "sequence": 50,
+            "kind": "heal",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "abilityId": "leech",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 6,
+            "hpAfter": 7,
+            "armorBefore": 5,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 healed 1."
+        },
+        {
+            "eventId": "evt-000051",
+            "sequence": 51,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "3d49195d8a84428dae2461c96d14f56b",
+            "targetRuntimeId": "",
+            "abilityId": "shield",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Blessed Monk #118 used Shield."
+        },
+        {
+            "eventId": "evt-000052",
+            "sequence": 52,
+            "kind": "armor_gain",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "3d49195d8a84428dae2461c96d14f56b",
+            "targetRuntimeId": "3d49195d8a84428dae2461c96d14f56b",
+            "abilityId": "shield",
+            "effectKind": 2,
+            "amount": 10,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": 1,
+            "armorBefore": 2,
+            "armorAfter": 12,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Blessed Monk #118 gained 10 armor."
+        },
+        {
+            "eventId": "evt-000053",
+            "sequence": 53,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 used Regenerate."
+        },
+        {
+            "eventId": "evt-000054",
+            "sequence": 54,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 7,
+            "hpAfter": 8,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 healed 1."
+        },
+        {
+            "eventId": "evt-000055",
+            "sequence": 55,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "3d49195d8a84428dae2461c96d14f56b",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Blessed Monk #118 cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000056",
+            "sequence": 56,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "32d60fda91674b5a84fb66ae3762df2a",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Tidal Inferno Beast #24 is not ready to attack."
+        },
+        {
+            "eventId": "evt-000057",
+            "sequence": 57,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 cannot attack from BackRight."
+        },
+        {
+            "eventId": "evt-000058",
+            "sequence": 58,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "34c775cab58b4f15af2426c4d5f6c644",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000059",
+            "sequence": 59,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 cannot attack from BackLeft."
+        },
+        {
+            "eventId": "evt-000060",
+            "sequence": 60,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "",
+            "abilityId": "leech",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 used Leech."
+        },
+        {
+            "eventId": "evt-000061",
+            "sequence": 61,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 attacked Grove Dark Sorcerer #125."
+        },
+        {
+            "eventId": "evt-000062",
+            "sequence": 62,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 8,
+            "hpAfter": 7,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 took 1 damage."
+        },
+        {
+            "eventId": "evt-000063",
+            "sequence": 63,
+            "kind": "heal",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "abilityId": "leech",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 7,
+            "hpAfter": 8,
+            "armorBefore": 5,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 healed 1."
+        },
+        {
+            "eventId": "evt-000064",
+            "sequence": 64,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "32d60fda91674b5a84fb66ae3762df2a",
+            "targetRuntimeId": "",
+            "abilityId": "enrage",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Tidal Inferno Beast #24 used Enrage."
+        },
+        {
+            "eventId": "evt-000065",
+            "sequence": 65,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 used Regenerate."
+        },
+        {
+            "eventId": "evt-000066",
+            "sequence": 66,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 7,
+            "hpAfter": 8,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 healed 1."
+        },
+        {
+            "eventId": "evt-000067",
+            "sequence": 67,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "3d49195d8a84428dae2461c96d14f56b",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Blessed Monk #118 cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000068",
+            "sequence": 68,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "32d60fda91674b5a84fb66ae3762df2a",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Tidal Inferno Beast #24 cannot attack from BackLeft."
+        },
+        {
+            "eventId": "evt-000069",
+            "sequence": 69,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 cannot attack from BackRight."
+        },
+        {
+            "eventId": "evt-000070",
+            "sequence": 70,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "34c775cab58b4f15af2426c4d5f6c644",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000071",
+            "sequence": 71,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "289aa4f1c20647028721254c4727f7f6",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 cannot attack from BackLeft."
+        },
+        {
+            "eventId": "evt-000072",
+            "sequence": 72,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "",
+            "abilityId": "leech",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 used Leech."
+        },
+        {
+            "eventId": "evt-000073",
+            "sequence": 73,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 attacked Grove Dark Sorcerer #125."
+        },
+        {
+            "eventId": "evt-000074",
+            "sequence": 74,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "8cd14023bc58411cba6f3545773d9c9e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 8,
+            "hpAfter": 7,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Dark Sorcerer #125 took 1 damage."
+        },
+        {
+            "eventId": "evt-000075",
+            "sequence": 75,
+            "kind": "heal",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "targetRuntimeId": "13bef2780fd24334a66e31de0e13a385",
+            "abilityId": "leech",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 8,
+            "hpAfter": 9,
+            "armorBefore": 5,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Grove Storm Caller #164 healed 1."
+        },
+        {
+            "eventId": "evt-000076",
+            "sequence": 76,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "32d60fda91674b5a84fb66ae3762df2a",
+            "targetRuntimeId": "",
+            "abilityId": "enrage",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Tidal Inferno Beast #24 used Enrage."
+        }
+    ]
+}

@@ -135,6 +135,7 @@ namespace Flippy.CardDuelMobile.Battle
         public int remainingTurns;
         public string sourceRuntimeId = string.Empty;
         public string abilityId = string.Empty;
+        public string iconAssetRef = string.Empty;
     }
 
     [Serializable]
@@ -142,6 +143,7 @@ namespace Flippy.CardDuelMobile.Battle
     {
         public string abilityId = string.Empty;
         public string displayName = string.Empty;
+        public string iconAssetRef = string.Empty;
         public int skillType = -1;
         public int triggerKind = -1;
         public int targetSelectorKind = -1;

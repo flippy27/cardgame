@@ -223,6 +223,36 @@ namespace Flippy.CardDuelMobile.Networking
             }
         }
 
+        public async Task DestroyCardAsync(string runtimeCardId)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(runtimeCardId))
+                {
+                    throw new ArgumentException("Runtime card id is required.", nameof(runtimeCardId));
+                }
+
+                if (_usingHttpFallback && _httpCoordinator != null)
+                {
+                    _httpCoordinator.RequestDestroyCard(runtimeCardId);
+                    return;
+                }
+
+                EnsureSignalRConnected();
+                var snapshot = await InvokeAsync("DestroyCard", new DestroyCardRequestDto
+                {
+                    matchId = matchId,
+                    playerId = playerId,
+                    runtimeCardId = runtimeCardId
+                });
+                EnqueueSnapshotProcessing(snapshot);
+            }
+            catch (Exception ex)
+            {
+                ReportActionError("DestroyCard", ex);
+            }
+        }
+
         public async Task ForfeitAsync()
         {
             try
@@ -263,6 +293,11 @@ namespace Flippy.CardDuelMobile.Networking
         void IMatchCoordinator.RequestEndTurn()
         {
             _ = EndTurnAsync();
+        }
+
+        void IMatchCoordinator.RequestDestroyCard(string runtimeCardId)
+        {
+            _ = DestroyCardAsync(runtimeCardId);
         }
 
         void IMatchCoordinator.RequestSetReady(bool isReady)

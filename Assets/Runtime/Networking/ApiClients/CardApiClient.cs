@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 using Flippy.CardDuelMobile.Core;
-using Codice.Client.BaseCommands.WkStatus.Printers;
+
 
 namespace Flippy.CardDuelMobile.Networking.ApiClients
 {

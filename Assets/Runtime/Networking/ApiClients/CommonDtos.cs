@@ -279,6 +279,14 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
     }
 
     [System.Serializable]
+    public sealed class DestroyCardRequestDto
+    {
+        public string matchId;
+        public string playerId;
+        public string runtimeCardId;
+    }
+
+    [System.Serializable]
     public sealed class ForfeitRequestDto
     {
         public string matchId;

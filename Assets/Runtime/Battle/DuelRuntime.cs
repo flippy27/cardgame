@@ -611,6 +611,7 @@ namespace Flippy.CardDuelMobile.Battle
                 {
                     abilityId = ability.abilityId,
                     displayName = string.IsNullOrWhiteSpace(ability.displayName) ? ability.abilityId : ability.displayName,
+                    iconAssetRef = string.Empty,
                     triggerKind = (int)ability.trigger,
                     skillType = -1,
                     animationCueId = ability.abilityId

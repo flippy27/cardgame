@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -31,8 +32,9 @@ namespace Flippy.CardDuelMobile.UI
 
         public static CardVisualAssetResolver Instance { get; private set; }
 
-        private Dictionary<string, CardVisualAssetEntry> _cache;
-        private readonly Dictionary<string, Sprite> _runtimeSpriteCache = new(StringComparer.OrdinalIgnoreCase);
+        [ShowInInspector] private Dictionary<string, CardVisualAssetEntry> _cache;
+        private static Sprite _missingSprite;
+        private static Texture2D _missingTexture;
 
         private void Awake()
         {
@@ -61,12 +63,18 @@ namespace Flippy.CardDuelMobile.UI
 
         public static Sprite ResolveSprite(string assetRef)
         {
-            return Instance != null ? Instance.ResolveSpriteInternal(assetRef) : ResolveSpriteFallback(assetRef, null);
+            if (Instance == null)
+            {
+                Debug.LogError($"[CardVisualAssetResolver] No resolver instance found. assetRef: {assetRef}");
+                return MissingSprite;
+            }
+
+            return Instance.ResolveSpriteInternal(assetRef);
         }
 
         public static Texture2D ResolveTexture(string assetRef)
         {
-            return Instance != null ? Instance.ResolveTextureInternal(assetRef) : ResolveTextureFallback(assetRef);
+            return Instance != null ? Instance.ResolveTextureInternal(assetRef) : MissingTexture;
         }
 
         private void RebuildCache()
@@ -104,22 +112,48 @@ namespace Flippy.CardDuelMobile.UI
         {
             if (string.IsNullOrWhiteSpace(assetRef))
             {
-                return null;
+                Debug.LogWarning("[CardVisualAssetResolver] Empty assetRef received. Showing magenta placeholder.", this);
+                return MissingSprite;
             }
 
-            if (_cache != null && _cache.TryGetValue(assetRef, out var entry) && entry.sprite != null)
+            assetRef = assetRef.Trim();
+
+            if (_cache == null)
+            {
+                RebuildCache();
+            }
+
+            if (!_cache.TryGetValue(assetRef, out var entry))
+            {
+                Debug.LogWarning($"[CardVisualAssetResolver] Missing backend assetRef '{assetRef}' in resolver cache. Showing magenta placeholder.", this);
+                return MissingSprite;
+            }
+
+            if (entry.sprite != null)
             {
                 return entry.sprite;
             }
 
-            return ResolveSpriteFallback(assetRef, _runtimeSpriteCache);
+            if (entry.texture != null)
+            {
+                var sprite = Sprite.Create(
+                    entry.texture,
+                    new Rect(0f, 0f, entry.texture.width, entry.texture.height),
+                    new Vector2(0.5f, 0.5f)
+                );
+
+                return sprite;
+            }
+
+            Debug.LogWarning($"[CardVisualAssetResolver] AssetRef exists but has no sprite or texture assigned: '{assetRef}'.", this);
+            return MissingSprite;
         }
 
         private Texture2D ResolveTextureInternal(string assetRef)
         {
             if (string.IsNullOrWhiteSpace(assetRef))
             {
-                return null;
+                return MissingTexture;
             }
 
             if (_cache != null && _cache.TryGetValue(assetRef, out var entry))
@@ -135,61 +169,52 @@ namespace Flippy.CardDuelMobile.UI
                 }
             }
 
-            return ResolveTextureFallback(assetRef);
+            return MissingTexture;
         }
 
-        private static Sprite ResolveSpriteFallback(string assetRef, Dictionary<string, Sprite> runtimeCache)
+        public static Sprite MissingSprite
         {
-            if (string.IsNullOrWhiteSpace(assetRef))
+            get
             {
-                return null;
-            }
-
-            if (runtimeCache != null && runtimeCache.TryGetValue(assetRef, out var cachedSprite))
-            {
-                return cachedSprite;
-            }
-
-            var sprite = Resources.Load<Sprite>(assetRef);
-            if (sprite != null)
-            {
-                if (runtimeCache != null)
+                if (_missingSprite != null)
                 {
-                    runtimeCache[assetRef] = sprite;
+                    return _missingSprite;
                 }
 
-                return sprite;
+                _missingSprite = Sprite.Create(
+                    MissingTexture,
+                    new Rect(0f, 0f, MissingTexture.width, MissingTexture.height),
+                    new Vector2(0.5f, 0.5f));
+                _missingSprite.name = "MissingCardVisual_Magenta";
+                return _missingSprite;
             }
-
-            var texture = ResolveTextureFallback(assetRef);
-            if (texture == null)
-            {
-                return null;
-            }
-
-            var generatedSprite = Sprite.Create(texture, new Rect(0f, 0f, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-            if (runtimeCache != null)
-            {
-                runtimeCache[assetRef] = generatedSprite;
-            }
-
-            return generatedSprite;
         }
 
-        private static Texture2D ResolveTextureFallback(string assetRef)
+        public static Texture2D MissingTexture
         {
-            if (string.IsNullOrWhiteSpace(assetRef))
+            get
             {
-                return null;
-            }
+                if (_missingTexture != null)
+                {
+                    return _missingTexture;
+                }
 
-            var sprite = Resources.Load<Sprite>(assetRef);
-            if (sprite != null)
-            {
-                return sprite.texture;
-            }
+                _missingTexture = new Texture2D(4, 4, TextureFormat.RGBA32, false)
+                {
+                    name = "MissingCardVisual_Magenta"
+                };
 
-            return Resources.Load<Texture2D>(assetRef);
+                var pixels = new[]
+                {
+                    Color.magenta, Color.black, Color.magenta, Color.black,
+                    Color.black, Color.magenta, Color.black, Color.magenta,
+                    Color.magenta, Color.black, Color.magenta, Color.black,
+                    Color.black, Color.magenta, Color.black, Color.magenta
+                };
+                _missingTexture.SetPixels(pixels);
+                _missingTexture.Apply(updateMipmaps: false, makeNoLongerReadable: false);
+                return _missingTexture;
+            }
         }
     }
 }

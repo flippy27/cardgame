@@ -250,7 +250,7 @@ namespace Flippy.CardDuelMobile.UI
                 {
                     stateId = ability.abilityId,
                     displayName = string.IsNullOrWhiteSpace(ability.displayName) ? ability.abilityId : ability.displayName,
-                    icon = ResolveIconSprite("skills", ability.abilityId, ability.animationCueId),
+                    icon = ResolveBackendIconSprite(ability.iconAssetRef, ability.metadataJson),
                     stackCount = 1,
                     tint = Color.white
                 });
@@ -279,7 +279,7 @@ namespace Flippy.CardDuelMobile.UI
                 {
                     stateId = statusId,
                     displayName = ResolveStatusDisplayName(status),
-                    icon = ResolveIconSprite("statuses", statusId, status.abilityId),
+                    icon = ResolveBackendIconSprite(status.iconAssetRef, null),
                     stackCount = status.remainingTurns > 0 ? status.remainingTurns : Mathf.Max(1, status.amount),
                     tint = ResolveStatusTint(status.kind)
                 });
@@ -298,12 +298,34 @@ namespace Flippy.CardDuelMobile.UI
 
         private static Sprite ResolveAttackTypeSprite(BoardCardDto card, Sprite meleeSprite, Sprite rangedSprite, Sprite magicSprite)
         {
-            return AttackPresentationResolver.ResolveDeliveryType(card) switch
+            return ResolveStableDeliveryType(card) switch
             {
                 AttackPresentationResolver.DeliveryTypeProjectile => rangedSprite,
                 AttackPresentationResolver.DeliveryTypeBeam => magicSprite,
                 AttackPresentationResolver.DeliveryTypeArc => magicSprite,
                 _ => meleeSprite
+            };
+        }
+
+        private static string ResolveStableDeliveryType(BoardCardDto card)
+        {
+            if (card == null)
+            {
+                return AttackPresentationResolver.DeliveryTypeMelee;
+            }
+
+            if (!string.IsNullOrWhiteSpace(card.attackDeliveryType))
+            {
+                return AttackPresentationResolver.NormalizeDeliveryType(card.attackDeliveryType);
+            }
+
+            // Last-resort presentation fallback: unit type is card identity, not board position,
+            // so the icon will not change when the server moves a card between slots.
+            return card.unitType switch
+            {
+                1 => AttackPresentationResolver.DeliveryTypeProjectile,
+                2 => AttackPresentationResolver.DeliveryTypeBeam,
+                _ => AttackPresentationResolver.DeliveryTypeMelee
             };
         }
 
@@ -376,40 +398,90 @@ namespace Flippy.CardDuelMobile.UI
             return System.Array.Empty<CardAbilityDto>();
         }
 
-        private static Sprite ResolveIconSprite(string category, params string[] ids)
+        private static Sprite ResolveBackendIconSprite(string explicitAssetRef, string metadataJson)
         {
-            if (ids == null)
+            var assetRef = FirstNonEmpty(explicitAssetRef, ExtractMetadataString(metadataJson, "iconAssetRef"), ExtractMetadataString(metadataJson, "assetRef"));
+            return CardVisualAssetResolver.ResolveSprite(assetRef);
+        }
+
+        private static string FirstNonEmpty(params string[] values)
+        {
+            if (values == null)
             {
-                return null;
+                return string.Empty;
             }
 
-            foreach (var id in ids)
+            foreach (var value in values)
             {
-                var normalized = NormalizeAssetId(id);
-                if (string.IsNullOrWhiteSpace(normalized))
+                if (!string.IsNullOrWhiteSpace(value))
                 {
-                    continue;
-                }
-
-                var candidates = new[]
-                {
-                    $"icons/{category}/{normalized}",
-                    $"{category}/{normalized}",
-                    $"icons/{normalized}",
-                    normalized
-                };
-
-                foreach (var candidate in candidates)
-                {
-                    var sprite = CardVisualAssetResolver.ResolveSprite(candidate);
-                    if (sprite != null)
-                    {
-                        return sprite;
-                    }
+                    return value.Trim();
                 }
             }
 
-            return null;
+            return string.Empty;
+        }
+
+        private static string ExtractMetadataString(string metadataJson, string propertyName)
+        {
+            if (string.IsNullOrWhiteSpace(metadataJson) || string.IsNullOrWhiteSpace(propertyName))
+            {
+                return string.Empty;
+            }
+
+            var search = $"\"{propertyName}\"";
+            var propertyIndex = metadataJson.IndexOf(search, StringComparison.OrdinalIgnoreCase);
+            if (propertyIndex < 0)
+            {
+                return string.Empty;
+            }
+
+            var colonIndex = metadataJson.IndexOf(':', propertyIndex + search.Length);
+            if (colonIndex < 0)
+            {
+                return string.Empty;
+            }
+
+            var start = colonIndex + 1;
+            while (start < metadataJson.Length && char.IsWhiteSpace(metadataJson[start]))
+            {
+                start++;
+            }
+
+            if (start >= metadataJson.Length || metadataJson[start] != '"')
+            {
+                return string.Empty;
+            }
+
+            var end = start + 1;
+            var escaping = false;
+            while (end < metadataJson.Length)
+            {
+                var current = metadataJson[end];
+                if (escaping)
+                {
+                    escaping = false;
+                }
+                else if (current == '\\')
+                {
+                    escaping = true;
+                }
+                else if (current == '"')
+                {
+                    break;
+                }
+
+                end++;
+            }
+
+            if (end >= metadataJson.Length)
+            {
+                return string.Empty;
+            }
+
+            return metadataJson.Substring(start + 1, end - start - 1)
+                .Replace("\\\"", "\"")
+                .Replace("\\\\", "\\");
         }
 
         private static string ResolveStatusId(StatusEffectDto status)

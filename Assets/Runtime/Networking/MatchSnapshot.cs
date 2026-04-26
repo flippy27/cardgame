@@ -124,6 +124,7 @@ namespace Flippy.CardDuelMobile.Networking
         public int remainingTurns;
         public string sourceRuntimeId;
         public string abilityId;
+        public string iconAssetRef;
     }
 
     [System.Serializable]
@@ -131,6 +132,7 @@ namespace Flippy.CardDuelMobile.Networking
     {
         public string abilityId;
         public string displayName;
+        public string iconAssetRef;
         public int skillType = -1;
         public int triggerKind = -1;
         public int targetSelectorKind = -1;

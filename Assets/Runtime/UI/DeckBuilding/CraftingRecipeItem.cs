@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Flippy.CardDuelMobile.Networking;
 using Flippy.CardDuelMobile.Networking.ApiClients;
+using Flippy.CardDuelMobile.UI;
+using TMPro;
 
 namespace Flippy.CardDuelMobile.UI.DeckBuilding
 {
@@ -23,13 +25,16 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
     /// </summary>
     public sealed class CraftingRecipeItem : MonoBehaviour
     {
-        [SerializeField] private Text cardNameText;
-        [SerializeField] private Text rarityText;
+        [SerializeField] private TextMeshProUGUI cardNameText;
+        [SerializeField] private TextMeshProUGUI rarityText;
         [SerializeField] private Transform costContainer;
         [SerializeField] private GameObject costChipPrefab;
-        [SerializeField] private Text affordabilityText;
+        [SerializeField] private TextMeshProUGUI affordabilityText;
         [SerializeField] private Button craftButton;
-        [SerializeField] private Text craftButtonText;
+        [SerializeField] private TextMeshProUGUI craftButtonText;
+        [SerializeField] private Image cardArtImage;
+        [SerializeField] private CardSurfaceVisualRenderer visualRenderer;
+        [SerializeField] private string visualSurface = "collection";
 
         [SerializeField] private Color canAffordColor = new Color(0.2f, 0.8f, 0.2f);
         [SerializeField] private Color cannotAffordColor = new Color(0.9f, 0.3f, 0.3f);
@@ -53,6 +58,9 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
             if (cardNameText != null)
                 cardNameText.text = card.displayName ?? card.cardId;
+
+            EnsureVisualRenderer();
+            visualRenderer?.ApplyCard(card.cardId, visualSurface);
 
             if (rarityText != null)
             {
@@ -110,6 +118,20 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
                     return $"Need {deficit} more {req.itemTypeDisplayName ?? req.itemTypeKey}";
             }
             return "Missing items";
+        }
+
+        private void EnsureVisualRenderer()
+        {
+            if (visualRenderer == null)
+            {
+                visualRenderer = GetComponent<CardSurfaceVisualRenderer>() ?? GetComponentInChildren<CardSurfaceVisualRenderer>(true);
+            }
+
+            if (visualRenderer == null && cardArtImage != null)
+            {
+                visualRenderer = gameObject.AddComponent<CardSurfaceVisualRenderer>();
+                visualRenderer.EnsureDefaultImageBinding(cardArtImage, visualSurface);
+            }
         }
 
         private void OnCraftClicked() => _onCraft?.Invoke(_card.cardId);

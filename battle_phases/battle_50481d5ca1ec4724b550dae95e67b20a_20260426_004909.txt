@@ -1,0 +1,424 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-04-26T00:49:09.1216578Z
+LastUpdatedUtc: 2026-04-26T00:49:09.5194612Z
+MatchId: 50481d5ca1ec4724b550dae95e67b20a
+CurrentTurn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: 6c646037-69b0-4350-a98e-d09f77806192
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (11fd524f-49f9-4ffe-b0e3-1ffc06233cad)
+
+Human Timeline
+No battle presentation events recorded yet.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-04-26T00:49:09.1221997Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=1/1 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=196 | P1 id=c6e7d90f hp=20 mana=1/1 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=16
+   Events: none
+
+Raw Structured Battle Events Seen By Unity
+
+Raw Logs Seen By Unity
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "50481d5ca1ec4724b550dae95e67b20a",
+    "rulesetId": "11fd524f-49f9-4ffe-b0e3-1ffc06233cad",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "11fd524f-49f9-4ffe-b0e3-1ffc06233cad",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset used for casual, ranked, and private matches unless another ruleset is selected.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 1,
+        "maxMana": 10,
+        "manaGrantedPerTurn": 1,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "6c646037-69b0-4350-a98e-d09f77806192",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 1,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 184529280,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "6c646037-69b0-4350-a98e-d09f77806192",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 1,
+            "maxMana": 1,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "c856eba0d73f46ccb8f227c2fb830dfb",
+                    "cardId": "grove_0037",
+                    "displayName": "Grove Forest Archer #37",
+                    "manaCost": 5,
+                    "attack": 2,
+                    "health": 1,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "enrage",
+                            "displayName": "Enrage",
+                            "skillType": 3,
+                            "triggerKind": 1,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "a295814d37934a62afaf707f5888e9fe",
+                    "cardId": "alloy_0045",
+                    "displayName": "Alloy Undead Knight #45",
+                    "manaCost": 1,
+                    "attack": 1,
+                    "health": 2,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "stun",
+                            "displayName": "Stun",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 4,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 0,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "cad5f896b3e4473093c3b8f939805339",
+                    "cardId": "alloy_0025",
+                    "displayName": "Alloy Blessed Monk #25",
+                    "manaCost": 3,
+                    "attack": 6,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "fly",
+                            "displayName": "Fly",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "armor",
+                            "displayName": "Armor",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 2,
+                                    "amount": 5,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "9ccdb8adde6e420e942eacea4fa530e5",
+                    "cardId": "alloy_0051",
+                    "displayName": "Alloy Shadow Assassin #51",
+                    "manaCost": 7,
+                    "attack": 3,
+                    "health": 2,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 196,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "c6e7d90f-eda8-4c2a-9991-996d85617a68",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 1,
+            "maxMana": 1,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 16,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by 6c646037-69b0-4350-a98e-d09f77806192."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by c6e7d90f-eda8-4c2a-9991-996d85617a68."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 184529280."
+        }
+    ],
+    "battleEvents": []
+}

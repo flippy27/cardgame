@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+
 using TMPro;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -103,7 +105,12 @@ namespace Flippy.CardDuelMobile.UI
 
             if (iconPrefab != null)
             {
+
                 instance = Instantiate(iconPrefab, parent, false);
+                var pos = instance.transform.localPosition;
+                pos.z = 4f;
+                instance.transform.localPosition = pos;
+
                 instance.name = $"{RuntimeIconNamePrefix}{index:00}";
                 instance.SetActive(true);
             }
@@ -288,10 +295,11 @@ namespace Flippy.CardDuelMobile.UI
             {
                 if (state == null)
                 {
+                    Debug.LogWarning("Card icon state is NULL, clearing icon.");
                     Clear();
                     return;
                 }
-
+                Debug.Log($"Applying card icon. Sprite: {(state.icon != null ? state.icon.name : "NULL")}, stack: {state.stackCount}");
                 if (_root != null)
                 {
                     _root.SetActive(true);

@@ -1,0 +1,528 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-04-26T00:38:24.7166519Z
+LastUpdatedUtc: 2026-04-26T00:38:32.4719889Z
+MatchId: 143e474b4f0242889dfa91be65a0fd60
+CurrentTurn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: 6c646037-69b0-4350-a98e-d09f77806192
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (11fd524f-49f9-4ffe-b0e3-1ffc06233cad)
+
+Human Timeline
+001. seq=1 skill_begin/SkillBegin: Alloy Blessed Monk #40 used Taunt.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-04-26T00:38:24.7176551Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=1/1 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=136 | P1 id=c6e7d90f hp=20 mana=1/1 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=16
+   Events: none
+-- Step 2 | UTC 2026-04-26T00:38:32.4376270Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=0/1 board=[Front:Alloy Blessed Monk #40#f72bbe89 hp=5/5 armor=1 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=136 | P1 id=c6e7d90f hp=20 mana=1/1 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=16
+   - seq=1 skill_begin/SkillBegin: Alloy Blessed Monk #40 used Taunt.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=f72bbe89510043ba91fff56e1604d795 serverTargetSeat=0 targetVisual=-1 target= ability=taunt effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Blessed Monk #40 used Taunt.
+
+Raw Logs Seen By Unity
+turn=1 Info: Alloy Blessed Monk #40 entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "143e474b4f0242889dfa91be65a0fd60",
+    "rulesetId": "11fd524f-49f9-4ffe-b0e3-1ffc06233cad",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "11fd524f-49f9-4ffe-b0e3-1ffc06233cad",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset used for casual, ranked, and private matches unless another ruleset is selected.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 1,
+        "maxMana": 10,
+        "manaGrantedPerTurn": 1,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "6c646037-69b0-4350-a98e-d09f77806192",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 1,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 361076591,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "6c646037-69b0-4350-a98e-d09f77806192",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 0,
+            "maxMana": 1,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "f1249fda410b40129ed660c15edfcaad",
+                    "cardId": "grove_0083",
+                    "displayName": "Grove Ocean Leviathan #83",
+                    "manaCost": 6,
+                    "attack": 6,
+                    "health": 6,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "poison",
+                            "displayName": "Poison",
+                            "skillType": 3,
+                            "triggerKind": 3,
+                            "targetSelectorKind": 4,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 0,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "regenerate",
+                            "displayName": "Regenerate",
+                            "skillType": 3,
+                            "triggerKind": 2,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "90817187060d44359ca1e3e52c19bd84",
+                    "cardId": "void_0091",
+                    "displayName": "Void Sky Drake #91",
+                    "manaCost": 4,
+                    "attack": 5,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "armor",
+                            "displayName": "Armor",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 2,
+                                    "amount": 5,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "fly",
+                            "displayName": "Fly",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "812d3b9d07ba463e8c110e134e55ed88",
+                    "cardId": "alloy_0052",
+                    "displayName": "Alloy Storm Caller #52",
+                    "manaCost": 5,
+                    "attack": 3,
+                    "health": 7,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "armor",
+                            "displayName": "Armor",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 2,
+                                    "amount": 5,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "f72bbe89510043ba91fff56e1604d795",
+                        "cardId": "alloy_0040",
+                        "displayName": "Alloy Blessed Monk #40",
+                        "manaCost": 1,
+                        "attackMotionLevel": 4,
+                        "attackShakeLevel": 4,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 4,
+                        "currentHealth": 5,
+                        "maxHealth": 5,
+                        "armor": 1,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 3,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "trample",
+                                "displayName": "Trample",
+                                "skillType": 3,
+                                "triggerKind": 3,
+                                "targetSelectorKind": 3,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 0,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "enrage",
+                                "displayName": "Enrage",
+                                "skillType": 3,
+                                "triggerKind": 1,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 3,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 136,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "c6e7d90f-eda8-4c2a-9991-996d85617a68",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 1,
+            "maxMana": 1,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 16,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by 6c646037-69b0-4350-a98e-d09f77806192."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by c6e7d90f-eda8-4c2a-9991-996d85617a68."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 361076591."
+        },
+        {
+            "type": 0,
+            "message": "Alloy Blessed Monk #40 entered Front."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "f72bbe89510043ba91fff56e1604d795",
+            "targetRuntimeId": "",
+            "abilityId": "taunt",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Blessed Monk #40 used Taunt."
+        }
+    ]
+}

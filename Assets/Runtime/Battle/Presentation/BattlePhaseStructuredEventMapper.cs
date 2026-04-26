@@ -16,20 +16,29 @@ namespace Flippy.CardDuelMobile.UI
                 return results;
             }
 
-            foreach (var battleEvent in battleEvents.OrderBy(item => item?.sequence ?? int.MaxValue))
+            var orderedEvents = battleEvents
+                .Where(item => item != null)
+                .OrderBy(item => item.sequence)
+                .ToList();
+            var resolvedDamageKeys = new HashSet<string>(StringComparer.Ordinal);
+            foreach (var battleEvent in orderedEvents)
             {
-                if (battleEvent == null)
+                var kind = NormalizeKind(battleEvent.kind);
+                if (kind is "card_damage" or "card_counterattack")
                 {
-                    continue;
+                    resolvedDamageKeys.Add(AttackKey(battleEvent));
                 }
+            }
 
-                results.Add(Map(snapshot, battleEvent));
+            foreach (var battleEvent in orderedEvents)
+            {
+                results.Add(Map(snapshot, battleEvent, resolvedDamageKeys));
             }
 
             return results;
         }
 
-        private static BattlePresentationEvent Map(DuelSnapshotDto snapshot, BattleEventDto battleEvent)
+        private static BattlePresentationEvent Map(DuelSnapshotDto snapshot, BattleEventDto battleEvent, HashSet<string> resolvedDamageKeys)
         {
             var kind = NormalizeKind(battleEvent.kind);
             var presentationKind = kind switch
@@ -47,7 +56,12 @@ namespace Flippy.CardDuelMobile.UI
                 "armor_gain" => BattlePresentationEventKind.ArmorGain,
                 "attack_buff" => BattlePresentationEventKind.AttackBuff,
                 "death" => BattlePresentationEventKind.Death,
-                "card_attack" when battleEvent.amount > 0 => BattlePresentationEventKind.CardAttack,
+                "card_counterattack" => BattlePresentationEventKind.CardAttack,
+                "card_attack" => resolvedDamageKeys != null && resolvedDamageKeys.Contains(AttackKey(battleEvent))
+                    ? BattlePresentationEventKind.Info
+                    : BattlePresentationEventKind.CardAttack,
+                "card_destroyed" => BattlePresentationEventKind.Info,
+                "attack_position_blocked" => BattlePresentationEventKind.Skip,
                 _ => BattlePresentationEventKind.Info
             };
 
@@ -96,6 +110,7 @@ namespace Flippy.CardDuelMobile.UI
             return kind switch
             {
                 "card_damage" => $"{source} hit {target} for {battleEvent.amount}.",
+                "card_counterattack" => $"{source} counterattacked {target} for {battleEvent.amount}.",
                 "hero_damage" => $"{source} hit hero P{battleEvent.targetSeatIndex} for {battleEvent.amount}.",
                 "shield_block" => $"{target} blocked damage with shield.",
                 "status_applied" => $"{StatusKindName(battleEvent.statusKind)} applied to {target}.",
@@ -105,6 +120,9 @@ namespace Flippy.CardDuelMobile.UI
                 "attack_buff" => $"{target} gained {battleEvent.amount} attack.",
                 "death" => $"{target} died.",
                 "skill_begin" => $"{source} used {battleEvent.abilityId}.",
+                "card_attack" => $"{source} attack declared against {target}.",
+                "card_destroyed" => $"{target} was destroyed by player action.",
+                "attack_position_blocked" => $"{source} could not attack from its current position.",
                 _ => $"{kind} ({battleEvent.eventId})"
             };
         }
@@ -163,14 +181,14 @@ namespace Flippy.CardDuelMobile.UI
 
         private static bool HasResolvedHealth(string kind, BattleEventDto battleEvent)
         {
-            return kind is "card_damage" or "hero_damage" or "heal" ||
+            return kind is "card_attack" or "card_damage" or "card_counterattack" or "hero_damage" or "heal" ||
                    battleEvent.hpBefore != 0 ||
                    battleEvent.hpAfter != 0;
         }
 
         private static bool HasResolvedArmor(string kind, BattleEventDto battleEvent)
         {
-            return kind is "card_damage" or "shield_block" or "armor_gain" ||
+            return kind is "card_attack" or "card_damage" or "card_counterattack" or "shield_block" or "armor_gain" ||
                    battleEvent.armorBefore != 0 ||
                    battleEvent.armorAfter != 0;
         }
@@ -213,6 +231,16 @@ namespace Flippy.CardDuelMobile.UI
         private static string NormalizeKind(string kind)
         {
             return string.IsNullOrWhiteSpace(kind) ? string.Empty : kind.Trim().ToLowerInvariant();
+        }
+
+        private static string AttackKey(BattleEventDto battleEvent)
+        {
+            if (battleEvent == null)
+            {
+                return string.Empty;
+            }
+
+            return $"{battleEvent.sourceSeatIndex}:{battleEvent.sourceRuntimeId}|{battleEvent.targetSeatIndex}:{battleEvent.targetRuntimeId}";
         }
     }
 }

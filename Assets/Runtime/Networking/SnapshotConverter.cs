@@ -345,7 +345,7 @@ namespace Flippy.CardDuelMobile.Networking
             }
 
             var kind = NormalizeEventKind(battleEvent.kind);
-            return kind is "card_attack" or "card_damage" or "hero_damage" or "shield_block" or "skill_begin" or "heal" or "armor_gain" or "attack_buff";
+            return kind is "card_attack" or "card_damage" or "card_counterattack" or "card_destroyed" or "hero_damage" or "shield_block" or "skill_begin" or "heal" or "armor_gain" or "attack_buff" or "attack_position_blocked";
         }
 
         private static bool HasMeaningfulTargetSeat(BattleEventSnapshot battleEvent)
@@ -384,7 +384,8 @@ namespace Flippy.CardDuelMobile.Networking
                     amount = effect.amount,
                     remainingTurns = effect.remainingTurns,
                     sourceRuntimeId = effect.sourceRuntimeId ?? string.Empty,
-                    abilityId = effect.abilityId ?? string.Empty
+                    abilityId = effect.abilityId ?? string.Empty,
+                    iconAssetRef = effect.iconAssetRef ?? string.Empty
                 })
                 .ToArray();
         }
@@ -409,6 +410,7 @@ namespace Flippy.CardDuelMobile.Networking
             {
                 abilityId = ability.abilityId ?? string.Empty,
                 displayName = ability.displayName ?? string.Empty,
+                iconAssetRef = ability.iconAssetRef ?? string.Empty,
                 skillType = ability.skillType,
                 triggerKind = ability.triggerKind,
                 targetSelectorKind = ability.targetSelectorKind,

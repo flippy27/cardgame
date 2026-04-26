@@ -1219,6 +1219,9 @@ MonoBehaviour:
   - assetRef: abilities/poison
     sprite: {fileID: -7089129573798456675, guid: 2988d539b2586ee49bd6f3936ac6911c, type: 3}
     texture: {fileID: 0}
+  - assetRef: abilities/taunt
+    sprite: {fileID: 3623433382724870678, guid: 418ae8dfdd93e574391f15ff7c529192, type: 3}
+    texture: {fileID: 0}
   statusIconAssets:
   - assetRef: icons/statuses/poisoned
     sprite: {fileID: 945015270597009332, guid: c3fddc697a15b724d8983a53352b2b40, type: 3}
@@ -1268,6 +1271,10 @@ MonoBehaviour:
   rulesProfile: {fileID: 11400000, guid: fa6991372035d449db477abec2831388, type: 2}
   localPlayerDeck: {fileID: 11400000, guid: 72e6813897fcb4f3a9129ddcfc58d1ba, type: 2}
   enemyDeck: {fileID: 11400000, guid: 5372a66c083c346008b2f20e1f53b9c6, type: 2}
+  useServerDecks: 1
+  allowInspectorDeckFallback: 0
+  aiDeckAccountEmail: playertwo@flippy.com
+  aiDeckAccountPassword: 123456
   aiDifficulty: 1
   aiFirstActionDelay: 0.45
   aiActionDelay: 0.35
@@ -1370,7 +1377,6 @@ MonoBehaviour:
   endTurnButton: {fileID: 147048371}
   boardCardPrefab: {fileID: 6883590961288053840, guid: 6f85dbf44447147e795bbbff7b8ac20f, type: 3}
   boardCardPlayedPrefab: {fileID: 2256093238488591113, guid: d82198fc1ed2c43a182a92cdcc26ce6f, type: 3}
-  debugPanel: {fileID: 188100840}
   attackEffectSystem: {fileID: 1870878618}
   localHeroAttackTarget: {fileID: 317117506}
   remoteHeroAttackTarget: {fileID: 1805038066}

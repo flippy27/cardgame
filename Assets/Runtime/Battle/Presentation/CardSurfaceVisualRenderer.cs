@@ -170,12 +170,12 @@ namespace Flippy.CardDuelMobile.UI
                     return;
                 }
 
-                ApplyLocalFallback(cardId);
+                ApplyMissingVisuals();
             }
             catch (Exception ex)
             {
                 Debug.LogWarning($"[CardVisuals] Could not resolve visuals for '{cardId}' on surface '{surface}': {ex.Message}");
-                ApplyLocalFallback(cardId);
+                ApplyMissingVisuals();
             }
         }
 
@@ -220,34 +220,23 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
-        private void ApplyLocalFallback(string cardId)
+        private void ApplyMissingVisuals()
         {
-            var localDefinition = CardRegistry.GetCard(cardId);
-            var localProfile = localDefinition?.visualProfile;
-            if (localProfile == null)
-            {
-                if (clearBindingsWhenMissing)
-                {
-                    ClearBindings();
-                }
-
-                return;
-            }
-
-            ApplyFallbackLayer("frame", localProfile.frame);
-            ApplyFallbackLayer("art", localProfile.artwork);
-            ApplyFallbackLayer("icon", localProfile.icon);
-        }
-
-        private void ApplyFallbackLayer(string layerKey, Sprite sprite)
-        {
-            var binding = FindBinding(layerKey);
-            if (binding == null)
+            if (layerBindings == null || layerBindings.Length == 0)
             {
                 return;
             }
 
-            binding.Apply(sprite, sprite != null ? sprite.texture : null);
+            if (clearBindingsWhenMissing)
+            {
+                ClearBindings();
+                return;
+            }
+
+            foreach (var binding in layerBindings)
+            {
+                binding?.Apply(CardVisualAssetResolver.MissingSprite, CardVisualAssetResolver.MissingTexture);
+            }
         }
 
         private CardVisualLayerBinding FindBinding(string layerKey)

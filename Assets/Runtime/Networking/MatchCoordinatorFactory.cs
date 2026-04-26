@@ -75,6 +75,7 @@ namespace Flippy.CardDuelMobile.Networking
         // Note: These are async void to match existing MatchHttpCoordinator implementation
         void RequestPlayCard(string runtimeCardKey, int slotIndex);
         void RequestEndTurn();
+        void RequestDestroyCard(string runtimeCardId);
         void RequestSetReady(bool isReady);
         void RequestForfeit();
     }

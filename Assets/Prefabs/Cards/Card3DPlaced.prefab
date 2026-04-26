@@ -651,7 +651,7 @@ MonoBehaviour:
   createFallbackIconWhenMissing: 1
   autoConfigureGridLayout: 1
   layout: 0
-  cellSize: {x: 18, y: 18}
+  cellSize: {x: 800, y: 800}
   spacing: {x: 2, y: 2}
   showStackText: 1
   stackFont: {fileID: 0}
@@ -677,7 +677,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 18, y: 18}
+  m_CellSize: {x: 800, y: 800}
   m_Spacing: {x: 2, y: 2}
   m_Constraint: 0
   m_ConstraintCount: 2

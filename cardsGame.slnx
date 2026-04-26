@@ -75,6 +75,7 @@
   <Project Path="Unity.2D.Common.Editor.csproj" />
   <Project Path="Unity.Networking.Transport.csproj" />
   <Project Path="ScriptablePacker.csproj" />
+  <Project Path="Unity.Mobile.AndroidLogcat.Editor.csproj" />
   <Project Path="Unity.Rider.Editor.csproj" />
   <Project Path="Unity.2D.Tooling.Editor.csproj" />
   <Project Path="Unity.VisualScripting.State.csproj" />

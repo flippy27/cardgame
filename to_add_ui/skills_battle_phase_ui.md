@@ -369,45 +369,19 @@ Entonces `CardSurfaceVisualRenderer` busca un binding llamado `frame`, resuelve 
 
 ## Como Se Resuelven Los Iconos
 
-Para habilidades, el cliente intenta resolver el icono usando el id de habilidad.
+El cliente ya no inventa rutas desde `abilityId`, `animationCueId` o `statusKind`.
 
-Ejemplo: habilidad `poison`.
+Para habilidades, Unity usa exactamente:
 
-Keys recomendadas:
+- `ability.iconAssetRef`, si viene.
+- `ability.metadataJson.iconAssetRef`, si viene.
+- `ability.metadataJson.assetRef`, si viene.
 
-- `icons/skills/poison`
-- `skills/poison`
-- `icons/poison`
-- `poison`
+Para buffs/debuffs/statuses, Unity usa exactamente:
 
-La recomendada para mantener orden es:
+- `status.iconAssetRef`, si viene.
 
-`icons/skills/poison`
-
-Para status/debuffs, usa el id del status.
-
-Ejemplo: status `poisoned`.
-
-Keys recomendadas:
-
-- `icons/statuses/poisoned`
-- `statuses/poisoned`
-- `icons/poisoned`
-- `poisoned`
-
-La recomendada para mantener orden es:
-
-`icons/statuses/poisoned`
-
-Importante: `poison` y `poisoned` son cosas distintas.
-
-- `poison` es la habilidad o efecto que puede aplicar veneno.
-- `poisoned` es el debuff/status activo sobre una carta.
-
-Por eso normalmente tendras dos iconos o dos keys:
-
-- `icons/skills/poison`
-- `icons/statuses/poisoned`
+Si no viene una key, o si la key no existe en `CardVisualAssetResolver`, se muestra el placeholder fucsia. Puedes usar nombres como `icons/skills/poison` o `icons/statuses/poisoned`, pero solo si el backend envia exactamente esas strings.
 
 ## Flujo Runtime
 
@@ -463,4 +437,4 @@ Si algo se ve raro en multiplayer, este archivo es el primer lugar para comparar
 - Confundir habilidad con debuff: `poison` no es lo mismo que `poisoned`.
 - Poner `Status Icon Group` en `Card3DView`: las cartas en mano normalmente no tienen buffs/debuffs activos.
 - No agregar entries al resolver: la logica funciona, pero el icono/frame/arte no se vera.
-- Usar nombres distintos a los del backend: las keys deben coincidir exactamente con `assetRef` o con la convencion documentada.
+- Usar nombres distintos a los del backend: las keys deben coincidir exactamente con el `assetRef` que envia el servidor.

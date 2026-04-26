@@ -137,6 +137,25 @@ namespace Flippy.CardDuelMobile.Networking
         }
 
         /// <summary>
+        /// Request live board-card destruction. The server owns validation and final state.
+        /// </summary>
+        public async void RequestDestroyCard(string runtimeCardId)
+        {
+            try
+            {
+                GameLogger.Info("MatchHttp", $"Requesting DestroyCard: {runtimeCardId}");
+                var snapshot = await _apiClient.DestroyCard(matchId, playerId, runtimeCardId);
+                ProcessSnapshot(snapshot);
+                GameLogger.Info("MatchHttp", "DestroyCard success");
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Error("MatchHttp", $"DestroyCard failed: {ex.Message}");
+                HandleGameplayActionError("DestroyCard", ex);
+            }
+        }
+
+        /// <summary>
         /// Request forfeit.
         /// </summary>
         public async void RequestForfeit()

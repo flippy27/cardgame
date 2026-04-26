@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 using Flippy.CardDuelMobile.Core;
+using System.Linq;
 
 namespace Flippy.CardDuelMobile.Networking.ApiClients
 {
@@ -28,7 +29,9 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         public async Task<CraftableCardDto[]> FetchCraftableCards()
         {
             var json = await HttpClientHelper.GetAsync($"{_baseUrl}/api/v1/crafting/cards");
-            var w = JsonUtility.FromJson<CraftableCardListWrapper>($"{{\"cards\":{json}}}");
+            Debug.Log($"crafitng cards {json}");
+            CraftableCardListWrapper w = JsonUtility.FromJson<CraftableCardListWrapper>($"{{\"cards\":{json}}}");
+            Debug.Log($"array  {w.cards.Count()}");
             return w?.cards ?? Array.Empty<CraftableCardDto>();
         }
 

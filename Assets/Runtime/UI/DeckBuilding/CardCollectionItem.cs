@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Flippy.CardDuelMobile.Networking.ApiClients;
+using Flippy.CardDuelMobile.UI;
+using TMPro;
 
 namespace Flippy.CardDuelMobile.UI.DeckBuilding
 {
@@ -24,11 +26,13 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
     public sealed class CardCollectionItem : MonoBehaviour
     {
         [SerializeField] private Image cardArtImage;
-        [SerializeField] private Text cardNameText;
-        [SerializeField] private Text copiesText;
+        [SerializeField] private TextMeshProUGUI cardNameText;
+        [SerializeField] private TextMeshProUGUI copiesText;
         [SerializeField] private Image rarityBar;
         [SerializeField] private Image factionIcon;
         [SerializeField] private Button selectButton;
+        [SerializeField] private CardSurfaceVisualRenderer visualRenderer;
+        [SerializeField] private string visualSurface = "collection";
 
         private static readonly Color[] RarityColors =
         {
@@ -67,6 +71,9 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             if (cardNameText != null)
                 cardNameText.text = entry.displayName ?? entry.cardId;
 
+            EnsureVisualRenderer();
+            visualRenderer?.ApplyCard(entry.cardId, visualSurface);
+
             if (copiesText != null)
                 copiesText.text = entry.ownedCopies > 1 ? $"×{entry.ownedCopies}" : string.Empty;
 
@@ -85,6 +92,20 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             {
                 var idx = Mathf.Clamp(first.cardFaction, 0, FactionColors.Length - 1);
                 factionIcon.color = FactionColors[idx];
+            }
+        }
+
+        private void EnsureVisualRenderer()
+        {
+            if (visualRenderer == null)
+            {
+                visualRenderer = GetComponent<CardSurfaceVisualRenderer>() ?? GetComponentInChildren<CardSurfaceVisualRenderer>(true);
+            }
+
+            if (visualRenderer == null && cardArtImage != null)
+            {
+                visualRenderer = gameObject.AddComponent<CardSurfaceVisualRenderer>();
+                visualRenderer.EnsureDefaultImageBinding(cardArtImage, visualSurface);
             }
         }
 

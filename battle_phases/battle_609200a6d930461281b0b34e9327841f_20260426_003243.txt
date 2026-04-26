@@ -1,0 +1,959 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-04-26T00:32:43.7448305Z
+LastUpdatedUtc: 2026-04-26T00:33:31.3314446Z
+MatchId: 609200a6d930461281b0b34e9327841f
+CurrentTurn: 5
+ActivePlayerIndex: 0
+ActivePlayerId: 6c646037-69b0-4350-a98e-d09f77806192
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (11fd524f-49f9-4ffe-b0e3-1ffc06233cad)
+
+Human Timeline
+001. seq=1 skill_begin/SkillBegin: Alloy Undead Knight #45 used Stun.
+002. seq=2 skill_begin/SkillBegin: Alloy Undead Knight #45 used Taunt.
+003. seq=3 Alloy Undead Knight #45#7a0c3bce skipped. Alloy Undead Knight #45 is not ready to attack.
+004. seq=-1 /Info: Tidal Frost Giant #90 entered Front.
+005. seq=4 attack_position_blocked/Info: Tidal Frost Giant #90 cannot attack from Front.
+006. seq=5 skill_begin/SkillBegin: Alloy Undead Knight #45 used Stun.
+007. seq=6 skill_begin/SkillBegin: Alloy Undead Knight #45 used Taunt.
+008. seq=7 Alloy Undead Knight #45#58bce73b skipped. Alloy Undead Knight #45 is not ready to attack.
+009. seq=8 attack_position_blocked/Info: Alloy Undead Knight #45 cannot attack from BackLeft.
+010. seq=9 skill_begin/SkillBegin: Alloy Blessed Monk #118 used Shield.
+011. seq=10 Alloy Blessed Monk #118#3e243083 gains armor 10. Armor 2->12. Alloy Blessed Monk #118 gained 10 armor.
+012. seq=11 attack_position_blocked/Info: Alloy Blessed Monk #118 cannot attack from Front.
+013. seq=12 attack_position_blocked/Info: Tidal Frost Giant #90 cannot attack from BackLeft.
+014. seq=13 skill_begin/SkillBegin: Alloy Blessed Monk #25 used Fly.
+015. seq=14 skill_begin/SkillBegin: Alloy Blessed Monk #25 used Armor.
+016. seq=15 Alloy Blessed Monk #25#c40ef845 gains armor 5. Armor 0->5. Alloy Blessed Monk #25 gained 5 armor.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-04-26T00:32:43.7463343Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=1/1 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=96 | P1 id=c6e7d90f hp=20 mana=1/1 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=16
+   Events: none
+-- Step 2 | UTC 2026-04-26T00:32:48.4423986Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=0/1 board=[Front:Alloy Undead Knight #45#7a0c3bce hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=96 | P1 id=c6e7d90f hp=20 mana=1/1 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=16
+   - seq=1 skill_begin/SkillBegin: Alloy Undead Knight #45 used Stun.
+   - seq=2 skill_begin/SkillBegin: Alloy Undead Knight #45 used Taunt.
+-- Step 3 | UTC 2026-04-26T00:33:07.9311466Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=0/1 board=[Front:Alloy Undead Knight #45#7a0c3bce hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=96 | P1 id=c6e7d90f hp=20 mana=2/2 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=15
+   - seq=3 Alloy Undead Knight #45#7a0c3bce skipped. Alloy Undead Knight #45 is not ready to attack.
+-- Step 4 | UTC 2026-04-26T00:33:15.4238816Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=0/1 board=[Front:Alloy Undead Knight #45#7a0c3bce hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=96 | P1 id=c6e7d90f hp=20 mana=0/2 board=[Front:Tidal Frost Giant #90#4a1954fc hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=15
+   - seq=-1 /Info: Tidal Frost Giant #90 entered Front.
+-- Step 5 | UTC 2026-04-26T00:33:15.4325098Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=2/2 board=[Front:Alloy Undead Knight #45#7a0c3bce hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=4 deck=95 | P1 id=c6e7d90f hp=20 mana=0/2 board=[Front:Tidal Frost Giant #90#4a1954fc hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=15
+   - seq=4 attack_position_blocked/Info: Tidal Frost Giant #90 cannot attack from Front.
+-- Step 6 | UTC 2026-04-26T00:33:17.5110091Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=1/2 board=[Front:Alloy Undead Knight #45#58bce73b hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Alloy Undead Knight #45#7a0c3bce hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=3 deck=95 | P1 id=c6e7d90f hp=20 mana=0/2 board=[Front:Tidal Frost Giant #90#4a1954fc hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=15
+   - seq=5 skill_begin/SkillBegin: Alloy Undead Knight #45 used Stun.
+   - seq=6 skill_begin/SkillBegin: Alloy Undead Knight #45 used Taunt.
+-- Step 7 | UTC 2026-04-26T00:33:19.1119304Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=1/2 board=[Front:Alloy Undead Knight #45#58bce73b hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Alloy Undead Knight #45#7a0c3bce hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=3 deck=95 | P1 id=c6e7d90f hp=20 mana=3/3 board=[Front:Tidal Frost Giant #90#4a1954fc hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=14
+   - seq=7 Alloy Undead Knight #45#58bce73b skipped. Alloy Undead Knight #45 is not ready to attack.
+   - seq=8 attack_position_blocked/Info: Alloy Undead Knight #45 cannot attack from BackLeft.
+-- Step 8 | UTC 2026-04-26T00:33:24.6088042Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=1/2 board=[Front:Alloy Undead Knight #45#58bce73b hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Alloy Undead Knight #45#7a0c3bce hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=3 deck=95 | P1 id=c6e7d90f hp=20 mana=1/3 board=[Front:Alloy Blessed Monk #118#3e243083 hp=1/1 armor=12 unitType=0 delivery=melee, BackLeft:Tidal Frost Giant #90#4a1954fc hp=5/5 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=14
+   - seq=9 skill_begin/SkillBegin: Alloy Blessed Monk #118 used Shield.
+   - seq=10 Alloy Blessed Monk #118#3e243083 gains armor 10. Armor 2->12. Alloy Blessed Monk #118 gained 10 armor.
+-- Step 9 | UTC 2026-04-26T00:33:24.8631423Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=3/3 board=[Front:Alloy Undead Knight #45#58bce73b hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Alloy Undead Knight #45#7a0c3bce hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=4 deck=94 | P1 id=c6e7d90f hp=20 mana=1/3 board=[Front:Alloy Blessed Monk #118#3e243083 hp=1/1 armor=12 unitType=0 delivery=melee, BackLeft:Tidal Frost Giant #90#4a1954fc hp=5/5 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=14
+   - seq=11 attack_position_blocked/Info: Alloy Blessed Monk #118 cannot attack from Front.
+   - seq=12 attack_position_blocked/Info: Tidal Frost Giant #90 cannot attack from BackLeft.
+-- Step 10 | UTC 2026-04-26T00:33:30.9506924Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=0/3 board=[Front:Alloy Blessed Monk #25#c40ef845 hp=3/3 armor=5 unitType=0 delivery=melee, BackLeft:Alloy Undead Knight #45#58bce73b hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Alloy Undead Knight #45#7a0c3bce hp=2/2 armor=0 unitType=0 delivery=melee] hand=3 deck=94 | P1 id=c6e7d90f hp=20 mana=1/3 board=[Front:Alloy Blessed Monk #118#3e243083 hp=1/1 armor=12 unitType=0 delivery=melee, BackLeft:Tidal Frost Giant #90#4a1954fc hp=5/5 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=14
+   - seq=13 skill_begin/SkillBegin: Alloy Blessed Monk #25 used Fly.
+   - seq=14 skill_begin/SkillBegin: Alloy Blessed Monk #25 used Armor.
+   - seq=15 Alloy Blessed Monk #25#c40ef845 gains armor 5. Armor 0->5. Alloy Blessed Monk #25 gained 5 armor.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=7a0c3bcee8b24fdf9b0588c1cbdd4140 serverTargetSeat=0 targetVisual=-1 target= ability=stun effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 used Stun.
+seq=2 id=evt-000002 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=7a0c3bcee8b24fdf9b0588c1cbdd4140 serverTargetSeat=0 targetVisual=-1 target= ability=taunt effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 used Taunt.
+seq=3 id=evt-000003 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=7a0c3bcee8b24fdf9b0588c1cbdd4140 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 is not ready to attack.
+seq=4 id=evt-000004 kind=attack_position_blocked serverSrcSeat=1 srcVisual=1 src=4a1954fc50554dbda734e1b3356978a9 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Tidal Frost Giant #90 cannot attack from Front.
+seq=5 id=evt-000005 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=58bce73b58fa4862bb06b24c61911d02 serverTargetSeat=0 targetVisual=-1 target= ability=stun effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 used Stun.
+seq=6 id=evt-000006 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=58bce73b58fa4862bb06b24c61911d02 serverTargetSeat=0 targetVisual=-1 target= ability=taunt effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 used Taunt.
+seq=7 id=evt-000007 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=58bce73b58fa4862bb06b24c61911d02 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 is not ready to attack.
+seq=8 id=evt-000008 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=7a0c3bcee8b24fdf9b0588c1cbdd4140 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Undead Knight #45 cannot attack from BackLeft.
+seq=9 id=evt-000009 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=3e243083b268456eb75b811a3c6edc0d serverTargetSeat=0 targetVisual=-1 target= ability=shield effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Blessed Monk #118 used Shield.
+seq=10 id=evt-000010 kind=armor_gain serverSrcSeat=1 srcVisual=1 src=3e243083b268456eb75b811a3c6edc0d serverTargetSeat=1 targetVisual=1 target=3e243083b268456eb75b811a3c6edc0d ability=shield effect=2 status=0 amount=10 hp=1->1 armor=2->12 message=Alloy Blessed Monk #118 gained 10 armor.
+seq=11 id=evt-000011 kind=attack_position_blocked serverSrcSeat=1 srcVisual=1 src=3e243083b268456eb75b811a3c6edc0d serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Blessed Monk #118 cannot attack from Front.
+seq=12 id=evt-000012 kind=attack_position_blocked serverSrcSeat=1 srcVisual=1 src=4a1954fc50554dbda734e1b3356978a9 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Tidal Frost Giant #90 cannot attack from BackLeft.
+seq=13 id=evt-000013 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=c40ef845e29d49d6b6a58354f52a64c1 serverTargetSeat=0 targetVisual=-1 target= ability=fly effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Blessed Monk #25 used Fly.
+seq=14 id=evt-000014 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=c40ef845e29d49d6b6a58354f52a64c1 serverTargetSeat=0 targetVisual=-1 target= ability=armor effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Alloy Blessed Monk #25 used Armor.
+seq=15 id=evt-000015 kind=armor_gain serverSrcSeat=0 srcVisual=0 src=c40ef845e29d49d6b6a58354f52a64c1 serverTargetSeat=0 targetVisual=0 target=c40ef845e29d49d6b6a58354f52a64c1 ability=armor effect=2 status=0 amount=5 hp=3->3 armor=0->5 message=Alloy Blessed Monk #25 gained 5 armor.
+
+Raw Logs Seen By Unity
+turn=1 Info: Alloy Undead Knight #45 entered Front.
+turn=2 Info: Tidal Frost Giant #90 entered Front.
+turn=4 Info: Alloy Blessed Monk #118 entered Front.
+turn=5 Info: Alloy Blessed Monk #25 entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "609200a6d930461281b0b34e9327841f",
+    "rulesetId": "11fd524f-49f9-4ffe-b0e3-1ffc06233cad",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "11fd524f-49f9-4ffe-b0e3-1ffc06233cad",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset used for casual, ranked, and private matches unless another ruleset is selected.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 1,
+        "maxMana": 10,
+        "manaGrantedPerTurn": 1,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "6c646037-69b0-4350-a98e-d09f77806192",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 5,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 1348186043,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "6c646037-69b0-4350-a98e-d09f77806192",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 0,
+            "maxMana": 3,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "dc91b859393c4b1d92b829f15ffb1cdb",
+                    "cardId": "void_0091",
+                    "displayName": "Void Sky Drake #91",
+                    "manaCost": 4,
+                    "attack": 5,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "armor",
+                            "displayName": "Armor",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 2,
+                                    "amount": 5,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "abilityId": "fly",
+                            "displayName": "Fly",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 3,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "99c86fed9090461088ef5bb8173ab620",
+                    "cardId": "alloy_0048",
+                    "displayName": "Alloy Fire Knight #48",
+                    "manaCost": 4,
+                    "attack": 5,
+                    "health": 7,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "c9e25e35c2e54b9d9e1da6a7378fd9b6",
+                    "cardId": "alloy_0052",
+                    "displayName": "Alloy Storm Caller #52",
+                    "manaCost": 5,
+                    "attack": 3,
+                    "health": 7,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "armor",
+                            "displayName": "Armor",
+                            "skillType": 3,
+                            "triggerKind": 0,
+                            "targetSelectorKind": 0,
+                            "animationCueId": "",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{}",
+                            "effects": [
+                                {
+                                    "effectKind": 2,
+                                    "amount": 5,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": 0,
+                                    "sequence": 0,
+                                    "metadataJson": "{}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "c40ef845e29d49d6b6a58354f52a64c1",
+                        "cardId": "alloy_0025",
+                        "displayName": "Alloy Blessed Monk #25",
+                        "manaCost": 3,
+                        "attackMotionLevel": 5,
+                        "attackShakeLevel": 5,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 6,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 5,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "fly",
+                                "displayName": "Fly",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 3,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "armor",
+                                "displayName": "Armor",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 2,
+                                        "amount": 5,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "58bce73b58fa4862bb06b24c61911d02",
+                        "cardId": "alloy_0045",
+                        "displayName": "Alloy Undead Knight #45",
+                        "manaCost": 1,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "stun",
+                                "displayName": "Stun",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 4,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 0,
+                                        "amount": 3,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 3,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "7a0c3bcee8b24fdf9b0588c1cbdd4140",
+                        "cardId": "alloy_0045",
+                        "displayName": "Alloy Undead Knight #45",
+                        "manaCost": 1,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "stun",
+                                "displayName": "Stun",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 4,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 0,
+                                        "amount": 3,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 3,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 94,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "c6e7d90f-eda8-4c2a-9991-996d85617a68",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 1,
+            "maxMana": 3,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "3e243083b268456eb75b811a3c6edc0d",
+                        "cardId": "alloy_0118",
+                        "displayName": "Alloy Blessed Monk #118",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 1,
+                        "maxHealth": 1,
+                        "armor": 12,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "shield",
+                                "displayName": "Shield",
+                                "skillType": 3,
+                                "triggerKind": 0,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 2,
+                                        "amount": 10,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            },
+                            {
+                                "abilityId": "leech",
+                                "displayName": "Leech",
+                                "skillType": 3,
+                                "triggerKind": 3,
+                                "targetSelectorKind": 0,
+                                "animationCueId": "",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{}",
+                                "effects": [
+                                    {
+                                        "effectKind": 1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": 0,
+                                        "sequence": 0,
+                                        "metadataJson": "{}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "4a1954fc50554dbda734e1b3356978a9",
+                        "cardId": "tidal_0090",
+                        "displayName": "Tidal Frost Giant #90",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 5,
+                        "maxHealth": 5,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 14,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by 6c646037-69b0-4350-a98e-d09f77806192."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by c6e7d90f-eda8-4c2a-9991-996d85617a68."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 1348186043."
+        },
+        {
+            "type": 0,
+            "message": "Alloy Undead Knight #45 entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Tidal Frost Giant #90 entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Alloy Undead Knight #45 entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Alloy Blessed Monk #118 entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Alloy Blessed Monk #25 entered Front."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7a0c3bcee8b24fdf9b0588c1cbdd4140",
+            "targetRuntimeId": "",
+            "abilityId": "stun",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 used Stun."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7a0c3bcee8b24fdf9b0588c1cbdd4140",
+            "targetRuntimeId": "",
+            "abilityId": "taunt",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 used Taunt."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7a0c3bcee8b24fdf9b0588c1cbdd4140",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 is not ready to attack."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "4a1954fc50554dbda734e1b3356978a9",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Tidal Frost Giant #90 cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "58bce73b58fa4862bb06b24c61911d02",
+            "targetRuntimeId": "",
+            "abilityId": "stun",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 used Stun."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "58bce73b58fa4862bb06b24c61911d02",
+            "targetRuntimeId": "",
+            "abilityId": "taunt",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 used Taunt."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "58bce73b58fa4862bb06b24c61911d02",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 is not ready to attack."
+        },
+        {
+            "eventId": "evt-000008",
+            "sequence": 8,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7a0c3bcee8b24fdf9b0588c1cbdd4140",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Undead Knight #45 cannot attack from BackLeft."
+        },
+        {
+            "eventId": "evt-000009",
+            "sequence": 9,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "3e243083b268456eb75b811a3c6edc0d",
+            "targetRuntimeId": "",
+            "abilityId": "shield",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Blessed Monk #118 used Shield."
+        },
+        {
+            "eventId": "evt-000010",
+            "sequence": 10,
+            "kind": "armor_gain",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "3e243083b268456eb75b811a3c6edc0d",
+            "targetRuntimeId": "3e243083b268456eb75b811a3c6edc0d",
+            "abilityId": "shield",
+            "effectKind": 2,
+            "amount": 10,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": 1,
+            "armorBefore": 2,
+            "armorAfter": 12,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Blessed Monk #118 gained 10 armor."
+        },
+        {
+            "eventId": "evt-000011",
+            "sequence": 11,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "3e243083b268456eb75b811a3c6edc0d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Blessed Monk #118 cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000012",
+            "sequence": 12,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "4a1954fc50554dbda734e1b3356978a9",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Tidal Frost Giant #90 cannot attack from BackLeft."
+        },
+        {
+            "eventId": "evt-000013",
+            "sequence": 13,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "c40ef845e29d49d6b6a58354f52a64c1",
+            "targetRuntimeId": "",
+            "abilityId": "fly",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Blessed Monk #25 used Fly."
+        },
+        {
+            "eventId": "evt-000014",
+            "sequence": 14,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "c40ef845e29d49d6b6a58354f52a64c1",
+            "targetRuntimeId": "",
+            "abilityId": "armor",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Blessed Monk #25 used Armor."
+        },
+        {
+            "eventId": "evt-000015",
+            "sequence": 15,
+            "kind": "armor_gain",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "c40ef845e29d49d6b6a58354f52a64c1",
+            "targetRuntimeId": "c40ef845e29d49d6b6a58354f52a64c1",
+            "abilityId": "armor",
+            "effectKind": 2,
+            "amount": 5,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Alloy Blessed Monk #25 gained 5 armor."
+        }
+    ]
+}

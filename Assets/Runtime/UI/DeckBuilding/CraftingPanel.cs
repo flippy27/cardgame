@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Networking;
 using Flippy.CardDuelMobile.Networking.ApiClients;
+using TMPro;
 
 namespace Flippy.CardDuelMobile.UI.DeckBuilding
 {
@@ -31,7 +32,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
     public sealed class CraftingPanel : MonoBehaviour
     {
         [Header("Header")]
-        [SerializeField] private Text dustAmountText;
+        [SerializeField] private TextMeshProUGUI dustAmountText;
         [SerializeField] private Button closeButton;
 
         [Header("Filters")]
@@ -42,7 +43,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         [SerializeField] private GameObject recipeItemPrefab;
 
         [Header("Feedback")]
-        [SerializeField] private Text statusText;
+        [SerializeField] private TextMeshProUGUI statusText;
         [SerializeField] private GameObject loadingOverlay;
 
         private CraftingService _craftingService;

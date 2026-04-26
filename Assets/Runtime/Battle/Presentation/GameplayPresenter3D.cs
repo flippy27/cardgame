@@ -32,7 +32,7 @@ namespace Flippy.CardDuelMobile.UI
         [SerializeField] private EndTurnButton3D endTurnButton;
         [SerializeField] public GameObject boardCardPrefab;
         [SerializeField] public GameObject boardCardPlayedPrefab;
-        [SerializeField] private DebugPanel debugPanel;
+        //[SerializeField] private DebugPanel debugPanel;
         [SerializeField] private AttackEffectSystem attackEffectSystem;
         [SerializeField] private Transform localHeroAttackTarget;
         [SerializeField] private Transform remoteHeroAttackTarget;
@@ -187,10 +187,10 @@ namespace Flippy.CardDuelMobile.UI
                 hand3DManager.Initialize();
 
             // Debug panel
-            if (debugPanel == null)
-            {
-                debugPanel = FindFirstObjectByType<DebugPanel>();
-            }
+            // if (debugPanel == null)
+            // {
+            //     debugPanel = FindFirstObjectByType<DebugPanel>();
+            // }
         }
 
         private void EnsureEventSystem()
@@ -228,11 +228,11 @@ namespace Flippy.CardDuelMobile.UI
             {
                 // Multiplayer mode: initialize debug panel with network coordinator
                 var netCoordinator = CardDuelNetworkCoordinator.Instance;
-                if (debugPanel != null && netCoordinator != null)
-                {
-                    debugPanel.Initialize(netCoordinator.DuelRuntime, netCoordinator.DuelState, hand3DManager, board3DManager);
-                    //Debug.Log("[GameplayPresenter3D] Initialized debug panel for multiplayer");
-                }
+                // if (debugPanel != null && netCoordinator != null)
+                // {
+                //     debugPanel.Initialize(netCoordinator.DuelRuntime, netCoordinator.DuelState, hand3DManager, board3DManager);
+                //     //Debug.Log("[GameplayPresenter3D] Initialized debug panel for multiplayer");
+                // }
             }
         }
 
@@ -302,27 +302,27 @@ namespace Flippy.CardDuelMobile.UI
 
         private void InitializeDebugPanelIfNeeded(DuelSnapshotDto snapshot)
         {
-            if (debugPanel == null || snapshot?.players == null || snapshot.players.Length < 2)
-            {
-                return;
-            }
+            // if (debugPanel == null || snapshot?.players == null || snapshot.players.Length < 2)
+            // {
+            //     return;
+            // }
 
-            if (GameModeManager.Instance.IsLocalMode)
-            {
-                var coordinator = LocalSinglePlayerCoordinator.Instance;
-                if (coordinator != null && coordinator.DuelRuntime != null)
-                {
-                    debugPanel.Initialize(coordinator.DuelRuntime, coordinator.DuelState, hand3DManager, board3DManager);
-                }
-            }
-            else
-            {
-                var netCoordinator = CardDuelNetworkCoordinator.Instance;
-                if (netCoordinator != null && netCoordinator.DuelRuntime != null)
-                {
-                    debugPanel.Initialize(netCoordinator.DuelRuntime, netCoordinator.DuelState, hand3DManager, board3DManager);
-                }
-            }
+            // if (GameModeManager.Instance.IsLocalMode)
+            // {
+            //     var coordinator = LocalSinglePlayerCoordinator.Instance;
+            //     if (coordinator != null && coordinator.DuelRuntime != null)
+            //     {
+            //         debugPanel.Initialize(coordinator.DuelRuntime, coordinator.DuelState, hand3DManager, board3DManager);
+            //     }
+            // }
+            // else
+            // {
+            //     var netCoordinator = CardDuelNetworkCoordinator.Instance;
+            //     if (netCoordinator != null && netCoordinator.DuelRuntime != null)
+            //     {
+            //         debugPanel.Initialize(netCoordinator.DuelRuntime, netCoordinator.DuelState, hand3DManager, board3DManager);
+            //     }
+            // }
         }
 
         private List<BattleLogEntry> CollectNewLogs(DuelSnapshotDto snapshot)
@@ -1830,6 +1830,11 @@ namespace Flippy.CardDuelMobile.UI
 
         private void UpdateBoard(DuelSnapshotDto snapshot)
         {
+            if (UpdateBoardAuthoritative(snapshot))
+            {
+                return;
+            }
+
             if (snapshot?.players == null || snapshot.players.Length < 2)
                 return;
 
@@ -1935,6 +1940,120 @@ namespace Flippy.CardDuelMobile.UI
                     }
                 }
             }
+        }
+
+        private bool UpdateBoardAuthoritative(DuelSnapshotDto snapshot)
+        {
+            if (snapshot?.players == null || snapshot.players.Length < 2)
+            {
+                return true;
+            }
+
+            for (var playerIndex = 0; playerIndex < 2; playerIndex++)
+            {
+                var playerSnapshot = snapshot.players[playerIndex];
+                if (playerSnapshot?.board == null)
+                {
+                    continue;
+                }
+
+                var currentCards = new Dictionary<string, (BoardSlot slot, ICardDisplay view)>();
+                var snapshotCards = new Dictionary<string, (BoardSlot slot, BoardCardDto data)>();
+
+                foreach (var slot in System.Enum.GetValues(typeof(BoardSlot)) as BoardSlot[])
+                {
+                    var card = board3DManager.GetCardInSlot(playerIndex, slot);
+                    if (card?.CardData != null && !string.IsNullOrWhiteSpace(card.CardData.runtimeId))
+                    {
+                        currentCards[card.CardData.runtimeId] = (slot, card);
+                    }
+                }
+
+                foreach (var boardCard in playerSnapshot.board)
+                {
+                    if (boardCard.occupied &&
+                        boardCard.occupant != null &&
+                        !string.IsNullOrWhiteSpace(boardCard.occupant.runtimeId))
+                    {
+                        snapshotCards[boardCard.occupant.runtimeId] = (boardCard.slot, boardCard.occupant);
+                    }
+                }
+
+                Debug.Log($"[UpdateBoard] P{playerIndex} Snapshot cards: {string.Join(", ", snapshotCards.Select(x => $"{x.Value.slot}={x.Value.data.displayName}(ID:{ShortRuntimeId(x.Key)})").ToList())}");
+                Debug.Log($"[UpdateBoard] P{playerIndex} Current cards:  {string.Join(", ", currentCards.Select(x => $"{x.Value.slot}={x.Value.view.CardData.displayName}(ID:{ShortRuntimeId(x.Key)})").ToList())}");
+
+                foreach (var entry in snapshotCards)
+                {
+                    var runtimeId = entry.Key;
+                    if (!currentCards.TryGetValue(runtimeId, out var current) || current.view?.CardData == null)
+                    {
+                        continue;
+                    }
+
+                    var snapshotSlot = entry.Value.slot;
+                    var snapshotData = entry.Value.data;
+                    var oldHP = current.view.CardData.currentHealth;
+
+                    if (current.slot != snapshotSlot)
+                    {
+                        Debug.Log($"[UpdateBoard] Moving {snapshotData.displayName} {current.slot}->{snapshotSlot}");
+                        ReparentCardToSlot(current.view, playerIndex, current.slot, snapshotSlot);
+                        Debug.Log($"[GameplayPresenter3D] Moved card {snapshotData.displayName} P{playerIndex} {current.slot}->{snapshotSlot}");
+                    }
+
+                    CopyBoardCardData(current.view.CardData, snapshotData);
+                    current.view.UpdateStatsDisplay();
+
+                    if (snapshotData.currentHealth < oldHP && snapshotData.currentHealth > 0)
+                    {
+                        current.view.SetColor(Color.red);
+                        StartCoroutine(ResetCardColor(current.view, 0.2f));
+                    }
+                    else if (snapshotData.currentHealth <= 0)
+                    {
+                        current.view.AnimateDeath();
+                        StartCoroutine(ClearBoardSlotAfterDelay(playerIndex, snapshotSlot, current.view.CardData.runtimeId, 0.5f));
+                    }
+                }
+
+                foreach (var entry in currentCards)
+                {
+                    var runtimeId = entry.Key;
+                    var currentSlot = entry.Value.slot;
+                    var currentView = entry.Value.view;
+
+                    if (snapshotCards.ContainsKey(runtimeId))
+                    {
+                        continue;
+                    }
+
+                    if (currentView?.CardData != null && currentView.CardData.currentHealth > 0)
+                    {
+                        currentView.AnimateDeath();
+                    }
+
+                    if (currentView?.CardData != null)
+                    {
+                        StartCoroutine(RemoveBoardCardViewAfterDelay(currentView, playerIndex, currentSlot, currentView.CardData.runtimeId, 0.5f));
+                    }
+                }
+
+                foreach (var entry in snapshotCards)
+                {
+                    if (currentCards.ContainsKey(entry.Key))
+                    {
+                        continue;
+                    }
+
+                    var snapshotSlot = entry.Value.slot;
+                    var snapshotData = entry.Value.data;
+                    Debug.Log($"[UpdateBoard] Card NOT in currentCards: {snapshotData.displayName} (ID:{ShortRuntimeId(entry.Key)}) -> creating at {snapshotSlot}");
+                    CreateBoardCard(snapshotData, playerIndex, snapshotSlot);
+                    Debug.Log($"[GameplayPresenter3D] Created card {snapshotData.displayName} at P{playerIndex} {snapshotSlot}");
+                }
+            }
+
+            return true;
         }
 
         private static void CopyBoardCardData(BoardCardDto destination, BoardCardDto source)
@@ -2183,6 +2302,68 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
+        public void RequestDestroyCard(string runtimeCardId)
+        {
+            if (string.IsNullOrWhiteSpace(runtimeCardId))
+            {
+                Debug.LogWarning("[GameplayPresenter3D] RequestDestroyCard blocked: runtimeCardId is empty.");
+                return;
+            }
+
+            if (!IsLocalBoardCard(runtimeCardId))
+            {
+                Debug.LogWarning($"[GameplayPresenter3D] RequestDestroyCard blocked: '{runtimeCardId}' is not on the local player's board.");
+                return;
+            }
+
+            if (GameModeManager.Instance.IsLocalMode)
+            {
+                Debug.LogWarning("[GameplayPresenter3D] DestroyCard is server-authoritative and is not implemented for local AI mode.");
+                hud3D?.Log("Destroy card is only available in server matches.");
+                return;
+            }
+
+            var coordinator = MatchCoordinatorFactory.Instance.GetCoordinator();
+            if (coordinator != null)
+            {
+                Debug.Log($"[GameplayPresenter3D] RequestDestroyCard: {runtimeCardId}");
+                coordinator.RequestDestroyCard(runtimeCardId);
+                hud3D?.Log("Destroy card requested");
+            }
+            else
+            {
+                Debug.LogError("[GameplayPresenter3D] No coordinator available for DestroyCard.");
+            }
+        }
+
+        private bool IsLocalBoardCard(string runtimeCardId)
+        {
+            if (_latestSnapshot?.players == null ||
+                _latestSnapshot.localPlayerIndex < 0 ||
+                _latestSnapshot.localPlayerIndex >= _latestSnapshot.players.Length)
+            {
+                return false;
+            }
+
+            var local = _latestSnapshot.players[_latestSnapshot.localPlayerIndex];
+            if (local?.board == null)
+            {
+                return false;
+            }
+
+            foreach (var slot in local.board)
+            {
+                var occupant = slot?.occupant;
+                if (occupant != null &&
+                    string.Equals(occupant.runtimeId, runtimeCardId, StringComparison.Ordinal))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private System.Collections.IEnumerator ResetCardColor(ICardDisplay card, float delay)
         {
             yield return new WaitForSeconds(delay);
@@ -2208,6 +2389,35 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             board3DManager.ClearSlot(playerIndex, slot);
+        }
+
+        private System.Collections.IEnumerator RemoveBoardCardViewAfterDelay(ICardDisplay cardView, int playerIndex, BoardSlot slot, string expectedRuntimeId, float delay)
+        {
+            yield return new WaitForSeconds(delay);
+
+            if (cardView is MonoBehaviour behaviour && behaviour == null)
+            {
+                yield break;
+            }
+
+            var currentCard = board3DManager.GetCardInSlot(playerIndex, slot);
+            if (currentCard == cardView)
+            {
+                board3DManager.RemoveCardReference(playerIndex, slot);
+            }
+
+            if (cardView?.CardData != null &&
+                !string.IsNullOrWhiteSpace(expectedRuntimeId) &&
+                !string.Equals(cardView.CardData.runtimeId, expectedRuntimeId, StringComparison.Ordinal))
+            {
+                yield break;
+            }
+
+            var go = cardView.GetGameObject();
+            if (go != null)
+            {
+                Destroy(go);
+            }
         }
 
         private void DetectAndAnimateRepositioning(DuelSnapshotDto snapshot)

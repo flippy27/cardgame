@@ -33,6 +33,7 @@ namespace Flippy.CardDuelMobile.UI
         public Button leaveButton;
         public Button readyButton;
         public Button copyJoinCodeButton;
+        public Button deckBuildingButton;
         public GameObject[] hideWhenInSession;
         public GameObject[] showWhenInSession;
 
@@ -69,6 +70,7 @@ namespace Flippy.CardDuelMobile.UI
             AddListener(leaveButton, HandleLeave);
             AddListener(readyButton, HandleReadyToggle);
             AddListener(copyJoinCodeButton, HandleCopyJoinCode);
+            AddListener(deckBuildingButton, HandleDeckBuilding);
             RefreshJoinCodeText();
             RefreshReadyButtonText();
             RefreshButtonVisibility();
@@ -84,6 +86,7 @@ namespace Flippy.CardDuelMobile.UI
             RemoveListener(leaveButton, HandleLeave);
             RemoveListener(readyButton, HandleReadyToggle);
             RemoveListener(copyJoinCodeButton, HandleCopyJoinCode);
+            RemoveListener(deckBuildingButton, HandleDeckBuilding);
         }
 
         private void OnDestroy()
@@ -303,6 +306,22 @@ namespace Flippy.CardDuelMobile.UI
 
             GUIUtility.systemCopyBuffer = _currentRoomCode;
             SetStatus("Join code copied.");
+        }
+
+        private void HandleDeckBuilding()
+        {
+            if (_busy)
+            {
+                return;
+            }
+
+            if (_authService == null || !_authService.IsAuthenticated)
+            {
+                SetStatus("Login before opening deck building.");
+                return;
+            }
+
+            SceneBootstrap.LoadDeckBuilding();
         }
 
         private async Task ReserveAndConnectAsync(string workingMessage, Func<string, Task<MatchReservation>> reserveFunc)
@@ -786,6 +805,7 @@ namespace Flippy.CardDuelMobile.UI
             if (createPrivateButton != null) createPrivateButton.gameObject.SetActive(!inSession);
             if (joinByCodeButton != null) joinByCodeButton.gameObject.SetActive(!inSession);
             if (advancedQueueButton != null) advancedQueueButton.gameObject.SetActive(!inSession);
+            if (deckBuildingButton != null) deckBuildingButton.gameObject.SetActive(!inSession);
             if (leaveButton != null) leaveButton.gameObject.SetActive(inSession);
             if (readyButton != null) readyButton.gameObject.SetActive(canReadyUp);
             if (copyJoinCodeButton != null) copyJoinCodeButton.gameObject.SetActive(showJoinCode);

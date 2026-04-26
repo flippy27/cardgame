@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Networking;
 using Flippy.CardDuelMobile.Networking.ApiClients;
+using TMPro;
 
 namespace Flippy.CardDuelMobile.UI.DeckBuilding
 {
@@ -51,13 +52,13 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
     public sealed class CardCollectionScreen : MonoBehaviour
     {
         [Header("Header")]
-        [SerializeField] private Text dustAmountText;
+        [SerializeField] private TextMeshProUGUI dustAmountText;
         [SerializeField] private Button backButton;
 
         [Header("Filters")]
-        [SerializeField] private InputField searchField;
-        [SerializeField] private Dropdown rarityDropdown;
-        [SerializeField] private Dropdown factionDropdown;
+        [SerializeField] private TMP_InputField  searchField;
+        [SerializeField] private TMP_Dropdown  rarityDropdown;
+        [SerializeField] private TMP_Dropdown factionDropdown;
         [SerializeField] private Button clearFiltersButton;
 
         [Header("Grid")]
@@ -68,13 +69,13 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         [Header("Pagination")]
         [SerializeField] private Button prevPageButton;
         [SerializeField] private Button nextPageButton;
-        [SerializeField] private Text pageLabel;
+        [SerializeField] private TextMeshProUGUI pageLabel;
 
         [Header("Actions")]
         [SerializeField] private Button craftCardsButton;
 
         [Header("Feedback")]
-        [SerializeField] private Text statusText;
+        [SerializeField] private TextMeshProUGUI statusText;
         [SerializeField] private GameObject loadingOverlay;
 
         [Header("Panels")]

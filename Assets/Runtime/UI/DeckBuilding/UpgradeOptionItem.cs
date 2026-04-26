@@ -1,102 +1,89 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Flippy.CardDuelMobile.Data;
-using Flippy.CardDuelMobile.Networking.ApiClients;
 
 namespace Flippy.CardDuelMobile.UI.DeckBuilding
 {
     /// <summary>
-    /// Single upgrade option row inside CardDetailPanel.
-    ///
-    /// Prefab structure (UpgradeOptionItem_Prefab):
-    ///   UpgradeOptionItem   (root — this component)
-    ///   ├── UpgradeNameText     (Text)  — "+2 ATK"
-    ///   ├── DescriptionText     (Text)  — description (optional)
-    ///   ├── CostContainer       (HorizontalLayoutGroup)
-    ///   │   └── [CostChip_Prefab × N per cost entry]
-    ///   │       └── CostLabel   (Text)  — "1 Upgrade Stone"
-    ///   ├── AffordabilityText   (Text)  — "Available" / "Need X more ..."
-    ///   └── ApplyButton         (Button)
-    ///       └── ApplyButtonText (Text)
+    /// Presentation row for a server-provided upgrade option.
+    /// It intentionally does not know client-side costs or ScriptableObjects.
     /// </summary>
     public sealed class UpgradeOptionItem : MonoBehaviour
     {
-        [SerializeField] private Text upgradeNameText;
-        [SerializeField] private Text descriptionText;
+        [SerializeField] private TextMeshProUGUI upgradeNameText;
+        [SerializeField] private TextMeshProUGUI descriptionText;
         [SerializeField] private Transform costContainer;
-        [SerializeField] private GameObject costChipPrefab;
-        [SerializeField] private Text affordabilityText;
+        [SerializeField] private TextMeshProUGUI affordabilityText;
         [SerializeField] private Button applyButton;
-        [SerializeField] private Text applyButtonText;
+        [SerializeField] private TextMeshProUGUI applyButtonText;
+        [SerializeField] private Color unavailableColor = new Color(0.9f, 0.55f, 0.25f);
 
-        [SerializeField] private Color canAffordColor = new Color(0.2f, 0.8f, 0.2f);
-        [SerializeField] private Color cannotAffordColor = new Color(0.9f, 0.3f, 0.3f);
+        private Action _onApply;
 
-        private UpgradeConfig.UpgradeOption _option;
-        private Action<UpgradeConfig.UpgradeOption> _onApply;
-
-        public void Bind(
-            UpgradeConfig.UpgradeOption option,
-            System.Collections.Generic.Dictionary<string, InventoryApiClient.PlayerItemDto> inventory,
-            bool canAfford,
-            Action<UpgradeConfig.UpgradeOption> onApply)
+        public void BindUnavailable(string title, string description)
         {
-            _option = option;
-            _onApply = onApply;
+            _onApply = null;
+            SetText(upgradeNameText, title);
+            SetText(descriptionText, description);
+            SetText(affordabilityText, "Waiting for backend contract");
 
-            if (upgradeNameText != null) upgradeNameText.text = option.displayName;
-            if (descriptionText != null) descriptionText.text = option.description;
-
-            BuildCostChips(option.costs);
+            if (affordabilityText != null)
+            {
+                affordabilityText.color = unavailableColor;
+            }
 
             if (applyButton != null)
             {
-                applyButton.interactable = canAfford;
+                applyButton.interactable = false;
+                applyButton.onClick.RemoveAllListeners();
+            }
+
+            SetText(applyButtonText, "Unavailable");
+            ClearChildren(costContainer);
+        }
+
+        public void BindServerOption(string title, string description, string affordability, bool canApply, Action onApply)
+        {
+            _onApply = onApply;
+            SetText(upgradeNameText, title);
+            SetText(descriptionText, description);
+            SetText(affordabilityText, affordability);
+
+            if (applyButton != null)
+            {
+                applyButton.interactable = canApply;
                 applyButton.onClick.RemoveAllListeners();
                 applyButton.onClick.AddListener(OnApplyClicked);
             }
 
-            if (applyButtonText != null)
-                applyButtonText.text = canAfford ? "Apply" : "Can't Afford";
-
-            if (affordabilityText != null)
-            {
-                affordabilityText.color = canAfford ? canAffordColor : cannotAffordColor;
-                affordabilityText.text = canAfford ? "Available" : BuildDeficitText(option.costs, inventory);
-            }
+            SetText(applyButtonText, canApply ? "Apply" : "Unavailable");
         }
 
-        private void BuildCostChips(UpgradeConfig.UpgradeCostEntry[] costs)
+        private void OnApplyClicked()
         {
-            if (costContainer == null) return;
-            foreach (Transform child in costContainer) Destroy(child.gameObject);
-            if (costs == null || costChipPrefab == null) return;
-
-            foreach (var cost in costs)
-            {
-                var chip = Instantiate(costChipPrefab, costContainer);
-                var label = chip.GetComponentInChildren<Text>();
-                if (label != null)
-                    label.text = $"{cost.quantity} {cost.displayName ?? cost.itemTypeKey}";
-            }
+            _onApply?.Invoke();
         }
 
-        private string BuildDeficitText(
-            UpgradeConfig.UpgradeCostEntry[] costs,
-            System.Collections.Generic.Dictionary<string, InventoryApiClient.PlayerItemDto> inventory)
+        private static void SetText(TextMeshProUGUI text, string value)
         {
-            if (costs == null) return string.Empty;
-            foreach (var cost in costs)
+            if (text != null)
             {
-                inventory.TryGetValue(cost.itemTypeKey, out var bal);
-                int deficit = cost.quantity - (bal?.quantity ?? 0);
-                if (deficit > 0)
-                    return $"Need {deficit} more {cost.displayName ?? cost.itemTypeKey}";
+                text.text = value ?? string.Empty;
             }
-            return "Missing items";
         }
 
-        private void OnApplyClicked() => _onApply?.Invoke(_option);
+        private static void ClearChildren(Transform container)
+        {
+            if (container == null)
+            {
+                return;
+            }
+
+            foreach (Transform child in container)
+            {
+                Destroy(child.gameObject);
+            }
+        }
     }
 }

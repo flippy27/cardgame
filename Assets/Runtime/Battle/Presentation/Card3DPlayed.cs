@@ -98,6 +98,12 @@ namespace Flippy.CardDuelMobile.UI
                 armorText,
                 armorRoot,
                 statsText);
+
+            if (healthText != null)
+            {
+                healthText.text = CardData.currentHealth.ToString();
+            }
+
             CardVisualCommon.ApplyAttackTypeIcon(
                 CardData,
                 attackTypeImage,

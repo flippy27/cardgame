@@ -56,6 +56,16 @@ namespace Flippy.CardDuelMobile.UI
         private Vector2 _inspectAnchorScreenPos;
         private float _inspectAnchorTime;
         private Card3DView _pressedHandCard;
+        private Card3DPlayed _pressedBoardCard;
+        private Card3DPlayed _draggedBoardCard;
+        private DragGhost3D _boardCardDragMover;
+        private Transform _boardCardOriginalParent;
+        private Vector3 _boardCardOriginalLocalPosition;
+        private Quaternion _boardCardOriginalLocalRotation;
+        private Vector3 _boardCardOriginalLocalScale;
+        private Board3DSlot _boardCardOriginalSlot;
+        private Collider[] _boardCardDisabledColliders;
+        private BoardCardDestroyDropZone _hoveredDestroyZone;
         private Vector2 _pressStartScreenPos;
         private Vector2 _detailInteractionStartScreenPos;
 
@@ -80,6 +90,12 @@ namespace Flippy.CardDuelMobile.UI
                     ResetInspectCandidate();
                 }
 
+                return;
+            }
+
+            if (_draggedBoardCard != null)
+            {
+                UpdateBoardCardDestroyDragging(pointerState);
                 return;
             }
 
@@ -124,6 +140,7 @@ namespace Flippy.CardDuelMobile.UI
             _pressStartScreenPos = pointerState.screenPosition;
             _detailInteractionStartScreenPos = pointerState.screenPosition;
             _pressedHandCard = hoveredCard as Card3DView;
+            _pressedBoardCard = hoveredCard as Card3DPlayed;
 
             if (hoveredCard == null)
             {
@@ -139,6 +156,14 @@ namespace Flippy.CardDuelMobile.UI
         {
             if (TryBeginDragFromDetail(pointerState))
             {
+                return;
+            }
+
+            if (_pressedBoardCard != null &&
+                (cardDetailOverlay == null || !cardDetailOverlay.IsVisible) &&
+                Vector2.Distance(pointerState.screenPosition, _pressStartScreenPos) >= quickDragStartScreenDistance)
+            {
+                BeginBoardCardDestroyDrag(_pressedBoardCard, pointerState.screenPosition);
                 return;
             }
 
@@ -166,6 +191,7 @@ namespace Flippy.CardDuelMobile.UI
         private void HandlePointerReleased(PointerState pointerState, ICardDisplay hoveredCard)
         {
             _pressedHandCard = null;
+            _pressedBoardCard = null;
             ResetInspectCandidate();
 
             if (cardDetailOverlay != null && cardDetailOverlay.IsVisible)
@@ -288,6 +314,132 @@ namespace Flippy.CardDuelMobile.UI
             _draggedCard = null;
             _isDragging = false;
             SetHoveredSlot(null);
+        }
+
+        private void BeginBoardCardDestroyDrag(Card3DPlayed cardView, Vector2 screenPosition)
+        {
+            if (cardView == null || cardView.PlayerIndex != 0 || cardView.CardData == null)
+            {
+                return;
+            }
+
+            if (cardDetailOverlay != null && cardDetailOverlay.IsShowing(cardView))
+            {
+                cardDetailOverlay.Hide();
+            }
+
+            _pressedHandCard = null;
+            _pressedBoardCard = null;
+            _draggedBoardCard = cardView;
+            _boardCardOriginalParent = cardView.transform.parent;
+            _boardCardOriginalLocalPosition = cardView.transform.localPosition;
+            _boardCardOriginalLocalRotation = cardView.transform.localRotation;
+            _boardCardOriginalLocalScale = cardView.transform.localScale;
+            _boardCardOriginalSlot = board3DManager?.GetSlot(cardView.PlayerIndex, cardView.CardData.slot);
+            _boardCardDisabledColliders = cardView.GetComponentsInChildren<Collider>(true);
+
+            if (_boardCardDisabledColliders != null)
+            {
+                foreach (var collider in _boardCardDisabledColliders)
+                {
+                    if (collider != null)
+                    {
+                        collider.enabled = false;
+                    }
+                }
+            }
+
+            cardView.transform.SetParent(null, worldPositionStays: true);
+            _boardCardDragMover = cardView.GetComponent<DragGhost3D>() ?? cardView.gameObject.AddComponent<DragGhost3D>();
+            _boardCardDragMover.enableVelocityTilt = false;
+            _boardCardDragMover.SetTargetPosition(screenPosition, mainCamera);
+            SetHoveredDestroyZone(RaycastDestroyDropZone(screenPosition, cardView));
+            Debug.Log($"[DragHandler3D] Started destroy drag for board card {cardView.CardData.displayName}");
+        }
+
+        private void UpdateBoardCardDestroyDragging(PointerState pointerState)
+        {
+            if (_draggedBoardCard == null)
+            {
+                return;
+            }
+
+            if (pointerState.isPressed)
+            {
+                _boardCardDragMover?.SetTargetPosition(pointerState.screenPosition, mainCamera);
+                SetHoveredDestroyZone(RaycastDestroyDropZone(pointerState.screenPosition, _draggedBoardCard));
+            }
+
+            if (pointerState.releasedThisFrame || !pointerState.isPressed)
+            {
+                EndBoardCardDestroyDrag();
+            }
+        }
+
+        private void EndBoardCardDestroyDrag()
+        {
+            var card = _draggedBoardCard;
+            var dropZone = _hoveredDestroyZone;
+
+            if (card == null)
+            {
+                ClearBoardCardDestroyDragState();
+                return;
+            }
+
+            if (_boardCardDragMover != null)
+            {
+                Destroy(_boardCardDragMover);
+                _boardCardDragMover = null;
+            }
+
+            if (_boardCardDisabledColliders != null)
+            {
+                foreach (var collider in _boardCardDisabledColliders)
+                {
+                    if (collider != null)
+                    {
+                        collider.enabled = true;
+                    }
+                }
+            }
+
+            if (dropZone != null && dropZone.CanAccept(card))
+            {
+                presenter?.RequestDestroyCard(card.CardData.runtimeId);
+            }
+
+            ReturnDraggedBoardCardToOriginalSlot(card);
+            ClearBoardCardDestroyDragState();
+        }
+
+        private void ReturnDraggedBoardCardToOriginalSlot(Card3DPlayed card)
+        {
+            if (card == null)
+            {
+                return;
+            }
+
+            var parent = _boardCardOriginalParent != null
+                ? _boardCardOriginalParent
+                : _boardCardOriginalSlot != null
+                    ? _boardCardOriginalSlot.transform
+                    : null;
+
+            card.transform.SetParent(parent, worldPositionStays: false);
+            card.transform.localPosition = _boardCardOriginalLocalPosition;
+            card.transform.localRotation = _boardCardOriginalLocalRotation;
+            card.transform.localScale = _boardCardOriginalLocalScale;
+        }
+
+        private void ClearBoardCardDestroyDragState()
+        {
+            SetHoveredDestroyZone(null);
+            _draggedBoardCard = null;
+            _pressedBoardCard = null;
+            _boardCardOriginalParent = null;
+            _boardCardOriginalSlot = null;
+            _boardCardDisabledColliders = null;
         }
 
         private void TryPlayCard()
@@ -482,6 +634,22 @@ namespace Flippy.CardDuelMobile.UI
             return slot != null && slot.PlayerIndex == 0 ? slot : null;
         }
 
+        private BoardCardDestroyDropZone RaycastDestroyDropZone(Vector2 screenPosition, Card3DPlayed draggedCard)
+        {
+            var zones = FindObjectsByType<BoardCardDestroyDropZone>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+            foreach (var zone in zones)
+            {
+                if (zone != null &&
+                    zone.CanAccept(draggedCard) &&
+                    zone.ContainsScreenPosition(screenPosition, mainCamera))
+                {
+                    return zone;
+                }
+            }
+
+            return null;
+        }
+
         private void SpawnDragGhost(Vector2 screenPosition, Card3DView sourceCard)
         {
             _dragGhostInstance = CreateDragGhostFromSourceCard(sourceCard);
@@ -586,6 +754,26 @@ namespace Flippy.CardDuelMobile.UI
             else if (presenter != null)
             {
                 presenter.CancelCardDisplacement(0);
+            }
+        }
+
+        private void SetHoveredDestroyZone(BoardCardDestroyDropZone zone)
+        {
+            if (_hoveredDestroyZone == zone)
+            {
+                return;
+            }
+
+            if (_hoveredDestroyZone != null)
+            {
+                _hoveredDestroyZone.SetHighlighted(false);
+            }
+
+            _hoveredDestroyZone = zone;
+
+            if (_hoveredDestroyZone != null)
+            {
+                _hoveredDestroyZone.SetHighlighted(true);
             }
         }
 

@@ -133,6 +133,31 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         }
 
         /// <summary>
+        /// Destroy one of the local player's live board cards.
+        /// POST /api/v1/matches/{matchId}/destroy-card
+        /// </summary>
+        public async Task<MatchSnapshot> DestroyCard(string matchId, string playerId, string runtimeCardId)
+        {
+            try
+            {
+                var url = $"{_baseUrl}/api/v1/matches/{matchId}/destroy-card";
+                var request = JsonUtility.ToJson(new DestroyCardRequestDto
+                {
+                    matchId = matchId,
+                    playerId = playerId,
+                    runtimeCardId = runtimeCardId
+                });
+                var response = await HttpClientHelper.PostAsync(url, request);
+                return JsonUtility.FromJson<MatchSnapshot>(response);
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Error("MatchplayApiClient", $"DestroyCard failed: {ex.Message}");
+                throw;
+            }
+        }
+
+        /// <summary>
         /// Forfeit match (auth token auto-added from SecureTokenStorage).
         /// POST /api/v1/matches/{matchId}/forfeit
         /// </summary>

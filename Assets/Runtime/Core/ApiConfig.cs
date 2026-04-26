@@ -10,7 +10,7 @@ namespace Flippy.CardDuelMobile.Core
 #if UNITY_EDITOR
         private const string DEFAULT_BASE_URL = "http://localhost:5000";
 #else
-        private const string DEFAULT_BASE_URL = "https://api.cardduel.com";
+        private const string DEFAULT_BASE_URL = "https://192.168.1.84:5000";
 #endif
 
         public static string BaseUrl { get; set; } = GetUrlFromEnvironment() ?? DEFAULT_BASE_URL;
