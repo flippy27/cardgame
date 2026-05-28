@@ -48,6 +48,8 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         [SerializeField] private Transform catalogContent;
         [SerializeField] private GameObject catalogItemPrefab;
         [SerializeField] private int pageSize = 12;
+        [SerializeField] private bool deckEditShowsOwnedCardsOnly = true;
+        [SerializeField] private bool hideAfterDeckSelection;
 
         [Header("Pagination")]
         [SerializeField] private Button prevButton;
@@ -162,10 +164,30 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
         private void ApplyFilter()
         {
-            _filtered = string.IsNullOrWhiteSpace(_searchText)
-                ? new List<ServerCardDefinition>(_allCards)
-                : _allCards.FindAll(c =>
-                    (c.displayName ?? c.name ?? c.cardId).IndexOf(_searchText, StringComparison.OrdinalIgnoreCase) >= 0);
+            _filtered = new List<ServerCardDefinition>();
+            foreach (var card in _allCards)
+            {
+                if (card == null)
+                {
+                    continue;
+                }
+
+                var cardId = card.cardId ?? string.Empty;
+                if (_deckEditMode && deckEditShowsOwnedCardsOnly &&
+                    (string.IsNullOrWhiteSpace(cardId) || !_ownedCounts.TryGetValue(cardId, out var owned) || owned <= 0))
+                {
+                    continue;
+                }
+
+                var searchableName = card.displayName ?? card.name ?? card.cardId ?? string.Empty;
+                if (!string.IsNullOrWhiteSpace(_searchText) &&
+                    searchableName.IndexOf(_searchText, StringComparison.OrdinalIgnoreCase) < 0)
+                {
+                    continue;
+                }
+
+                _filtered.Add(card);
+            }
 
             _currentPage = 0;
             RebuildGrid();
@@ -219,7 +241,10 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
                 buttons[0].onClick.AddListener(() =>
                 {
                     OnCardSelectedForDeck?.Invoke(capturedCard);
-                    Hide();
+                    if (hideAfterDeckSelection)
+                    {
+                        Hide();
+                    }
                 });
             }
             else if (!_deckEditMode && buttons.Length > 0)

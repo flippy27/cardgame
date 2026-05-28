@@ -19,7 +19,7 @@ namespace Flippy.CardDuelMobile.Networking
         private const int CacheMinutes = 5;
 
         public const int MinCards = 20;
-        public const int MaxCards = 60;
+        public const int MaxCards = 30;
         public const int MaxCopiesPerCard = 3;
 
         public DeckManagementService(CardGameApiClient apiClient, AuthService authService)
@@ -78,10 +78,18 @@ namespace Flippy.CardDuelMobile.Networking
 
             try
             {
-                // New deck: deckId = null → server assigns one; use upsert endpoint
-                var result = await _apiClient.UpsertDeckAsync(_authService.CurrentPlayerId, null, displayName, cardIds);
+                // Server upsert requires a client-supplied stable deckId.
+                var deckId = $"deck_{Guid.NewGuid():N}";
+                var result = await _apiClient.UpsertDeckAsync(_authService.CurrentPlayerId, deckId, displayName, cardIds);
                 InvalidateCache();
-                return result;
+                return result ?? new DeckDto
+                {
+                    playerId = _authService.CurrentPlayerId,
+                    userId = _authService.CurrentPlayerId,
+                    deckId = deckId,
+                    displayName = displayName,
+                    cardIds = new List<string>(cardIds)
+                };
             }
             catch (Exception ex)
             {
@@ -114,7 +122,14 @@ namespace Flippy.CardDuelMobile.Networking
             {
                 var result = await _apiClient.UpsertDeckAsync(_authService.CurrentPlayerId, deckId, displayName, cardIds);
                 InvalidateCache();
-                return result;
+                return result ?? new DeckDto
+                {
+                    playerId = _authService.CurrentPlayerId,
+                    userId = _authService.CurrentPlayerId,
+                    deckId = deckId,
+                    displayName = displayName,
+                    cardIds = new List<string>(cardIds)
+                };
             }
             catch (Exception ex)
             {
@@ -131,17 +146,9 @@ namespace Flippy.CardDuelMobile.Networking
                 return false;
             }
 
-            try
-            {
-                await _apiClient.DeleteDeckAsync(_authService.CurrentPlayerId, deckId);
-                InvalidateCache();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError($"[Decks] DeleteDeck failed: {ex.Message}");
-                return false;
-            }
+            await Task.Yield();
+            Debug.LogWarning("[Decks] DeleteDeck is disabled because the backend has no deck-level delete endpoint.");
+            return false;
         }
 
         public void InvalidateCache()

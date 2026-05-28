@@ -37,6 +37,37 @@ detail      CardDetailPanel
 
 Remove any `UpgradeConfig` asset/reference. The client no longer owns upgrade costs. The panel will show a placeholder in `upgradeOptionsContainer` until the backend exposes server upgrade options.
 
+`CardDetailPanel` now has editable `Upgrade Presets`. Each preset maps directly to:
+
+```text
+POST /api/v1/players/{userId}/cards/{playerCardId}/upgrades
+```
+
+Preset fields:
+
+```text
+title
+description
+upgradeKind
+intValue
+stringValue
+appliedBy
+note
+requiresStringValue
+```
+
+Examples:
+
+```text
+attack_bonus  intValue=1
+health_bonus  intValue=1
+armor_bonus   intValue=1
+level_up      intValue=0
+added_ability stringValue=<ability id>, requiresStringValue=true
+```
+
+The server still validates cost/effects. Unity only sends the request and refreshes card detail/history.
+
 Optional visual setup:
 
 ```text

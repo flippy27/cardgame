@@ -13,7 +13,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 {
     /// <summary>
     /// Create or edit a deck. Cards are referenced by their catalog cardId.
-    /// Validation: 20-60 cards, max 3 copies per cardId.
+    /// Validation follows the backend: 20-30 cards, max 3 copies per cardId.
     ///
     /// Hierarchy (DeckEditPanel — starts inactive):
     ///   DeckEditPanel
@@ -58,11 +58,14 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         [SerializeField] private GameObject loadingOverlay;
 
         private DeckManagementService _deckService;
+        private PlayerCardCollectionService _collectionService;
         private DeckDto _editingDeck;
         private bool _isNewDeck;
 
         // Working copy: cardId → count
         private readonly Dictionary<string, int> _cardCounts = new();
+        private readonly Dictionary<string, int> _ownedCounts = new();
+        private readonly Dictionary<string, string> _cardNames = new();
 
         public event Action OnSaved;
 
@@ -94,6 +97,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             if (deckNameInput != null) deckNameInput.text = string.Empty;
 
             gameObject.SetActive(true);
+            LoadOwnedCardsAsync();
             RebuildCardList();
             ShowStatus(string.Empty);
         }
@@ -119,6 +123,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             }
 
             gameObject.SetActive(true);
+            LoadOwnedCardsAsync();
             RebuildCardList();
             ShowStatus(string.Empty);
         }
@@ -132,8 +137,26 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void OnCatalogCardSelected(ServerCardDefinition card)
         {
             if (card == null) return;
+            if (string.IsNullOrWhiteSpace(card.cardId))
+            {
+                ShowValidation("Selected card has no cardId from server.");
+                return;
+            }
 
             _cardCounts.TryGetValue(card.cardId, out var current);
+            _ownedCounts.TryGetValue(card.cardId, out var owned);
+            if (_ownedCounts.Count > 0 && owned <= 0)
+            {
+                ShowValidation($"You do not own '{card.displayName ?? card.cardId}'. Craft it first.");
+                return;
+            }
+
+            if (_ownedCounts.Count > 0 && current >= owned)
+            {
+                ShowValidation($"Only {owned} owned copies of '{card.displayName ?? card.cardId}' available.");
+                return;
+            }
+
             if (current >= DeckManagementService.MaxCopiesPerCard)
             {
                 ShowValidation($"Max {DeckManagementService.MaxCopiesPerCard} copies of '{card.displayName ?? card.cardId}'");
@@ -176,7 +199,12 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             var go = Instantiate(deckCardRowPrefab, deckCardsContainer);
 
             var texts = go.GetComponentsInChildren<TextMeshProUGUI>(true);
-            if (texts.Length > 0) texts[0].text = cardId;
+            if (texts.Length > 0)
+            {
+                texts[0].text = _cardNames.TryGetValue(cardId, out var name) && !string.IsNullOrWhiteSpace(name)
+                    ? name
+                    : cardId;
+            }
             if (texts.Length > 1) texts[1].text = $"x{count}";
 
             var buttons = go.GetComponentsInChildren<Button>(true);
@@ -191,10 +219,17 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         {
             int total = _cardCounts.Values.Sum();
             bool valid = _deckService?.ValidateCardList(BuildCardIdList(), out _) ?? (total >= DeckManagementService.MinCards && total <= DeckManagementService.MaxCards);
+            var hasOwnershipError = !ValidateOwnedCopies(out var ownershipMessage);
+            if (hasOwnershipError)
+            {
+                valid = false;
+            }
 
             if (saveButton != null) saveButton.interactable = valid;
 
-            if (total < DeckManagementService.MinCards)
+            if (hasOwnershipError)
+                ShowValidation(ownershipMessage);
+            else if (total < DeckManagementService.MinCards)
                 ShowValidation($"Need at least {DeckManagementService.MinCards} cards ({DeckManagementService.MinCards - total} more)");
             else if (total > DeckManagementService.MaxCards)
                 ShowValidation($"Too many cards (remove {total - DeckManagementService.MaxCards})");
@@ -209,6 +244,68 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
                 for (int i = 0; i < kvp.Value; i++)
                     result.Add(kvp.Key);
             return result;
+        }
+
+        private bool ValidateOwnedCopies(out string message)
+        {
+            message = string.Empty;
+            if (_ownedCounts.Count == 0)
+            {
+                return true;
+            }
+
+            foreach (var kvp in _cardCounts)
+            {
+                _ownedCounts.TryGetValue(kvp.Key, out var owned);
+                if (kvp.Value <= owned)
+                {
+                    continue;
+                }
+
+                var label = _cardNames.TryGetValue(kvp.Key, out var name) && !string.IsNullOrWhiteSpace(name)
+                    ? name
+                    : kvp.Key;
+                message = $"Deck uses {kvp.Value} copies of '{label}', but you only own {owned}.";
+                return false;
+            }
+
+            return true;
+        }
+
+        private async void LoadOwnedCardsAsync()
+        {
+            ServiceLocator.TryResolve<PlayerCardCollectionService>(out _collectionService);
+            if (_collectionService == null)
+            {
+                return;
+            }
+
+            try
+            {
+                var summary = await _collectionService.GetSummaryAsync();
+                _ownedCounts.Clear();
+                _cardNames.Clear();
+
+                if (summary?.cards != null)
+                {
+                    foreach (var entry in summary.cards)
+                    {
+                        if (entry == null || string.IsNullOrWhiteSpace(entry.cardId))
+                        {
+                            continue;
+                        }
+
+                        _ownedCounts[entry.cardId] = Mathf.Max(0, entry.ownedCopies);
+                        _cardNames[entry.cardId] = entry.displayName ?? entry.cardId;
+                    }
+                }
+
+                RebuildCardList();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"[DeckEdit] Unable to load owned card counts: {ex.Message}");
+            }
         }
 
         private async void OnSaveClicked()
@@ -231,6 +328,12 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             if (!_deckService.ValidateCardList(cardList, out var validMsg))
             {
                 ShowValidation(validMsg);
+                return;
+            }
+
+            if (!ValidateOwnedCopies(out var ownershipMsg))
+            {
+                ShowValidation(ownershipMsg);
                 return;
             }
 

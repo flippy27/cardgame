@@ -125,6 +125,7 @@ upgradeHistoryContainer
 upgradeHistoryRowPrefab
 upgradeOptionsContainer
 upgradeOptionItemPrefab optional placeholder row
+upgradePresets          editable generic server POST presets
 statusText
 loadingOverlay
 ```
@@ -134,9 +135,73 @@ Data used:
 ```text
 GET /api/v1/players/{userId}/cards/{playerCardId}
 GET /api/v1/players/{userId}/cards/{playerCardId}/upgrades
+POST /api/v1/players/{userId}/cards/{playerCardId}/upgrades
 ```
 
-Upgrade options are intentionally disabled in the client until the backend exposes available upgrade options plus atomic costs. There is no `UpgradeConfig` ScriptableObject anymore.
+There is no `UpgradeConfig` ScriptableObject anymore. `Upgrade Presets` are generic request presets only:
+
+```text
+upgradeKind
+intValue
+stringValue
+appliedBy
+note
+```
+
+For example, `attack_bonus + intValue=1` sends the same body used by Swagger. The backend validates ownership, cost and effect; Unity refreshes the card detail after success.
+
+## DeckListPanel / DeckEditPanel
+
+Wire `DeckListPanel` to `CardCollectionScreen.deckListPanel` and the ActionBar deck button to `deckManagementButton`.
+
+Deck list data:
+
+```text
+GET /api/v1/decks/{playerId}
+```
+
+Deck edit save:
+
+```text
+PUT /api/v1/decks
+```
+
+The backend currently requires a `deckId`, so Unity generates `deck_{guid}` when creating a new deck. Edits are done as a local working copy and saved with a full `cardIds` list once the deck is valid.
+
+Validation mirrors the current backend:
+
+```text
+20-30 cards
+max 3 copies per cardId
+only owned cards shown for deck editing
+```
+
+Deck-level deletion is not fully wired because the current backend only exposes per-card entry deletion, not `DELETE /api/v1/decks/{playerId}/{deckId}`. See `server_fixes/deck_building_contract_findings.md`.
+
+`DeckEditPanel` should wire:
+
+```text
+titleText
+closeButton
+deckNameInput
+deckCardsContainer
+deckCardRowPrefab
+cardCountText
+addCardsButton
+saveButton
+cardCatalogPanel
+validationText
+statusText
+loadingOverlay
+```
+
+Deck editing uses only cards owned by the player, from:
+
+```text
+GET /api/v1/players/{userId}/cards/summary
+```
+
+`CardCatalogPanel` in deck edit mode defaults to `deckEditShowsOwnedCardsOnly = true`, so it does not let you add catalog cards that the player has not crafted/owned yet.
 
 ## MainMenu Button
 
@@ -156,15 +221,9 @@ GET  /api/v1/players/{userId}/inventory
 GET  /api/v1/players/{userId}/cards
 GET  /api/v1/players/{userId}/cards/summary
 GET  /api/v1/players/{userId}/cards/{playerCardId}
+POST /api/v1/players/{userId}/cards/{playerCardId}/upgrades
 GET  /api/v1/crafting/cards
 POST /api/v1/crafting/cards/{cardId}
+GET  /api/v1/decks/{playerId}
+PUT  /api/v1/decks
 ```
-
-Future backend work needed for upgrades:
-
-```text
-GET  /api/v1/players/{userId}/cards/{playerCardId}/upgrade-options
-POST /api/v1/players/{userId}/cards/{playerCardId}/upgrade-options/{optionId}/apply
-```
-
-The apply endpoint should validate ownership, affordability, deduct inventory and mutate the player card in one transaction.

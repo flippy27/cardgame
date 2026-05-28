@@ -24,7 +24,7 @@ namespace Flippy.CardDuelMobile.UI
             foreach (var battleEvent in orderedEvents)
             {
                 var kind = NormalizeKind(battleEvent.kind);
-                if (kind is "card_damage" or "card_counterattack")
+                if (kind is "card_damage" or "card_counterattack" or "hero_damage" or "shield_block")
                 {
                     resolvedDamageKeys.Add(AttackKey(battleEvent));
                 }

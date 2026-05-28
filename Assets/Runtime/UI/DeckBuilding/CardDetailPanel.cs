@@ -10,9 +10,22 @@ using Flippy.CardDuelMobile.Core;
 
 namespace Flippy.CardDuelMobile.UI.DeckBuilding
 {
+    [Serializable]
+    public sealed class GenericUpgradePreset
+    {
+        public string title = "Attack Bonus (+1)";
+        [TextArea] public string description = "Apply this upgrade through the server.";
+        public string upgradeKind = "attack_bonus";
+        public int intValue = 1;
+        public string stringValue = string.Empty;
+        public string appliedBy = "player";
+        [TextArea] public string note = string.Empty;
+        public bool requiresStringValue;
+    }
+
     /// <summary>
     /// Shows the server-owned details for one player-card instance.
-    /// Upgrade options are intentionally not computed on the client anymore.
+    /// Upgrade options are editable request presets. The server remains authoritative.
     /// </summary>
     public sealed class CardDetailPanel : MonoBehaviour
     {
@@ -40,6 +53,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         [Header("Upgrade Options")]
         [SerializeField] private Transform upgradeOptionsContainer;
         [SerializeField] private GameObject upgradeOptionItemPrefab;
+        [SerializeField] private GenericUpgradePreset[] upgradePresets;
 
         [Header("Feedback")]
         [SerializeField] private TextMeshProUGUI statusText;
@@ -54,6 +68,8 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
         private void Awake()
         {
+            EnsureDefaultUpgradePresets();
+
             if (closeButton != null)
             {
                 closeButton.onClick.AddListener(Hide);
@@ -69,6 +85,11 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
                 visualRenderer = gameObject.AddComponent<CardSurfaceVisualRenderer>();
                 visualRenderer.EnsureDefaultImageBinding(cardArtImage, visualSurface);
             }
+        }
+
+        private void OnValidate()
+        {
+            EnsureDefaultUpgradePresets();
         }
 
         public void Show(string playerCardId)
@@ -182,38 +203,49 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
             if (upgradeOptionItemPrefab == null || upgradeOptionsContainer == null) return;
 
-            // Pre-defined upgrade types that use the generic POST upgrade endpoint.
-            // When a dedicated upgrade-options GET endpoint is available, replace these with server data.
-            var options = new[]
+            if (upgradePresets == null || upgradePresets.Length == 0)
             {
-                ("Attack Bonus (+1)",   "attack_bonus",  1, (string)null),
-                ("Health Bonus (+5)",   "health_bonus",  5, (string)null),
-                ("Armor Bonus (+2)",    "armor_bonus",   2, (string)null),
-                ("Level Up",            "level_up",      0, (string)null),
-            };
+                SpawnTextRow(upgradeOptionsContainer, upgradeOptionItemPrefab, "No upgrade presets configured.");
+                return;
+            }
 
-            foreach (var (title, kind, intVal, strVal) in options)
+            foreach (var preset in upgradePresets)
             {
+                if (preset == null)
+                {
+                    continue;
+                }
+
                 var go = Instantiate(upgradeOptionItemPrefab, upgradeOptionsContainer);
                 var item = go.GetComponent<UpgradeOptionItem>();
                 if (item == null) continue;
 
-                var capturedKind = kind;
-                var capturedInt  = intVal;
-                var capturedStr  = strVal;
-                var capturedId   = playerCardId;
+                var capturedPreset = preset;
+                var capturedId = playerCardId;
+                var canApply = !string.IsNullOrWhiteSpace(capturedPreset.upgradeKind) &&
+                               (!capturedPreset.requiresStringValue || !string.IsNullOrWhiteSpace(capturedPreset.stringValue));
+                var title = string.IsNullOrWhiteSpace(capturedPreset.title)
+                    ? capturedPreset.upgradeKind
+                    : capturedPreset.title;
 
                 item.BindServerOption(
                     title,
-                    $"Apply {title} to this card via server.",
-                    "Server-authoritative cost",
-                    canApply: true,
-                    onApply: () => ApplyUpgrade(capturedId, capturedKind, capturedInt, capturedStr));
+                    string.IsNullOrWhiteSpace(capturedPreset.description)
+                        ? "Send generic upgrade request to server."
+                        : capturedPreset.description,
+                    canApply ? "Server validates cost/effects" : "Missing upgradeKind or stringValue",
+                    canApply,
+                    () => ApplyUpgrade(capturedId, capturedPreset));
             }
         }
 
-        private async void ApplyUpgrade(string playerCardId, string upgradeKind, int intValue, string stringValue)
+        private async void ApplyUpgrade(string playerCardId, GenericUpgradePreset preset)
         {
+            if (preset == null)
+            {
+                return;
+            }
+
             SetLoading(true);
             ShowStatus("Applying upgrade...");
 
@@ -221,11 +253,11 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             {
                 var request = new PlayerCardsApiClient.ApplyUpgradeRequestDto
                 {
-                    upgradeKind = upgradeKind,
-                    intValue    = intValue,
-                    stringValue = stringValue ?? string.Empty,
-                    appliedBy   = "player",
-                    note        = string.Empty
+                    upgradeKind = preset.upgradeKind,
+                    intValue    = preset.intValue,
+                    stringValue = preset.stringValue ?? string.Empty,
+                    appliedBy   = string.IsNullOrWhiteSpace(preset.appliedBy) ? "player" : preset.appliedBy,
+                    note        = preset.note ?? string.Empty
                 };
 
                 var (success, message, updated) = await _collectionService.ApplyUpgradeAsync(playerCardId, request);
@@ -249,6 +281,46 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
                 Debug.LogError($"[CardDetail] ApplyUpgrade failed: {ex}");
             }
             finally { SetLoading(false); }
+        }
+
+        private void EnsureDefaultUpgradePresets()
+        {
+            if (upgradePresets != null && upgradePresets.Length > 0)
+            {
+                return;
+            }
+
+            upgradePresets = new[]
+            {
+                new GenericUpgradePreset
+                {
+                    title = "Attack Bonus (+1)",
+                    description = "POST upgradeKind=attack_bonus, intValue=1.",
+                    upgradeKind = "attack_bonus",
+                    intValue = 1
+                },
+                new GenericUpgradePreset
+                {
+                    title = "Health Bonus (+1)",
+                    description = "POST upgradeKind=health_bonus, intValue=1.",
+                    upgradeKind = "health_bonus",
+                    intValue = 1
+                },
+                new GenericUpgradePreset
+                {
+                    title = "Armor Bonus (+1)",
+                    description = "POST upgradeKind=armor_bonus, intValue=1.",
+                    upgradeKind = "armor_bonus",
+                    intValue = 1
+                },
+                new GenericUpgradePreset
+                {
+                    title = "Level Up",
+                    description = "POST upgradeKind=level_up.",
+                    upgradeKind = "level_up",
+                    intValue = 0
+                }
+            };
         }
 
         private static string FormatUpgradeLabel(PlayerCardsApiClient.PlayerCardUpgradeDto upgrade)

@@ -1,17 +1,34 @@
-# Deck Building Upgrade Contract Needed
+# Deck Building Upgrade Contract Notes
 
-The client-side `UpgradeConfig` ScriptableObject was removed. Deck building now shows card details and applied upgrade history from the backend, but it does not compute available upgrade options locally.
+The client-side `UpgradeConfig` ScriptableObject was removed. Deck building now shows card details, applied upgrade history, and sends generic upgrade requests to the backend.
 
-To re-enable upgrade buttons in a server-authoritative way, backend should expose an atomic upgrade option contract.
+Current implemented client request:
 
-Suggested endpoints:
+```text
+POST /api/v1/players/{userId}/cards/{playerCardId}/upgrades
+```
+
+Body:
+
+```json
+{
+  "upgradeKind": "attack_bonus",
+  "intValue": 1,
+  "stringValue": "",
+  "appliedBy": "player",
+  "note": ""
+}
+```
+
+The Unity UI exposes these as editable `GenericUpgradePreset` entries on `CardDetailPanel`. The client does not calculate cost, requirements, or final effects; the backend validates the request.
+
+Optional future improvement if we want the UI to show affordability before clicking:
 
 ```text
 GET  /api/v1/players/{userId}/cards/{playerCardId}/upgrade-options
-POST /api/v1/players/{userId}/cards/{playerCardId}/upgrade-options/{optionId}/apply
 ```
 
-The GET response should include everything the UI needs to render without guessing:
+Suggested response:
 
 ```json
 {
@@ -36,4 +53,4 @@ The GET response should include everything the UI needs to render without guessi
 }
 ```
 
-The POST response should return updated player card detail plus updated inventory balances, after validating ownership and deducting items in one transaction.
+This is not required for the current Unity implementation, but would let the UI display disabled/enabled upgrade buttons and exact costs before sending the generic POST.

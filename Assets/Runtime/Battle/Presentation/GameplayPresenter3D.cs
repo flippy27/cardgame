@@ -978,9 +978,11 @@ namespace Flippy.CardDuelMobile.UI
                 }
             }
 
-            var defender = FindCardByRuntimeId(presentationEvent.targetRuntimeId, presentationEvent.targetPlayerIndex) ??
-                           FindCardByName(presentationEvent.targetName, presentationEvent.targetPlayerIndex);
-            if (defender != null && attacker != null && defender.PlayerIndex == attacker.PlayerIndex)
+            var defender = ResolveDefenderForPresentation(presentationEvent);
+            if (defender != null &&
+                attacker != null &&
+                defender.PlayerIndex == attacker.PlayerIndex &&
+                string.IsNullOrWhiteSpace(presentationEvent.targetRuntimeId))
             {
                 var oppositePlayerIndex = 1 - attacker.PlayerIndex;
                 var oppositeDefender = FindCardByName(presentationEvent.targetName, oppositePlayerIndex);
@@ -993,7 +995,7 @@ namespace Flippy.CardDuelMobile.UI
 
             if (attacker == null || defender == null)
             {
-                Debug.LogWarning($"[BattlePhase] Unable to resolve card attack presentation. attacker='{presentationEvent.sourceName}' resolved={attacker != null}, defender='{presentationEvent.targetName}' resolved={defender != null}");
+                Debug.LogWarning($"[BattlePhase] Unable to resolve card attack presentation. sourceId='{presentationEvent.sourceRuntimeId}', attacker='{presentationEvent.sourceName}' resolved={attacker != null}, targetId='{presentationEvent.targetRuntimeId}', defender='{presentationEvent.targetName}' resolved={defender != null}");
                 yield break;
             }
 
@@ -1065,8 +1067,23 @@ namespace Flippy.CardDuelMobile.UI
 
         private ICardDisplay ResolveAttackerForPresentation(BattlePresentationEvent presentationEvent, HashSet<string> consumedAttackers)
         {
-            var attacker = FindCardByRuntimeId(presentationEvent.sourceRuntimeId, presentationEvent.sourcePlayerIndex) ??
-                           FindCardByName(presentationEvent.sourceName, presentationEvent.sourcePlayerIndex);
+            if (!string.IsNullOrWhiteSpace(presentationEvent.sourceRuntimeId))
+            {
+                var exact = FindCardByRuntimeId(presentationEvent.sourceRuntimeId, presentationEvent.sourcePlayerIndex);
+                if (exact != null)
+                {
+                    consumedAttackers?.Add(exact.CardData.runtimeId);
+                    return exact;
+                }
+
+                if (presentationEvent.fromStructuredEvent)
+                {
+                    Debug.LogWarning($"[BattlePhase] Structured event source runtimeId not found: {presentationEvent.sourceRuntimeId} ({presentationEvent.sourceName}). Skipping fallback to avoid animating the wrong card.");
+                    return null;
+                }
+            }
+
+            var attacker = FindCardByName(presentationEvent.sourceName, presentationEvent.sourcePlayerIndex);
             if (attacker == null)
             {
                 attacker = FindNextAvailableAttacker(presentationEvent.sourcePlayerIndex, consumedAttackers);
@@ -1078,6 +1095,32 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             return attacker;
+        }
+
+        private ICardDisplay ResolveDefenderForPresentation(BattlePresentationEvent presentationEvent)
+        {
+            if (presentationEvent == null)
+            {
+                return null;
+            }
+
+            if (!string.IsNullOrWhiteSpace(presentationEvent.targetRuntimeId))
+            {
+                var exact = FindCardByRuntimeId(presentationEvent.targetRuntimeId, presentationEvent.targetPlayerIndex);
+                if (exact != null)
+                {
+                    presentationEvent.targetPlayerIndex = exact.PlayerIndex;
+                    return exact;
+                }
+
+                if (presentationEvent.fromStructuredEvent)
+                {
+                    Debug.LogWarning($"[BattlePhase] Structured event target runtimeId not found: {presentationEvent.targetRuntimeId} ({presentationEvent.targetName}). Skipping fallback to avoid animating the wrong target.");
+                    return null;
+                }
+            }
+
+            return FindCardByName(presentationEvent.targetName, presentationEvent.targetPlayerIndex);
         }
 
         private ICardDisplay FindNextAvailableAttacker(int playerIndex, HashSet<string> consumedAttackers)
@@ -1117,6 +1160,16 @@ namespace Flippy.CardDuelMobile.UI
             {
                 yield return attackEffectSystem.PlayDamagePopup(targetTransform.position, presentationEvent.amount, isPoison: true);
             }
+
+            if (presentationEvent.hasResolvedArmorAfter)
+            {
+                target.CardData.armor = Mathf.Max(0, presentationEvent.armorAfter);
+            }
+
+            target.CardData.currentHealth = presentationEvent.hasResolvedHealthAfter
+                ? presentationEvent.hpAfter
+                : Mathf.Max(0, target.CardData.currentHealth - presentationEvent.amount);
+            target.UpdateStatsDisplay();
         }
 
         private System.Collections.IEnumerator PlayShieldBlockEvent(BattlePresentationEvent presentationEvent, HashSet<string> consumedAttackers)
@@ -1234,10 +1287,25 @@ namespace Flippy.CardDuelMobile.UI
                 return null;
             }
 
-            return FindCardByRuntimeId(presentationEvent.targetRuntimeId, presentationEvent.targetPlayerIndex) ??
-                   (presentationEvent.targetPlayerIndex is 0 or 1
-                       ? FindCardByName(presentationEvent.targetName, presentationEvent.targetPlayerIndex)
-                       : FindCardOnBoardByName(presentationEvent.targetName));
+            if (!string.IsNullOrWhiteSpace(presentationEvent.targetRuntimeId))
+            {
+                var exact = FindCardByRuntimeId(presentationEvent.targetRuntimeId, presentationEvent.targetPlayerIndex);
+                if (exact != null)
+                {
+                    presentationEvent.targetPlayerIndex = exact.PlayerIndex;
+                    return exact;
+                }
+
+                if (presentationEvent.fromStructuredEvent)
+                {
+                    Debug.LogWarning($"[BattlePhase] Structured target runtimeId not found: {presentationEvent.targetRuntimeId} ({presentationEvent.targetName}). Skipping name fallback.");
+                    return null;
+                }
+            }
+
+            return presentationEvent.targetPlayerIndex is 0 or 1
+                ? FindCardByName(presentationEvent.targetName, presentationEvent.targetPlayerIndex)
+                : FindCardOnBoardByName(presentationEvent.targetName);
         }
 
         private static void ApplyStatusEffectToCard(BoardCardDto card, BattlePresentationEvent presentationEvent)
@@ -1974,6 +2042,32 @@ namespace Flippy.CardDuelMobile.UI
                 Debug.Log($"[UpdateBoard] P{playerIndex} Snapshot cards: {string.Join(", ", snapshotCards.Select(x => $"{x.Value.slot}={x.Value.data.displayName}(ID:{ShortRuntimeId(x.Key)})").ToList())}");
                 Debug.Log($"[UpdateBoard] P{playerIndex} Current cards:  {string.Join(", ", currentCards.Select(x => $"{x.Value.slot}={x.Value.view.CardData.displayName}(ID:{ShortRuntimeId(x.Key)})").ToList())}");
 
+                foreach (var entry in currentCards)
+                {
+                    var runtimeId = entry.Key;
+                    var currentSlot = entry.Value.slot;
+                    var currentView = entry.Value.view;
+
+                    if (snapshotCards.ContainsKey(runtimeId))
+                    {
+                        continue;
+                    }
+
+                    board3DManager.RemoveCardReferenceForView(playerIndex, currentView);
+                    board3DManager.DetachCardFromSlot(currentView);
+
+                    if (currentView?.CardData != null && currentView.CardData.currentHealth > 0)
+                    {
+                        currentView.AnimateDeath();
+                    }
+
+                    if (currentView?.CardData != null)
+                    {
+                        Debug.Log($"[UpdateBoard] Removing visual-only stale card {currentView.CardData.displayName} from P{playerIndex} {currentSlot} (ID:{ShortRuntimeId(runtimeId)})");
+                        StartCoroutine(DestroyBoardCardViewAfterDelay(currentView, currentView.CardData.runtimeId, 0.5f));
+                    }
+                }
+
                 foreach (var entry in snapshotCards)
                 {
                     var runtimeId = entry.Key;
@@ -2019,29 +2113,9 @@ namespace Flippy.CardDuelMobile.UI
                     else if (snapshotData.currentHealth <= 0)
                     {
                         current.view.AnimateDeath();
-                        StartCoroutine(ClearBoardSlotAfterDelay(playerIndex, snapshotSlot, current.view.CardData.runtimeId, 0.5f));
-                    }
-                }
-
-                foreach (var entry in currentCards)
-                {
-                    var runtimeId = entry.Key;
-                    var currentSlot = entry.Value.slot;
-                    var currentView = entry.Value.view;
-
-                    if (snapshotCards.ContainsKey(runtimeId))
-                    {
-                        continue;
-                    }
-
-                    if (currentView?.CardData != null && currentView.CardData.currentHealth > 0)
-                    {
-                        currentView.AnimateDeath();
-                    }
-
-                    if (currentView?.CardData != null)
-                    {
-                        StartCoroutine(RemoveBoardCardViewAfterDelay(currentView, playerIndex, currentSlot, currentView.CardData.runtimeId, 0.5f));
+                        board3DManager.RemoveCardReferenceForView(playerIndex, current.view);
+                        board3DManager.DetachCardFromSlot(current.view);
+                        StartCoroutine(DestroyBoardCardViewAfterDelay(current.view, current.view.CardData.runtimeId, 0.5f));
                     }
                 }
 
@@ -2398,19 +2472,13 @@ namespace Flippy.CardDuelMobile.UI
             board3DManager.ClearSlot(playerIndex, slot);
         }
 
-        private System.Collections.IEnumerator RemoveBoardCardViewAfterDelay(ICardDisplay cardView, int playerIndex, BoardSlot slot, string expectedRuntimeId, float delay)
+        private System.Collections.IEnumerator DestroyBoardCardViewAfterDelay(ICardDisplay cardView, string expectedRuntimeId, float delay)
         {
             yield return new WaitForSeconds(delay);
 
             if (cardView is MonoBehaviour behaviour && behaviour == null)
             {
                 yield break;
-            }
-
-            var currentCard = board3DManager.GetCardInSlot(playerIndex, slot);
-            if (currentCard == cardView)
-            {
-                board3DManager.RemoveCardReference(playerIndex, slot);
             }
 
             if (cardView?.CardData != null &&

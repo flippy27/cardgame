@@ -75,7 +75,7 @@ namespace Flippy.CardDuelMobile.UI
             var key = (playerIndex, slot);
 
             // Remove card from any other slots it might be in
-            if (cardView != null)
+            if (IsAlive(cardView))
             {
                 var slots = System.Enum.GetValues(typeof(BoardSlot)) as BoardSlot[];
                 foreach (var otherSlot in slots)
@@ -83,12 +83,27 @@ namespace Flippy.CardDuelMobile.UI
                     var otherKey = (playerIndex, otherSlot);
                     if (otherKey != key && _cardViews.TryGetValue(otherKey, out var existingCard))
                     {
-                        if (existingCard == cardView)
+                        if (!IsAlive(existingCard) || existingCard == cardView)
                         {
                             _cardViews.Remove(otherKey);
                         }
                     }
                 }
+            }
+
+            if (_cardViews.TryGetValue(key, out var targetOccupant))
+            {
+                if (!IsAlive(targetOccupant) || targetOccupant != cardView)
+                {
+                    DetachCardFromSlot(targetOccupant);
+                    _cardViews.Remove(key);
+                }
+            }
+
+            if (!IsAlive(cardView))
+            {
+                _cardViews.Remove(key);
+                return;
             }
 
             _cardViews[key] = cardView;
@@ -101,7 +116,13 @@ namespace Flippy.CardDuelMobile.UI
                     return;
                 }
 
-                var cardTransform = (cardView as MonoBehaviour).transform;
+                var cardTransform = cardView.GetTransform();
+                if (cardTransform == null)
+                {
+                    _cardViews.Remove(key);
+                    return;
+                }
+
                 cardTransform.SetParent(slotComponent.transform);
                 cardTransform.localPosition = Vector3.zero;
                 cardTransform.localRotation = Quaternion.identity;
@@ -113,7 +134,14 @@ namespace Flippy.CardDuelMobile.UI
 
         public ICardDisplay GetCardInSlot(int playerIndex, BoardSlot slot)
         {
-            _cardViews.TryGetValue((playerIndex, slot), out var card);
+            var key = (playerIndex, slot);
+            _cardViews.TryGetValue(key, out var card);
+            if (!IsAlive(card))
+            {
+                _cardViews.Remove(key);
+                return null;
+            }
+
             return card;
         }
 
@@ -131,6 +159,33 @@ namespace Flippy.CardDuelMobile.UI
         public void RemoveCardReference(int playerIndex, BoardSlot slot)
         {
             _cardViews.Remove((playerIndex, slot));
+        }
+
+        public void RemoveCardReferenceForView(int playerIndex, ICardDisplay cardView)
+        {
+            if (cardView == null)
+            {
+                return;
+            }
+
+            var slots = System.Enum.GetValues(typeof(BoardSlot)) as BoardSlot[];
+            foreach (var slot in slots)
+            {
+                var key = (playerIndex, slot);
+                if (_cardViews.TryGetValue(key, out var existing) && existing == cardView)
+                {
+                    _cardViews.Remove(key);
+                }
+            }
+        }
+
+        public void DetachCardFromSlot(ICardDisplay cardView)
+        {
+            var cardTransform = cardView.GetTransform();
+            if (cardTransform != null)
+            {
+                cardTransform.SetParent(transform, worldPositionStays: true);
+            }
         }
 
         public void MoveCardBetweenSlots(int playerIndex, BoardSlot fromSlot, BoardSlot toSlot, ICardDisplay cardView)
@@ -158,7 +213,18 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             var toKey = (playerIndex, toSlot);
-            var cardTransform = (cardView as MonoBehaviour).transform;
+            if (_cardViews.TryGetValue(toKey, out var targetOccupant) && targetOccupant != cardView)
+            {
+                DetachCardFromSlot(targetOccupant);
+                _cardViews.Remove(toKey);
+            }
+
+            var cardTransform = cardView.GetTransform();
+            if (cardTransform == null)
+            {
+                return;
+            }
+
             cardTransform.SetParent(toSlotComponent.transform, worldPositionStays: true);
             _cardViews[toKey] = cardView;
         }
@@ -170,6 +236,11 @@ namespace Flippy.CardDuelMobile.UI
             {
                 slotComponent.SetHighlight(highlight);
             }
+        }
+
+        private static bool IsAlive(ICardDisplay card)
+        {
+            return card is MonoBehaviour behaviour && behaviour != null;
         }
     }
 }

@@ -142,8 +142,13 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             // Delete button (second button if present)
             if (buttons.Length > 1)
             {
-                var capturedDeck = deck;
-                buttons[1].onClick.AddListener(() => OnDeleteClicked(capturedDeck));
+                // The current backend has no deck-level delete endpoint.
+                buttons[1].interactable = false;
+                var label = buttons[1].GetComponentInChildren<TextMeshProUGUI>(true);
+                if (label != null)
+                {
+                    label.text = "No delete API";
+                }
             }
         }
 

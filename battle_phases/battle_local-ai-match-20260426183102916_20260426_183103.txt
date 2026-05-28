@@ -1,0 +1,724 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-04-26T18:31:03.0767427Z
+LastUpdatedUtc: 2026-04-26T18:32:47.2239042Z
+MatchId: local-ai-match-20260426183102916
+CurrentTurn: 7
+ActivePlayerIndex: 0
+ActivePlayerId: 6c646037-69b0-4350-a98e-d09f77806192
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset:  ()
+
+Human Timeline
+001. seq=-1 /Info: Grove Storm Caller #164 entered Front.
+002. seq=-1 /Info: Player 0 ended turn.
+003. seq=-1 P0 P0 hits hero P1 for 1. HP 20->19. Direct attack to Player 1 Hero: 1 damage dealt. 20→19HP
+004. seq=-1 /Info: Player 1 drew a card. Deck: 15 remaining.
+005. seq=-1 /Info: Ember Nature Guardian #163 entered Front.
+006. seq=-1 /Info: Ember Nature Guardian #163 moved to BackLeft (replacement).
+007. seq=-1 /Info: Alloy Blessed Monk #25 entered Front.
+008. seq=-1 /Info: Alloy Blessed Monk #25 moved to BackLeft, Ember Nature Guardian #163 moved to BackRight (replacement chain).
+009. seq=-1 /Info: Alloy Blessed Monk #141 entered Front.
+010. seq=-1 /Info: Player 1 ended turn.
+011. seq=-1 P1 Alloy Blessed Monk #141#none attacks Grove Storm Caller #164#none for 3. HP 4->1, Armor 0->0. [P1] Alloy Blessed Monk #141 (ATK 3) → [P0] Grove Storm Caller #164: 4→1HP
+012. seq=-1 P1 Alloy Blessed Monk #25#none attacks Grove Storm Caller #164#none for 7. HP 1->-6, Armor 0->0. [P1] Alloy Blessed Monk #25 (ATK 7) → [P0] Grove Storm Caller #164: 1→-6HP
+013. seq=-1 Grove Storm Caller #164#none dies. Grove Storm Caller #164 died.
+014. seq=-1 /Info: [P-1] Unknown (ATK 2) → [P1] Alloy Blessed Monk #25: 3→1HP
+015. seq=-1 P1 P1 hits hero P0 for 5. HP 20->15. Direct attack to Player 0 Hero: 5 damage dealt. 20→15HP
+016. seq=-1 /Info: Player 0 drew a card. Deck: 0 remaining.
+017. seq=-1 /Info: Tidal Fire Knight #62 entered Front.
+018. seq=-1 P0 Tidal Fire Knight #62#none attacks Alloy Blessed Monk #141#none for 2. HP 6->4, Armor 0->0. [P0] Tidal Fire Knight #62 (ATK 2) → [P1] Alloy Blessed Monk #141: 6→4HP
+019. seq=-1 /Info: Player 1 drew a card. Deck: 14 remaining.
+020. seq=-1 /StatusDamage: Alloy Blessed Monk #141 took 2 poison damage.
+021. seq=-1 Alloy Blessed Monk #141#none dies. Alloy Blessed Monk #141 died.
+022. seq=-1 P1 Alloy Blessed Monk #25#none attacks Tidal Fire Knight #62#none for 6. HP 5->-1, Armor 0->0. [P1] Alloy Blessed Monk #25 (ATK 6) → [P0] Tidal Fire Knight #62: 5→-1HP
+023. seq=-1 Tidal Fire Knight #62#none dies. Tidal Fire Knight #62 died.
+024. seq=-1 /Info: [P-1] Unknown (ATK 1) → [P1] Alloy Blessed Monk #25: 1→0HP
+025. seq=-1 Alloy Blessed Monk #25#none dies. Alloy Blessed Monk #25 died.
+026. seq=-1 P1 P1 hits hero P0 for 1. HP 17->16. Direct attack to Player 0 Hero: 1 damage dealt. 17→16HP
+027. seq=-1 /Info: Player 0 deck is empty! Takes 1 damage.
+028. seq=-1 /Info: Void Sky Drake #91 entered Front.
+029. seq=-1 /Info: Void Sky Drake #91 moved to BackLeft (replacement).
+030. seq=-1 /Info: Grove Forest Archer #37 entered Front.
+031. seq=-1 P0 Grove Forest Archer #37#none attacks Ember Nature Guardian #163#none for 2. HP 6->4, Armor 0->0. [P0] Grove Forest Archer #37 (ATK 2) → [P1] Ember Nature Guardian #163: 6→4HP
+032. seq=-1 P0 Void Sky Drake #91#none attacks Ember Nature Guardian #163#none for 6. HP 4->-2, Armor 0->0. [P0] Void Sky Drake #91 (ATK 6) → [P1] Ember Nature Guardian #163: 4→-2HP
+033. seq=-1 Ember Nature Guardian #163#none dies. Ember Nature Guardian #163 died.
+034. seq=-1 /Info: [P-1] Unknown (ATK 1) → [P0] Void Sky Drake #91: 3→2HP
+035. seq=-1 /Info: Player 1 drew a card. Deck: 13 remaining.
+036. seq=-1 /Info: Grove Ocean Leviathan #83 entered BackLeft.
+037. seq=-1 /Info: Grove Light Paladin #115 entered Front.
+038. seq=-1 /Info: Grove Light Paladin #115 moved to BackLeft, Grove Ocean Leviathan #83 moved to BackRight (replacement chain).
+039. seq=-1 /Info: Grove Inferno Beast #96 entered Front.
+040. seq=-1 P1 Grove Inferno Beast #96#none attacks Grove Forest Archer #37#none for 1. HP 1->0, Armor 0->0. [P1] Grove Inferno Beast #96 (ATK 1) → [P0] Grove Forest Archer #37: 1→0HP
+041. seq=-1 Grove Forest Archer #37#none dies. Grove Forest Archer #37 died.
+042. seq=-1 P1 Grove Light Paladin #115#none attacks Void Sky Drake #91#none for 2. HP 2->0, Armor 0->0. [P1] Grove Light Paladin #115 (ATK 2) → [P0] Void Sky Drake #91: 2→0HP
+043. seq=-1 Void Sky Drake #91#none dies. Void Sky Drake #91 died.
+044. seq=-1 P1 P1 hits hero P0 for 6. HP 24->18. Direct attack to Player 0 Hero: 6 damage dealt. 24→18HP
+045. seq=-1 P1 P1 hits hero P0 for 1. HP 18->17. Direct attack to Player 0 Hero: 1 damage dealt. 18→17HP
+046. seq=-1 /Info: Grove Ocean Leviathan #83 entered Front.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-04-26T18:31:03.0772599Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=1 | P1 id=c6e7d90f hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=16
+   Events: none
+-- Step 2 | UTC 2026-04-26T18:31:05.2531032Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=19/20 board=[Front:Grove Storm Caller #164#46cd80b5 hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=1 | P1 id=c6e7d90f hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=16
+   - seq=-1 /Info: Grove Storm Caller #164 entered Front.
+-- Step 3 | UTC 2026-04-26T18:31:08.5719779Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=19/20 board=[Front:Grove Storm Caller #164#46cd80b5 hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=1 | P1 id=c6e7d90f hp=19 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=5 deck=15
+   - seq=-1 /Info: Player 0 ended turn.
+   - seq=-1 P0 P0 hits hero P1 for 1. HP 20->19. Direct attack to Player 1 Hero: 1 damage dealt. 20→19HP
+   - seq=-1 /Info: Player 1 drew a card. Deck: 15 remaining.
+-- Step 4 | UTC 2026-04-26T18:31:09.8467035Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=19/20 board=[Front:Grove Storm Caller #164#46cd80b5 hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=1 | P1 id=c6e7d90f hp=19 mana=14/20 board=[Front:Ember Nature Guardian #163#081b3fad hp=6/6 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=4 deck=15
+   - seq=-1 /Info: Ember Nature Guardian #163 entered Front.
+-- Step 5 | UTC 2026-04-26T18:31:09.8551501Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=19/20 board=[Front:Grove Storm Caller #164#46cd80b5 hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=1 | P1 id=c6e7d90f hp=19 mana=11/20 board=[Front:Alloy Blessed Monk #25#c24a0bc7 hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Ember Nature Guardian #163#081b3fad hp=6/6 armor=2 unitType=0 delivery=melee, BackRight:empty] hand=3 deck=15
+   - seq=-1 /Info: Ember Nature Guardian #163 moved to BackLeft (replacement).
+   - seq=-1 /Info: Alloy Blessed Monk #25 entered Front.
+-- Step 6 | UTC 2026-04-26T18:31:09.8642086Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=20 mana=19/20 board=[Front:Grove Storm Caller #164#46cd80b5 hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=1 | P1 id=c6e7d90f hp=19 mana=7/20 board=[Front:Alloy Blessed Monk #141#64ca74d6 hp=6/6 armor=0 unitType=0 delivery=melee, BackLeft:Alloy Blessed Monk #25#c24a0bc7 hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:Ember Nature Guardian #163#081b3fad hp=6/6 armor=2 unitType=0 delivery=melee] hand=2 deck=15
+   - seq=-1 /Info: Alloy Blessed Monk #25 moved to BackLeft, Ember Nature Guardian #163 moved to BackRight (replacement chain).
+   - seq=-1 /Info: Alloy Blessed Monk #141 entered Front.
+-- Step 7 | UTC 2026-04-26T18:31:10.0692309Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=15 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=0 | P1 id=c6e7d90f hp=29 mana=7/20 board=[Front:Alloy Blessed Monk #141#64ca74d6 hp=6/6 armor=0 unitType=0 delivery=melee, BackLeft:Alloy Blessed Monk #25#c24a0bc7 hp=1/3 armor=0 unitType=0 delivery=melee, BackRight:Ember Nature Guardian #163#081b3fad hp=6/6 armor=2 unitType=0 delivery=melee] hand=2 deck=15
+   - seq=-1 /Info: Player 1 ended turn.
+   - seq=-1 P1 Alloy Blessed Monk #141#none attacks Grove Storm Caller #164#none for 3. HP 4->1, Armor 0->0. [P1] Alloy Blessed Monk #141 (ATK 3) → [P0] Grove Storm Caller #164: 4→1HP
+   - seq=-1 P1 Alloy Blessed Monk #25#none attacks Grove Storm Caller #164#none for 7. HP 1->-6, Armor 0->0. [P1] Alloy Blessed Monk #25 (ATK 7) → [P0] Grove Storm Caller #164: 1→-6HP
+   - seq=-1 Grove Storm Caller #164#none dies. Grove Storm Caller #164 died.
+   - seq=-1 /Info: [P-1] Unknown (ATK 2) → [P1] Alloy Blessed Monk #25: 3→1HP
+   - seq=-1 P1 P1 hits hero P0 for 5. HP 20->15. Direct attack to Player 0 Hero: 5 damage dealt. 20→15HP
+   - seq=-1 /Info: Player 0 drew a card. Deck: 0 remaining.
+-- Step 8 | UTC 2026-04-26T18:31:18.5272379Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=15 mana=17/20 board=[Front:Tidal Fire Knight #62#292ca908 hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=0 | P1 id=c6e7d90f hp=29 mana=7/20 board=[Front:Alloy Blessed Monk #141#64ca74d6 hp=6/6 armor=0 unitType=0 delivery=melee, BackLeft:Alloy Blessed Monk #25#c24a0bc7 hp=1/3 armor=0 unitType=0 delivery=melee, BackRight:Ember Nature Guardian #163#081b3fad hp=6/6 armor=2 unitType=0 delivery=melee] hand=2 deck=15
+   - seq=-1 /Info: Tidal Fire Knight #62 entered Front.
+-- Step 9 | UTC 2026-04-26T18:31:31.7312208Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=17 mana=17/20 board=[Front:Tidal Fire Knight #62#292ca908 hp=5/5 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=0 | P1 id=c6e7d90f hp=29 mana=20/20 board=[Front:Alloy Blessed Monk #141#64ca74d6 hp=2/6 armor=0 unitType=0 delivery=melee, BackLeft:Alloy Blessed Monk #25#c24a0bc7 hp=1/3 armor=0 unitType=0 delivery=melee, BackRight:Ember Nature Guardian #163#081b3fad hp=6/6 armor=2 unitType=0 delivery=melee] hand=3 deck=14
+   - seq=-1 P0 Tidal Fire Knight #62#none attacks Alloy Blessed Monk #141#none for 2. HP 6->4, Armor 0->0. [P0] Tidal Fire Knight #62 (ATK 2) → [P1] Alloy Blessed Monk #141: 6→4HP
+   - seq=-1 /Info: Player 1 drew a card. Deck: 14 remaining.
+   - seq=-1 /StatusDamage: Alloy Blessed Monk #141 took 2 poison damage.
+-- Step 10 | UTC 2026-04-26T18:31:32.9310341Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=16 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=3 deck=0 | P1 id=c6e7d90f hp=35 mana=20/20 board=[Front:Ember Nature Guardian #163#081b3fad hp=6/6 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=14
+   - seq=-1 Alloy Blessed Monk #141#none dies. Alloy Blessed Monk #141 died.
+   - seq=-1 P1 Alloy Blessed Monk #25#none attacks Tidal Fire Knight #62#none for 6. HP 5->-1, Armor 0->0. [P1] Alloy Blessed Monk #25 (ATK 6) → [P0] Tidal Fire Knight #62: 5→-1HP
+   - seq=-1 Tidal Fire Knight #62#none dies. Tidal Fire Knight #62 died.
+   - seq=-1 /Info: [P-1] Unknown (ATK 1) → [P1] Alloy Blessed Monk #25: 1→0HP
+   - seq=-1 Alloy Blessed Monk #25#none dies. Alloy Blessed Monk #25 died.
+   - seq=-1 P1 P1 hits hero P0 for 1. HP 17->16. Direct attack to Player 0 Hero: 1 damage dealt. 17→16HP
+   - seq=-1 /Info: Player 0 deck is empty! Takes 1 damage.
+-- Step 11 | UTC 2026-04-26T18:31:43.6597420Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=16 mana=16/20 board=[Front:Void Sky Drake #91#3d6e5144 hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=2 deck=0 | P1 id=c6e7d90f hp=35 mana=20/20 board=[Front:Ember Nature Guardian #163#081b3fad hp=6/6 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=14
+   - seq=-1 /Info: Void Sky Drake #91 entered Front.
+-- Step 12 | UTC 2026-04-26T18:31:46.0855970Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=16 mana=11/20 board=[Front:Grove Forest Archer #37#61c3ee31 hp=1/1 armor=0 unitType=0 delivery=melee, BackLeft:Void Sky Drake #91#3d6e5144 hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=1 deck=0 | P1 id=c6e7d90f hp=35 mana=20/20 board=[Front:Ember Nature Guardian #163#081b3fad hp=6/6 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=14
+   - seq=-1 /Info: Void Sky Drake #91 moved to BackLeft (replacement).
+   - seq=-1 /Info: Grove Forest Archer #37 entered Front.
+-- Step 13 | UTC 2026-04-26T18:32:38.6975813Z | Turn 6 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=24 mana=11/20 board=[Front:Grove Forest Archer #37#61c3ee31 hp=1/1 armor=0 unitType=0 delivery=melee, BackLeft:Void Sky Drake #91#3d6e5144 hp=2/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=1 deck=0 | P1 id=c6e7d90f hp=35 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=13
+   - seq=-1 P0 Grove Forest Archer #37#none attacks Ember Nature Guardian #163#none for 2. HP 6->4, Armor 0->0. [P0] Grove Forest Archer #37 (ATK 2) → [P1] Ember Nature Guardian #163: 6→4HP
+   - seq=-1 P0 Void Sky Drake #91#none attacks Ember Nature Guardian #163#none for 6. HP 4->-2, Armor 0->0. [P0] Void Sky Drake #91 (ATK 6) → [P1] Ember Nature Guardian #163: 4→-2HP
+   - seq=-1 Ember Nature Guardian #163#none dies. Ember Nature Guardian #163 died.
+   - seq=-1 /Info: [P-1] Unknown (ATK 1) → [P0] Void Sky Drake #91: 3→2HP
+   - seq=-1 /Info: Player 1 drew a card. Deck: 13 remaining.
+-- Step 14 | UTC 2026-04-26T18:32:41.4063242Z | Turn 6 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=24 mana=11/20 board=[Front:Grove Forest Archer #37#61c3ee31 hp=1/1 armor=0 unitType=0 delivery=melee, BackLeft:Void Sky Drake #91#3d6e5144 hp=2/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=1 deck=0 | P1 id=c6e7d90f hp=35 mana=14/20 board=[Front:empty, BackLeft:Grove Ocean Leviathan #83#c74b760f hp=6/6 armor=1 unitType=0 delivery=melee, BackRight:empty] hand=3 deck=13
+   - seq=-1 /Info: Grove Ocean Leviathan #83 entered BackLeft.
+-- Step 15 | UTC 2026-04-26T18:32:41.4119829Z | Turn 6 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=24 mana=11/20 board=[Front:Grove Forest Archer #37#61c3ee31 hp=1/1 armor=0 unitType=0 delivery=melee, BackLeft:Void Sky Drake #91#3d6e5144 hp=2/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=1 deck=0 | P1 id=c6e7d90f hp=35 mana=8/20 board=[Front:Grove Light Paladin #115#791aa0a8 hp=2/2 armor=2 unitType=0 delivery=melee, BackLeft:Grove Ocean Leviathan #83#c74b760f hp=6/6 armor=1 unitType=0 delivery=melee, BackRight:empty] hand=2 deck=13
+   - seq=-1 /Info: Grove Light Paladin #115 entered Front.
+-- Step 16 | UTC 2026-04-26T18:32:41.4177634Z | Turn 6 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=6c646037 hp=24 mana=11/20 board=[Front:Grove Forest Archer #37#61c3ee31 hp=1/1 armor=0 unitType=0 delivery=melee, BackLeft:Void Sky Drake #91#3d6e5144 hp=2/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=1 deck=0 | P1 id=c6e7d90f hp=35 mana=7/20 board=[Front:Grove Inferno Beast #96#94e5ad1d hp=2/2 armor=1 unitType=0 delivery=melee, BackLeft:Grove Light Paladin #115#791aa0a8 hp=2/2 armor=2 unitType=0 delivery=melee, BackRight:Grove Ocean Leviathan #83#c74b760f hp=6/6 armor=1 unitType=0 delivery=melee] hand=1 deck=13
+   - seq=-1 /Info: Grove Light Paladin #115 moved to BackLeft, Grove Ocean Leviathan #83 moved to BackRight (replacement chain).
+   - seq=-1 /Info: Grove Inferno Beast #96 entered Front.
+-- Step 17 | UTC 2026-04-26T18:32:41.4256348Z | Turn 7 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=17 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=1 deck=0 | P1 id=c6e7d90f hp=38 mana=7/20 board=[Front:Grove Inferno Beast #96#94e5ad1d hp=2/2 armor=1 unitType=0 delivery=melee, BackLeft:Grove Light Paladin #115#791aa0a8 hp=2/2 armor=2 unitType=0 delivery=melee, BackRight:Grove Ocean Leviathan #83#c74b760f hp=6/6 armor=1 unitType=0 delivery=melee] hand=1 deck=13
+   - seq=-1 P1 Grove Inferno Beast #96#none attacks Grove Forest Archer #37#none for 1. HP 1->0, Armor 0->0. [P1] Grove Inferno Beast #96 (ATK 1) → [P0] Grove Forest Archer #37: 1→0HP
+   - seq=-1 Grove Forest Archer #37#none dies. Grove Forest Archer #37 died.
+   - seq=-1 P1 Grove Light Paladin #115#none attacks Void Sky Drake #91#none for 2. HP 2->0, Armor 0->0. [P1] Grove Light Paladin #115 (ATK 2) → [P0] Void Sky Drake #91: 2→0HP
+   - seq=-1 Void Sky Drake #91#none dies. Void Sky Drake #91 died.
+   - seq=-1 P1 P1 hits hero P0 for 6. HP 24->18. Direct attack to Player 0 Hero: 6 damage dealt. 24→18HP
+   - seq=-1 P1 P1 hits hero P0 for 1. HP 18->17. Direct attack to Player 0 Hero: 1 damage dealt. 18→17HP
+-- Step 18 | UTC 2026-04-26T18:32:47.2239042Z | Turn 7 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=6c646037 hp=17 mana=14/20 board=[Front:Grove Ocean Leviathan #83#ea361d9d hp=6/6 armor=1 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=0 | P1 id=c6e7d90f hp=38 mana=7/20 board=[Front:Grove Inferno Beast #96#94e5ad1d hp=2/2 armor=1 unitType=0 delivery=melee, BackLeft:Grove Light Paladin #115#791aa0a8 hp=2/2 armor=2 unitType=0 delivery=melee, BackRight:Grove Ocean Leviathan #83#c74b760f hp=6/6 armor=1 unitType=0 delivery=melee] hand=1 deck=13
+   - seq=-1 /Info: Grove Ocean Leviathan #83 entered Front.
+
+Raw Structured Battle Events Seen By Unity
+
+Raw Logs Seen By Unity
+turn=1 Summon: Grove Storm Caller #164 entered Front.
+turn=2 Turn: Player 0 ended turn.
+turn=2 Attack: Direct attack to Player 1 Hero: 1 damage dealt. 20→19HP
+turn=2 Info: Player 1 drew a card. Deck: 15 remaining.
+turn=2 Summon: Ember Nature Guardian #163 entered Front.
+turn=2 Info: Ember Nature Guardian #163 moved to BackLeft (replacement).
+turn=2 Summon: Alloy Blessed Monk #25 entered Front.
+turn=2 Info: Alloy Blessed Monk #25 moved to BackLeft, Ember Nature Guardian #163 moved to BackRight (replacement chain).
+turn=2 Summon: Alloy Blessed Monk #141 entered Front.
+turn=3 Turn: Player 1 ended turn.
+turn=3 Attack: [P1] Alloy Blessed Monk #141 (ATK 3) → [P0] Grove Storm Caller #164: 4→1HP
+turn=3 Attack: [P1] Alloy Blessed Monk #25 (ATK 7) → [P0] Grove Storm Caller #164: 1→-6HP
+turn=3 Death: Grove Storm Caller #164 died.
+turn=3 Attack: [P-1] Unknown (ATK 2) → [P1] Alloy Blessed Monk #25: 3→1HP
+turn=3 Attack: Direct attack to Player 0 Hero: 5 damage dealt. 20→15HP
+turn=3 Info: Player 0 drew a card. Deck: 0 remaining.
+turn=3 Summon: Tidal Fire Knight #62 entered Front.
+turn=4 Attack: [P0] Tidal Fire Knight #62 (ATK 2) → [P1] Alloy Blessed Monk #141: 6→4HP
+turn=4 Info: Player 1 drew a card. Deck: 14 remaining.
+turn=4 Attack: Alloy Blessed Monk #141 took 2 poison damage.
+turn=5 Death: Alloy Blessed Monk #141 died.
+turn=5 Attack: [P1] Alloy Blessed Monk #25 (ATK 6) → [P0] Tidal Fire Knight #62: 5→-1HP
+turn=5 Death: Tidal Fire Knight #62 died.
+turn=5 Attack: [P-1] Unknown (ATK 1) → [P1] Alloy Blessed Monk #25: 1→0HP
+turn=5 Death: Alloy Blessed Monk #25 died.
+turn=5 Attack: Direct attack to Player 0 Hero: 1 damage dealt. 17→16HP
+turn=5 Info: Player 0 deck is empty! Takes 1 damage.
+turn=5 Summon: Void Sky Drake #91 entered Front.
+turn=5 Info: Void Sky Drake #91 moved to BackLeft (replacement).
+turn=5 Summon: Grove Forest Archer #37 entered Front.
+turn=6 Attack: [P0] Grove Forest Archer #37 (ATK 2) → [P1] Ember Nature Guardian #163: 6→4HP
+turn=6 Attack: [P0] Void Sky Drake #91 (ATK 6) → [P1] Ember Nature Guardian #163: 4→-2HP
+turn=6 Death: Ember Nature Guardian #163 died.
+turn=6 Attack: [P-1] Unknown (ATK 1) → [P0] Void Sky Drake #91: 3→2HP
+turn=6 Info: Player 1 drew a card. Deck: 13 remaining.
+turn=6 Summon: Grove Ocean Leviathan #83 entered BackLeft.
+turn=6 Summon: Grove Light Paladin #115 entered Front.
+turn=6 Info: Grove Light Paladin #115 moved to BackLeft, Grove Ocean Leviathan #83 moved to BackRight (replacement chain).
+turn=6 Summon: Grove Inferno Beast #96 entered Front.
+turn=7 Attack: [P1] Grove Inferno Beast #96 (ATK 1) → [P0] Grove Forest Archer #37: 1→0HP
+turn=7 Death: Grove Forest Archer #37 died.
+turn=7 Attack: [P1] Grove Light Paladin #115 (ATK 2) → [P0] Void Sky Drake #91: 2→0HP
+turn=7 Death: Void Sky Drake #91 died.
+turn=7 Attack: Direct attack to Player 0 Hero: 6 damage dealt. 24→18HP
+turn=7 Attack: Direct attack to Player 0 Hero: 1 damage dealt. 18→17HP
+turn=7 Summon: Grove Ocean Leviathan #83 entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "local-ai-match-20260426183102916",
+    "rulesetId": "",
+    "rulesetName": "",
+    "rules": {
+        "rulesetId": "",
+        "rulesetKey": "",
+        "displayName": "",
+        "description": "",
+        "isActive": false,
+        "isDefault": false,
+        "startingHeroHealth": 0,
+        "maxHeroHealth": 0,
+        "startingMana": 0,
+        "maxMana": 0,
+        "manaGrantedPerTurn": 0,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 0,
+        "cardsDrawnOnTurnStart": 0,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "6c646037-69b0-4350-a98e-d09f77806192",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 7,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 0,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn",
+    "players": [
+        {
+            "playerId": "6c646037-69b0-4350-a98e-d09f77806192",
+            "playerIndex": 0,
+            "heroHealth": 17,
+            "mana": 14,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "ea361d9d7b034a73beeb0d1d388d96de",
+                        "cardId": "grove_0083",
+                        "displayName": "Grove Ocean Leviathan #83",
+                        "manaCost": 6,
+                        "attackMotionLevel": 5,
+                        "attackShakeLevel": 5,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 6,
+                        "currentHealth": 6,
+                        "maxHealth": 6,
+                        "armor": 1,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 1,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "poison",
+                                "displayName": "Poison",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "poison",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "regenerate",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "regenerate",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "taunt",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 0,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "c6e7d90f-eda8-4c2a-9991-996d85617a68",
+            "playerIndex": 1,
+            "heroHealth": 38,
+            "mana": 7,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "0edd2c8a27fa433292db9d7a042b3e4c",
+                    "cardId": "alloy_0118",
+                    "displayName": "Alloy Blessed Monk #118",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 1,
+                    "armor": 2,
+                    "isUnit": false,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "shield",
+                            "displayName": "Shield",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "shield",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "leech",
+                            "displayName": "Leech",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "leech",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "94e5ad1daa2a46d59c7f1995687b22e1",
+                        "cardId": "grove_0096",
+                        "displayName": "Grove Inferno Beast #96",
+                        "manaCost": 1,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 1,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 1,
+                        "slot": 0,
+                        "canAttack": true,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "trample",
+                                "displayName": "Trample",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "trample",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "shield",
+                                "displayName": "Shield",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "shield",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "taunt",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "791aa0a82545472389ac4a5150551464",
+                        "cardId": "grove_0115",
+                        "displayName": "Grove Light Paladin #115",
+                        "manaCost": 6,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 2,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "c74b760f3efd4270be6ffa1f5fa5f1f1",
+                        "cardId": "grove_0083",
+                        "displayName": "Grove Ocean Leviathan #83",
+                        "manaCost": 6,
+                        "attackMotionLevel": 5,
+                        "attackShakeLevel": 5,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 6,
+                        "currentHealth": 6,
+                        "maxHealth": 6,
+                        "armor": 1,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "poison",
+                                "displayName": "Poison",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "poison",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "regenerate",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "regenerate",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "taunt",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 13,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 4,
+            "message": "Grove Storm Caller #164 died."
+        },
+        {
+            "type": 1,
+            "message": "[P-1] Unknown (ATK 2) → [P1] Alloy Blessed Monk #25: 3→1HP"
+        },
+        {
+            "type": 1,
+            "message": "Direct attack to Player 0 Hero: 5 damage dealt. 20→15HP"
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 0 remaining."
+        },
+        {
+            "type": 3,
+            "message": "Tidal Fire Knight #62 entered Front."
+        },
+        {
+            "type": 5,
+            "message": "Player 0 ended turn."
+        },
+        {
+            "type": 1,
+            "message": "[P0] Tidal Fire Knight #62 (ATK 2) → [P1] Alloy Blessed Monk #141: 6→4HP"
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 14 remaining."
+        },
+        {
+            "type": 1,
+            "message": "Alloy Blessed Monk #141 took 2 poison damage."
+        },
+        {
+            "type": 5,
+            "message": "Player 1 ended turn."
+        },
+        {
+            "type": 1,
+            "message": "Alloy Blessed Monk #141 took 2 poison damage."
+        },
+        {
+            "type": 4,
+            "message": "Alloy Blessed Monk #141 died."
+        },
+        {
+            "type": 1,
+            "message": "[P1] Alloy Blessed Monk #25 (ATK 6) → [P0] Tidal Fire Knight #62: 5→-1HP"
+        },
+        {
+            "type": 4,
+            "message": "Tidal Fire Knight #62 died."
+        },
+        {
+            "type": 1,
+            "message": "[P-1] Unknown (ATK 1) → [P1] Alloy Blessed Monk #25: 1→0HP"
+        },
+        {
+            "type": 4,
+            "message": "Alloy Blessed Monk #25 died."
+        },
+        {
+            "type": 1,
+            "message": "Direct attack to Player 0 Hero: 1 damage dealt. 17→16HP"
+        },
+        {
+            "type": 0,
+            "message": "Player 0 deck is empty! Takes 1 damage."
+        },
+        {
+            "type": 3,
+            "message": "Void Sky Drake #91 entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Void Sky Drake #91 moved to BackLeft (replacement)."
+        },
+        {
+            "type": 3,
+            "message": "Grove Forest Archer #37 entered Front."
+        },
+        {
+            "type": 5,
+            "message": "Player 0 ended turn."
+        },
+        {
+            "type": 1,
+            "message": "[P0] Grove Forest Archer #37 (ATK 2) → [P1] Ember Nature Guardian #163: 6→4HP"
+        },
+        {
+            "type": 1,
+            "message": "[P0] Void Sky Drake #91 (ATK 6) → [P1] Ember Nature Guardian #163: 4→-2HP"
+        },
+        {
+            "type": 4,
+            "message": "Ember Nature Guardian #163 died."
+        },
+        {
+            "type": 1,
+            "message": "[P-1] Unknown (ATK 1) → [P0] Void Sky Drake #91: 3→2HP"
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 13 remaining."
+        },
+        {
+            "type": 3,
+            "message": "Grove Ocean Leviathan #83 entered BackLeft."
+        },
+        {
+            "type": 3,
+            "message": "Grove Light Paladin #115 entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Grove Light Paladin #115 moved to BackLeft, Grove Ocean Leviathan #83 moved to BackRight (replacement chain)."
+        },
+        {
+            "type": 3,
+            "message": "Grove Inferno Beast #96 entered Front."
+        },
+        {
+            "type": 5,
+            "message": "Player 1 ended turn."
+        },
+        {
+            "type": 1,
+            "message": "[P1] Grove Inferno Beast #96 (ATK 1) → [P0] Grove Forest Archer #37: 1→0HP"
+        },
+        {
+            "type": 4,
+            "message": "Grove Forest Archer #37 died."
+        },
+        {
+            "type": 1,
+            "message": "[P1] Grove Light Paladin #115 (ATK 2) → [P0] Void Sky Drake #91: 2→0HP"
+        },
+        {
+            "type": 4,
+            "message": "Void Sky Drake #91 died."
+        },
+        {
+            "type": 1,
+            "message": "Direct attack to Player 0 Hero: 6 damage dealt. 24→18HP"
+        },
+        {
+            "type": 1,
+            "message": "Direct attack to Player 0 Hero: 1 damage dealt. 18→17HP"
+        },
+        {
+            "type": 0,
+            "message": "Player 0 deck is empty! Takes 1 damage."
+        },
+        {
+            "type": 3,
+            "message": "Grove Ocean Leviathan #83 entered Front."
+        }
+    ],
+    "battleEvents": []
+}
