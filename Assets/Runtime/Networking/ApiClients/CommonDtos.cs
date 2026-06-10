@@ -130,8 +130,13 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         public int health;
         public int armor;
         public int unitType = -1;
-        public string cardType;
-        public string rarity;
+        // Server emits these as integer enum values (System.Text.Json default), not strings.
+        // cardType: CardType (Unit=0,Utility=1,Equipment=2,Spell=3)
+        // cardRarity: CardRarity (Common=0,Rare=1,Epic=2,Legendary=3)
+        // cardFaction: CardFaction (Ember=0,Tidal=1,Grove=2,Alloy=3,Void=4)
+        public int cardType = -1;
+        public int cardRarity = -1;
+        public int cardFaction = -1;
         public string attackDeliveryType;
         public CardAbilityDto[] abilities;
         public CardBattlePresentationDto battlePresentation;

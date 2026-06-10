@@ -319,8 +319,8 @@ namespace Flippy.CardDuelMobile.SinglePlayer
             card.attack = serverCard.attack;
             card.health = serverCard.health;
             card.armor = serverCard.armor;
-            card.cardType = ParseEnum(serverCard.cardType, CardType.Unit);
-            card.rarity = ParseEnum(serverCard.rarity, CardRarity.Common);
+            card.cardType = serverCard.cardType >= 0 ? (CardType)serverCard.cardType : CardType.Unit;
+            card.rarity = serverCard.cardRarity >= 0 ? (CardRarity)serverCard.cardRarity : CardRarity.Common;
             card.unitType = ParseUnitType(serverCard.unitType);
             card.attackMotionLevel = serverCard.battlePresentation?.attackMotionLevel ?? 0;
             card.attackShakeLevel = serverCard.battlePresentation?.attackShakeLevel ?? 0;
