@@ -52,7 +52,7 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             public string description;
             public int rewardExp;
             public bool isUnlocked;
-            public long unlockedAt;
+            public string unlockedAt;    // server DateTimeOffset (ISO-8601)
         }
 
         [System.Serializable]

@@ -125,6 +125,6 @@ namespace Flippy.CardDuelMobile.Networking
         public int ratingBefore;
         public int ratingAfter;
         public int ratingDelta;
-        public long createdAt;
+        public string createdAt;    // server DateTimeOffset (ISO-8601)
     }
 }

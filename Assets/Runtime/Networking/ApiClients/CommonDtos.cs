@@ -101,8 +101,8 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         public string displayName;
         public string description;
         public List<string> cardIds;
-        public long createdAt;
-        public long updatedAt;
+        public string createdAt;    // server DateTimeOffset (ISO-8601)
+        public string updatedAt;    // server DateTimeOffset (ISO-8601)
         public bool isActive;
 
         public string Name => !string.IsNullOrWhiteSpace(displayName) ? displayName : deckName;
