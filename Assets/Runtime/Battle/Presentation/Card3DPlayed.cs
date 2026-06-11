@@ -76,9 +76,43 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             UpdateStatsDisplay();
+            LayoutStatsOverlay();
             visualRenderer?.ApplyCard(card.cardId, "played");
 
             GameLogger.Info("Card3DPlayed", $"Initialized {card.displayName}");
+        }
+
+        // The board token's stat texts ship hand-tuned to an old frame's coordinate space; normalise
+        // them in the 1000x1000 overlay canvas so they land on the current board frame's sockets at
+        // a readable size. No mana cost on the board. Tweak offsets to match the frame art.
+        private void LayoutStatsOverlay()
+        {
+            PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -120f), 85f);   // name strip (top)
+            PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(185f, 150f), 230f); // attack, bottom-left
+            PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-185f, 150f), 230f);// health, bottom-right
+            PlaceStat(armorText, new Vector2(0.5f, 0f), new Vector2(0f, 130f), 190f);  // armor, bottom-centre
+        }
+
+        private static void PlaceStat(TextMeshProUGUI text, Vector2 anchor, Vector2 anchoredPosition, float fontSize)
+        {
+            if (text == null)
+            {
+                return;
+            }
+
+            var rect = text.rectTransform;
+            rect.localScale = Vector3.one;
+            rect.anchorMin = anchor;
+            rect.anchorMax = anchor;
+            rect.pivot = new Vector2(0.5f, 0.5f);
+            rect.sizeDelta = new Vector2(320f, 320f);
+            rect.anchoredPosition = anchoredPosition;
+
+            text.enableAutoSizing = false;
+            text.fontSize = fontSize;
+            text.alignment = TextAlignmentOptions.Center;
+            text.textWrappingMode = TextWrappingModes.NoWrap;
+            text.overflowMode = TextOverflowModes.Overflow;
         }
 
         public void UpdateStatsDisplay()

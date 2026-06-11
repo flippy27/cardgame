@@ -73,9 +73,50 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             UpdateStatsDisplay();
+            LayoutStatsOverlay();
             visualRenderer?.ApplyCard(card.cardId, "hand");
 
             GameLogger.Info("Card3D", $"Initialized {card.displayName}");
+        }
+
+        // The prefab ships the stat texts hand-tuned to an old frame's coordinate space (anchored
+        // positions in the thousands, 100x child scales), so they no longer land on the current
+        // frame's sockets. Normalise them here in the 1000x1400 overlay canvas: each stat is pinned
+        // to its corner socket at a readable size. Tweak these offsets to match the frame art.
+        private void LayoutStatsOverlay()
+        {
+            // mana cost — top-left disc
+            PlaceStat(costText, new Vector2(0f, 1f), new Vector2(175f, -210f), 230f);
+            // name — title band (mid card)
+            PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -815f), 95f);
+            // attack — bottom-left socket
+            PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(195f, 235f), 230f);
+            // health — bottom-right socket
+            PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-195f, 235f), 230f);
+            // armor — bottom-centre (only shown when > 0)
+            PlaceStat(armorText, new Vector2(0.5f, 0f), new Vector2(0f, 205f), 190f);
+        }
+
+        private static void PlaceStat(TextMeshProUGUI text, Vector2 anchor, Vector2 anchoredPosition, float fontSize)
+        {
+            if (text == null)
+            {
+                return;
+            }
+
+            var rect = text.rectTransform;
+            rect.localScale = Vector3.one;
+            rect.anchorMin = anchor;
+            rect.anchorMax = anchor;
+            rect.pivot = new Vector2(0.5f, 0.5f);
+            rect.sizeDelta = new Vector2(320f, 320f);
+            rect.anchoredPosition = anchoredPosition;
+
+            text.enableAutoSizing = false;
+            text.fontSize = fontSize;
+            text.alignment = TextAlignmentOptions.Center;
+            text.textWrappingMode = TextWrappingModes.NoWrap;
+            text.overflowMode = TextOverflowModes.Overflow;
         }
 
         public void UpdateStatsDisplay()
