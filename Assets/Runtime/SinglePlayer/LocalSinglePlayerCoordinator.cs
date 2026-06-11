@@ -322,9 +322,11 @@ namespace Flippy.CardDuelMobile.SinglePlayer
             card.cardType = serverCard.cardType >= 0 ? (CardType)serverCard.cardType : CardType.Unit;
             card.rarity = serverCard.cardRarity >= 0 ? (CardRarity)serverCard.cardRarity : CardRarity.Common;
             card.unitType = ParseUnitType(serverCard.unitType);
-            card.attackMotionLevel = serverCard.battlePresentation?.attackMotionLevel ?? 0;
-            card.attackShakeLevel = serverCard.battlePresentation?.attackShakeLevel ?? 0;
-            card.attackDeliveryType = FirstNonEmpty(serverCard.attackDeliveryType, serverCard.battlePresentation?.attackDeliveryType);
+            // Attack feel (motion/shake/delivery) is no longer server-provided; left at
+            // defaults so AttackPresentationResolver derives it from attack stat + unitType.
+            card.attackMotionLevel = 0;
+            card.attackShakeLevel = 0;
+            card.attackDeliveryType = null;
             card.abilities = BuildRuntimeAbilities(serverCard.abilities);
             return card;
         }

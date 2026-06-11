@@ -32,9 +32,6 @@ namespace Flippy.CardDuelMobile.Data
         [Tooltip("Turns until this card can attack after being played (1 = can't attack same turn)")]
         public int turnsUntilCanAttack = 1;
 
-        [Header("Visuals")]
-        public CardVisualProfile visualProfile;
-
         [Header("Attack Feel")]
         [Tooltip("0 = auto-resolve from attack stat. 1-5 = explicit projectile motion preset.")]
         [Range(0, 5)] public int attackMotionLevel;

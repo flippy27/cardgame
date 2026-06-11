@@ -137,41 +137,7 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         public int cardType = -1;
         public int cardRarity = -1;
         public int cardFaction = -1;
-        public string attackDeliveryType;
         public CardAbilityDto[] abilities;
-        public CardBattlePresentationDto battlePresentation;
-        public CardVisualProfileDto[] visualProfiles;
-    }
-
-    [System.Serializable]
-    public sealed class CardBattlePresentationDto
-    {
-        public int attackMotionLevel;
-        public int attackShakeLevel;
-        public string attackDeliveryType;
-        public string impactFxId;
-        public string attackAudioCueId;
-        public string metadataJson;
-    }
-
-    [System.Serializable]
-    public sealed class CardVisualProfileDto
-    {
-        public string profileKey;
-        public string displayName;
-        public bool isDefault;
-        public CardVisualLayerDto[] layers;
-    }
-
-    [System.Serializable]
-    public sealed class CardVisualLayerDto
-    {
-        public string surface;
-        public string layer;
-        public string sourceKind;
-        public string assetRef;
-        public int sortOrder;
-        public string metadataJson;
     }
 
     [System.Serializable]

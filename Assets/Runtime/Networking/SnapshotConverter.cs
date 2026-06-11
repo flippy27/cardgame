@@ -621,12 +621,6 @@ namespace Flippy.CardDuelMobile.Networking
                 return ClampPresentationLevel(snapshotCard.attackMotionLevel);
             }
 
-            var catalogCard = ResolveCatalogCardDefinition(snapshotCard.cardId);
-            if (catalogCard?.battlePresentation != null && catalogCard.battlePresentation.attackMotionLevel > 0)
-            {
-                return ClampPresentationLevel(catalogCard.battlePresentation.attackMotionLevel);
-            }
-
             var definition = string.IsNullOrWhiteSpace(snapshotCard.cardId) ? null : CardRegistry.GetCard(snapshotCard.cardId);
             return AttackPresentationResolver.ResolveMotionLevel(definition, snapshotCard.attack);
         }
@@ -643,12 +637,6 @@ namespace Flippy.CardDuelMobile.Networking
                 return ClampPresentationLevel(snapshotCard.attackShakeLevel);
             }
 
-            var catalogCard = ResolveCatalogCardDefinition(snapshotCard.cardId);
-            if (catalogCard?.battlePresentation != null && catalogCard.battlePresentation.attackShakeLevel > 0)
-            {
-                return ClampPresentationLevel(catalogCard.battlePresentation.attackShakeLevel);
-            }
-
             var definition = string.IsNullOrWhiteSpace(snapshotCard.cardId) ? null : CardRegistry.GetCard(snapshotCard.cardId);
             return AttackPresentationResolver.ResolveShakeLevel(definition, snapshotCard.attack);
         }
@@ -663,12 +651,6 @@ namespace Flippy.CardDuelMobile.Networking
             if (!string.IsNullOrWhiteSpace(snapshotCard.attackDeliveryType))
             {
                 return AttackPresentationResolver.NormalizeDeliveryType(snapshotCard.attackDeliveryType);
-            }
-
-            var catalogCard = ResolveCatalogCardDefinition(snapshotCard.cardId);
-            if (!string.IsNullOrWhiteSpace(catalogCard?.battlePresentation?.attackDeliveryType))
-            {
-                return AttackPresentationResolver.NormalizeDeliveryType(catalogCard.battlePresentation.attackDeliveryType);
             }
 
             return ResolveCardDeliveryType(snapshotCard.cardId, snapshotCard.attackDeliveryType, snapshotCard.unitType);
@@ -701,17 +683,6 @@ namespace Flippy.CardDuelMobile.Networking
             if (!string.IsNullOrWhiteSpace(snapshotDeliveryType))
             {
                 return AttackPresentationResolver.NormalizeDeliveryType(snapshotDeliveryType);
-            }
-
-            var catalogCard = ResolveCatalogCardDefinition(cardId);
-            if (!string.IsNullOrWhiteSpace(catalogCard?.attackDeliveryType))
-            {
-                return AttackPresentationResolver.NormalizeDeliveryType(catalogCard.attackDeliveryType);
-            }
-
-            if (!string.IsNullOrWhiteSpace(catalogCard?.battlePresentation?.attackDeliveryType))
-            {
-                return AttackPresentationResolver.NormalizeDeliveryType(catalogCard.battlePresentation.attackDeliveryType);
             }
 
             var definition = string.IsNullOrWhiteSpace(cardId) ? null : CardRegistry.GetCard(cardId);

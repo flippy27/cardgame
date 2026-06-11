@@ -220,9 +220,9 @@ namespace Flippy.CardDuelMobile.Networking
 
         private static bool HasDetailedPresentation(ServerCardDefinition card)
         {
-            return card != null &&
-                   card.visualProfiles != null &&
-                   card.visualProfiles.Length > 0;
+            // The /cards catalog response already includes abilities; there is no extra
+            // per-card visual data to lazily fetch anymore, so any cached card is complete.
+            return card != null;
         }
     }
 }
