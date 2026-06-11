@@ -163,9 +163,21 @@ namespace Flippy.CardDuelMobile.SinglePlayer
                 apiClient = new CardGameApiClient(ConfigManager.GetApiBaseUrl());
             }
 
-            if (!ServiceLocator.TryResolve<AuthService>(out var authService) || !authService.IsAuthenticated)
+            // StartMatch runs on GameplayPresenter3D.Start(), which can fire before the editor
+            // auto-login finishes its async HTTP login. Wait briefly for an authenticated session.
+            AuthService authService = null;
+            for (var attempt = 0; attempt < 60; attempt++)
             {
-                Debug.LogError("[LocalAI] Cannot load local player's server deck: no authenticated player.");
+                if (ServiceLocator.TryResolve<AuthService>(out authService) && authService != null && authService.IsAuthenticated)
+                {
+                    break;
+                }
+                await Task.Delay(200);
+            }
+
+            if (authService == null || !authService.IsAuthenticated)
+            {
+                Debug.LogError("[LocalAI] Cannot load local player's server deck: no authenticated player (timed out waiting for login).");
                 return false;
             }
 
