@@ -164,8 +164,11 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            var art = CardArtLibrary.GetCardArt(cardId);
-            var frame = CardArtLibrary.GetFrame(ResolveRarity(cardId));
+            // The composite already bakes in the type/rarity frame + faction overlay/crest,
+            // so the single "art" binding shows the full card. Any explicit "frame" binding is
+            // cleared to avoid drawing the frame twice.
+            var (cardType, cardRarity, cardFaction) = ResolveCardMeta(cardId);
+            var composite = CardArtLibrary.GetCardComposite(cardId, cardType, cardRarity, cardFaction);
 
             foreach (var binding in layerBindings)
             {
@@ -176,37 +179,30 @@ namespace Flippy.CardDuelMobile.UI
 
                 if (string.Equals(binding.layer, "frame", StringComparison.OrdinalIgnoreCase))
                 {
-                    if (frame != null)
-                    {
-                        binding.Apply(frame, frame.texture);
-                    }
-                    else
-                    {
-                        binding.Clear();
-                    }
+                    binding.Clear();
                     continue;
                 }
 
-                binding.Apply(art, art != null ? art.texture : null);
+                binding.Apply(composite, composite != null ? composite.texture : null);
             }
         }
 
-        private static int ResolveRarity(string cardId)
+        private static (int cardType, int cardRarity, int cardFaction) ResolveCardMeta(string cardId)
         {
             try
             {
                 var catalog = GameService.Instance?.CardCatalog;
                 if (catalog != null && catalog.TryGetCard(cardId, out ServerCardDefinition definition) && definition != null)
                 {
-                    return definition.cardRarity;
+                    return (definition.cardType, definition.cardRarity, definition.cardFaction);
                 }
             }
             catch (Exception)
             {
-                // Catalog not ready / lookup failed — fall back to the common frame.
+                // Catalog not ready / lookup failed — composite falls back to defaults/raw art.
             }
 
-            return 0;
+            return (-1, -1, -1);
         }
 
         private void ClearBindings()

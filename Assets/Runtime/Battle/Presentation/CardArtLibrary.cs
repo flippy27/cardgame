@@ -1,34 +1,41 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Flippy.CardDuelMobile.UI
 {
     /// <summary>
-    /// Client-side card art resolver. Maps a stable <c>cardId</c> to a single Sprite.
+    /// Client-side card art resolver. Composites a card's final sprite from layers that live in
+    /// the client (Resources), keyed by <c>cardId</c> and the card's type/rarity/faction:
     ///
-    /// This replaces the old server-driven layered visual system: the server no longer
-    /// sends visual profiles / layers / asset refs. Art lives entirely in the client and
-    /// is resolved here by convention from the card's id (and rarity for the frame).
+    ///   1. card illustration   Resources/CardArt/{cardId}.png            (512x768, placeholder today)
+    ///   2. type+rarity frame   Resources/Art/frames/hand/frame_hand_{type}_{rarity}.png
+    ///   3. faction overlay     Resources/Art/factions/overlays/faction_overlay_{faction}.png
+    ///   4. faction crest       Resources/Art/factions/crests/faction_crest_{faction}.png (256x256)
     ///
-    /// Current backend: <see cref="Resources"/> (art shipped in the build). Art files live at
-    ///   Assets/Resources/CardArt/{cardId}.png      → per-card illustration
-    ///   Assets/Resources/CardArt/frames/frame_{rarity}.png → rarity frame (0..3)
-    /// Use <c>Tools/CardDuel/Generate Placeholder Card Art</c> to fill these with placeholders.
+    /// The composite is baked into a single Sprite (cached per cardId) so the existing single
+    /// "art" binding shows the full production-ready card without per-prefab layer wiring.
+    /// Source textures are imported readable+Sprite by CardArtImportPostprocessor.
     ///
-    /// ROLLOUT (future): swap the body of <see cref="LoadSprite"/> for an Addressables load
-    /// (Addressables.LoadAssetAsync&lt;Sprite&gt;($"CardArt/{cardId}")) so new cards can be
-    /// downloaded from a remote content catalog at the menu without an app store release.
-    /// The public API here stays the same; only the loader changes.
+    /// Replace any Resources/CardArt/{cardId}.png with real art (same name, 512x768) to swap it in.
+    /// ROLLOUT (future): swap Resources.Load in <see cref="Load"/> for Addressables to enable
+    /// remote content download at the menu.
     /// </summary>
     public static class CardArtLibrary
     {
-        public const string ResourceRoot = "CardArt";
+        public const int CanvasWidth = 512;
+        public const int CanvasHeight = 768;
 
-        private static readonly Dictionary<string, Sprite> _artCache = new();
-        private static readonly Dictionary<int, Sprite> _frameCache = new();
+        private const string ArtRoot = "CardArt";
+        private const string FrameHandRoot = "Art/frames/hand";
+        private const string FactionOverlayRoot = "Art/factions/overlays";
+        private const string FactionCrestRoot = "Art/factions/crests";
+
+        private static readonly Dictionary<string, Sprite> _rawCache = new();
+        private static readonly Dictionary<string, Sprite> _compositeCache = new();
         private static Sprite _missing;
 
-        /// <summary>Per-card illustration. Returns <see cref="Missing"/> if no art exists yet.</summary>
+        /// <summary>Raw per-card illustration only (no frame). Returns <see cref="Missing"/> if absent.</summary>
         public static Sprite GetCardArt(string cardId)
         {
             if (string.IsNullOrWhiteSpace(cardId))
@@ -36,30 +43,190 @@ namespace Flippy.CardDuelMobile.UI
                 return Missing;
             }
 
-            if (_artCache.TryGetValue(cardId, out var cached))
+            if (_rawCache.TryGetValue(cardId, out var cached))
             {
                 return cached ?? Missing;
             }
 
-            var sprite = LoadSprite($"{ResourceRoot}/{cardId}");
-            _artCache[cardId] = sprite;
+            var sprite = Load($"{ArtRoot}/{cardId}");
+            _rawCache[cardId] = sprite;
             return sprite ?? Missing;
         }
 
-        /// <summary>Rarity frame sprite. rarity: 0 Common, 1 Rare, 2 Epic, 3 Legendary. Null if none.</summary>
-        public static Sprite GetFrame(int cardRarity)
+        /// <summary>
+        /// Full composited card sprite (illustration + type/rarity frame + faction overlay + crest),
+        /// cached per cardId. Falls back to the raw illustration if compositing is not possible.
+        /// </summary>
+        public static Sprite GetCardComposite(string cardId, int cardType, int cardRarity, int cardFaction)
         {
-            if (_frameCache.TryGetValue(cardRarity, out var cached))
+            if (string.IsNullOrWhiteSpace(cardId))
+            {
+                return Missing;
+            }
+
+            if (_compositeCache.TryGetValue(cardId, out var cached))
             {
                 return cached;
             }
 
-            var sprite = LoadSprite($"{ResourceRoot}/frames/frame_{cardRarity}");
-            _frameCache[cardRarity] = sprite;
+            Sprite result;
+            try
+            {
+                result = BuildComposite(cardId, cardType, cardRarity, cardFaction) ?? GetCardArt(cardId);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"[CardArt] Composite failed for '{cardId}': {ex.Message}. Using raw art.");
+                result = GetCardArt(cardId);
+            }
+
+            _compositeCache[cardId] = result;
+            return result;
+        }
+
+        private static Sprite BuildComposite(string cardId, int cardType, int cardRarity, int cardFaction)
+        {
+            var artTex = LoadTexture($"{ArtRoot}/{cardId}");
+            if (artTex == null)
+            {
+                return null;
+            }
+
+            var canvas = ScaleToCanvas(artTex);
+
+            var frameTex = LoadTexture($"{FrameHandRoot}/frame_hand_{TypeName(cardType)}_{RarityName(cardRarity)}");
+            if (frameTex != null)
+            {
+                AlphaOver(canvas, frameTex, 0, 0);
+            }
+
+            var overlayTex = LoadTexture($"{FactionOverlayRoot}/faction_overlay_{FactionName(cardFaction)}");
+            if (overlayTex != null)
+            {
+                AlphaOver(canvas, overlayTex, 0, 0);
+            }
+
+            var crestTex = LoadTexture($"{FactionCrestRoot}/faction_crest_{FactionName(cardFaction)}");
+            if (crestTex != null)
+            {
+                var cx = (CanvasWidth - crestTex.width) / 2;
+                AlphaOver(canvas, crestTex, cx, 120);
+            }
+
+            var baked = new Texture2D(CanvasWidth, CanvasHeight, TextureFormat.RGBA32, false)
+            {
+                name = $"CardComposite_{cardId}",
+                wrapMode = TextureWrapMode.Clamp
+            };
+            baked.SetPixels32(canvas);
+            baked.Apply(false, false);
+
+            var sprite = Sprite.Create(baked, new Rect(0, 0, CanvasWidth, CanvasHeight), new Vector2(0.5f, 0.5f), 100f);
+            sprite.name = $"CardComposite_{cardId}";
             return sprite;
         }
 
-        /// <summary>Magenta fallback sprite shown when a card has no art yet.</summary>
+        // --- compositing helpers (CPU alpha-over; requires readable source textures) ---
+
+        private static Color32[] ScaleToCanvas(Texture2D src)
+        {
+            var dst = new Color32[CanvasWidth * CanvasHeight];
+            var sp = src.GetPixels32();
+            var sw = src.width;
+            var sh = src.height;
+
+            if (sw == CanvasWidth && sh == CanvasHeight)
+            {
+                Array.Copy(sp, dst, dst.Length);
+            }
+            else
+            {
+                for (var y = 0; y < CanvasHeight; y++)
+                {
+                    var sy = y * sh / CanvasHeight;
+                    for (var x = 0; x < CanvasWidth; x++)
+                    {
+                        var sx = x * sw / CanvasWidth;
+                        dst[y * CanvasWidth + x] = sp[sy * sw + sx];
+                    }
+                }
+            }
+
+            // illustration is the opaque base
+            for (var i = 0; i < dst.Length; i++)
+            {
+                dst[i].a = 255;
+            }
+            return dst;
+        }
+
+        private static void AlphaOver(Color32[] canvas, Texture2D layer, int offsetX, int offsetY)
+        {
+            var lp = layer.GetPixels32();
+            var lw = layer.width;
+            var lh = layer.height;
+
+            for (var ly = 0; ly < lh; ly++)
+            {
+                var cy = offsetY + ly;
+                if (cy < 0 || cy >= CanvasHeight)
+                {
+                    continue;
+                }
+
+                for (var lx = 0; lx < lw; lx++)
+                {
+                    var cx = offsetX + lx;
+                    if (cx < 0 || cx >= CanvasWidth)
+                    {
+                        continue;
+                    }
+
+                    var src = lp[ly * lw + lx];
+                    if (src.a == 0)
+                    {
+                        continue;
+                    }
+
+                    var di = cy * CanvasWidth + cx;
+                    var dst = canvas[di];
+                    var sa = src.a / 255f;
+                    var ia = 1f - sa;
+                    canvas[di] = new Color32(
+                        (byte)(src.r * sa + dst.r * ia),
+                        (byte)(src.g * sa + dst.g * ia),
+                        (byte)(src.b * sa + dst.b * ia),
+                        255);
+                }
+            }
+        }
+
+        private static string TypeName(int cardType) => cardType switch
+        {
+            1 => "utility",
+            2 => "equipment",
+            3 => "spell",
+            _ => "unit"
+        };
+
+        private static string RarityName(int cardRarity) => cardRarity switch
+        {
+            1 => "rare",
+            2 => "epic",
+            3 => "legendary",
+            _ => "common"
+        };
+
+        private static string FactionName(int cardFaction) => cardFaction switch
+        {
+            0 => "ember",
+            1 => "tidal",
+            2 => "grove",
+            3 => "alloy",
+            4 => "void",
+            _ => "neutral"
+        };
+
         public static Sprite Missing
         {
             get
@@ -83,17 +250,22 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
-        /// <summary>Drop the in-memory cache (call after a content update / addressables refresh).</summary>
         public static void ClearCache()
         {
-            _artCache.Clear();
-            _frameCache.Clear();
+            _rawCache.Clear();
+            _compositeCache.Clear();
         }
 
-        // Single point of asset loading. Swap this for Addressables to enable remote rollout.
-        private static Sprite LoadSprite(string resourcePath)
+        private static Sprite Load(string resourcePath) => Resources.Load<Sprite>(resourcePath);
+
+        private static Texture2D LoadTexture(string resourcePath)
         {
-            return Resources.Load<Sprite>(resourcePath);
+            var sprite = Resources.Load<Sprite>(resourcePath);
+            if (sprite != null && sprite.texture != null)
+            {
+                return sprite.texture;
+            }
+            return Resources.Load<Texture2D>(resourcePath);
         }
     }
 }
