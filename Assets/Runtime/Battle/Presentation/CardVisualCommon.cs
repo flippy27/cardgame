@@ -250,7 +250,7 @@ namespace Flippy.CardDuelMobile.UI
                 {
                     stateId = ability.abilityId,
                     displayName = string.IsNullOrWhiteSpace(ability.displayName) ? ability.abilityId : ability.displayName,
-                    icon = ResolveBackendIconSprite(ability.iconAssetRef, ability.metadataJson),
+                    icon = CardArtLibrary.GetSkillIcon(ability.abilityId),
                     stackCount = 1,
                     tint = Color.white
                 });
@@ -279,7 +279,7 @@ namespace Flippy.CardDuelMobile.UI
                 {
                     stateId = statusId,
                     displayName = ResolveStatusDisplayName(status),
-                    icon = ResolveBackendIconSprite(status.iconAssetRef, null),
+                    icon = CardArtLibrary.GetStatusIcon(status.kind),
                     stackCount = status.remainingTurns > 0 ? status.remainingTurns : Mathf.Max(1, status.amount),
                     tint = ResolveStatusTint(status.kind)
                 });
@@ -396,92 +396,6 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             return System.Array.Empty<CardAbilityDto>();
-        }
-
-        private static Sprite ResolveBackendIconSprite(string explicitAssetRef, string metadataJson)
-        {
-            var assetRef = FirstNonEmpty(explicitAssetRef, ExtractMetadataString(metadataJson, "iconAssetRef"), ExtractMetadataString(metadataJson, "assetRef"));
-            return CardVisualAssetResolver.ResolveSprite(assetRef);
-        }
-
-        private static string FirstNonEmpty(params string[] values)
-        {
-            if (values == null)
-            {
-                return string.Empty;
-            }
-
-            foreach (var value in values)
-            {
-                if (!string.IsNullOrWhiteSpace(value))
-                {
-                    return value.Trim();
-                }
-            }
-
-            return string.Empty;
-        }
-
-        private static string ExtractMetadataString(string metadataJson, string propertyName)
-        {
-            if (string.IsNullOrWhiteSpace(metadataJson) || string.IsNullOrWhiteSpace(propertyName))
-            {
-                return string.Empty;
-            }
-
-            var search = $"\"{propertyName}\"";
-            var propertyIndex = metadataJson.IndexOf(search, StringComparison.OrdinalIgnoreCase);
-            if (propertyIndex < 0)
-            {
-                return string.Empty;
-            }
-
-            var colonIndex = metadataJson.IndexOf(':', propertyIndex + search.Length);
-            if (colonIndex < 0)
-            {
-                return string.Empty;
-            }
-
-            var start = colonIndex + 1;
-            while (start < metadataJson.Length && char.IsWhiteSpace(metadataJson[start]))
-            {
-                start++;
-            }
-
-            if (start >= metadataJson.Length || metadataJson[start] != '"')
-            {
-                return string.Empty;
-            }
-
-            var end = start + 1;
-            var escaping = false;
-            while (end < metadataJson.Length)
-            {
-                var current = metadataJson[end];
-                if (escaping)
-                {
-                    escaping = false;
-                }
-                else if (current == '\\')
-                {
-                    escaping = true;
-                }
-                else if (current == '"')
-                {
-                    break;
-                }
-
-                end++;
-            }
-
-            if (end >= metadataJson.Length)
-            {
-                return string.Empty;
-            }
-
-            return metadataJson.Substring(start + 1, end - start - 1)
-                .Replace("\\\"", "\"")
-                .Replace("\\\\", "\\");
         }
 
         private static string ResolveStatusId(StatusEffectDto status)

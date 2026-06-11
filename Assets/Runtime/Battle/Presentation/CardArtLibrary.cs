@@ -30,9 +30,12 @@ namespace Flippy.CardDuelMobile.UI
         private const string FrameHandRoot = "Art/frames/hand";
         private const string FactionOverlayRoot = "Art/factions/overlays";
         private const string FactionCrestRoot = "Art/factions/crests";
+        private const string SkillIconRoot = "Art/icons/skills";
+        private const string StatusIconRoot = "Art/icons/status";
 
         private static readonly Dictionary<string, Sprite> _rawCache = new();
         private static readonly Dictionary<string, Sprite> _compositeCache = new();
+        private static readonly Dictionary<string, Sprite> _iconCache = new();
         private static Sprite _missing;
 
         /// <summary>Raw per-card illustration only (no frame). Returns <see cref="Missing"/> if absent.</summary>
@@ -82,6 +85,45 @@ namespace Flippy.CardDuelMobile.UI
 
             _compositeCache[cardId] = result;
             return result;
+        }
+
+        /// <summary>Ability icon from the pack: Resources/Art/icons/skills/skill_{abilityId}. Null if absent.</summary>
+        public static Sprite GetSkillIcon(string abilityId)
+        {
+            if (string.IsNullOrWhiteSpace(abilityId))
+            {
+                return null;
+            }
+            return LoadIcon($"{SkillIconRoot}/skill_{abilityId.Trim().ToLowerInvariant()}");
+        }
+
+        /// <summary>
+        /// Status badge from the pack (grayscale, meant to be tinted by the UI):
+        /// Resources/Art/icons/status/status_{poisoned|stunned|shielded|enrage_cooldown}. Null if absent.
+        /// StatusEffectKind: 0 Poison, 1 Stun, 2 Shield, 3 EnrageCooldown.
+        /// </summary>
+        public static Sprite GetStatusIcon(int statusKind)
+        {
+            var key = statusKind switch
+            {
+                0 => "poisoned",
+                1 => "stunned",
+                2 => "shielded",
+                3 => "enrage_cooldown",
+                _ => null
+            };
+            return key == null ? null : LoadIcon($"{StatusIconRoot}/status_{key}");
+        }
+
+        private static Sprite LoadIcon(string resourcePath)
+        {
+            if (_iconCache.TryGetValue(resourcePath, out var cached))
+            {
+                return cached;
+            }
+            var sprite = Resources.Load<Sprite>(resourcePath);
+            _iconCache[resourcePath] = sprite;
+            return sprite;
         }
 
         private static Sprite BuildComposite(string cardId, int cardType, int cardRarity, int cardFaction)
