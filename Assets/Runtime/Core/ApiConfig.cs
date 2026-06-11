@@ -2,13 +2,13 @@ namespace Flippy.CardDuelMobile.Core
 {
     /// <summary>
     /// API configuration. Set via environment or override in code.
-    /// Dev: http://localhost:5000
+    /// Dev: http://127.0.0.1:5000  (use 127.0.0.1, NOT localhost — localhost resolves to IPv6 ::1 first and Docker Desktop/WSL2 port-forward hangs on it)
     /// Prod: https://api.cardduel.com (set via env var API_BASE_URL)
     /// </summary>
     public static class ApiConfig
     {
 #if UNITY_EDITOR
-        private const string DEFAULT_BASE_URL = "http://localhost:5000";
+        private const string DEFAULT_BASE_URL = "http://127.0.0.1:5000";
 #else
         private const string DEFAULT_BASE_URL = "https://192.168.1.84:5000";
 #endif
