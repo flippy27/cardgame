@@ -37,9 +37,9 @@ namespace Flippy.CardDuelMobile.UI
                 spriteRenderer.enabled = false;
             }
 
-            if (materialRenderer != null && materialRenderer.material != null && materialRenderer.material.HasProperty(materialTextureProperty))
+            if (materialRenderer != null && materialRenderer.material != null)
             {
-                materialRenderer.material.SetTexture(materialTextureProperty, null);
+                SetMaterialTexture(materialRenderer.material, null);
             }
         }
 
@@ -63,9 +63,35 @@ namespace Flippy.CardDuelMobile.UI
                 spriteRenderer.enabled = sprite != null;
             }
 
-            if (materialRenderer != null && materialRenderer.material != null && materialRenderer.material.HasProperty(materialTextureProperty))
+            if (materialRenderer != null && materialRenderer.material != null)
             {
-                materialRenderer.material.SetTexture(materialTextureProperty, texture);
+                SetMaterialTexture(materialRenderer.material, texture);
+            }
+        }
+
+        // Sets the card texture on whatever main-texture property the shader exposes (URP _BaseMap
+        // and/or built-in _MainTex) and forces the base color to white so the art shows untinted.
+        private void SetMaterialTexture(Material material, Texture texture)
+        {
+            if (material.HasProperty("_BaseMap"))
+            {
+                material.SetTexture("_BaseMap", texture);
+            }
+            if (material.HasProperty("_MainTex"))
+            {
+                material.SetTexture("_MainTex", texture);
+            }
+
+            if (texture != null)
+            {
+                if (material.HasProperty("_BaseColor"))
+                {
+                    material.SetColor("_BaseColor", Color.white);
+                }
+                if (material.HasProperty("_Color"))
+                {
+                    material.SetColor("_Color", Color.white);
+                }
             }
         }
     }

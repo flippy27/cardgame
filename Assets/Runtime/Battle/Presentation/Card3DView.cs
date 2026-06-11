@@ -124,7 +124,7 @@ namespace Flippy.CardDuelMobile.UI
 
         public void ResetColor()
         {
-            SetColor(baseColor);
+            SetColor(Color.white);
         }
 
         public void AnimateDrop(Vector3 targetPos, float duration = 0.3f)
@@ -203,9 +203,11 @@ namespace Flippy.CardDuelMobile.UI
                 ? meshRenderer.sharedMaterial
                 : new Material(Shader.Find("Standard"));
 
+            // White base so the card art texture shows untinted (the binding sets the texture +
+            // forces white; baseColor is only kept for highlight/death-fade effects).
             _cardMaterial = new Material(sourceMaterial)
             {
-                color = baseColor
+                color = Color.white
             };
             meshRenderer.material = _cardMaterial;
         }
