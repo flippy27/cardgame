@@ -27,12 +27,21 @@ namespace Flippy.CardDuelMobile.UI
         public const int CanvasHeight = 768;
 
         private const string ArtRoot = "CardArt";
-        private const string FrameHandRoot = "Art/frames/hand";
-        private const string FrameBoardRoot = "Art/frames/board";
-        private const string FactionOverlayRoot = "Art/factions/overlays";
-        private const string FactionCrestRoot = "Art/factions/crests";
+        // Modular frame set: blank-socket frames per faction + per variant (hand/board, ±armor),
+        // and separate stat/attack symbol sprites baked into the sockets.
+        private const string FrameRoot = "Art/frames2";
+        private const string ModularIconRoot = "Art/icons/modular";
         private const string SkillIconRoot = "Art/icons/skills";
         private const string StatusIconRoot = "Art/icons/status";
+
+        // Socket centres as fractions of the (bbox-normalised) 512x768 card, top-left origin. Stat
+        // symbols are baked here and the TMP numbers overlay at the same fractions. Tune to the art.
+        private static readonly Vector2 SocketMana = new Vector2(0.135f, 0.085f);   // top-left
+        private static readonly Vector2 SocketRarity = new Vector2(0.865f, 0.085f); // top-right
+        private static readonly Vector2 SocketAttack = new Vector2(0.135f, 0.915f); // bottom-left
+        private static readonly Vector2 SocketHealth = new Vector2(0.865f, 0.915f); // bottom-right
+        private static readonly Vector2 SocketArmor = new Vector2(0.865f, 0.775f);  // above health (armor variant)
+        private const float SocketIconFraction = 0.17f; // icon size as fraction of canvas width
 
         private static readonly Dictionary<string, Sprite> _rawCache = new();
         private static readonly Dictionary<string, Sprite> _compositeCache = new();
@@ -58,21 +67,22 @@ namespace Flippy.CardDuelMobile.UI
         }
 
         /// <summary>
-        /// Full composited card sprite (illustration + type/rarity frame + faction overlay + crest),
-        /// cached per cardId. Falls back to the raw illustration if compositing is not possible.
+        /// Full composited card sprite (illustration + faction frame + baked stat/attack symbols),
+        /// cached per cardId+variant. Falls back to the raw illustration if compositing fails.
+        /// unitType: 0 Melee / 1 Ranged / 2 Magic / negative = none (non-unit).
         /// </summary>
-        public static Sprite GetCardComposite(string cardId, int cardType, int cardRarity, int cardFaction, string surface = null)
+        public static Sprite GetCardComposite(string cardId, int cardType, int cardRarity, int cardFaction, int unitType = -1, bool hasArmor = false, string surface = null)
         {
             if (string.IsNullOrWhiteSpace(cardId))
             {
                 return Missing;
             }
 
-            // Board ("played") cards use the compact board frame; everything else uses the hand frame.
+            // Board ("played") cards use the board frame; everything else uses the hand frame.
             var isBoard = !string.IsNullOrWhiteSpace(surface) &&
                           (surface.Equals("played", StringComparison.OrdinalIgnoreCase) ||
                            surface.Equals("board", StringComparison.OrdinalIgnoreCase));
-            var cacheKey = cardId + (isBoard ? ":b" : ":h");
+            var cacheKey = $"{cardId}:{(isBoard ? "b" : "h")}:{(hasArmor ? "a" : "n")}";
 
             if (_compositeCache.TryGetValue(cacheKey, out var cached))
             {
@@ -82,7 +92,7 @@ namespace Flippy.CardDuelMobile.UI
             Sprite result;
             try
             {
-                result = BuildComposite(cardId, cardType, cardRarity, cardFaction, isBoard) ?? GetCardArt(cardId);
+                result = BuildComposite(cardId, cardType, cardRarity, cardFaction, unitType, hasArmor, isBoard) ?? GetCardArt(cardId);
             }
             catch (Exception ex)
             {
@@ -92,6 +102,12 @@ namespace Flippy.CardDuelMobile.UI
 
             _compositeCache[cacheKey] = result;
             return result;
+        }
+
+        /// <summary>Modular symbol sprite from the new set: Resources/Art/icons/modular/{name}. Null if absent.</summary>
+        public static Sprite GetModularIcon(string name)
+        {
+            return string.IsNullOrWhiteSpace(name) ? null : LoadIcon($"{ModularIconRoot}/{name}");
         }
 
         /// <summary>Ability icon from the pack: Resources/Art/icons/skills/skill_{abilityId}. Null if absent.</summary>
@@ -133,13 +149,12 @@ namespace Flippy.CardDuelMobile.UI
             return sprite;
         }
 
-        // Art window where the per-card illustration is allowed to show, as fractions of the canvas
-        // with a TOP-left origin (x, y, width, height). Outside this rect the card is the frame only,
-        // so the illustration never bleeds past the frame silhouette. Tuned to the delivered frames.
-        private static readonly Rect HandArtWindow = new Rect(0.12f, 0.16f, 0.76f, 0.39f);
-        private static readonly Rect BoardArtWindow = new Rect(0.12f, 0.16f, 0.76f, 0.44f);
+        // Art window (fraction of the bbox-normalised 512x768 card, TOP-left origin). The modular
+        // frames are nearly full-art, so the window covers most of the card; the frame sits on top.
+        private static readonly Rect HandArtWindow = new Rect(0.10f, 0.07f, 0.80f, 0.86f);
+        private static readonly Rect BoardArtWindow = new Rect(0.10f, 0.10f, 0.80f, 0.78f);
 
-        private static Sprite BuildComposite(string cardId, int cardType, int cardRarity, int cardFaction, bool isBoard)
+        private static Sprite BuildComposite(string cardId, int cardType, int cardRarity, int cardFaction, int unitType, bool hasArmor, bool isBoard)
         {
             var artTex = LoadTexture($"{ArtRoot}/{cardId}");
             if (artTex == null)
@@ -148,31 +163,39 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             // Start fully transparent: the card silhouette is defined by the frame, so outside the
-            // frame the quad is see-through (the stray red sibling quad is disabled in the renderer).
+            // frame the quad is see-through (the stray sibling quads are disabled in the renderer).
             var canvas = new Color32[CanvasWidth * CanvasHeight];
 
             // 1) Illustration, clipped to the frame's art window only.
             BlitArtToWindow(canvas, artTex, isBoard ? BoardArtWindow : HandArtWindow);
 
-            // 2) A single frame on top (type+rarity in hand, type on board). This gives the card its
-            //    shape and covers everything outside the art window.
-            var framePath = isBoard
-                ? $"{FrameBoardRoot}/frame_board_{TypeName(cardType)}"
-                : $"{FrameHandRoot}/frame_hand_{TypeName(cardType)}_{RarityName(cardRarity)}";
-            var frameTex = LoadTexture(framePath);
+            // 2) Faction frame (blank sockets), cropped to its opaque bounds and scaled to fill the
+            //    card so every family/variant lines up regardless of its internal transparent margin.
+            var surface = isBoard ? "board" : "hand";
+            var armor = hasArmor ? "_armor" : string.Empty;
+            var frameTex = LoadTexture($"{FrameRoot}/frame_{surface}{armor}_{FactionName(cardFaction)}");
             if (frameTex != null)
             {
-                AlphaOverScaled(canvas, frameTex);
+                AlphaOverScaledCropped(canvas, frameTex);
             }
 
-            // 3) Faction crest for identity (small, lower-centre). The full-frame faction "overlay" is
-            //    intentionally NOT composited: it is itself a complete frame, and stacking it on the
-            //    type/rarity frame produced the double-frame artifact.
-            var crestTex = LoadTexture($"{FactionCrestRoot}/faction_crest_{FactionName(cardFaction)}");
-            if (crestTex != null)
+            // 3) Bake the modular stat/attack symbols into the frame sockets. Numbers overlay on top
+            //    at the same socket fractions (CardVisualCommon / LayoutStatsOverlay). Board frames
+            //    carry no mana/rarity sockets, so those symbols are hand-only.
+            var isUnit = cardType == 0;
+            if (!isBoard)
             {
-                var cx = (CanvasWidth - crestTex.width) / 2;
-                AlphaOver(canvas, crestTex, cx, 120);
+                BlitIcon(canvas, GetModularIcon("stat_mana"), SocketMana);
+                BlitIcon(canvas, GetModularIcon("stat_rarity"), SocketRarity);
+            }
+            if (isUnit)
+            {
+                BlitIcon(canvas, GetModularIcon(AttackIconName(unitType)), SocketAttack);
+                BlitIcon(canvas, GetModularIcon("stat_health"), SocketHealth);
+            }
+            if (hasArmor)
+            {
+                BlitIcon(canvas, GetModularIcon("stat_armor"), SocketArmor);
             }
 
             var baked = new Texture2D(CanvasWidth, CanvasHeight, TextureFormat.RGBA32, false)
@@ -224,6 +247,117 @@ namespace Flippy.CardDuelMobile.UI
                 }
             }
         }
+
+        // Alpha-over a frame layer cropped to its opaque bounds, scaled to fill the whole canvas. This
+        // normalises frames authored with different transparent margins (512x512 with the card body
+        // centred) so they all fill the 512x768 card and the sockets land at consistent fractions.
+        private static void AlphaOverScaledCropped(Color32[] canvas, Texture2D layer)
+        {
+            var lp = layer.GetPixels32();
+            var lw = layer.width;
+            var lh = layer.height;
+            if (lw <= 0 || lh <= 0)
+            {
+                return;
+            }
+
+            int minx = lw, miny = lh, maxx = -1, maxy = -1;
+            for (var y = 0; y < lh; y++)
+            {
+                for (var x = 0; x < lw; x++)
+                {
+                    if (lp[y * lw + x].a > 16)
+                    {
+                        if (x < minx) minx = x;
+                        if (x > maxx) maxx = x;
+                        if (y < miny) miny = y;
+                        if (y > maxy) maxy = y;
+                    }
+                }
+            }
+            if (maxx < minx || maxy < miny)
+            {
+                return;
+            }
+
+            var bw = maxx - minx + 1;
+            var bh = maxy - miny + 1;
+            for (var y = 0; y < CanvasHeight; y++)
+            {
+                var ly = miny + y * bh / CanvasHeight; // both buffers are bottom-origin: no flip
+                for (var x = 0; x < CanvasWidth; x++)
+                {
+                    var lx = minx + x * bw / CanvasWidth;
+                    var src = lp[ly * lw + lx];
+                    if (src.a == 0)
+                    {
+                        continue;
+                    }
+
+                    var di = y * CanvasWidth + x;
+                    canvas[di] = Over(src, canvas[di]);
+                }
+            }
+        }
+
+        // Bake a modular symbol centred on a socket (socket centre as a fraction of the card,
+        // TOP-left origin). Sized to SocketIconFraction of the card width.
+        private static void BlitIcon(Color32[] canvas, Sprite icon, Vector2 socketTopLeft)
+        {
+            if (icon == null || icon.texture == null)
+            {
+                return;
+            }
+
+            var size = Mathf.RoundToInt(SocketIconFraction * CanvasWidth);
+            if (size <= 0)
+            {
+                return;
+            }
+
+            var x0 = Mathf.RoundToInt(socketTopLeft.x * CanvasWidth) - size / 2;
+            var y0 = Mathf.RoundToInt((1f - socketTopLeft.y) * CanvasHeight) - size / 2; // top-left -> bottom origin
+
+            var tex = icon.texture;
+            var sp = tex.GetPixels32();
+            var sw = tex.width;
+            var sh = tex.height;
+
+            for (var y = 0; y < size; y++)
+            {
+                var cy = y0 + y;
+                if (cy < 0 || cy >= CanvasHeight)
+                {
+                    continue;
+                }
+
+                var sy = y * sh / size;
+                for (var x = 0; x < size; x++)
+                {
+                    var cx = x0 + x;
+                    if (cx < 0 || cx >= CanvasWidth)
+                    {
+                        continue;
+                    }
+
+                    var src = sp[sy * sw + (x * sw / size)];
+                    if (src.a == 0)
+                    {
+                        continue;
+                    }
+
+                    var di = cy * CanvasWidth + cx;
+                    canvas[di] = Over(src, canvas[di]);
+                }
+            }
+        }
+
+        private static string AttackIconName(int unitType) => unitType switch
+        {
+            1 => "attack_bow",
+            2 => "attack_magic",
+            _ => "attack_sword"
+        };
 
         private static void AlphaOver(Color32[] canvas, Texture2D layer, int offsetX, int offsetY)
         {

@@ -85,16 +85,17 @@ namespace Flippy.CardDuelMobile.UI
         // to its corner socket at a readable size. Tweak these offsets to match the frame art.
         private void LayoutStatsOverlay()
         {
-            // mana cost — top-left disc
-            PlaceStat(costText, new Vector2(0f, 1f), new Vector2(175f, -210f), 230f);
-            // name — title band (mid card)
-            PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -815f), 95f);
+            // Numbers sit on top of the baked socket symbols (same fractions as CardArtLibrary).
+            // mana — top-left socket
+            PlaceStat(costText, new Vector2(0f, 1f), new Vector2(135f, -119f), 165f);
+            // name — title strip (top centre)
+            PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -70f), 75f);
             // attack — bottom-left socket
-            PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(195f, 235f), 230f);
+            PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(135f, 119f), 165f);
             // health — bottom-right socket
-            PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-195f, 235f), 230f);
-            // armor — bottom-centre (only shown when > 0)
-            PlaceStat(armorText, new Vector2(0.5f, 0f), new Vector2(0f, 205f), 190f);
+            PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-135f, 119f), 165f);
+            // armor — above health (armor variant)
+            PlaceStat(armorText, new Vector2(1f, 0f), new Vector2(-135f, 315f), 145f);
         }
 
         private static void PlaceStat(TextMeshProUGUI text, Vector2 anchor, Vector2 anchoredPosition, float fontSize)

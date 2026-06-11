@@ -219,11 +219,11 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            // The composite already bakes in the type/rarity (hand) or board frame + faction
-            // overlay/crest, so the single "art" binding shows the full card. Any explicit "frame"
-            // binding is cleared to avoid drawing the frame twice.
-            var (cardType, cardRarity, cardFaction) = ResolveCardMeta(cardId);
-            var composite = CardArtLibrary.GetCardComposite(cardId, cardType, cardRarity, cardFaction, surface);
+            // The composite bakes the faction frame + stat/attack symbols, so the single "art"
+            // binding shows the full card. Any explicit "frame" binding is cleared to avoid drawing
+            // the frame twice.
+            var (cardType, cardRarity, cardFaction, unitType, hasArmor) = ResolveCardMeta(cardId);
+            var composite = CardArtLibrary.GetCardComposite(cardId, cardType, cardRarity, cardFaction, unitType, hasArmor, surface);
 
             foreach (var binding in layerBindings)
             {
@@ -276,14 +276,14 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
-        private static (int cardType, int cardRarity, int cardFaction) ResolveCardMeta(string cardId)
+        private static (int cardType, int cardRarity, int cardFaction, int unitType, bool hasArmor) ResolveCardMeta(string cardId)
         {
             try
             {
                 var catalog = GameService.Instance?.CardCatalog;
                 if (catalog != null && catalog.TryGetCard(cardId, out ServerCardDefinition definition) && definition != null)
                 {
-                    return (definition.cardType, definition.cardRarity, definition.cardFaction);
+                    return (definition.cardType, definition.cardRarity, definition.cardFaction, definition.unitType, definition.armor > 0);
                 }
             }
             catch (Exception)
@@ -291,7 +291,7 @@ namespace Flippy.CardDuelMobile.UI
                 // Catalog not ready / lookup failed — composite falls back to defaults/raw art.
             }
 
-            return (-1, -1, -1);
+            return (-1, -1, -1, -1, false);
         }
 
         private void ClearBindings()
