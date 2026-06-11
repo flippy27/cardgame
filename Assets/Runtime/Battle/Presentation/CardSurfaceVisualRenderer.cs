@@ -92,6 +92,22 @@ namespace Flippy.CardDuelMobile.UI
                 {
                     material.SetColor("_Color", Color.white);
                 }
+
+                // The card quads face the camera flipped 180deg in-plane, so the art reads
+                // upside-down/mirrored. Rotate the texture 180deg via tiling (-1) + offset (1)
+                // ONLY on the 3D material path; UI Image/SpriteRenderer bindings stay upright.
+                var flipScale = new Vector2(-1f, -1f);
+                var flipOffset = new Vector2(1f, 1f);
+                if (material.HasProperty("_BaseMap"))
+                {
+                    material.SetTextureScale("_BaseMap", flipScale);
+                    material.SetTextureOffset("_BaseMap", flipOffset);
+                }
+                if (material.HasProperty("_MainTex"))
+                {
+                    material.SetTextureScale("_MainTex", flipScale);
+                    material.SetTextureOffset("_MainTex", flipOffset);
+                }
             }
         }
     }
