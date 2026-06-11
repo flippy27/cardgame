@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 3ee7a10728d221b42a27d588bb0e2f86
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8256385838177009219
+    second: vfx_attack_delivery_arc_01_0
+  - first:
+      213: 2114861611258850286
+    second: vfx_attack_delivery_arc_01_1
+  - first:
+      213: 4693595907164425795
+    second: vfx_attack_delivery_arc_01_2
+  - first:
+      213: 5533810861894092744
+    second: vfx_attack_delivery_arc_01_3
+  - first:
+      213: 1580034087442257205
+    second: vfx_attack_delivery_arc_01_4
+  - first:
+      213: 9034606256167641209
+    second: vfx_attack_delivery_arc_01_5
+  - first:
+      213: 2693887644901285393
+    second: vfx_attack_delivery_arc_01_6
+  - first:
+      213: -8093031660734084877
+    second: vfx_attack_delivery_arc_01_7
+  - first:
+      213: -6974945569148849999
+    second: vfx_attack_delivery_arc_01_8
+  - first:
+      213: -3693922426839560471
+    second: vfx_attack_delivery_arc_01_9
+  - first:
+      213: 4874798791209984610
+    second: vfx_attack_delivery_arc_01_10
+  - first:
+      213: 3355232628099293789
+    second: vfx_attack_delivery_arc_01_11
+  - first:
+      213: 3371269497639117038
+    second: vfx_attack_delivery_arc_01_12
+  - first:
+      213: 1459880723378679878
+    second: vfx_attack_delivery_arc_01_13
+  - first:
+      213: 4696990081286294245
+    second: vfx_attack_delivery_arc_01_14
+  - first:
+      213: -8297979414089618802
+    second: vfx_attack_delivery_arc_01_15
+  - first:
+      213: 6433481841920884055
+    second: vfx_attack_delivery_arc_01_16
+  - first:
+      213: 9022178894208985490
+    second: vfx_attack_delivery_arc_01_17
+  - first:
+      213: 189173049186203628
+    second: vfx_attack_delivery_arc_01_18
+  - first:
+      213: -4521498358849342436
+    second: vfx_attack_delivery_arc_01_19
+  - first:
+      213: -6614351001891390855
+    second: vfx_attack_delivery_arc_01_20
+  - first:
+      213: -6041120381439766689
+    second: vfx_attack_delivery_arc_01_21
+  - first:
+      213: -2011495968613699448
+    second: vfx_attack_delivery_arc_01_22
+  - first:
+      213: -5991823214390899223
+    second: vfx_attack_delivery_arc_01_23
+  - first:
+      213: -5063425798944521953
+    second: vfx_attack_delivery_arc_01_24
+  - first:
+      213: -9194281268404384742
+    second: vfx_attack_delivery_arc_01_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_0
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 223
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1c4ea03dc6b6d80800000000000000
+      internalID: -8256385838177009219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 143
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeba1303e6f795d10800000000000000
+      internalID: 2114861611258850286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 183
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e43cd1c90032140800000000000000
+      internalID: 4693595907164425795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 183
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c74565d8ab0ccc40800000000000000
+      internalID: 5533810861894092744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 169
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 535110391a86de510800000000000000
+      internalID: 1580034087442257205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 151
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970e468c58e516d70800000000000000
+      internalID: 9034606256167641209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_6
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 149
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11e972b4a8c926520800000000000000
+      internalID: 2693887644901285393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_7
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 158
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f884f15596cfaf80800000000000000
+      internalID: -8093031660734084877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 102
+        width: 23
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b0b23fa5f3043f90800000000000000
+      internalID: -6974945569148849999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_9
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 133
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee0160cf1d8cbcc0800000000000000
+      internalID: -3693922426839560471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 131
+        width: 27
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 262239d3ca3c6a340800000000000000
+      internalID: 4874798791209984610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_11
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 112
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52a8a86c4e209e20800000000000000
+      internalID: 3355232628099293789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_12
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 125
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0a3e01fb729ce20800000000000000
+      internalID: 3371269497639117038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_13
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 90
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6403d6b78c9824410800000000000000
+      internalID: 1459880723378679878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_14
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 99
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea4a9cd79f0f2140800000000000000
+      internalID: 4696990081286294245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_15
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 99
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a2fadffa7a7dc80800000000000000
+      internalID: -8297979414089618802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_16
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 123
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75dbe9036a1584950800000000000000
+      internalID: 6433481841920884055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_17
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 99
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2996a5917e7353d70800000000000000
+      internalID: 9022178894208985490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_18
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 93
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce732ddc2e310a200800000000000000
+      internalID: 189173049186203628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_19
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 102
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c14f544d2396041c0800000000000000
+      internalID: -4521498358849342436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_20
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 98
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ab380eeca1534a0800000000000000
+      internalID: -6614351001891390855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_21
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 81
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f09e23501a92ca0800000000000000
+      internalID: -6041120381439766689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_22
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 96
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88076abe21bb514e0800000000000000
+      internalID: -2011495968613699448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_23
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 76
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed8a455884c8dca0800000000000000
+      internalID: -5991823214390899223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_24
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 46
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f110d5320191bb9b0800000000000000
+      internalID: -5063425798944521953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_arc_01_25
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 17
+        width: 59
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c8ab756e9576080800000000000000
+      internalID: -9194281268404384742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

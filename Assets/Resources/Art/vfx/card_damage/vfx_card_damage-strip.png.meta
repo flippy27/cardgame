@@ -1,0 +1,1130 @@
+fileFormatVersion: 2
+guid: 7c63bcb63be9384488c0fc6c152a34a5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 683870570559946492
+    second: vfx_card_damage-strip_0
+  - first:
+      213: 6934550597133109978
+    second: vfx_card_damage-strip_1
+  - first:
+      213: 2195917878914372993
+    second: vfx_card_damage-strip_2
+  - first:
+      213: 137267652268185702
+    second: vfx_card_damage-strip_3
+  - first:
+      213: 370134835430860837
+    second: vfx_card_damage-strip_4
+  - first:
+      213: 3925277209114687635
+    second: vfx_card_damage-strip_5
+  - first:
+      213: 8982105501346680836
+    second: vfx_card_damage-strip_6
+  - first:
+      213: 8513253292231572179
+    second: vfx_card_damage-strip_7
+  - first:
+      213: -5098602804187819170
+    second: vfx_card_damage-strip_8
+  - first:
+      213: 1413293282799718822
+    second: vfx_card_damage-strip_9
+  - first:
+      213: 6442495273966468991
+    second: vfx_card_damage-strip_10
+  - first:
+      213: -4453253239849621584
+    second: vfx_card_damage-strip_11
+  - first:
+      213: 4692099622914085009
+    second: vfx_card_damage-strip_12
+  - first:
+      213: 2177659160059914067
+    second: vfx_card_damage-strip_13
+  - first:
+      213: -7935924851336988557
+    second: vfx_card_damage-strip_14
+  - first:
+      213: 7389227924589659532
+    second: vfx_card_damage-strip_15
+  - first:
+      213: -1756959017726254536
+    second: vfx_card_damage-strip_16
+  - first:
+      213: -460259545631581215
+    second: vfx_card_damage-strip_17
+  - first:
+      213: -8908522407485617174
+    second: vfx_card_damage-strip_18
+  - first:
+      213: 2757097474050446978
+    second: vfx_card_damage-strip_19
+  - first:
+      213: 5213304509931331061
+    second: vfx_card_damage-strip_20
+  - first:
+      213: -1360217719424665665
+    second: vfx_card_damage-strip_21
+  - first:
+      213: -2527277456977716967
+    second: vfx_card_damage-strip_22
+  - first:
+      213: 1101075946880502936
+    second: vfx_card_damage-strip_23
+  - first:
+      213: 7537617398822374040
+    second: vfx_card_damage-strip_24
+  - first:
+      213: -4435188472370484852
+    second: vfx_card_damage-strip_25
+  - first:
+      213: -2160020954563923367
+    second: vfx_card_damage-strip_26
+  - first:
+      213: 1849685146990021859
+    second: vfx_card_damage-strip_27
+  - first:
+      213: 7672852963544332634
+    second: vfx_card_damage-strip_28
+  - first:
+      213: -1644366792027739061
+    second: vfx_card_damage-strip_29
+  - first:
+      213: 5970564596054216441
+    second: vfx_card_damage-strip_30
+  - first:
+      213: 6973048395769256302
+    second: vfx_card_damage-strip_31
+  - first:
+      213: 1020852628613527997
+    second: vfx_card_damage-strip_32
+  - first:
+      213: -6225775129958231847
+    second: vfx_card_damage-strip_33
+  - first:
+      213: -4864129369978901839
+    second: vfx_card_damage-strip_34
+  - first:
+      213: 7395576067813637902
+    second: vfx_card_damage-strip_35
+  - first:
+      213: 2131409078387831720
+    second: vfx_card_damage-strip_36
+  - first:
+      213: -5027660490310106270
+    second: vfx_card_damage-strip_37
+  - first:
+      213: -7031681294126719961
+    second: vfx_card_damage-strip_38
+  - first:
+      213: 6722897977006719783
+    second: vfx_card_damage-strip_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 30
+        width: 230
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfeb19e19a89d7900800000000000000
+      internalID: 683870570559946492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 167
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ada871bf6097c3060800000000000000
+      internalID: 6934550597133109978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 211
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185de982da7797e10800000000000000
+      internalID: 2195917878914372993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_3
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 216
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 668d894d33ca7e100800000000000000
+      internalID: 137267652268185702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_4
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 18
+        width: 215
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528aad8fbabf22500800000000000000
+      internalID: 370134835430860837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_5
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 161
+        width: 39
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 398b73e13d2697630800000000000000
+      internalID: 3925277209114687635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_6
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 22
+        width: 225
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 400d9de3d59d6ac70800000000000000
+      internalID: 8982105501346680836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_7
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 192
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da336e93c6252670800000000000000
+      internalID: 8513253292231572179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_8
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 171
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53139d53cf1e39b0800000000000000
+      internalID: -5098602804187819170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_9
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 181
+        width: 61
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a119b4b0c60d9310800000000000000
+      internalID: 1413293282799718822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_10
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 122
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7f77ef5157586950800000000000000
+      internalID: 6442495273966468991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_11
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 142
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b7e7efc5cdd232c0800000000000000
+      internalID: -4453253239849621584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_12
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 142
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 190d98a4fbfad1140800000000000000
+      internalID: 4692099622914085009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_13
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 142
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3572f35e779983e10800000000000000
+      internalID: 2177659160059914067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_14
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 147
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3783ddfd46eedd190800000000000000
+      internalID: -7935924851336988557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_15
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 133
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c854099c5afcb8660800000000000000
+      internalID: 7389227924589659532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_16
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 94
+        width: 48
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 832e18705170e97e0800000000000000
+      internalID: -1756959017726254536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_17
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 92
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eb952eb164dc99f0800000000000000
+      internalID: -460259545631581215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_18
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 105
+        width: 43
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeb463cd1129e5480800000000000000
+      internalID: -8908522407485617174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_19
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 104
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28657ef7b8d234620800000000000000
+      internalID: 2757097474050446978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_20
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 103
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fd166c94d0695840800000000000000
+      internalID: 5213304509931331061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_21
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 103
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb73080e0398f1de0800000000000000
+      internalID: -1360217719424665665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_22
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 90
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9199dfffa8e4decd0800000000000000
+      internalID: -2527277456977716967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_23
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 64
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c0a8c6dbec74f00800000000000000
+      internalID: 1101075946880502936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_24
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 77
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a8c95961ffa9860800000000000000
+      internalID: 7537617398822374040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_25
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 75
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c892370459b0372c0800000000000000
+      internalID: -4435188472370484852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_26
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 59
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95231d7d2601602e0800000000000000
+      internalID: -2160020954563923367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_27
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 58
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ec08a457d66ba910800000000000000
+      internalID: 1849685146990021859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_28
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 65
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59fcd92e137b7a60800000000000000
+      internalID: 7672852963544332634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_29
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 42
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4cecb86d190e29e0800000000000000
+      internalID: -1644366792027739061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_30
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 38
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fec550edd4bbd250800000000000000
+      internalID: 5970564596054216441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_31
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 55
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e691f67329e35c060800000000000000
+      internalID: 6973048395769256302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_32
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 63
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db978889e0cca2e00800000000000000
+      internalID: 1020852628613527997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_33
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 38
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0d06f318a9999a0800000000000000
+      internalID: -6225775129958231847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_34
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 52
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1baecd8fb142f7cb0800000000000000
+      internalID: -4864129369978901839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_35
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 66
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f796f004d52a660800000000000000
+      internalID: 7395576067813637902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_36
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 38
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3795c9349449d10800000000000000
+      internalID: 2131409078387831720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_37
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 53
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263ccc7fb692a3ab0800000000000000
+      internalID: -5027660490310106270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_38
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 42
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c51d15e137a6e90800000000000000
+      internalID: -7031681294126719961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_damage-strip_39
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 43
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7238da437188c4d50800000000000000
+      internalID: 6722897977006719783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

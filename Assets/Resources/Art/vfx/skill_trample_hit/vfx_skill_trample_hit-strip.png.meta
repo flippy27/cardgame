@@ -1,0 +1,755 @@
+fileFormatVersion: 2
+guid: fef01059362b6e64b80dbf91a1d5276e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1342031179379057845
+    second: vfx_skill_trample_hit-strip_0
+  - first:
+      213: 1826709697703175700
+    second: vfx_skill_trample_hit-strip_1
+  - first:
+      213: -5155316958976152231
+    second: vfx_skill_trample_hit-strip_2
+  - first:
+      213: -8361754610481011065
+    second: vfx_skill_trample_hit-strip_3
+  - first:
+      213: 7785975173003729392
+    second: vfx_skill_trample_hit-strip_4
+  - first:
+      213: -3515924499817315449
+    second: vfx_skill_trample_hit-strip_5
+  - first:
+      213: -7355398738498773432
+    second: vfx_skill_trample_hit-strip_6
+  - first:
+      213: -8675871591328468183
+    second: vfx_skill_trample_hit-strip_7
+  - first:
+      213: -4481953012670879190
+    second: vfx_skill_trample_hit-strip_8
+  - first:
+      213: 3688261191778767831
+    second: vfx_skill_trample_hit-strip_9
+  - first:
+      213: -4304062012380042878
+    second: vfx_skill_trample_hit-strip_10
+  - first:
+      213: -5876682876278464852
+    second: vfx_skill_trample_hit-strip_11
+  - first:
+      213: -7502689244164556558
+    second: vfx_skill_trample_hit-strip_12
+  - first:
+      213: 588916284825685603
+    second: vfx_skill_trample_hit-strip_13
+  - first:
+      213: 8379896578219306552
+    second: vfx_skill_trample_hit-strip_14
+  - first:
+      213: 7031761770854156819
+    second: vfx_skill_trample_hit-strip_15
+  - first:
+      213: -5037743626173097254
+    second: vfx_skill_trample_hit-strip_16
+  - first:
+      213: 3473075619819500293
+    second: vfx_skill_trample_hit-strip_17
+  - first:
+      213: 2872281724941762600
+    second: vfx_skill_trample_hit-strip_18
+  - first:
+      213: -1794851024025559834
+    second: vfx_skill_trample_hit-strip_19
+  - first:
+      213: 4487214947559385646
+    second: vfx_skill_trample_hit-strip_20
+  - first:
+      213: -2788358213525266379
+    second: vfx_skill_trample_hit-strip_21
+  - first:
+      213: 1452264760079261054
+    second: vfx_skill_trample_hit-strip_22
+  - first:
+      213: 7745857565482137116
+    second: vfx_skill_trample_hit-strip_23
+  - first:
+      213: 2635168403236881753
+    second: vfx_skill_trample_hit-strip_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 12
+        width: 220
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4bdc93b0c5206de0800000000000000
+      internalID: -1342031179379057845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 23
+        width: 231
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 416eb5faac6c95910800000000000000
+      internalID: 1826709697703175700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_2
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 219
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95deda33a82a478b0800000000000000
+      internalID: -5155316958976152231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_3
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 201
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7866b47fb7415fb80800000000000000
+      internalID: -8361754610481011065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_4
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 207
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f9d5e00b275d0c60800000000000000
+      internalID: 7785975173003729392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_5
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 207
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 783cb4bab4de43fc0800000000000000
+      internalID: -3515924499817315449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_6
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 195
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e9c6261df5ce990800000000000000
+      internalID: -7355398738498773432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_7
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 189
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923b6f121cc199780800000000000000
+      internalID: -8675871591328468183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_8
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 199
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2aa2cb3b77ecc1c0800000000000000
+      internalID: -4481953012670879190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_9
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 192
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d315de33065f2330800000000000000
+      internalID: 3688261191778767831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_10
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 185
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 289a5d45766e444c0800000000000000
+      internalID: -4304062012380042878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_11
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 194
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae1dcd5f04d17ea0800000000000000
+      internalID: -5876682876278464852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_12
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 194
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f87d6522e711e790800000000000000
+      internalID: -7502689244164556558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_13
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 41
+        width: 232
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e4a77ad304c2800800000000000000
+      internalID: 588916284825685603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_14
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 181
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ee54f0a8f5b4470800000000000000
+      internalID: 8379896578219306552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_15
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 185
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a0fe02316d59160800000000000000
+      internalID: 7031761770854156819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_16
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 156
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adad674fcd6561ab0800000000000000
+      internalID: -5037743626173097254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_17
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 128
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 503396500e7d23030800000000000000
+      internalID: 3473075619819500293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_18
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 137
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8200006c2056cd720800000000000000
+      internalID: 2872281724941762600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_19
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 105
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ecd530d0886717e0800000000000000
+      internalID: -1794851024025559834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_20
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 34
+        width: 218
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2aa914783ac54e30800000000000000
+      internalID: 4487214947559385646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_21
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 96
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 530a8486af2cd49d0800000000000000
+      internalID: -2788358213525266379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_22
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 97
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7d9758da1b772410800000000000000
+      internalID: 1452264760079261054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_23
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 102
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16b55f9a60de7b60800000000000000
+      internalID: 7745857565482137116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_trample_hit-strip_24
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 92
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 955844673bff19420800000000000000
+      internalID: 2635168403236881753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

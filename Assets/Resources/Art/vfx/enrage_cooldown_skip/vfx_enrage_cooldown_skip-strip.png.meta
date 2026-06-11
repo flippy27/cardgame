@@ -1,0 +1,1980 @@
+fileFormatVersion: 2
+guid: 40a49dd1d973c5f4da1c1c33d8d7656b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4853039282625543451
+    second: vfx_enrage_cooldown_skip-strip_0
+  - first:
+      213: 5975254933953065337
+    second: vfx_enrage_cooldown_skip-strip_1
+  - first:
+      213: -861511293051962749
+    second: vfx_enrage_cooldown_skip-strip_2
+  - first:
+      213: -4772568910071736545
+    second: vfx_enrage_cooldown_skip-strip_3
+  - first:
+      213: -988743776004388873
+    second: vfx_enrage_cooldown_skip-strip_4
+  - first:
+      213: 1762809996219098979
+    second: vfx_enrage_cooldown_skip-strip_5
+  - first:
+      213: 7016748990728891917
+    second: vfx_enrage_cooldown_skip-strip_6
+  - first:
+      213: -4744243603157620715
+    second: vfx_enrage_cooldown_skip-strip_7
+  - first:
+      213: -2175307387817329769
+    second: vfx_enrage_cooldown_skip-strip_8
+  - first:
+      213: 4087247611735254999
+    second: vfx_enrage_cooldown_skip-strip_9
+  - first:
+      213: -1749698199533793752
+    second: vfx_enrage_cooldown_skip-strip_10
+  - first:
+      213: -5813485221731158367
+    second: vfx_enrage_cooldown_skip-strip_11
+  - first:
+      213: 1838775922706141488
+    second: vfx_enrage_cooldown_skip-strip_12
+  - first:
+      213: -6099157428166695041
+    second: vfx_enrage_cooldown_skip-strip_13
+  - first:
+      213: -8237750671203444949
+    second: vfx_enrage_cooldown_skip-strip_14
+  - first:
+      213: 2444453573225899962
+    second: vfx_enrage_cooldown_skip-strip_15
+  - first:
+      213: -2841516656053065735
+    second: vfx_enrage_cooldown_skip-strip_16
+  - first:
+      213: -5110838173810748136
+    second: vfx_enrage_cooldown_skip-strip_17
+  - first:
+      213: 4974562044382316673
+    second: vfx_enrage_cooldown_skip-strip_18
+  - first:
+      213: 2004632142827887115
+    second: vfx_enrage_cooldown_skip-strip_19
+  - first:
+      213: 2787368469012751691
+    second: vfx_enrage_cooldown_skip-strip_20
+  - first:
+      213: -4815941963587430426
+    second: vfx_enrage_cooldown_skip-strip_21
+  - first:
+      213: 7273123089665574111
+    second: vfx_enrage_cooldown_skip-strip_22
+  - first:
+      213: -1513301069412068094
+    second: vfx_enrage_cooldown_skip-strip_23
+  - first:
+      213: -9155964573200914162
+    second: vfx_enrage_cooldown_skip-strip_24
+  - first:
+      213: -149542431941379089
+    second: vfx_enrage_cooldown_skip-strip_25
+  - first:
+      213: -8418865749393241728
+    second: vfx_enrage_cooldown_skip-strip_26
+  - first:
+      213: 4419251306283883388
+    second: vfx_enrage_cooldown_skip-strip_27
+  - first:
+      213: -3448846354353435385
+    second: vfx_enrage_cooldown_skip-strip_28
+  - first:
+      213: -4247223506440603516
+    second: vfx_enrage_cooldown_skip-strip_29
+  - first:
+      213: 3125923185821895735
+    second: vfx_enrage_cooldown_skip-strip_30
+  - first:
+      213: 5064971722336992325
+    second: vfx_enrage_cooldown_skip-strip_31
+  - first:
+      213: -5280205264675001545
+    second: vfx_enrage_cooldown_skip-strip_32
+  - first:
+      213: 1468851790399563826
+    second: vfx_enrage_cooldown_skip-strip_33
+  - first:
+      213: -6055090908993518768
+    second: vfx_enrage_cooldown_skip-strip_34
+  - first:
+      213: -1889834525407321772
+    second: vfx_enrage_cooldown_skip-strip_35
+  - first:
+      213: 187128575830340978
+    second: vfx_enrage_cooldown_skip-strip_36
+  - first:
+      213: -4464107902996359234
+    second: vfx_enrage_cooldown_skip-strip_37
+  - first:
+      213: -78574443289641226
+    second: vfx_enrage_cooldown_skip-strip_38
+  - first:
+      213: 1617984835636063132
+    second: vfx_enrage_cooldown_skip-strip_39
+  - first:
+      213: -3020929381871020184
+    second: vfx_enrage_cooldown_skip-strip_40
+  - first:
+      213: 3536137755189189147
+    second: vfx_enrage_cooldown_skip-strip_41
+  - first:
+      213: -1227511794073794300
+    second: vfx_enrage_cooldown_skip-strip_42
+  - first:
+      213: -4125370434391979113
+    second: vfx_enrage_cooldown_skip-strip_43
+  - first:
+      213: 5746871737711522448
+    second: vfx_enrage_cooldown_skip-strip_44
+  - first:
+      213: 3016685842253315530
+    second: vfx_enrage_cooldown_skip-strip_45
+  - first:
+      213: -6688871848285294781
+    second: vfx_enrage_cooldown_skip-strip_46
+  - first:
+      213: 8940497052483726619
+    second: vfx_enrage_cooldown_skip-strip_47
+  - first:
+      213: 3056660304266609444
+    second: vfx_enrage_cooldown_skip-strip_48
+  - first:
+      213: -1526131283918260200
+    second: vfx_enrage_cooldown_skip-strip_49
+  - first:
+      213: -5499305220063116284
+    second: vfx_enrage_cooldown_skip-strip_50
+  - first:
+      213: 2579300151488530868
+    second: vfx_enrage_cooldown_skip-strip_51
+  - first:
+      213: 5580493561548590884
+    second: vfx_enrage_cooldown_skip-strip_52
+  - first:
+      213: -197958523433373713
+    second: vfx_enrage_cooldown_skip-strip_53
+  - first:
+      213: 5968920682968936433
+    second: vfx_enrage_cooldown_skip-strip_54
+  - first:
+      213: 3249287838931868147
+    second: vfx_enrage_cooldown_skip-strip_55
+  - first:
+      213: 6718636741492872071
+    second: vfx_enrage_cooldown_skip-strip_56
+  - first:
+      213: -987266761811092392
+    second: vfx_enrage_cooldown_skip-strip_57
+  - first:
+      213: -6924699147915141859
+    second: vfx_enrage_cooldown_skip-strip_58
+  - first:
+      213: 523839535620414377
+    second: vfx_enrage_cooldown_skip-strip_59
+  - first:
+      213: 3121142890321194017
+    second: vfx_enrage_cooldown_skip-strip_60
+  - first:
+      213: -3205567068926798969
+    second: vfx_enrage_cooldown_skip-strip_61
+  - first:
+      213: 2138020413930344586
+    second: vfx_enrage_cooldown_skip-strip_62
+  - first:
+      213: 519636446860539377
+    second: vfx_enrage_cooldown_skip-strip_63
+  - first:
+      213: -6743212980840174003
+    second: vfx_enrage_cooldown_skip-strip_64
+  - first:
+      213: -1551986373839655372
+    second: vfx_enrage_cooldown_skip-strip_65
+  - first:
+      213: 4829517554379730694
+    second: vfx_enrage_cooldown_skip-strip_66
+  - first:
+      213: 3120289647752868932
+    second: vfx_enrage_cooldown_skip-strip_67
+  - first:
+      213: 5853794188041187585
+    second: vfx_enrage_cooldown_skip-strip_68
+  - first:
+      213: 4092685303097776044
+    second: vfx_enrage_cooldown_skip-strip_69
+  - first:
+      213: 2443864806604644282
+    second: vfx_enrage_cooldown_skip-strip_70
+  - first:
+      213: -4603243080601433919
+    second: vfx_enrage_cooldown_skip-strip_71
+  - first:
+      213: -8506224974925829459
+    second: vfx_enrage_cooldown_skip-strip_72
+  - first:
+      213: -7524315289756233459
+    second: vfx_enrage_cooldown_skip-strip_73
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_0
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 223
+        width: 46
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1d79e9d385795340800000000000000
+      internalID: 4853039282625543451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 183
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9713ca444be5ce250800000000000000
+      internalID: 5975254933953065337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_2
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 197
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a76af1b0c4b04f0800000000000000
+      internalID: -861511293051962749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_3
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 191
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f17d919ccdd64cdb0800000000000000
+      internalID: -4772568910071736545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_4
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 187
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f7416936c64742f0800000000000000
+      internalID: -988743776004388873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_5
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 191
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 367a52f0a52c67810800000000000000
+      internalID: 1762809996219098979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_6
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 199
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0ee97ed700806160800000000000000
+      internalID: 7016748990728891917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_7
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 193
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 518eed9349f092eb0800000000000000
+      internalID: -4744243603157620715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_8
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 50
+        width: 231
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79b7ddfb471cfc1e0800000000000000
+      internalID: -2175307387817329769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_9
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 181
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d72b863c02d8b830800000000000000
+      internalID: 4087247611735254999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_10
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 185
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82ec5a002c2d7b7e0800000000000000
+      internalID: -1749698199533793752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_11
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 161
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a63bb3fdf9525fa0800000000000000
+      internalID: -5813485221731158367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_12
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 162
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 031d07e95f4a48910800000000000000
+      internalID: 1838775922706141488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_13
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 168
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7760f042a07b5ba0800000000000000
+      internalID: -6099157428166695041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_14
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 140
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b27dea6f861adad80800000000000000
+      internalID: -8237750671203444949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_15
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 154
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab76016d2917ce120800000000000000
+      internalID: 2444453573225899962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_16
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 164
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f7e99408a7e098d0800000000000000
+      internalID: -2841516656053065735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_17
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 172
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815118162c7a219b0800000000000000
+      internalID: -5110838173810748136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_18
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 158
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1888c80b2d1390540800000000000000
+      internalID: 4974562044382316673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_19
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 142
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0a169a1052e1db10800000000000000
+      internalID: 2004632142827887115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_20
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 156
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4521adbad8bea620800000000000000
+      internalID: 2787368469012751691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_21
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 144
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e75971dc465a2db0800000000000000
+      internalID: -4815941963587430426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_22
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 148
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd445375ae25fe460800000000000000
+      internalID: 7273123089665574111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_23
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 155
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2059977f1bcaffae0800000000000000
+      internalID: -1513301069412068094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_24
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 160
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e096c462bba7fe080800000000000000
+      internalID: -9155964573200914162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_25
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 151
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb394153f7bcedf0800000000000000
+      internalID: -149542431941379089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_26
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 135
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08986bbb43e2a2b80800000000000000
+      internalID: -8418865749393241728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_27
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 135
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7b5b3c16a5545d30800000000000000
+      internalID: 4419251306283883388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_28
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 142
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70dccd3738c3320d0800000000000000
+      internalID: -3448846354353435385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_29
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 51
+        width: 230
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4883be049b4de05c0800000000000000
+      internalID: -4247223506440603516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_30
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 150
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73c421e5392816b20800000000000000
+      internalID: 3125923185821895735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_31
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 151
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c7b4332f46a4640800000000000000
+      internalID: 5064971722336992325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_32
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 131
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b26e99941f8b6b0800000000000000
+      internalID: -5280205264675001545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_33
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 22
+        width: 232
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 238667acbe8626410800000000000000
+      internalID: 1468851790399563826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_34
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 120
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0538eb646eef7fba0800000000000000
+      internalID: -6055090908993518768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_35
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 132
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 451e3dc0385f5c5e0800000000000000
+      internalID: -1889834525407321772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_36
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 139
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27531b1c270d89200800000000000000
+      internalID: 187128575830340978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_37
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 118
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb753ea938d4c02c0800000000000000
+      internalID: -4464107902996359234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_38
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 115
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fefb4bc5f8d8eef0800000000000000
+      internalID: -78574443289641226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_39
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 121
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b6e04b2ac347610800000000000000
+      internalID: 1617984835636063132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_40
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 124
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86799069bb08316d0800000000000000
+      internalID: -3020929381871020184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_41
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 121
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a16e69d82e21130800000000000000
+      internalID: 3536137755189189147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_42
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 119
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40901a4e68007fee0800000000000000
+      internalID: -1227511794073794300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_43
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 107
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79bca23727dbfb6c0800000000000000
+      internalID: -4125370434391979113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_44
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 100
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 092f600b56df0cf40800000000000000
+      internalID: 5746871737711522448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_45
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 103
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acd757a5acb6dd920800000000000000
+      internalID: 3016685842253315530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_46
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 106
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34f28de3e7a5c23a0800000000000000
+      internalID: -6688871848285294781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_47
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 102
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1d28b053b6031c70800000000000000
+      internalID: 8940497052483726619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_48
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 68
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42349d21a507b6a20800000000000000
+      internalID: 3056660304266609444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_49
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 99
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818f07ddea712dae0800000000000000
+      internalID: -1526131283918260200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_50
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 62
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 404cfa6f90b8ea3b0800000000000000
+      internalID: -5499305220063116284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_51
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 91
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9c59272d38bc320800000000000000
+      internalID: 2579300151488530868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_52
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 80
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42f4577d355e17d40800000000000000
+      internalID: 5580493561548590884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_53
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 92
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef2e7295c5b04df0800000000000000
+      internalID: -197958523433373713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_54
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 84
+        width: 24
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff68d88cbdd5d250800000000000000
+      internalID: 5968920682968936433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_55
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 85
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f9d784f21ac71d20800000000000000
+      internalID: 3249287838931868147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_56
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 84
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 783129ff4846d3d50800000000000000
+      internalID: 6718636741492872071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_57
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 59
+        width: 37
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c13b36c168c42f0800000000000000
+      internalID: -987266761811092392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_58
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 76
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d511840d686ef90800000000000000
+      internalID: -6924699147915141859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_59
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 80
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9abd5ff384d054700800000000000000
+      internalID: 523839535620414377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_60
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 57
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ca4d61ce6805b20800000000000000
+      internalID: 3121142890321194017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_61
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 80
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7839de01cb98383d0800000000000000
+      internalID: -3205567068926798969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_62
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 77
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a801ade1d36cbad10800000000000000
+      internalID: 2138020413930344586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_63
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 71
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f5f773689e163700800000000000000
+      internalID: 519636446860539377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_64
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 64
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ee730658b4b62a0800000000000000
+      internalID: -6743212980840174003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_65
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 59
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e6a03ad9c367ae0800000000000000
+      internalID: -1551986373839655372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_66
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 52
+        width: 37
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60f2159b0a4e50340800000000000000
+      internalID: 4829517554379730694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_67
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 63
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44473a217ee7d4b20800000000000000
+      internalID: 3120289647752868932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_68
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 52
+        width: 36
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 101f07e9ccadc3150800000000000000
+      internalID: 5853794188041187585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_69
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 54
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca7da9469932cc830800000000000000
+      internalID: 4092685303097776044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_70
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 52
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf9fbce71a5ae120800000000000000
+      internalID: 2443864806604644282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_71
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 51
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c80af5aecefd10c0800000000000000
+      internalID: -4603243080601433919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_72
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 53
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daa6df50471d3f980800000000000000
+      internalID: -8506224974925829459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_enrage_cooldown_skip-strip_73
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 52
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d011a080c13449790800000000000000
+      internalID: -7524315289756233459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

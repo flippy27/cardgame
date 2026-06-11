@@ -1,0 +1,1430 @@
+fileFormatVersion: 2
+guid: 10fbd7ceb000b1042883d8e2f9932421
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5383224018506802120
+    second: vfx_card_destroyed_03_0
+  - first:
+      213: 918377496416318758
+    second: vfx_card_destroyed_03_1
+  - first:
+      213: 1947608482765433690
+    second: vfx_card_destroyed_03_2
+  - first:
+      213: -8841376361641460433
+    second: vfx_card_destroyed_03_3
+  - first:
+      213: 911117850856357876
+    second: vfx_card_destroyed_03_4
+  - first:
+      213: 221201787709205448
+    second: vfx_card_destroyed_03_5
+  - first:
+      213: -6574741711163237872
+    second: vfx_card_destroyed_03_6
+  - first:
+      213: 919626631464935174
+    second: vfx_card_destroyed_03_7
+  - first:
+      213: -3851303133077587793
+    second: vfx_card_destroyed_03_8
+  - first:
+      213: -1348006647772283811
+    second: vfx_card_destroyed_03_9
+  - first:
+      213: -2446865406701772209
+    second: vfx_card_destroyed_03_10
+  - first:
+      213: 4592229222194533065
+    second: vfx_card_destroyed_03_11
+  - first:
+      213: -2031910340353785067
+    second: vfx_card_destroyed_03_12
+  - first:
+      213: 7768218763872816687
+    second: vfx_card_destroyed_03_13
+  - first:
+      213: 5738630305849721315
+    second: vfx_card_destroyed_03_14
+  - first:
+      213: 8409276510346946969
+    second: vfx_card_destroyed_03_15
+  - first:
+      213: 2288354041852842485
+    second: vfx_card_destroyed_03_16
+  - first:
+      213: 9052977211545000614
+    second: vfx_card_destroyed_03_17
+  - first:
+      213: 896823600834167320
+    second: vfx_card_destroyed_03_18
+  - first:
+      213: 3549580668768475124
+    second: vfx_card_destroyed_03_19
+  - first:
+      213: 3791302064180429536
+    second: vfx_card_destroyed_03_20
+  - first:
+      213: 3403937754043899437
+    second: vfx_card_destroyed_03_21
+  - first:
+      213: 2997266487215648320
+    second: vfx_card_destroyed_03_22
+  - first:
+      213: 7424586755185806727
+    second: vfx_card_destroyed_03_23
+  - first:
+      213: -5464392253952149721
+    second: vfx_card_destroyed_03_24
+  - first:
+      213: -4602419668614617140
+    second: vfx_card_destroyed_03_25
+  - first:
+      213: 457431037531984299
+    second: vfx_card_destroyed_03_26
+  - first:
+      213: -2474285357249462452
+    second: vfx_card_destroyed_03_27
+  - first:
+      213: -4916708339969448248
+    second: vfx_card_destroyed_03_28
+  - first:
+      213: -7390751949286734169
+    second: vfx_card_destroyed_03_29
+  - first:
+      213: 6730136673623859482
+    second: vfx_card_destroyed_03_30
+  - first:
+      213: -4960887531060398549
+    second: vfx_card_destroyed_03_31
+  - first:
+      213: -8445031250816108900
+    second: vfx_card_destroyed_03_32
+  - first:
+      213: -6002237413281123091
+    second: vfx_card_destroyed_03_33
+  - first:
+      213: -3683083791817161286
+    second: vfx_card_destroyed_03_34
+  - first:
+      213: -2469481313460490789
+    second: vfx_card_destroyed_03_35
+  - first:
+      213: 8286873478482821866
+    second: vfx_card_destroyed_03_36
+  - first:
+      213: 7562951694915172965
+    second: vfx_card_destroyed_03_37
+  - first:
+      213: 1875660317937763089
+    second: vfx_card_destroyed_03_38
+  - first:
+      213: 4919271962422982286
+    second: vfx_card_destroyed_03_39
+  - first:
+      213: -5836490679207569557
+    second: vfx_card_destroyed_03_40
+  - first:
+      213: -5933930703090116148
+    second: vfx_card_destroyed_03_41
+  - first:
+      213: -4229216960606253373
+    second: vfx_card_destroyed_03_42
+  - first:
+      213: -5514321152078163506
+    second: vfx_card_destroyed_03_43
+  - first:
+      213: -8657246064788557886
+    second: vfx_card_destroyed_03_44
+  - first:
+      213: -5532971049555824293
+    second: vfx_card_destroyed_03_45
+  - first:
+      213: -2609546423218150883
+    second: vfx_card_destroyed_03_46
+  - first:
+      213: -767515227224181531
+    second: vfx_card_destroyed_03_47
+  - first:
+      213: 7955729060905692996
+    second: vfx_card_destroyed_03_48
+  - first:
+      213: 7955890850289849700
+    second: vfx_card_destroyed_03_49
+  - first:
+      213: -2981626165121265767
+    second: vfx_card_destroyed_03_50
+  - first:
+      213: -3066713540463743447
+    second: vfx_card_destroyed_03_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 195
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c3e27929bd05ba40800000000000000
+      internalID: 5383224018506802120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 174
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6257b9b977bbebc00800000000000000
+      internalID: 918377496416318758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_2
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 199
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5b65c0a89b470b10800000000000000
+      internalID: 1947608482765433690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 170
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d33deea0f1d4580800000000000000
+      internalID: -8841376361641460433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_4
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 187
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff7fc8abd0f4ac00800000000000000
+      internalID: 911117850856357876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_5
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 179
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cba61c9addd11300800000000000000
+      internalID: 221201787709205448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_6
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 164
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01adb288f33d1c4a0800000000000000
+      internalID: -6574741711163237872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_7
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 171
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60fd4768c8b23cc00800000000000000
+      internalID: 919626631464935174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 159
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa8bf8e943c6d8ac0800000000000000
+      internalID: -3851303133077587793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_9
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 145
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5cfaac881bea4de0800000000000000
+      internalID: -1348006647772283811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_10
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 160
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f42695c60ecfa0ed0800000000000000
+      internalID: -2446865406701772209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_11
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 78
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2d21c9520eabf30800000000000000
+      internalID: 4592229222194533065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_12
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 136
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51305cb9f443dc3e0800000000000000
+      internalID: -2031910340353785067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_13
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 129
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2ec926dec14ecb60800000000000000
+      internalID: 7768218763872816687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_14
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 85
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e1c67dcbd5b3af40800000000000000
+      internalID: 5738630305849721315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_15
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 122
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99924419e60c3b470800000000000000
+      internalID: 8409276510346946969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 119
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1d7f870edd1cf10800000000000000
+      internalID: 2288354041852842485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_17
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 100
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aa98d52fc2a2ad70800000000000000
+      internalID: 9052977211545000614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_18
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 100
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81248e93058227c00800000000000000
+      internalID: 896823600834167320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_19
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 115
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7d98fcfc4a24130800000000000000
+      internalID: 3549580668768475124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_20
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 112
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e20ea3e3296d9430800000000000000
+      internalID: 3791302064180429536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_21
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 111
+        width: 15
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ed35b3a573d3f20800000000000000
+      internalID: 3403937754043899437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_22
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 95
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04eebab6dfd689920800000000000000
+      internalID: 2997266487215648320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_23
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 111
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d8be2115e690760800000000000000
+      internalID: 7424586755185806727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_24
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 104
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72739c552349a24b0800000000000000
+      internalID: -5464392253952149721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_25
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 77
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc764f032bbe020c0800000000000000
+      internalID: -4602419668614617140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_26
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 88
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba11555ea1f195600800000000000000
+      internalID: 457431037531984299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_27
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 84
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4ff130b39299add0800000000000000
+      internalID: -2474285357249462452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_28
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 52
+        width: 76
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c6abeb80d754cbb0800000000000000
+      internalID: -4916708339969448248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_29
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 99
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a60dbf8246ce6990800000000000000
+      internalID: -7390751949286734169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_30
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 81
+        width: 43
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a11ed2995af366d50800000000000000
+      internalID: 6730136673623859482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_31
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b26fa7c0313672bb0800000000000000
+      internalID: -4960887531060398549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_32
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 84
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c96780232d83dca80800000000000000
+      internalID: -8445031250816108900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_33
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 71
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de4b1d3bfd4c3bca0800000000000000
+      internalID: -6002237413281123091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_34
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 63
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab54dbe1ece03ecc0800000000000000
+      internalID: -3683083791817161286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_35
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 63
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdde8bb44d3aabdd0800000000000000
+      internalID: -2469481313460490789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_36
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 53
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2039fd583e00370800000000000000
+      internalID: 8286873478482821866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_37
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 50
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56a7bdc0f7005f860800000000000000
+      internalID: 7562951694915172965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_38
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 56
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1130af91f1fa70a10800000000000000
+      internalID: 1875660317937763089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_39
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 53
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e86b2c159c3c44440800000000000000
+      internalID: 4919271962422982286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_40
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 53
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6754fa76ae900fa0800000000000000
+      internalID: -5836490679207569557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_41
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 61
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc99780077176ada0800000000000000
+      internalID: -5933930703090116148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_42
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 62
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cec109e49dce45c0800000000000000
+      internalID: -4229216960606253373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_43
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 55
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec155f8d0223973b0800000000000000
+      internalID: -5514321152078163506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_44
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 49
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf212772984bd780800000000000000
+      internalID: -8657246064788557886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_45
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 41
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5174b63520f633b0800000000000000
+      internalID: -5532971049555824293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_46
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 40
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d12e033aa5709cbd0800000000000000
+      internalID: -2609546423218150883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_47
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 45
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e47991a7fc3955f0800000000000000
+      internalID: -767515227224181531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_48
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 38
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44f298cfd6d686e60800000000000000
+      internalID: 7955729060905692996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_49
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 44
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4659e438390096e60800000000000000
+      internalID: 7955890850289849700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_50
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 53
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99fcfe6dcc22f96d0800000000000000
+      internalID: -2981626165121265767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_destroyed_03_51
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 39
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e27c87848d075d0800000000000000
+      internalID: -3066713540463743447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

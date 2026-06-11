@@ -1,0 +1,1730 @@
+fileFormatVersion: 2
+guid: f997ac33b49d9b04a94fb2e54aaf29d9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5463523348516376739
+    second: vfx_armor_gain-strip_0
+  - first:
+      213: -32814567524955956
+    second: vfx_armor_gain-strip_1
+  - first:
+      213: 2254943671299178477
+    second: vfx_armor_gain-strip_2
+  - first:
+      213: -2220060240374790825
+    second: vfx_armor_gain-strip_3
+  - first:
+      213: 2960279625525310437
+    second: vfx_armor_gain-strip_4
+  - first:
+      213: 652624287018871457
+    second: vfx_armor_gain-strip_5
+  - first:
+      213: -1893268592574051958
+    second: vfx_armor_gain-strip_6
+  - first:
+      213: 2125127049236353567
+    second: vfx_armor_gain-strip_7
+  - first:
+      213: 6338887359133155449
+    second: vfx_armor_gain-strip_8
+  - first:
+      213: -1157443217149536917
+    second: vfx_armor_gain-strip_9
+  - first:
+      213: -4417270465787077755
+    second: vfx_armor_gain-strip_10
+  - first:
+      213: -7254344633219405730
+    second: vfx_armor_gain-strip_11
+  - first:
+      213: 5824034557960889438
+    second: vfx_armor_gain-strip_12
+  - first:
+      213: 2973034971051165832
+    second: vfx_armor_gain-strip_13
+  - first:
+      213: 5606195106900239301
+    second: vfx_armor_gain-strip_14
+  - first:
+      213: 2788330685881028173
+    second: vfx_armor_gain-strip_15
+  - first:
+      213: -6003607900670458457
+    second: vfx_armor_gain-strip_16
+  - first:
+      213: 4232686015967989302
+    second: vfx_armor_gain-strip_17
+  - first:
+      213: -1795788780509637272
+    second: vfx_armor_gain-strip_18
+  - first:
+      213: 4346656727771288604
+    second: vfx_armor_gain-strip_19
+  - first:
+      213: -3243870922712685215
+    second: vfx_armor_gain-strip_20
+  - first:
+      213: -8529089201618722779
+    second: vfx_armor_gain-strip_21
+  - first:
+      213: -1607967815875819290
+    second: vfx_armor_gain-strip_22
+  - first:
+      213: -6585124772795437324
+    second: vfx_armor_gain-strip_23
+  - first:
+      213: 5799603109316004780
+    second: vfx_armor_gain-strip_24
+  - first:
+      213: 1128989544957847764
+    second: vfx_armor_gain-strip_25
+  - first:
+      213: -7485620439300933786
+    second: vfx_armor_gain-strip_26
+  - first:
+      213: 6685094701474318880
+    second: vfx_armor_gain-strip_27
+  - first:
+      213: -6767669681875015792
+    second: vfx_armor_gain-strip_28
+  - first:
+      213: -5310968343717957008
+    second: vfx_armor_gain-strip_29
+  - first:
+      213: 8892339034082082844
+    second: vfx_armor_gain-strip_30
+  - first:
+      213: 1187883429189037881
+    second: vfx_armor_gain-strip_31
+  - first:
+      213: -2691865988624820066
+    second: vfx_armor_gain-strip_32
+  - first:
+      213: 9102658892832691563
+    second: vfx_armor_gain-strip_33
+  - first:
+      213: -2056083778662149348
+    second: vfx_armor_gain-strip_34
+  - first:
+      213: 722079308888031760
+    second: vfx_armor_gain-strip_35
+  - first:
+      213: -7265982957813086443
+    second: vfx_armor_gain-strip_36
+  - first:
+      213: -1121740615709889155
+    second: vfx_armor_gain-strip_37
+  - first:
+      213: 7822844073544539813
+    second: vfx_armor_gain-strip_38
+  - first:
+      213: -7381888655885384264
+    second: vfx_armor_gain-strip_39
+  - first:
+      213: 7102655682169700418
+    second: vfx_armor_gain-strip_40
+  - first:
+      213: 1380065142372412532
+    second: vfx_armor_gain-strip_41
+  - first:
+      213: 4602281378867082331
+    second: vfx_armor_gain-strip_42
+  - first:
+      213: 6992435755667611085
+    second: vfx_armor_gain-strip_43
+  - first:
+      213: 6563754839597887020
+    second: vfx_armor_gain-strip_44
+  - first:
+      213: 4737837991354758369
+    second: vfx_armor_gain-strip_45
+  - first:
+      213: 2949823643185848092
+    second: vfx_armor_gain-strip_46
+  - first:
+      213: 3121149289984946644
+    second: vfx_armor_gain-strip_47
+  - first:
+      213: -4587704998800272046
+    second: vfx_armor_gain-strip_48
+  - first:
+      213: -7916564508726508910
+    second: vfx_armor_gain-strip_49
+  - first:
+      213: 7620923482023736769
+    second: vfx_armor_gain-strip_50
+  - first:
+      213: 448786673824440612
+    second: vfx_armor_gain-strip_51
+  - first:
+      213: 4022234909075222559
+    second: vfx_armor_gain-strip_52
+  - first:
+      213: 6369975586853254679
+    second: vfx_armor_gain-strip_53
+  - first:
+      213: -6436879606588257719
+    second: vfx_armor_gain-strip_54
+  - first:
+      213: 8913520134464865991
+    second: vfx_armor_gain-strip_55
+  - first:
+      213: -487054419789840846
+    second: vfx_armor_gain-strip_56
+  - first:
+      213: -1245276270786820520
+    second: vfx_armor_gain-strip_57
+  - first:
+      213: 1660452042684208138
+    second: vfx_armor_gain-strip_58
+  - first:
+      213: -2374277498052093189
+    second: vfx_armor_gain-strip_59
+  - first:
+      213: 6921794437133003956
+    second: vfx_armor_gain-strip_60
+  - first:
+      213: -912902447953430810
+    second: vfx_armor_gain-strip_61
+  - first:
+      213: -8366886263647762956
+    second: vfx_armor_gain-strip_62
+  - first:
+      213: 9110702239027966424
+    second: vfx_armor_gain-strip_63
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_0
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 219
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5fe0a5267aad24b0800000000000000
+      internalID: -5463523348516376739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_1
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 226
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc8873f135b6b8ff0800000000000000
+      internalID: -32814567524955956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_2
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 12
+        width: 220
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: def7d44625b2b4f10800000000000000
+      internalID: 2254943671299178477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_3
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 237
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7550e7849f2c031e0800000000000000
+      internalID: -2220060240374790825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_4
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 209
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e3334b92a6051920800000000000000
+      internalID: 2960279625525310437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_5
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 221
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aa6d8fc4569e0900800000000000000
+      internalID: 652624287018871457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_6
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 146
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a89483bfe32c9b5e0800000000000000
+      internalID: -1893268592574051958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_7
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 214
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f129e48bac7fd7d10800000000000000
+      internalID: 2125127049236353567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_8
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 191
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9708850e77048f750800000000000000
+      internalID: 6338887359133155449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_9
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 12
+        width: 232
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b65dd12c68fefefe0800000000000000
+      internalID: -1157443217149536917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_10
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 197
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58bdfe14ae3b2b2c0800000000000000
+      internalID: -4417270465787077755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_11
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 205
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5822b2cdf3635b90800000000000000
+      internalID: -7254344633219405730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_12
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 199
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54abdac29023d050800000000000000
+      internalID: 5824034557960889438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_13
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 171
+        width: 104
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888815aed87524920800000000000000
+      internalID: 2973034971051165832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_14
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 188
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c362503fb43dcd40800000000000000
+      internalID: 5606195106900239301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 190
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4e82405cf322b620800000000000000
+      internalID: 2788330685881028173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_16
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 169
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a50fcd3c66eeaca0800000000000000
+      internalID: -6003607900670458457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_17
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 172
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e098b71858dba30800000000000000
+      internalID: 4232686015967989302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_18
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 157
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 865571e5e931417e0800000000000000
+      internalID: -1795788780509637272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_19
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 171
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c149e5ba34d625c30800000000000000
+      internalID: 4346656727771288604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_20
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 160
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 165ed7225947bf2d0800000000000000
+      internalID: -3243870922712685215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_21
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 120
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52065e76f8692a980800000000000000
+      internalID: -8529089201618722779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_22
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 164
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e806747ac95fa9e0800000000000000
+      internalID: -1607967815875819290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 134
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe27eb98efec94a0800000000000000
+      internalID: -6585124772795437324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_24
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 140
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab0801ec445c7050800000000000000
+      internalID: 5799603109316004780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_25
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 106
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d8a75e620afaaf00800000000000000
+      internalID: 1128989544957847764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_26
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 117
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6677018fedbbd1890800000000000000
+      internalID: -7485620439300933786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_27
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 114
+        width: 67
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02a093b363a36cc50800000000000000
+      internalID: 6685094701474318880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_28
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 141
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 097a8aee7486412a0800000000000000
+      internalID: -6767669681875015792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_29
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 129
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 072b85b1e66ab46b0800000000000000
+      internalID: -5310968343717957008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_30
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 94
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c108dc4ec3fe76b70800000000000000
+      internalID: 8892339034082082844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_31
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 120
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93fa2676fa53c7010800000000000000
+      internalID: 1187883429189037881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_32
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 113
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e98df0d352294aad0800000000000000
+      internalID: -2691865988624820066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_33
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 81
+        width: 13
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b65d7daf804235e70800000000000000
+      internalID: 9102658892832691563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_34
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 117
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13566862b25773e0800000000000000
+      internalID: -2056083778662149348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_35
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 104
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0124ee14e47550a00800000000000000
+      internalID: 722079308888031760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_36
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 105
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51742872ffa0a2b90800000000000000
+      internalID: -7265982957813086443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_37
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 109
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7deb7e6ad6ce60f0800000000000000
+      internalID: -1121740615709889155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_38
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 72
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae54e8dc33509c60800000000000000
+      internalID: 7822844073544539813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_39
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 21
+        width: 41
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b5477ed0634e8990800000000000000
+      internalID: -7381888655885384264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_40
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 94
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24082a126b3b19260800000000000000
+      internalID: 7102655682169700418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_41
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 97
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ca1026fe9f62310800000000000000
+      internalID: 1380065142372412532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_42
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 72
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5474c7b7869edf30800000000000000
+      internalID: 4602281378867082331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_43
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 37
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcdde43b54f1a0160800000000000000
+      internalID: 6992435755667611085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_44
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 46
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2eabf61044271b50800000000000000
+      internalID: 6563754839597887020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_45
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 55
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e4fc0e0d8e20c140800000000000000
+      internalID: 4737837991354758369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_46
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 36
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1f142289f0efe820800000000000000
+      internalID: 2949823643185848092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_47
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 53
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d1f3802ebc805b20800000000000000
+      internalID: 3121149289984946644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_48
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 16
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 255d93c3c923550c0800000000000000
+      internalID: -4587704998800272046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_49
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 42
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29244e7e586b22290800000000000000
+      internalID: -7916564508726508910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_50
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 16
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5357e8785f2c960800000000000000
+      internalID: 7620923482023736769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_51
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 77
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4212c312a196a3600800000000000000
+      internalID: 448786673824440612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_52
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 42
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f10ba9ec659d1d730800000000000000
+      internalID: 4022234909075222559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_53
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 21
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7167c42fb03b66850800000000000000
+      internalID: 6369975586853254679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_54
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 38
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ac9531a1c9ba6a0800000000000000
+      internalID: -6436879606588257719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_55
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 58
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c60211265f23bb70800000000000000
+      internalID: 8913520134464865991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_56
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 53
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e7422f592ad39f0800000000000000
+      internalID: -487054419789840846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_57
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 21
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856478854d3e7bee0800000000000000
+      internalID: -1245276270786820520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_58
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 16
+        width: 26
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0493cad55c1b0710800000000000000
+      internalID: 1660452042684208138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_59
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 79
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfad66ae13fdc0fd0800000000000000
+      internalID: -2374277498052093189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_60
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 12
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc66990e572f0060800000000000000
+      internalID: 6921794437133003956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_61
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 58
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6b6237f08b453f0800000000000000
+      internalID: -912902447953430810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_62
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 16
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f50e2bd549d2eb80800000000000000
+      internalID: -8366886263647762956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_armor_gain-strip_63
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 36
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d13e937a67bf6e70800000000000000
+      internalID: 9110702239027966424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

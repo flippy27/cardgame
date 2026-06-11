@@ -1,0 +1,1730 @@
+fileFormatVersion: 2
+guid: 9fa277bda60042d4f8ddd721ee22e211
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2308514285596293016
+    second: vfx_heal-strip_0
+  - first:
+      213: 6084146745875609467
+    second: vfx_heal-strip_1
+  - first:
+      213: -7725825039548265976
+    second: vfx_heal-strip_2
+  - first:
+      213: 6687182747858504196
+    second: vfx_heal-strip_3
+  - first:
+      213: 5141983391283155041
+    second: vfx_heal-strip_4
+  - first:
+      213: -4525924052061317707
+    second: vfx_heal-strip_5
+  - first:
+      213: -8878635538661666769
+    second: vfx_heal-strip_6
+  - first:
+      213: 5840673274870851970
+    second: vfx_heal-strip_7
+  - first:
+      213: 8828150246666063518
+    second: vfx_heal-strip_8
+  - first:
+      213: 7116956401285291170
+    second: vfx_heal-strip_9
+  - first:
+      213: -2479897999764101693
+    second: vfx_heal-strip_10
+  - first:
+      213: -5844079227265726311
+    second: vfx_heal-strip_11
+  - first:
+      213: 8916227368774512475
+    second: vfx_heal-strip_12
+  - first:
+      213: -5325463551181479759
+    second: vfx_heal-strip_13
+  - first:
+      213: 3913682234487220756
+    second: vfx_heal-strip_14
+  - first:
+      213: 6731476898446755063
+    second: vfx_heal-strip_15
+  - first:
+      213: 4751376839525629366
+    second: vfx_heal-strip_16
+  - first:
+      213: 6211951675078148401
+    second: vfx_heal-strip_17
+  - first:
+      213: -8251860759450875578
+    second: vfx_heal-strip_18
+  - first:
+      213: -7682993407697709957
+    second: vfx_heal-strip_19
+  - first:
+      213: 3589121431321777598
+    second: vfx_heal-strip_20
+  - first:
+      213: -3554880590133514024
+    second: vfx_heal-strip_21
+  - first:
+      213: -7093482110955412620
+    second: vfx_heal-strip_22
+  - first:
+      213: 3644615200830396148
+    second: vfx_heal-strip_23
+  - first:
+      213: 1811895081733126372
+    second: vfx_heal-strip_24
+  - first:
+      213: 4408617410385943294
+    second: vfx_heal-strip_25
+  - first:
+      213: -1627973411107223530
+    second: vfx_heal-strip_26
+  - first:
+      213: -312623967965266208
+    second: vfx_heal-strip_27
+  - first:
+      213: -1479650324105661116
+    second: vfx_heal-strip_28
+  - first:
+      213: 458087262966187194
+    second: vfx_heal-strip_29
+  - first:
+      213: -6016014402227566127
+    second: vfx_heal-strip_30
+  - first:
+      213: -1801319418486708243
+    second: vfx_heal-strip_31
+  - first:
+      213: 6339630517214573594
+    second: vfx_heal-strip_32
+  - first:
+      213: 1534177829727030000
+    second: vfx_heal-strip_33
+  - first:
+      213: -3527609859093231370
+    second: vfx_heal-strip_34
+  - first:
+      213: 1843386501090654482
+    second: vfx_heal-strip_35
+  - first:
+      213: -6182776082022356511
+    second: vfx_heal-strip_36
+  - first:
+      213: 3305955314949900164
+    second: vfx_heal-strip_37
+  - first:
+      213: -8225103324713208017
+    second: vfx_heal-strip_38
+  - first:
+      213: -1216496984683666308
+    second: vfx_heal-strip_39
+  - first:
+      213: -379389041672262360
+    second: vfx_heal-strip_40
+  - first:
+      213: -6775748309595266167
+    second: vfx_heal-strip_41
+  - first:
+      213: -1864234597964793805
+    second: vfx_heal-strip_42
+  - first:
+      213: -4819351936145572524
+    second: vfx_heal-strip_43
+  - first:
+      213: -7395325071536260925
+    second: vfx_heal-strip_44
+  - first:
+      213: -5010220165363704999
+    second: vfx_heal-strip_45
+  - first:
+      213: -8985135462969457044
+    second: vfx_heal-strip_46
+  - first:
+      213: 1379413610817992510
+    second: vfx_heal-strip_47
+  - first:
+      213: 1535448692747051491
+    second: vfx_heal-strip_48
+  - first:
+      213: -6676880075947802437
+    second: vfx_heal-strip_49
+  - first:
+      213: 7307539313707334278
+    second: vfx_heal-strip_50
+  - first:
+      213: -7596250018030521925
+    second: vfx_heal-strip_51
+  - first:
+      213: 3403795296492997195
+    second: vfx_heal-strip_52
+  - first:
+      213: 5283675011671739920
+    second: vfx_heal-strip_53
+  - first:
+      213: -5623345798945527745
+    second: vfx_heal-strip_54
+  - first:
+      213: 395732787447416684
+    second: vfx_heal-strip_55
+  - first:
+      213: 7341677419818709043
+    second: vfx_heal-strip_56
+  - first:
+      213: -9101720489227106602
+    second: vfx_heal-strip_57
+  - first:
+      213: -7776014780194922826
+    second: vfx_heal-strip_58
+  - first:
+      213: 2683483789161728845
+    second: vfx_heal-strip_59
+  - first:
+      213: 2858223877009005555
+    second: vfx_heal-strip_60
+  - first:
+      213: -684753542048446907
+    second: vfx_heal-strip_61
+  - first:
+      213: -7031201156478280533
+    second: vfx_heal-strip_62
+  - first:
+      213: 2284883445319743047
+    second: vfx_heal-strip_63
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_heal-strip_0
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 230
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8684e100d7286ffd0800000000000000
+      internalID: -2308514285596293016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_1
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 236
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77b34dea3b3f6450800000000000000
+      internalID: 6084146745875609467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_2
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 225
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a48e84f0b58c490800000000000000
+      internalID: -7725825039548265976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_3
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 221
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40a0a3a6745adcc50800000000000000
+      internalID: 6687182747858504196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_4
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 12
+        width: 225
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1601466a6aefb5740800000000000000
+      internalID: 5141983391283155041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_5
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 211
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b51d74dd00b031c0800000000000000
+      internalID: -4525924052061317707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_6
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 189
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2099e3c400c8c480800000000000000
+      internalID: -8878635538661666769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 215
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2896bc5f56d3e0150800000000000000
+      internalID: 5840673274870851970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_8
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 175
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ece4430e3e38a70800000000000000
+      internalID: 8828150246666063518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_9
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 12
+        width: 220
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac5d84c32284c260800000000000000
+      internalID: 7116956401285291170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_10
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 206
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c5ebd488e1a59dd0800000000000000
+      internalID: -2479897999764101693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_11
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 210
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9984693f7e8a5eea0800000000000000
+      internalID: -5844079227265726311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_12
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 206
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5fab6c3d8dccbb70800000000000000
+      internalID: 8916227368774512475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_13
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 197
+        width: 21
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b0a98f9d172816b0800000000000000
+      internalID: -5325463551181479759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_14
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 202
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a2e56b141305630800000000000000
+      internalID: 3913682234487220756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_15
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 157
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f4caa103920b6d50800000000000000
+      internalID: 6731476898446755063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_16
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 176
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd71f9cf0840f140800000000000000
+      internalID: 4751376839525629366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_17
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 181
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1310dead229453650800000000000000
+      internalID: 6211951675078148401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_18
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 154
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64902f80c508b7d80800000000000000
+      internalID: -8251860759450875578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_19
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 164
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b749282b336806590800000000000000
+      internalID: -7682993407697709957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_20
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 156
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb51da10dee1fc130800000000000000
+      internalID: 3589121431321777598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_21
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 128
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d0392610f68aaec0800000000000000
+      internalID: -3554880590133514024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_22
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 131
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4732aeb5a93ee8d90800000000000000
+      internalID: -7093482110955412620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_23
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 148
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f61c741736449230800000000000000
+      internalID: 3644615200830396148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_24
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 138
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e8fafc1af4252910800000000000000
+      internalID: 1811895081733126372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_25
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 12
+        width: 105
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efa18a84d2e8e2d30800000000000000
+      internalID: 4408617410385943294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_26
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 133
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6184c27dec64869e0800000000000000
+      internalID: -1627973411107223530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_27
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 121
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee3821582659abf0800000000000000
+      internalID: -312623967965266208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_28
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 121
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 445f3e7aed9377be0800000000000000
+      internalID: -1479650324105661116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_29
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 82
+        width: 29
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab40b3940f37b5600800000000000000
+      internalID: 458087262966187194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_30
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 13
+        width: 103
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d9879f76c2d28ca0800000000000000
+      internalID: -6016014402227566127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_31
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 105
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7261e588d6007e0800000000000000
+      internalID: -1801319418486708243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_32
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 91
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a14fcc9dd54eaf750800000000000000
+      internalID: 6339630517214573594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_33
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 91
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fac8239b9e7a4510800000000000000
+      internalID: 1534177829727030000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_34
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 84
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f80592f5896b0fc0800000000000000
+      internalID: -3527609859093231370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_35
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 63
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 219324d8146059910800000000000000
+      internalID: 1843386501090654482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_36
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 68
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9a64149ed523aa0800000000000000
+      internalID: -6182776082022356511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_37
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 67
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48747eed7dc11ed20800000000000000
+      internalID: 3305955314949900164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_38
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 67
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f27b599ca109add80800000000000000
+      internalID: -8225103324713208017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_39
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 47
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74a89d00722e1fe0800000000000000
+      internalID: -1216496984683666308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_40
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 45
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82de27b3da32cbaf0800000000000000
+      internalID: -379389041672262360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_41
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 39
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 983ee17dfc4b7f1a0800000000000000
+      internalID: -6775748309595266167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_42
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 39
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 338b052a288e026e0800000000000000
+      internalID: -1864234597964793805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_43
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 50
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45db376b2f83e1db0800000000000000
+      internalID: -4819351936145572524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_44
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 42
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c87a8097078e5990800000000000000
+      internalID: -7395325071536260925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_45
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 39
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b5ffc0e4f187ab0800000000000000
+      internalID: -5010220165363704999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_46
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 40
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66c0f6d6e26e4380800000000000000
+      internalID: -8985135462969457044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_47
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 39
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37352fde59a42310800000000000000
+      internalID: 1379413610817992510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_48
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 42
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e1a60e63720f4510800000000000000
+      internalID: 1535448692747051491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_49
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 36
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb08f3152f4f653a0800000000000000
+      internalID: -6676880075947802437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_50
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 46
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a3abfe948996560800000000000000
+      internalID: 7307539313707334278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_51
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 41
+        width: 33
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb17c32fad2b49690800000000000000
+      internalID: -7596250018030521925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_52
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 37
+        width: 30
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a4c9fb9c5bc3f20800000000000000
+      internalID: 3403795296492997195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_53
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 39
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01e4d43dd62635940800000000000000
+      internalID: 5283675011671739920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_54
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 51
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f38aaa42accd5f1b0800000000000000
+      internalID: -5623345798945527745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_55
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 32
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6747cd9fdced7500800000000000000
+      internalID: 395732787447416684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_56
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 23
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 330fcc727b0e2e560800000000000000
+      internalID: 7341677419818709043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_57
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 14
+        width: 62
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d649b2207130b180800000000000000
+      internalID: -9101720489227106602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_58
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 28
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6be5b4aa1cb061490800000000000000
+      internalID: -7776014780194922826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_59
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 14
+        width: 50
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b018dd946ad3520800000000000000
+      internalID: 2683483789161728845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_60
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 25
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb59adf8737aa720800000000000000
+      internalID: 2858223877009005555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_61
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 23
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 546038f08444f76f0800000000000000
+      internalID: -684753542048446907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_62
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 28
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bacdbc31dc72c6e90800000000000000
+      internalID: -7031201156478280533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_heal-strip_63
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 14
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746347f336985bf10800000000000000
+      internalID: 2284883445319743047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

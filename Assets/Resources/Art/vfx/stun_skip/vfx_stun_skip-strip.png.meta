@@ -1,0 +1,1755 @@
+fileFormatVersion: 2
+guid: 12c1a83fef3845c49acdbb4698486bac
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7970234695484777445
+    second: vfx_stun_skip-strip_0
+  - first:
+      213: 4457318644092936450
+    second: vfx_stun_skip-strip_1
+  - first:
+      213: 4386764166317156593
+    second: vfx_stun_skip-strip_2
+  - first:
+      213: 5930971401096957520
+    second: vfx_stun_skip-strip_3
+  - first:
+      213: -5199157073577073238
+    second: vfx_stun_skip-strip_4
+  - first:
+      213: 4264006249224964736
+    second: vfx_stun_skip-strip_5
+  - first:
+      213: -7310648886538445056
+    second: vfx_stun_skip-strip_6
+  - first:
+      213: 6023898131945453687
+    second: vfx_stun_skip-strip_7
+  - first:
+      213: 7505789611781280880
+    second: vfx_stun_skip-strip_8
+  - first:
+      213: -2033390314879991931
+    second: vfx_stun_skip-strip_9
+  - first:
+      213: 3152781579940426112
+    second: vfx_stun_skip-strip_10
+  - first:
+      213: -5494932802826084283
+    second: vfx_stun_skip-strip_11
+  - first:
+      213: 7572312053988569922
+    second: vfx_stun_skip-strip_12
+  - first:
+      213: 7967035959048794916
+    second: vfx_stun_skip-strip_13
+  - first:
+      213: 7962112654235594067
+    second: vfx_stun_skip-strip_14
+  - first:
+      213: 6868324932629577861
+    second: vfx_stun_skip-strip_15
+  - first:
+      213: -700352453233069888
+    second: vfx_stun_skip-strip_16
+  - first:
+      213: 7001906877775228607
+    second: vfx_stun_skip-strip_17
+  - first:
+      213: 5347843372880108118
+    second: vfx_stun_skip-strip_18
+  - first:
+      213: -1738383008701380731
+    second: vfx_stun_skip-strip_19
+  - first:
+      213: -4828810989284988217
+    second: vfx_stun_skip-strip_20
+  - first:
+      213: 6381671294269372401
+    second: vfx_stun_skip-strip_21
+  - first:
+      213: -5923524384238390190
+    second: vfx_stun_skip-strip_22
+  - first:
+      213: 313255545164511009
+    second: vfx_stun_skip-strip_23
+  - first:
+      213: -4543585303541654984
+    second: vfx_stun_skip-strip_24
+  - first:
+      213: -5255333267488395425
+    second: vfx_stun_skip-strip_25
+  - first:
+      213: 4619816380101022305
+    second: vfx_stun_skip-strip_26
+  - first:
+      213: 288643639186446612
+    second: vfx_stun_skip-strip_27
+  - first:
+      213: -8349273483824503374
+    second: vfx_stun_skip-strip_28
+  - first:
+      213: -2309476655014127290
+    second: vfx_stun_skip-strip_29
+  - first:
+      213: -7129681425542710416
+    second: vfx_stun_skip-strip_30
+  - first:
+      213: 5156151915655887137
+    second: vfx_stun_skip-strip_31
+  - first:
+      213: 103027670745179733
+    second: vfx_stun_skip-strip_32
+  - first:
+      213: 2609073382433676907
+    second: vfx_stun_skip-strip_33
+  - first:
+      213: -1044829244185670079
+    second: vfx_stun_skip-strip_34
+  - first:
+      213: -6341587128525542270
+    second: vfx_stun_skip-strip_35
+  - first:
+      213: -1452841645908201761
+    second: vfx_stun_skip-strip_36
+  - first:
+      213: -5076026576454079578
+    second: vfx_stun_skip-strip_37
+  - first:
+      213: -3467545920317232168
+    second: vfx_stun_skip-strip_38
+  - first:
+      213: 7404839659534267656
+    second: vfx_stun_skip-strip_39
+  - first:
+      213: -4465187595479293327
+    second: vfx_stun_skip-strip_40
+  - first:
+      213: 6161151153884106309
+    second: vfx_stun_skip-strip_41
+  - first:
+      213: 8897913889500667236
+    second: vfx_stun_skip-strip_42
+  - first:
+      213: -5365611257527048908
+    second: vfx_stun_skip-strip_43
+  - first:
+      213: -1425912915598496146
+    second: vfx_stun_skip-strip_44
+  - first:
+      213: -5585849111978470489
+    second: vfx_stun_skip-strip_45
+  - first:
+      213: -6927276898921037245
+    second: vfx_stun_skip-strip_46
+  - first:
+      213: 4217656700243529696
+    second: vfx_stun_skip-strip_47
+  - first:
+      213: 5643714629088938894
+    second: vfx_stun_skip-strip_48
+  - first:
+      213: 2827313251373549541
+    second: vfx_stun_skip-strip_49
+  - first:
+      213: -1986963669786331745
+    second: vfx_stun_skip-strip_50
+  - first:
+      213: -2439944933967616807
+    second: vfx_stun_skip-strip_51
+  - first:
+      213: 958613350517244197
+    second: vfx_stun_skip-strip_52
+  - first:
+      213: 6136826195893403558
+    second: vfx_stun_skip-strip_53
+  - first:
+      213: -7763037010910213462
+    second: vfx_stun_skip-strip_54
+  - first:
+      213: -5766383961753841471
+    second: vfx_stun_skip-strip_55
+  - first:
+      213: -7513816852292558704
+    second: vfx_stun_skip-strip_56
+  - first:
+      213: 2982407511903179181
+    second: vfx_stun_skip-strip_57
+  - first:
+      213: -7765951105674475558
+    second: vfx_stun_skip-strip_58
+  - first:
+      213: 7147043925656505785
+    second: vfx_stun_skip-strip_59
+  - first:
+      213: 5504839002876337415
+    second: vfx_stun_skip-strip_60
+  - first:
+      213: -8767203863240993603
+    second: vfx_stun_skip-strip_61
+  - first:
+      213: -1890418157453754979
+    second: vfx_stun_skip-strip_62
+  - first:
+      213: -6718220758697507776
+    second: vfx_stun_skip-strip_63
+  - first:
+      213: 967530799539595496
+    second: vfx_stun_skip-strip_64
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_0
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 180
+        width: 12
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1cd227c5c9046190800000000000000
+      internalID: -7970234695484777445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_1
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 216
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 201a2efd0b39bdd30800000000000000
+      internalID: 4457318644092936450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_2
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 218
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f82fb664cae0ec30800000000000000
+      internalID: 4386764166317156593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 189
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e826fc01b0f4250800000000000000
+      internalID: 5930971401096957520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 204
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5aaf91032e8d7b0800000000000000
+      internalID: -5199157073577073238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_5
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 170
+        width: 12
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a891d871bcc2b30800000000000000
+      internalID: 4264006249224964736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_6
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 183
+        width: 9
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f5548329b5b8a90800000000000000
+      internalID: -7310648886538445056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_7
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 191
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7787fbd5f6f299350800000000000000
+      internalID: 6023898131945453687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_8
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 30
+        width: 232
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0745a0172ebe92860800000000000000
+      internalID: 7505789611781280880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_9
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 192
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58fbbdf2842f7c3e0800000000000000
+      internalID: -2033390314879991931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_10
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 174
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0817ebe842ee0cb20800000000000000
+      internalID: 3152781579940426112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_11
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 152
+        width: 33
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 540e8eeaab31eb3b0800000000000000
+      internalID: -5494932802826084283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_12
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 180
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 243b56a71b1461960800000000000000
+      internalID: 7572312053988569922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_13
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 158
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 423fddb5ef8909e60800000000000000
+      internalID: 7967035959048794916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_14
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 164
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35dea51264b1f7e60800000000000000
+      internalID: 7962112654235594067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_15
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 128
+        width: 60
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5804853e221315f50800000000000000
+      internalID: 6868324932629577861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_16
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 156
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c038778729d746f0800000000000000
+      internalID: -700352453233069888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_17
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 126
+        width: 43
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbe28282535cb2160800000000000000
+      internalID: 7001906877775228607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_18
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 114
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65a12faa63b573a40800000000000000
+      internalID: 5347843372880108118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_19
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 154
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58787ca2dd500e7e0800000000000000
+      internalID: -1738383008701380731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_20
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 150
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca6a284dfd9cfcb0800000000000000
+      internalID: -4828810989284988217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_21
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 156
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f7bb380b30409850800000000000000
+      internalID: 6381671294269372401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_22
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 114
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2543b1be4f96bcda0800000000000000
+      internalID: -5923524384238390190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_23
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 129
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 127b3753248e85400800000000000000
+      internalID: 313255545164511009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_24
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 135
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ad6b74d31f1f0c0800000000000000
+      internalID: -4543585303541654984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_25
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 20
+        width: 220
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5faf07bc3e4117b0800000000000000
+      internalID: -5255333267488395425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_26
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 116
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 162d3775582ec1040800000000000000
+      internalID: 4619816380101022305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_27
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 132
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419526c4cd7710400800000000000000
+      internalID: 288643639186446612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_28
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 107
+        width: 13
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b56d08b00c612c80800000000000000
+      internalID: -8349273483824503374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_29
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 135
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64953d8e73713ffd0800000000000000
+      internalID: -2309476655014127290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_30
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 127
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b73d4a4884e0d90800000000000000
+      internalID: -7129681425542710416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_31
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 70
+        width: 87
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1297e9c49d45e8740800000000000000
+      internalID: 5156151915655887137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_32
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 113
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5566dc4ee170e6100800000000000000
+      internalID: 103027670745179733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_33
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 81
+        width: 110
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6ed2e8fa6a453420800000000000000
+      internalID: 2609073382433676907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_34
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 96
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e8f5196550081f0800000000000000
+      internalID: -1044829244185670079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_35
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 112
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28cab041b182ef7a0800000000000000
+      internalID: -6341587128525542270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_36
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 68
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fde6fb4783876dbe0800000000000000
+      internalID: -1452841645908201761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_37
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 49
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ab230009b45e89b0800000000000000
+      internalID: -5076026576454079578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_38
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 93
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dbe2297b5dc0efc0800000000000000
+      internalID: -3467545920317232168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_39
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 75
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 805b345107643c660800000000000000
+      internalID: 7404839659534267656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_40
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 83
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 172e9fb1a877802c0800000000000000
+      internalID: -4465187595479293327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_41
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 54
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e00cec45ec08550800000000000000
+      internalID: 6161151153884106309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_42
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 45
+        width: 89
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46d93b11a8dbb7b70800000000000000
+      internalID: 8897913889500667236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_43
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 48
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43563405df48985b0800000000000000
+      internalID: -5365611257527048908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_44
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 51
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e2c1112c3263ce0800000000000000
+      internalID: -1425912915598496146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_45
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 72
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a39797e3d31b72b0800000000000000
+      internalID: -5585849111978470489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_46
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 57
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 342ca0bdc5e5ddf90800000000000000
+      internalID: -6927276898921037245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_47
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 65
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0efcf8a3c60288a30800000000000000
+      internalID: 4217656700243529696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_48
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 63
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b8580bd80825e40800000000000000
+      internalID: 5643714629088938894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_49
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 43
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e700e02c62ac3720800000000000000
+      internalID: 2827313251373549541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_50
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 71
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9577c8d113ec64e0800000000000000
+      internalID: -1986963669786331745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_51
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 56
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4a85b8203932ed0800000000000000
+      internalID: -2439944933967616807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_52
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 76
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 521078a63cdad4d00800000000000000
+      internalID: 958613350517244197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_53
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 64
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6afb98e29e26a2550800000000000000
+      internalID: 6136826195893403558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_54
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 47
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaa8c7a08f6244490800000000000000
+      internalID: -7763037010910213462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_55
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 48
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c01721a650b9ffa0800000000000000
+      internalID: -5766383961753841471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_56
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 35
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09022cbf16f89b790800000000000000
+      internalID: -7513816852292558704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_57
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 31
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da11272a4d3a36920800000000000000
+      internalID: 2982407511903179181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_58
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 27
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad7883b7d9cc93490800000000000000
+      internalID: -7765951105674475558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_59
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 24
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd8ede65966f2360800000000000000
+      internalID: 7147043925656505785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_60
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 34
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70dd82048ed156c40800000000000000
+      internalID: 5504839002876337415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_61
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 24
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db4961a7982a45680800000000000000
+      internalID: -8767203863240993603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_62
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 25
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d3500a3b2e3c5e0800000000000000
+      internalID: -1890418157453754979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_63
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 26
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0440e2b80d514c2a0800000000000000
+      internalID: -6718220758697507776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_stun_skip-strip_64
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 30
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e8aecfc22c5d6d00800000000000000
+      internalID: 967530799539595496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1355 @@
+fileFormatVersion: 2
+guid: 537f3872fd248d04da72a80964768e1d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6087498132701330715
+    second: vfx_attack_delivery_beam-strip_0
+  - first:
+      213: 5516524535097756952
+    second: vfx_attack_delivery_beam-strip_1
+  - first:
+      213: -2618819866506645195
+    second: vfx_attack_delivery_beam-strip_2
+  - first:
+      213: -4184868972734085662
+    second: vfx_attack_delivery_beam-strip_3
+  - first:
+      213: 3058321524891774589
+    second: vfx_attack_delivery_beam-strip_4
+  - first:
+      213: 7418369638121470526
+    second: vfx_attack_delivery_beam-strip_5
+  - first:
+      213: 2693362696273983229
+    second: vfx_attack_delivery_beam-strip_6
+  - first:
+      213: -5259899843354119772
+    second: vfx_attack_delivery_beam-strip_7
+  - first:
+      213: -6108979654428672689
+    second: vfx_attack_delivery_beam-strip_8
+  - first:
+      213: 8412120530499311321
+    second: vfx_attack_delivery_beam-strip_9
+  - first:
+      213: -6961997669513713115
+    second: vfx_attack_delivery_beam-strip_10
+  - first:
+      213: 2060718330582946491
+    second: vfx_attack_delivery_beam-strip_11
+  - first:
+      213: 7228267809891860513
+    second: vfx_attack_delivery_beam-strip_12
+  - first:
+      213: 7432480575619431132
+    second: vfx_attack_delivery_beam-strip_13
+  - first:
+      213: 4602939695096847184
+    second: vfx_attack_delivery_beam-strip_14
+  - first:
+      213: -3368827577790018952
+    second: vfx_attack_delivery_beam-strip_15
+  - first:
+      213: -8780936094114105432
+    second: vfx_attack_delivery_beam-strip_16
+  - first:
+      213: -4672826409847987309
+    second: vfx_attack_delivery_beam-strip_17
+  - first:
+      213: 6119442965415065965
+    second: vfx_attack_delivery_beam-strip_18
+  - first:
+      213: 9201551569562103777
+    second: vfx_attack_delivery_beam-strip_19
+  - first:
+      213: -6440577610196339183
+    second: vfx_attack_delivery_beam-strip_20
+  - first:
+      213: -1214925770567627366
+    second: vfx_attack_delivery_beam-strip_21
+  - first:
+      213: -230737241748977326
+    second: vfx_attack_delivery_beam-strip_22
+  - first:
+      213: -1025824432051995273
+    second: vfx_attack_delivery_beam-strip_23
+  - first:
+      213: -4939689635344155247
+    second: vfx_attack_delivery_beam-strip_24
+  - first:
+      213: -7654634948864959292
+    second: vfx_attack_delivery_beam-strip_25
+  - first:
+      213: -2286363734921681916
+    second: vfx_attack_delivery_beam-strip_26
+  - first:
+      213: 2692391758225822130
+    second: vfx_attack_delivery_beam-strip_27
+  - first:
+      213: 746583521920231655
+    second: vfx_attack_delivery_beam-strip_28
+  - first:
+      213: 7735304407695056700
+    second: vfx_attack_delivery_beam-strip_29
+  - first:
+      213: -7819691249529853650
+    second: vfx_attack_delivery_beam-strip_30
+  - first:
+      213: -8512858469867575991
+    second: vfx_attack_delivery_beam-strip_31
+  - first:
+      213: -7122253027394363598
+    second: vfx_attack_delivery_beam-strip_32
+  - first:
+      213: -165941167749004258
+    second: vfx_attack_delivery_beam-strip_33
+  - first:
+      213: -4654759179964284576
+    second: vfx_attack_delivery_beam-strip_34
+  - first:
+      213: -8541662010289985269
+    second: vfx_attack_delivery_beam-strip_35
+  - first:
+      213: 5981981560333098927
+    second: vfx_attack_delivery_beam-strip_36
+  - first:
+      213: 5540759383859050427
+    second: vfx_attack_delivery_beam-strip_37
+  - first:
+      213: -1858097072651513934
+    second: vfx_attack_delivery_beam-strip_38
+  - first:
+      213: 5200776152150568942
+    second: vfx_attack_delivery_beam-strip_39
+  - first:
+      213: -7343729307505147374
+    second: vfx_attack_delivery_beam-strip_40
+  - first:
+      213: -618244144410644364
+    second: vfx_attack_delivery_beam-strip_41
+  - first:
+      213: -5531924624397859049
+    second: vfx_attack_delivery_beam-strip_42
+  - first:
+      213: 3107345081703779237
+    second: vfx_attack_delivery_beam-strip_43
+  - first:
+      213: -3502719322033074137
+    second: vfx_attack_delivery_beam-strip_44
+  - first:
+      213: -6738757571318413557
+    second: vfx_attack_delivery_beam-strip_45
+  - first:
+      213: -2792013233745509914
+    second: vfx_attack_delivery_beam-strip_46
+  - first:
+      213: 8305942608048288182
+    second: vfx_attack_delivery_beam-strip_47
+  - first:
+      213: -7878153641937952147
+    second: vfx_attack_delivery_beam-strip_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 151
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1d348a7c432b7450800000000000000
+      internalID: 6087498132701330715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 143
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d8a3d36d1ae8c40800000000000000
+      internalID: 5516524535097756952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_2
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 166
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 531b22ed43518abd0800000000000000
+      internalID: -2618819866506645195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_3
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 165
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e581a877db5ce5c0800000000000000
+      internalID: -4184868972734085662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_4
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 84
+        width: 81
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7eea142937517a20800000000000000
+      internalID: 3058321524891774589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 153
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3af5c4b1e753f660800000000000000
+      internalID: 7418369638121470526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_6
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6f2ba2a1fb06520800000000000000
+      internalID: 2693362696273983229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_7
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 143
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1bebae5f41107b0800000000000000
+      internalID: -5259899843354119772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_8
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 152
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4db0bdfe5b883ba0800000000000000
+      internalID: -6108979654428672689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_9
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 90
+        width: 232
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d69e2c9d0bddb470800000000000000
+      internalID: 8412120530499311321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_10
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 155
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52aa98d7104026f90800000000000000
+      internalID: -6961997669513713115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_11
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 146
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb2588c4764299c10800000000000000
+      internalID: 2060718330582946491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_12
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 150
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 120cefda647ff4460800000000000000
+      internalID: 7228267809891860513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_13
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 96
+        width: 28
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda79cd54b9752760800000000000000
+      internalID: 7432480575619431132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_14
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 147
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05bdac8e34de0ef30800000000000000
+      internalID: 4602939695096847184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_15
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 152
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87a4944ba258f31d0800000000000000
+      internalID: -3368827577790018952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_16
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 149
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a73ce25529d32680800000000000000
+      internalID: -8780936094114105432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_17
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 144
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39362ff4329c62fb0800000000000000
+      internalID: -4672826409847987309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_18
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 116
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d69f3d074f0ace450800000000000000
+      internalID: 6119442965415065965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_19
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 129
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1efef2e866a72bf70800000000000000
+      internalID: 9201551569562103777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_20
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 120
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 116b9e389c87e96a0800000000000000
+      internalID: -6440577610196339183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_21
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 129
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9d49d8d277b32fe0800000000000000
+      internalID: -1214925770567627366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 117
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 259491d73b14cccf0800000000000000
+      internalID: -230737241748977326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_23
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 103
+        width: 9
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77dbf953d1a83c1f0800000000000000
+      internalID: -1025824432051995273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_24
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 104
+        width: 230
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19df1a0c272b27bb0800000000000000
+      internalID: -4939689635344155247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_25
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 110
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc1d9be11645c590800000000000000
+      internalID: -7654634948864959292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_26
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 119
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40468a8fb443540e0800000000000000
+      internalID: -2286363734921681916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_27
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 120
+        width: 8
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b15d390a0c4d5520800000000000000
+      internalID: 2692391758225822130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_28
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 120
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e82733f1c56c5a00800000000000000
+      internalID: 746583521920231655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_29
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 112
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3f5d2a1062595b60800000000000000
+      internalID: 7735304407695056700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_30
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 127
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e29ea823d30ea7390800000000000000
+      internalID: -7819691249529853650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_31
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 130
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9452e5023504cd980800000000000000
+      internalID: -8512858469867575991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_32
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 121
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23f55bd5b9ca82d90800000000000000
+      internalID: -7122253027394363598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_33
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 124
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1405ba136572bdf0800000000000000
+      internalID: -165941167749004258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_34
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 120
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0618d331039f66fb0800000000000000
+      internalID: -4654759179964284576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_35
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 108
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09673548abe57980800000000000000
+      internalID: -8541662010289985269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_36
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 96
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf57940984440350800000000000000
+      internalID: 5981981560333098927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_37
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 101
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7b4dcad4bb4ec40800000000000000
+      internalID: 5540759383859050427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_38
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 112
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bfc96a9e86b636e0800000000000000
+      internalID: -1858097072651513934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_39
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 99
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eefe1410b5edc2840800000000000000
+      internalID: 5200776152150568942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_40
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 91
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212c7838a15d51a90800000000000000
+      internalID: -7343729307505147374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_41
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 96
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47030fbe93e8b67f0800000000000000
+      internalID: -618244144410644364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_42
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 93
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 717878e0dd7aa33b0800000000000000
+      internalID: -5531924624397859049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_43
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 93
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5abc28d63e18f1b20800000000000000
+      internalID: 3107345081703779237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_44
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 90
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7205256b557d36fc0800000000000000
+      internalID: -3502719322033074137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_45
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 93
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b07871e31bf1b72a0800000000000000
+      internalID: -6738757571318413557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_46
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 84
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1c862b1c6c049d0800000000000000
+      internalID: -2792013233745509914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_47
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 85
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b1ff759bc2a44370800000000000000
+      internalID: 8305942608048288182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_beam-strip_48
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 84
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d62a65eb00d2ba290800000000000000
+      internalID: -7878153641937952147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

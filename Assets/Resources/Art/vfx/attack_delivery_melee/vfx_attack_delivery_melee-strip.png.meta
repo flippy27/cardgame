@@ -1,0 +1,1455 @@
+fileFormatVersion: 2
+guid: c728f1abbd67c7c438d3e09d66c026c7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5919484213458609988
+    second: vfx_attack_delivery_melee-strip_0
+  - first:
+      213: -1854145647185943398
+    second: vfx_attack_delivery_melee-strip_1
+  - first:
+      213: -9132685595101307206
+    second: vfx_attack_delivery_melee-strip_2
+  - first:
+      213: 384164569714803810
+    second: vfx_attack_delivery_melee-strip_3
+  - first:
+      213: 5508994651737232112
+    second: vfx_attack_delivery_melee-strip_4
+  - first:
+      213: 387682325416684321
+    second: vfx_attack_delivery_melee-strip_5
+  - first:
+      213: 8204346516585078569
+    second: vfx_attack_delivery_melee-strip_6
+  - first:
+      213: -4963564151074504181
+    second: vfx_attack_delivery_melee-strip_7
+  - first:
+      213: 7860709225799559739
+    second: vfx_attack_delivery_melee-strip_8
+  - first:
+      213: -271782495215581067
+    second: vfx_attack_delivery_melee-strip_9
+  - first:
+      213: -4278419727115113472
+    second: vfx_attack_delivery_melee-strip_10
+  - first:
+      213: -5440203198143301337
+    second: vfx_attack_delivery_melee-strip_11
+  - first:
+      213: -2864754100335563768
+    second: vfx_attack_delivery_melee-strip_12
+  - first:
+      213: 7912203119967587118
+    second: vfx_attack_delivery_melee-strip_13
+  - first:
+      213: -3082052496564847824
+    second: vfx_attack_delivery_melee-strip_14
+  - first:
+      213: -3735470722478813770
+    second: vfx_attack_delivery_melee-strip_15
+  - first:
+      213: 7404742835357535536
+    second: vfx_attack_delivery_melee-strip_16
+  - first:
+      213: 2700685600217096651
+    second: vfx_attack_delivery_melee-strip_17
+  - first:
+      213: -6891146227346127
+    second: vfx_attack_delivery_melee-strip_18
+  - first:
+      213: -2938753679586052707
+    second: vfx_attack_delivery_melee-strip_19
+  - first:
+      213: -5053063891009261983
+    second: vfx_attack_delivery_melee-strip_20
+  - first:
+      213: 439087219260368761
+    second: vfx_attack_delivery_melee-strip_21
+  - first:
+      213: -7778150265484001737
+    second: vfx_attack_delivery_melee-strip_22
+  - first:
+      213: -6436074812447924810
+    second: vfx_attack_delivery_melee-strip_23
+  - first:
+      213: 3781636349687138876
+    second: vfx_attack_delivery_melee-strip_24
+  - first:
+      213: 8254949545308461911
+    second: vfx_attack_delivery_melee-strip_25
+  - first:
+      213: 9054869014278815070
+    second: vfx_attack_delivery_melee-strip_26
+  - first:
+      213: -199227922869968227
+    second: vfx_attack_delivery_melee-strip_27
+  - first:
+      213: -9026415800490503668
+    second: vfx_attack_delivery_melee-strip_28
+  - first:
+      213: -4417317246272224651
+    second: vfx_attack_delivery_melee-strip_29
+  - first:
+      213: 4562861578271199821
+    second: vfx_attack_delivery_melee-strip_30
+  - first:
+      213: -4256211973293021878
+    second: vfx_attack_delivery_melee-strip_31
+  - first:
+      213: 2560067871827092384
+    second: vfx_attack_delivery_melee-strip_32
+  - first:
+      213: -6790249874335491650
+    second: vfx_attack_delivery_melee-strip_33
+  - first:
+      213: -7682806730725904243
+    second: vfx_attack_delivery_melee-strip_34
+  - first:
+      213: -5845753473929544775
+    second: vfx_attack_delivery_melee-strip_35
+  - first:
+      213: 2109876702029221043
+    second: vfx_attack_delivery_melee-strip_36
+  - first:
+      213: -3252279951105351502
+    second: vfx_attack_delivery_melee-strip_37
+  - first:
+      213: -6653808783122549244
+    second: vfx_attack_delivery_melee-strip_38
+  - first:
+      213: 1832790234953242084
+    second: vfx_attack_delivery_melee-strip_39
+  - first:
+      213: 8762464688854086062
+    second: vfx_attack_delivery_melee-strip_40
+  - first:
+      213: -4149666686236087250
+    second: vfx_attack_delivery_melee-strip_41
+  - first:
+      213: 5981589753486905740
+    second: vfx_attack_delivery_melee-strip_42
+  - first:
+      213: -3316697106564231051
+    second: vfx_attack_delivery_melee-strip_43
+  - first:
+      213: 2699915043094062087
+    second: vfx_attack_delivery_melee-strip_44
+  - first:
+      213: 5199550775730266251
+    second: vfx_attack_delivery_melee-strip_45
+  - first:
+      213: 6088273872785935752
+    second: vfx_attack_delivery_melee-strip_46
+  - first:
+      213: 9190218573477644168
+    second: vfx_attack_delivery_melee-strip_47
+  - first:
+      213: 4253067936923576331
+    second: vfx_attack_delivery_melee-strip_48
+  - first:
+      213: -3960280035938590705
+    second: vfx_attack_delivery_melee-strip_49
+  - first:
+      213: -3224475960702809682
+    second: vfx_attack_delivery_melee-strip_50
+  - first:
+      213: -6310338322397778007
+    second: vfx_attack_delivery_melee-strip_51
+  - first:
+      213: 1231478761129289735
+    second: vfx_attack_delivery_melee-strip_52
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_0
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 20
+        width: 221
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb8544b7874c9dda0800000000000000
+      internalID: -5919484213458609988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_1
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 16
+        width: 232
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9425a98b50c446e0800000000000000
+      internalID: -1854145647185943398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_2
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 215
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abed8aa96de224180800000000000000
+      internalID: -9132685595101307206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_3
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 180
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 264442904a3d45500800000000000000
+      internalID: 384164569714803810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_4
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 182
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f21356a271e37c40800000000000000
+      internalID: 5508994651737232112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_5
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 191
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ba82c5503516500800000000000000
+      internalID: 387682325416684321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_6
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 184
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f544730b1bbd170800000000000000
+      internalID: 8204346516585078569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_7
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 63
+        width: 216
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b024753e3b0ed1bb0800000000000000
+      internalID: -4963564151074504181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_8
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 159
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3a2b6e9469d61d60800000000000000
+      internalID: 7860709225799559739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_9
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 165
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5788184b24f6a3cf0800000000000000
+      internalID: -271782495215581067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_10
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 173
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00ca74d1defff94c0800000000000000
+      internalID: -4278419727115113472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_11
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 144
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72979b4c3048084b0800000000000000
+      internalID: -5440203198143301337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_12
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 137
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ca7a8e2595e38d0800000000000000
+      internalID: -2864754100335563768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_13
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 133
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2bc76421dacdcd60800000000000000
+      internalID: 7912203119967587118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_14
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 140
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b752375995a35d0800000000000000
+      internalID: -3082052496564847824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_15
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 131
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd47c55b21f82cc0800000000000000
+      internalID: -3735470722478813770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_16
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 142
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03dca92706ee2c660800000000000000
+      internalID: 7404742835357535536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_17
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 127
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc1e3fa9e33ca7520800000000000000
+      internalID: 2700685600217096651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_18
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 109
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 135160df98487eff0800000000000000
+      internalID: -6891146227346127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_19
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 76
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95b6ed39137737d0800000000000000
+      internalID: -2938753679586052707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_20
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 117
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e2a05d929efd9b0800000000000000
+      internalID: -5053063891009261983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_21
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 115
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 977ad61ef73f71600800000000000000
+      internalID: 439087219260368761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_22
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 121
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73e37304b857e0490800000000000000
+      internalID: -7778150265484001737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_23
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 82
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bdd330de087ea6a0800000000000000
+      internalID: -6436074812447924810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_24
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 107
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3a8ecc59321b7430800000000000000
+      internalID: 3781636349687138876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_25
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 93
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b12e6ffd87f8270800000000000000
+      internalID: 8254949545308461911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_26
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 100
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5db7cbc46b59ad70800000000000000
+      internalID: 9054869014278815070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_27
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 99
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d922ffb72433c3df0800000000000000
+      internalID: -199227922869968227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_28
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 85
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c025ac847aabbb280800000000000000
+      internalID: -9026415800490503668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_29
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 96
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 572ccb35e5982b2c0800000000000000
+      internalID: -4417317246272224651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_30
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 86
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42122c2e6a825f30800000000000000
+      internalID: 4562861578271199821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_31
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 67
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a45ea1bb2c5eee4c0800000000000000
+      internalID: -4256211973293021878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_32
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 72
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3e4256a20378320800000000000000
+      internalID: 2560067871827092384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_33
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 66
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb9971037bf24c1a0800000000000000
+      internalID: -6790249874335491650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_34
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 75
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d803a11dbff216590800000000000000
+      internalID: -7682806730725904243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_35
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 63
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb7ce50036bfdea0800000000000000
+      internalID: -5845753473929544775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_36
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 81
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bc03509ea9c74d10800000000000000
+      internalID: 2109876702029221043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_37
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 62
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b0ad34ad949dd2d0800000000000000
+      internalID: -3252279951105351502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_38
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 56
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4063b964a2ce8a3a0800000000000000
+      internalID: -6653808783122549244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_39
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 56
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e5513612016f6910800000000000000
+      internalID: 1832790234953242084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_40
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 56
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea13d0085378a9970800000000000000
+      internalID: 8762464688854086062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_41
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 51
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c20ae722c6966c0800000000000000
+      internalID: -4149666686236087250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_42
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 62
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8114b06030e20350800000000000000
+      internalID: 5981589753486905740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_43
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 51
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5705cafdd89b8f1d0800000000000000
+      internalID: -3316697106564231051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_44
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 31
+        width: 33
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 704ea5b4d66087520800000000000000
+      internalID: 2699915043094062087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_45
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 37
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b806203d1e3882840800000000000000
+      internalID: 5199550775730266251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_46
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 28
+        width: 53
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d82ba84d4ed7450800000000000000
+      internalID: 6088273872785935752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_47
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 37
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8870558c9173a8f70800000000000000
+      internalID: 9190218573477644168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_48
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 46
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b08eee141cee50b30800000000000000
+      internalID: 4253067936923576331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_49
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 31
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f002fce2a424a09c0800000000000000
+      internalID: -3960280035938590705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_50
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 28
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea9c58f923c5043d0800000000000000
+      internalID: -3224475960702809682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_51
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 28
+        width: 25
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af22f8babc2d68a0800000000000000
+      internalID: -6310338322397778007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_delivery_melee-strip_52
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 16
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708ac899867171110800000000000000
+      internalID: 1231478761129289735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

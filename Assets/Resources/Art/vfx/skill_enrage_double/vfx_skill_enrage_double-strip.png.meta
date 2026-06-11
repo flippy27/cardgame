@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 12b360694c9a5fd419ef3378628edea4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8613535015799142032
+    second: vfx_skill_enrage_double-strip_0
+  - first:
+      213: 2978954301437224246
+    second: vfx_skill_enrage_double-strip_1
+  - first:
+      213: 6136920141708424090
+    second: vfx_skill_enrage_double-strip_2
+  - first:
+      213: 6107068360014427627
+    second: vfx_skill_enrage_double-strip_3
+  - first:
+      213: -42062215037590091
+    second: vfx_skill_enrage_double-strip_4
+  - first:
+      213: 5043122090851365614
+    second: vfx_skill_enrage_double-strip_5
+  - first:
+      213: -8682704612228060793
+    second: vfx_skill_enrage_double-strip_6
+  - first:
+      213: -6090742959396932796
+    second: vfx_skill_enrage_double-strip_7
+  - first:
+      213: -2460450368054710011
+    second: vfx_skill_enrage_double-strip_8
+  - first:
+      213: 6665118651604962539
+    second: vfx_skill_enrage_double-strip_9
+  - first:
+      213: 8827042726116145771
+    second: vfx_skill_enrage_double-strip_10
+  - first:
+      213: -5249086001805249716
+    second: vfx_skill_enrage_double-strip_11
+  - first:
+      213: 8446834308287607805
+    second: vfx_skill_enrage_double-strip_12
+  - first:
+      213: 3658245209131725351
+    second: vfx_skill_enrage_double-strip_13
+  - first:
+      213: -4595830331510109397
+    second: vfx_skill_enrage_double-strip_14
+  - first:
+      213: 1269758842534972554
+    second: vfx_skill_enrage_double-strip_15
+  - first:
+      213: 5025382721641659709
+    second: vfx_skill_enrage_double-strip_16
+  - first:
+      213: -5315430717889253408
+    second: vfx_skill_enrage_double-strip_17
+  - first:
+      213: -3367411838231991248
+    second: vfx_skill_enrage_double-strip_18
+  - first:
+      213: -7138093540385166048
+    second: vfx_skill_enrage_double-strip_19
+  - first:
+      213: -8426989676749366613
+    second: vfx_skill_enrage_double-strip_20
+  - first:
+      213: 2935867356373739709
+    second: vfx_skill_enrage_double-strip_21
+  - first:
+      213: 7514712710525673091
+    second: vfx_skill_enrage_double-strip_22
+  - first:
+      213: -2205643725580799336
+    second: vfx_skill_enrage_double-strip_23
+  - first:
+      213: -3034766514176525868
+    second: vfx_skill_enrage_double-strip_24
+  - first:
+      213: 1704465156033815754
+    second: vfx_skill_enrage_double-strip_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 42
+        width: 229
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07947e22a83967880800000000000000
+      internalID: -8613535015799142032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 52
+        width: 230
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 635a94b672f575920800000000000000
+      internalID: 2978954301437224246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_2
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 54
+        width: 227
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a937875aa58ba2550800000000000000
+      internalID: 6136920141708424090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_3
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 183
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be5ffa9115aa0c450800000000000000
+      internalID: 6107068360014427627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_4
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 191
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b5e73663a09a6ff0800000000000000
+      internalID: -42062215037590091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_5
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 187
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee2fe1072d4ccf540800000000000000
+      internalID: 5043122090851365614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_6
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 176
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 789208a7826d08780800000000000000
+      internalID: -8682704612228060793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_7
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 137
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4433fee6c85597ba0800000000000000
+      internalID: -6090742959396932796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_8
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 154
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 501be902d69baddd0800000000000000
+      internalID: -2460450368054710011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_9
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 158
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec8ebea9124f7c50800000000000000
+      internalID: 6665118651604962539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_10
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 143
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a395b7794ff7a70800000000000000
+      internalID: 8827042726116145771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_11
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 54
+        width: 232
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c433cea97108727b0800000000000000
+      internalID: -5249086001805249716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_12
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 132
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df3b016dc0f293570800000000000000
+      internalID: 8446834308287607805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_13
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 144
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 722329fa2a2b4c230800000000000000
+      internalID: 3658245209131725351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_14
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 126
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2bcf5ac9a45830c0800000000000000
+      internalID: -4595830331510109397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_15
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 115
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c45b790f61f9110800000000000000
+      internalID: 1269758842534972554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_16
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 118
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d36dfa5febdb540800000000000000
+      internalID: 5025382721641659709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_17
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 124
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0efe208acebcb36b0800000000000000
+      internalID: -5315430717889253408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_18
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 100
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03cacb146cc8441d0800000000000000
+      internalID: -3367411838231991248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_19
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 93
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02de4d78eb560fc90800000000000000
+      internalID: -7138093540385166048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_20
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 92
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa587f79815d0b80800000000000000
+      internalID: -8426989676749366613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_21
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 86
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db862544ecb4eb820800000000000000
+      internalID: 2935867356373739709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_22
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 76
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38edef3456f994860800000000000000
+      internalID: 7514712710525673091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_23
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 54
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 892ffa3b7baf361e0800000000000000
+      internalID: -2205643725580799336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_24
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 54
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9f14a2fe752e5d0800000000000000
+      internalID: -3034766514176525868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_enrage_double-strip_25
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 55
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac42d6d570a77a710800000000000000
+      internalID: 1704465156033815754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

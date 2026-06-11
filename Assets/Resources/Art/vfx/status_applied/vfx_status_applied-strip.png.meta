@@ -1,0 +1,1705 @@
+fileFormatVersion: 2
+guid: 99c87f4fa66a5dc49b42e64b59ef3a6d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3248956785542356625
+    second: vfx_status_applied-strip_0
+  - first:
+      213: 6150763419936102048
+    second: vfx_status_applied-strip_1
+  - first:
+      213: -590536835423748401
+    second: vfx_status_applied-strip_2
+  - first:
+      213: 8113695532844852562
+    second: vfx_status_applied-strip_3
+  - first:
+      213: 509296344607612146
+    second: vfx_status_applied-strip_4
+  - first:
+      213: 8140856319060925244
+    second: vfx_status_applied-strip_5
+  - first:
+      213: 7871038085402098819
+    second: vfx_status_applied-strip_6
+  - first:
+      213: 5090583647347068529
+    second: vfx_status_applied-strip_7
+  - first:
+      213: 6171563162730845275
+    second: vfx_status_applied-strip_8
+  - first:
+      213: -7482245433490108220
+    second: vfx_status_applied-strip_9
+  - first:
+      213: 4359773430310211797
+    second: vfx_status_applied-strip_10
+  - first:
+      213: 900029145956774154
+    second: vfx_status_applied-strip_11
+  - first:
+      213: 6346273431285080075
+    second: vfx_status_applied-strip_12
+  - first:
+      213: -8957146144944173679
+    second: vfx_status_applied-strip_13
+  - first:
+      213: 7743537879989241758
+    second: vfx_status_applied-strip_14
+  - first:
+      213: -1587710474909585024
+    second: vfx_status_applied-strip_15
+  - first:
+      213: -6863863696699973217
+    second: vfx_status_applied-strip_16
+  - first:
+      213: 7818301896752529967
+    second: vfx_status_applied-strip_17
+  - first:
+      213: -6117699677236279829
+    second: vfx_status_applied-strip_18
+  - first:
+      213: 3755768699631254147
+    second: vfx_status_applied-strip_19
+  - first:
+      213: 4112311589926301501
+    second: vfx_status_applied-strip_20
+  - first:
+      213: -228263499432952676
+    second: vfx_status_applied-strip_21
+  - first:
+      213: -6613600085398059890
+    second: vfx_status_applied-strip_22
+  - first:
+      213: 2749536581220777975
+    second: vfx_status_applied-strip_23
+  - first:
+      213: 4579513387192377661
+    second: vfx_status_applied-strip_24
+  - first:
+      213: 4641048033805303523
+    second: vfx_status_applied-strip_25
+  - first:
+      213: 573515868703788376
+    second: vfx_status_applied-strip_26
+  - first:
+      213: 321930508076543662
+    second: vfx_status_applied-strip_27
+  - first:
+      213: 8241664805209685606
+    second: vfx_status_applied-strip_28
+  - first:
+      213: 6855910730494570500
+    second: vfx_status_applied-strip_29
+  - first:
+      213: 2930930967392654151
+    second: vfx_status_applied-strip_30
+  - first:
+      213: 4114416240026841511
+    second: vfx_status_applied-strip_31
+  - first:
+      213: -8925271441407675123
+    second: vfx_status_applied-strip_32
+  - first:
+      213: 3913876942065181589
+    second: vfx_status_applied-strip_33
+  - first:
+      213: 8422093982635075503
+    second: vfx_status_applied-strip_34
+  - first:
+      213: -2571294968668816364
+    second: vfx_status_applied-strip_35
+  - first:
+      213: -4145258677825946138
+    second: vfx_status_applied-strip_36
+  - first:
+      213: 141668741014728718
+    second: vfx_status_applied-strip_37
+  - first:
+      213: -9199180562285351465
+    second: vfx_status_applied-strip_38
+  - first:
+      213: 6659852931732948476
+    second: vfx_status_applied-strip_39
+  - first:
+      213: 3386116951829126737
+    second: vfx_status_applied-strip_40
+  - first:
+      213: 527929039517703389
+    second: vfx_status_applied-strip_41
+  - first:
+      213: 8122325298190981813
+    second: vfx_status_applied-strip_42
+  - first:
+      213: -8596192442166736103
+    second: vfx_status_applied-strip_43
+  - first:
+      213: -997476884298294570
+    second: vfx_status_applied-strip_44
+  - first:
+      213: 4222599262156336831
+    second: vfx_status_applied-strip_45
+  - first:
+      213: -7633871452685164912
+    second: vfx_status_applied-strip_46
+  - first:
+      213: -3458541558523430278
+    second: vfx_status_applied-strip_47
+  - first:
+      213: 4171222657689597332
+    second: vfx_status_applied-strip_48
+  - first:
+      213: 4907052645890841155
+    second: vfx_status_applied-strip_49
+  - first:
+      213: 3446165233561058348
+    second: vfx_status_applied-strip_50
+  - first:
+      213: 3652621631693092399
+    second: vfx_status_applied-strip_51
+  - first:
+      213: 6832127109080568632
+    second: vfx_status_applied-strip_52
+  - first:
+      213: 3680859402321805769
+    second: vfx_status_applied-strip_53
+  - first:
+      213: 5371356921987580262
+    second: vfx_status_applied-strip_54
+  - first:
+      213: -5323516115384095534
+    second: vfx_status_applied-strip_55
+  - first:
+      213: 3052518148535898730
+    second: vfx_status_applied-strip_56
+  - first:
+      213: -8548070686040236036
+    second: vfx_status_applied-strip_57
+  - first:
+      213: -4312611375290954271
+    second: vfx_status_applied-strip_58
+  - first:
+      213: 5314244839688372610
+    second: vfx_status_applied-strip_59
+  - first:
+      213: -794796463537846813
+    second: vfx_status_applied-strip_60
+  - first:
+      213: 1649644989226403444
+    second: vfx_status_applied-strip_61
+  - first:
+      213: -268333866614028015
+    second: vfx_status_applied-strip_62
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_0
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 235
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f61272b640369e2d0800000000000000
+      internalID: -3248956785542356625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 192
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a612c60eb6eb5550800000000000000
+      internalID: 6150763419936102048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_2
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 201
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fceb8c180edfdc7f0800000000000000
+      internalID: -590536835423748401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_3
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 201
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25524e25913a99070800000000000000
+      internalID: 8113695532844852562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_4
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 130
+        width: 32
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fcddb9b352611700800000000000000
+      internalID: 509296344607612146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_5
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 96
+        width: 120
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3bde19a0b12af070800000000000000
+      internalID: 8140856319060925244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_6
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 174
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c76f5af6b8b3d60800000000000000
+      internalID: 7871038085402098819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_7
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 167
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ec88f2bd265a640800000000000000
+      internalID: 5090583647347068529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_8
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 167
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5455778ffbc5a550800000000000000
+      internalID: 6171563162730845275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_9
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 180
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c0988ebb69b92890800000000000000
+      internalID: -7482245433490108220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_10
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 166
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d093d6f5d6018c30800000000000000
+      internalID: 4359773430310211797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_11
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 167
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a01704c5dbb8d7c00800000000000000
+      internalID: 900029145956774154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_12
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 117
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b002f3fcf0e721850800000000000000
+      internalID: 6346273431285080075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_13
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 167
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19dc755c903d1b380800000000000000
+      internalID: -8957146144944173679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_14
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 169
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e974a81cca2967b60800000000000000
+      internalID: 7743537879989241758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_15
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 46
+        width: 216
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081f8d03cb157f9e0800000000000000
+      internalID: -1587710474909585024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_16
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 154
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f91af7b8558aeb0a0800000000000000
+      internalID: -6863863696699973217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_17
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 35
+        width: 118
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2282b6e620308c60800000000000000
+      internalID: 7818301896752529967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_18
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 144
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be54fc77e80991ba0800000000000000
+      internalID: -6117699677236279829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_19
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 154
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a3d00cbbb2f1430800000000000000
+      internalID: 3755768699631254147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_20
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 137
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f67436a9dd11930800000000000000
+      internalID: 4112311589926301501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_21
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 138
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9c7c118e8b05dcf0800000000000000
+      internalID: -228263499432952676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_22
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 138
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e840b5f33c5c734a0800000000000000
+      internalID: -6613600085398059890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_23
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 139
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ff3b94f3f0582620800000000000000
+      internalID: 2749536581220777975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_24
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 127
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d316fbf8923bd8f30800000000000000
+      internalID: 4579513387192377661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_25
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 102
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee7d70f890586040800000000000000
+      internalID: 4641048033805303523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_26
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 117
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d832bd4a985f700800000000000000
+      internalID: 573515868703788376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_27
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 116
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eae6348671ab77400800000000000000
+      internalID: 321930508076543662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_28
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 115
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ebc506976406270800000000000000
+      internalID: 8241664805209685606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_29
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 112
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 400fae63c76152f50800000000000000
+      internalID: 6855910730494570500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_30
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 119
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74391a4af22cca820800000000000000
+      internalID: 2930930967392654151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_31
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 90
+        width: 36
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a1f5ec65c7591930800000000000000
+      internalID: 4114416240026841511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_32
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 90
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d05f4f289e0132480800000000000000
+      internalID: -8925271441407675123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_33
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 100
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593236a9752e05630800000000000000
+      internalID: 3913876942065181589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_34
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 100
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa72be3ead941e470800000000000000
+      internalID: 8422093982635075503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_35
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 104
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41cfebb69dce05cd0800000000000000
+      internalID: -2571294968668816364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_36
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 79
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed341ee1351976c0800000000000000
+      internalID: -4145258677825946138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_37
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 87
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e00b5f728fe47f100800000000000000
+      internalID: 141668741014728718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_38
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 61
+        width: 57
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ddad489402f55080800000000000000
+      internalID: -9199180562285351465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_39
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 60
+        width: 46
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf5494cb4fc8c6c50800000000000000
+      internalID: 6659852931732948476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_40
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 92
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e14b16d67edfe20800000000000000
+      internalID: 3386116951829126737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_41
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 68
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddcd0131aa4935700800000000000000
+      internalID: 527929039517703389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_42
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 76
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ba97d423db48b070800000000000000
+      internalID: 8122325298190981813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_43
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 77
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b01c7b48034b880800000000000000
+      internalID: -8596192442166736103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_44
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 71
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6da9cbffe004822f0800000000000000
+      internalID: -997476884298294570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_45
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 74
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbea7a918afa99a30800000000000000
+      internalID: 4222599262156336831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_46
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 67
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e94b91c5a0f0690800000000000000
+      internalID: -7633871452685164912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_47
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 52
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7af843d6cac000d0800000000000000
+      internalID: -3458541558523430278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_48
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 40
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49536a638e823e930800000000000000
+      internalID: 4171222657689597332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_49
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ad67cf16a591440800000000000000
+      internalID: 4907052645890841155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_50
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 63
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2c35b7750d33df20800000000000000
+      internalID: 3446165233561058348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_51
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 61
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2679f78508b0b230800000000000000
+      internalID: 3652621631693092399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_52
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 57
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8335015586790de50800000000000000
+      internalID: 6832127109080568632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_53
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 53
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c14c87df1a051330800000000000000
+      internalID: 3680859402321805769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_54
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 38
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 661c7e079a4ea8a40800000000000000
+      internalID: 5371356921987580262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_55
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 48
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dca67a5c421f16b0800000000000000
+      internalID: -5323516115384095534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_56
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 57
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a625ae94519bc5a20800000000000000
+      internalID: 3052518148535898730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_57
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 54
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff54ab20072f5980800000000000000
+      internalID: -8548070686040236036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_58
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 56
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ed4979adc68624c0800000000000000
+      internalID: -4312611375290954271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_59
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 28
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281041f868dffb940800000000000000
+      internalID: 5314244839688372610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_60
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 22
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e50712d3d058f4f0800000000000000
+      internalID: -794796463537846813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_61
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 13
+        width: 49
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 476c754a067b4e610800000000000000
+      internalID: 1649644989226403444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_status_applied-strip_62
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 21
+        width: 66
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 119834f15cfa64cf0800000000000000
+      internalID: -268333866614028015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

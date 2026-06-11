@@ -1,0 +1,1505 @@
+fileFormatVersion: 2
+guid: ba8a7f5a0483d2545b4e4b2cc382e950
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7030926110353227104
+    second: vfx_skill_haste_ready-strip_0
+  - first:
+      213: -6275143395209189449
+    second: vfx_skill_haste_ready-strip_1
+  - first:
+      213: 1207515195358190734
+    second: vfx_skill_haste_ready-strip_2
+  - first:
+      213: -6675862336606555017
+    second: vfx_skill_haste_ready-strip_3
+  - first:
+      213: -2145827628917929791
+    second: vfx_skill_haste_ready-strip_4
+  - first:
+      213: -5102788882069829537
+    second: vfx_skill_haste_ready-strip_5
+  - first:
+      213: -4403811470487269389
+    second: vfx_skill_haste_ready-strip_6
+  - first:
+      213: -3083300332855133836
+    second: vfx_skill_haste_ready-strip_7
+  - first:
+      213: 7647938013250461444
+    second: vfx_skill_haste_ready-strip_8
+  - first:
+      213: 1938752807919633839
+    second: vfx_skill_haste_ready-strip_9
+  - first:
+      213: 7591100940422227746
+    second: vfx_skill_haste_ready-strip_10
+  - first:
+      213: -4338310422228169670
+    second: vfx_skill_haste_ready-strip_11
+  - first:
+      213: 3466801312844712882
+    second: vfx_skill_haste_ready-strip_12
+  - first:
+      213: -8314094213909435547
+    second: vfx_skill_haste_ready-strip_13
+  - first:
+      213: 7030269911172049239
+    second: vfx_skill_haste_ready-strip_14
+  - first:
+      213: -1416895134081508612
+    second: vfx_skill_haste_ready-strip_15
+  - first:
+      213: 2367994591239846026
+    second: vfx_skill_haste_ready-strip_16
+  - first:
+      213: -1557298854996813402
+    second: vfx_skill_haste_ready-strip_17
+  - first:
+      213: -29920118428001733
+    second: vfx_skill_haste_ready-strip_18
+  - first:
+      213: 8056612909211792706
+    second: vfx_skill_haste_ready-strip_19
+  - first:
+      213: 2727383917768238575
+    second: vfx_skill_haste_ready-strip_20
+  - first:
+      213: -2748619440882622664
+    second: vfx_skill_haste_ready-strip_21
+  - first:
+      213: -2392978644249545773
+    second: vfx_skill_haste_ready-strip_22
+  - first:
+      213: 4917683449843136987
+    second: vfx_skill_haste_ready-strip_23
+  - first:
+      213: -5986090565103834991
+    second: vfx_skill_haste_ready-strip_24
+  - first:
+      213: -4786974258540268723
+    second: vfx_skill_haste_ready-strip_25
+  - first:
+      213: 3618987157342177595
+    second: vfx_skill_haste_ready-strip_26
+  - first:
+      213: 5592149862393931051
+    second: vfx_skill_haste_ready-strip_27
+  - first:
+      213: 7668301468558752510
+    second: vfx_skill_haste_ready-strip_28
+  - first:
+      213: 5003919961290817882
+    second: vfx_skill_haste_ready-strip_29
+  - first:
+      213: 5280797731781608753
+    second: vfx_skill_haste_ready-strip_30
+  - first:
+      213: -7230262331661329638
+    second: vfx_skill_haste_ready-strip_31
+  - first:
+      213: 4984735300293474604
+    second: vfx_skill_haste_ready-strip_32
+  - first:
+      213: -1123146502129370841
+    second: vfx_skill_haste_ready-strip_33
+  - first:
+      213: 3977585547064912061
+    second: vfx_skill_haste_ready-strip_34
+  - first:
+      213: -9191339537881390912
+    second: vfx_skill_haste_ready-strip_35
+  - first:
+      213: -4546416673517381314
+    second: vfx_skill_haste_ready-strip_36
+  - first:
+      213: 7130706385239662783
+    second: vfx_skill_haste_ready-strip_37
+  - first:
+      213: 5454790995087372461
+    second: vfx_skill_haste_ready-strip_38
+  - first:
+      213: 9093593805601550874
+    second: vfx_skill_haste_ready-strip_39
+  - first:
+      213: -6457905199999977389
+    second: vfx_skill_haste_ready-strip_40
+  - first:
+      213: 274170467706407210
+    second: vfx_skill_haste_ready-strip_41
+  - first:
+      213: -8637249210270390708
+    second: vfx_skill_haste_ready-strip_42
+  - first:
+      213: 7666826514574538407
+    second: vfx_skill_haste_ready-strip_43
+  - first:
+      213: -9089254153753090766
+    second: vfx_skill_haste_ready-strip_44
+  - first:
+      213: -5278895448150320255
+    second: vfx_skill_haste_ready-strip_45
+  - first:
+      213: 8882269689703296924
+    second: vfx_skill_haste_ready-strip_46
+  - first:
+      213: -4739470062587633619
+    second: vfx_skill_haste_ready-strip_47
+  - first:
+      213: -5833366400716384501
+    second: vfx_skill_haste_ready-strip_48
+  - first:
+      213: 5386634319585800232
+    second: vfx_skill_haste_ready-strip_49
+  - first:
+      213: 416777045759798619
+    second: vfx_skill_haste_ready-strip_50
+  - first:
+      213: -7476366121394195379
+    second: vfx_skill_haste_ready-strip_51
+  - first:
+      213: 3730506186123374399
+    second: vfx_skill_haste_ready-strip_52
+  - first:
+      213: -3405182786854063169
+    second: vfx_skill_haste_ready-strip_53
+  - first:
+      213: -1515169328762027946
+    second: vfx_skill_haste_ready-strip_54
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 165
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d7f91cb0ed29160800000000000000
+      internalID: 7030926110353227104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 189
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b7eae544563ae8a0800000000000000
+      internalID: -6275143395209189449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_2
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 58
+        width: 210
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c16382ca4f1c010800000000000000
+      internalID: 1207515195358190734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_3
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 118
+        width: 188
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 774382933929a53a0800000000000000
+      internalID: -6675862336606555017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_4
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 189
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c8c02df32d7832e0800000000000000
+      internalID: -2145827628917929791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_5
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 169
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f584a682c804f29b0800000000000000
+      internalID: -5102788882069829537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_6
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 157
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ffc0dbccc482e2c0800000000000000
+      internalID: -4403811470487269389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_7
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 170
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 479735ceeaae535d0800000000000000
+      internalID: -3083300332855133836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_8
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 170
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40f10004a1fe22a60800000000000000
+      internalID: 7647938013250461444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_9
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 137
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa547572865d7ea10800000000000000
+      internalID: 1938752807919633839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_10
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 64
+        width: 38
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22720000612095960800000000000000
+      internalID: 7591100940422227746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_11
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 140
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c07b508a93bc3c0800000000000000
+      internalID: -4338310422228169670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_12
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 143
+        width: 38
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb87f61d6d8c1030800000000000000
+      internalID: 3466801312844712882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_13
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 52
+        width: 206
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b2cc6cc576e9c80800000000000000
+      internalID: -8314094213909435547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_14
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 151
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759e68a7c39809160800000000000000
+      internalID: 7030269911172049239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_15
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 144
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfa9711f16d265ce0800000000000000
+      internalID: -1416895134081508612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_16
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 136
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a88b5e8d88eccd020800000000000000
+      internalID: 2367994591239846026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_17
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 147
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a9daca31fc536ae0800000000000000
+      internalID: -1557298854996813402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_18
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 118
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3a16719fc3b59ff0800000000000000
+      internalID: -29920118428001733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_19
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 133
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 245356251c6decf60800000000000000
+      internalID: 8056612909211792706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_20
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 128
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe560b0193d99d520800000000000000
+      internalID: 2727383917768238575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_21
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 135
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83f557b6e21fad9d0800000000000000
+      internalID: -2748619440882622664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_22
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 123
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d3f8620a9e6aced0800000000000000
+      internalID: -2392978644249545773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_23
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 111
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd9b7b9ea0f1f3440800000000000000
+      internalID: 4917683449843136987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_24
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 123
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1982ba1c8522deca0800000000000000
+      internalID: -5986090565103834991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_25
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 118
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d43b4ca3640419db0800000000000000
+      internalID: -4786974258540268723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_26
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 123
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b39c41835a9393230800000000000000
+      internalID: 3618987157342177595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_27
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 111
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b256dbedbae4b9d40800000000000000
+      internalID: 5592149862393931051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_28
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 32
+        width: 96
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efafc08ae874b6a60800000000000000
+      internalID: 7668301468558752510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_29
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 105
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a51c93161be717540800000000000000
+      internalID: 5003919961290817882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_30
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 100
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1350885ee89294940800000000000000
+      internalID: 5280797731781608753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_31
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 110
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b507887b2f8ab90800000000000000
+      internalID: -7230262331661329638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_32
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 86
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c29b75968565d2540800000000000000
+      internalID: 4984735300293474604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_33
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 94
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7293bddf438c960f0800000000000000
+      internalID: -1123146502129370841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_34
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 80
+        width: 70
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8288c1bf8333730800000000000000
+      internalID: 3977585547064912061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_35
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 92
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c0a39a536dc17080800000000000000
+      internalID: -9191339537881390912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_36
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 82
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3955169f12e7e0c0800000000000000
+      internalID: -4546416673517381314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_37
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 101
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0e1d16dab55f260800000000000000
+      internalID: 7130706385239662783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_38
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 97
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da0be22628f43bb40800000000000000
+      internalID: 5454790995087372461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_39
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 96
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a12b292e26fe23e70800000000000000
+      internalID: 9093593805601550874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_40
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3587ad0af69e066a0800000000000000
+      internalID: -6457905199999977389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_41
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 87
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a290b87769c0ec300800000000000000
+      internalID: 274170467706407210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_42
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 75
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c466f49fa93522880800000000000000
+      internalID: -8637249210270390708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_43
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 85
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a6f2cb281a066a60800000000000000
+      internalID: 7666826514574538407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_44
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 32
+        width: 97
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 235ad4c018b7cd180800000000000000
+      internalID: -9089254153753090766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_45
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 79
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18bd2960f889db6b0800000000000000
+      internalID: -5278895448150320255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_46
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 69
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9febf5f839244b70800000000000000
+      internalID: 8882269689703296924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_47
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 73
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20addfb6150a3eb0800000000000000
+      internalID: -4739470062587633619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_48
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 45
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b07d9904a28bb0fa0800000000000000
+      internalID: -5833366400716384501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_49
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 59
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 820f6d1cf5b21ca40800000000000000
+      internalID: 5386634319585800232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_50
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 39
+        width: 36
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5dac03d380b8c500800000000000000
+      internalID: 416777045759798619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_51
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 55
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d44b883cf9c9e3890800000000000000
+      internalID: -7476366121394195379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_52
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 62
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3fe7487c9b65c330800000000000000
+      internalID: 3730506186123374399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_53
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 48
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb3f94afb4c5eb0d0800000000000000
+      internalID: -3405182786854063169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_haste_ready-strip_54
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 32
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6508290f58909fae0800000000000000
+      internalID: -1515169328762027946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

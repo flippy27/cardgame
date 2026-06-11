@@ -1,0 +1,1055 @@
+fileFormatVersion: 2
+guid: 1c682f43f487f2a41b45b0ebe64ed26d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 648318314496852544
+    second: vfx_card_attack-strip_0
+  - first:
+      213: -2306837987526471357
+    second: vfx_card_attack-strip_1
+  - first:
+      213: 48678708986127554
+    second: vfx_card_attack-strip_2
+  - first:
+      213: -6031707989525446377
+    second: vfx_card_attack-strip_3
+  - first:
+      213: 1363071950914801566
+    second: vfx_card_attack-strip_4
+  - first:
+      213: -9043399070620704530
+    second: vfx_card_attack-strip_5
+  - first:
+      213: -8929939842658332295
+    second: vfx_card_attack-strip_6
+  - first:
+      213: 3497716807702126049
+    second: vfx_card_attack-strip_7
+  - first:
+      213: -2597117257913281798
+    second: vfx_card_attack-strip_8
+  - first:
+      213: -6485006825573821426
+    second: vfx_card_attack-strip_9
+  - first:
+      213: -1675848989777269543
+    second: vfx_card_attack-strip_10
+  - first:
+      213: -1273069356024708229
+    second: vfx_card_attack-strip_11
+  - first:
+      213: -9001102855423964841
+    second: vfx_card_attack-strip_12
+  - first:
+      213: 4881479939745569254
+    second: vfx_card_attack-strip_13
+  - first:
+      213: 2171021136147636173
+    second: vfx_card_attack-strip_14
+  - first:
+      213: 3832950273467172371
+    second: vfx_card_attack-strip_15
+  - first:
+      213: 6387485537175347598
+    second: vfx_card_attack-strip_16
+  - first:
+      213: -1187204286983306629
+    second: vfx_card_attack-strip_17
+  - first:
+      213: -2566194983252923448
+    second: vfx_card_attack-strip_18
+  - first:
+      213: -5686728057427847552
+    second: vfx_card_attack-strip_19
+  - first:
+      213: 1952706501492969529
+    second: vfx_card_attack-strip_20
+  - first:
+      213: -7748964683802695853
+    second: vfx_card_attack-strip_21
+  - first:
+      213: 8986300770397808538
+    second: vfx_card_attack-strip_22
+  - first:
+      213: 5534377773819926016
+    second: vfx_card_attack-strip_23
+  - first:
+      213: -1662924781813681051
+    second: vfx_card_attack-strip_24
+  - first:
+      213: -8368912784160060682
+    second: vfx_card_attack-strip_25
+  - first:
+      213: -2525293774040825039
+    second: vfx_card_attack-strip_26
+  - first:
+      213: -2364394102612763594
+    second: vfx_card_attack-strip_27
+  - first:
+      213: 4443436977542390591
+    second: vfx_card_attack-strip_28
+  - first:
+      213: -4813649860112220134
+    second: vfx_card_attack-strip_29
+  - first:
+      213: -2650809462482243826
+    second: vfx_card_attack-strip_30
+  - first:
+      213: -7186965880591152917
+    second: vfx_card_attack-strip_31
+  - first:
+      213: -4873300772283339817
+    second: vfx_card_attack-strip_32
+  - first:
+      213: 6558440844792217919
+    second: vfx_card_attack-strip_33
+  - first:
+      213: 3800117738644050273
+    second: vfx_card_attack-strip_34
+  - first:
+      213: -5020175661329508974
+    second: vfx_card_attack-strip_35
+  - first:
+      213: 5058130434044456258
+    second: vfx_card_attack-strip_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 165
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04207f4721a4ff800800000000000000
+      internalID: 648318314496852544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 169
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3419b1f82177cffd0800000000000000
+      internalID: -2306837987526471357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 160
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c42e352701fca000800000000000000
+      internalID: 48678708986127554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_3
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 65
+        width: 201
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71143777a811b4ca0800000000000000
+      internalID: -6031707989525446377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_4
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 28
+        width: 232
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f439da7ba9ae210800000000000000
+      internalID: 1363071950914801566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_5
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 155
+        width: 54
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee02e8195746f7280800000000000000
+      internalID: -9043399070620704530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_6
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 173
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9711eb4a60b721480800000000000000
+      internalID: -8929939842658332295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_7
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 169
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ed9ff7a7e26a8030800000000000000
+      internalID: 3497716807702126049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 142
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af2da023d9f25fbd0800000000000000
+      internalID: -2597117257913281798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_9
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 78
+        width: 209
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0450b3b6a0a006a0800000000000000
+      internalID: -6485006825573821426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_10
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 139
+        width: 39
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dce02b09303eb8e0800000000000000
+      internalID: -1675848989777269543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_11
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 145
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7346bb6a26255ee0800000000000000
+      internalID: -1273069356024708229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_12
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 154
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75943b394a8a51380800000000000000
+      internalID: -9001102855423964841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_13
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 138
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e9daba54208eb340800000000000000
+      internalID: 4881479939745569254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_14
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 128
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcfd1f38834012e10800000000000000
+      internalID: 2171021136147636173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_15
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 141
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3164fb347ff513530800000000000000
+      internalID: 3832950273467172371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_16
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 123
+        width: 31
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e812843f048e4a850800000000000000
+      internalID: 6387485537175347598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_17
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 127
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b720a86bdf3368fe0800000000000000
+      internalID: -1187204286983306629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_18
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 118
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cbe1de424b036cd0800000000000000
+      internalID: -2566194983252923448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_19
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 120
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08614ca16fea411b0800000000000000
+      internalID: -5686728057427847552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_20
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 101
+        width: 37
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930951c9738691b10800000000000000
+      internalID: 1952706501492969529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_21
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 106
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357a4e40da5267490800000000000000
+      internalID: -7748964683802695853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_22
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 99
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97616070f0c5bc70800000000000000
+      internalID: 8986300770397808538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_23
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 109
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0069a5d434f0ecc40800000000000000
+      internalID: 5534377773819926016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_24
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 108
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5643dc3b8ba1ce8e0800000000000000
+      internalID: -1662924781813681051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_25
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 92
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fa0ae7c926abdb80800000000000000
+      internalID: -8368912784160060682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_26
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 106
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1338acc21ba54fcd0800000000000000
+      internalID: -2525293774040825039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_27
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 88
+        width: 50
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63cdcbc371cff2fd0800000000000000
+      internalID: -2364394102612763594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_28
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 86
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f33ef3483624aad30800000000000000
+      internalID: 4443436977542390591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_29
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 88
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1007eeb4fa723db0800000000000000
+      internalID: -4813649860112220134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_30
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 82
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f6085a6de663bd0800000000000000
+      internalID: -2650809462482243826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_31
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 87
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8038a1c94c24c90800000000000000
+      internalID: -7186965880591152917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_32
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 93
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db2a6874ce8e5cb0800000000000000
+      internalID: -4873300772283339817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_33
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 74
+        width: 41
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f31c0424333440b50800000000000000
+      internalID: 6558440844792217919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_34
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 72
+        width: 30
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1611a8c03fabcb430800000000000000
+      internalID: 3800117738644050273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_35
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 72
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 295946485d0c45ab0800000000000000
+      internalID: -5020175661329508974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_card_attack-strip_36
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 73
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24defc4a4d6123640800000000000000
+      internalID: 5058130434044456258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

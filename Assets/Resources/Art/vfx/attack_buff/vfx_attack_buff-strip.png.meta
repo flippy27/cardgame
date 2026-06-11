@@ -1,0 +1,2305 @@
+fileFormatVersion: 2
+guid: 4bfa0a415a075634b8d56d73ef666f22
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7713618931807405137
+    second: vfx_attack_buff-strip_0
+  - first:
+      213: 6474137939948061960
+    second: vfx_attack_buff-strip_1
+  - first:
+      213: 5112453744402759755
+    second: vfx_attack_buff-strip_2
+  - first:
+      213: -6366570143847236818
+    second: vfx_attack_buff-strip_3
+  - first:
+      213: 229973885157247213
+    second: vfx_attack_buff-strip_4
+  - first:
+      213: -5417578827634022313
+    second: vfx_attack_buff-strip_5
+  - first:
+      213: -725411773563983603
+    second: vfx_attack_buff-strip_6
+  - first:
+      213: -1123152860370685077
+    second: vfx_attack_buff-strip_7
+  - first:
+      213: -5708071049402729251
+    second: vfx_attack_buff-strip_8
+  - first:
+      213: -2512154241038059883
+    second: vfx_attack_buff-strip_9
+  - first:
+      213: 1704670218518093614
+    second: vfx_attack_buff-strip_10
+  - first:
+      213: -5672912841248575248
+    second: vfx_attack_buff-strip_11
+  - first:
+      213: -4132860584738562695
+    second: vfx_attack_buff-strip_12
+  - first:
+      213: 644225344586092892
+    second: vfx_attack_buff-strip_13
+  - first:
+      213: 8363599766500743629
+    second: vfx_attack_buff-strip_14
+  - first:
+      213: 6341205143688970907
+    second: vfx_attack_buff-strip_15
+  - first:
+      213: 7235039640514042506
+    second: vfx_attack_buff-strip_16
+  - first:
+      213: 1640936237078762711
+    second: vfx_attack_buff-strip_17
+  - first:
+      213: -4435575300201500513
+    second: vfx_attack_buff-strip_18
+  - first:
+      213: -404581495711057132
+    second: vfx_attack_buff-strip_19
+  - first:
+      213: 8040249228172560126
+    second: vfx_attack_buff-strip_20
+  - first:
+      213: -4112106254976459039
+    second: vfx_attack_buff-strip_21
+  - first:
+      213: -3978030491949713628
+    second: vfx_attack_buff-strip_22
+  - first:
+      213: 6477033187571613939
+    second: vfx_attack_buff-strip_23
+  - first:
+      213: 5224924524438325549
+    second: vfx_attack_buff-strip_24
+  - first:
+      213: -269738125138577833
+    second: vfx_attack_buff-strip_25
+  - first:
+      213: 1167171411529424769
+    second: vfx_attack_buff-strip_26
+  - first:
+      213: 3081114424101706985
+    second: vfx_attack_buff-strip_27
+  - first:
+      213: -5630650408812502485
+    second: vfx_attack_buff-strip_28
+  - first:
+      213: 3867754657462850734
+    second: vfx_attack_buff-strip_29
+  - first:
+      213: -6669357588663388752
+    second: vfx_attack_buff-strip_30
+  - first:
+      213: 1975828921981739743
+    second: vfx_attack_buff-strip_31
+  - first:
+      213: 8018480817413035703
+    second: vfx_attack_buff-strip_32
+  - first:
+      213: 4692958031259350675
+    second: vfx_attack_buff-strip_33
+  - first:
+      213: -1165022941364984178
+    second: vfx_attack_buff-strip_34
+  - first:
+      213: -4559410929443481673
+    second: vfx_attack_buff-strip_35
+  - first:
+      213: 6690870155596459080
+    second: vfx_attack_buff-strip_36
+  - first:
+      213: -7080423112682111404
+    second: vfx_attack_buff-strip_37
+  - first:
+      213: -3405499084888223561
+    second: vfx_attack_buff-strip_38
+  - first:
+      213: -3963140857949945758
+    second: vfx_attack_buff-strip_39
+  - first:
+      213: -1582356837133194439
+    second: vfx_attack_buff-strip_40
+  - first:
+      213: -1987725698876073801
+    second: vfx_attack_buff-strip_41
+  - first:
+      213: -9093729563575079847
+    second: vfx_attack_buff-strip_42
+  - first:
+      213: 2792189792883504935
+    second: vfx_attack_buff-strip_43
+  - first:
+      213: -1348668838240466082
+    second: vfx_attack_buff-strip_44
+  - first:
+      213: 5751922297307173807
+    second: vfx_attack_buff-strip_45
+  - first:
+      213: 2916297144869288276
+    second: vfx_attack_buff-strip_46
+  - first:
+      213: 3184903645197166978
+    second: vfx_attack_buff-strip_47
+  - first:
+      213: 495509459991776695
+    second: vfx_attack_buff-strip_48
+  - first:
+      213: -9160510434745172115
+    second: vfx_attack_buff-strip_49
+  - first:
+      213: -4986783482178732069
+    second: vfx_attack_buff-strip_50
+  - first:
+      213: 9071433208834366485
+    second: vfx_attack_buff-strip_51
+  - first:
+      213: 4479091491704208357
+    second: vfx_attack_buff-strip_52
+  - first:
+      213: -426440817628270347
+    second: vfx_attack_buff-strip_53
+  - first:
+      213: 7910566805390772153
+    second: vfx_attack_buff-strip_54
+  - first:
+      213: 7227539468790109645
+    second: vfx_attack_buff-strip_55
+  - first:
+      213: -890600424273619395
+    second: vfx_attack_buff-strip_56
+  - first:
+      213: 4138732553161058012
+    second: vfx_attack_buff-strip_57
+  - first:
+      213: 8764365074570495555
+    second: vfx_attack_buff-strip_58
+  - first:
+      213: 7733181995702298263
+    second: vfx_attack_buff-strip_59
+  - first:
+      213: -7700007852331611567
+    second: vfx_attack_buff-strip_60
+  - first:
+      213: 4098644976401814955
+    second: vfx_attack_buff-strip_61
+  - first:
+      213: 4935129351397302010
+    second: vfx_attack_buff-strip_62
+  - first:
+      213: 1709873205428882570
+    second: vfx_attack_buff-strip_63
+  - first:
+      213: 2843602893586218003
+    second: vfx_attack_buff-strip_64
+  - first:
+      213: 8659412701916605208
+    second: vfx_attack_buff-strip_65
+  - first:
+      213: -3487386069395791165
+    second: vfx_attack_buff-strip_66
+  - first:
+      213: -5678031481895923397
+    second: vfx_attack_buff-strip_67
+  - first:
+      213: 5442556722912390297
+    second: vfx_attack_buff-strip_68
+  - first:
+      213: 1835335668547225016
+    second: vfx_attack_buff-strip_69
+  - first:
+      213: 3618883479310598951
+    second: vfx_attack_buff-strip_70
+  - first:
+      213: 5821017094830630463
+    second: vfx_attack_buff-strip_71
+  - first:
+      213: 132793269399087480
+    second: vfx_attack_buff-strip_72
+  - first:
+      213: 8305725575862737177
+    second: vfx_attack_buff-strip_73
+  - first:
+      213: -932028433166503938
+    second: vfx_attack_buff-strip_74
+  - first:
+      213: -8897295768383644888
+    second: vfx_attack_buff-strip_75
+  - first:
+      213: 1782590056602844118
+    second: vfx_attack_buff-strip_76
+  - first:
+      213: -6479422631996521994
+    second: vfx_attack_buff-strip_77
+  - first:
+      213: 6324529042736374728
+    second: vfx_attack_buff-strip_78
+  - first:
+      213: -3251720312064331996
+    second: vfx_attack_buff-strip_79
+  - first:
+      213: 7241440049232891197
+    second: vfx_attack_buff-strip_80
+  - first:
+      213: -6550371448438466285
+    second: vfx_attack_buff-strip_81
+  - first:
+      213: 3272295541276154683
+    second: vfx_attack_buff-strip_82
+  - first:
+      213: 7285090144116832682
+    second: vfx_attack_buff-strip_83
+  - first:
+      213: -3082154375716902722
+    second: vfx_attack_buff-strip_84
+  - first:
+      213: -1930354944951481952
+    second: vfx_attack_buff-strip_85
+  - first:
+      213: -8226916781241285154
+    second: vfx_attack_buff-strip_86
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_0
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 230
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab34e43378b3f490800000000000000
+      internalID: -7713618931807405137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_1
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 12
+        width: 216
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 805cb79a722c8d950800000000000000
+      internalID: 6474137939948061960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_2
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 12
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b400eb5f79513f640800000000000000
+      internalID: 5112453744402759755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_3
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 225
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2bb06a8f2665a7a0800000000000000
+      internalID: -6366570143847236818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_4
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 211
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de80a64b708013300800000000000000
+      internalID: 229973885157247213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_5
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 150
+        width: 27
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 758623482c4e0d4b0800000000000000
+      internalID: -5417578827634022313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_6
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 214
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0925d8d5d1dee5f0800000000000000
+      internalID: -725411773563983603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_7
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 202
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6334299c62c960f0800000000000000
+      internalID: -1123152860370685077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_8
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 178
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddcb8ab8f9bd8c0b0800000000000000
+      internalID: -5708071049402729251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_9
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 173
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5967fe91709032dd0800000000000000
+      internalID: -2512154241038059883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_10
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 195
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f55f1388438a710800000000000000
+      internalID: 1704670218518093614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_11
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 189
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f070a7c3d3c541b0800000000000000
+      internalID: -5672912841248575248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 120
+        width: 35
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97dd17ce13125a6c0800000000000000
+      internalID: -4132860584738562695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 97
+        width: 7
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c519b53a98fb0f800800000000000000
+      internalID: 644225344586092892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_14
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 162
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc911d5eca9711470800000000000000
+      internalID: 8363599766500743629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_15
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 171
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9206752b7c700850800000000000000
+      internalID: 6341205143688970907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_16
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 156
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a95bc5836086460800000000000000
+      internalID: 7235039640514042506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_17
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 12
+        width: 64
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d4552640d6c5c610800000000000000
+      internalID: 1640936237078762711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_18
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 162
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f903ef0e3cba172c0800000000000000
+      internalID: -4435575300201500513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_19
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 161
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41b3271f543a26af0800000000000000
+      internalID: -404581495711057132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_20
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 160
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef685dee214b49f60800000000000000
+      internalID: 8040249228172560126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_21
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 141
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee5771e52ddee6c0800000000000000
+      internalID: -4112106254976459039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_22
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 148
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4273aa518523bc8c0800000000000000
+      internalID: -3978030491949713628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_23
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 114
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f04f970e5b03e950800000000000000
+      internalID: 6477033187571613939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_24
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 129
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d298f511c29a28840800000000000000
+      internalID: 5224924524438325549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_25
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 126
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7563cb4ba92b14cf0800000000000000
+      internalID: -269738125138577833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_26
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 129
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18fd3300730a23010800000000000000
+      internalID: 1167171411529424769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_27
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 126
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec1ae88e3152ca20800000000000000
+      internalID: 3081114424101706985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_28
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 124
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22a2502949ebd1b0800000000000000
+      internalID: -5630650408812502485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_29
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 134
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea49f646e560da530800000000000000
+      internalID: 3867754657462850734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_30
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 12
+        width: 116
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b5b9afdb9ea173a0800000000000000
+      internalID: -6669357588663388752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_31
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 123
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd22aa7afed8b6b10800000000000000
+      internalID: 1975828921981739743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_32
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 106
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b61038d1dd574f60800000000000000
+      internalID: 8018480817413035703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_33
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 106
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396b70f077cb02140800000000000000
+      internalID: 4692958031259350675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_34
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 106
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8662c0bec105dfe0800000000000000
+      internalID: -1165022941364984178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_35
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 106
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b7dc7d9ae7b9b0c0800000000000000
+      internalID: -4559410929443481673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_36
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 49
+        width: 37
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84ce69ee4febadc50800000000000000
+      internalID: 6690870155596459080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_37
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 76
+        width: 20
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45efd1551b84dbd90800000000000000
+      internalID: -7080423112682111404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_38
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 113
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b0d15a10ac3db0d0800000000000000
+      internalID: -3405499084888223561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_39
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 87
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2608e0723681009c0800000000000000
+      internalID: -3963140857949945758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_40
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 97
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93be3ce17d65a0ae0800000000000000
+      internalID: -1582356837133194439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_41
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 84
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8939f120e2a64e0800000000000000
+      internalID: -1987725698876073801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_42
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 89
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ca3af74259cc180800000000000000
+      internalID: -9093729563575079847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_43
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 87
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727fa4ea2d9dfb620800000000000000
+      internalID: 2792189792883504935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_44
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 81
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5bc90156d0984de0800000000000000
+      internalID: -1348668838240466082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_45
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 65
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa394aabadee2df40800000000000000
+      internalID: 5751922297307173807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_46
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 51
+        width: 20
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4597b635dc4c87820800000000000000
+      internalID: 2916297144869288276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_47
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 70
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 289e2dfadfc033c20800000000000000
+      internalID: 3184903645197166978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_48
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 62
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bdc7a18a3760e600800000000000000
+      internalID: 495509459991776695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_49
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 76
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f31c74b445fd080800000000000000
+      internalID: -9160510434745172115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_50
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 66
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf73f418d26bcab0800000000000000
+      internalID: -4986783482178732069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_51
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 76
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51c1140e07434ed70800000000000000
+      internalID: 9071433208834366485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_52
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 66
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ebf08ffafde82e30800000000000000
+      internalID: 4479091491704208357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_53
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 58
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f03a83f55af41af0800000000000000
+      internalID: -426440817628270347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_54
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 61
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b74057f89af7cd60800000000000000
+      internalID: 7910566805390772153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_55
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 69
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5995d8ad06d4460800000000000000
+      internalID: 7227539468790109645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_56
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 58
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d36db5af1a3f3a3f0800000000000000
+      internalID: -890600424273619395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_57
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 55
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd6a283445bbf6930800000000000000
+      internalID: 4138732553161058012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_58
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 49
+        width: 73
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3464d97899741a970800000000000000
+      internalID: 8764365074570495555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_59
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 64
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 796284d8d08c15b60800000000000000
+      internalID: 7733181995702298263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_60
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 59
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a4e0a97a3142590800000000000000
+      internalID: -7700007852331611567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_61
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 20
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba59ed6f3ef41e830800000000000000
+      internalID: 4098644976401814955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_62
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 46
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afed3a66ff91d7440800000000000000
+      internalID: 4935129351397302010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_63
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 45
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c0c8cfe90bab710800000000000000
+      internalID: 1709873205428882570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_64
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 28
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31cba7204c1867720800000000000000
+      internalID: 2843602893586218003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_65
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 47
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81bae3d09f96c2870800000000000000
+      internalID: 8659412701916605208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_66
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 32
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c2a40bc8d05a9fc0800000000000000
+      internalID: -3487386069395791165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_67
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 48
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b31db1263749331b0800000000000000
+      internalID: -5678031481895923397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_68
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 27
+        width: 45
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c6b1be088d78b40800000000000000
+      internalID: 5442556722912390297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_69
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 52
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b58c57011c687910800000000000000
+      internalID: 1835335668547225016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_70
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 18
+        width: 144
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72386dbc95bd83230800000000000000
+      internalID: 3618883479310598951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_71
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 49
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f362bd8e43868c050800000000000000
+      internalID: 5821017094830630463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_72
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 48
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 879681366c6c7d100800000000000000
+      internalID: 132793269399087480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_73
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 34
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 919dc27d76dd34370800000000000000
+      internalID: 8305725575862737177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_74
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 32
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: effeb800415c013f0800000000000000
+      internalID: -932028433166503938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_75
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 33
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b18e773a4768480800000000000000
+      internalID: -8897295768383644888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_76
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 27
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dbb4ff36380db810800000000000000
+      internalID: 1782590056602844118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_77
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 38
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f1883612777416a0800000000000000
+      internalID: -6479422631996521994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_78
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 31
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c361f3d7ad35c750800000000000000
+      internalID: 6324529042736374728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_79
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 17
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42fab72ca919fd2d0800000000000000
+      internalID: -3251720312064331996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_80
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 26
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d40d4ab53ce7460800000000000000
+      internalID: 7241440049232891197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_81
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 23
+        width: 24
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319d6fc7fd76815a0800000000000000
+      internalID: -6550371448438466285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_82
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 22
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b1cd91577896d20800000000000000
+      internalID: 3272295541276154683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_83
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 27
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa978c453e6d91560800000000000000
+      internalID: 7285090144116832682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_84
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 18
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb86a7cdcecf935d0800000000000000
+      internalID: -3082154375716902722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_85
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 16
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a98fbfa7600635e0800000000000000
+      internalID: -1930354944951481952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_attack_buff-strip_86
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 12
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed5c96986ce14dd80800000000000000
+      internalID: -8226916781241285154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

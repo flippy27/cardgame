@@ -1,0 +1,1230 @@
+fileFormatVersion: 2
+guid: 5c41b73475173f24dab73f23d647680f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2116379832839025586
+    second: vfx_skill_stun_apply-strip_0
+  - first:
+      213: 8951043593986418549
+    second: vfx_skill_stun_apply-strip_1
+  - first:
+      213: -6509206539581085631
+    second: vfx_skill_stun_apply-strip_2
+  - first:
+      213: -5887447805026309889
+    second: vfx_skill_stun_apply-strip_3
+  - first:
+      213: -6698544623566439264
+    second: vfx_skill_stun_apply-strip_4
+  - first:
+      213: 1308175130623966243
+    second: vfx_skill_stun_apply-strip_5
+  - first:
+      213: -2129056224820725011
+    second: vfx_skill_stun_apply-strip_6
+  - first:
+      213: -167206450533973088
+    second: vfx_skill_stun_apply-strip_7
+  - first:
+      213: 2214193524838230413
+    second: vfx_skill_stun_apply-strip_8
+  - first:
+      213: -4985119798893020480
+    second: vfx_skill_stun_apply-strip_9
+  - first:
+      213: -1174947458875328593
+    second: vfx_skill_stun_apply-strip_10
+  - first:
+      213: -104507296599667950
+    second: vfx_skill_stun_apply-strip_11
+  - first:
+      213: 884527438994642344
+    second: vfx_skill_stun_apply-strip_12
+  - first:
+      213: 6518983296200175907
+    second: vfx_skill_stun_apply-strip_13
+  - first:
+      213: 2546700880602294546
+    second: vfx_skill_stun_apply-strip_14
+  - first:
+      213: -4701592495532453918
+    second: vfx_skill_stun_apply-strip_15
+  - first:
+      213: -2070757045063397850
+    second: vfx_skill_stun_apply-strip_16
+  - first:
+      213: -4175352881402088694
+    second: vfx_skill_stun_apply-strip_17
+  - first:
+      213: -7020126451407246231
+    second: vfx_skill_stun_apply-strip_18
+  - first:
+      213: 3123986070248117376
+    second: vfx_skill_stun_apply-strip_19
+  - first:
+      213: -7835967442600396570
+    second: vfx_skill_stun_apply-strip_20
+  - first:
+      213: -4493153198375472566
+    second: vfx_skill_stun_apply-strip_21
+  - first:
+      213: 5555319176190710907
+    second: vfx_skill_stun_apply-strip_22
+  - first:
+      213: 401012177658923123
+    second: vfx_skill_stun_apply-strip_23
+  - first:
+      213: -2375161441467187129
+    second: vfx_skill_stun_apply-strip_24
+  - first:
+      213: 1856355303473581606
+    second: vfx_skill_stun_apply-strip_25
+  - first:
+      213: 4177173619094883308
+    second: vfx_skill_stun_apply-strip_26
+  - first:
+      213: -6580716758687076794
+    second: vfx_skill_stun_apply-strip_27
+  - first:
+      213: -2827165593258311454
+    second: vfx_skill_stun_apply-strip_28
+  - first:
+      213: 5862446247297829145
+    second: vfx_skill_stun_apply-strip_29
+  - first:
+      213: 7580377909762346425
+    second: vfx_skill_stun_apply-strip_30
+  - first:
+      213: 6503667329100771380
+    second: vfx_skill_stun_apply-strip_31
+  - first:
+      213: 7436878872402968784
+    second: vfx_skill_stun_apply-strip_32
+  - first:
+      213: -9107178048407039867
+    second: vfx_skill_stun_apply-strip_33
+  - first:
+      213: 7791622778275171866
+    second: vfx_skill_stun_apply-strip_34
+  - first:
+      213: 3597245248712811851
+    second: vfx_skill_stun_apply-strip_35
+  - first:
+      213: -5326042277670213636
+    second: vfx_skill_stun_apply-strip_36
+  - first:
+      213: 7705137985568621225
+    second: vfx_skill_stun_apply-strip_37
+  - first:
+      213: 5740708384260946225
+    second: vfx_skill_stun_apply-strip_38
+  - first:
+      213: -6541016719804499110
+    second: vfx_skill_stun_apply-strip_39
+  - first:
+      213: 5159299067983808086
+    second: vfx_skill_stun_apply-strip_40
+  - first:
+      213: 6731702800417506652
+    second: vfx_skill_stun_apply-strip_41
+  - first:
+      213: 3615344811006072119
+    second: vfx_skill_stun_apply-strip_42
+  - first:
+      213: 4850270685294837210
+    second: vfx_skill_stun_apply-strip_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_0
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 165
+        width: 17
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c44dd41cb11a2e0800000000000000
+      internalID: -2116379832839025586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_1
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 21
+        width: 223
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 577a89c59be783c70800000000000000
+      internalID: 8951043593986418549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_2
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 206
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148ae96b327aaa5a0800000000000000
+      internalID: -6509206539581085631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_3
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 183
+        width: 66
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff8e0c31a659b4ea0800000000000000
+      internalID: -5887447805026309889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_4
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 148
+        width: 48
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ac3830c72df903a0800000000000000
+      internalID: -6698544623566439264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_5
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 12
+        width: 159
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c77dca952972210800000000000000
+      internalID: 1308175130623966243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_6
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 12
+        width: 232
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deaf9bcc4a21472e0800000000000000
+      internalID: -2129056224820725011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_7
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 114
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3c4cf7e96fdadf0800000000000000
+      internalID: -167206450533973088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_8
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 148
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d89e3ff87456abe10800000000000000
+      internalID: 2214193524838230413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_9
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 125
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0caf63884fb41dab0800000000000000
+      internalID: -4985119798893020480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_10
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 130
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa7fcf3e28fb1bfe0800000000000000
+      internalID: -1174947458875328593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_11
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 121
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21b8dbdda27bc8ef0800000000000000
+      internalID: -104507296599667950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_12
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 117
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a59c53f409764c00800000000000000
+      internalID: 884527438994642344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_13
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 100
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32177b2d4c4187a50800000000000000
+      internalID: 6518983296200175907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_14
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 112
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 219697935f2b75320800000000000000
+      internalID: 2546700880602294546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_15
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 14
+        width: 92
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ef4521198690ceb0800000000000000
+      internalID: -4701592495532453918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_16
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 107
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62ecbd850713343e0800000000000000
+      internalID: -2070757045063397850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_17
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 102
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a03ff142daa2e06c0800000000000000
+      internalID: -4175352881402088694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_18
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 92
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c2c89cf20839e90800000000000000
+      internalID: -7020126451407246231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_19
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 94
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084586087c0aa5b20800000000000000
+      internalID: 3123986070248117376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_20
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 95
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e8f640b02d014390800000000000000
+      internalID: -7835967442600396570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_21
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 78
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a427b69c8fc15a1c0800000000000000
+      internalID: -4493153198375472566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_22
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 81
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7453ce7b55781d40800000000000000
+      internalID: 5555319176190710907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_23
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 71
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37847ff637ea09500800000000000000
+      internalID: 401012177658923123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_24
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 82
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 740c42dc04bb90fd0800000000000000
+      internalID: -2375161441467187129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_25
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 51
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e8478205913c910800000000000000
+      internalID: 1856355303473581606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_26
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 84
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceb8843664d48f930800000000000000
+      internalID: 4177173619094883308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_27
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 68
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64e2ffe59f89ca4a0800000000000000
+      internalID: -6580716758687076794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_28
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 66
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0c1a43fd3e3c8d0800000000000000
+      internalID: -2827165593258311454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_29
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 63
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91942052dc79b5150800000000000000
+      internalID: 5862446247297829145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_30
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 54
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd4a9edb89e23960800000000000000
+      internalID: 7580377909762346425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_31
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 49
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4307d585afaa14a50800000000000000
+      internalID: 6503667329100771380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_32
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 39
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d0cf23aee9153760800000000000000
+      internalID: 7436878872402968784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_33
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 14
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 580967e11ddcc9180800000000000000
+      internalID: -9107178048407039867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_34
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 40
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e0fe292a7612c60800000000000000
+      internalID: 7791622778275171866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_35
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 31
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b452d73ae7bfbe130800000000000000
+      internalID: 3597245248712811851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_36
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 37
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf721cc54c81616b0800000000000000
+      internalID: -5326042277670213636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_37
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 31
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a2cf2f9c262eea60800000000000000
+      internalID: 7705137985568621225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_38
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 19
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 139faf22cd71baf40800000000000000
+      internalID: 5740708384260946225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_39
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 18
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5b792af2f3a935a0800000000000000
+      internalID: -6541016719804499110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_40
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 25
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656cd2dca23899740800000000000000
+      internalID: 5159299067983808086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_41
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 12
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c554368e700db6d50800000000000000
+      internalID: 6731702800417506652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_42
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 15
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 735919063f84c2230800000000000000
+      internalID: 3615344811006072119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_stun_apply-strip_43
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 12
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: add3d7d8d7f9f4340800000000000000
+      internalID: 4850270685294837210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

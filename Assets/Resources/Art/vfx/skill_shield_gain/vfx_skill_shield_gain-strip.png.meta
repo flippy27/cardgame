@@ -1,0 +1,1155 @@
+fileFormatVersion: 2
+guid: 096fc3d8cbc5e2c4db545944b3c19f18
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8006999809548290640
+    second: vfx_skill_shield_gain-strip_0
+  - first:
+      213: 7465144559622395788
+    second: vfx_skill_shield_gain-strip_1
+  - first:
+      213: 8751138431116820136
+    second: vfx_skill_shield_gain-strip_2
+  - first:
+      213: -1516069211264064083
+    second: vfx_skill_shield_gain-strip_3
+  - first:
+      213: -5122085365885212884
+    second: vfx_skill_shield_gain-strip_4
+  - first:
+      213: 6479360878558108032
+    second: vfx_skill_shield_gain-strip_5
+  - first:
+      213: 866726879018637089
+    second: vfx_skill_shield_gain-strip_6
+  - first:
+      213: -2879598581885406913
+    second: vfx_skill_shield_gain-strip_7
+  - first:
+      213: -9032512101505727188
+    second: vfx_skill_shield_gain-strip_8
+  - first:
+      213: -8217660393628388667
+    second: vfx_skill_shield_gain-strip_9
+  - first:
+      213: 1068023534096620926
+    second: vfx_skill_shield_gain-strip_10
+  - first:
+      213: -2980168550230048205
+    second: vfx_skill_shield_gain-strip_11
+  - first:
+      213: 2081487872192460322
+    second: vfx_skill_shield_gain-strip_12
+  - first:
+      213: -1180522194369038302
+    second: vfx_skill_shield_gain-strip_13
+  - first:
+      213: 2037403637911253028
+    second: vfx_skill_shield_gain-strip_14
+  - first:
+      213: -5603818944926305979
+    second: vfx_skill_shield_gain-strip_15
+  - first:
+      213: 672653852491505427
+    second: vfx_skill_shield_gain-strip_16
+  - first:
+      213: -7224784898174853716
+    second: vfx_skill_shield_gain-strip_17
+  - first:
+      213: 8693163924762075817
+    second: vfx_skill_shield_gain-strip_18
+  - first:
+      213: 5388962471902354456
+    second: vfx_skill_shield_gain-strip_19
+  - first:
+      213: 1526809053143456385
+    second: vfx_skill_shield_gain-strip_20
+  - first:
+      213: 2146112035010602882
+    second: vfx_skill_shield_gain-strip_21
+  - first:
+      213: -2933783816375443752
+    second: vfx_skill_shield_gain-strip_22
+  - first:
+      213: -8301372735459141295
+    second: vfx_skill_shield_gain-strip_23
+  - first:
+      213: -3021444802374170248
+    second: vfx_skill_shield_gain-strip_24
+  - first:
+      213: -2505400499287027380
+    second: vfx_skill_shield_gain-strip_25
+  - first:
+      213: 6680254598636721627
+    second: vfx_skill_shield_gain-strip_26
+  - first:
+      213: 5764150465205445244
+    second: vfx_skill_shield_gain-strip_27
+  - first:
+      213: 7250423808407307634
+    second: vfx_skill_shield_gain-strip_28
+  - first:
+      213: -5857625142695018203
+    second: vfx_skill_shield_gain-strip_29
+  - first:
+      213: -2587865465913838647
+    second: vfx_skill_shield_gain-strip_30
+  - first:
+      213: 3862595372017553342
+    second: vfx_skill_shield_gain-strip_31
+  - first:
+      213: 3291939219920604828
+    second: vfx_skill_shield_gain-strip_32
+  - first:
+      213: -7910975516502256504
+    second: vfx_skill_shield_gain-strip_33
+  - first:
+      213: 5382191691468343426
+    second: vfx_skill_shield_gain-strip_34
+  - first:
+      213: 2020453249934408509
+    second: vfx_skill_shield_gain-strip_35
+  - first:
+      213: 8420310751214573042
+    second: vfx_skill_shield_gain-strip_36
+  - first:
+      213: 3335128489132042506
+    second: vfx_skill_shield_gain-strip_37
+  - first:
+      213: -4978271483776064509
+    second: vfx_skill_shield_gain-strip_38
+  - first:
+      213: -3096333167351118709
+    second: vfx_skill_shield_gain-strip_39
+  - first:
+      213: -3907297436214895463
+    second: vfx_skill_shield_gain-strip_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_0
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 231
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b5f04b981c61e090800000000000000
+      internalID: -8006999809548290640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 21
+        width: 232
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c879b39cc65899760800000000000000
+      internalID: 7465144559622395788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 206
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aebcfe990a427970800000000000000
+      internalID: 8751138431116820136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_3
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 218
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da5e2b7b517d5fae0800000000000000
+      internalID: -1516069211264064083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_4
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 213
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c276f296f72bae8b0800000000000000
+      internalID: -5122085365885212884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_5
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 26
+        width: 231
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089d402d3605be950800000000000000
+      internalID: 6479360878558108032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_6
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 180
+        width: 11
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 127503d118b370c00800000000000000
+      internalID: 866726879018637089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_7
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 218
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f317007b85c9908d0800000000000000
+      internalID: -2879598581885406913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_8
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 207
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c258558991216a280800000000000000
+      internalID: -9032512101505727188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_9
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 12
+        width: 97
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2bbf8396105fd80800000000000000
+      internalID: -8217660393628388667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_10
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 181
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7d1691eeb162de00800000000000000
+      internalID: 1068023534096620926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_11
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 15
+        width: 89
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3324fb04e7054a6d0800000000000000
+      internalID: -2980168550230048205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_12
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 175
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226b05a013ee2ec10800000000000000
+      internalID: 2081487872192460322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_13
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 159
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2283b23a151fd9fe0800000000000000
+      internalID: -1180522194369038302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_14
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 180
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 420f9c560df464c10800000000000000
+      internalID: 2037403637911253028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_15
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 181
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54130122c5c3b32b0800000000000000
+      internalID: -5603818944926305979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_16
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 175
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31fdd8e6d1fb55900800000000000000
+      internalID: 672653852491505427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_17
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 136
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cad5ea5e9686cbb90800000000000000
+      internalID: -7224784898174853716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_18
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 163
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a22fadf78254a870800000000000000
+      internalID: 8693163924762075817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_19
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 112
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c96a5f0d079ca40800000000000000
+      internalID: 5388962471902354456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_20
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 97
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a57749eb0503510800000000000000
+      internalID: 1526809053143456385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_21
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 90
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2876ff6768588cd10800000000000000
+      internalID: 2146112035010602882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_22
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 45
+        width: 65
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ded621b92b1947d0800000000000000
+      internalID: -2933783816375443752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_23
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 124
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15958daca799bcc80800000000000000
+      internalID: -8301372735459141295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_24
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 135
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8798906e5fba116d0800000000000000
+      internalID: -3021444802374170248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_25
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 102
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4119e325870b3dd0800000000000000
+      internalID: -2505400499287027380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_26
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 98
+        width: 53
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd559e8f92805bc50800000000000000
+      internalID: 6680254598636721627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_27
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 85
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c72297eee406eff40800000000000000
+      internalID: 5764150465205445244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_28
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 83
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27507231a0eae9460800000000000000
+      internalID: 7250423808407307634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_29
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 27
+        width: 74
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 521444eb7f885bea0800000000000000
+      internalID: -5857625142695018203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_30
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 84
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c374b1e11e061cd0800000000000000
+      internalID: -2587865465913838647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_31
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 69
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebf8c24a602ba9530800000000000000
+      internalID: 3862595372017553342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_32
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 66
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e4b8177415fad20800000000000000
+      internalID: 3291939219920604828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_33
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 71
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88412109ea1963290800000000000000
+      internalID: -7910975516502256504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_34
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 70
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 288870bc3d261ba40800000000000000
+      internalID: 5382191691468343426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_35
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 53
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3bbf97a6871a0c10800000000000000
+      internalID: 2020453249934408509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_36
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 52
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f51c88f304fad470800000000000000
+      internalID: 8420310751214573042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_37
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 36
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a09200bc0b1c84e20800000000000000
+      internalID: 3335128489132042506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_38
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 27
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30422162670a9eab0800000000000000
+      internalID: -4978271483776064509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_39
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 26
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b84c6cda36d9705d0800000000000000
+      internalID: -3096333167351118709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_shield_gain-strip_40
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 40
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99cdd9afead76c9c0800000000000000
+      internalID: -3907297436214895463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

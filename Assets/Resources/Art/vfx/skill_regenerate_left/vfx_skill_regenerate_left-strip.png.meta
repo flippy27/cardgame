@@ -1,0 +1,1105 @@
+fileFormatVersion: 2
+guid: ad98058ded32297488f9ea2bd31eecd5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5767479702035833969
+    second: vfx_skill_regenerate_left-strip_0
+  - first:
+      213: -7649507853045172350
+    second: vfx_skill_regenerate_left-strip_1
+  - first:
+      213: -870440807536474009
+    second: vfx_skill_regenerate_left-strip_2
+  - first:
+      213: 1289807085505953912
+    second: vfx_skill_regenerate_left-strip_3
+  - first:
+      213: -2591439317494305891
+    second: vfx_skill_regenerate_left-strip_4
+  - first:
+      213: 3808369699055063726
+    second: vfx_skill_regenerate_left-strip_5
+  - first:
+      213: -1850119877010033890
+    second: vfx_skill_regenerate_left-strip_6
+  - first:
+      213: 9103253483249297901
+    second: vfx_skill_regenerate_left-strip_7
+  - first:
+      213: -2156010140929533619
+    second: vfx_skill_regenerate_left-strip_8
+  - first:
+      213: 5444899717398231048
+    second: vfx_skill_regenerate_left-strip_9
+  - first:
+      213: -4146723401377984637
+    second: vfx_skill_regenerate_left-strip_10
+  - first:
+      213: 2129663850947014567
+    second: vfx_skill_regenerate_left-strip_11
+  - first:
+      213: 5697670101472575176
+    second: vfx_skill_regenerate_left-strip_12
+  - first:
+      213: -6550728697601058175
+    second: vfx_skill_regenerate_left-strip_13
+  - first:
+      213: 3717395184218583225
+    second: vfx_skill_regenerate_left-strip_14
+  - first:
+      213: 7324362681435018833
+    second: vfx_skill_regenerate_left-strip_15
+  - first:
+      213: 210598658426881333
+    second: vfx_skill_regenerate_left-strip_16
+  - first:
+      213: 5573444344462670287
+    second: vfx_skill_regenerate_left-strip_17
+  - first:
+      213: 7358194053754544943
+    second: vfx_skill_regenerate_left-strip_18
+  - first:
+      213: 915467806394479035
+    second: vfx_skill_regenerate_left-strip_19
+  - first:
+      213: -4150184773474291116
+    second: vfx_skill_regenerate_left-strip_20
+  - first:
+      213: -9025605018642516391
+    second: vfx_skill_regenerate_left-strip_21
+  - first:
+      213: -7886602195291733645
+    second: vfx_skill_regenerate_left-strip_22
+  - first:
+      213: 589101572837991773
+    second: vfx_skill_regenerate_left-strip_23
+  - first:
+      213: -738579647165394516
+    second: vfx_skill_regenerate_left-strip_24
+  - first:
+      213: -6839539278160672913
+    second: vfx_skill_regenerate_left-strip_25
+  - first:
+      213: -6805481391719700958
+    second: vfx_skill_regenerate_left-strip_26
+  - first:
+      213: 6324364621097260964
+    second: vfx_skill_regenerate_left-strip_27
+  - first:
+      213: 4633363132887236996
+    second: vfx_skill_regenerate_left-strip_28
+  - first:
+      213: -646443360184194173
+    second: vfx_skill_regenerate_left-strip_29
+  - first:
+      213: -6313592677268058534
+    second: vfx_skill_regenerate_left-strip_30
+  - first:
+      213: 6041672437236926761
+    second: vfx_skill_regenerate_left-strip_31
+  - first:
+      213: 3788684027096386501
+    second: vfx_skill_regenerate_left-strip_32
+  - first:
+      213: -6884022722842936486
+    second: vfx_skill_regenerate_left-strip_33
+  - first:
+      213: 1159699626729567609
+    second: vfx_skill_regenerate_left-strip_34
+  - first:
+      213: -1551967892412116394
+    second: vfx_skill_regenerate_left-strip_35
+  - first:
+      213: -1019899035547148863
+    second: vfx_skill_regenerate_left-strip_36
+  - first:
+      213: 4345905596131855461
+    second: vfx_skill_regenerate_left-strip_37
+  - first:
+      213: -1747778281883097739
+    second: vfx_skill_regenerate_left-strip_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 34
+        width: 232
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1742f194b343a0050800000000000000
+      internalID: 5767479702035833969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_1
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 111
+        width: 232
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2877ea0f22d77d590800000000000000
+      internalID: -7649507853045172350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_2
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 165
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 768c8c482b29be3f0800000000000000
+      internalID: -870440807536474009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_3
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 179
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8704d58e5b056e110800000000000000
+      internalID: 1289807085505953912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_4
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 163
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9b65c7bbab590cd0800000000000000
+      internalID: -2591439317494305891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_5
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 82
+        width: 232
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea2d98d401c0ad430800000000000000
+      internalID: 3808369699055063726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_6
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 146
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e137de236cd0356e0800000000000000
+      internalID: -1850119877010033890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_7
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 143
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de96969dfc0455e70800000000000000
+      internalID: 9103253483249297901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_8
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 116
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4951c923305412e0800000000000000
+      internalID: -2156010140929533619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_9
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 141
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8087525d17b209b40800000000000000
+      internalID: 5444899717398231048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_10
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 142
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38fc0176901e376c0800000000000000
+      internalID: -4146723401377984637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_11
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 126
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7afefae2df51e8d10800000000000000
+      internalID: 2129663850947014567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_12
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 119
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cef2ad05c0321f40800000000000000
+      internalID: 5697670101472575176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_13
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 136
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a188fe4f22715a0800000000000000
+      internalID: -6550728697601058175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_14
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 138
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b0b8157937d69330800000000000000
+      internalID: 3717395184218583225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_15
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 109
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156df097d0d55a560800000000000000
+      internalID: 7324362681435018833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_16
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 132
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53545b13d523ce200800000000000000
+      internalID: 210598658426881333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_17
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 125
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc97b171a1ad85d40800000000000000
+      internalID: 5573444344462670287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_18
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 119
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f236e6aa18e8d1660800000000000000
+      internalID: 7358194053754544943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_19
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 115
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb1f27b9e1564bc00800000000000000
+      internalID: 915467806394479035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_20
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 123
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45274d8efe49766c0800000000000000
+      internalID: -4150184773474291116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_21
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 126
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95674d42e0c9eb280800000000000000
+      internalID: -9025605018642516391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_22
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 116
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37102d0a6192d8290800000000000000
+      internalID: -7886602195291733645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_23
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 130
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d55e1a162c8ec2800800000000000000
+      internalID: 589101572837991773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_24
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 120
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca19f5c59b900c5f0800000000000000
+      internalID: -738579647165394516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_25
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 117
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f67c6e193431511a0800000000000000
+      internalID: -6839539278160672913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_26
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 110
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22624013bb21e81a0800000000000000
+      internalID: -6805481391719700958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_27
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 108
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a7dc8e6d18a4c750800000000000000
+      internalID: 6324364621097260964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_28
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 112
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 481822388330d4040800000000000000
+      internalID: 4633363132887236996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_29
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 110
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38bafcc503f5707f0800000000000000
+      internalID: -646443360184194173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_30
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 104
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e0eee29ec9168a0800000000000000
+      internalID: -6313592677268058534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_31
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 98
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92986ce421558d350800000000000000
+      internalID: 6041672437236926761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_32
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 102
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cbc641ac0c149430800000000000000
+      internalID: 3788684027096386501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_33
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 104
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5bba338ec90770a0800000000000000
+      internalID: -6884022722842936486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_34
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 92
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9757e598aa4181010800000000000000
+      internalID: 1159699626729567609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_35
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 86
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 652d6fdac6d467ae0800000000000000
+      internalID: -1551967892412116394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_36
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 98
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cdd2771b3798d1f0800000000000000
+      internalID: -1019899035547148863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_37
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 89
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c42d43d12cf4c30800000000000000
+      internalID: 4345905596131855461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_regenerate_left-strip_38
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 58
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 575273aa9e4aeb7e0800000000000000
+      internalID: -1747778281883097739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

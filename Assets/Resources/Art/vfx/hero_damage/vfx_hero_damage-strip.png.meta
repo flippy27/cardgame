@@ -1,0 +1,1230 @@
+fileFormatVersion: 2
+guid: ca89f7a14ea96bf44a1c9ed279df0c2d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2632329394817981239
+    second: vfx_hero_damage-strip_0
+  - first:
+      213: 1661741244216759596
+    second: vfx_hero_damage-strip_1
+  - first:
+      213: -4157156253240372180
+    second: vfx_hero_damage-strip_2
+  - first:
+      213: -8073893328409252863
+    second: vfx_hero_damage-strip_3
+  - first:
+      213: 2679511248652521236
+    second: vfx_hero_damage-strip_4
+  - first:
+      213: 7183401569708859069
+    second: vfx_hero_damage-strip_5
+  - first:
+      213: -763478949578774955
+    second: vfx_hero_damage-strip_6
+  - first:
+      213: -6727903428238864064
+    second: vfx_hero_damage-strip_7
+  - first:
+      213: 8860276261141173034
+    second: vfx_hero_damage-strip_8
+  - first:
+      213: 2735642804539738106
+    second: vfx_hero_damage-strip_9
+  - first:
+      213: 349966563453362356
+    second: vfx_hero_damage-strip_10
+  - first:
+      213: 4753392189176283285
+    second: vfx_hero_damage-strip_11
+  - first:
+      213: 3972494768610957707
+    second: vfx_hero_damage-strip_12
+  - first:
+      213: 5037545844577665677
+    second: vfx_hero_damage-strip_13
+  - first:
+      213: 9045474793062812250
+    second: vfx_hero_damage-strip_14
+  - first:
+      213: 458981269625295631
+    second: vfx_hero_damage-strip_15
+  - first:
+      213: 2754263472444282639
+    second: vfx_hero_damage-strip_16
+  - first:
+      213: -309860473871022157
+    second: vfx_hero_damage-strip_17
+  - first:
+      213: -3406522976913551702
+    second: vfx_hero_damage-strip_18
+  - first:
+      213: -4483866250915643551
+    second: vfx_hero_damage-strip_19
+  - first:
+      213: -4715237765873358951
+    second: vfx_hero_damage-strip_20
+  - first:
+      213: -2650765412587284607
+    second: vfx_hero_damage-strip_21
+  - first:
+      213: 5297693869860953869
+    second: vfx_hero_damage-strip_22
+  - first:
+      213: 390659926575013597
+    second: vfx_hero_damage-strip_23
+  - first:
+      213: -4847242207565831601
+    second: vfx_hero_damage-strip_24
+  - first:
+      213: -1366368729166865265
+    second: vfx_hero_damage-strip_25
+  - first:
+      213: -7059599737304363082
+    second: vfx_hero_damage-strip_26
+  - first:
+      213: -9145843704357764595
+    second: vfx_hero_damage-strip_27
+  - first:
+      213: -899065134172608880
+    second: vfx_hero_damage-strip_28
+  - first:
+      213: -6694143147723918483
+    second: vfx_hero_damage-strip_29
+  - first:
+      213: -4414090982988368702
+    second: vfx_hero_damage-strip_30
+  - first:
+      213: -561424452171357280
+    second: vfx_hero_damage-strip_31
+  - first:
+      213: -7165716197237288116
+    second: vfx_hero_damage-strip_32
+  - first:
+      213: 2937450193424372054
+    second: vfx_hero_damage-strip_33
+  - first:
+      213: 1120640352533498659
+    second: vfx_hero_damage-strip_34
+  - first:
+      213: -8742130216756212503
+    second: vfx_hero_damage-strip_35
+  - first:
+      213: -7397010201039965167
+    second: vfx_hero_damage-strip_36
+  - first:
+      213: 8667615052551930209
+    second: vfx_hero_damage-strip_37
+  - first:
+      213: -6030477541144746541
+    second: vfx_hero_damage-strip_38
+  - first:
+      213: -8603748062171443444
+    second: vfx_hero_damage-strip_39
+  - first:
+      213: -2063590296380635336
+    second: vfx_hero_damage-strip_40
+  - first:
+      213: 7368229668816454535
+    second: vfx_hero_damage-strip_41
+  - first:
+      213: -8966171094876357452
+    second: vfx_hero_damage-strip_42
+  - first:
+      213: 3652913165013942601
+    second: vfx_hero_damage-strip_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 24
+        width: 232
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c42e02bc56187bd0800000000000000
+      internalID: -2632329394817981239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 225
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25d72a7bd0bf0710800000000000000
+      internalID: 1661741244216759596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_2
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 12
+        width: 217
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2450d9c960de46c0800000000000000
+      internalID: -4157156253240372180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_3
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 16
+        width: 232
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10c25cd8bc4c3ff80800000000000000
+      internalID: -8073893328409252863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_4
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 220
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41fc893b8498f2520800000000000000
+      internalID: 2679511248652521236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_5
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 210
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbeda791ba190b360800000000000000
+      internalID: 7183401569708859069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_6
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 206
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5566ed0c0f39765f0800000000000000
+      internalID: -763478949578774955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_7
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 169
+        width: 29
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04190bc5a7fa1a2a0800000000000000
+      internalID: -6727903428238864064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_8
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 161
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a235525d05606fa70800000000000000
+      internalID: 8860276261141173034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_9
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 169
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af7c1fcf2a4f6f520800000000000000
+      internalID: 2735642804539738106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_10
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 192
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0e6e93cb45bd400800000000000000
+      internalID: 349966563453362356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_11
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 169
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59008f1f20177f140800000000000000
+      internalID: 4753392189176283285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_12
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 162
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b895723e1f2212730800000000000000
+      internalID: 3972494768610957707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_13
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 181
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d820ccd6145f8e540800000000000000
+      internalID: 5037545844577665677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_14
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 170
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a4249366bf78d70800000000000000
+      internalID: 9045474793062812250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_15
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 101
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f03d29e6801ae5600800000000000000
+      internalID: 458981269625295631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_16
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 149
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0710e4190c193620800000000000000
+      internalID: 2754263472444282639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_17
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 140
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b7cbfc6a8723bbf0800000000000000
+      internalID: -309860473871022157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_18
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 150
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae8cd9a66999b0d0800000000000000
+      internalID: -3406522976913551702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_19
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 91
+        width: 21
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f7fcdb66b16c1c0800000000000000
+      internalID: -4483866250915643551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_20
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 127
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 997ac9dfb3c109eb0800000000000000
+      internalID: -4715237765873358951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_21
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 40
+        width: 77
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 187d7dfc6e6963bd0800000000000000
+      internalID: -2650765412587284607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_22
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 133
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0f93d99180358940800000000000000
+      internalID: 5297693869860953869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_23
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 128
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddedb772227eb6500800000000000000
+      internalID: 390659926575013597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_24
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 102
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4222cdd4e22bbcb0800000000000000
+      internalID: -4847242207565831601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_25
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 111
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8c9ec151eea90de0800000000000000
+      internalID: -1366368729166865265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_26
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 65
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf48893173470e90800000000000000
+      internalID: -7059599737304363082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_27
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 44
+        width: 77
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02438e8b9f631180800000000000000
+      internalID: -9145843704357764595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_28
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 63
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 096e3bf1601e583f0800000000000000
+      internalID: -899065134172608880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_29
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 76
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63fc443640a913a0800000000000000
+      internalID: -6694143147723918483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_30
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 62
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c439b843affdb2c0800000000000000
+      internalID: -4414090982988368702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_31
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 54
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3ab107f6b6538f0800000000000000
+      internalID: -561424452171357280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_32
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 63
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43986e85134e8c90800000000000000
+      internalID: -7165716197237288116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_33
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 27
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 651567c336be3c820800000000000000
+      internalID: 2937450193424372054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_34
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 34
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32b4ab596705d8f00800000000000000
+      internalID: 1120640352533498659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_35
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 41
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec890ab2e6bda680800000000000000
+      internalID: -8742130216756212503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_36
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 34
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1147217c96a885990800000000000000
+      internalID: -7397010201039965167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_37
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 52
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161cf21a7fd894870800000000000000
+      internalID: 8667615052551930209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_38
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 33
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d5a81e80a07f4ca0800000000000000
+      internalID: -6030477541144746541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_39
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 47
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0fc059d8b8599880800000000000000
+      internalID: -8603748062171443444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_40
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 26
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8370a4e0f87ac53e0800000000000000
+      internalID: -2063590296380635336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_41
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 42
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7838c4168d5314660800000000000000
+      internalID: 7368229668816454535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_42
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 29
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bcf48ed4e2c19380800000000000000
+      internalID: -8966171094876357452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_hero_damage-strip_43
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 26
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 941010c6b21c1b230800000000000000
+      internalID: 3652913165013942601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1005 @@
+fileFormatVersion: 2
+guid: 38e9965b1035d7241b2a68fc8748d1fa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7720336372272740119
+    second: vfx_skill_poison_apply-strip_0
+  - first:
+      213: -2861821051372123479
+    second: vfx_skill_poison_apply-strip_1
+  - first:
+      213: -1037774924654778014
+    second: vfx_skill_poison_apply-strip_2
+  - first:
+      213: -3263130087850796316
+    second: vfx_skill_poison_apply-strip_3
+  - first:
+      213: -5802234763549854973
+    second: vfx_skill_poison_apply-strip_4
+  - first:
+      213: -6905321255859540746
+    second: vfx_skill_poison_apply-strip_5
+  - first:
+      213: 4915688674129990361
+    second: vfx_skill_poison_apply-strip_6
+  - first:
+      213: 5812597138084225908
+    second: vfx_skill_poison_apply-strip_7
+  - first:
+      213: -2010950234734350692
+    second: vfx_skill_poison_apply-strip_8
+  - first:
+      213: 3946300841675666192
+    second: vfx_skill_poison_apply-strip_9
+  - first:
+      213: 3833712813380658940
+    second: vfx_skill_poison_apply-strip_10
+  - first:
+      213: 2178121994946622873
+    second: vfx_skill_poison_apply-strip_11
+  - first:
+      213: 4233059375353462576
+    second: vfx_skill_poison_apply-strip_12
+  - first:
+      213: 4671449478902972544
+    second: vfx_skill_poison_apply-strip_13
+  - first:
+      213: -6954708006402393337
+    second: vfx_skill_poison_apply-strip_14
+  - first:
+      213: 5325917795888384404
+    second: vfx_skill_poison_apply-strip_15
+  - first:
+      213: 7876442279992111375
+    second: vfx_skill_poison_apply-strip_16
+  - first:
+      213: 6148271559178298876
+    second: vfx_skill_poison_apply-strip_17
+  - first:
+      213: -4094221898243334963
+    second: vfx_skill_poison_apply-strip_18
+  - first:
+      213: -4177434419772911964
+    second: vfx_skill_poison_apply-strip_19
+  - first:
+      213: -7446255486982893950
+    second: vfx_skill_poison_apply-strip_20
+  - first:
+      213: 7677162248805188272
+    second: vfx_skill_poison_apply-strip_21
+  - first:
+      213: -5485832771348534308
+    second: vfx_skill_poison_apply-strip_22
+  - first:
+      213: -532709986720996536
+    second: vfx_skill_poison_apply-strip_23
+  - first:
+      213: 8775785914042312888
+    second: vfx_skill_poison_apply-strip_24
+  - first:
+      213: 4978009064465214312
+    second: vfx_skill_poison_apply-strip_25
+  - first:
+      213: 8625456151169392963
+    second: vfx_skill_poison_apply-strip_26
+  - first:
+      213: -7340807204800981008
+    second: vfx_skill_poison_apply-strip_27
+  - first:
+      213: 4032508800705210687
+    second: vfx_skill_poison_apply-strip_28
+  - first:
+      213: 2397856607115742261
+    second: vfx_skill_poison_apply-strip_29
+  - first:
+      213: -7815445231097872366
+    second: vfx_skill_poison_apply-strip_30
+  - first:
+      213: -4913769688852506286
+    second: vfx_skill_poison_apply-strip_31
+  - first:
+      213: -803765236272133629
+    second: vfx_skill_poison_apply-strip_32
+  - first:
+      213: 8050392200022216995
+    second: vfx_skill_poison_apply-strip_33
+  - first:
+      213: 6532007121535184914
+    second: vfx_skill_poison_apply-strip_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_0
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 212
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e8c72839fadbd490800000000000000
+      internalID: -7720336372272740119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 32
+        width: 228
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aaca369ae4c848d0800000000000000
+      internalID: -2861821051372123479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_2
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 210
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 269e42354351991f0800000000000000
+      internalID: -1037774924654778014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_3
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 160
+        width: 31
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea93c1597807b2d0800000000000000
+      internalID: -3263130087850796316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_4
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 193
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 303303f59325a7fa0800000000000000
+      internalID: -5802234763549854973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_5
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 177
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fca98c57ee5b20a0800000000000000
+      internalID: -6905321255859540746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_6
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 196
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d2ddeffdc8083440800000000000000
+      internalID: 4915688674129990361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_7
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 182
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47366f5fc4e7aa050800000000000000
+      internalID: 5812597138084225908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 16
+        width: 230
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9eabad7a6ba714e0800000000000000
+      internalID: -2010950234734350692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_9
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 168
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01337e405b314c630800000000000000
+      internalID: 3946300841675666192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_10
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 151
+        width: 35
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf6ea6ced75143530800000000000000
+      internalID: 3833712813380658940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_11
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 148
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 995324a0a6e3a3e10800000000000000
+      internalID: 2178121994946622873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_12
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 179
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03f741df219deba30800000000000000
+      internalID: 4233059375353462576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_13
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 178
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0800238fc8254d040800000000000000
+      internalID: 4671449478902972544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_14
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 157
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70bf1d17ae9eb7f90800000000000000
+      internalID: -6954708006402393337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_15
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 161
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499cbd6740679e940800000000000000
+      internalID: 5325917795888384404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_16
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 154
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f013cc0c58ebe4d60800000000000000
+      internalID: 7876442279992111375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_17
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 142
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf5a57b786c035550800000000000000
+      internalID: 6148271559178298876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_18
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 142
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc949b20e66e27c0800000000000000
+      internalID: -4094221898243334963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_19
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 148
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ae02f83785c606c0800000000000000
+      internalID: -4177434419772911964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_20
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 60
+        width: 112
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ec497261699a890800000000000000
+      internalID: -7446255486982893950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_21
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 135
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b28213d362ca8a60800000000000000
+      internalID: 7677162248805188272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_22
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 123
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdbe29ed8286ed3b0800000000000000
+      internalID: -5485832771348534308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_23
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 50
+        width: 232
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8432139e61f6b98f0800000000000000
+      internalID: -532709986720996536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_24
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 134
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b86e5feacad9c970800000000000000
+      internalID: 8775785914042312888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_25
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 112
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86baf189ed0751540800000000000000
+      internalID: 4978009064465214312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_26
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 125
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 341e82c7ba6c3b770800000000000000
+      internalID: 8625456151169392963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_27
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 114
+        width: 27
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f795319db6302a90800000000000000
+      internalID: -7340807204800981008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_28
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 60
+        width: 117
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f39abab936956f730800000000000000
+      internalID: 4032508800705210687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_29
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 112
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53c057931e5e64120800000000000000
+      internalID: 2397856607115742261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_30
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 112
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21004e668f5f98390800000000000000
+      internalID: -7815445231097872366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_31
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 83
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2595dd39088cecbb0800000000000000
+      internalID: -4913769688852506286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_32
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 74
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30a0131b6c378d4f0800000000000000
+      internalID: -803765236272133629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_33
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 82
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32156e89d0db8bf60800000000000000
+      internalID: 8050392200022216995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_skill_poison_apply-strip_34
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 76
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2103d657ed956aa50800000000000000
+      internalID: 6532007121535184914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
