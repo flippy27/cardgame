@@ -959,11 +959,117 @@ namespace Flippy.CardDuelMobile.UI
                         break;
                 }
 
+                TryPlayEventVfx(presentationEvent);
+
                 if (attackEffectSystem.BetweenEventsDelay > 0f)
                 {
                     yield return new WaitForSeconds(attackEffectSystem.BetweenEventsDelay);
                 }
             }
+        }
+
+        // Spawns the art-pack VFX strip for a battle event at the involved card's world position,
+        // alongside the existing motion/popup animation. Best-effort: silently skips if the effect
+        // or a position can't be resolved.
+        private void TryPlayEventVfx(BattlePresentationEvent presentationEvent)
+        {
+            if (presentationEvent == null)
+            {
+                return;
+            }
+
+            var vfx = MapEventToVfx(presentationEvent);
+            if (string.IsNullOrWhiteSpace(vfx))
+            {
+                return;
+            }
+
+            ICardDisplay display = null;
+            if (!string.IsNullOrWhiteSpace(presentationEvent.targetRuntimeId))
+            {
+                display = FindCardByRuntimeId(presentationEvent.targetRuntimeId, presentationEvent.targetPlayerIndex);
+            }
+            if (display == null && !string.IsNullOrWhiteSpace(presentationEvent.sourceRuntimeId))
+            {
+                display = FindCardByRuntimeId(presentationEvent.sourceRuntimeId, presentationEvent.sourcePlayerIndex);
+            }
+
+            Vector3 position;
+            if (display != null && display.TryGetTransform(out var cardTransform))
+            {
+                position = cardTransform.position;
+            }
+            else if (presentationEvent.kind == BattlePresentationEventKind.HeroAttack)
+            {
+                var heroAnchor = presentationEvent.targetPlayerIndex == 1 ? remoteHeroAttackTarget : localHeroAttackTarget;
+                heroAnchor = heroAnchor != null ? heroAnchor : (remoteHeroAttackTarget != null ? remoteHeroAttackTarget : localHeroAttackTarget);
+                if (heroAnchor == null)
+                {
+                    return;
+                }
+                position = heroAnchor.position;
+            }
+            else
+            {
+                return;
+            }
+
+            BattleVfxPlayer.Instance.Play(vfx, position);
+        }
+
+        private static string MapEventToVfx(BattlePresentationEvent presentationEvent)
+        {
+            switch (presentationEvent.kind)
+            {
+                case BattlePresentationEventKind.CardAttack:
+                    return "card_damage";
+                case BattlePresentationEventKind.HeroAttack:
+                    return "hero_damage";
+                case BattlePresentationEventKind.ShieldBlock:
+                    return "shield_block";
+                case BattlePresentationEventKind.Heal:
+                    return "heal";
+                case BattlePresentationEventKind.ArmorGain:
+                    return "armor_gain";
+                case BattlePresentationEventKind.AttackBuff:
+                    return "attack_buff";
+                case BattlePresentationEventKind.Death:
+                    return "death";
+                case BattlePresentationEventKind.StatusExpired:
+                    return "status_expired";
+                case BattlePresentationEventKind.SkillBegin:
+                    return AbilitySkillVfx(presentationEvent.abilityId) ?? "skill_begin";
+                case BattlePresentationEventKind.StatusApplied:
+                    return AbilitySkillVfx(presentationEvent.abilityId) ?? "status_applied";
+                case BattlePresentationEventKind.StatusDamage:
+                    return AbilitySkillVfx(presentationEvent.abilityId) ?? "card_damage";
+                default:
+                    return null;
+            }
+        }
+
+        private static string AbilitySkillVfx(string abilityId)
+        {
+            if (string.IsNullOrWhiteSpace(abilityId))
+            {
+                return null;
+            }
+
+            return abilityId.Trim().ToLowerInvariant() switch
+            {
+                "poison" => "skill_poison_apply",
+                "stun" => "skill_stun_apply",
+                "shield" => "skill_shield_gain",
+                "trample" => "skill_trample_hit",
+                "leech" => "skill_leech_heal",
+                "enrage" => "skill_enrage_double",
+                "regenerate_left" => "skill_regenerate_left",
+                "taunt" => "skill_taunt_pulse",
+                "haste" => "skill_haste_ready",
+                "fly" => "fly_bypass",
+                "armor" => "armor_gain",
+                _ => null
+            };
         }
 
         private System.Collections.IEnumerator PlayCardAttackEvent(BattlePresentationEvent presentationEvent, HashSet<string> consumedAttackers)
