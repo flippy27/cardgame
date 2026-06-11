@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using Flippy.CardDuelMobile.Data;
 using Flippy.CardDuelMobile.Networking;
 using Flippy.CardDuelMobile.Networking.ApiClients;
 
@@ -73,20 +70,37 @@ namespace Flippy.CardDuelMobile.UI
         }
     }
 
+    /// <summary>
+    /// Renders a card's art onto one or more bound surfaces (Image / RawImage / SpriteRenderer /
+    /// material). Art is resolved client-side by <c>cardId</c> through <see cref="CardArtLibrary"/>.
+    ///
+    /// The old server-driven layered composition (visual profiles + asset-ref layers fetched from
+    /// the API) is gone. Bindings whose <c>layer</c> is "frame" get the rarity frame; every other
+    /// binding (including the default single "art" binding wired by the deck/battle views) gets the
+    /// per-card illustration. The public API (<see cref="ApplyCard"/>, EnsureDefault*Binding) is
+    /// unchanged so existing prefabs and call sites keep working.
+    /// </summary>
     public sealed class CardSurfaceVisualRenderer : MonoBehaviour
     {
         [SerializeField] private string defaultSurface = "hand";
-        [SerializeField] private string requestedProfileKey;
-        [SerializeField] private bool fetchDetailedCardData = true;
         [SerializeField] private bool clearBindingsWhenMissing;
         [SerializeField] private CardVisualLayerBinding[] layerBindings;
 
-        private int _requestVersion;
-
         public void ApplyCard(string cardId, string surfaceOverride = null, string profileKeyOverride = null)
         {
-            _requestVersion++;
-            _ = ApplyCardAsync(cardId, surfaceOverride ?? defaultSurface, profileKeyOverride ?? requestedProfileKey, _requestVersion);
+            // surfaceOverride / profileKeyOverride are kept for call-site compatibility but no longer
+            // change resolution: a card now has a single illustration regardless of surface.
+            if (string.IsNullOrWhiteSpace(cardId))
+            {
+                if (clearBindingsWhenMissing)
+                {
+                    ClearBindings();
+                }
+
+                return;
+            }
+
+            ApplyArt(cardId);
         }
 
         public void EnsureDefaultMaterialBinding(Renderer renderer, string surface = null)
@@ -143,126 +157,56 @@ namespace Flippy.CardDuelMobile.UI
             };
         }
 
-        private async Task ApplyCardAsync(string cardId, string surface, string profileKey, int requestVersion)
+        private void ApplyArt(string cardId)
         {
-            if (string.IsNullOrWhiteSpace(cardId))
+            if (layerBindings == null || layerBindings.Length == 0)
             {
-                if (clearBindingsWhenMissing)
-                {
-                    ClearBindings();
-                }
-
                 return;
             }
 
+            var art = CardArtLibrary.GetCardArt(cardId);
+            var frame = CardArtLibrary.GetFrame(ResolveRarity(cardId));
+
+            foreach (var binding in layerBindings)
+            {
+                if (binding == null)
+                {
+                    continue;
+                }
+
+                if (string.Equals(binding.layer, "frame", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (frame != null)
+                    {
+                        binding.Apply(frame, frame.texture);
+                    }
+                    else
+                    {
+                        binding.Clear();
+                    }
+                    continue;
+                }
+
+                binding.Apply(art, art != null ? art.texture : null);
+            }
+        }
+
+        private static int ResolveRarity(string cardId)
+        {
             try
             {
-                var definition = await CardVisualCompositionResolver.ResolveCardDefinitionAsync(cardId, fetchDetailedCardData);
-                if (this == null || requestVersion != _requestVersion)
+                var catalog = GameService.Instance?.CardCatalog;
+                if (catalog != null && catalog.TryGetCard(cardId, out ServerCardDefinition definition) && definition != null)
                 {
-                    return;
-                }
-
-                var resolvedLayers = CardVisualCompositionResolver.ResolveLayers(definition, surface, profileKey);
-                if (resolvedLayers.Count > 0)
-                {
-                    ApplyResolvedLayers(resolvedLayers);
-                    return;
-                }
-
-                ApplyMissingVisuals();
-            }
-            catch (Exception ex)
-            {
-                Debug.LogWarning($"[CardVisuals] Could not resolve visuals for '{cardId}' on surface '{surface}': {ex.Message}");
-                ApplyMissingVisuals();
-            }
-        }
-
-        private void ApplyResolvedLayers(IReadOnlyList<CardVisualLayerDto> layers)
-        {
-            if (layerBindings == null || layerBindings.Length == 0)
-            {
-                return;
-            }
-
-            var appliedBindings = new HashSet<CardVisualLayerBinding>();
-            foreach (var layer in layers)
-            {
-                if (layer == null || string.IsNullOrWhiteSpace(layer.layer))
-                {
-                    continue;
-                }
-
-                var binding = FindBinding(layer.layer);
-                if (binding == null)
-                {
-                    continue;
-                }
-
-                var sprite = CardVisualAssetResolver.ResolveSprite(layer.assetRef);
-                var texture = sprite != null ? sprite.texture : CardVisualAssetResolver.ResolveTexture(layer.assetRef);
-                binding.Apply(sprite, texture);
-                appliedBindings.Add(binding);
-            }
-
-            foreach (var binding in layerBindings)
-            {
-                if (binding == null)
-                {
-                    continue;
-                }
-
-                if (!appliedBindings.Contains(binding))
-                {
-                    binding.Clear();
+                    return definition.cardRarity;
                 }
             }
-        }
-
-        private void ApplyMissingVisuals()
-        {
-            if (layerBindings == null || layerBindings.Length == 0)
+            catch (Exception)
             {
-                return;
+                // Catalog not ready / lookup failed — fall back to the common frame.
             }
 
-            if (clearBindingsWhenMissing)
-            {
-                ClearBindings();
-                return;
-            }
-
-            foreach (var binding in layerBindings)
-            {
-                binding?.Apply(CardVisualAssetResolver.MissingSprite, CardVisualAssetResolver.MissingTexture);
-            }
-        }
-
-        private CardVisualLayerBinding FindBinding(string layerKey)
-        {
-            if (layerBindings == null || layerBindings.Length == 0)
-            {
-                return null;
-            }
-
-            if (!string.IsNullOrWhiteSpace(layerKey))
-            {
-                foreach (var binding in layerBindings)
-                {
-                    if (binding != null && string.Equals(binding.layer, layerKey, StringComparison.OrdinalIgnoreCase))
-                    {
-                        return binding;
-                    }
-                }
-            }
-
-            if (layerBindings.Length == 1)
-            {
-                return layerBindings[0];
-            }
-
-            return layerBindings.FirstOrDefault(binding => binding != null);
+            return 0;
         }
 
         private void ClearBindings()
@@ -281,120 +225,6 @@ namespace Flippy.CardDuelMobile.UI
         private bool HasAnyBindings()
         {
             return layerBindings != null && layerBindings.Any(binding => binding != null);
-        }
-    }
-
-    internal static class CardVisualCompositionResolver
-    {
-        public static async Task<ServerCardDefinition> ResolveCardDefinitionAsync(string cardId, bool fetchDetailedCardData)
-        {
-            if (string.IsNullOrWhiteSpace(cardId))
-            {
-                return null;
-            }
-
-            var gameService = GameService.Instance;
-            var catalog = GameService.Instance?.CardCatalog;
-            ServerCardDefinition definition = null;
-            if (catalog != null)
-            {
-                catalog.TryGetCard(cardId, out definition);
-                if (fetchDetailedCardData)
-                {
-                    definition = await catalog.EnsureCardDetailsLoaded(cardId) ?? definition;
-                }
-            }
-
-            if (definition == null && fetchDetailedCardData && gameService?.ApiClient != null)
-            {
-                try
-                {
-                    definition = await gameService.ApiClient.FetchCard(cardId);
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogWarning($"[CardVisuals] Could not fetch detailed card '{cardId}': {ex.Message}");
-                }
-            }
-
-            return definition;
-        }
-
-        public static List<CardVisualLayerDto> ResolveLayers(ServerCardDefinition definition, string surface, string requestedProfileKey)
-        {
-            var results = new List<CardVisualLayerDto>();
-            if (definition?.visualProfiles == null || definition.visualProfiles.Length == 0)
-            {
-                return results;
-            }
-
-            var normalizedSurface = string.IsNullOrWhiteSpace(surface) ? "hand" : surface.Trim().ToLowerInvariant();
-            var selectedProfile = SelectProfile(definition.visualProfiles, normalizedSurface, requestedProfileKey);
-            if (selectedProfile?.layers == null)
-            {
-                return results;
-            }
-
-            results.AddRange(selectedProfile.layers
-                .Where(layer => layer != null && string.Equals(NormalizeSurface(layer.surface), normalizedSurface, StringComparison.Ordinal))
-                .OrderBy(layer => layer.sortOrder));
-
-            return results;
-        }
-
-        private static CardVisualProfileDto SelectProfile(CardVisualProfileDto[] profiles, string surface, string requestedProfileKey)
-        {
-            if (profiles == null || profiles.Length == 0)
-            {
-                return null;
-            }
-
-            if (!string.IsNullOrWhiteSpace(requestedProfileKey))
-            {
-                var exactMatch = profiles.FirstOrDefault(profile =>
-                    profile != null &&
-                    string.Equals(profile.profileKey, requestedProfileKey, StringComparison.OrdinalIgnoreCase) &&
-                    ContainsSurface(profile, surface));
-                if (exactMatch != null)
-                {
-                    return exactMatch;
-                }
-            }
-
-            var defaultMatch = profiles.FirstOrDefault(profile =>
-                profile != null &&
-                profile.isDefault &&
-                ContainsSurface(profile, surface));
-            if (defaultMatch != null)
-            {
-                return defaultMatch;
-            }
-
-            return profiles.FirstOrDefault(profile => profile != null && ContainsSurface(profile, surface));
-        }
-
-        private static bool ContainsSurface(CardVisualProfileDto profile, string surface)
-        {
-            if (profile?.layers == null)
-            {
-                return false;
-            }
-
-            for (var index = 0; index < profile.layers.Length; index++)
-            {
-                var layer = profile.layers[index];
-                if (layer != null && string.Equals(NormalizeSurface(layer.surface), surface, StringComparison.Ordinal))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private static string NormalizeSurface(string surface)
-        {
-            return string.IsNullOrWhiteSpace(surface) ? string.Empty : surface.Trim().ToLowerInvariant();
         }
     }
 }
