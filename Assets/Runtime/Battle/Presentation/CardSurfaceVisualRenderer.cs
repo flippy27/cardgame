@@ -93,6 +93,19 @@ namespace Flippy.CardDuelMobile.UI
                     material.SetColor("_Color", Color.white);
                 }
 
+                // The composite is fully transparent outside the frame silhouette. Enable alpha
+                // clipping so an opaque URP material renders the card shape instead of a black quad.
+                if (material.HasProperty("_AlphaClip"))
+                {
+                    material.SetFloat("_AlphaClip", 1f);
+                    material.EnableKeyword("_ALPHATEST_ON");
+                    if (material.HasProperty("_Cutoff"))
+                    {
+                        material.SetFloat("_Cutoff", 0.5f);
+                    }
+                    material.renderQueue = (int)UnityEngine.Rendering.RenderQueue.AlphaTest;
+                }
+
                 // The card quads face the camera flipped 180deg in-plane, so the art reads
                 // upside-down/mirrored. Rotate the texture 180deg via tiling (-1) + offset (1)
                 // ONLY on the 3D material path; UI Image/SpriteRenderer bindings stay upright.

@@ -189,6 +189,26 @@ namespace Flippy.CardDuelMobile.UI
             if (visualRenderer != null && meshRenderer != null)
             {
                 visualRenderer.EnsureDefaultMaterialBinding(meshRenderer, "hand");
+                HideUnboundCardRenderers();
+            }
+        }
+
+        // The card prefab carries a few legacy mesh quads (Visual, CardMesh, Visual (1)); only the
+        // bound one shows the composited card. Disable the others at runtime so their leftover
+        // material (a red quad behind the card) stops showing. Runtime-only: the prefab is untouched.
+        private void HideUnboundCardRenderers()
+        {
+            if (!Application.isPlaying || meshRenderer == null)
+            {
+                return;
+            }
+
+            foreach (var renderer in GetComponentsInChildren<Renderer>(true))
+            {
+                if (renderer != meshRenderer)
+                {
+                    renderer.enabled = false;
+                }
             }
         }
 
