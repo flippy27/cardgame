@@ -87,11 +87,12 @@ namespace Flippy.CardDuelMobile.UI
         // a readable size. No mana cost on the board. Tweak offsets to match the frame art.
         private void LayoutStatsOverlay()
         {
-            // Numbers sit on top of the baked socket symbols (same fractions as CardArtLibrary).
-            PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -60f), 70f);    // name strip (top)
-            PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(135f, 85f), 175f);  // attack, bottom-left
-            PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-135f, 85f), 175f); // health, bottom-right
-            PlaceStat(armorText, new Vector2(1f, 0f), new Vector2(-135f, 225f), 150f); // armor, above health
+            // Numbers sit on top of the baked socket symbols (same fractions as CardArtLibrary, with
+            // the centred frame's transparent band accounted for). Overlay canvas is 1000x1000.
+            PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -300f), 65f);   // name strip (top)
+            PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(270f, 300f), 155f); // attack, bottom-left
+            PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-270f, 300f), 155f);// health, bottom-right
+            PlaceStat(armorText, new Vector2(1f, 0f), new Vector2(-270f, 415f), 135f); // armor, above health
         }
 
         private static void PlaceStat(TextMeshProUGUI text, Vector2 anchor, Vector2 anchoredPosition, float fontSize)

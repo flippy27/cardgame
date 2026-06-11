@@ -34,14 +34,18 @@ namespace Flippy.CardDuelMobile.UI
         private const string SkillIconRoot = "Art/icons/skills";
         private const string StatusIconRoot = "Art/icons/status";
 
-        // Socket centres as fractions of the (bbox-normalised) 512x768 card, top-left origin. Stat
-        // symbols are baked here and the TMP numbers overlay at the same fractions. Tune to the art.
-        private static readonly Vector2 SocketMana = new Vector2(0.135f, 0.085f);   // top-left
-        private static readonly Vector2 SocketRarity = new Vector2(0.865f, 0.085f); // top-right
-        private static readonly Vector2 SocketAttack = new Vector2(0.135f, 0.915f); // bottom-left
-        private static readonly Vector2 SocketHealth = new Vector2(0.865f, 0.915f); // bottom-right
-        private static readonly Vector2 SocketArmor = new Vector2(0.865f, 0.775f);  // above health (armor variant)
-        private const float SocketIconFraction = 0.17f; // icon size as fraction of canvas width
+        // Socket centres as fractions of the 512x768 card (top-left origin). The 512x512 frame is
+        // placed centred, so it occupies the middle with a ~0.167 transparent band top & bottom. Stat
+        // symbols are baked here and the TMP numbers overlay at the same fractions (LayoutStatsOverlay).
+        // Tune to the art.
+        private static readonly Vector2 HandSocketMana = new Vector2(0.27f, 0.267f);
+        private static readonly Vector2 HandSocketRarity = new Vector2(0.71f, 0.267f);
+        private static readonly Vector2 HandSocketAttack = new Vector2(0.27f, 0.733f);
+        private static readonly Vector2 HandSocketHealth = new Vector2(0.71f, 0.733f);
+        private static readonly Vector2 BoardSocketAttack = new Vector2(0.27f, 0.700f);
+        private static readonly Vector2 BoardSocketHealth = new Vector2(0.73f, 0.700f);
+        private const float SocketArmorYOffset = 0.115f; // armor socket sits this much above health
+        private const float SocketIconFraction = 0.16f;  // icon size as fraction of canvas width
 
         private static readonly Dictionary<string, Sprite> _rawCache = new();
         private static readonly Dictionary<string, Sprite> _compositeCache = new();
@@ -149,10 +153,10 @@ namespace Flippy.CardDuelMobile.UI
             return sprite;
         }
 
-        // Art window (fraction of the bbox-normalised 512x768 card, TOP-left origin). The modular
-        // frames are nearly full-art, so the window covers most of the card; the frame sits on top.
-        private static readonly Rect HandArtWindow = new Rect(0.10f, 0.07f, 0.80f, 0.86f);
-        private static readonly Rect BoardArtWindow = new Rect(0.10f, 0.10f, 0.80f, 0.78f);
+        // Art window (fraction of the 512x768 card, TOP-left origin) — the frame's transparent
+        // interior, with the centred 512x512 frame's ~0.167 band baked into these values.
+        private static readonly Rect HandArtWindow = new Rect(0.30f, 0.28f, 0.40f, 0.45f);
+        private static readonly Rect BoardArtWindow = new Rect(0.22f, 0.32f, 0.56f, 0.36f);
 
         private static Sprite BuildComposite(string cardId, int cardType, int cardRarity, int cardFaction, int unitType, bool hasArmor, bool isBoard)
         {
@@ -169,33 +173,37 @@ namespace Flippy.CardDuelMobile.UI
             // 1) Illustration, clipped to the frame's art window only.
             BlitArtToWindow(canvas, artTex, isBoard ? BoardArtWindow : HandArtWindow);
 
-            // 2) Faction frame (blank sockets), cropped to its opaque bounds and scaled to fill the
-            //    card so every family/variant lines up regardless of its internal transparent margin.
+            // 2) Faction frame (blank sockets), placed at native size and centred so its own
+            //    proportions are preserved (no stretch). Frames are authored 512x512.
             var surface = isBoard ? "board" : "hand";
             var armor = hasArmor ? "_armor" : string.Empty;
             var frameTex = LoadTexture($"{FrameRoot}/frame_{surface}{armor}_{FactionName(cardFaction)}");
             if (frameTex != null)
             {
-                AlphaOverScaledCropped(canvas, frameTex);
+                var offX = (CanvasWidth - frameTex.width) / 2;
+                var offY = (CanvasHeight - frameTex.height) / 2;
+                AlphaOver(canvas, frameTex, offX, offY);
             }
 
             // 3) Bake the modular stat/attack symbols into the frame sockets. Numbers overlay on top
-            //    at the same socket fractions (CardVisualCommon / LayoutStatsOverlay). Board frames
-            //    carry no mana/rarity sockets, so those symbols are hand-only.
+            //    at the same socket fractions (LayoutStatsOverlay). Board frames carry no mana/rarity
+            //    sockets, so those symbols are hand-only.
             var isUnit = cardType == 0;
+            var attackSocket = isBoard ? BoardSocketAttack : HandSocketAttack;
+            var healthSocket = isBoard ? BoardSocketHealth : HandSocketHealth;
             if (!isBoard)
             {
-                BlitIcon(canvas, GetModularIcon("stat_mana"), SocketMana);
-                BlitIcon(canvas, GetModularIcon("stat_rarity"), SocketRarity);
+                BlitIcon(canvas, GetModularIcon("stat_mana"), HandSocketMana);
+                BlitIcon(canvas, GetModularIcon("stat_rarity"), HandSocketRarity);
             }
             if (isUnit)
             {
-                BlitIcon(canvas, GetModularIcon(AttackIconName(unitType)), SocketAttack);
-                BlitIcon(canvas, GetModularIcon("stat_health"), SocketHealth);
+                BlitIcon(canvas, GetModularIcon(AttackIconName(unitType)), attackSocket);
+                BlitIcon(canvas, GetModularIcon("stat_health"), healthSocket);
             }
             if (hasArmor)
             {
-                BlitIcon(canvas, GetModularIcon("stat_armor"), SocketArmor);
+                BlitIcon(canvas, GetModularIcon("stat_armor"), new Vector2(healthSocket.x, healthSocket.y - SocketArmorYOffset));
             }
 
             var baked = new Texture2D(CanvasWidth, CanvasHeight, TextureFormat.RGBA32, false)
