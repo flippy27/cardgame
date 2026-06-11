@@ -20,6 +20,10 @@ namespace Flippy.CardDuelMobile.UI
         [SerializeField] public Board3DSlot slotLocalBackLeft;
         [SerializeField] public Board3DSlot slotLocalBackRight;
 
+        [Header("Card sizing")]
+        [Tooltip("Local scale applied to a card when placed in a slot. Bump up to make played cards fill more of the slot.")]
+        [SerializeField] private float boardCardScale = 1.6f;
+
         private Dictionary<(int playerIndex, BoardSlot slot), Board3DSlot> _slots = new();
         private Dictionary<(int playerIndex, BoardSlot slot), ICardDisplay> _cardViews = new();
         private bool _initialized = false;
@@ -126,7 +130,7 @@ namespace Flippy.CardDuelMobile.UI
                 cardTransform.SetParent(slotComponent.transform);
                 cardTransform.localPosition = Vector3.zero;
                 cardTransform.localRotation = Quaternion.identity;
-                cardTransform.localScale = Vector3.one;
+                cardTransform.localScale = Vector3.one * boardCardScale;
 
                 Debug.Log($"[Board3DManager] Card placed in slot P{playerIndex} {slot}");
             }

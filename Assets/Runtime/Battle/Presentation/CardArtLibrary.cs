@@ -139,11 +139,6 @@ namespace Flippy.CardDuelMobile.UI
         private static readonly Rect HandArtWindow = new Rect(0.12f, 0.16f, 0.76f, 0.39f);
         private static readonly Rect BoardArtWindow = new Rect(0.12f, 0.16f, 0.76f, 0.44f);
 
-        // Opaque card-back fill behind the art window and the frame's transparent gaps. The composite
-        // must be fully opaque so the card quad hides the prefab's stray sibling quads (one of which
-        // has a red material that would otherwise show through any transparent pixel).
-        private static readonly Color32 BackerColor = new Color32(20, 18, 30, 255);
-
         private static Sprite BuildComposite(string cardId, int cardType, int cardRarity, int cardFaction, bool isBoard)
         {
             var artTex = LoadTexture($"{ArtRoot}/{cardId}");
@@ -152,13 +147,9 @@ namespace Flippy.CardDuelMobile.UI
                 return null;
             }
 
-            // Opaque dark base everywhere: the art is confined to the window, the frame sits on top,
-            // and the rest reads as a neutral card backing (never transparent → no red bleed-through).
+            // Start fully transparent: the card silhouette is defined by the frame, so outside the
+            // frame the quad is see-through (the stray red sibling quad is disabled in the renderer).
             var canvas = new Color32[CanvasWidth * CanvasHeight];
-            for (var i = 0; i < canvas.Length; i++)
-            {
-                canvas[i] = BackerColor;
-            }
 
             // 1) Illustration, clipped to the frame's art window only.
             BlitArtToWindow(canvas, artTex, isBoard ? BoardArtWindow : HandArtWindow);

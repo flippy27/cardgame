@@ -240,6 +240,40 @@ namespace Flippy.CardDuelMobile.UI
 
                 binding.Apply(composite, composite != null ? composite.texture : null);
             }
+
+            DisableStrayRenderers();
+        }
+
+        // The card prefabs carry legacy mesh quads (e.g. Visual (1), CardMesh) that no binding drives;
+        // they keep their leftover material (one is a red quad) and show through/behind the composited
+        // card. Disable every mesh/sprite renderer in the hierarchy that isn't a binding target so only
+        // the composited card draws. Runtime-only: the prefab asset is never modified.
+        private void DisableStrayRenderers()
+        {
+            if (!Application.isPlaying || layerBindings == null)
+            {
+                return;
+            }
+
+            foreach (var renderer in GetComponentsInChildren<Renderer>(true))
+            {
+                var isBound = false;
+                foreach (var binding in layerBindings)
+                {
+                    if (binding != null &&
+                        (ReferenceEquals(binding.materialRenderer, renderer) ||
+                         ReferenceEquals(binding.spriteRenderer, renderer)))
+                    {
+                        isBound = true;
+                        break;
+                    }
+                }
+
+                if (!isBound)
+                {
+                    renderer.enabled = false;
+                }
+            }
         }
 
         private static (int cardType, int cardRarity, int cardFaction) ResolveCardMeta(string cardId)
