@@ -154,17 +154,33 @@ namespace Flippy.CardDuelMobile.UI
         {
             var searchRoot = panelRoot != null ? panelRoot.transform : transform;
             var images = searchRoot.GetComponentsInChildren<Image>(true);
+            var panelImage = panelRoot != null ? panelRoot.GetComponent<Image>() : null;
             Image fallback = null;
 
+            // Prefer an explicit art/visual image; never bind the panel's own (usually full-screen)
+            // background image, which would stretch the card art across the whole overlay.
             foreach (var image in images)
             {
-                if (image == null)
+                if (image == null || image == panelImage)
                 {
                     continue;
                 }
 
                 var objectName = image.gameObject.name.ToLowerInvariant();
-                if (objectName.Contains("art") || objectName.Contains("visual") || objectName.Contains("card"))
+                if (objectName.Contains("art") || objectName.Contains("visual"))
+                {
+                    return image;
+                }
+            }
+
+            foreach (var image in images)
+            {
+                if (image == null || image == panelImage)
+                {
+                    continue;
+                }
+
+                if (image.gameObject.name.ToLowerInvariant().Contains("card"))
                 {
                     return image;
                 }

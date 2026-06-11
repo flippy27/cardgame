@@ -28,6 +28,7 @@ namespace Flippy.CardDuelMobile.UI
 
         private const string ArtRoot = "CardArt";
         private const string FrameHandRoot = "Art/frames/hand";
+        private const string FrameBoardRoot = "Art/frames/board";
         private const string FactionOverlayRoot = "Art/factions/overlays";
         private const string FactionCrestRoot = "Art/factions/crests";
         private const string SkillIconRoot = "Art/icons/skills";
@@ -60,14 +61,20 @@ namespace Flippy.CardDuelMobile.UI
         /// Full composited card sprite (illustration + type/rarity frame + faction overlay + crest),
         /// cached per cardId. Falls back to the raw illustration if compositing is not possible.
         /// </summary>
-        public static Sprite GetCardComposite(string cardId, int cardType, int cardRarity, int cardFaction)
+        public static Sprite GetCardComposite(string cardId, int cardType, int cardRarity, int cardFaction, string surface = null)
         {
             if (string.IsNullOrWhiteSpace(cardId))
             {
                 return Missing;
             }
 
-            if (_compositeCache.TryGetValue(cardId, out var cached))
+            // Board ("played") cards use the compact board frame; everything else uses the hand frame.
+            var isBoard = !string.IsNullOrWhiteSpace(surface) &&
+                          (surface.Equals("played", StringComparison.OrdinalIgnoreCase) ||
+                           surface.Equals("board", StringComparison.OrdinalIgnoreCase));
+            var cacheKey = cardId + (isBoard ? ":b" : ":h");
+
+            if (_compositeCache.TryGetValue(cacheKey, out var cached))
             {
                 return cached;
             }
@@ -75,7 +82,7 @@ namespace Flippy.CardDuelMobile.UI
             Sprite result;
             try
             {
-                result = BuildComposite(cardId, cardType, cardRarity, cardFaction) ?? GetCardArt(cardId);
+                result = BuildComposite(cardId, cardType, cardRarity, cardFaction, isBoard) ?? GetCardArt(cardId);
             }
             catch (Exception ex)
             {
@@ -83,7 +90,7 @@ namespace Flippy.CardDuelMobile.UI
                 result = GetCardArt(cardId);
             }
 
-            _compositeCache[cardId] = result;
+            _compositeCache[cacheKey] = result;
             return result;
         }
 
@@ -126,7 +133,7 @@ namespace Flippy.CardDuelMobile.UI
             return sprite;
         }
 
-        private static Sprite BuildComposite(string cardId, int cardType, int cardRarity, int cardFaction)
+        private static Sprite BuildComposite(string cardId, int cardType, int cardRarity, int cardFaction, bool isBoard)
         {
             var artTex = LoadTexture($"{ArtRoot}/{cardId}");
             if (artTex == null)
@@ -136,16 +143,19 @@ namespace Flippy.CardDuelMobile.UI
 
             var canvas = ScaleToCanvas(artTex);
 
-            var frameTex = LoadTexture($"{FrameHandRoot}/frame_hand_{TypeName(cardType)}_{RarityName(cardRarity)}");
+            var framePath = isBoard
+                ? $"{FrameBoardRoot}/frame_board_{TypeName(cardType)}"
+                : $"{FrameHandRoot}/frame_hand_{TypeName(cardType)}_{RarityName(cardRarity)}";
+            var frameTex = LoadTexture(framePath);
             if (frameTex != null)
             {
-                AlphaOver(canvas, frameTex, 0, 0);
+                AlphaOverScaled(canvas, frameTex);
             }
 
             var overlayTex = LoadTexture($"{FactionOverlayRoot}/faction_overlay_{FactionName(cardFaction)}");
             if (overlayTex != null)
             {
-                AlphaOver(canvas, overlayTex, 0, 0);
+                AlphaOverScaled(canvas, overlayTex);
             }
 
             var crestTex = LoadTexture($"{FactionCrestRoot}/faction_crest_{FactionName(cardFaction)}");
@@ -231,6 +241,43 @@ namespace Flippy.CardDuelMobile.UI
                     }
 
                     var di = cy * CanvasWidth + cx;
+                    var dst = canvas[di];
+                    var sa = src.a / 255f;
+                    var ia = 1f - sa;
+                    canvas[di] = new Color32(
+                        (byte)(src.r * sa + dst.r * ia),
+                        (byte)(src.g * sa + dst.g * ia),
+                        (byte)(src.b * sa + dst.b * ia),
+                        255);
+                }
+            }
+        }
+
+        // Alpha-over a full-card layer (frame/overlay) scaled to the canvas, so layers authored at
+        // a different size (e.g. 256x384 board frames) still cover the 512x768 card.
+        private static void AlphaOverScaled(Color32[] canvas, Texture2D layer)
+        {
+            var lp = layer.GetPixels32();
+            var lw = layer.width;
+            var lh = layer.height;
+            if (lw <= 0 || lh <= 0)
+            {
+                return;
+            }
+
+            for (var y = 0; y < CanvasHeight; y++)
+            {
+                var sy = y * lh / CanvasHeight;
+                for (var x = 0; x < CanvasWidth; x++)
+                {
+                    var sx = x * lw / CanvasWidth;
+                    var src = lp[sy * lw + sx];
+                    if (src.a == 0)
+                    {
+                        continue;
+                    }
+
+                    var di = y * CanvasWidth + x;
                     var dst = canvas[di];
                     var sa = src.a / 255f;
                     var ia = 1f - sa;

@@ -142,7 +142,7 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            ApplyArt(cardId);
+            ApplyArt(cardId, surfaceOverride ?? defaultSurface);
         }
 
         public void EnsureDefaultMaterialBinding(Renderer renderer, string surface = null)
@@ -199,18 +199,18 @@ namespace Flippy.CardDuelMobile.UI
             };
         }
 
-        private void ApplyArt(string cardId)
+        private void ApplyArt(string cardId, string surface)
         {
             if (layerBindings == null || layerBindings.Length == 0)
             {
                 return;
             }
 
-            // The composite already bakes in the type/rarity frame + faction overlay/crest,
-            // so the single "art" binding shows the full card. Any explicit "frame" binding is
-            // cleared to avoid drawing the frame twice.
+            // The composite already bakes in the type/rarity (hand) or board frame + faction
+            // overlay/crest, so the single "art" binding shows the full card. Any explicit "frame"
+            // binding is cleared to avoid drawing the frame twice.
             var (cardType, cardRarity, cardFaction) = ResolveCardMeta(cardId);
-            var composite = CardArtLibrary.GetCardComposite(cardId, cardType, cardRarity, cardFaction);
+            var composite = CardArtLibrary.GetCardComposite(cardId, cardType, cardRarity, cardFaction, surface);
 
             foreach (var binding in layerBindings)
             {
