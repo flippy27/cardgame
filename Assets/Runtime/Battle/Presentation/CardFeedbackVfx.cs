@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Flippy.CardDuelMobile.Battle.Presentation
+namespace Flippy.CardDuelMobile.UI
 {
     /// <summary>
     /// Lightweight, code-built particle bursts for card game-feel (no prefabs/assets required).
