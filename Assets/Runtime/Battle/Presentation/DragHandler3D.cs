@@ -314,6 +314,12 @@ namespace Flippy.CardDuelMobile.UI
 
             if (_dragGhostInstance != null)
             {
+                // The card "dissolves" into particles at the point it was released; the board card then
+                // falls from the sky a beat later (GameplayPresenter3D.AnimateBoardCardEntry).
+                if (played)
+                {
+                    CardFeedbackVfx.Disperse(_dragGhostInstance.transform.position, new Color(0.9f, 0.95f, 1f, 1f));
+                }
                 Destroy(_dragGhostInstance);
                 _dragGhostInstance = null;
                 _dragGhost = null;
@@ -709,6 +715,13 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             _dragGhost.SetTargetPosition(screenPosition, mainCamera);
+
+            // Pickup sparkle where the card lifts off the hand.
+            if (sourceCard != null)
+            {
+                CardFeedbackVfx.PickupSparkle(sourceCard.transform.position, new Color(0.85f, 0.92f, 1f, 1f));
+            }
+
             Debug.Log($"[DragHandler3D] Spawned drag ghost for {sourceCard?.CardData?.displayName ?? _dragGhostInstance.name}");
         }
 

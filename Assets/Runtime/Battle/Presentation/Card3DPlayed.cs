@@ -174,6 +174,38 @@ namespace Flippy.CardDuelMobile.UI
             StartCoroutine(AnimateDropCoroutine(targetPos, duration));
         }
 
+        /// <summary>
+        /// Drops the card "from the sky": starts above the slot, slightly larger than its resting
+        /// size, and eases down to the target position and real scale (with a tiny settle overshoot).
+        /// </summary>
+        public void AnimateDropFromSky(Vector3 targetPos, float duration = 0.32f, float startScaleMultiplier = 1.25f, float skyHeight = 2.2f)
+        {
+            StartCoroutine(AnimateDropFromSkyCoroutine(targetPos, duration, startScaleMultiplier, skyHeight));
+        }
+
+        private System.Collections.IEnumerator AnimateDropFromSkyCoroutine(Vector3 targetPos, float duration, float startScaleMultiplier, float skyHeight)
+        {
+            var restScale = transform.localScale;
+            var startScale = restScale * Mathf.Max(1f, startScaleMultiplier);
+            var startPos = targetPos + Vector3.up * skyHeight;
+            transform.position = startPos;
+            transform.localScale = startScale;
+
+            var elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                var t = Mathf.Clamp01(elapsed / duration);
+                var ease = 1f - Mathf.Pow(1f - t, 3f); // ease-out cubic (fast then settle)
+                transform.position = Vector3.Lerp(startPos, targetPos, ease);
+                transform.localScale = Vector3.Lerp(startScale, restScale, ease);
+                yield return null;
+            }
+
+            transform.position = targetPos;
+            transform.localScale = restScale;
+        }
+
         public void AnimateAttack(Vector3 targetPos, float returnDuration = 0.4f)
         {
             StartCoroutine(AnimateAttackCoroutine(targetPos, returnDuration));

@@ -2902,12 +2902,49 @@ namespace Flippy.CardDuelMobile.UI
 
             board3DManager.SetCardInSlot(playerIndex, slot, cardPlayed);
 
-            // Drop-in: raise the freshly placed card and let it fall onto the slot with a mini screen
-            // shake, so plays (yours and the AI's) read as landing on the board.
-            var landingPos = cardPlayed.transform.position;
-            cardPlayed.transform.position = landingPos + Vector3.up * 1.4f;
-            cardPlayed.AnimateDrop(landingPos, 0.28f);
-            StartCoroutine(ShakeAfter(0.2f, 2));
+            // Game-feel drop sequence: brief pause (the card "vanished" into particles at release),
+            // then it falls from the sky a touch oversized, settling to real size with a dust kick + shake.
+            StartCoroutine(AnimateBoardCardEntry(cardPlayed, cardPlayed.transform.position));
+        }
+
+        private System.Collections.IEnumerator AnimateBoardCardEntry(Card3DPlayed card, Vector3 landingPos)
+        {
+            if (card == null)
+            {
+                yield break;
+            }
+
+            var renderers = card.GetComponentsInChildren<Renderer>(true);
+            SetRenderersEnabled(renderers, false);
+
+            // Beat between the ghost dispersing and the card falling — enough to feel deliberate, not slow.
+            yield return new WaitForSeconds(0.13f);
+            if (card == null)
+            {
+                yield break;
+            }
+
+            SetRenderersEnabled(renderers, true);
+            card.AnimateDropFromSky(landingPos, 0.3f, 1.25f);
+
+            yield return new WaitForSeconds(0.27f); // land
+            CardFeedbackVfx.LandImpact(landingPos);
+            ResolveCameraShake()?.PlayLevel(2);
+        }
+
+        private static void SetRenderersEnabled(Renderer[] renderers, bool enabled)
+        {
+            if (renderers == null)
+            {
+                return;
+            }
+            foreach (var renderer in renderers)
+            {
+                if (renderer != null)
+                {
+                    renderer.enabled = enabled;
+                }
+            }
         }
 
         private BattleCameraShake _cameraShake;
