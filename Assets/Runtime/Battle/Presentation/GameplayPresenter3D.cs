@@ -2901,6 +2901,37 @@ namespace Flippy.CardDuelMobile.UI
             cardPlayed.Initialize(cardData, playerIndex);
 
             board3DManager.SetCardInSlot(playerIndex, slot, cardPlayed);
+
+            // Drop-in: raise the freshly placed card and let it fall onto the slot with a mini screen
+            // shake, so plays (yours and the AI's) read as landing on the board.
+            var landingPos = cardPlayed.transform.position;
+            cardPlayed.transform.position = landingPos + Vector3.up * 1.4f;
+            cardPlayed.AnimateDrop(landingPos, 0.28f);
+            StartCoroutine(ShakeAfter(0.2f, 2));
+        }
+
+        private BattleCameraShake _cameraShake;
+
+        private BattleCameraShake ResolveCameraShake()
+        {
+            if (_cameraShake != null)
+            {
+                return _cameraShake;
+            }
+            var cam = Camera.main;
+            if (cam == null)
+            {
+                return null;
+            }
+            // BattleCameraShake self-initialises sane presets, so adding it on demand is safe.
+            _cameraShake = cam.GetComponent<BattleCameraShake>() ?? cam.gameObject.AddComponent<BattleCameraShake>();
+            return _cameraShake;
+        }
+
+        private System.Collections.IEnumerator ShakeAfter(float delay, int level)
+        {
+            yield return new WaitForSeconds(delay);
+            ResolveCameraShake()?.PlayLevel(level);
         }
 
         private System.Collections.IEnumerator AnimateCardMovement(ICardDisplay card, Vector3 startPos, Vector3 endPos, float duration)
