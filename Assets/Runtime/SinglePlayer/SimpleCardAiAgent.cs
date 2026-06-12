@@ -123,6 +123,14 @@ namespace Flippy.CardDuelMobile.SinglePlayer
 
             var frontOccupied = IsSlotOccupied(seat, BoardSlot.Front);
             var backLeftOccupied = IsSlotOccupied(seat, BoardSlot.BackLeft);
+            var backRightOccupied = IsSlotOccupied(seat, BoardSlot.BackRight);
+            var occupiedCount = (frontOccupied ? 1 : 0) + (backLeftOccupied ? 1 : 0) + (backRightOccupied ? 1 : 0);
+
+            // A full board has no room to shift, so no unit can be placed this turn.
+            if (occupiedCount >= 3)
+            {
+                return new AiMove(true, string.Empty, BoardSlot.Front);
+            }
 
             foreach (var card in seat.hand)
             {
