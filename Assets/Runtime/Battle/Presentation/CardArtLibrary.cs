@@ -42,8 +42,8 @@ namespace Flippy.CardDuelMobile.UI
         private static readonly Vector2 HandSocketRarity = new Vector2(0.71f, 0.267f);
         private static readonly Vector2 HandSocketAttack = new Vector2(0.27f, 0.733f);
         private static readonly Vector2 HandSocketHealth = new Vector2(0.71f, 0.733f);
-        private static readonly Vector2 BoardSocketAttack = new Vector2(0.27f, 0.700f);
-        private static readonly Vector2 BoardSocketHealth = new Vector2(0.73f, 0.700f);
+        private static readonly Vector2 BoardSocketAttack = new Vector2(0.25f, 0.625f);
+        private static readonly Vector2 BoardSocketHealth = new Vector2(0.75f, 0.625f);
         private const float SocketArmorYOffset = 0.115f; // armor socket sits this much above health
         private const float SocketIconFraction = 0.16f;  // icon size as fraction of canvas width
 
