@@ -195,6 +195,13 @@ namespace Flippy.CardDuelMobile.Battle
                 TurnsUntilCanAttack = handEntry.Definition.turnsUntilCanAttack
             };
 
+            // Haste: may attack the turn it is played (mirrors server engine).
+            if (handEntry.Definition.abilities != null &&
+                handEntry.Definition.abilities.Any(a => a != null && a.abilityId == "haste"))
+            {
+                cardRuntime.TurnsUntilCanAttack = 0;
+            }
+
             // Initialize skills
             InitializeCardSkills(cardRuntime);
 
@@ -395,6 +402,17 @@ namespace Flippy.CardDuelMobile.Battle
                 }
 
                 _context.ProcessStatusEffects(_state.ActivePlayerIndex);
+
+                // Tick down summoning sickness for the player whose turn is starting, so a card placed
+                // last turn becomes able to attack this turn (mirrors server engine readiness).
+                foreach (var boardSlot in nextPlayer.Board)
+                {
+                    if (boardSlot.Occupant != null && boardSlot.Occupant.TurnsUntilCanAttack > 0)
+                    {
+                        boardSlot.Occupant.TurnsUntilCanAttack--;
+                    }
+                }
+
                 ResolveTurnAbilities(_state.ActivePlayerIndex, AbilityTriggerEnum.OnTurnStart);
             }
 
