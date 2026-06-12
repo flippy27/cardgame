@@ -573,22 +573,6 @@ namespace Flippy.CardDuelMobile.UI
                 (byte)(oa * 255f));
         }
 
-        private static string TypeName(int cardType) => cardType switch
-        {
-            1 => "utility",
-            2 => "equipment",
-            3 => "spell",
-            _ => "unit"
-        };
-
-        private static string RarityName(int cardRarity) => cardRarity switch
-        {
-            1 => "rare",
-            2 => "epic",
-            3 => "legendary",
-            _ => "common"
-        };
-
         private static string FactionName(int cardFaction) => cardFaction switch
         {
             0 => "ember",
