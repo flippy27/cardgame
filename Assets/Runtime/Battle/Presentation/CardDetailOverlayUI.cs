@@ -68,6 +68,9 @@ namespace Flippy.CardDuelMobile.UI
             if (visualRenderer != null && detailImage != null)
             {
                 visualRenderer.EnsureDefaultImageBinding(detailImage, "played");
+                // The composite is a 2:3 card; keep it from stretching across the (often full-screen)
+                // overlay image. PreserveAspect renders it centred at card proportions over the dim backdrop.
+                detailImage.preserveAspect = true;
             }
 
             attackTypeImage ??= FindPreferredAttackTypeImage();
