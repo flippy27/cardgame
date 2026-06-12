@@ -177,8 +177,10 @@ namespace Flippy.CardDuelMobile.UI
                 : LoadTexture($"{FrameHandRoot}/frame_hand_{typeName}_{RarityName(cardRarity)}");
 
             // FACTION layers (colour border + central crest), shared by all cards of that faction.
-            var overlayTex = LoadTexture($"{OverlayRoot}/faction_overlay_{FactionName(cardFaction)}");
-            var crestTex = LoadTexture($"{CrestRoot}/faction_crest_{FactionName(cardFaction)}");
+            // Hand-only: these are authored at the 512x768 hand shape, so layering them over the compact
+            // 256x384 board frame would draw a second, misaligned border ("two frames" on board tokens).
+            var overlayTex = isBoard ? null : LoadTexture($"{OverlayRoot}/faction_overlay_{FactionName(cardFaction)}");
+            var crestTex = isBoard ? null : LoadTexture($"{CrestRoot}/faction_crest_{FactionName(cardFaction)}");
 
             // Only give up (-> magenta Missing) when there is genuinely nothing to draw.
             if (artTex == null && frameTex == null)
