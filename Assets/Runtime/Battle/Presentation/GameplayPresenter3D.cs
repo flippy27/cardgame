@@ -216,12 +216,26 @@ namespace Flippy.CardDuelMobile.UI
 
             if (isLocal)
             {
-                // Local mode: start match via LocalSinglePlayerCoordinator
-                var coordinator = LocalSinglePlayerCoordinator.Instance;
-                if (coordinator != null && !coordinator.IsActive)
+                // Single-player: prefer the server-authoritative coordinator (real private match vs the
+                // AI account). It switches the session to online mode, so the rest of the presenter
+                // follows the identical multiplayer path. Falls back to the legacy local sim if the
+                // server coordinator isn't present in the scene.
+                if (ServerSinglePlayerCoordinator.Instance != null)
                 {
-                    Debug.Log("[GameplayPresenter3D] Starting local match from MainGame");
-                    coordinator.StartMatch();
+                    if (!ServerSinglePlayerCoordinator.Instance.IsActive)
+                    {
+                        Debug.Log("[GameplayPresenter3D] Starting server-authoritative AI match from MainGame");
+                        _ = ServerSinglePlayerCoordinator.Instance.StartMatchAsync();
+                    }
+                }
+                else
+                {
+                    var coordinator = LocalSinglePlayerCoordinator.Instance;
+                    if (coordinator != null && !coordinator.IsActive)
+                    {
+                        Debug.Log("[GameplayPresenter3D] Starting local match from MainGame (legacy sim)");
+                        coordinator.StartMatch();
+                    }
                 }
             }
             else
