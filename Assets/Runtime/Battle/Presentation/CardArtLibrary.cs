@@ -161,7 +161,15 @@ namespace Flippy.CardDuelMobile.UI
         private static Sprite BuildComposite(string cardId, int cardType, int cardRarity, int cardFaction, int unitType, bool hasArmor, bool isBoard)
         {
             var artTex = LoadTexture($"{ArtRoot}/{cardId}");
-            if (artTex == null)
+
+            // The card's visual identity is the SHARED frame (by faction + variant), not the
+            // per-card illustration — the illustration is optional placeholder art keyed by cardId.
+            var surface = isBoard ? "board" : "hand";
+            var armor = hasArmor ? "_armor" : string.Empty;
+            var frameTex = LoadTexture($"{FrameRoot}/frame_{surface}{armor}_{FactionName(cardFaction)}");
+
+            // Only give up (-> magenta Missing) when there is genuinely nothing to draw.
+            if (artTex == null && frameTex == null)
             {
                 return null;
             }
@@ -169,15 +177,22 @@ namespace Flippy.CardDuelMobile.UI
             // Start fully transparent: the card silhouette is defined by the frame, so outside the
             // frame the quad is see-through (the stray sibling quads are disabled in the renderer).
             var canvas = new Color32[CanvasWidth * CanvasHeight];
+            var artWindow = isBoard ? BoardArtWindow : HandArtWindow;
 
-            // 1) Illustration, clipped to the frame's art window only.
-            BlitArtToWindow(canvas, artTex, isBoard ? BoardArtWindow : HandArtWindow);
+            // 1) Illustration, clipped to the frame's art window. When the per-card art is missing
+            //    (e.g. catalog cards with no placeholder yet), fill the window with a faction tint so
+            //    the card reads as "this faction, art pending" instead of a transparent hole.
+            if (artTex != null)
+            {
+                BlitArtToWindow(canvas, artTex, artWindow);
+            }
+            else
+            {
+                FillWindow(canvas, artWindow, FactionColor(cardFaction));
+            }
 
             // 2) Faction frame (blank sockets), placed at native size and centred so its own
             //    proportions are preserved (no stretch). Frames are authored 512x512.
-            var surface = isBoard ? "board" : "hand";
-            var armor = hasArmor ? "_armor" : string.Empty;
-            var frameTex = LoadTexture($"{FrameRoot}/frame_{surface}{armor}_{FactionName(cardFaction)}");
             if (frameTex != null)
             {
                 var offX = (CanvasWidth - frameTex.width) / 2;
@@ -476,6 +491,34 @@ namespace Flippy.CardDuelMobile.UI
             4 => "void",
             _ => "neutral"
         };
+
+        // Faction tints (opaque) used to fill the art window when a card has no per-card illustration.
+        private static Color32 FactionColor(int cardFaction) => cardFaction switch
+        {
+            0 => new Color32(0xE2, 0x49, 0x2B, 0xFF), // Ember  red-orange
+            1 => new Color32(0x1E, 0x6F, 0xA8, 0xFF), // Tidal  deep blue
+            2 => new Color32(0x3E, 0x8E, 0x41, 0xFF), // Grove  moss green
+            3 => new Color32(0x8A, 0x93, 0xA0, 0xFF), // Alloy  steel
+            4 => new Color32(0x5B, 0x2A, 0x86, 0xFF), // Void   purple
+            _ => new Color32(0x55, 0x5B, 0x66, 0xFF)  // neutral grey
+        };
+
+        // Fills the art window (fraction of the canvas, TOP-left origin) with a flat opaque colour.
+        // Mirrors BlitArtToWindow's coordinate mapping so the fill lands exactly in the frame window.
+        private static void FillWindow(Color32[] canvas, Rect normWindowTopLeft, Color32 color)
+        {
+            var x0 = Mathf.Clamp(Mathf.RoundToInt(normWindowTopLeft.xMin * CanvasWidth), 0, CanvasWidth);
+            var x1 = Mathf.Clamp(Mathf.RoundToInt(normWindowTopLeft.xMax * CanvasWidth), 0, CanvasWidth);
+            var y0 = Mathf.Clamp(Mathf.RoundToInt(CanvasHeight - normWindowTopLeft.yMax * CanvasHeight), 0, CanvasHeight);
+            var y1 = Mathf.Clamp(Mathf.RoundToInt(CanvasHeight - normWindowTopLeft.yMin * CanvasHeight), 0, CanvasHeight);
+            for (var y = y0; y < y1; y++)
+            {
+                for (var x = x0; x < x1; x++)
+                {
+                    canvas[y * CanvasWidth + x] = color;
+                }
+            }
+        }
 
         public static Sprite Missing
         {
