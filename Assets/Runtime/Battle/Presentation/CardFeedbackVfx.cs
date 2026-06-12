@@ -48,18 +48,18 @@ namespace Flippy.CardDuelMobile.UI
             return tex;
         }
 
-        /// <summary>Card vanishing into dispersing particles (e.g. the dragged ghost on release).</summary>
+        /// <summary>Card vanishing into a big cloud of dispersing particles that briefly covers the card.</summary>
         public static void Disperse(Vector3 position, Color tint)
         {
-            Spawn(position, Quaternion.identity, tint, count: 30, speed: 2.4f, size: 0.18f,
-                life: 0.5f, gravity: -0.15f, radius: 0.25f, ParticleSystemShapeType.Sphere);
+            Spawn(position, Quaternion.identity, tint, count: 46, speed: 2.6f, size: 1.5f,
+                life: 0.55f, gravity: -0.15f, radius: 1.6f, ParticleSystemShapeType.Sphere);
         }
 
-        /// <summary>Sparkle when a card is picked up from hand (ghost appears).</summary>
+        /// <summary>Burst when a card is picked up from hand (ghost appears) — large enough to cover the card.</summary>
         public static void PickupSparkle(Vector3 position, Color tint)
         {
-            Spawn(position, Quaternion.identity, tint, count: 16, speed: 1.3f, size: 0.12f,
-                life: 0.4f, gravity: -0.3f, radius: 0.18f, ParticleSystemShapeType.Sphere);
+            Spawn(position, Quaternion.identity, tint, count: 36, speed: 1.8f, size: 1.2f,
+                life: 0.45f, gravity: -0.25f, radius: 1.3f, ParticleSystemShapeType.Sphere);
         }
 
         /// <summary>Dirt/dust kicked up when a card lands on the board.</summary>
