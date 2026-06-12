@@ -117,7 +117,7 @@ namespace Flippy.CardDuelMobile.SinglePlayer
 
                 // 4) AI joins the room (seat 1) using its own token.
                 WithAiToken();
-                MatchReservationDto aiRes;
+                MatchmakingApiClient.MatchReservationDto aiRes;
                 try
                 {
                     aiRes = await mm.JoinPrivateMatch(_aiId, aiDeckId, humanRes.roomCode);
