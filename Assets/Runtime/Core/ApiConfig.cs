@@ -1,17 +1,18 @@
 namespace Flippy.CardDuelMobile.Core
 {
     /// <summary>
-    /// API configuration. Set via environment or override in code.
-    /// Dev: http://127.0.0.1:5000  (use 127.0.0.1, NOT localhost — localhost resolves to IPv6 ::1 first and Docker Desktop/WSL2 port-forward hangs on it)
-    /// Prod: https://api.cardduel.com (set via env var API_BASE_URL)
+    /// API configuration — single source of truth for the server endpoint.
+    /// At runtime the value comes from Resources/config.json (ConfigManager pushes it
+    /// here via SetUrl). The constant below is only the fallback when config.json is
+    /// missing/invalid, and the API_BASE_URL env var overrides everything.
+    /// All paths now point at the Raspberry Pi server (192.168.1.87:5000).
+    /// (Use the IP, NOT localhost — localhost resolves to IPv6 ::1 and the Docker port-forward hangs on it.)
     /// </summary>
     public static class ApiConfig
     {
-#if UNITY_EDITOR
-        private const string DEFAULT_BASE_URL = "http://127.0.0.1:5000";
-#else
-        private const string DEFAULT_BASE_URL = "https://192.168.1.84:5000";
-#endif
+        // Same fallback in editor and player builds: the Pi. Keeps editor, device and
+        // config.json from diverging onto different hosts.
+        private const string DEFAULT_BASE_URL = "http://192.168.1.87:5000";
 
         public static string BaseUrl { get; set; } = GetUrlFromEnvironment() ?? DEFAULT_BASE_URL;
         public static int TimeoutSeconds { get; set; } = 30;
