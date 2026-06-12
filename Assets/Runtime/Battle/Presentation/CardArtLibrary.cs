@@ -27,25 +27,32 @@ namespace Flippy.CardDuelMobile.UI
         public const int CanvasHeight = 768;
 
         private const string ArtRoot = "CardArt";
-        // Modular frame set: blank-socket frames per faction + per variant (hand/board, ±armor),
-        // and separate stat/attack symbol sprites baked into the sockets.
-        private const string FrameRoot = "Art/frames2";
-        private const string ModularIconRoot = "Art/icons/modular";
+        // Data-driven frame set (CardDuel complete art pack): the card's whole visual identity comes
+        // from its DATA, never its name —
+        //   frame   = CardType x CardRarity  (hand) / CardType (board)   <- rarity is the frame tier
+        //   faction = overlay + crest layered on top of the frame
+        //   sockets = UnitType attack icon + stat icons (mana/health/armor)
+        private const string FrameHandRoot = "Art/frames/hand";    // frame_hand_{type}_{rarity} (512x768)
+        private const string FrameBoardRoot = "Art/frames/board";  // frame_board_{type}          (256x384)
+        private const string OverlayRoot = "Art/factions/overlays"; // faction_overlay_{faction}  (512x768)
+        private const string CrestRoot = "Art/factions/crests";     // faction_crest_{faction}    (256x256)
+        private const string CoreIconRoot = "Art/icons/core";       // stat_/attack_type_/card_type_ (128)
+        private const string ModularIconRoot = "Art/icons/modular"; // legacy PACK2 symbols (kept for GetModularIcon)
         private const string SkillIconRoot = "Art/icons/skills";
         private const string StatusIconRoot = "Art/icons/status";
 
-        // Socket centres as fractions of the 512x768 card (top-left origin). The 512x512 frame is
-        // placed centred, so it occupies the middle with a ~0.167 transparent band top & bottom. Stat
-        // symbols are baked here and the TMP numbers overlay at the same fractions (LayoutStatsOverlay).
-        // Tune to the art.
-        private static readonly Vector2 HandSocketMana = new Vector2(0.27f, 0.267f);
-        private static readonly Vector2 HandSocketRarity = new Vector2(0.71f, 0.267f);
-        private static readonly Vector2 HandSocketAttack = new Vector2(0.27f, 0.733f);
-        private static readonly Vector2 HandSocketHealth = new Vector2(0.71f, 0.733f);
-        private static readonly Vector2 BoardSocketAttack = new Vector2(0.25f, 0.625f);
-        private static readonly Vector2 BoardSocketHealth = new Vector2(0.75f, 0.625f);
-        private const float SocketArmorYOffset = 0.115f; // armor socket sits this much above health
-        private const float SocketIconFraction = 0.16f;  // icon size as fraction of canvas width
+        // Socket centres as fractions of the full-bleed 512x768 card (top-left origin, y grows down).
+        // The frame fills the whole canvas, so these are the pockets designed into the art-pack frames.
+        // The TMP stat numbers overlay at the same fractions (LayoutStatsOverlay). Tune by screenshot.
+        private static readonly Vector2 HandSocketMana = new Vector2(0.155f, 0.115f);   // top-left disc
+        private static readonly Vector2 HandSocketAttack = new Vector2(0.165f, 0.875f); // bottom-left
+        private static readonly Vector2 HandSocketHealth = new Vector2(0.835f, 0.875f); // bottom-right
+        private static readonly Vector2 BoardSocketAttack = new Vector2(0.18f, 0.80f);
+        private static readonly Vector2 BoardSocketHealth = new Vector2(0.82f, 0.80f);
+        private const float SocketArmorYOffset = 0.10f;   // armor socket sits this much above health
+        private const float SocketIconFraction = 0.15f;   // icon size as fraction of canvas width
+        private static readonly Vector2 CrestCentre = new Vector2(0.5f, 0.135f); // faction emblem, top band
+        private const float CrestFraction = 0.20f;        // crest size as fraction of canvas width
 
         private static readonly Dictionary<string, Sprite> _rawCache = new();
         private static readonly Dictionary<string, Sprite> _compositeCache = new();
@@ -153,20 +160,25 @@ namespace Flippy.CardDuelMobile.UI
             return sprite;
         }
 
-        // Art window (fraction of the 512x768 card, TOP-left origin) — the frame's transparent
-        // interior, with the centred 512x512 frame's ~0.167 band baked into these values.
-        private static readonly Rect HandArtWindow = new Rect(0.30f, 0.28f, 0.40f, 0.45f);
-        private static readonly Rect BoardArtWindow = new Rect(0.22f, 0.32f, 0.56f, 0.36f);
+        // Art window (fraction of the 512x768 card, TOP-left origin). Generous on purpose: the frame
+        // is opaque outside its transparent interior, so it masks any art that spills past the pocket.
+        private static readonly Rect HandArtWindow = new Rect(0.16f, 0.20f, 0.68f, 0.52f);
+        private static readonly Rect BoardArtWindow = new Rect(0.14f, 0.18f, 0.72f, 0.50f);
 
         private static Sprite BuildComposite(string cardId, int cardType, int cardRarity, int cardFaction, int unitType, bool hasArmor, bool isBoard)
         {
             var artTex = LoadTexture($"{ArtRoot}/{cardId}");
 
-            // The card's visual identity is the SHARED frame (by faction + variant), not the
-            // per-card illustration — the illustration is optional placeholder art keyed by cardId.
-            var surface = isBoard ? "board" : "hand";
-            var armor = hasArmor ? "_armor" : string.Empty;
-            var frameTex = LoadTexture($"{FrameRoot}/frame_{surface}{armor}_{FactionName(cardFaction)}");
+            // FRAME by DATA: type x rarity (hand) or type (board). Rarity IS the frame tier — there is
+            // no separate rarity gem. This is what makes the card read as its rarity/type at a glance.
+            var typeName = TypeName(cardType);
+            var frameTex = isBoard
+                ? LoadTexture($"{FrameBoardRoot}/frame_board_{typeName}")
+                : LoadTexture($"{FrameHandRoot}/frame_hand_{typeName}_{RarityName(cardRarity)}");
+
+            // FACTION layers (colour border + central crest), shared by all cards of that faction.
+            var overlayTex = LoadTexture($"{OverlayRoot}/faction_overlay_{FactionName(cardFaction)}");
+            var crestTex = LoadTexture($"{CrestRoot}/faction_crest_{FactionName(cardFaction)}");
 
             // Only give up (-> magenta Missing) when there is genuinely nothing to draw.
             if (artTex == null && frameTex == null)
@@ -179,9 +191,8 @@ namespace Flippy.CardDuelMobile.UI
             var canvas = new Color32[CanvasWidth * CanvasHeight];
             var artWindow = isBoard ? BoardArtWindow : HandArtWindow;
 
-            // 1) Illustration, clipped to the frame's art window. When the per-card art is missing
-            //    (e.g. catalog cards with no placeholder yet), fill the window with a faction tint so
-            //    the card reads as "this faction, art pending" instead of a transparent hole.
+            // 1) Illustration, clipped to the frame's art window. When the per-card art is missing,
+            //    fill the window with a faction tint so it reads "this faction, art pending".
             if (artTex != null)
             {
                 BlitArtToWindow(canvas, artTex, artWindow);
@@ -191,34 +202,30 @@ namespace Flippy.CardDuelMobile.UI
                 FillWindow(canvas, artWindow, FactionColor(cardFaction));
             }
 
-            // 2) Faction frame (blank sockets), placed at native size and centred so its own
-            //    proportions are preserved (no stretch). Frames are authored 512x512.
-            if (frameTex != null)
-            {
-                var offX = (CanvasWidth - frameTex.width) / 2;
-                var offY = (CanvasHeight - frameTex.height) / 2;
-                AlphaOver(canvas, frameTex, offX, offY);
-            }
+            // 2) Base type/rarity frame, scaled to fill the canvas (hand 512x768 = 1:1; board 256x384 = 2x).
+            AlphaOverFill(canvas, frameTex);
+            // 3) Faction overlay (border colour/symbology), then 4) the faction crest emblem.
+            AlphaOverFill(canvas, overlayTex);
+            BlitLayerScaled(canvas, crestTex, CrestCentre, CrestFraction);
 
-            // 3) Bake the modular stat/attack symbols into the frame sockets. Numbers overlay on top
-            //    at the same socket fractions (LayoutStatsOverlay). Board frames carry no mana/rarity
-            //    sockets, so those symbols are hand-only.
+            // 5) Bake the stat/attack symbols into the sockets. UnitType drives the attack icon
+            //    (melee/ranged/magic). Numbers overlay on top at the same fractions (LayoutStatsOverlay).
+            //    Board tokens show no mana. Rarity needs no icon (it is the frame).
             var isUnit = cardType == 0;
             var attackSocket = isBoard ? BoardSocketAttack : HandSocketAttack;
             var healthSocket = isBoard ? BoardSocketHealth : HandSocketHealth;
             if (!isBoard)
             {
-                BlitIcon(canvas, GetModularIcon("stat_mana"), HandSocketMana);
-                BlitIcon(canvas, GetModularIcon("stat_rarity"), HandSocketRarity);
+                BlitIcon(canvas, GetCoreIcon("stat_mana"), HandSocketMana);
             }
             if (isUnit)
             {
-                BlitIcon(canvas, GetModularIcon(AttackIconName(unitType)), attackSocket);
-                BlitIcon(canvas, GetModularIcon("stat_health"), healthSocket);
+                BlitIcon(canvas, GetCoreIcon(AttackIconName(unitType)), attackSocket);
+                BlitIcon(canvas, GetCoreIcon("stat_health"), healthSocket);
             }
             if (hasArmor)
             {
-                BlitIcon(canvas, GetModularIcon("stat_armor"), new Vector2(healthSocket.x, healthSocket.y - SocketArmorYOffset));
+                BlitIcon(canvas, GetCoreIcon("stat_armor"), new Vector2(healthSocket.x, healthSocket.y - SocketArmorYOffset));
             }
 
             var baked = new Texture2D(CanvasWidth, CanvasHeight, TextureFormat.RGBA32, false)
@@ -375,12 +382,112 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
+        // UnitType -> core attack-type icon (0/none Melee, 1 Ranged, 2 Magic).
         private static string AttackIconName(int unitType) => unitType switch
         {
-            1 => "attack_bow",
-            2 => "attack_magic",
-            _ => "attack_sword"
+            1 => "attack_type_ranged",
+            2 => "attack_type_magic",
+            _ => "attack_type_melee"
         };
+
+        private static string TypeName(int cardType) => cardType switch
+        {
+            1 => "utility",
+            2 => "equipment",
+            3 => "spell",
+            _ => "unit"
+        };
+
+        private static string RarityName(int cardRarity) => cardRarity switch
+        {
+            1 => "rare",
+            2 => "epic",
+            3 => "legendary",
+            _ => "common"
+        };
+
+        /// <summary>Core stat / attack-type / card-type icon: Resources/Art/icons/core/{name}. Null if absent.</summary>
+        private static Sprite GetCoreIcon(string name) =>
+            string.IsNullOrWhiteSpace(name) ? null : LoadIcon($"{CoreIconRoot}/{name}");
+
+        // Alpha-over an entire layer scaled to fill the whole 512x768 canvas (nearest sample). Used for
+        // full-card frames and faction overlays; hand assets are already 512x768 (1:1), board are 256x384 (2x).
+        private static void AlphaOverFill(Color32[] canvas, Texture2D layer)
+        {
+            if (layer == null)
+            {
+                return;
+            }
+            var lp = layer.GetPixels32();
+            var lw = layer.width;
+            var lh = layer.height;
+            if (lw <= 0 || lh <= 0)
+            {
+                return;
+            }
+            for (var y = 0; y < CanvasHeight; y++)
+            {
+                var ly = y * lh / CanvasHeight; // both bottom-origin
+                for (var x = 0; x < CanvasWidth; x++)
+                {
+                    var src = lp[ly * lw + (x * lw / CanvasWidth)];
+                    if (src.a == 0)
+                    {
+                        continue;
+                    }
+                    var di = y * CanvasWidth + x;
+                    canvas[di] = Over(src, canvas[di]);
+                }
+            }
+        }
+
+        // Alpha-over a layer scaled to widthFraction of the canvas width (square), centred on a fraction
+        // point (top-left origin). Used for the faction crest emblem.
+        private static void BlitLayerScaled(Color32[] canvas, Texture2D layer, Vector2 centreTopLeft, float widthFraction)
+        {
+            if (layer == null || widthFraction <= 0f)
+            {
+                return;
+            }
+            var size = Mathf.RoundToInt(widthFraction * CanvasWidth);
+            if (size <= 0)
+            {
+                return;
+            }
+            var lp = layer.GetPixels32();
+            var lw = layer.width;
+            var lh = layer.height;
+            if (lw <= 0 || lh <= 0)
+            {
+                return;
+            }
+            var x0 = Mathf.RoundToInt(centreTopLeft.x * CanvasWidth) - size / 2;
+            var y0 = Mathf.RoundToInt((1f - centreTopLeft.y) * CanvasHeight) - size / 2; // top-left -> bottom origin
+            for (var y = 0; y < size; y++)
+            {
+                var cy = y0 + y;
+                if (cy < 0 || cy >= CanvasHeight)
+                {
+                    continue;
+                }
+                var sy = y * lh / size;
+                for (var x = 0; x < size; x++)
+                {
+                    var cx = x0 + x;
+                    if (cx < 0 || cx >= CanvasWidth)
+                    {
+                        continue;
+                    }
+                    var src = lp[sy * lw + (x * lw / size)];
+                    if (src.a == 0)
+                    {
+                        continue;
+                    }
+                    var di = cy * CanvasWidth + cx;
+                    canvas[di] = Over(src, canvas[di]);
+                }
+            }
+        }
 
         private static void AlphaOver(Color32[] canvas, Texture2D layer, int offsetX, int offsetY)
         {
