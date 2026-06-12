@@ -65,6 +65,8 @@ namespace Flippy.CardDuelMobile.UI
         private Vector3 _boardCardOriginalLocalScale;
         private Board3DSlot _boardCardOriginalSlot;
         private Collider[] _boardCardDisabledColliders;
+        // Renderers of the hand card being dragged; hidden so only the drag ghost shows (no duplicate).
+        private Renderer[] _draggedCardHiddenRenderers;
         private BoardCardDestroyDropZone _hoveredDestroyZone;
         private Vector2 _pressStartScreenPos;
         private Vector2 _detailInteractionStartScreenPos;
@@ -241,6 +243,12 @@ namespace Flippy.CardDuelMobile.UI
 
             presenter?.SaveOriginalCardPositions(0);
             SpawnDragGhost(screenPosition, cardView);
+
+            // Hide the original hand card so only the ghost is visible while dragging (avoids the
+            // duplicate). It is restored on cancel, or removed by the hand refresh once the card is played.
+            _draggedCardHiddenRenderers = cardView.GetComponentsInChildren<Renderer>(true);
+            SetRenderersEnabled(_draggedCardHiddenRenderers, false);
+
             UpdateDrag(screenPosition);
 
             Debug.Log($"[DragHandler3D] Started dragging {cardView.CardData.displayName}");
@@ -297,10 +305,11 @@ namespace Flippy.CardDuelMobile.UI
 
             Debug.Log($"[DragHandler3D] EndDrag - WorldDistance: {_dragDistance}, ScreenDistance: {_dragScreenDistance}, HoveredSlot: {_hoveredSlot?.Slot}");
 
+            var played = false;
             if ((_dragDistance >= dragMinDistance || _dragScreenDistance >= dragMinScreenDistance) &&
                 _hoveredSlot != null)
             {
-                TryPlayCard();
+                played = TryPlayCard();
             }
 
             if (_dragGhostInstance != null)
@@ -311,9 +320,32 @@ namespace Flippy.CardDuelMobile.UI
                 Debug.Log("[DragHandler3D] Drag ghost destroyed");
             }
 
+            // Restore the original card only if it was NOT played; a played card is removed by the
+            // upcoming hand refresh, so leaving it hidden prevents a one-frame duplicate flash.
+            if (!played)
+            {
+                SetRenderersEnabled(_draggedCardHiddenRenderers, true);
+            }
+            _draggedCardHiddenRenderers = null;
+
             _draggedCard = null;
             _isDragging = false;
             SetHoveredSlot(null);
+        }
+
+        private static void SetRenderersEnabled(Renderer[] renderers, bool enabled)
+        {
+            if (renderers == null)
+            {
+                return;
+            }
+            foreach (var renderer in renderers)
+            {
+                if (renderer != null)
+                {
+                    renderer.enabled = enabled;
+                }
+            }
         }
 
         private void BeginBoardCardDestroyDrag(Card3DPlayed cardView, Vector2 screenPosition)
@@ -442,12 +474,12 @@ namespace Flippy.CardDuelMobile.UI
             _boardCardDisabledColliders = null;
         }
 
-        private void TryPlayCard()
+        private bool TryPlayCard()
         {
             if (_draggedCard == null || _hoveredSlot == null)
             {
                 Debug.LogWarning($"[DragHandler3D] TryPlayCard failed: card={_draggedCard}, slot={_hoveredSlot}");
-                return;
+                return false;
             }
 
             var targetSlot = _hoveredSlot.Slot;
@@ -457,38 +489,39 @@ namespace Flippy.CardDuelMobile.UI
             if (snapshot == null)
             {
                 Debug.LogWarning("[DragHandler3D] Snapshot unavailable; cannot play card.");
-                return;
+                return false;
             }
 
             var isLocalTurn = SnapshotTurnAuthority.IsLocalTurn(snapshot);
             if (!isLocalTurn)
             {
                 Debug.LogWarning("[DragHandler3D] No es turno del jugador local");
-                return;
+                return false;
             }
 
             var localPlayer = snapshot.players[snapshot.localPlayerIndex];
             if (localPlayer == null)
             {
                 Debug.LogWarning("[DragHandler3D] Local player snapshot missing.");
-                return;
+                return false;
             }
 
             var handCard = localPlayer.hand?.FirstOrDefault(c => c.runtimeCardKey == _draggedCard.CardData.runtimeId);
             if (handCard == null)
             {
                 Debug.LogWarning("[DragHandler3D] Card is not present in the latest local hand snapshot.");
-                return;
+                return false;
             }
 
             if (presenter == null)
             {
                 Debug.LogError("[DragHandler3D] presenter is null!");
-                return;
+                return false;
             }
 
             Debug.Log($"[DragHandler3D] Playing {_draggedCard.CardData.displayName} (ID: {_draggedCard.CardData.runtimeId}) to {targetSlot}");
             presenter.RequestPlayCard(_draggedCard.CardData.runtimeId, targetSlot);
+            return true;
         }
 
         private void UpdateHoveredCard(ICardDisplay hoveredCard, PointerState pointerState)
