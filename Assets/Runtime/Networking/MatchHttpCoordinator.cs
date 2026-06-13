@@ -101,12 +101,12 @@ namespace Flippy.CardDuelMobile.Networking
         /// <summary>
         /// Request play card.
         /// </summary>
-        public async void RequestPlayCard(string runtimeHandKey, int slotIndex)
+        public async void RequestPlayCard(string runtimeHandKey, int slotIndex, string targetRuntimeId = null)
         {
             try
             {
-                GameLogger.Info("MatchHttp", $"Requesting PlayCard: {runtimeHandKey} -> slot {slotIndex}");
-                var snapshot = await _apiClient.PlayCard(matchId, playerId, runtimeHandKey, slotIndex);
+                GameLogger.Info("MatchHttp", $"Requesting PlayCard: {runtimeHandKey} -> slot {slotIndex} target {targetRuntimeId}");
+                var snapshot = await _apiClient.PlayCard(matchId, playerId, runtimeHandKey, slotIndex, targetRuntimeId);
                 ProcessSnapshot(snapshot);
                 GameLogger.Info("MatchHttp", $"PlayCard success");
             }

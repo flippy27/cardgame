@@ -50,6 +50,7 @@ namespace Flippy.CardDuelMobile.UI
         private float _dragScreenDistance;
         private bool _isDragging;
         private Board3DSlot _hoveredSlot;
+        private ICardDisplay _targetCard;             // board card highlighted as a spell/equipment target
         private const float hoverMaxDistance = 3.2f; // max world distance from a slot centre to count as "over board"
         private const float hoverHysteresis = 1.0f;  // the nearest slot must be this much closer to switch away
         private GameObject _dragGhostInstance;
@@ -314,7 +315,85 @@ namespace Flippy.CardDuelMobile.UI
             // flips at slot boundaries and gets intercepted by displaced cards' colliders). Hysteresis
             // keeps the current slot until another is clearly closer, so it never oscillates.
             var ghostPos = _dragGhostInstance != null ? _dragGhostInstance.transform.position : Vector3.zero;
-            SetHoveredSlot(ResolveHoverSlotByDistance(ghostPos));
+
+            // Non-unit cards (spell/equipment/utility) don't take a slot — they pick a TARGET board
+            // card (highlighted) instead of doing slot displacement.
+            if (DraggedCardIsNonUnit())
+            {
+                SetHoveredSlot(null);
+                UpdateTargetHover(ghostPos);
+            }
+            else
+            {
+                SetTargetCard(null);
+                SetHoveredSlot(ResolveHoverSlotByDistance(ghostPos));
+            }
+        }
+
+        // True when the dragged hand card is Utility/Equipment/Spell (cardType != Unit), resolved from
+        // the catalog (the hand DTO carries no cardType).
+        private bool DraggedCardIsNonUnit()
+        {
+            var cardId = _draggedCard?.CardData?.cardId;
+            if (string.IsNullOrEmpty(cardId))
+            {
+                return false;
+            }
+            var catalog = Networking.GameService.Instance?.CardCatalog;
+            if (catalog != null && catalog.TryGetCard(cardId, out var def) && def != null)
+            {
+                return def.cardType != 0; // 0 = Unit
+            }
+            return false;
+        }
+
+        // Highlights the board card nearest the ghost as the spell/equipment target.
+        private void UpdateTargetHover(Vector3 ghostPos)
+        {
+            if (board3DManager == null)
+            {
+                SetTargetCard(null);
+                return;
+            }
+            ICardDisplay nearest = null;
+            var nearestDist = float.MaxValue;
+            foreach (var p in new[] { 0, 1 })
+            {
+                foreach (var s in new[] { BoardSlot.Front, BoardSlot.BackLeft, BoardSlot.BackRight })
+                {
+                    var card = board3DManager.GetCardInSlot(p, s);
+                    var slot = board3DManager.GetSlot(p, s);
+                    if (card == null || slot == null)
+                    {
+                        continue;
+                    }
+                    var sp = slot.transform.position;
+                    var d = Vector2.Distance(new Vector2(sp.x, sp.y), new Vector2(ghostPos.x, ghostPos.y));
+                    if (d < nearestDist)
+                    {
+                        nearestDist = d;
+                        nearest = card;
+                    }
+                }
+            }
+            SetTargetCard(nearestDist <= hoverMaxDistance ? nearest : null);
+        }
+
+        private void SetTargetCard(ICardDisplay card)
+        {
+            if (_targetCard == card)
+            {
+                return;
+            }
+            _targetCard?.ResetColor();
+            _targetCard = card;
+            if (_targetCard != null)
+            {
+                // Green = friendly target, red = enemy target (tint stands in for a coloured outline).
+                _targetCard.SetColor(_targetCard.PlayerIndex == 0
+                    ? new Color(0.45f, 1f, 0.5f)
+                    : new Color(1f, 0.45f, 0.45f));
+            }
         }
 
         private Board3DSlot ResolveHoverSlotByDistance(Vector3 worldPos)
@@ -372,11 +451,22 @@ namespace Flippy.CardDuelMobile.UI
             Debug.Log($"[DragHandler3D] EndDrag - WorldDistance: {_dragDistance}, ScreenDistance: {_dragScreenDistance}, HoveredSlot: {_hoveredSlot?.Slot}");
 
             var played = false;
-            if ((_dragDistance >= dragMinDistance || _dragScreenDistance >= dragMinScreenDistance) &&
-                _hoveredSlot != null)
+            var movedEnough = _dragDistance >= dragMinDistance || _dragScreenDistance >= dragMinScreenDistance;
+            if (movedEnough)
             {
-                played = TryPlayCard();
+                if (DraggedCardIsNonUnit())
+                {
+                    if (_targetCard != null)
+                    {
+                        played = TryPlayCardOnTarget(_targetCard);
+                    }
+                }
+                else if (_hoveredSlot != null)
+                {
+                    played = TryPlayCard();
+                }
             }
+            SetTargetCard(null); // clear any target highlight
 
             if (_dragGhostInstance != null)
             {
@@ -622,6 +712,35 @@ namespace Flippy.CardDuelMobile.UI
 
             Debug.Log($"[DragHandler3D] Playing {_draggedCard.CardData.displayName} (ID: {_draggedCard.CardData.runtimeId}) to {targetSlot}");
             presenter.RequestPlayCard(_draggedCard.CardData.runtimeId, targetSlot);
+            return true;
+        }
+
+        // Plays a non-unit card (spell/equipment/utility) against a chosen board card. Slot is
+        // irrelevant server-side for these; the target runtimeId drives the effect.
+        private bool TryPlayCardOnTarget(ICardDisplay target)
+        {
+            if (_draggedCard?.CardData == null || target?.CardData == null || presenter == null)
+            {
+                return false;
+            }
+
+            var snapshot = GameplayPresenter3D.GetLatestSnapshot();
+            if (snapshot == null || !SnapshotTurnAuthority.IsLocalTurn(snapshot))
+            {
+                return false;
+            }
+
+            var localPlayer = snapshot.players != null && snapshot.localPlayerIndex >= 0 && snapshot.localPlayerIndex < snapshot.players.Length
+                ? snapshot.players[snapshot.localPlayerIndex]
+                : null;
+            var handCard = localPlayer?.hand?.FirstOrDefault(c => c.runtimeCardKey == _draggedCard.CardData.runtimeId);
+            if (handCard == null)
+            {
+                return false;
+            }
+
+            Debug.Log($"[DragHandler3D] Playing {_draggedCard.CardData.displayName} on target {target.CardData.runtimeId}");
+            presenter.RequestPlayCard(_draggedCard.CardData.runtimeId, BoardSlot.Front, target.CardData.runtimeId);
             return true;
         }
 

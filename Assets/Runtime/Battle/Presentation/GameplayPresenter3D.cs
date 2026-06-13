@@ -2403,14 +2403,14 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
-        public void RequestPlayCard(string runtimeCardKey, BoardSlot targetSlot)
+        public void RequestPlayCard(string runtimeCardKey, BoardSlot targetSlot, string targetRuntimeId = null)
         {
-            Debug.Log($"[GameplayPresenter3D] RequestPlayCard: {runtimeCardKey} → {targetSlot}");
+            Debug.Log($"[GameplayPresenter3D] RequestPlayCard: {runtimeCardKey} → {targetSlot} target {targetRuntimeId}");
 
             var coordinator = MatchCoordinatorFactory.Instance.GetCoordinator();
             if (coordinator != null)
             {
-                coordinator.RequestPlayCard(runtimeCardKey, (int)targetSlot);
+                coordinator.RequestPlayCard(runtimeCardKey, (int)targetSlot, targetRuntimeId);
                 hud3D?.Log($"Played card to {targetSlot}");
             }
             else

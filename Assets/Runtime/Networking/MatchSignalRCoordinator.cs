@@ -286,9 +286,9 @@ namespace Flippy.CardDuelMobile.Networking
             _rulesSyncInFlight = false;
         }
 
-        void IMatchCoordinator.RequestPlayCard(string runtimeCardKey, int slotIndex)
+        void IMatchCoordinator.RequestPlayCard(string runtimeCardKey, int slotIndex, string targetRuntimeId)
         {
-            _ = PlayCardAsync(runtimeCardKey, slotIndex);
+            _ = PlayCardAsync(runtimeCardKey, slotIndex, targetRuntimeId);
         }
 
         void IMatchCoordinator.RequestEndTurn()
