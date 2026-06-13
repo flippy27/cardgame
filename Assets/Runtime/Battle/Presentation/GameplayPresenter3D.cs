@@ -2715,17 +2715,18 @@ namespace Flippy.CardDuelMobile.UI
             if (_previewAnimCoroutine != null)
                 StopCoroutine(_previewAnimCoroutine);
 
-            // Snap cards back to originals before new preview
+            // Calculate displacement (uses board manager state, not snapshot). Cards that this target
+            // does NOT displace must animate back to their original slot; cards it does displace animate
+            // to the shifted slot. We do NOT snap to original first (that caused a visible bounce) —
+            // AnimateDisplacements lerps smoothly from wherever each card currently is.
+            var displacements = CalculateDisplacementsFromBoardManager(playerIndex, targetSlot);
             foreach (var card in _originalCardPositions.Keys)
             {
-                if (card != null && card.TryGetTransform(out var cardTransform))
+                if (card != null && !displacements.ContainsKey(card))
                 {
-                    cardTransform.position = _originalCardPositions[card];
+                    displacements[card] = _originalCardPositions[card];
                 }
             }
-
-            // Calculate displacement (uses board manager state, not snapshot)
-            var displacements = CalculateDisplacementsFromBoardManager(playerIndex, targetSlot);
 
             // Animate to preview positions
             _previewAnimCoroutine = AnimateDisplacements(displacements, 0.3f);
