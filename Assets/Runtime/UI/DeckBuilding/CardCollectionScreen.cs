@@ -101,6 +101,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void Start()
         {
             ApplyTextScale();
+            ApplyKenneySkin();
             WireButtons();
             PopulateDropdowns();
             SubscribePanelEvents();
@@ -112,6 +113,35 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             DeckBuilderTextScale.Apply(dustAmountText, DeckBuilderTextScale.Role.Label);
             DeckBuilderTextScale.Apply(pageLabel, DeckBuilderTextScale.Role.Label);
             DeckBuilderTextScale.ApplyAutoSize(statusText, DeckBuilderTextScale.Role.Status);
+        }
+
+        /// <summary>
+        /// Applies the temporary Kenney art skin in code (no prefab wiring). Null-safe:
+        /// if the sprites aren't present under Resources this is a no-op.
+        /// </summary>
+        private void ApplyKenneySkin()
+        {
+            if (!KenneyUiSkin.Available) return;
+
+            // Root window + scroll-view background.
+            KenneyUiSkin.SkinPanelWindow(this);
+            if (cardGridContent != null)
+            {
+                // The scroll Content's Viewport (parent) usually carries the bg image.
+                var viewport = cardGridContent.parent != null ? cardGridContent.parent.GetComponent<Image>() : null;
+                KenneyUiSkin.SkinInsetImage(viewport);
+            }
+
+            // Nav buttons.
+            KenneyUiSkin.SkinButton(backButton, KenneyUiSkin.ButtonStyle.Nav);
+            KenneyUiSkin.SkinButton(deckManagementButton, KenneyUiSkin.ButtonStyle.Nav);
+            KenneyUiSkin.SkinButton(cardCatalogButton, KenneyUiSkin.ButtonStyle.Nav);
+            KenneyUiSkin.SkinButton(clearFiltersButton, KenneyUiSkin.ButtonStyle.Nav);
+            // Page arrows are small square icon buttons.
+            KenneyUiSkin.SkinButton(prevPageButton, KenneyUiSkin.ButtonStyle.Icon);
+            KenneyUiSkin.SkinButton(nextPageButton, KenneyUiSkin.ButtonStyle.Icon);
+            // Primary action.
+            KenneyUiSkin.SkinButton(craftCardsButton, KenneyUiSkin.ButtonStyle.Primary);
         }
 
         private void OnDestroy()

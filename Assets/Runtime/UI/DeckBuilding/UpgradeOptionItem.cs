@@ -27,6 +27,10 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             DeckBuilderTextScale.ApplyAutoSize(descriptionText, DeckBuilderTextScale.Role.Status);
             DeckBuilderTextScale.ApplyAutoSize(affordabilityText, DeckBuilderTextScale.Role.Status);
             DeckBuilderTextScale.Apply(applyButtonText, DeckBuilderTextScale.Role.Button);
+
+            // Temporary Kenney skin for the apply button chrome. Null-safe.
+            if (KenneyUiSkin.Available)
+                KenneyUiSkin.SkinButton(applyButton, KenneyUiSkin.ButtonStyle.Primary);
         }
 
         public void BindUnavailable(string title, string description)

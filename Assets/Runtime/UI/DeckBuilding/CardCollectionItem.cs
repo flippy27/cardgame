@@ -61,6 +61,12 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
             DeckBuilderTextScale.ApplyAutoSize(cardNameText, DeckBuilderTextScale.Role.CardName);
             DeckBuilderTextScale.Apply(copiesText, DeckBuilderTextScale.Role.Label);
+
+            // Temporary Kenney skin for the cell background button only. The rarity
+            // bar, faction icon and card art are tinted/filled in code (see Bind) and
+            // must NOT be re-skinned, so we touch only the select button's chrome.
+            if (KenneyUiSkin.Available)
+                KenneyUiSkin.SkinButton(selectButton, KenneyUiSkin.ButtonStyle.Icon);
         }
 
         /// <summary>Bind a summary entry to this cell. Call after Instantiate.</summary>

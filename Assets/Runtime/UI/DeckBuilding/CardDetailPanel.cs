@@ -70,6 +70,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         {
             EnsureDefaultUpgradePresets();
             ApplyTextScale();
+            ApplyKenneySkin();
 
             if (closeButton != null)
             {
@@ -91,6 +92,22 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void OnValidate()
         {
             EnsureDefaultUpgradePresets();
+        }
+
+        /// <summary>
+        /// Temporary Kenney art skin (code-side, no prefab wiring). Null-safe.
+        /// Deliberately skips <see cref="cardArtImage"/> (holds card art, not chrome).
+        /// </summary>
+        private void ApplyKenneySkin()
+        {
+            if (!KenneyUiSkin.Available) return;
+            KenneyUiSkin.SkinPanelWindow(this);
+            if (upgradeHistoryContainer != null)
+            {
+                var viewport = upgradeHistoryContainer.parent != null ? upgradeHistoryContainer.parent.GetComponent<Image>() : null;
+                KenneyUiSkin.SkinInsetImage(viewport);
+            }
+            KenneyUiSkin.SkinButton(closeButton, KenneyUiSkin.ButtonStyle.Icon);
         }
 
         private void ApplyTextScale()

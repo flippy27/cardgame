@@ -72,6 +72,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void Awake()
         {
             ApplyTextScale();
+            ApplyKenneySkin();
 
             if (closeButton != null) closeButton.onClick.AddListener(Hide);
             if (saveButton != null) saveButton.onClick.AddListener(OnSaveClicked);
@@ -87,6 +88,22 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void OnDestroy()
         {
             if (cardCatalogPanel != null) cardCatalogPanel.OnCardSelectedForDeck -= OnCatalogCardSelected;
+        }
+
+        /// <summary>Temporary Kenney art skin (code-side, no prefab wiring). Null-safe.</summary>
+        private void ApplyKenneySkin()
+        {
+            if (!KenneyUiSkin.Available) return;
+            KenneyUiSkin.SkinPanelWindow(this);
+            if (deckCardsContainer != null)
+            {
+                var viewport = deckCardsContainer.parent != null ? deckCardsContainer.parent.GetComponent<Image>() : null;
+                KenneyUiSkin.SkinInsetImage(viewport);
+            }
+            if (deckNameInput != null) KenneyUiSkin.SkinInputImage(deckNameInput.GetComponent<Image>());
+            KenneyUiSkin.SkinButton(closeButton, KenneyUiSkin.ButtonStyle.Icon);
+            KenneyUiSkin.SkinButton(addCardsButton, KenneyUiSkin.ButtonStyle.Primary);
+            KenneyUiSkin.SkinButton(saveButton, KenneyUiSkin.ButtonStyle.Primary);
         }
 
         private void ApplyTextScale()
@@ -227,6 +244,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             {
                 var capturedId = cardId;
                 buttons[0].onClick.AddListener(() => RemoveCard(capturedId));
+                if (KenneyUiSkin.Available) KenneyUiSkin.SkinButton(buttons[0], KenneyUiSkin.ButtonStyle.Icon);
             }
         }
 

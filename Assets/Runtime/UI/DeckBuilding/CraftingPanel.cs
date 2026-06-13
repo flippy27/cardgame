@@ -62,9 +62,24 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             DeckBuilderTextScale.Apply(dustAmountText, DeckBuilderTextScale.Role.Label);
             DeckBuilderTextScale.ApplyAutoSize(statusText, DeckBuilderTextScale.Role.Status);
 
+            ApplyKenneySkin();
+
             if (closeButton != null) closeButton.onClick.AddListener(Hide);
             if (affordableOnlyToggle != null)
                 affordableOnlyToggle.onValueChanged.AddListener(v => { _affordableOnly = v; RebuildList(); });
+        }
+
+        /// <summary>Temporary Kenney art skin (code-side, no prefab wiring). Null-safe.</summary>
+        private void ApplyKenneySkin()
+        {
+            if (!KenneyUiSkin.Available) return;
+            KenneyUiSkin.SkinPanelWindow(this);
+            if (recipeListContainer != null)
+            {
+                var viewport = recipeListContainer.parent != null ? recipeListContainer.parent.GetComponent<Image>() : null;
+                KenneyUiSkin.SkinInsetImage(viewport);
+            }
+            KenneyUiSkin.SkinButton(closeButton, KenneyUiSkin.ButtonStyle.Icon);
         }
 
         public void Show()

@@ -80,6 +80,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
                 craftButton.interactable = canAfford;
                 craftButton.onClick.RemoveAllListeners();
                 craftButton.onClick.AddListener(OnCraftClicked);
+                if (KenneyUiSkin.Available) KenneyUiSkin.SkinButton(craftButton, KenneyUiSkin.ButtonStyle.Primary);
             }
 
             if (craftButtonText != null)

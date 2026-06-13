@@ -79,11 +79,30 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             DeckBuilderTextScale.Apply(pageLabel, DeckBuilderTextScale.Role.Label);
             DeckBuilderTextScale.ApplyAutoSize(statusText, DeckBuilderTextScale.Role.Status);
 
+            ApplyKenneySkin();
+
             if (closeButton != null) closeButton.onClick.AddListener(Hide);
             if (clearFiltersButton != null) clearFiltersButton.onClick.AddListener(ClearFilters);
             if (prevButton != null) prevButton.onClick.AddListener(PrevPage);
             if (nextButton != null) nextButton.onClick.AddListener(NextPage);
             if (searchField != null) searchField.onEndEdit.AddListener(OnSearchChanged);
+        }
+
+        /// <summary>Temporary Kenney art skin (code-side, no prefab wiring). Null-safe.</summary>
+        private void ApplyKenneySkin()
+        {
+            if (!KenneyUiSkin.Available) return;
+            KenneyUiSkin.SkinPanelWindow(this);
+            if (catalogContent != null)
+            {
+                var viewport = catalogContent.parent != null ? catalogContent.parent.GetComponent<Image>() : null;
+                KenneyUiSkin.SkinInsetImage(viewport);
+            }
+            if (searchField != null) KenneyUiSkin.SkinInputImage(searchField.GetComponent<Image>());
+            KenneyUiSkin.SkinButton(closeButton, KenneyUiSkin.ButtonStyle.Icon);
+            KenneyUiSkin.SkinButton(clearFiltersButton, KenneyUiSkin.ButtonStyle.Nav);
+            KenneyUiSkin.SkinButton(prevButton, KenneyUiSkin.ButtonStyle.Icon);
+            KenneyUiSkin.SkinButton(nextButton, KenneyUiSkin.ButtonStyle.Icon);
         }
 
         public void Show()
@@ -250,6 +269,8 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
                 renderer.ApplyCard(card.cardId, "collection");
 
             var buttons = go.GetComponentsInChildren<Button>(true);
+            if (KenneyUiSkin.Available && buttons.Length > 0)
+                KenneyUiSkin.SkinButton(buttons[0], KenneyUiSkin.ButtonStyle.Primary);
             if (_deckEditMode && buttons.Length > 0)
             {
                 var capturedCard = card;
