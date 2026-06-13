@@ -124,7 +124,8 @@ namespace Flippy.CardDuelMobile.UI
                 rangedAttackTypeSprite,
                 magicAttackTypeSprite);
 
-            visualRenderer?.ApplyCard(card.cardId, source is Card3DView ? "hand" : "played");
+            // The big preview always shows the full hand-style card, even for board (played) cards.
+            visualRenderer?.ApplyCard(card.cardId, "hand");
             CardVisualCommon.ApplyAbilityIcons(card, abilityIconGroup, abilityIconSlots);
             var resolvedStatusSlots = statusIconSlots != null && statusIconSlots.Length > 0 ? statusIconSlots : stateIconSlots;
             CardVisualCommon.ApplyStatusIcons(card, statusIconGroup, resolvedStatusSlots);
@@ -170,13 +171,14 @@ namespace Flippy.CardDuelMobile.UI
             rect.anchorMin = new Vector2(0.5f, 0.5f);
             rect.anchorMax = new Vector2(0.5f, 0.5f);
             rect.pivot = new Vector2(0.5f, 0.5f);
-            rect.sizeDelta = new Vector2(420f, 630f); // 2:3 card
+            rect.sizeDelta = new Vector2(520f, 780f); // 2:3 card, large preview
             rect.anchoredPosition = Vector2.zero;
-            rect.SetSiblingIndex(0); // behind the title/stat children, in front of the panel backdrop
+            rect.SetAsLastSibling(); // render above the dim backdrop and the semi-transparent icon panels
 
             var image = go.GetComponent<Image>();
             image.raycastTarget = false;
             image.preserveAspect = true;
+            image.color = Color.white;
             return image;
         }
 

@@ -139,9 +139,12 @@ namespace Flippy.CardDuelMobile.UI
         {
             text.color = Color.white;
             text.fontStyle = FontStyles.Bold;
-            _ = text.fontMaterial; // force a per-instance material so the outline doesn't leak to the shared one
-            text.outlineColor = Color.black;
-            text.outlineWidth = 0.25f;
+            // Outline via the instance material (text.outlineWidth alone often doesn't take on the
+            // default font material). fontMaterial returns a per-instance copy, so this doesn't leak.
+            var mat = text.fontMaterial;
+            mat.EnableKeyword(ShaderUtilities.Keyword_Outline);
+            mat.SetColor(ShaderUtilities.ID_OutlineColor, Color.black);
+            mat.SetFloat(ShaderUtilities.ID_OutlineWidth, 0.22f);
         }
 
         public void UpdateStatsDisplay()

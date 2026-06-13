@@ -65,8 +65,9 @@ namespace Flippy.CardDuelMobile.UI
         private Vector3 _boardCardOriginalLocalScale;
         private Board3DSlot _boardCardOriginalSlot;
         private Collider[] _boardCardDisabledColliders;
-        // Renderers of the hand card being dragged; hidden so only the drag ghost shows (no duplicate).
+        // Renderers + canvases of the hand card being dragged; hidden so only the drag ghost shows.
         private Renderer[] _draggedCardHiddenRenderers;
+        private Canvas[] _draggedCardHiddenCanvases;
         private BoardCardDestroyDropZone _hoveredDestroyZone;
         private Vector2 _pressStartScreenPos;
         private Vector2 _detailInteractionStartScreenPos;
@@ -250,6 +251,14 @@ namespace Flippy.CardDuelMobile.UI
             _draggedCardHiddenRenderers = cardView.GetComponentsInChildren<Renderer>(true)
                 .Where(r => r != null && r.enabled).ToArray();
             SetRenderersEnabled(_draggedCardHiddenRenderers, false);
+            // Also hide the source card's stat canvases, or its numbers stay visible at the hand
+            // position while the card itself is hidden (looked like detached numbers).
+            _draggedCardHiddenCanvases = cardView.GetComponentsInChildren<Canvas>(true)
+                .Where(c => c != null && c.enabled).ToArray();
+            foreach (var canvas in _draggedCardHiddenCanvases)
+            {
+                canvas.enabled = false;
+            }
 
             UpdateDrag(screenPosition);
 
@@ -333,8 +342,19 @@ namespace Flippy.CardDuelMobile.UI
             if (!played)
             {
                 SetRenderersEnabled(_draggedCardHiddenRenderers, true);
+                if (_draggedCardHiddenCanvases != null)
+                {
+                    foreach (var canvas in _draggedCardHiddenCanvases)
+                    {
+                        if (canvas != null)
+                        {
+                            canvas.enabled = true;
+                        }
+                    }
+                }
             }
             _draggedCardHiddenRenderers = null;
+            _draggedCardHiddenCanvases = null;
 
             _draggedCard = null;
             _isDragging = false;
@@ -714,13 +734,6 @@ namespace Flippy.CardDuelMobile.UI
             foreach (var collider in _dragGhostInstance.GetComponentsInChildren<Collider>(true))
             {
                 collider.enabled = false;
-            }
-
-            // The ghost is just the card art following the cursor — hide its stat canvases so their
-            // numbers don't render detached, and switch off any stray (e.g. red placeholder) quads.
-            foreach (var canvas in _dragGhostInstance.GetComponentsInChildren<Canvas>(true))
-            {
-                canvas.enabled = false;
             }
 
             _dragGhost.SetTargetPosition(screenPosition, mainCamera);
