@@ -52,7 +52,9 @@ namespace Flippy.CardDuelMobile.UI
         private Board3DSlot _hoveredSlot;
         private Board3DSlot _pendingHoverSlot;
         private float _pendingHoverElapsed;
+        private Vector2 _hoverCommitScreenPos;
         private const float hoverSwitchDebounce = 0.08f; // stable window before switching hovered slot
+        private const float hoverDeadZone = 40f;          // px the cursor must move before re-evaluating the slot
         private GameObject _dragGhostInstance;
         private DragGhost3D _dragGhost;
 
@@ -311,6 +313,14 @@ namespace Flippy.CardDuelMobile.UI
                 _dragDistance = Vector3.Distance(_dragStartWorldPos, ghostWorldPos);
             }
 
+            // Dead-zone: once a slot is hovered, don't re-evaluate until the cursor moves a minimum
+            // distance. Sitting exactly on a slot boundary therefore stays put instead of oscillating;
+            // you must actually move toward another slot to switch.
+            if (_hoveredSlot != null && Vector2.Distance(screenPosition, _hoverCommitScreenPos) < hoverDeadZone)
+            {
+                return;
+            }
+
             // Debounce the hovered slot: at a boundary the raycast can flip between two slots every
             // frame, which made the displacement preview oscillate wildly. Only commit a switch once
             // the same candidate has been hovered for a short, stable window.
@@ -335,6 +345,7 @@ namespace Flippy.CardDuelMobile.UI
                 if (_pendingHoverElapsed >= hoverSwitchDebounce)
                 {
                     SetHoveredSlot(candidate);
+                    _hoverCommitScreenPos = screenPosition;
                     _pendingHoverElapsed = 0f;
                 }
             }
