@@ -21,6 +21,14 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
         private Action _onApply;
 
+        private void Awake()
+        {
+            DeckBuilderTextScale.ApplyAutoSize(upgradeNameText, DeckBuilderTextScale.Role.CardName);
+            DeckBuilderTextScale.ApplyAutoSize(descriptionText, DeckBuilderTextScale.Role.Status);
+            DeckBuilderTextScale.ApplyAutoSize(affordabilityText, DeckBuilderTextScale.Role.Status);
+            DeckBuilderTextScale.Apply(applyButtonText, DeckBuilderTextScale.Role.Button);
+        }
+
         public void BindUnavailable(string title, string description)
         {
             _onApply = null;

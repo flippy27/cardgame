@@ -58,6 +58,9 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         {
             if (selectButton != null)
                 selectButton.onClick.AddListener(OnClicked);
+
+            DeckBuilderTextScale.ApplyAutoSize(cardNameText, DeckBuilderTextScale.Role.CardName);
+            DeckBuilderTextScale.Apply(copiesText, DeckBuilderTextScale.Role.Label);
         }
 
         /// <summary>Bind a summary entry to this cell. Call after Instantiate.</summary>

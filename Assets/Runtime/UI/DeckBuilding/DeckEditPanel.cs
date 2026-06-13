@@ -71,6 +71,8 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
         private void Awake()
         {
+            ApplyTextScale();
+
             if (closeButton != null) closeButton.onClick.AddListener(Hide);
             if (saveButton != null) saveButton.onClick.AddListener(OnSaveClicked);
             if (addCardsButton != null) addCardsButton.onClick.AddListener(OnAddCardsClicked);
@@ -85,6 +87,14 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void OnDestroy()
         {
             if (cardCatalogPanel != null) cardCatalogPanel.OnCardSelectedForDeck -= OnCatalogCardSelected;
+        }
+
+        private void ApplyTextScale()
+        {
+            DeckBuilderTextScale.Apply(titleText, DeckBuilderTextScale.Role.Header);
+            DeckBuilderTextScale.Apply(cardCountText, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.ApplyAutoSize(validationText, DeckBuilderTextScale.Role.Status);
+            DeckBuilderTextScale.ApplyAutoSize(statusText, DeckBuilderTextScale.Role.Status);
         }
 
         public void OpenForCreate()
@@ -204,8 +214,13 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
                 texts[0].text = _cardNames.TryGetValue(cardId, out var name) && !string.IsNullOrWhiteSpace(name)
                     ? name
                     : cardId;
+                DeckBuilderTextScale.ApplyAutoSize(texts[0], DeckBuilderTextScale.Role.CardName);
             }
-            if (texts.Length > 1) texts[1].text = $"x{count}";
+            if (texts.Length > 1)
+            {
+                texts[1].text = $"x{count}";
+                DeckBuilderTextScale.Apply(texts[1], DeckBuilderTextScale.Role.Label);
+            }
 
             var buttons = go.GetComponentsInChildren<Button>(true);
             if (buttons.Length > 0)

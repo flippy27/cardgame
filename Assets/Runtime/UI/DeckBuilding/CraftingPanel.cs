@@ -59,6 +59,9 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
         private void Awake()
         {
+            DeckBuilderTextScale.Apply(dustAmountText, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.ApplyAutoSize(statusText, DeckBuilderTextScale.Role.Status);
+
             if (closeButton != null) closeButton.onClick.AddListener(Hide);
             if (affordableOnlyToggle != null)
                 affordableOnlyToggle.onValueChanged.AddListener(v => { _affordableOnly = v; RebuildList(); });

@@ -100,10 +100,18 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
         private void Start()
         {
+            ApplyTextScale();
             WireButtons();
             PopulateDropdowns();
             SubscribePanelEvents();
             LoadDataAsync();
+        }
+
+        private void ApplyTextScale()
+        {
+            DeckBuilderTextScale.Apply(dustAmountText, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.Apply(pageLabel, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.ApplyAutoSize(statusText, DeckBuilderTextScale.Role.Status);
         }
 
         private void OnDestroy()

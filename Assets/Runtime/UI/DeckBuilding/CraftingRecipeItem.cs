@@ -56,6 +56,11 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             _card = card;
             _onCraft = onCraft;
 
+            DeckBuilderTextScale.ApplyAutoSize(cardNameText, DeckBuilderTextScale.Role.CardName);
+            DeckBuilderTextScale.Apply(rarityText, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.ApplyAutoSize(affordabilityText, DeckBuilderTextScale.Role.Status);
+            DeckBuilderTextScale.Apply(craftButtonText, DeckBuilderTextScale.Role.Button);
+
             if (cardNameText != null)
                 cardNameText.text = card.displayName ?? card.cardId;
 

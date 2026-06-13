@@ -49,6 +49,8 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
         private void Awake()
         {
+            DeckBuilderTextScale.ApplyAutoSize(statusText, DeckBuilderTextScale.Role.Status);
+
             if (closeButton != null) closeButton.onClick.AddListener(Hide);
             if (createDeckButton != null) createDeckButton.onClick.AddListener(OnCreateClicked);
 
@@ -129,8 +131,16 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
             // Try to find text labels in the row
             var texts = go.GetComponentsInChildren<TextMeshProUGUI>(true);
-            if (texts.Length > 0) texts[0].text = deck.Name;
-            if (texts.Length > 1) texts[1].text = $"{deck.CardCount} cards";
+            if (texts.Length > 0)
+            {
+                texts[0].text = deck.Name;
+                DeckBuilderTextScale.ApplyAutoSize(texts[0], DeckBuilderTextScale.Role.CardName);
+            }
+            if (texts.Length > 1)
+            {
+                texts[1].text = $"{deck.CardCount} cards";
+                DeckBuilderTextScale.Apply(texts[1], DeckBuilderTextScale.Role.Label);
+            }
 
             // Edit button (first button in row)
             var buttons = go.GetComponentsInChildren<Button>(true);
@@ -148,6 +158,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
                 if (label != null)
                 {
                     label.text = "No delete API";
+                    DeckBuilderTextScale.Apply(label, DeckBuilderTextScale.Role.Button);
                 }
             }
         }

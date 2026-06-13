@@ -69,6 +69,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void Awake()
         {
             EnsureDefaultUpgradePresets();
+            ApplyTextScale();
 
             if (closeButton != null)
             {
@@ -90,6 +91,18 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void OnValidate()
         {
             EnsureDefaultUpgradePresets();
+        }
+
+        private void ApplyTextScale()
+        {
+            DeckBuilderTextScale.ApplyAutoSize(cardNameText, DeckBuilderTextScale.Role.Header);
+            DeckBuilderTextScale.Apply(levelText, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.Apply(attackText, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.Apply(healthText, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.Apply(armorText, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.Apply(rarityText, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.Apply(factionText, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.ApplyAutoSize(statusText, DeckBuilderTextScale.Role.Status);
         }
 
         public void Show(string playerCardId)
@@ -353,6 +366,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             if (tmp != null)
             {
                 tmp.text = text;
+                DeckBuilderTextScale.ApplyAutoSize(tmp, DeckBuilderTextScale.Role.Status);
                 return;
             }
 

@@ -75,6 +75,10 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
         private void Awake()
         {
+            DeckBuilderTextScale.Apply(titleText, DeckBuilderTextScale.Role.Header);
+            DeckBuilderTextScale.Apply(pageLabel, DeckBuilderTextScale.Role.Label);
+            DeckBuilderTextScale.ApplyAutoSize(statusText, DeckBuilderTextScale.Role.Status);
+
             if (closeButton != null) closeButton.onClick.AddListener(Hide);
             if (clearFiltersButton != null) clearFiltersButton.onClick.AddListener(ClearFilters);
             if (prevButton != null) prevButton.onClick.AddListener(PrevPage);
@@ -223,9 +227,21 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             _ownedCounts.TryGetValue(card.cardId, out var owned);
 
             var texts = go.GetComponentsInChildren<TextMeshProUGUI>(true);
-            if (texts.Length > 0) texts[0].text = card.displayName ?? card.name ?? card.cardId;
-            if (texts.Length > 1) texts[1].text = $"ATK:{card.attack} HP:{card.health} Mana:{card.manaCost}";
-            if (texts.Length > 2) texts[2].text = owned > 0 ? $"Owned: {owned}" : "Not owned";
+            if (texts.Length > 0)
+            {
+                texts[0].text = card.displayName ?? card.name ?? card.cardId;
+                DeckBuilderTextScale.ApplyAutoSize(texts[0], DeckBuilderTextScale.Role.CardName);
+            }
+            if (texts.Length > 1)
+            {
+                texts[1].text = $"ATK:{card.attack} HP:{card.health} Mana:{card.manaCost}";
+                DeckBuilderTextScale.Apply(texts[1], DeckBuilderTextScale.Role.Label);
+            }
+            if (texts.Length > 2)
+            {
+                texts[2].text = owned > 0 ? $"Owned: {owned}" : "Not owned";
+                DeckBuilderTextScale.Apply(texts[2], DeckBuilderTextScale.Role.Label);
+            }
 
             // Visuals via CardSurfaceVisualRenderer if present
             var renderer = go.GetComponent<CardSurfaceVisualRenderer>()
