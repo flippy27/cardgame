@@ -95,10 +95,10 @@ namespace Flippy.CardDuelMobile.UI
             PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-130f, 260f), 155f);// health, bottom-right
             PlaceStat(armorText, new Vector2(1f, 0f), new Vector2(-130f, 345f), 135f); // armor, above health
 
-            // Ability icons float along the top of the board token; status badges along the bottom
-            // (prefab had both off-card with zero height).
-            PlaceIconPanel(abilityIconGroup, new Vector2(0.5f, 1f), new Vector2(0f, -120f), new Vector2(700f, 140f));
-            PlaceIconPanel(statusIconGroup, new Vector2(0.5f, 0f), new Vector2(0f, 120f), new Vector2(700f, 140f));
+            // Board cards show skills + buffs/debuffs as a row of small circles floating ABOVE the
+            // frame (skills left, status right). y positive past the top edge = above the card.
+            PlaceIconPanel(abilityIconGroup, new Vector2(0.5f, 1f), new Vector2(-180f, 110f), new Vector2(360f, 130f));
+            PlaceIconPanel(statusIconGroup, new Vector2(0.5f, 1f), new Vector2(180f, 110f), new Vector2(360f, 130f));
         }
 
         private static void PlaceIconPanel(CardIconGroup group, Vector2 anchor, Vector2 anchoredPosition, Vector2 size)
@@ -135,6 +135,11 @@ namespace Flippy.CardDuelMobile.UI
             text.alignment = TextAlignmentOptions.Center;
             text.textWrappingMode = TextWrappingModes.NoWrap;
             text.overflowMode = TextOverflowModes.Overflow;
+            text.color = Color.white;
+            text.fontStyle = FontStyles.Bold;
+            _ = text.fontMaterial; // per-instance material so the outline doesn't leak to the shared one
+            text.outlineColor = Color.black;
+            text.outlineWidth = 0.25f;
         }
 
         public void UpdateStatsDisplay()

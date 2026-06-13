@@ -45,13 +45,15 @@ namespace Flippy.CardDuelMobile.UI
         // PACK1 frames are CENTRED with transparent top/bottom margins (hand art spans y 0.128-0.876,
         // board y 0.167-0.828), so sockets live inside that band. The TMP stat numbers overlay at the
         // same fractions (LayoutStatsOverlay). Tune by screenshot.
-        private static readonly Vector2 HandSocketMana = new Vector2(0.130f, 0.170f);   // top-left disc
-        private static readonly Vector2 HandSocketAttack = new Vector2(0.130f, 0.780f); // bottom-left
-        private static readonly Vector2 HandSocketHealth = new Vector2(0.870f, 0.780f); // bottom-right
+        // Hand frame layout: cost top-right, unit-type (attack) bottom-left, rarity bottom-centre (no
+        // baked icon — frame art), hp bottom-right. Shield is a dynamic overlay added later.
+        private static readonly Vector2 HandSocketMana = new Vector2(0.870f, 0.170f);   // cost, top-right
+        private static readonly Vector2 HandSocketAttack = new Vector2(0.130f, 0.780f); // unit-type, bottom-left
+        private static readonly Vector2 HandSocketHealth = new Vector2(0.870f, 0.780f); // hp, bottom-right
         private static readonly Vector2 BoardSocketAttack = new Vector2(0.130f, 0.740f);
         private static readonly Vector2 BoardSocketHealth = new Vector2(0.870f, 0.740f);
         private const float SocketArmorYOffset = 0.085f;  // armor socket sits this much above health
-        private const float SocketIconFraction = 0.15f;   // icon size as fraction of canvas width
+        private const float SocketIconFraction = 0.19f;   // icon size as fraction of canvas width
         private static readonly Vector2 CrestCentre = new Vector2(0.5f, 0.135f); // faction emblem, top band
         private const float CrestFraction = 0.20f;        // crest size as fraction of canvas width
 

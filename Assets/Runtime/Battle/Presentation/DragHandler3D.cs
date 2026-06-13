@@ -245,8 +245,10 @@ namespace Flippy.CardDuelMobile.UI
             SpawnDragGhost(screenPosition, cardView);
 
             // Hide the original hand card so only the ghost is visible while dragging (avoids the
-            // duplicate). It is restored on cancel, or removed by the hand refresh once the card is played.
-            _draggedCardHiddenRenderers = cardView.GetComponentsInChildren<Renderer>(true);
+            // duplicate). Capture ONLY the renderers that are currently enabled, so restoring on cancel
+            // doesn't switch on stray disabled quads (e.g. the red placeholder sibling).
+            _draggedCardHiddenRenderers = cardView.GetComponentsInChildren<Renderer>(true)
+                .Where(r => r != null && r.enabled).ToArray();
             SetRenderersEnabled(_draggedCardHiddenRenderers, false);
 
             UpdateDrag(screenPosition);
@@ -712,6 +714,13 @@ namespace Flippy.CardDuelMobile.UI
             foreach (var collider in _dragGhostInstance.GetComponentsInChildren<Collider>(true))
             {
                 collider.enabled = false;
+            }
+
+            // The ghost is just the card art following the cursor — hide its stat canvases so their
+            // numbers don't render detached, and switch off any stray (e.g. red placeholder) quads.
+            foreach (var canvas in _dragGhostInstance.GetComponentsInChildren<Canvas>(true))
+            {
+                canvas.enabled = false;
             }
 
             _dragGhost.SetTargetPosition(screenPosition, mainCamera);
