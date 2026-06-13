@@ -115,7 +115,9 @@ namespace Flippy.CardDuelMobile.UI
                 damage,
                 motionLevel,
                 shakeLevel,
-                IsRangedAttack(attacker));
+                IsRangedAttack(attacker),
+                ResolveDelivery(attacker),
+                ProjectileVfxLibrary.ResolveFaction(attacker?.CardData));
         }
 
         public IEnumerator PlayHeroAttack(
@@ -139,7 +141,16 @@ namespace Flippy.CardDuelMobile.UI
                 damage,
                 motionLevel,
                 shakeLevel,
-                IsRangedAttack(attacker));
+                IsRangedAttack(attacker),
+                ResolveDelivery(attacker),
+                ProjectileVfxLibrary.ResolveFaction(attacker?.CardData));
+        }
+
+        private static string ResolveDelivery(ICardDisplay attacker)
+        {
+            return attacker?.CardData != null
+                ? AttackPresentationResolver.ResolveDeliveryType(attacker.CardData)
+                : AttackPresentationResolver.DeliveryTypeMelee;
         }
 
         public IEnumerator PlayDamagePopup(Vector3 worldPosition, int amount, bool isPoison = false)
@@ -199,7 +210,9 @@ namespace Flippy.CardDuelMobile.UI
             int damage,
             int motionLevel,
             int shakeLevel,
-            bool useProjectile)
+            bool useProjectile,
+            string deliveryType = null,
+            string faction = null)
         {
             if (attackerTransform == null)
             {
@@ -226,14 +239,50 @@ namespace Flippy.CardDuelMobile.UI
 
             yield return AnimateAttackerForward(attackerTransform, attackerOrigin, lungeTarget, motion);
 
+            // Ranged/magic: a faction-tinted projectile sprite travels attacker -> target and must
+            // LAND before the impact flash. Beam/arc deliveries fly along an arc; straight projectile
+            // flies flat. Impact VFX (melee swing or projectile burst + a card_damage hit) play once
+            // the projectile resolves at the target.
+            var normalizedDelivery = AttackPresentationResolver.NormalizeDeliveryType(deliveryType);
+            var isArc = string.Equals(normalizedDelivery, AttackPresentationResolver.DeliveryTypeBeam, StringComparison.Ordinal) ||
+                        string.Equals(normalizedDelivery, AttackPresentationResolver.DeliveryTypeArc, StringComparison.Ordinal);
+
             if (useProjectile)
             {
                 var projectileStart = attackerTransform.position + Vector3.up * motion.projectileLaunchHeight;
-                yield return AnimateProjectile(projectileStart, impactPosition, motion);
+                yield return AnimateProjectile(projectileStart, impactPosition, motion, faction, isArc);
+                PlayDeliveryImpactVfx(normalizedDelivery, targetPosition);
             }
+            else
+            {
+                // Melee lands on contact: play the melee swing/impact strip at the target.
+                PlayDeliveryImpactVfx(AttackPresentationResolver.DeliveryTypeMelee, targetPosition);
+            }
+
+            // Generic hit burst at the target for every connecting attack.
+            PlayHitVfx(targetPosition);
 
             yield return PlayImpactFeedback(defender, impactedSlot, attackDirection, motion, shakeLevel, damage);
             yield return AnimateAttackerReturn(attackerTransform, attackerOrigin, motion);
+        }
+
+        private static void PlayDeliveryImpactVfx(string normalizedDelivery, Vector3 targetPosition)
+        {
+            var vfxName = normalizedDelivery switch
+            {
+                AttackPresentationResolver.DeliveryTypeProjectile => "attack_delivery_projectile",
+                AttackPresentationResolver.DeliveryTypeBeam => "attack_delivery_beam",
+                AttackPresentationResolver.DeliveryTypeArc => "attack_delivery_arc",
+                _ => "attack_delivery_melee"
+            };
+
+            // Best-effort: BattleVfxPlayer silently no-ops if the strip is missing.
+            BattleVfxPlayer.Instance.Play(vfxName, targetPosition);
+        }
+
+        private static void PlayHitVfx(Vector3 targetPosition)
+        {
+            BattleVfxPlayer.Instance.Play("card_damage", targetPosition);
         }
 
         private Vector3 ResolveImpactPosition(ICardDisplay defender, Board3DSlot impactedSlot, Vector3 fallbackPosition)
@@ -338,17 +387,37 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
-        private IEnumerator AnimateProjectile(Vector3 startPosition, Vector3 endPosition, AttackMotionPreset motion)
+        private IEnumerator AnimateProjectile(
+            Vector3 startPosition,
+            Vector3 endPosition,
+            AttackMotionPreset motion,
+            string faction = null,
+            bool isArc = false)
         {
-            var projectile = InstantiateProjectile(motion);
+            // Prefer a faction sprite projectile (Art/projectiles/{faction}); fall back to the
+            // tinted primitive when the faction is unknown or the art is missing.
+            var spriteFrames = ProjectileVfxLibrary.GetFrames(faction);
+            var projectile = spriteFrames != null && spriteFrames.Length > 0
+                ? CreateSpriteProjectile(spriteFrames, faction)
+                : InstantiateProjectile(motion);
+
             if (projectile == null)
             {
                 yield break;
             }
 
+            var spriteRenderer = projectile.GetComponent<SpriteRenderer>();
             var transformToMove = projectile.transform;
             var elapsed = 0f;
             var duration = Mathf.Max(0.01f, motion.projectileDuration);
+            // Arc/magic deliveries lob higher; straight projectiles barely rise.
+            var arcHeight = isArc ? motion.arcHeight : motion.arcHeight * 0.25f;
+            var cam = Camera.main;
+            var frameTime = spriteFrames != null && spriteFrames.Length > 0
+                ? duration / spriteFrames.Length
+                : 0f;
+            var frameTimer = 0f;
+            var frameIndex = 0;
 
             while (elapsed < duration)
             {
@@ -361,14 +430,60 @@ namespace Flippy.CardDuelMobile.UI
                 var normalized = Mathf.Clamp01(elapsed / duration);
                 var progress = motion.travelCurve != null ? motion.travelCurve.Evaluate(normalized) : normalized;
                 var position = Vector3.Lerp(startPosition, endPosition, progress);
-                position.y += Mathf.Sin(progress * Mathf.PI) * motion.arcHeight;
+                position.y += Mathf.Sin(progress * Mathf.PI) * arcHeight;
 
                 transformToMove.position = position;
-                transformToMove.localScale = Vector3.one * motion.projectileScale;
+
+                if (spriteRenderer != null)
+                {
+                    // Billboard sprite projectiles toward the camera and march the strip frames.
+                    if (cam != null)
+                    {
+                        transformToMove.rotation = cam.transform.rotation;
+                    }
+
+                    if (spriteFrames != null && spriteFrames.Length > 1 && frameTime > 0f)
+                    {
+                        frameTimer += Time.deltaTime;
+                        if (frameTimer >= frameTime)
+                        {
+                            frameTimer -= frameTime;
+                            frameIndex = (frameIndex + 1) % spriteFrames.Length;
+                            spriteRenderer.sprite = spriteFrames[frameIndex];
+                        }
+                    }
+                }
+                else
+                {
+                    transformToMove.localScale = Vector3.one * motion.projectileScale;
+                }
+
                 yield return null;
             }
 
             Destroy(projectile);
+        }
+
+        // 128px @100PPU ~1.28u; scaled down to sit between board cards.
+        private const float SpriteProjectileWorldScale = 0.55f;
+
+        private GameObject CreateSpriteProjectile(Sprite[] frames, string faction)
+        {
+            EnsureSceneReferences();
+
+            var go = new GameObject($"AttackProjectile_{faction}");
+            if (projectileRoot != null)
+            {
+                go.transform.SetParent(projectileRoot, worldPositionStays: true);
+            }
+
+            go.transform.localScale = Vector3.one * SpriteProjectileWorldScale;
+
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sprite = frames[0];
+            sr.sortingOrder = 1000;
+            sr.color = ProjectileVfxLibrary.GetTint(faction);
+            return go;
         }
 
         private IEnumerator PlayImpactFeedback(

@@ -1039,7 +1039,10 @@ namespace Flippy.CardDuelMobile.UI
             switch (presentationEvent.kind)
             {
                 case BattlePresentationEventKind.CardAttack:
-                    return "card_damage";
+                    // The hit/impact burst for card attacks is now spawned inside the attack
+                    // sequence (AttackEffectSystem) so it lands exactly when the projectile/swing
+                    // connects. Returning null avoids a duplicate card_damage burst here.
+                    return null;
                 case BattlePresentationEventKind.HeroAttack:
                     return "hero_damage";
                 case BattlePresentationEventKind.ShieldBlock:

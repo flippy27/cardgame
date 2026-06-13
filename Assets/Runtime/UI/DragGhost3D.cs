@@ -78,7 +78,8 @@ namespace Flippy.CardDuelMobile.UI
             if (_lastPosition == Vector3.zero)
                 _lastPosition = _targetPosition;
 
-            
+            // Snap immediately so the ghost never shows a frame at its spawn position before Update runs.
+            transform.position = _targetPosition;
         }
     }
 }
