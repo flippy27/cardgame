@@ -6,6 +6,7 @@ using UnityEngine;
 using Flippy.CardDuelMobile.Core;
 using Flippy.CardDuelMobile.Networking;
 using Flippy.CardDuelMobile.Networking.ApiClients;
+using Flippy.CardDuelMobile.UI;
 
 namespace Flippy.CardDuelMobile.SinglePlayer
 {
@@ -187,6 +188,13 @@ namespace Flippy.CardDuelMobile.SinglePlayer
 
         private IEnumerator RunAiTurn()
         {
+            // Wait until the human's battle presentation has finished animating, so the AI doesn't
+            // appear to act "first" / on top of the player's own attacks resolving.
+            while (GameplayPresenter3D.Instance != null && GameplayPresenter3D.Instance.IsPlayingBattlePresentation)
+            {
+                yield return null;
+            }
+
             yield return new WaitForSeconds(aiFirstActionDelay);
 
             var safety = Mathf.Max(1, maxAiActionsPerTurn);

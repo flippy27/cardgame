@@ -89,6 +89,9 @@ namespace Flippy.CardDuelMobile.UI
 
         public static GameplayPresenter3D Instance { get; private set; }
 
+        /// <summary>True while the battle/snapshot animation queue is still draining (attacks playing).</summary>
+        public bool IsPlayingBattlePresentation => _processingSnapshotQueue;
+
         public static DuelSnapshotDto GetLatestSnapshot() => Instance?._latestSnapshot;
 
         private void Awake()

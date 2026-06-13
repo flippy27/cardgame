@@ -55,8 +55,8 @@ namespace Flippy.CardDuelMobile.UI
         [SerializeField] private BattleCameraShake cameraShake;
 
         [Header("Timings")]
-        [SerializeField] private float betweenEventsDelay = 0.22f;
-        [SerializeField] private float deathPause = 0.38f;
+        [SerializeField] private float betweenEventsDelay = 0.55f;
+        [SerializeField] private float deathPause = 0.45f;
         [SerializeField] private float hitFlashDuration = 0.14f;
 
         [Header("Motion Presets (1-5)")]
