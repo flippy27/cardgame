@@ -54,6 +54,7 @@ namespace Flippy.CardDuelMobile.UI
         private static readonly Vector2 BoardSocketHealth = new Vector2(0.870f, 0.740f);
         private const float SocketArmorYOffset = 0.085f;  // armor socket sits this much above health
         private const float SocketIconFraction = 0.19f;   // icon size as fraction of canvas width
+        private const float SocketCircleFraction = 0.27f;  // socket circle background, behind the icon
         private static readonly Vector2 CrestCentre = new Vector2(0.5f, 0.135f); // faction emblem, top band
         private const float CrestFraction = 0.20f;        // crest size as fraction of canvas width
 
@@ -213,24 +214,25 @@ namespace Flippy.CardDuelMobile.UI
             AlphaOverFill(canvas, overlayTex);
             BlitLayerScaled(canvas, crestTex, CrestCentre, CrestFraction);
 
-            // 5) Bake the stat/attack symbols into the sockets. UnitType drives the attack icon
-            //    (melee/ranged/magic). Numbers overlay on top at the same fractions (LayoutStatsOverlay).
-            //    Board tokens show no mana. Rarity needs no icon (it is the frame).
+            // 5) Bake a circle background + the stat/attack symbol into each socket, so the sockets read
+            //    as circles regardless of the frame art (frames are plain; we draw the circles here).
+            //    UnitType drives the attack icon. Numbers overlay on top (LayoutStatsOverlay). Board
+            //    tokens show no mana. Rarity is the frame tier (no icon).
             var isUnit = cardType == 0;
             var attackSocket = isBoard ? BoardSocketAttack : HandSocketAttack;
             var healthSocket = isBoard ? BoardSocketHealth : HandSocketHealth;
             if (!isBoard)
             {
-                BlitIcon(canvas, GetCoreIcon("stat_mana"), HandSocketMana);
+                BlitSocket(canvas, GetCoreIcon("stat_mana"), HandSocketMana);
             }
             if (isUnit)
             {
-                BlitIcon(canvas, GetCoreIcon(AttackIconName(unitType)), attackSocket);
-                BlitIcon(canvas, GetCoreIcon("stat_health"), healthSocket);
+                BlitSocket(canvas, GetCoreIcon(AttackIconName(unitType)), attackSocket);
+                BlitSocket(canvas, GetCoreIcon("stat_health"), healthSocket);
             }
             if (hasArmor)
             {
-                BlitIcon(canvas, GetCoreIcon("stat_armor"), new Vector2(healthSocket.x, healthSocket.y - SocketArmorYOffset));
+                BlitSocket(canvas, GetCoreIcon("stat_armor"), new Vector2(healthSocket.x, healthSocket.y - SocketArmorYOffset));
             }
 
             var baked = new Texture2D(CanvasWidth, CanvasHeight, TextureFormat.RGBA32, false)
@@ -337,14 +339,27 @@ namespace Flippy.CardDuelMobile.UI
 
         // Bake a modular symbol centred on a socket (socket centre as a fraction of the card,
         // TOP-left origin). Sized to SocketIconFraction of the card width.
+        // Draws a circle background + the stat/attack icon at a socket, so sockets read as circles on
+        // plain (circle-less) frames. The number is drawn on top later by the TMP overlay.
+        private static void BlitSocket(Color32[] canvas, Sprite icon, Vector2 socketTopLeft)
+        {
+            BlitSpriteAt(canvas, GetSocketCircle(), socketTopLeft, SocketCircleFraction);
+            BlitSpriteAt(canvas, icon, socketTopLeft, SocketIconFraction);
+        }
+
         private static void BlitIcon(Color32[] canvas, Sprite icon, Vector2 socketTopLeft)
+        {
+            BlitSpriteAt(canvas, icon, socketTopLeft, SocketIconFraction);
+        }
+
+        private static void BlitSpriteAt(Color32[] canvas, Sprite icon, Vector2 socketTopLeft, float sizeFraction)
         {
             if (icon == null || icon.texture == null)
             {
                 return;
             }
 
-            var size = Mathf.RoundToInt(SocketIconFraction * CanvasWidth);
+            var size = Mathf.RoundToInt(sizeFraction * CanvasWidth);
             if (size <= 0)
             {
                 return;
@@ -410,6 +425,42 @@ namespace Flippy.CardDuelMobile.UI
             3 => "legendary",
             _ => "common"
         };
+
+        private static Sprite _socketCircle;
+
+        // Generated socket-circle background (dark steel disc + light metallic ring). Drawn behind each
+        // stat icon so the sockets exist on plain frames. Cached.
+        private static Sprite GetSocketCircle()
+        {
+            if (_socketCircle != null)
+            {
+                return _socketCircle;
+            }
+            const int size = 128;
+            var tex = new Texture2D(size, size, TextureFormat.RGBA32, false) { name = "SocketCircle" };
+            var c = (size - 1) * 0.5f;
+            var fill = new Color(0.16f, 0.18f, 0.22f, 0.92f);
+            var ring = new Color(0.62f, 0.65f, 0.72f, 1f);
+            var pixels = new Color32[size * size];
+            for (var y = 0; y < size; y++)
+            {
+                for (var x = 0; x < size; x++)
+                {
+                    var d = Mathf.Sqrt((x - c) * (x - c) + (y - c) * (y - c)) / c; // 0 centre .. 1 edge
+                    Color col;
+                    if (d > 1f) col = new Color(0, 0, 0, 0);
+                    else if (d > 0.82f) col = ring;                 // metallic rim
+                    else if (d > 0.74f) col = Color.Lerp(ring, fill, (d - 0.74f) / 0.08f);
+                    else col = fill;                                 // dark interior
+                    pixels[y * size + x] = col;
+                }
+            }
+            tex.SetPixels32(pixels);
+            tex.Apply(false, false);
+            _socketCircle = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), 100f);
+            _socketCircle.name = "SocketCircle";
+            return _socketCircle;
+        }
 
         /// <summary>Core stat / attack-type / card-type icon: Resources/Art/icons/core/{name}. Null if absent.</summary>
         private static Sprite GetCoreIcon(string name) =>
