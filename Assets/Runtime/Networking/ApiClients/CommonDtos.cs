@@ -245,6 +245,9 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         public string playerId;
         public string runtimeHandKey;
         public int slotIndex;
+        // Optional runtime id of the unit a Spell/Equipment/Utility card targets. Null/empty for
+        // Unit plays (server ignores it for units).
+        public string targetRuntimeId;
     }
 
     [System.Serializable]

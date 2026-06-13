@@ -86,7 +86,7 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         /// Play a card (auth token auto-added from SecureTokenStorage).
         /// POST /api/v1/matches/{matchId}/play
         /// </summary>
-        public async Task<MatchSnapshot> PlayCard(string matchId, string playerId, string runtimeHandKey, int slotIndex)
+        public async Task<MatchSnapshot> PlayCard(string matchId, string playerId, string runtimeHandKey, int slotIndex, string targetRuntimeId = null)
         {
             try
             {
@@ -96,7 +96,8 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
                     matchId = matchId,
                     playerId = playerId,
                     runtimeHandKey = runtimeHandKey,
-                    slotIndex = slotIndex
+                    slotIndex = slotIndex,
+                    targetRuntimeId = targetRuntimeId
                 });
                 var response = await HttpClientHelper.PostAsync(url, request);
                 return JsonUtility.FromJson<MatchSnapshot>(response);

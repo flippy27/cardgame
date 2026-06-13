@@ -150,7 +150,7 @@ namespace Flippy.CardDuelMobile.Networking
             }
         }
 
-        public async Task PlayCardAsync(string runtimeHandKey, int slotIndex)
+        public async Task PlayCardAsync(string runtimeHandKey, int slotIndex, string targetRuntimeId = null)
         {
             try
             {
@@ -166,7 +166,8 @@ namespace Flippy.CardDuelMobile.Networking
                     matchId = matchId,
                     playerId = playerId,
                     runtimeHandKey = runtimeHandKey,
-                    slotIndex = slotIndex
+                    slotIndex = slotIndex,
+                    targetRuntimeId = targetRuntimeId
                 });
                 EnqueueSnapshotProcessing(snapshot);
             }
