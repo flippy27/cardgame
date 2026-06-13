@@ -159,10 +159,21 @@ namespace Flippy.CardDuelMobile.UI
 
         private void HandleLocalMatch()
         {
-            SetStatus("Starting local match...");
-            GameLogger.Info("UI", "Local match selected");
-            GameModeManager.Instance?.SetLocalMode();
-            SceneBootstrap.LoadMainGame();
+            // Show a deck picker first; the chosen deck is what the human plays vs the AI.
+            SetStatus("Choose your deck...");
+            GameLogger.Info("UI", "Local match selected — opening deck picker");
+            SinglePlayerDeckSelectOverlay.Show(
+                onConfirm: deck =>
+                {
+                    if (deck != null && GamePlayStateManager.Instance != null)
+                    {
+                        GamePlayStateManager.Instance.SetSelectedDeck(deck.deckId, deck.cardIds);
+                    }
+                    SetStatus("Starting local match...");
+                    GameModeManager.Instance?.SetLocalMode();
+                    SceneBootstrap.LoadMainGame();
+                },
+                onCancel: () => SetStatus(string.Empty));
         }
 
         private async void HandleQuickMatch()

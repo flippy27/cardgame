@@ -88,7 +88,13 @@ namespace Flippy.CardDuelMobile.SinglePlayer
                     api = new CardGameApiClient(_baseUrl);
                 }
 
-                var humanDeckId = await ResolveFirstDeckIdAsync(api, _humanId, "human");
+                // Honor the deck the player picked in the pre-battle deck selector; fall back to
+                // their first/active server deck if nothing was selected.
+                var humanDeckId = GamePlayStateManager.Instance?.GetSelectedDeck().deckId;
+                if (string.IsNullOrWhiteSpace(humanDeckId))
+                {
+                    humanDeckId = await ResolveFirstDeckIdAsync(api, _humanId, "human");
+                }
                 if (string.IsNullOrWhiteSpace(humanDeckId))
                 {
                     return false;
