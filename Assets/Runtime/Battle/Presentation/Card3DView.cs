@@ -87,11 +87,11 @@ namespace Flippy.CardDuelMobile.UI
         {
             // Numbers sit on top of the baked socket symbols (same fractions as CardArtLibrary, with
             // the centred frame's transparent band accounted for). Overlay canvas is 1000x1400.
-            PlaceStat(costText, new Vector2(1f, 1f), new Vector2(-130f, -238f), 150f);  // cost, top-right (0.87,0.17)
+            PlaceStat(costText, new Vector2(0f, 1f), new Vector2(130f, -238f), 150f);   // cost, top-left (0.13,0.17)
             PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -180f), 70f);    // name, title strip
             PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(130f, 308f), 150f);  // attack, bottom-left (0.13,0.78)
             PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-130f, 308f), 150f); // health, bottom-right (0.87,0.78)
-            PlaceStat(armorText, new Vector2(0f, 1f), new Vector2(130f, -238f), 130f);  // armor, top-left (0.13,0.17)
+            PlaceStat(armorText, new Vector2(1f, 0f), new Vector2(-130f, 539f), 130f);  // armor, just above health
 
             // Ability icons: a row of larger circles across the lower-middle of the card.
             abilityIconGroup?.SetCellSize(new Vector2(110f, 110f));
