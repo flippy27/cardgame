@@ -93,7 +93,7 @@ namespace Flippy.CardDuelMobile.UI
             PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -180f), 65f);   // name strip (top)
             PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(130f, 260f), 155f); // attack, bottom-left
             PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-130f, 260f), 155f);// health, bottom-right
-            PlaceStat(armorText, new Vector2(1f, 0f), new Vector2(-130f, 345f), 135f); // armor, above health
+            PlaceStat(armorText, new Vector2(0f, 1f), new Vector2(130f, -260f), 135f); // armor, top-left (0.13,0.26)
 
             // Board cards show skills + buffs/debuffs as a row of SMALL circles floating ABOVE the
             // frame (skills left, status right). y positive past the top edge = above the card.

@@ -52,7 +52,8 @@ namespace Flippy.CardDuelMobile.UI
         private static readonly Vector2 HandSocketHealth = new Vector2(0.870f, 0.780f); // hp, bottom-right
         private static readonly Vector2 BoardSocketAttack = new Vector2(0.130f, 0.740f);
         private static readonly Vector2 BoardSocketHealth = new Vector2(0.870f, 0.740f);
-        private const float SocketArmorYOffset = 0.085f;  // armor socket sits this much above health
+        private static readonly Vector2 HandSocketArmor = new Vector2(0.130f, 0.170f);  // top-left (free corner)
+        private static readonly Vector2 BoardSocketArmor = new Vector2(0.130f, 0.260f); // top-left of board token
         private const float SocketIconFraction = 0.19f;   // icon size as fraction of canvas width
         private const float SocketCircleFraction = 0.27f;  // socket circle background, behind the icon
         private static readonly Vector2 CrestCentre = new Vector2(0.5f, 0.135f); // faction emblem, top band
@@ -232,7 +233,9 @@ namespace Flippy.CardDuelMobile.UI
             }
             if (hasArmor)
             {
-                BlitSocket(canvas, GetCoreIcon("stat_armor"), new Vector2(healthSocket.x, healthSocket.y - SocketArmorYOffset));
+                // Armor has no dedicated frame slot in the layout; place it in the free top-left corner
+                // (opposite the cost) instead of stacking it on top of the health socket.
+                BlitSocket(canvas, GetCoreIcon("stat_armor"), isBoard ? BoardSocketArmor : HandSocketArmor);
             }
 
             var baked = new Texture2D(CanvasWidth, CanvasHeight, TextureFormat.RGBA32, false)
