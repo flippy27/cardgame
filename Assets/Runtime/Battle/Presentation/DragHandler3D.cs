@@ -412,7 +412,23 @@ namespace Flippy.CardDuelMobile.UI
 
             _draggedCard = null;
             _isDragging = false;
-            SetHoveredSlot(null);
+
+            if (played)
+            {
+                // Leave the displaced cards at their preview positions — the play snapshot confirms them
+                // in place. Calling SetHoveredSlot(null) here would CancelCardDisplacement and animate
+                // them back to their original slots, then the snapshot would re-animate them forward
+                // (the "go and come back" bounce). Just drop the highlight.
+                if (_hoveredSlot != null)
+                {
+                    _hoveredSlot.SetHighlight(false);
+                }
+                _hoveredSlot = null;
+            }
+            else
+            {
+                SetHoveredSlot(null); // aborted drag: animate displaced cards back to their original slots
+            }
         }
 
         private static void SetRenderersEnabled(Renderer[] renderers, bool enabled)
