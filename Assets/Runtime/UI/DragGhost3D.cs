@@ -17,15 +17,40 @@ namespace Flippy.CardDuelMobile.UI
         private Vector3 _lastPosition;
         private Vector3 _currentTiltRotation;
         private Card3DView _cardView;
+        private Vector3 _pivotOffset;   // transform.position - visual bounds centre, so the card centres on the cursor
+        private bool _pivotCaptured;
 
         private void Awake()
         {
             _cardView = GetComponent<Card3DView>() ?? GetComponentInChildren<Card3DView>(true);
         }
 
+        // The card's visual is offset from its transform origin (it would hang from the top of the
+        // cursor). Capture that offset once so we can centre the card on the cursor instead.
+        private void EnsurePivotOffset()
+        {
+            if (_pivotCaptured)
+            {
+                return;
+            }
+            _pivotCaptured = true;
+            Bounds? bounds = null;
+            foreach (var renderer in GetComponentsInChildren<Renderer>(true))
+            {
+                if (renderer == null)
+                {
+                    continue;
+                }
+                if (bounds == null) bounds = renderer.bounds;
+                else { var b = bounds.Value; b.Encapsulate(renderer.bounds); bounds = b; }
+            }
+            _pivotOffset = bounds.HasValue ? transform.position - bounds.Value.center : Vector3.zero;
+            _pivotOffset.z = 0f; // keep the configured ghost Z
+        }
+
         private void Update()
         {
-            transform.position = _targetPosition;
+            transform.position = _targetPosition + _pivotOffset;
 
             if (!enableVelocityTilt)
             {
@@ -62,6 +87,7 @@ namespace Flippy.CardDuelMobile.UI
 
         public void SetTargetPosition(Vector3 screenPos, Camera cam)
         {
+            EnsurePivotOffset();
             if (cam == null)
             {
                 cam = Camera.main;
@@ -79,7 +105,7 @@ namespace Flippy.CardDuelMobile.UI
                 _lastPosition = _targetPosition;
 
             // Snap immediately so the ghost never shows a frame at its spawn position before Update runs.
-            transform.position = _targetPosition;
+            transform.position = _targetPosition + _pivotOffset;
         }
     }
 }
