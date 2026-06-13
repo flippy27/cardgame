@@ -251,7 +251,10 @@ namespace Flippy.CardDuelMobile.UI
                 {
                     card.transform.localPosition = _targetLocalPositions[i];
                     card.transform.localRotation = _targetLocalRotations[i];
-                    card.SetStatsOverlayRotation(Quaternion.Euler(0f, 0f, -rotZ));
+                    // Overlay inherits the card's fan rotation so the stat numbers stay glued to their
+                    // baked sockets (counter-rotating kept glyphs axis-aligned but slid them off the
+                    // tilted corners — the cost number "corrido" on angled cards).
+                    card.SetStatsOverlayRotation(Quaternion.identity);
                 }
             }
         }
@@ -269,7 +272,7 @@ namespace Flippy.CardDuelMobile.UI
 
                 card.transform.localPosition = Vector3.Slerp(card.transform.localPosition, _targetLocalPositions[i], t);
                 card.transform.localRotation = Quaternion.Slerp(card.transform.localRotation, _targetLocalRotations[i], t);
-                card.SetStatsOverlayRotation(Quaternion.Euler(0f, 0f, -card.transform.localEulerAngles.z));
+                card.SetStatsOverlayRotation(Quaternion.identity);
             }
         }
 

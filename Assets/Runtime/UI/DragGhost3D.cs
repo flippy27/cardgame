@@ -81,7 +81,9 @@ namespace Flippy.CardDuelMobile.UI
 
             if (_cardView != null)
             {
-                _cardView.SetStatsOverlayRotation(Quaternion.Inverse(transform.localRotation));
+                // Keep the stat numbers glued to their sockets (inherit the ghost's velocity tilt)
+                // instead of counter-rotating, which slid them off the corners ("se cambia la carta").
+                _cardView.SetStatsOverlayRotation(Quaternion.identity);
             }
         }
 
