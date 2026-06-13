@@ -94,6 +94,25 @@ namespace Flippy.CardDuelMobile.UI
             PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(130f, 260f), 155f); // attack, bottom-left
             PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-130f, 260f), 155f);// health, bottom-right
             PlaceStat(armorText, new Vector2(1f, 0f), new Vector2(-130f, 345f), 135f); // armor, above health
+
+            // Ability icons float along the top of the board token; status badges along the bottom
+            // (prefab had both off-card with zero height).
+            PlaceIconPanel(abilityIconGroup, new Vector2(0.5f, 1f), new Vector2(0f, -120f), new Vector2(700f, 140f));
+            PlaceIconPanel(statusIconGroup, new Vector2(0.5f, 0f), new Vector2(0f, 120f), new Vector2(700f, 140f));
+        }
+
+        private static void PlaceIconPanel(CardIconGroup group, Vector2 anchor, Vector2 anchoredPosition, Vector2 size)
+        {
+            if (group == null || group.transform is not RectTransform rect)
+            {
+                return;
+            }
+            rect.localScale = Vector3.one;
+            rect.anchorMin = anchor;
+            rect.anchorMax = anchor;
+            rect.pivot = new Vector2(0.5f, 0.5f);
+            rect.sizeDelta = size;
+            rect.anchoredPosition = anchoredPosition;
         }
 
         private static void PlaceStat(TextMeshProUGUI text, Vector2 anchor, Vector2 anchoredPosition, float fontSize)
