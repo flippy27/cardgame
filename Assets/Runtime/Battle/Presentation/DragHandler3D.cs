@@ -392,18 +392,21 @@ namespace Flippy.CardDuelMobile.UI
                 Debug.Log("[DragHandler3D] Drag ghost destroyed");
             }
 
-            // Always restore the card's visuals. The server is authoritative: if the play is accepted
-            // the next snapshot removes the card from the hand; if it is REJECTED (e.g. illegal slot)
-            // the card stays in hand and must remain visible — never leave it hidden ("consumed but
-            // not played"). A brief 1-frame flash on a successful play is acceptable.
-            SetRenderersEnabled(_draggedCardHiddenRenderers, true);
-            if (_draggedCardHiddenCanvases != null)
+            // If the card was played, keep it hidden (no flash of the hand card at its old position):
+            // the snapshot either removes it from the hand (accepted) or RefreshHand re-shows it
+            // (rejected — it re-enables hand card renderers, so it is never left "consumed but hidden").
+            // If the drag was aborted, restore it now.
+            if (!played)
             {
-                foreach (var canvas in _draggedCardHiddenCanvases)
+                SetRenderersEnabled(_draggedCardHiddenRenderers, true);
+                if (_draggedCardHiddenCanvases != null)
                 {
-                    if (canvas != null)
+                    foreach (var canvas in _draggedCardHiddenCanvases)
                     {
-                        canvas.enabled = true;
+                        if (canvas != null)
+                        {
+                            canvas.enabled = true;
+                        }
                     }
                 }
             }

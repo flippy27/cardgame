@@ -127,6 +127,17 @@ namespace Flippy.CardDuelMobile.UI
                 var existing = _handCards.Find(c => c != null && c.CardData.runtimeId == dto.runtimeCardKey);
                 if (existing != null)
                 {
+                    // Re-show first in case this card was hidden mid-drag and the play was rejected (it
+                    // stays in hand). Initialize() runs DisableStrayRenderers afterwards, so the stray
+                    // (red placeholder) quads get switched back off — only the real card stays visible.
+                    foreach (var renderer in existing.GetComponentsInChildren<Renderer>(true))
+                    {
+                        if (renderer != null) renderer.enabled = true;
+                    }
+                    foreach (var canvas in existing.GetComponentsInChildren<Canvas>(true))
+                    {
+                        if (canvas != null) canvas.enabled = true;
+                    }
                     existing.Initialize(BuildHandCard(dto), 0);
                     continue;
                 }
