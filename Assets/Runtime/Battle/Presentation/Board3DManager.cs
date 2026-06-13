@@ -22,7 +22,7 @@ namespace Flippy.CardDuelMobile.UI
 
         [Header("Card sizing")]
         [Tooltip("Local scale applied to a card when placed in a slot. Bump up to make played cards fill more of the slot.")]
-        [SerializeField] private float boardCardScale = 2.0f;
+        [SerializeField] private float boardCardScale = 1.5f;
 
         private Dictionary<(int playerIndex, BoardSlot slot), Board3DSlot> _slots = new();
         private Dictionary<(int playerIndex, BoardSlot slot), ICardDisplay> _cardViews = new();
