@@ -1246,7 +1246,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 396118108}
-  - component: {fileID: 396118107}
   m_Layer: 0
   m_Name: LocalSinglePlayerCoordinator
   m_TagString: Untagged
@@ -1254,31 +1253,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &396118107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396118106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2060b9af5ea0c489d5bba0400f1266, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Flippy.CardDuelMobile.Runtime::Flippy.CardDuelMobile.SinglePlayer.LocalSinglePlayerCoordinator
-  autoStartOnStart: 0
-  localPlayerIndex: 0
-  rulesProfile: {fileID: 11400000, guid: fa6991372035d449db477abec2831388, type: 2}
-  localPlayerDeck: {fileID: 11400000, guid: 72e6813897fcb4f3a9129ddcfc58d1ba, type: 2}
-  enemyDeck: {fileID: 11400000, guid: 5372a66c083c346008b2f20e1f53b9c6, type: 2}
-  useServerDecks: 1
-  allowInspectorDeckFallback: 0
-  aiDeckAccountEmail: playertwo@flippy.com
-  aiDeckAccountPassword: 123456
-  aiDifficulty: 1
-  aiFirstActionDelay: 0.45
-  aiActionDelay: 0.35
-  maxAiActionsPerTurn: 8
 --- !u!4 &396118108
 Transform:
   m_ObjectHideFlags: 0
