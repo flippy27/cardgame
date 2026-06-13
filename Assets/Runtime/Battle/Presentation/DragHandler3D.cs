@@ -50,11 +50,8 @@ namespace Flippy.CardDuelMobile.UI
         private float _dragScreenDistance;
         private bool _isDragging;
         private Board3DSlot _hoveredSlot;
-        private Board3DSlot _pendingHoverSlot;
-        private float _pendingHoverElapsed;
-        private Vector2 _hoverCommitScreenPos;
-        private const float hoverSwitchDebounce = 0.08f; // stable window before switching hovered slot
-        private const float hoverDeadZone = 40f;          // px the cursor must move before re-evaluating the slot
+        private const float hoverMaxDistance = 3.2f; // max world distance from a slot centre to count as "over board"
+        private const float hoverHysteresis = 1.0f;  // the nearest slot must be this much closer to switch away
         private GameObject _dragGhostInstance;
         private DragGhost3D _dragGhost;
 
@@ -313,42 +310,56 @@ namespace Flippy.CardDuelMobile.UI
                 _dragDistance = Vector3.Distance(_dragStartWorldPos, ghostWorldPos);
             }
 
-            // Dead-zone: once a slot is hovered, don't re-evaluate until the cursor moves a minimum
-            // distance. Sitting exactly on a slot boundary therefore stays put instead of oscillating;
-            // you must actually move toward another slot to switch.
-            if (_hoveredSlot != null && Vector2.Distance(screenPosition, _hoverCommitScreenPos) < hoverDeadZone)
+            // Pick the hovered slot by NEAREST slot centre to the ghost (not a physics raycast, which
+            // flips at slot boundaries and gets intercepted by displaced cards' colliders). Hysteresis
+            // keeps the current slot until another is clearly closer, so it never oscillates.
+            var ghostPos = _dragGhostInstance != null ? _dragGhostInstance.transform.position : Vector3.zero;
+            SetHoveredSlot(ResolveHoverSlotByDistance(ghostPos));
+        }
+
+        private Board3DSlot ResolveHoverSlotByDistance(Vector3 worldPos)
+        {
+            if (board3DManager == null)
             {
-                return;
+                return null;
             }
 
-            // Debounce the hovered slot: at a boundary the raycast can flip between two slots every
-            // frame, which made the displacement preview oscillate wildly. Only commit a switch once
-            // the same candidate has been hovered for a short, stable window.
-            var candidate = RaycastBoardSlot(screenPosition);
-            if (candidate == _hoveredSlot)
+            Board3DSlot nearest = null;
+            var nearestDist = float.MaxValue;
+            foreach (var slotEnum in new[] { BoardSlot.Front, BoardSlot.BackLeft, BoardSlot.BackRight })
             {
-                _pendingHoverSlot = candidate;
-                _pendingHoverElapsed = 0f;
+                var slot = board3DManager.GetSlot(0, slotEnum);
+                if (slot == null)
+                {
+                    continue;
+                }
+                var p = slot.transform.position;
+                var d = Vector2.Distance(new Vector2(p.x, p.y), new Vector2(worldPos.x, worldPos.y)); // ignore depth
+                if (d < nearestDist)
+                {
+                    nearestDist = d;
+                    nearest = slot;
+                }
             }
-            else
-            {
-                if (candidate == _pendingHoverSlot)
-                {
-                    _pendingHoverElapsed += Time.deltaTime;
-                }
-                else
-                {
-                    _pendingHoverSlot = candidate;
-                    _pendingHoverElapsed = 0f;
-                }
 
-                if (_pendingHoverElapsed >= hoverSwitchDebounce)
+            // Off the board area entirely -> no hover (clears the preview).
+            if (nearest == null || nearestDist > hoverMaxDistance)
+            {
+                return null;
+            }
+
+            // Hysteresis: keep the current slot unless the new nearest is at least hoverHysteresis closer.
+            if (_hoveredSlot != null && _hoveredSlot != nearest)
+            {
+                var cp = _hoveredSlot.transform.position;
+                var currentDist = Vector2.Distance(new Vector2(cp.x, cp.y), new Vector2(worldPos.x, worldPos.y));
+                if (currentDist <= nearestDist + hoverHysteresis)
                 {
-                    SetHoveredSlot(candidate);
-                    _hoverCommitScreenPos = screenPosition;
-                    _pendingHoverElapsed = 0f;
+                    return _hoveredSlot;
                 }
             }
+
+            return nearest;
         }
 
         private void EndDrag()
@@ -711,32 +722,6 @@ namespace Flippy.CardDuelMobile.UI
             return hit.collider.GetComponentInParent<Card3DPlayed>();
         }
 
-        private Board3DSlot RaycastBoardSlot(Vector2 screenPosition)
-        {
-            if (mainCamera == null)
-            {
-                return null;
-            }
-
-            var ray = mainCamera.ScreenPointToRay(screenPosition);
-            if (!Physics.Raycast(ray, out var hit, 100f))
-            {
-                return null;
-            }
-
-            if (_dragGhostInstance != null && hit.collider.gameObject == _dragGhostInstance)
-            {
-                var dragGhostLayer = _dragGhostInstance.layer;
-                var layerMask = ~(1 << dragGhostLayer);
-                if (!Physics.Raycast(ray, out hit, 100f, layerMask))
-                {
-                    return null;
-                }
-            }
-
-            var slot = hit.collider.GetComponentInParent<Board3DSlot>() ?? hit.collider.GetComponent<Board3DSlot>();
-            return slot != null && slot.PlayerIndex == 0 ? slot : null;
-        }
 
         private BoardCardDestroyDropZone RaycastDestroyDropZone(Vector2 screenPosition, Card3DPlayed draggedCard)
         {
