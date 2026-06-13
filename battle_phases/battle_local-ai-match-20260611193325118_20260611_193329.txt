@@ -1,0 +1,705 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-11T19:33:29.1538459Z
+LastUpdatedUtc: 2026-06-11T19:33:29.1569995Z
+MatchId: local-ai-match-20260611193325118
+CurrentTurn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset:  ()
+
+Human Timeline
+No battle presentation events recorded yet.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-11T19:33:29.1538459Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=16 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=16
+   Events: none
+
+Raw Structured Battle Events Seen By Unity
+
+Raw Logs Seen By Unity
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "local-ai-match-20260611193325118",
+    "rulesetId": "",
+    "rulesetName": "",
+    "rules": {
+        "rulesetId": "",
+        "rulesetKey": "",
+        "displayName": "",
+        "description": "",
+        "isActive": false,
+        "isDefault": false,
+        "startingHeroHealth": 0,
+        "maxHeroHealth": 0,
+        "startingMana": 0,
+        "maxMana": 0,
+        "manaGrantedPerTurn": 0,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 0,
+        "cardsDrawnOnTurnStart": 0,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 1,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 0,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "9a10f20c5c1e4fc6a879c81420b6b113",
+                    "cardId": "alloy_0033",
+                    "displayName": "Alloy Card #33",
+                    "manaCost": 6,
+                    "attack": 4,
+                    "health": 7,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "taunt",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "fly",
+                            "displayName": "Fly",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "fly",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "leech",
+                            "displayName": "Leech",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "leech",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "c68f4de1a4b24b82a1777fa7033feb4b",
+                    "cardId": "alloy_0018",
+                    "displayName": "Alloy Card #18",
+                    "manaCost": 5,
+                    "attack": 1,
+                    "health": 6,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "shield",
+                            "displayName": "Shield",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "shield",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "poison",
+                            "displayName": "Poison",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "poison",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "enrage",
+                            "displayName": "Enrage",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "enrage",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "748d1984784e445c93afb78597654e1e",
+                    "cardId": "alloy_0093",
+                    "displayName": "Alloy Card #93",
+                    "manaCost": 3,
+                    "attack": 4,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "taunt",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "fly",
+                            "displayName": "Fly",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "fly",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "leech",
+                            "displayName": "Leech",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "leech",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "71f4e258c26949f49f7f8289cd8e3407",
+                    "cardId": "alloy_0058",
+                    "displayName": "Alloy Card #58",
+                    "manaCost": 3,
+                    "attack": 5,
+                    "health": 4,
+                    "armor": 1,
+                    "isUnit": false,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "shield",
+                            "displayName": "Shield",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "shield",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "poison",
+                            "displayName": "Poison",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "poison",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "enrage",
+                            "displayName": "Enrage",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "enrage",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 16,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "0fe6cae0edc04469b30e2035ecb978c9",
+                    "cardId": "grove_0137",
+                    "displayName": "Grove Card #137",
+                    "manaCost": 5,
+                    "attack": 6,
+                    "health": 6,
+                    "armor": 2,
+                    "isUnit": false,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "armor",
+                            "displayName": "Armor",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "armor",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "haste",
+                            "displayName": "Haste",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "haste",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "trample",
+                            "displayName": "Trample",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "trample",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "leech",
+                            "displayName": "Leech",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "leech",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "e6e3d15d8597464eb3ed699ccd1a0cbf",
+                    "cardId": "grove_0152",
+                    "displayName": "Grove Card #152",
+                    "manaCost": 6,
+                    "attack": 3,
+                    "health": 7,
+                    "armor": 2,
+                    "isUnit": false,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "shield",
+                            "displayName": "Shield",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "shield",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "stun",
+                            "displayName": "Stun",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "stun",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "regenerate_left",
+                            "displayName": "Regenerate Left",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "regenerate_left",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "a8966f0061ab4582be0f1fb0b8888593",
+                    "cardId": "grove_0177",
+                    "displayName": "Grove Card #177",
+                    "manaCost": 3,
+                    "attack": 4,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": [
+                        {
+                            "abilityId": "armor",
+                            "displayName": "Armor",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "armor",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "haste",
+                            "displayName": "Haste",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "haste",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "trample",
+                            "displayName": "Trample",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "trample",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "leech",
+                            "displayName": "Leech",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "leech",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "ffe3338fcdbc4d758e235fe6f37e880f",
+                    "cardId": "grove_0112",
+                    "displayName": "Grove Card #112",
+                    "manaCost": 1,
+                    "attack": 5,
+                    "health": 2,
+                    "armor": 1,
+                    "isUnit": false,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "shield",
+                            "displayName": "Shield",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "shield",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "stun",
+                            "displayName": "Stun",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "stun",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "regenerate_left",
+                            "displayName": "Regenerate Left",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "regenerate_left",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 16,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 19 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 19 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 18 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 18 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 17 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 17 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 16 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 16 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Duel started with seed 1574352276. Player 0 starts."
+        }
+    ],
+    "battleEvents": []
+}

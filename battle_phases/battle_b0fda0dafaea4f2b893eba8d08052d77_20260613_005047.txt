@@ -1,0 +1,330 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T00:50:47.4973358Z
+LastUpdatedUtc: 2026-06-13T00:54:11.8796741Z
+MatchId: b0fda0dafaea4f2b893eba8d08052d77
+CurrentTurn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 714275267.
+002. seq=-1 /Info: Chrome Vanguard entered Front.
+003. seq=-1 /Info: Plated Colossus entered Front.
+004. seq=-1 /Info: Gear Automaton entered Front.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T00:50:47.4988422Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T00:50:48.0383615Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 714275267.
+-- Step 3 | UTC 2026-06-13T00:50:55.4331344Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Chrome Vanguard#d539e3d9 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Chrome Vanguard entered Front.
+-- Step 4 | UTC 2026-06-13T00:54:10.6435281Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=15/20 board=[Front:Plated Colossus#923d3a07 hp=4/4 armor=2 unitType=2 delivery=beam, BackLeft:Chrome Vanguard#d539e3d9 hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Plated Colossus entered Front.
+-- Step 5 | UTC 2026-06-13T00:54:11.8464119Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=12/20 board=[Front:Gear Automaton#54faa8ce hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Plated Colossus#923d3a07 hp=4/4 armor=2 unitType=2 delivery=beam, BackRight:Chrome Vanguard#d539e3d9 hp=3/3 armor=1 unitType=1 delivery=projectile] hand=1 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Gear Automaton entered Front.
+
+Raw Structured Battle Events Seen By Unity
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 714275267.
+turn=1 Info: Chrome Vanguard entered Front.
+turn=1 Info: Plated Colossus entered Front.
+turn=1 Info: Gear Automaton entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "b0fda0dafaea4f2b893eba8d08052d77",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 1,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 714275267,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 12,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "d4ba30ba45c94d9ca1e1479aa1c822db",
+                    "cardId": "alloy_0036",
+                    "displayName": "Cog Golem",
+                    "manaCost": 1,
+                    "attack": 1,
+                    "health": 2,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "54faa8cee1344059bfc8007ad05ef5fa",
+                        "cardId": "alloy_0014",
+                        "displayName": "Gear Automaton",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_taunt_pulse",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"targetingModifier\": true}",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "923d3a07c6bb41ffba1689fa8a6f9077",
+                        "cardId": "alloy_0011",
+                        "displayName": "Plated Colossus",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 0,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 2,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "trample",
+                                "displayName": "Trample",
+                                "iconAssetRef": "",
+                                "skillType": 4,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_trample_hit",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "d539e3d9f57140afad9630fa630ff5e7",
+                        "cardId": "alloy_0028",
+                        "displayName": "Chrome Vanguard",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 1,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 714275267."
+        },
+        {
+            "type": 0,
+            "message": "Chrome Vanguard entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Plated Colossus entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Gear Automaton entered Front."
+        }
+    ],
+    "battleEvents": []
+}

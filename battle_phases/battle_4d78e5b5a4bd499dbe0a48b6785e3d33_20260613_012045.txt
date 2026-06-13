@@ -1,0 +1,344 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T01:20:45.5719047Z
+LastUpdatedUtc: 2026-06-13T01:20:54.0876839Z
+MatchId: 4d78e5b5a4bd499dbe0a48b6785e3d33
+CurrentTurn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 2011861945.
+002. seq=-1 /Info: Plated Colossus entered Front.
+003. seq=-1 /Info: Plated Sentinel entered Front.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T01:20:45.5729046Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T01:20:45.8351420Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 2011861945.
+-- Step 3 | UTC 2026-06-13T01:20:47.2688750Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Plated Colossus#ea72db4f hp=4/4 armor=2 unitType=2 delivery=beam, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Plated Colossus entered Front.
+-- Step 4 | UTC 2026-06-13T01:20:54.0557179Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=14/20 board=[Front:Plated Sentinel#171fd107 hp=4/4 armor=1 unitType=0 delivery=melee, BackLeft:Plated Colossus#ea72db4f hp=4/4 armor=2 unitType=2 delivery=beam, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Plated Sentinel entered Front.
+
+Raw Structured Battle Events Seen By Unity
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 2011861945.
+turn=1 Info: Plated Colossus entered Front.
+turn=1 Info: Plated Sentinel entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "4d78e5b5a4bd499dbe0a48b6785e3d33",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 1,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 2011861945,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 14,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "e0153f255e1a42909dfd851cd2b6f178",
+                    "cardId": "alloy_0028",
+                    "displayName": "Chrome Vanguard",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "cd08c571e0404c5e9656cd83350eeba2",
+                    "cardId": "alloy_0036",
+                    "displayName": "Cog Golem",
+                    "manaCost": 1,
+                    "attack": 1,
+                    "health": 2,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "171fd1079bb44982a65866770420c8e6",
+                        "cardId": "alloy_0016",
+                        "displayName": "Plated Sentinel",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 1,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "cleave",
+                                "displayName": "Cleave",
+                                "iconAssetRef": "",
+                                "skillType": 4,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_cleave",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 0,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"note\": \"usesAttackerAttack\", \"animationStep\": \"cleave\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "ea72db4f73874ddf95b803ac11d77663",
+                        "cardId": "alloy_0011",
+                        "displayName": "Plated Colossus",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 0,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 2,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "trample",
+                                "displayName": "Trample",
+                                "iconAssetRef": "",
+                                "skillType": 4,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_trample_hit",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 2011861945."
+        },
+        {
+            "type": 0,
+            "message": "Plated Colossus entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Plated Sentinel entered Front."
+        }
+    ],
+    "battleEvents": []
+}

@@ -1,0 +1,1129 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-12T23:21:46.1022121Z
+LastUpdatedUtc: 2026-06-12T23:21:58.6466462Z
+MatchId: b3d470a04a274229aa702c08ef800d88
+CurrentTurn: 5
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 617125074.
+002. seq=-1 /Info: Iron Warforged entered Front.
+003. seq=1 Iron Warforged#975879ee skipped. Iron Warforged is not ready to attack.
+004. seq=-1 /Info: Vine Spider entered Front.
+005. seq=-1 /Info: Moss Spider entered BackLeft.
+006. seq=-1 /Info: Briar Spider entered BackRight.
+007. seq=2 skill_begin/SkillBegin: Moss Spider used Regenerate.
+008. seq=3 Moss Spider#c0751b9d heals 0. HP 4->4. Moss Spider healed 0.
+009. seq=4 Vine Spider#0f57616e skipped. Vine Spider is not ready to attack.
+010. seq=5 Moss Spider#c0751b9d skipped. Moss Spider is not ready to attack.
+011. seq=6 Briar Spider#19b1a0c2 skipped. Briar Spider is not ready to attack.
+012. seq=-1 /Info: Cog Golem entered Front.
+013. seq=7 Cog Golem#d03db640 skipped. Cog Golem is not ready to attack.
+014. seq=8 card_attack/Info: Iron Warforged attacked Moss Spider.
+015. seq=9 P0 P0 attacks Moss Spider#c0751b9d for 2. HP 4->2, Armor 0->0. Moss Spider took 2 damage.
+016. seq=10 P1 Moss Spider#c0751b9d attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider struck back at Iron Warforged.
+017. seq=11 P1 Moss Spider#c0751b9d attacks P0 for 3. HP 3->0, Armor 0->0. Iron Warforged took 3 damage.
+018. seq=12 P0 dies. Iron Warforged died.
+019. seq=13 skill_begin/SkillBegin: Moss Spider used Regenerate.
+020. seq=14 Moss Spider#c0751b9d heals 2. HP 2->4. Moss Spider healed 2.
+021. seq=15 card_attack/Info: Vine Spider attacked Cog Golem.
+022. seq=16 P1 Vine Spider#0f57616e attacks P0 for 2. HP 2->1, Armor 1->0. Cog Golem took 2 damage.
+023. seq=17 P0 P0 attacks Vine Spider#0f57616e for 1. HP 0->0, Armor 0->0. Cog Golem struck back at Vine Spider.
+024. seq=18 P0 P0 attacks Vine Spider#0f57616e for 1. HP 3->2, Armor 0->0. Vine Spider took 1 damage.
+025. seq=19 card_attack/Info: Moss Spider attacked Cog Golem.
+026. seq=20 P1 Moss Spider#c0751b9d attacks P0 for 3. HP 1->-2, Armor 0->0. Cog Golem took 3 damage.
+027. seq=21 P0 dies. Cog Golem died.
+028. seq=22 P0 P0 attacks Moss Spider#c0751b9d for 1. HP 0->0, Armor 0->0. Cog Golem struck back at Moss Spider.
+029. seq=23 P0 P0 attacks Moss Spider#c0751b9d for 1. HP 4->3, Armor 0->0. Moss Spider took 1 damage.
+030. seq=24 skill_begin/SkillBegin: Briar Spider used Poison.
+031. seq=25 P1 Briar Spider#19b1a0c2 attacks P0 for 2. HP 0->0, Armor 0->0. Briar Spider attacked the enemy hero.
+032. seq=26 P1 Briar Spider#19b1a0c2 hits hero P0 for 2. HP 20->18. Seat 1 hero took 2 damage.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-12T23:21:46.1032122Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-12T23:21:46.5019810Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 617125074.
+-- Step 3 | UTC 2026-06-12T23:21:48.2627049Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#975879ee hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Iron Warforged entered Front.
+-- Step 4 | UTC 2026-06-12T23:21:49.3135630Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#975879ee hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=1 Iron Warforged#975879ee skipped. Iron Warforged is not ready to attack.
+-- Step 5 | UTC 2026-06-12T23:21:50.0321235Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#975879ee hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=18/20 board=[Front:Vine Spider#0f57616e hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Vine Spider entered Front.
+-- Step 6 | UTC 2026-06-12T23:21:50.5154429Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#975879ee hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=15/20 board=[Front:Vine Spider#0f57616e hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#c0751b9d hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Moss Spider entered BackLeft.
+-- Step 7 | UTC 2026-06-12T23:21:51.0078897Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#975879ee hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=13/20 board=[Front:Vine Spider#0f57616e hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#c0751b9d hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Briar Spider#19b1a0c2 hp=2/2 armor=1 unitType=1 delivery=projectile] hand=0 deck=19
+   - seq=-1 /Info: Briar Spider entered BackRight.
+-- Step 8 | UTC 2026-06-12T23:21:51.5093307Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Iron Warforged#975879ee hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=19 | P1 id=user-2 hp=20 mana=13/20 board=[Front:Vine Spider#0f57616e hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#c0751b9d hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Briar Spider#19b1a0c2 hp=2/2 armor=1 unitType=1 delivery=projectile] hand=0 deck=19
+   - seq=2 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=3 Moss Spider#c0751b9d heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=4 Vine Spider#0f57616e skipped. Vine Spider is not ready to attack.
+   - seq=5 Moss Spider#c0751b9d skipped. Moss Spider is not ready to attack.
+   - seq=6 Briar Spider#19b1a0c2 skipped. Briar Spider is not ready to attack.
+-- Step 9 | UTC 2026-06-12T23:21:53.3076161Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=19/20 board=[Front:Cog Golem#d03db640 hp=2/2 armor=1 unitType=0 delivery=melee, BackLeft:Iron Warforged#975879ee hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=19 | P1 id=user-2 hp=20 mana=13/20 board=[Front:Vine Spider#0f57616e hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#c0751b9d hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Briar Spider#19b1a0c2 hp=2/2 armor=1 unitType=1 delivery=projectile] hand=0 deck=19
+   - seq=-1 /Info: Cog Golem entered Front.
+-- Step 10 | UTC 2026-06-12T23:21:54.0960850Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=19/20 board=[Front:Cog Golem#d03db640 hp=2/2 armor=1 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=19 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Vine Spider#0f57616e hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#c0751b9d hp=2/4 armor=0 unitType=2 delivery=beam, BackRight:Briar Spider#19b1a0c2 hp=2/2 armor=1 unitType=1 delivery=projectile] hand=0 deck=18
+   - seq=7 Cog Golem#d03db640 skipped. Cog Golem is not ready to attack.
+   - seq=8 card_attack/Info: Iron Warforged attacked Moss Spider.
+   - seq=9 P0 P0 attacks Moss Spider#c0751b9d for 2. HP 4->2, Armor 0->0. Moss Spider took 2 damage.
+   - seq=10 P1 Moss Spider#c0751b9d attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider struck back at Iron Warforged.
+   - seq=11 P1 Moss Spider#c0751b9d attacks P0 for 3. HP 3->0, Armor 0->0. Iron Warforged took 3 damage.
+   - seq=12 P0 dies. Iron Warforged died.
+-- Step 11 | UTC 2026-06-12T23:21:58.6466462Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=18 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=18 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Vine Spider#0f57616e hp=2/3 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#c0751b9d hp=3/4 armor=0 unitType=2 delivery=beam, BackRight:Briar Spider#19b1a0c2 hp=2/2 armor=1 unitType=1 delivery=projectile] hand=0 deck=18
+   - seq=13 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=14 Moss Spider#c0751b9d heals 2. HP 2->4. Moss Spider healed 2.
+   - seq=15 card_attack/Info: Vine Spider attacked Cog Golem.
+   - seq=16 P1 Vine Spider#0f57616e attacks P0 for 2. HP 2->1, Armor 1->0. Cog Golem took 2 damage.
+   - seq=17 P0 P0 attacks Vine Spider#0f57616e for 1. HP 0->0, Armor 0->0. Cog Golem struck back at Vine Spider.
+   - seq=18 P0 P0 attacks Vine Spider#0f57616e for 1. HP 3->2, Armor 0->0. Vine Spider took 1 damage.
+   - seq=19 card_attack/Info: Moss Spider attacked Cog Golem.
+   - seq=20 P1 Moss Spider#c0751b9d attacks P0 for 3. HP 1->-2, Armor 0->0. Cog Golem took 3 damage.
+   - seq=21 P0 dies. Cog Golem died.
+   - seq=22 P0 P0 attacks Moss Spider#c0751b9d for 1. HP 0->0, Armor 0->0. Cog Golem struck back at Moss Spider.
+   - seq=23 P0 P0 attacks Moss Spider#c0751b9d for 1. HP 4->3, Armor 0->0. Moss Spider took 1 damage.
+   - seq=24 skill_begin/SkillBegin: Briar Spider used Poison.
+   - seq=25 P1 Briar Spider#19b1a0c2 attacks P0 for 2. HP 0->0, Armor 0->0. Briar Spider attacked the enemy hero.
+   - seq=26 P1 Briar Spider#19b1a0c2 hits hero P0 for 2. HP 20->18. Seat 1 hero took 2 damage.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=975879ee902548dda447df1c44eff285 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Warforged is not ready to attack.
+seq=2 id=evt-000002 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=c0751b9db8704358927d66e4d97aa585 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=3 id=evt-000003 kind=heal serverSrcSeat=1 srcVisual=1 src=c0751b9db8704358927d66e4d97aa585 serverTargetSeat=1 targetVisual=1 target=c0751b9db8704358927d66e4d97aa585 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=4 id=evt-000004 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=0f57616e3ea7485096d66223e22a03da serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Vine Spider is not ready to attack.
+seq=5 id=evt-000005 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=c0751b9db8704358927d66e4d97aa585 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider is not ready to attack.
+seq=6 id=evt-000006 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=19b1a0c2cb5b4b45a5ff833fd6d4e3cd serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Briar Spider is not ready to attack.
+seq=7 id=evt-000007 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=d03db6401c184e9a9a9528ab71a994ba serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Cog Golem is not ready to attack.
+seq=8 id=evt-000008 kind=card_attack serverSrcSeat=0 srcVisual=0 src=975879ee902548dda447df1c44eff285 serverTargetSeat=1 targetVisual=1 target=c0751b9db8704358927d66e4d97aa585 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Iron Warforged attacked Moss Spider.
+seq=9 id=evt-000009 kind=card_damage serverSrcSeat=0 srcVisual=0 src=975879ee902548dda447df1c44eff285 serverTargetSeat=1 targetVisual=1 target=c0751b9db8704358927d66e4d97aa585 ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Moss Spider took 2 damage.
+seq=10 id=evt-000010 kind=card_counterattack serverSrcSeat=1 srcVisual=1 src=c0751b9db8704358927d66e4d97aa585 serverTargetSeat=0 targetVisual=0 target=975879ee902548dda447df1c44eff285 ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Moss Spider struck back at Iron Warforged.
+seq=11 id=evt-000011 kind=card_damage serverSrcSeat=1 srcVisual=1 src=c0751b9db8704358927d66e4d97aa585 serverTargetSeat=0 targetVisual=0 target=975879ee902548dda447df1c44eff285 ability= effect=0 status=0 amount=3 hp=3->0 armor=0->0 message=Iron Warforged took 3 damage.
+seq=12 id=evt-000012 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=975879ee902548dda447df1c44eff285 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Warforged died.
+seq=13 id=evt-000013 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=c0751b9db8704358927d66e4d97aa585 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=14 id=evt-000014 kind=heal serverSrcSeat=1 srcVisual=1 src=c0751b9db8704358927d66e4d97aa585 serverTargetSeat=1 targetVisual=1 target=c0751b9db8704358927d66e4d97aa585 ability=regenerate effect=1 status=0 amount=2 hp=2->4 armor=0->0 message=Moss Spider healed 2.
+seq=15 id=evt-000015 kind=card_attack serverSrcSeat=1 srcVisual=1 src=0f57616e3ea7485096d66223e22a03da serverTargetSeat=0 targetVisual=0 target=d03db6401c184e9a9a9528ab71a994ba ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Vine Spider attacked Cog Golem.
+seq=16 id=evt-000016 kind=card_damage serverSrcSeat=1 srcVisual=1 src=0f57616e3ea7485096d66223e22a03da serverTargetSeat=0 targetVisual=0 target=d03db6401c184e9a9a9528ab71a994ba ability= effect=0 status=0 amount=2 hp=2->1 armor=1->0 message=Cog Golem took 2 damage.
+seq=17 id=evt-000017 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=d03db6401c184e9a9a9528ab71a994ba serverTargetSeat=1 targetVisual=1 target=0f57616e3ea7485096d66223e22a03da ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Cog Golem struck back at Vine Spider.
+seq=18 id=evt-000018 kind=card_damage serverSrcSeat=0 srcVisual=0 src=d03db6401c184e9a9a9528ab71a994ba serverTargetSeat=1 targetVisual=1 target=0f57616e3ea7485096d66223e22a03da ability= effect=0 status=0 amount=1 hp=3->2 armor=0->0 message=Vine Spider took 1 damage.
+seq=19 id=evt-000019 kind=card_attack serverSrcSeat=1 srcVisual=1 src=c0751b9db8704358927d66e4d97aa585 serverTargetSeat=0 targetVisual=0 target=d03db6401c184e9a9a9528ab71a994ba ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Moss Spider attacked Cog Golem.
+seq=20 id=evt-000020 kind=card_damage serverSrcSeat=1 srcVisual=1 src=c0751b9db8704358927d66e4d97aa585 serverTargetSeat=0 targetVisual=0 target=d03db6401c184e9a9a9528ab71a994ba ability= effect=0 status=0 amount=3 hp=1->-2 armor=0->0 message=Cog Golem took 3 damage.
+seq=21 id=evt-000021 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=d03db6401c184e9a9a9528ab71a994ba ability= effect=0 status=0 amount=0 hp=-2->-2 armor=0->0 message=Cog Golem died.
+seq=22 id=evt-000022 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=d03db6401c184e9a9a9528ab71a994ba serverTargetSeat=1 targetVisual=1 target=c0751b9db8704358927d66e4d97aa585 ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Cog Golem struck back at Moss Spider.
+seq=23 id=evt-000023 kind=card_damage serverSrcSeat=0 srcVisual=0 src=d03db6401c184e9a9a9528ab71a994ba serverTargetSeat=1 targetVisual=1 target=c0751b9db8704358927d66e4d97aa585 ability= effect=0 status=0 amount=1 hp=4->3 armor=0->0 message=Moss Spider took 1 damage.
+seq=24 id=evt-000024 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=19b1a0c2cb5b4b45a5ff833fd6d4e3cd serverTargetSeat=0 targetVisual=-1 target= ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Briar Spider used Poison.
+seq=25 id=evt-000025 kind=card_attack serverSrcSeat=1 srcVisual=1 src=19b1a0c2cb5b4b45a5ff833fd6d4e3cd serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Briar Spider attacked the enemy hero.
+seq=26 id=evt-000026 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=19b1a0c2cb5b4b45a5ff833fd6d4e3cd serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=2 hp=20->18 armor=0->0 message=Seat 1 hero took 2 damage.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 617125074.
+turn=1 Info: Iron Warforged entered Front.
+turn=2 Info: Vine Spider entered Front.
+turn=2 Info: Moss Spider entered BackLeft.
+turn=2 Info: Briar Spider entered BackRight.
+turn=3 Info: Moss Spider healed 0.
+turn=3 Info: Cog Golem entered Front.
+turn=4 Info: 975879ee902548dda447df1c44eff285 hit Moss Spider for 2.
+turn=4 Info: c0751b9db8704358927d66e4d97aa585 hit Iron Warforged for 3.
+turn=4 Info: Iron Warforged died.
+turn=5 Info: Moss Spider healed 2.
+turn=5 Info: 0f57616e3ea7485096d66223e22a03da hit Cog Golem for 2.
+turn=5 Info: d03db6401c184e9a9a9528ab71a994ba hit Vine Spider for 1.
+turn=5 Info: c0751b9db8704358927d66e4d97aa585 hit Cog Golem for 3.
+turn=5 Info: Cog Golem died.
+turn=5 Info: d03db6401c184e9a9a9528ab71a994ba hit Moss Spider for 1.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "b3d470a04a274229aa702c08ef800d88",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 5,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 617125074,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 18,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "70dada4d6ea1405aab400a0d7a68cbcc",
+                    "cardId": "alloy_0025",
+                    "displayName": "Steel Construct",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "7924fe8cf8b84d85bc3c092536e6df7c",
+                    "cardId": "alloy_0037",
+                    "displayName": "Piston Reckoner",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "2e380cb5087f4f46ab736c202e4cf639",
+                    "cardId": "alloy_0037",
+                    "displayName": "Piston Reckoner",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "d0bc32a8f2af4d19978f6613e7b9ad66",
+                    "cardId": "alloy_0011",
+                    "displayName": "Plated Colossus",
+                    "manaCost": 3,
+                    "attack": 3,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": [
+                        {
+                            "abilityId": "trample",
+                            "displayName": "Trample",
+                            "iconAssetRef": "",
+                            "skillType": 4,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_trample_hit",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"normalAttackModifier\": true}",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 18,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "0f57616e3ea7485096d66223e22a03da",
+                        "cardId": "grove_0023",
+                        "displayName": "Vine Spider",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 3,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "c0751b9db8704358927d66e4d97aa585",
+                        "cardId": "grove_0011",
+                        "displayName": "Moss Spider",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 3,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"self\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-self\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "19b1a0c2cb5b4b45a5ff833fd6d4e3cd",
+                        "cardId": "grove_0032",
+                        "displayName": "Briar Spider",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 1,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "poison",
+                                "displayName": "Poison",
+                                "iconAssetRef": "",
+                                "skillType": 1,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_poison_apply",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 2,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"poison\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 18,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 617125074."
+        },
+        {
+            "type": 0,
+            "message": "Iron Warforged entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Vine Spider entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Briar Spider entered BackRight."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "type": 0,
+            "message": "Cog Golem entered Front."
+        },
+        {
+            "type": 0,
+            "message": "975879ee902548dda447df1c44eff285 hit Moss Spider for 2."
+        },
+        {
+            "type": 0,
+            "message": "c0751b9db8704358927d66e4d97aa585 hit Iron Warforged for 3."
+        },
+        {
+            "type": 0,
+            "message": "Iron Warforged died."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 2."
+        },
+        {
+            "type": 0,
+            "message": "0f57616e3ea7485096d66223e22a03da hit Cog Golem for 2."
+        },
+        {
+            "type": 0,
+            "message": "d03db6401c184e9a9a9528ab71a994ba hit Vine Spider for 1."
+        },
+        {
+            "type": 0,
+            "message": "c0751b9db8704358927d66e4d97aa585 hit Cog Golem for 3."
+        },
+        {
+            "type": 0,
+            "message": "Cog Golem died."
+        },
+        {
+            "type": 0,
+            "message": "d03db6401c184e9a9a9528ab71a994ba hit Moss Spider for 1."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "975879ee902548dda447df1c44eff285",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged is not ready to attack."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "targetRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "0f57616e3ea7485096d66223e22a03da",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Vine Spider is not ready to attack."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider is not ready to attack."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "19b1a0c2cb5b4b45a5ff833fd6d4e3cd",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Briar Spider is not ready to attack."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "d03db6401c184e9a9a9528ab71a994ba",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Cog Golem is not ready to attack."
+        },
+        {
+            "eventId": "evt-000008",
+            "sequence": 8,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "975879ee902548dda447df1c44eff285",
+            "targetRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged attacked Moss Spider."
+        },
+        {
+            "eventId": "evt-000009",
+            "sequence": 9,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "975879ee902548dda447df1c44eff285",
+            "targetRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider took 2 damage."
+        },
+        {
+            "eventId": "evt-000010",
+            "sequence": 10,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "targetRuntimeId": "975879ee902548dda447df1c44eff285",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider struck back at Iron Warforged."
+        },
+        {
+            "eventId": "evt-000011",
+            "sequence": 11,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "targetRuntimeId": "975879ee902548dda447df1c44eff285",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged took 3 damage."
+        },
+        {
+            "eventId": "evt-000012",
+            "sequence": 12,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "975879ee902548dda447df1c44eff285",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged died."
+        },
+        {
+            "eventId": "evt-000013",
+            "sequence": 13,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000014",
+            "sequence": 14,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "targetRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 2."
+        },
+        {
+            "eventId": "evt-000015",
+            "sequence": 15,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "0f57616e3ea7485096d66223e22a03da",
+            "targetRuntimeId": "d03db6401c184e9a9a9528ab71a994ba",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Vine Spider attacked Cog Golem."
+        },
+        {
+            "eventId": "evt-000016",
+            "sequence": 16,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "0f57616e3ea7485096d66223e22a03da",
+            "targetRuntimeId": "d03db6401c184e9a9a9528ab71a994ba",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 1,
+            "armorBefore": 1,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Cog Golem took 2 damage."
+        },
+        {
+            "eventId": "evt-000017",
+            "sequence": 17,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "d03db6401c184e9a9a9528ab71a994ba",
+            "targetRuntimeId": "0f57616e3ea7485096d66223e22a03da",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Cog Golem struck back at Vine Spider."
+        },
+        {
+            "eventId": "evt-000018",
+            "sequence": 18,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "d03db6401c184e9a9a9528ab71a994ba",
+            "targetRuntimeId": "0f57616e3ea7485096d66223e22a03da",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Vine Spider took 1 damage."
+        },
+        {
+            "eventId": "evt-000019",
+            "sequence": 19,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "targetRuntimeId": "d03db6401c184e9a9a9528ab71a994ba",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider attacked Cog Golem."
+        },
+        {
+            "eventId": "evt-000020",
+            "sequence": 20,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "targetRuntimeId": "d03db6401c184e9a9a9528ab71a994ba",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": -2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Cog Golem took 3 damage."
+        },
+        {
+            "eventId": "evt-000021",
+            "sequence": 21,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "d03db6401c184e9a9a9528ab71a994ba",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": -2,
+            "hpAfter": -2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Cog Golem died."
+        },
+        {
+            "eventId": "evt-000022",
+            "sequence": 22,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "d03db6401c184e9a9a9528ab71a994ba",
+            "targetRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Cog Golem struck back at Moss Spider."
+        },
+        {
+            "eventId": "evt-000023",
+            "sequence": 23,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "d03db6401c184e9a9a9528ab71a994ba",
+            "targetRuntimeId": "c0751b9db8704358927d66e4d97aa585",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider took 1 damage."
+        },
+        {
+            "eventId": "evt-000024",
+            "sequence": 24,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "19b1a0c2cb5b4b45a5ff833fd6d4e3cd",
+            "targetRuntimeId": "",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Briar Spider used Poison."
+        },
+        {
+            "eventId": "evt-000025",
+            "sequence": 25,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "19b1a0c2cb5b4b45a5ff833fd6d4e3cd",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Briar Spider attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000026",
+            "sequence": 26,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "19b1a0c2cb5b4b45a5ff833fd6d4e3cd",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 20,
+            "hpAfter": 18,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 2 damage."
+        }
+    ]
+}

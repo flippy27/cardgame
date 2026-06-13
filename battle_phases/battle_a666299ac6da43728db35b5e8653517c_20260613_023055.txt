@@ -1,0 +1,344 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T02:30:55.7726385Z
+LastUpdatedUtc: 2026-06-13T02:31:03.4105179Z
+MatchId: a666299ac6da43728db35b5e8653517c
+CurrentTurn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 548776685.
+002. seq=-1 /Info: Chrome Vanguard entered Front.
+003. seq=-1 /Info: Piston Reckoner entered Front.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T02:30:55.7737650Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=30 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T02:30:59.3411270Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 548776685.
+-- Step 3 | UTC 2026-06-13T02:31:02.2400952Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Chrome Vanguard#32e9ea0b hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Chrome Vanguard entered Front.
+-- Step 4 | UTC 2026-06-13T02:31:03.3873835Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Piston Reckoner#fdf5f0c0 hp=3/3 armor=2 unitType=0 delivery=melee, BackLeft:Chrome Vanguard#32e9ea0b hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Piston Reckoner entered Front.
+
+Raw Structured Battle Events Seen By Unity
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 548776685.
+turn=1 Info: Chrome Vanguard entered Front.
+turn=1 Info: Piston Reckoner entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "a666299ac6da43728db35b5e8653517c",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 1,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 548776685,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 16,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "014044a2031c4b86b8fd78ba1b0a0f33",
+                    "cardId": "void_0037",
+                    "displayName": "Oblivion Eidolon",
+                    "manaCost": 1,
+                    "attack": 1,
+                    "health": 1,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": [
+                        {
+                            "abilityId": "leech",
+                            "displayName": "Leech",
+                            "iconAssetRef": "",
+                            "skillType": 1,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_leech_heal",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"normalAttackModifier\": true}",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "61a9897921f74dbfa32491c457ffc323",
+                    "cardId": "ember_0021",
+                    "displayName": "Molten Gauntlets",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "equip_weapon",
+                            "displayName": "Weapon",
+                            "iconAssetRef": "",
+                            "skillType": 2,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "equip_weapon",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"equipment\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"equip-weapon\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "fdf5f0c0af1348b0b60410bd397490e6",
+                        "cardId": "alloy_0037",
+                        "displayName": "Piston Reckoner",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 2,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "32e9ea0b22064e2fa227d5bac76171a2",
+                        "cardId": "alloy_0028",
+                        "displayName": "Chrome Vanguard",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 1,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 26,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 548776685."
+        },
+        {
+            "type": 0,
+            "message": "Chrome Vanguard entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Piston Reckoner entered Front."
+        }
+    ],
+    "battleEvents": []
+}

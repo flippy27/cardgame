@@ -1,0 +1,425 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-12T22:45:13.0298718Z
+LastUpdatedUtc: 2026-06-12T22:45:20.4500438Z
+MatchId: local-ai-match-20260612224508566
+CurrentTurn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset:  ()
+
+Human Timeline
+001. seq=-1 /Info: Plated Colossus entered Front.
+002. seq=-1 /Info: Plated Colossus moved to BackLeft (replacement).
+003. seq=-1 /Info: Steel Construct entered Front.
+004. seq=-1 /Info: Steel Construct moved to BackLeft, Plated Colossus moved to BackRight (replacement chain).
+005. seq=-1 /Info: Iron Warforged entered Front.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-12T22:45:13.0303724Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20
+   Events: none
+-- Step 2 | UTC 2026-06-12T22:45:16.1757206Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Plated Colossus#7ab4a9b2 hp=4/4 armor=2 unitType=2 delivery=beam, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20
+   - seq=-1 /Info: Plated Colossus entered Front.
+-- Step 3 | UTC 2026-06-12T22:45:17.7100387Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=15/20 board=[Front:Steel Construct#8adad812 hp=3/3 armor=0 unitType=2 delivery=beam, BackLeft:Plated Colossus#7ab4a9b2 hp=4/4 armor=2 unitType=2 delivery=beam, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20
+   - seq=-1 /Info: Plated Colossus moved to BackLeft (replacement).
+   - seq=-1 /Info: Steel Construct entered Front.
+-- Step 4 | UTC 2026-06-12T22:45:20.4500438Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=13/20 board=[Front:Iron Warforged#3106b2e8 hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:Steel Construct#8adad812 hp=3/3 armor=0 unitType=2 delivery=beam, BackRight:Plated Colossus#7ab4a9b2 hp=4/4 armor=2 unitType=2 delivery=beam] hand=1 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20
+   - seq=-1 /Info: Steel Construct moved to BackLeft, Plated Colossus moved to BackRight (replacement chain).
+   - seq=-1 /Info: Iron Warforged entered Front.
+
+Raw Structured Battle Events Seen By Unity
+
+Raw Logs Seen By Unity
+turn=1 Summon: Plated Colossus entered Front.
+turn=1 Info: Plated Colossus moved to BackLeft (replacement).
+turn=1 Summon: Steel Construct entered Front.
+turn=1 Info: Steel Construct moved to BackLeft, Plated Colossus moved to BackRight (replacement chain).
+turn=1 Summon: Iron Warforged entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "local-ai-match-20260612224508566",
+    "rulesetId": "",
+    "rulesetName": "",
+    "rules": {
+        "rulesetId": "",
+        "rulesetKey": "",
+        "displayName": "",
+        "description": "",
+        "isActive": false,
+        "isDefault": false,
+        "startingHeroHealth": 0,
+        "maxHeroHealth": 0,
+        "startingMana": 0,
+        "maxMana": 0,
+        "manaGrantedPerTurn": 0,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 0,
+        "cardsDrawnOnTurnStart": 0,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 1,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 0,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 13,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "7e65521e0c0a4c118ab51af57653d9e5",
+                    "cardId": "alloy_0028",
+                    "displayName": "Chrome Vanguard",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 1,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": []
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "3106b2e83eb24e249a9306a83f861092",
+                        "cardId": "alloy_0035",
+                        "displayName": "Iron Warforged",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 1,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "8adad812e906407e8f5ee30ffb6b70a4",
+                        "cardId": "alloy_0025",
+                        "displayName": "Steel Construct",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 1,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "7ab4a9b281b04c7bb319422af0bb39ba",
+                        "cardId": "alloy_0011",
+                        "displayName": "Plated Colossus",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 0,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 2,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 1,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "trample",
+                                "displayName": "Trample",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "trample",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "225825d09dbc4a728be61de4f86e1d19",
+                    "cardId": "grove_0025",
+                    "displayName": "Bloom Treant",
+                    "manaCost": 3,
+                    "attack": 3,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "8b6a57bb9da74e778e8d663916963111",
+                    "cardId": "grove_0034",
+                    "displayName": "Wild Boar",
+                    "manaCost": 3,
+                    "attack": 2,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "poison",
+                            "displayName": "Poison",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "poison",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "73e8db215a2a444a81e4caf63552099e",
+                    "cardId": "grove_0028",
+                    "displayName": "Bramble Lurker",
+                    "manaCost": 1,
+                    "attack": 1,
+                    "health": 2,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "14c56e66edc8432dbc1222407e76e729",
+                    "cardId": "grove_0031",
+                    "displayName": "Fang Spriggan",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 2,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "taunt",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 23 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 23 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 22 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 22 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 21 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 21 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 20 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 20 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Duel started with seed -1000139036. Player 0 starts."
+        },
+        {
+            "type": 3,
+            "message": "Plated Colossus entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Plated Colossus moved to BackLeft (replacement)."
+        },
+        {
+            "type": 3,
+            "message": "Steel Construct entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Steel Construct moved to BackLeft, Plated Colossus moved to BackRight (replacement chain)."
+        },
+        {
+            "type": 3,
+            "message": "Iron Warforged entered Front."
+        }
+    ],
+    "battleEvents": []
+}

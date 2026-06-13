@@ -1,0 +1,330 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T01:33:16.8928624Z
+LastUpdatedUtc: 2026-06-13T01:33:24.1994890Z
+MatchId: 0063722b9b734b759f5022a4327ef441
+CurrentTurn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 257392237.
+002. seq=-1 /Info: Iron Warforged entered Front.
+003. seq=-1 /Info: Gear Automaton entered Front.
+004. seq=-1 /Info: Steel Construct entered BackRight.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T01:33:16.8938623Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T01:33:17.1283603Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 257392237.
+-- Step 3 | UTC 2026-06-13T01:33:19.8075595Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#b6fb4f27 hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Iron Warforged entered Front.
+-- Step 4 | UTC 2026-06-13T01:33:20.9036824Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=15/20 board=[Front:Gear Automaton#3a6893d8 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Iron Warforged#b6fb4f27 hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Gear Automaton entered Front.
+-- Step 5 | UTC 2026-06-13T01:33:24.1799877Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=13/20 board=[Front:Gear Automaton#3a6893d8 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Iron Warforged#b6fb4f27 hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:Steel Construct#179acbbf hp=3/3 armor=0 unitType=2 delivery=beam] hand=1 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Steel Construct entered BackRight.
+
+Raw Structured Battle Events Seen By Unity
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 257392237.
+turn=1 Info: Iron Warforged entered Front.
+turn=1 Info: Gear Automaton entered Front.
+turn=1 Info: Steel Construct entered BackRight.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "0063722b9b734b759f5022a4327ef441",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 1,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 257392237,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 13,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "ad8ecc8d56f94d41848832c4fb85438e",
+                    "cardId": "alloy_0011",
+                    "displayName": "Plated Colossus",
+                    "manaCost": 3,
+                    "attack": 3,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": [
+                        {
+                            "abilityId": "trample",
+                            "displayName": "Trample",
+                            "iconAssetRef": "",
+                            "skillType": 4,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_trample_hit",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"normalAttackModifier\": true}",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "3a6893d8bbb34ddab4163c1a746a9a06",
+                        "cardId": "alloy_0014",
+                        "displayName": "Gear Automaton",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_taunt_pulse",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"targetingModifier\": true}",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "b6fb4f27f59d40b0b63a4aa999a46f20",
+                        "cardId": "alloy_0035",
+                        "displayName": "Iron Warforged",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "179acbbfad624f4ca6ee16204588cd67",
+                        "cardId": "alloy_0025",
+                        "displayName": "Steel Construct",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 257392237."
+        },
+        {
+            "type": 0,
+            "message": "Iron Warforged entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Gear Automaton entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Steel Construct entered BackRight."
+        }
+    ],
+    "battleEvents": []
+}

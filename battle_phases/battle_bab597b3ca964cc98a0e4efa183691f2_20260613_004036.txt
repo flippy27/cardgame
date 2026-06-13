@@ -1,0 +1,1297 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T00:40:36.7810913Z
+LastUpdatedUtc: 2026-06-13T00:44:52.8774123Z
+MatchId: bab597b3ca964cc98a0e4efa183691f2
+CurrentTurn: 5
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 1073462824.
+002. seq=-1 /Info: Iron Warforged entered Front.
+003. seq=-1 /Info: Gear Automaton entered Front.
+004. seq=1 Gear Automaton#ac632b7f skipped. Gear Automaton is not ready to attack.
+005. seq=2 Iron Warforged#b5a09131 skipped. Iron Warforged is not ready to attack.
+006. seq=-1 /Info: Thorn Howler entered Front.
+007. seq=-1 /Info: Bloom Treant entered BackLeft.
+008. seq=-1 /Info: Root Antler entered Front.
+009. seq=3 skill_begin/SkillBegin: Thorn Howler used Regenerate.
+010. seq=4 Thorn Howler#31a5ac01 heals 0. HP 4->4. Thorn Howler healed 0.
+011. seq=5 Root Antler#9b3b6c8b skipped. Root Antler is not ready to attack.
+012. seq=6 Thorn Howler#31a5ac01 skipped. Thorn Howler is not ready to attack.
+013. seq=7 Bloom Treant#000ac327 skipped. Bloom Treant is not ready to attack.
+014. seq=-1 /Info: Forge Automaton entered BackRight.
+015. seq=8 skill_begin/SkillBegin: Gear Automaton used Taunt.
+016. seq=9 card_attack/Info: Gear Automaton attacked Root Antler.
+017. seq=10 P0 Gear Automaton#ac632b7f attacks P1 for 3. HP 3->0, Armor 0->0. Root Antler took 3 damage.
+018. seq=11 P1 dies. Root Antler died.
+019. seq=12 P1 P1 attacks Gear Automaton#ac632b7f for 2. HP 0->0, Armor 0->0. Root Antler struck back at Gear Automaton.
+020. seq=13 P1 P1 attacks Gear Automaton#ac632b7f for 2. HP 4->2, Armor 0->0. Gear Automaton took 2 damage.
+021. seq=14 card_attack/Info: Iron Warforged attacked Bloom Treant.
+022. seq=15 P0 P0 attacks Bloom Treant#000ac327 for 2. HP 4->2, Armor 0->0. Bloom Treant took 2 damage.
+023. seq=16 P1 Bloom Treant#000ac327 attacks P0 for 3. HP 0->0, Armor 0->0. Bloom Treant struck back at Iron Warforged.
+024. seq=17 P1 Bloom Treant#000ac327 attacks P0 for 3. HP 3->0, Armor 0->0. Iron Warforged took 3 damage.
+025. seq=18 P0 dies. Iron Warforged died.
+026. seq=-1 /Info: Moss Spider entered BackRight.
+027. seq=19 skill_begin/SkillBegin: Thorn Howler used Regenerate.
+028. seq=20 Bloom Treant#000ac327 heals 2. HP 2->4. Bloom Treant healed 2.
+029. seq=21 skill_begin/SkillBegin: Moss Spider used Regenerate.
+030. seq=22 Moss Spider#cc8b3669 heals 0. HP 4->4. Moss Spider healed 0.
+031. seq=23 card_attack/Info: Thorn Howler attacked Gear Automaton.
+032. seq=24 P1 Thorn Howler#31a5ac01 attacks P0 for 3. HP 2->-1, Armor 0->0. Gear Automaton took 3 damage.
+033. seq=25 P0 dies. Gear Automaton died.
+034. seq=26 P0 P0 attacks Thorn Howler#31a5ac01 for 3. HP 0->0, Armor 0->0. Gear Automaton struck back at Thorn Howler.
+035. seq=27 P0 P0 attacks Thorn Howler#31a5ac01 for 3. HP 4->1, Armor 0->0. Thorn Howler took 3 damage.
+036. seq=28 card_attack/Info: Bloom Treant attacked Forge Automaton.
+037. seq=29 P1 Bloom Treant#000ac327 attacks Forge Automaton#d8d43af9 for 3. HP 3->2, Armor 2->0. Forge Automaton took 3 damage.
+038. seq=30 P0 Forge Automaton#d8d43af9 attacks Bloom Treant#000ac327 for 2. HP 0->0, Armor 0->0. Forge Automaton struck back at Bloom Treant.
+039. seq=31 P0 Forge Automaton#d8d43af9 attacks Bloom Treant#000ac327 for 2. HP 4->2, Armor 0->0. Bloom Treant took 2 damage.
+040. seq=32 Moss Spider#cc8b3669 skipped. Moss Spider is not ready to attack.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T00:40:36.7815896Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T00:40:37.0017417Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 1073462824.
+-- Step 3 | UTC 2026-06-13T00:42:45.5781626Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#b5a09131 hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Iron Warforged entered Front.
+-- Step 4 | UTC 2026-06-13T00:43:08.5036704Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=15/20 board=[Front:Gear Automaton#ac632b7f hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Iron Warforged#b5a09131 hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Gear Automaton entered Front.
+-- Step 5 | UTC 2026-06-13T00:44:35.0884660Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=15/20 board=[Front:Gear Automaton#ac632b7f hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Iron Warforged#b5a09131 hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=1 Gear Automaton#ac632b7f skipped. Gear Automaton is not ready to attack.
+   - seq=2 Iron Warforged#b5a09131 skipped. Iron Warforged is not ready to attack.
+-- Step 6 | UTC 2026-06-13T00:44:35.7285821Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=15/20 board=[Front:Gear Automaton#ac632b7f hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Iron Warforged#b5a09131 hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Thorn Howler#31a5ac01 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Thorn Howler entered Front.
+-- Step 7 | UTC 2026-06-13T00:44:36.2209204Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=15/20 board=[Front:Gear Automaton#ac632b7f hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Iron Warforged#b5a09131 hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=14/20 board=[Front:Thorn Howler#31a5ac01 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#000ac327 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Bloom Treant entered BackLeft.
+-- Step 8 | UTC 2026-06-13T00:44:36.6858045Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=15/20 board=[Front:Gear Automaton#ac632b7f hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Iron Warforged#b5a09131 hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Root Antler#9b3b6c8b hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Thorn Howler#31a5ac01 hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Bloom Treant#000ac327 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=-1 /Info: Root Antler entered Front.
+-- Step 9 | UTC 2026-06-13T00:44:37.1412402Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Gear Automaton#ac632b7f hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Iron Warforged#b5a09131 hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=19 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Root Antler#9b3b6c8b hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Thorn Howler#31a5ac01 hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Bloom Treant#000ac327 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=3 skill_begin/SkillBegin: Thorn Howler used Regenerate.
+   - seq=4 Thorn Howler#31a5ac01 heals 0. HP 4->4. Thorn Howler healed 0.
+   - seq=5 Root Antler#9b3b6c8b skipped. Root Antler is not ready to attack.
+   - seq=6 Thorn Howler#31a5ac01 skipped. Thorn Howler is not ready to attack.
+   - seq=7 Bloom Treant#000ac327 skipped. Bloom Treant is not ready to attack.
+-- Step 10 | UTC 2026-06-13T00:44:43.0539050Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Gear Automaton#ac632b7f hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Iron Warforged#b5a09131 hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:Forge Automaton#d8d43af9 hp=3/3 armor=2 unitType=1 delivery=projectile] hand=2 deck=19 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Root Antler#9b3b6c8b hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Thorn Howler#31a5ac01 hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Bloom Treant#000ac327 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=-1 /Info: Forge Automaton entered BackRight.
+-- Step 11 | UTC 2026-06-13T00:44:44.8045795Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Gear Automaton#ac632b7f hp=2/4 armor=0 unitType=0 delivery=melee, BackLeft:Forge Automaton#d8d43af9 hp=3/3 armor=2 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=19 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Thorn Howler#31a5ac01 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#000ac327 hp=2/4 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=18
+   - seq=8 skill_begin/SkillBegin: Gear Automaton used Taunt.
+   - seq=9 card_attack/Info: Gear Automaton attacked Root Antler.
+   - seq=10 P0 Gear Automaton#ac632b7f attacks P1 for 3. HP 3->0, Armor 0->0. Root Antler took 3 damage.
+   - seq=11 P1 dies. Root Antler died.
+   - seq=12 P1 P1 attacks Gear Automaton#ac632b7f for 2. HP 0->0, Armor 0->0. Root Antler struck back at Gear Automaton.
+   - seq=13 P1 P1 attacks Gear Automaton#ac632b7f for 2. HP 4->2, Armor 0->0. Gear Automaton took 2 damage.
+   - seq=14 card_attack/Info: Iron Warforged attacked Bloom Treant.
+   - seq=15 P0 P0 attacks Bloom Treant#000ac327 for 2. HP 4->2, Armor 0->0. Bloom Treant took 2 damage.
+   - seq=16 P1 Bloom Treant#000ac327 attacks P0 for 3. HP 0->0, Armor 0->0. Bloom Treant struck back at Iron Warforged.
+   - seq=17 P1 Bloom Treant#000ac327 attacks P0 for 3. HP 3->0, Armor 0->0. Iron Warforged took 3 damage.
+   - seq=18 P0 dies. Iron Warforged died.
+-- Step 12 | UTC 2026-06-13T00:44:52.4004918Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Gear Automaton#ac632b7f hp=2/4 armor=0 unitType=0 delivery=melee, BackLeft:Forge Automaton#d8d43af9 hp=3/3 armor=2 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=19 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Thorn Howler#31a5ac01 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#000ac327 hp=2/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#cc8b3669 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=-1 /Info: Moss Spider entered BackRight.
+-- Step 13 | UTC 2026-06-13T00:44:52.8774123Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Forge Automaton#d8d43af9 hp=2/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=18 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Thorn Howler#31a5ac01 hp=1/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#000ac327 hp=2/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#cc8b3669 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=19 skill_begin/SkillBegin: Thorn Howler used Regenerate.
+   - seq=20 Bloom Treant#000ac327 heals 2. HP 2->4. Bloom Treant healed 2.
+   - seq=21 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=22 Moss Spider#cc8b3669 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=23 card_attack/Info: Thorn Howler attacked Gear Automaton.
+   - seq=24 P1 Thorn Howler#31a5ac01 attacks P0 for 3. HP 2->-1, Armor 0->0. Gear Automaton took 3 damage.
+   - seq=25 P0 dies. Gear Automaton died.
+   - seq=26 P0 P0 attacks Thorn Howler#31a5ac01 for 3. HP 0->0, Armor 0->0. Gear Automaton struck back at Thorn Howler.
+   - seq=27 P0 P0 attacks Thorn Howler#31a5ac01 for 3. HP 4->1, Armor 0->0. Thorn Howler took 3 damage.
+   - seq=28 card_attack/Info: Bloom Treant attacked Forge Automaton.
+   - seq=29 P1 Bloom Treant#000ac327 attacks Forge Automaton#d8d43af9 for 3. HP 3->2, Armor 2->0. Forge Automaton took 3 damage.
+   - seq=30 P0 Forge Automaton#d8d43af9 attacks Bloom Treant#000ac327 for 2. HP 0->0, Armor 0->0. Forge Automaton struck back at Bloom Treant.
+   - seq=31 P0 Forge Automaton#d8d43af9 attacks Bloom Treant#000ac327 for 2. HP 4->2, Armor 0->0. Bloom Treant took 2 damage.
+   - seq=32 Moss Spider#cc8b3669 skipped. Moss Spider is not ready to attack.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=ac632b7fff244307b618aaab7e9a33fd serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Automaton is not ready to attack.
+seq=2 id=evt-000002 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=b5a09131be3e457199a9a670158ee2bf serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Warforged is not ready to attack.
+seq=3 id=evt-000003 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=31a5ac0154f14aa69964d3dad11189e3 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Thorn Howler used Regenerate.
+seq=4 id=evt-000004 kind=heal serverSrcSeat=1 srcVisual=1 src=31a5ac0154f14aa69964d3dad11189e3 serverTargetSeat=1 targetVisual=1 target=31a5ac0154f14aa69964d3dad11189e3 ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Thorn Howler healed 0.
+seq=5 id=evt-000005 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=9b3b6c8b25454e80a40db62f8605e770 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Antler is not ready to attack.
+seq=6 id=evt-000006 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=31a5ac0154f14aa69964d3dad11189e3 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Thorn Howler is not ready to attack.
+seq=7 id=evt-000007 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=000ac327829e4ae8bb3a0df668696eb1 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Bloom Treant is not ready to attack.
+seq=8 id=evt-000008 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=ac632b7fff244307b618aaab7e9a33fd serverTargetSeat=0 targetVisual=-1 target= ability=taunt effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Automaton used Taunt.
+seq=9 id=evt-000009 kind=card_attack serverSrcSeat=0 srcVisual=0 src=ac632b7fff244307b618aaab7e9a33fd serverTargetSeat=1 targetVisual=1 target=9b3b6c8b25454e80a40db62f8605e770 ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Gear Automaton attacked Root Antler.
+seq=10 id=evt-000010 kind=card_damage serverSrcSeat=0 srcVisual=0 src=ac632b7fff244307b618aaab7e9a33fd serverTargetSeat=1 targetVisual=1 target=9b3b6c8b25454e80a40db62f8605e770 ability= effect=0 status=0 amount=3 hp=3->0 armor=0->0 message=Root Antler took 3 damage.
+seq=11 id=evt-000011 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=1 targetVisual=1 target=9b3b6c8b25454e80a40db62f8605e770 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Antler died.
+seq=12 id=evt-000012 kind=card_counterattack serverSrcSeat=1 srcVisual=1 src=9b3b6c8b25454e80a40db62f8605e770 serverTargetSeat=0 targetVisual=0 target=ac632b7fff244307b618aaab7e9a33fd ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Antler struck back at Gear Automaton.
+seq=13 id=evt-000013 kind=card_damage serverSrcSeat=1 srcVisual=1 src=9b3b6c8b25454e80a40db62f8605e770 serverTargetSeat=0 targetVisual=0 target=ac632b7fff244307b618aaab7e9a33fd ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Gear Automaton took 2 damage.
+seq=14 id=evt-000014 kind=card_attack serverSrcSeat=0 srcVisual=0 src=b5a09131be3e457199a9a670158ee2bf serverTargetSeat=1 targetVisual=1 target=000ac327829e4ae8bb3a0df668696eb1 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Iron Warforged attacked Bloom Treant.
+seq=15 id=evt-000015 kind=card_damage serverSrcSeat=0 srcVisual=0 src=b5a09131be3e457199a9a670158ee2bf serverTargetSeat=1 targetVisual=1 target=000ac327829e4ae8bb3a0df668696eb1 ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Bloom Treant took 2 damage.
+seq=16 id=evt-000016 kind=card_counterattack serverSrcSeat=1 srcVisual=1 src=000ac327829e4ae8bb3a0df668696eb1 serverTargetSeat=0 targetVisual=0 target=b5a09131be3e457199a9a670158ee2bf ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Bloom Treant struck back at Iron Warforged.
+seq=17 id=evt-000017 kind=card_damage serverSrcSeat=1 srcVisual=1 src=000ac327829e4ae8bb3a0df668696eb1 serverTargetSeat=0 targetVisual=0 target=b5a09131be3e457199a9a670158ee2bf ability= effect=0 status=0 amount=3 hp=3->0 armor=0->0 message=Iron Warforged took 3 damage.
+seq=18 id=evt-000018 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=b5a09131be3e457199a9a670158ee2bf ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Warforged died.
+seq=19 id=evt-000019 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=31a5ac0154f14aa69964d3dad11189e3 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Thorn Howler used Regenerate.
+seq=20 id=evt-000020 kind=heal serverSrcSeat=1 srcVisual=1 src=000ac327829e4ae8bb3a0df668696eb1 serverTargetSeat=1 targetVisual=1 target=000ac327829e4ae8bb3a0df668696eb1 ability=regenerate_left effect=1 status=0 amount=2 hp=2->4 armor=0->0 message=Bloom Treant healed 2.
+seq=21 id=evt-000021 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=cc8b366990134ab7977edc98a7650bfa serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=22 id=evt-000022 kind=heal serverSrcSeat=1 srcVisual=1 src=cc8b366990134ab7977edc98a7650bfa serverTargetSeat=1 targetVisual=1 target=cc8b366990134ab7977edc98a7650bfa ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=23 id=evt-000023 kind=card_attack serverSrcSeat=1 srcVisual=1 src=31a5ac0154f14aa69964d3dad11189e3 serverTargetSeat=0 targetVisual=0 target=ac632b7fff244307b618aaab7e9a33fd ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Thorn Howler attacked Gear Automaton.
+seq=24 id=evt-000024 kind=card_damage serverSrcSeat=1 srcVisual=1 src=31a5ac0154f14aa69964d3dad11189e3 serverTargetSeat=0 targetVisual=0 target=ac632b7fff244307b618aaab7e9a33fd ability= effect=0 status=0 amount=3 hp=2->-1 armor=0->0 message=Gear Automaton took 3 damage.
+seq=25 id=evt-000025 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=ac632b7fff244307b618aaab7e9a33fd ability= effect=0 status=0 amount=0 hp=-1->-1 armor=0->0 message=Gear Automaton died.
+seq=26 id=evt-000026 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=ac632b7fff244307b618aaab7e9a33fd serverTargetSeat=1 targetVisual=1 target=31a5ac0154f14aa69964d3dad11189e3 ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Gear Automaton struck back at Thorn Howler.
+seq=27 id=evt-000027 kind=card_damage serverSrcSeat=0 srcVisual=0 src=ac632b7fff244307b618aaab7e9a33fd serverTargetSeat=1 targetVisual=1 target=31a5ac0154f14aa69964d3dad11189e3 ability= effect=0 status=0 amount=3 hp=4->1 armor=0->0 message=Thorn Howler took 3 damage.
+seq=28 id=evt-000028 kind=card_attack serverSrcSeat=1 srcVisual=1 src=000ac327829e4ae8bb3a0df668696eb1 serverTargetSeat=0 targetVisual=0 target=d8d43af9496d4f24a1bec5461922f944 ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Bloom Treant attacked Forge Automaton.
+seq=29 id=evt-000029 kind=card_damage serverSrcSeat=1 srcVisual=1 src=000ac327829e4ae8bb3a0df668696eb1 serverTargetSeat=0 targetVisual=0 target=d8d43af9496d4f24a1bec5461922f944 ability= effect=0 status=0 amount=3 hp=3->2 armor=2->0 message=Forge Automaton took 3 damage.
+seq=30 id=evt-000030 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=d8d43af9496d4f24a1bec5461922f944 serverTargetSeat=1 targetVisual=1 target=000ac327829e4ae8bb3a0df668696eb1 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Forge Automaton struck back at Bloom Treant.
+seq=31 id=evt-000031 kind=card_damage serverSrcSeat=0 srcVisual=0 src=d8d43af9496d4f24a1bec5461922f944 serverTargetSeat=1 targetVisual=1 target=000ac327829e4ae8bb3a0df668696eb1 ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Bloom Treant took 2 damage.
+seq=32 id=evt-000032 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=cc8b366990134ab7977edc98a7650bfa serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider is not ready to attack.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 1073462824.
+turn=1 Info: Iron Warforged entered Front.
+turn=1 Info: Gear Automaton entered Front.
+turn=2 Info: Thorn Howler entered Front.
+turn=2 Info: Bloom Treant entered BackLeft.
+turn=2 Info: Root Antler entered Front.
+turn=3 Info: Thorn Howler healed 0.
+turn=3 Info: Forge Automaton entered BackRight.
+turn=4 Info: ac632b7fff244307b618aaab7e9a33fd hit Root Antler for 3.
+turn=4 Info: Root Antler died.
+turn=4 Info: 9b3b6c8b25454e80a40db62f8605e770 hit Gear Automaton for 2.
+turn=4 Info: b5a09131be3e457199a9a670158ee2bf hit Bloom Treant for 2.
+turn=4 Info: 000ac327829e4ae8bb3a0df668696eb1 hit Iron Warforged for 3.
+turn=4 Info: Iron Warforged died.
+turn=4 Info: Moss Spider entered BackRight.
+turn=5 Info: Bloom Treant healed 2.
+turn=5 Info: Moss Spider healed 0.
+turn=5 Info: 31a5ac0154f14aa69964d3dad11189e3 hit Gear Automaton for 3.
+turn=5 Info: Gear Automaton died.
+turn=5 Info: ac632b7fff244307b618aaab7e9a33fd hit Thorn Howler for 3.
+turn=5 Info: 000ac327829e4ae8bb3a0df668696eb1 hit Forge Automaton for 3.
+turn=5 Info: d8d43af9496d4f24a1bec5461922f944 hit Bloom Treant for 2.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "bab597b3ca964cc98a0e4efa183691f2",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 5,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 1073462824,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "e7429b9a95dc4c4dbf9611a024c18c8e",
+                    "cardId": "alloy_0014",
+                    "displayName": "Gear Automaton",
+                    "manaCost": 3,
+                    "attack": 3,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_taunt_pulse",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"targetingModifier\": true}",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "a4d99f5224e44777ab45d5896da5e847",
+                    "cardId": "alloy_0037",
+                    "displayName": "Piston Reckoner",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "f1c0025f4f234427af61b684b379fa21",
+                    "cardId": "alloy_0029",
+                    "displayName": "Iron Turret",
+                    "manaCost": 2,
+                    "attack": 1,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_taunt_pulse",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"targetingModifier\": true}",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "d8d43af9496d4f24a1bec5461922f944",
+                        "cardId": "alloy_0026",
+                        "displayName": "Forge Automaton",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 3,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 18,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 17,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "31a5ac0154f14aa69964d3dad11189e3",
+                        "cardId": "grove_0013",
+                        "displayName": "Thorn Howler",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 1,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate_left",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate_left",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"left\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-left\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "000ac327829e4ae8bb3a0df668696eb1",
+                        "cardId": "grove_0025",
+                        "displayName": "Bloom Treant",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 2,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "cc8b366990134ab7977edc98a7650bfa",
+                        "cardId": "grove_0011",
+                        "displayName": "Moss Spider",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"self\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-self\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 18,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Gear Automaton entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Thorn Howler entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Bloom Treant entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Root Antler entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Thorn Howler healed 0."
+        },
+        {
+            "type": 0,
+            "message": "Forge Automaton entered BackRight."
+        },
+        {
+            "type": 0,
+            "message": "ac632b7fff244307b618aaab7e9a33fd hit Root Antler for 3."
+        },
+        {
+            "type": 0,
+            "message": "Root Antler died."
+        },
+        {
+            "type": 0,
+            "message": "9b3b6c8b25454e80a40db62f8605e770 hit Gear Automaton for 2."
+        },
+        {
+            "type": 0,
+            "message": "b5a09131be3e457199a9a670158ee2bf hit Bloom Treant for 2."
+        },
+        {
+            "type": 0,
+            "message": "000ac327829e4ae8bb3a0df668696eb1 hit Iron Warforged for 3."
+        },
+        {
+            "type": 0,
+            "message": "Iron Warforged died."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider entered BackRight."
+        },
+        {
+            "type": 0,
+            "message": "Bloom Treant healed 2."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "type": 0,
+            "message": "31a5ac0154f14aa69964d3dad11189e3 hit Gear Automaton for 3."
+        },
+        {
+            "type": 0,
+            "message": "Gear Automaton died."
+        },
+        {
+            "type": 0,
+            "message": "ac632b7fff244307b618aaab7e9a33fd hit Thorn Howler for 3."
+        },
+        {
+            "type": 0,
+            "message": "000ac327829e4ae8bb3a0df668696eb1 hit Forge Automaton for 3."
+        },
+        {
+            "type": 0,
+            "message": "d8d43af9496d4f24a1bec5461922f944 hit Bloom Treant for 2."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "ac632b7fff244307b618aaab7e9a33fd",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton is not ready to attack."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "b5a09131be3e457199a9a670158ee2bf",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged is not ready to attack."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "31a5ac0154f14aa69964d3dad11189e3",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Thorn Howler used Regenerate."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "31a5ac0154f14aa69964d3dad11189e3",
+            "targetRuntimeId": "31a5ac0154f14aa69964d3dad11189e3",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Thorn Howler healed 0."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "9b3b6c8b25454e80a40db62f8605e770",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Antler is not ready to attack."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "31a5ac0154f14aa69964d3dad11189e3",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Thorn Howler is not ready to attack."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "000ac327829e4ae8bb3a0df668696eb1",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant is not ready to attack."
+        },
+        {
+            "eventId": "evt-000008",
+            "sequence": 8,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "ac632b7fff244307b618aaab7e9a33fd",
+            "targetRuntimeId": "",
+            "abilityId": "taunt",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton used Taunt."
+        },
+        {
+            "eventId": "evt-000009",
+            "sequence": 9,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "ac632b7fff244307b618aaab7e9a33fd",
+            "targetRuntimeId": "9b3b6c8b25454e80a40db62f8605e770",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton attacked Root Antler."
+        },
+        {
+            "eventId": "evt-000010",
+            "sequence": 10,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "ac632b7fff244307b618aaab7e9a33fd",
+            "targetRuntimeId": "9b3b6c8b25454e80a40db62f8605e770",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Antler took 3 damage."
+        },
+        {
+            "eventId": "evt-000011",
+            "sequence": 11,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "9b3b6c8b25454e80a40db62f8605e770",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Antler died."
+        },
+        {
+            "eventId": "evt-000012",
+            "sequence": 12,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "9b3b6c8b25454e80a40db62f8605e770",
+            "targetRuntimeId": "ac632b7fff244307b618aaab7e9a33fd",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Antler struck back at Gear Automaton."
+        },
+        {
+            "eventId": "evt-000013",
+            "sequence": 13,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "9b3b6c8b25454e80a40db62f8605e770",
+            "targetRuntimeId": "ac632b7fff244307b618aaab7e9a33fd",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton took 2 damage."
+        },
+        {
+            "eventId": "evt-000014",
+            "sequence": 14,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "b5a09131be3e457199a9a670158ee2bf",
+            "targetRuntimeId": "000ac327829e4ae8bb3a0df668696eb1",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged attacked Bloom Treant."
+        },
+        {
+            "eventId": "evt-000015",
+            "sequence": 15,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "b5a09131be3e457199a9a670158ee2bf",
+            "targetRuntimeId": "000ac327829e4ae8bb3a0df668696eb1",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant took 2 damage."
+        },
+        {
+            "eventId": "evt-000016",
+            "sequence": 16,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "000ac327829e4ae8bb3a0df668696eb1",
+            "targetRuntimeId": "b5a09131be3e457199a9a670158ee2bf",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant struck back at Iron Warforged."
+        },
+        {
+            "eventId": "evt-000017",
+            "sequence": 17,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "000ac327829e4ae8bb3a0df668696eb1",
+            "targetRuntimeId": "b5a09131be3e457199a9a670158ee2bf",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged took 3 damage."
+        },
+        {
+            "eventId": "evt-000018",
+            "sequence": 18,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "b5a09131be3e457199a9a670158ee2bf",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged died."
+        },
+        {
+            "eventId": "evt-000019",
+            "sequence": 19,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "31a5ac0154f14aa69964d3dad11189e3",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Thorn Howler used Regenerate."
+        },
+        {
+            "eventId": "evt-000020",
+            "sequence": 20,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "000ac327829e4ae8bb3a0df668696eb1",
+            "targetRuntimeId": "000ac327829e4ae8bb3a0df668696eb1",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant healed 2."
+        },
+        {
+            "eventId": "evt-000021",
+            "sequence": 21,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "cc8b366990134ab7977edc98a7650bfa",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000022",
+            "sequence": 22,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "cc8b366990134ab7977edc98a7650bfa",
+            "targetRuntimeId": "cc8b366990134ab7977edc98a7650bfa",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000023",
+            "sequence": 23,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "31a5ac0154f14aa69964d3dad11189e3",
+            "targetRuntimeId": "ac632b7fff244307b618aaab7e9a33fd",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Thorn Howler attacked Gear Automaton."
+        },
+        {
+            "eventId": "evt-000024",
+            "sequence": 24,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "31a5ac0154f14aa69964d3dad11189e3",
+            "targetRuntimeId": "ac632b7fff244307b618aaab7e9a33fd",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton took 3 damage."
+        },
+        {
+            "eventId": "evt-000025",
+            "sequence": 25,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "ac632b7fff244307b618aaab7e9a33fd",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": -1,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton died."
+        },
+        {
+            "eventId": "evt-000026",
+            "sequence": 26,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "ac632b7fff244307b618aaab7e9a33fd",
+            "targetRuntimeId": "31a5ac0154f14aa69964d3dad11189e3",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton struck back at Thorn Howler."
+        },
+        {
+            "eventId": "evt-000027",
+            "sequence": 27,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "ac632b7fff244307b618aaab7e9a33fd",
+            "targetRuntimeId": "31a5ac0154f14aa69964d3dad11189e3",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Thorn Howler took 3 damage."
+        },
+        {
+            "eventId": "evt-000028",
+            "sequence": 28,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "000ac327829e4ae8bb3a0df668696eb1",
+            "targetRuntimeId": "d8d43af9496d4f24a1bec5461922f944",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant attacked Forge Automaton."
+        },
+        {
+            "eventId": "evt-000029",
+            "sequence": 29,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "000ac327829e4ae8bb3a0df668696eb1",
+            "targetRuntimeId": "d8d43af9496d4f24a1bec5461922f944",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 2,
+            "armorBefore": 2,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Forge Automaton took 3 damage."
+        },
+        {
+            "eventId": "evt-000030",
+            "sequence": 30,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "d8d43af9496d4f24a1bec5461922f944",
+            "targetRuntimeId": "000ac327829e4ae8bb3a0df668696eb1",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Forge Automaton struck back at Bloom Treant."
+        },
+        {
+            "eventId": "evt-000031",
+            "sequence": 31,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "d8d43af9496d4f24a1bec5461922f944",
+            "targetRuntimeId": "000ac327829e4ae8bb3a0df668696eb1",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant took 2 damage."
+        },
+        {
+            "eventId": "evt-000032",
+            "sequence": 32,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "cc8b366990134ab7977edc98a7650bfa",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider is not ready to attack."
+        }
+    ]
+}

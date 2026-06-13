@@ -1,0 +1,400 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-12T23:11:44.3783833Z
+LastUpdatedUtc: 2026-06-12T23:11:55.8218296Z
+MatchId: 1557a55f4543490ba9d3b081eecaa1a3
+CurrentTurn: 2
+ActivePlayerIndex: 1
+ActivePlayerId: user-2
+IsLocalPlayersTurn: False
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 1001507267.
+002. seq=-1 /Info: Iron Turret entered Front.
+003. seq=-1 /Info: Gear Automaton entered Front.
+004. seq=1 Gear Automaton#9ce1910a skipped. Gear Automaton is not ready to attack.
+005. seq=2 Iron Turret#15a6a650 skipped. Iron Turret is not ready to attack.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-12T23:11:44.3794597Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-12T23:11:47.7418093Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 1001507267.
+-- Step 3 | UTC 2026-06-12T23:11:53.9127525Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Turret#15a6a650 hp=3/3 armor=3 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Iron Turret entered Front.
+-- Step 4 | UTC 2026-06-12T23:11:54.7473029Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=15/20 board=[Front:Gear Automaton#9ce1910a hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Iron Turret#15a6a650 hp=3/3 armor=3 unitType=0 delivery=melee, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Gear Automaton entered Front.
+-- Step 5 | UTC 2026-06-12T23:11:55.8038277Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=15/20 board=[Front:Gear Automaton#9ce1910a hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Iron Turret#15a6a650 hp=3/3 armor=3 unitType=0 delivery=melee, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=1 Gear Automaton#9ce1910a skipped. Gear Automaton is not ready to attack.
+   - seq=2 Iron Turret#15a6a650 skipped. Iron Turret is not ready to attack.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=9ce1910a53fb4705b4204b3375f470ec serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Automaton is not ready to attack.
+seq=2 id=evt-000002 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=15a6a650a0c847f0975ce903f2eb153d serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Turret is not ready to attack.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 1001507267.
+turn=1 Info: Iron Turret entered Front.
+turn=1 Info: Gear Automaton entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "1557a55f4543490ba9d3b081eecaa1a3",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 1,
+    "activePlayerId": "user-2",
+    "isLocalPlayersTurn": false,
+    "turnNumber": 2,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 1001507267,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Opponent's turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 15,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "6460ce859d4f4c8b8bc76c27930b9ad8",
+                    "cardId": "alloy_0014",
+                    "displayName": "Gear Automaton",
+                    "manaCost": 3,
+                    "attack": 3,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_taunt_pulse",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"targetingModifier\": true}",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "8047f65721604f3faf597a55e73fb864",
+                    "cardId": "alloy_0028",
+                    "displayName": "Chrome Vanguard",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": []
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "9ce1910a53fb4705b4204b3375f470ec",
+                        "cardId": "alloy_0014",
+                        "displayName": "Gear Automaton",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_taunt_pulse",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"targetingModifier\": true}",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "15a6a650a0c847f0975ce903f2eb153d",
+                        "cardId": "alloy_0029",
+                        "displayName": "Iron Turret",
+                        "manaCost": 2,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 3,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_taunt_pulse",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"targetingModifier\": true}",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 19,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 1001507267."
+        },
+        {
+            "type": 0,
+            "message": "Iron Turret entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Gear Automaton entered Front."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "9ce1910a53fb4705b4204b3375f470ec",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton is not ready to attack."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "15a6a650a0c847f0975ce903f2eb153d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Turret is not ready to attack."
+        }
+    ]
+}

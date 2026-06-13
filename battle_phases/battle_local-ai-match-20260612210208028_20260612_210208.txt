@@ -1,0 +1,654 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-12T21:02:08.6097648Z
+LastUpdatedUtc: 2026-06-12T21:05:59.9658021Z
+MatchId: local-ai-match-20260612210208028
+CurrentTurn: 6
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset:  ()
+
+Human Timeline
+001. seq=-1 /Info: Wild Boar entered Front.
+002. seq=-1 /Info: Root Treant entered BackLeft.
+003. seq=-1 /Info: Wild Boar moved to BackLeft, Root Treant moved to BackRight (replacement chain).
+004. seq=-1 /Info: Vine Spider entered Front.
+005. seq=-1 /Info: Player 1 ended turn.
+006. seq=-1 P1 P1 hits hero P0 for 2. HP 20->18. Direct attack to Player 0 Hero: 2 damage dealt. 20→18HP
+007. seq=-1 P1 P1 hits hero P0 for 2. HP 18->16. Direct attack to Player 0 Hero: 2 damage dealt. 18→16HP
+008. seq=-1 P1 P1 hits hero P0 for 2. HP 16->14. Direct attack to Player 0 Hero: 2 damage dealt. 16→14HP
+009. seq=-1 /Info: Player 0 drew a card. Deck: 19 remaining.
+010. seq=-1 /Info: Forge Automaton entered Front.
+011. seq=-1 /Info: Forge Automaton moved to BackLeft (replacement).
+012. seq=-1 /Info: Chrome Vanguard entered Front.
+013. seq=-1 /Info: Chrome Vanguard moved to BackLeft, Forge Automaton moved to BackRight (replacement chain).
+014. seq=-1 /Info: Player 0 ended turn.
+015. seq=-1 P0 Forge Automaton#none attacks Vine Spider#none for 2. HP 3->1, Armor 0->0. [P0] Forge Automaton (ATK 2) → [P1] Vine Spider: 3→1HP
+016. seq=-1 P0 Chrome Vanguard#none attacks Wild Boar#none for 2. HP 4->2, Armor 0->0. [P0] Chrome Vanguard (ATK 2) → [P1] Wild Boar: 4→2HP
+017. seq=-1 P0 Forge Automaton#none attacks Root Treant#none for 2. HP 4->2, Armor 0->0. [P0] Forge Automaton (ATK 2) → [P1] Root Treant: 4→2HP
+018. seq=-1 /Info: Player 1 drew a card. Deck: 19 remaining.
+019. seq=-1 /StatusDamage: Vine Spider took 2 poison damage.
+020. seq=-1 /StatusDamage: Wild Boar took 2 poison damage.
+021. seq=-1 /StatusDamage: Root Treant took 2 poison damage.
+022. seq=-1 Vine Spider#none dies. Vine Spider died.
+023. seq=-1 Wild Boar#none dies. Wild Boar died.
+024. seq=-1 Root Treant#none dies. Root Treant died.
+025. seq=-1 /Info: Root Antler entered Front.
+026. seq=-1 /Info: Root Antler moved to BackLeft (replacement).
+027. seq=-1 /Info: Moss Witch entered Front.
+028. seq=-1 P1 Moss Witch#none attacks Forge Automaton#none for 2. HP 3->3, Armor 0->0. [P1] Moss Witch (ATK 2) → [P0] Forge Automaton: 3→3HP (Armor blocked 2)
+029. seq=-1 P1 Root Antler#none attacks Forge Automaton#none for 2. HP 3->1, Armor 0->0. [P1] Root Antler (ATK 2) → [P0] Forge Automaton: 3→1HP
+030. seq=-1 /Info: Player 0 drew a card. Deck: 18 remaining.
+031. seq=-1 /StatusDamage: Forge Automaton took 4 poison damage.
+032. seq=-1 Forge Automaton#none dies. Forge Automaton died.
+033. seq=-1 P0 Chrome Vanguard#none attacks Moss Witch#none for 2. HP 3->1, Armor 0->0. [P0] Chrome Vanguard (ATK 2) → [P1] Moss Witch: 3→1HP
+034. seq=-1 P0 Forge Automaton#none attacks Root Antler#none for 2. HP 3->1, Armor 0->0. [P0] Forge Automaton (ATK 2) → [P1] Root Antler: 3→1HP
+035. seq=-1 /Info: Player 1 drew a card. Deck: 18 remaining.
+036. seq=-1 /StatusDamage: Moss Witch took 2 poison damage.
+037. seq=-1 /StatusDamage: Root Antler took 2 poison damage.
+038. seq=-1 Moss Witch#none dies. Moss Witch died.
+039. seq=-1 Root Antler#none dies. Root Antler died.
+040. seq=-1 /Info: Briar Spider entered BackRight.
+041. seq=-1 P1 Briar Spider#none attacks Chrome Vanguard#none for 2. HP 3->1, Armor 0->0. [P1] Briar Spider (ATK 2) → [P0] Chrome Vanguard: 3→1HP
+042. seq=-1 /Info: Player 0 drew a card. Deck: 17 remaining.
+043. seq=-1 /StatusDamage: Chrome Vanguard took 2 poison damage.
+044. seq=-1 Chrome Vanguard#none dies. Chrome Vanguard died.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-12T21:02:08.6108681Z | Turn 1 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20
+   Events: none
+-- Step 2 | UTC 2026-06-12T21:02:08.8350284Z | Turn 1 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Wild Boar#010d8fdf hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=20
+   - seq=-1 /Info: Wild Boar entered Front.
+-- Step 3 | UTC 2026-06-12T21:02:09.1819311Z | Turn 1 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=14/20 board=[Front:Wild Boar#010d8fdf hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#7c8576be hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=20
+   - seq=-1 /Info: Root Treant entered BackLeft.
+-- Step 4 | UTC 2026-06-12T21:02:09.5324973Z | Turn 1 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Vine Spider#6d945f3e hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Wild Boar#010d8fdf hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Root Treant#7c8576be hp=4/4 armor=0 unitType=1 delivery=projectile] hand=1 deck=20
+   - seq=-1 /Info: Wild Boar moved to BackLeft, Root Treant moved to BackRight (replacement chain).
+   - seq=-1 /Info: Vine Spider entered Front.
+-- Step 5 | UTC 2026-06-12T21:02:09.8878790Z | Turn 2 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=14 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=5 deck=19 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Vine Spider#6d945f3e hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Wild Boar#010d8fdf hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Root Treant#7c8576be hp=4/4 armor=0 unitType=1 delivery=projectile] hand=1 deck=20
+   - seq=-1 /Info: Player 1 ended turn.
+   - seq=-1 P1 P1 hits hero P0 for 2. HP 20->18. Direct attack to Player 0 Hero: 2 damage dealt. 20→18HP
+   - seq=-1 P1 P1 hits hero P0 for 2. HP 18->16. Direct attack to Player 0 Hero: 2 damage dealt. 18→16HP
+   - seq=-1 P1 P1 hits hero P0 for 2. HP 16->14. Direct attack to Player 0 Hero: 2 damage dealt. 16→14HP
+   - seq=-1 /Info: Player 0 drew a card. Deck: 19 remaining.
+-- Step 6 | UTC 2026-06-12T21:04:10.0105692Z | Turn 2 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=14 mana=18/20 board=[Front:Forge Automaton#b771b689 hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=19 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Vine Spider#6d945f3e hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Wild Boar#010d8fdf hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Root Treant#7c8576be hp=4/4 armor=0 unitType=1 delivery=projectile] hand=1 deck=20
+   - seq=-1 /Info: Forge Automaton entered Front.
+-- Step 7 | UTC 2026-06-12T21:04:16.9835869Z | Turn 2 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=14 mana=16/20 board=[Front:Chrome Vanguard#01edd320 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Forge Automaton#b771b689 hp=3/3 armor=2 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=19 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Vine Spider#6d945f3e hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Wild Boar#010d8fdf hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Root Treant#7c8576be hp=4/4 armor=0 unitType=1 delivery=projectile] hand=1 deck=20
+   - seq=-1 /Info: Forge Automaton moved to BackLeft (replacement).
+   - seq=-1 /Info: Chrome Vanguard entered Front.
+-- Step 8 | UTC 2026-06-12T21:04:21.5875718Z | Turn 2 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=14 mana=14/20 board=[Front:Forge Automaton#0201b4a7 hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:Chrome Vanguard#01edd320 hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:Forge Automaton#b771b689 hp=3/3 armor=2 unitType=1 delivery=projectile] hand=2 deck=19 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Vine Spider#6d945f3e hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Wild Boar#010d8fdf hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Root Treant#7c8576be hp=4/4 armor=0 unitType=1 delivery=projectile] hand=1 deck=20
+   - seq=-1 /Info: Chrome Vanguard moved to BackLeft, Forge Automaton moved to BackRight (replacement chain).
+-- Step 9 | UTC 2026-06-12T21:05:19.1555025Z | Turn 3 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=14/20 board=[Front:Forge Automaton#0201b4a7 hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:Chrome Vanguard#01edd320 hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:Forge Automaton#b771b689 hp=3/3 armor=2 unitType=1 delivery=projectile] hand=2 deck=19 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=2 deck=19
+   - seq=-1 /Info: Player 0 ended turn.
+   - seq=-1 P0 Forge Automaton#none attacks Vine Spider#none for 2. HP 3->1, Armor 0->0. [P0] Forge Automaton (ATK 2) → [P1] Vine Spider: 3→1HP
+   - seq=-1 P0 Chrome Vanguard#none attacks Wild Boar#none for 2. HP 4->2, Armor 0->0. [P0] Chrome Vanguard (ATK 2) → [P1] Wild Boar: 4→2HP
+   - seq=-1 P0 Forge Automaton#none attacks Root Treant#none for 2. HP 4->2, Armor 0->0. [P0] Forge Automaton (ATK 2) → [P1] Root Treant: 4→2HP
+   - seq=-1 /Info: Player 1 drew a card. Deck: 19 remaining.
+   - seq=-1 /StatusDamage: Vine Spider took 2 poison damage.
+   - seq=-1 /StatusDamage: Wild Boar took 2 poison damage.
+   - seq=-1 /StatusDamage: Root Treant took 2 poison damage.
+   - seq=-1 Vine Spider#none dies. Vine Spider died.
+   - seq=-1 Wild Boar#none dies. Wild Boar died.
+   - seq=-1 Root Treant#none dies. Root Treant died.
+-- Step 10 | UTC 2026-06-12T21:05:25.8009345Z | Turn 3 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=14/20 board=[Front:Forge Automaton#0201b4a7 hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:Chrome Vanguard#01edd320 hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:Forge Automaton#b771b689 hp=3/3 armor=2 unitType=1 delivery=projectile] hand=2 deck=19 | P1 id=user-2 hp=20 mana=18/20 board=[Front:Root Antler#955c6538 hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=1 deck=19
+   - seq=-1 /Info: Root Antler entered Front.
+-- Step 11 | UTC 2026-06-12T21:05:25.8241415Z | Turn 3 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=14/20 board=[Front:Forge Automaton#0201b4a7 hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:Chrome Vanguard#01edd320 hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:Forge Automaton#b771b689 hp=3/3 armor=2 unitType=1 delivery=projectile] hand=2 deck=19 | P1 id=user-2 hp=20 mana=16/20 board=[Front:Moss Witch#75b4b6b7 hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Root Antler#955c6538 hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Root Antler moved to BackLeft (replacement).
+   - seq=-1 /Info: Moss Witch entered Front.
+-- Step 12 | UTC 2026-06-12T21:05:25.8490516Z | Turn 4 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Chrome Vanguard#01edd320 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Forge Automaton#b771b689 hp=3/3 armor=2 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=18 | P1 id=user-2 hp=24 mana=16/20 board=[Front:Moss Witch#75b4b6b7 hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Root Antler#955c6538 hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=0 deck=19
+   - seq=-1 P1 Moss Witch#none attacks Forge Automaton#none for 2. HP 3->3, Armor 0->0. [P1] Moss Witch (ATK 2) → [P0] Forge Automaton: 3→3HP (Armor blocked 2)
+   - seq=-1 P1 Root Antler#none attacks Forge Automaton#none for 2. HP 3->1, Armor 0->0. [P1] Root Antler (ATK 2) → [P0] Forge Automaton: 3→1HP
+   - seq=-1 /Info: Player 0 drew a card. Deck: 18 remaining.
+   - seq=-1 /StatusDamage: Forge Automaton took 4 poison damage.
+   - seq=-1 Forge Automaton#none dies. Forge Automaton died.
+-- Step 13 | UTC 2026-06-12T21:05:55.5142467Z | Turn 5 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=24 mana=20/20 board=[Front:Chrome Vanguard#01edd320 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Forge Automaton#b771b689 hp=3/3 armor=2 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=18 | P1 id=user-2 hp=24 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=1 deck=18
+   - seq=-1 P0 Chrome Vanguard#none attacks Moss Witch#none for 2. HP 3->1, Armor 0->0. [P0] Chrome Vanguard (ATK 2) → [P1] Moss Witch: 3→1HP
+   - seq=-1 P0 Forge Automaton#none attacks Root Antler#none for 2. HP 3->1, Armor 0->0. [P0] Forge Automaton (ATK 2) → [P1] Root Antler: 3→1HP
+   - seq=-1 /Info: Player 1 drew a card. Deck: 18 remaining.
+   - seq=-1 /StatusDamage: Moss Witch took 2 poison damage.
+   - seq=-1 /StatusDamage: Root Antler took 2 poison damage.
+   - seq=-1 Moss Witch#none dies. Moss Witch died.
+   - seq=-1 Root Antler#none dies. Root Antler died.
+-- Step 14 | UTC 2026-06-12T21:05:59.9374696Z | Turn 5 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=24 mana=20/20 board=[Front:Chrome Vanguard#01edd320 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Forge Automaton#b771b689 hp=3/3 armor=2 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=18 | P1 id=user-2 hp=24 mana=18/20 board=[Front:empty, BackLeft:empty, BackRight:Briar Spider#c97565c4 hp=2/2 armor=1 unitType=1 delivery=projectile] hand=0 deck=18
+   - seq=-1 /Info: Briar Spider entered BackRight.
+-- Step 15 | UTC 2026-06-12T21:05:59.9658021Z | Turn 6 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=24 mana=20/20 board=[Front:Forge Automaton#b771b689 hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=17 | P1 id=user-2 hp=26 mana=18/20 board=[Front:Briar Spider#c97565c4 hp=2/2 armor=1 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=0 deck=18
+   - seq=-1 P1 Briar Spider#none attacks Chrome Vanguard#none for 2. HP 3->1, Armor 0->0. [P1] Briar Spider (ATK 2) → [P0] Chrome Vanguard: 3→1HP
+   - seq=-1 /Info: Player 0 drew a card. Deck: 17 remaining.
+   - seq=-1 /StatusDamage: Chrome Vanguard took 2 poison damage.
+   - seq=-1 Chrome Vanguard#none dies. Chrome Vanguard died.
+
+Raw Structured Battle Events Seen By Unity
+
+Raw Logs Seen By Unity
+turn=1 Summon: Wild Boar entered Front.
+turn=1 Summon: Root Treant entered BackLeft.
+turn=1 Info: Wild Boar moved to BackLeft, Root Treant moved to BackRight (replacement chain).
+turn=1 Summon: Vine Spider entered Front.
+turn=2 Turn: Player 1 ended turn.
+turn=2 Attack: Direct attack to Player 0 Hero: 2 damage dealt. 20→18HP
+turn=2 Attack: Direct attack to Player 0 Hero: 2 damage dealt. 18→16HP
+turn=2 Attack: Direct attack to Player 0 Hero: 2 damage dealt. 16→14HP
+turn=2 Info: Player 0 drew a card. Deck: 19 remaining.
+turn=2 Summon: Forge Automaton entered Front.
+turn=2 Info: Forge Automaton moved to BackLeft (replacement).
+turn=2 Summon: Chrome Vanguard entered Front.
+turn=2 Info: Chrome Vanguard moved to BackLeft, Forge Automaton moved to BackRight (replacement chain).
+turn=3 Turn: Player 0 ended turn.
+turn=3 Attack: [P0] Forge Automaton (ATK 2) → [P1] Vine Spider: 3→1HP
+turn=3 Attack: [P0] Chrome Vanguard (ATK 2) → [P1] Wild Boar: 4→2HP
+turn=3 Attack: [P0] Forge Automaton (ATK 2) → [P1] Root Treant: 4→2HP
+turn=3 Info: Player 1 drew a card. Deck: 19 remaining.
+turn=3 Attack: Vine Spider took 2 poison damage.
+turn=3 Attack: Wild Boar took 2 poison damage.
+turn=3 Attack: Root Treant took 2 poison damage.
+turn=3 Death: Vine Spider died.
+turn=3 Death: Wild Boar died.
+turn=3 Death: Root Treant died.
+turn=3 Summon: Root Antler entered Front.
+turn=3 Info: Root Antler moved to BackLeft (replacement).
+turn=3 Summon: Moss Witch entered Front.
+turn=4 Attack: [P1] Moss Witch (ATK 2) → [P0] Forge Automaton: 3→3HP (Armor blocked 2)
+turn=4 Attack: [P1] Root Antler (ATK 2) → [P0] Forge Automaton: 3→1HP
+turn=4 Info: Player 0 drew a card. Deck: 18 remaining.
+turn=4 Attack: Forge Automaton took 4 poison damage.
+turn=4 Death: Forge Automaton died.
+turn=5 Attack: [P0] Chrome Vanguard (ATK 2) → [P1] Moss Witch: 3→1HP
+turn=5 Attack: [P0] Forge Automaton (ATK 2) → [P1] Root Antler: 3→1HP
+turn=5 Info: Player 1 drew a card. Deck: 18 remaining.
+turn=5 Attack: Moss Witch took 2 poison damage.
+turn=5 Attack: Root Antler took 2 poison damage.
+turn=5 Death: Moss Witch died.
+turn=5 Death: Root Antler died.
+turn=5 Summon: Briar Spider entered BackRight.
+turn=6 Attack: [P1] Briar Spider (ATK 2) → [P0] Chrome Vanguard: 3→1HP
+turn=6 Info: Player 0 drew a card. Deck: 17 remaining.
+turn=6 Attack: Chrome Vanguard took 2 poison damage.
+turn=6 Death: Chrome Vanguard died.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "local-ai-match-20260612210208028",
+    "rulesetId": "",
+    "rulesetName": "",
+    "rules": {
+        "rulesetId": "",
+        "rulesetKey": "",
+        "displayName": "",
+        "description": "",
+        "isActive": false,
+        "isDefault": false,
+        "startingHeroHealth": 0,
+        "maxHeroHealth": 0,
+        "startingMana": 0,
+        "maxMana": 0,
+        "manaGrantedPerTurn": 0,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 0,
+        "cardsDrawnOnTurnStart": 0,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 6,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 0,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 24,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "42b004b2cd784a1c8fcfd072b8fe7d2f",
+                    "cardId": "alloy_0025",
+                    "displayName": "Steel Construct",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "55357f1b0c1141cb936a98705f78a7ce",
+                    "cardId": "alloy_0035",
+                    "displayName": "Iron Warforged",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "e037b5028dbb41058823ece528815714",
+                    "cardId": "alloy_0029",
+                    "displayName": "Iron Turret",
+                    "manaCost": 2,
+                    "attack": 1,
+                    "health": 3,
+                    "armor": 3,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "taunt",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "ddeb5ae0e77942d584d54561bbc27208",
+                    "cardId": "alloy_0029",
+                    "displayName": "Iron Turret",
+                    "manaCost": 2,
+                    "attack": 1,
+                    "health": 3,
+                    "armor": 3,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "taunt",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "b771b689f1a245c2b04df5482ab06702",
+                        "cardId": "alloy_0026",
+                        "displayName": "Forge Automaton",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 2,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 17,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 26,
+            "mana": 18,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "c97565c4ba124e1db483f7a8b9f66b70",
+                        "cardId": "grove_0032",
+                        "displayName": "Briar Spider",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 1,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "poison",
+                                "displayName": "Poison",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "poison",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 18,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 19 remaining."
+        },
+        {
+            "type": 3,
+            "message": "Forge Automaton entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Forge Automaton moved to BackLeft (replacement)."
+        },
+        {
+            "type": 3,
+            "message": "Chrome Vanguard entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Chrome Vanguard moved to BackLeft, Forge Automaton moved to BackRight (replacement chain)."
+        },
+        {
+            "type": 3,
+            "message": "Forge Automaton entered Front."
+        },
+        {
+            "type": 5,
+            "message": "Player 0 ended turn."
+        },
+        {
+            "type": 1,
+            "message": "[P0] Forge Automaton (ATK 2) → [P1] Vine Spider: 3→1HP"
+        },
+        {
+            "type": 1,
+            "message": "[P0] Chrome Vanguard (ATK 2) → [P1] Wild Boar: 4→2HP"
+        },
+        {
+            "type": 1,
+            "message": "[P0] Forge Automaton (ATK 2) → [P1] Root Treant: 4→2HP"
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 19 remaining."
+        },
+        {
+            "type": 1,
+            "message": "Vine Spider took 2 poison damage."
+        },
+        {
+            "type": 1,
+            "message": "Wild Boar took 2 poison damage."
+        },
+        {
+            "type": 1,
+            "message": "Root Treant took 2 poison damage."
+        },
+        {
+            "type": 4,
+            "message": "Vine Spider died."
+        },
+        {
+            "type": 4,
+            "message": "Wild Boar died."
+        },
+        {
+            "type": 4,
+            "message": "Root Treant died."
+        },
+        {
+            "type": 3,
+            "message": "Root Antler entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Root Antler moved to BackLeft (replacement)."
+        },
+        {
+            "type": 3,
+            "message": "Moss Witch entered Front."
+        },
+        {
+            "type": 5,
+            "message": "Player 1 ended turn."
+        },
+        {
+            "type": 1,
+            "message": "[P1] Moss Witch (ATK 2) → [P0] Forge Automaton: 3→3HP (Armor blocked 2)"
+        },
+        {
+            "type": 1,
+            "message": "[P1] Root Antler (ATK 2) → [P0] Forge Automaton: 3→1HP"
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 18 remaining."
+        },
+        {
+            "type": 1,
+            "message": "Forge Automaton took 4 poison damage."
+        },
+        {
+            "type": 4,
+            "message": "Forge Automaton died."
+        },
+        {
+            "type": 5,
+            "message": "Player 0 ended turn."
+        },
+        {
+            "type": 1,
+            "message": "[P0] Chrome Vanguard (ATK 2) → [P1] Moss Witch: 3→1HP"
+        },
+        {
+            "type": 1,
+            "message": "[P0] Forge Automaton (ATK 2) → [P1] Root Antler: 3→1HP"
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 18 remaining."
+        },
+        {
+            "type": 1,
+            "message": "Moss Witch took 2 poison damage."
+        },
+        {
+            "type": 1,
+            "message": "Root Antler took 2 poison damage."
+        },
+        {
+            "type": 4,
+            "message": "Moss Witch died."
+        },
+        {
+            "type": 4,
+            "message": "Root Antler died."
+        },
+        {
+            "type": 3,
+            "message": "Briar Spider entered BackRight."
+        },
+        {
+            "type": 5,
+            "message": "Player 1 ended turn."
+        },
+        {
+            "type": 1,
+            "message": "[P1] Briar Spider (ATK 2) → [P0] Chrome Vanguard: 3→1HP"
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 17 remaining."
+        },
+        {
+            "type": 1,
+            "message": "Chrome Vanguard took 2 poison damage."
+        },
+        {
+            "type": 4,
+            "message": "Chrome Vanguard died."
+        }
+    ],
+    "battleEvents": []
+}

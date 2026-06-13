@@ -1,0 +1,345 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T01:03:25.6192756Z
+LastUpdatedUtc: 2026-06-13T01:04:25.7708023Z
+MatchId: 386b9227f50946349c5d75b699ad7ed5
+CurrentTurn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 1448854561.
+002. seq=-1 /Info: Brass Warforged entered Front.
+003. seq=-1 /Info: Iron Warforged entered Front.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T01:03:25.6202797Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T01:03:25.9248770Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 1448854561.
+-- Step 3 | UTC 2026-06-13T01:04:01.4223430Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Brass Warforged#05be0fb4 hp=3/3 armor=1 unitType=2 delivery=beam, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Brass Warforged entered Front.
+-- Step 4 | UTC 2026-06-13T01:04:23.0443356Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Iron Warforged#339a6368 hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:Brass Warforged#05be0fb4 hp=3/3 armor=1 unitType=2 delivery=beam, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Iron Warforged entered Front.
+
+Raw Structured Battle Events Seen By Unity
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 1448854561.
+turn=1 Info: Brass Warforged entered Front.
+turn=1 Info: Iron Warforged entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "386b9227f50946349c5d75b699ad7ed5",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 1,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 1448854561,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 14,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "06df48941d51483fadb280ecdfe1f003",
+                    "cardId": "alloy_0036",
+                    "displayName": "Cog Golem",
+                    "manaCost": 1,
+                    "attack": 1,
+                    "health": 2,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "9fba6bec03ac409c995afb0dc82d6a9b",
+                        "cardId": "alloy_0031",
+                        "displayName": "Brass Warforged",
+                        "manaCost": 2,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 1,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "last_stand",
+                                "displayName": "Last Stand",
+                                "iconAssetRef": "",
+                                "skillType": 0,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_last_stand",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 0,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"last-stand\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "339a6368ae26473d800d508932eab582",
+                        "cardId": "alloy_0035",
+                        "displayName": "Iron Warforged",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "05be0fb49c87424b924d6c9011dcd03b",
+                        "cardId": "alloy_0031",
+                        "displayName": "Brass Warforged",
+                        "manaCost": 2,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 1,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "last_stand",
+                                "displayName": "Last Stand",
+                                "iconAssetRef": "",
+                                "skillType": 0,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_last_stand",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 0,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"last-stand\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 1448854561."
+        },
+        {
+            "type": 0,
+            "message": "Brass Warforged entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Iron Warforged entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Brass Warforged entered Front."
+        }
+    ],
+    "battleEvents": []
+}

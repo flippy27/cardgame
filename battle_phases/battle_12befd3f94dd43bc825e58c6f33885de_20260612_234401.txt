@@ -1,0 +1,683 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-12T23:44:01.6205519Z
+LastUpdatedUtc: 2026-06-12T23:44:11.0420587Z
+MatchId: 12befd3f94dd43bc825e58c6f33885de
+CurrentTurn: 3
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 435811345.
+002. seq=1 skill_begin/SkillBegin: Gear Vanguard used Armor.
+003. seq=2 Gear Vanguard#53c40570 gains armor 3. Armor 2->5. Gear Vanguard gained 3 armor.
+004. seq=-1 /Info: Chrome Vanguard entered Front.
+005. seq=-1 /Info: Iron Turret entered BackRight.
+006. seq=3 Chrome Vanguard#3df8c0d5 skipped. Chrome Vanguard is not ready to attack.
+007. seq=4 Gear Vanguard#53c40570 skipped. Gear Vanguard is not ready to attack.
+008. seq=5 Iron Turret#28480b17 skipped. Iron Turret is not ready to attack.
+009. seq=-1 /Info: Wild Boar entered Front.
+010. seq=-1 /Info: Briar Spider entered BackLeft.
+011. seq=6 Wild Boar#0c38c414 skipped. Wild Boar is not ready to attack.
+012. seq=7 Briar Spider#68c990e1 skipped. Briar Spider is not ready to attack.
+013. seq=8 Wild Boar#8036bca0 skipped. Wild Boar is not ready to attack.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-12T23:44:01.6215576Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-12T23:44:01.9052715Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 435811345.
+-- Step 3 | UTC 2026-06-12T23:44:03.7408947Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Gear Vanguard#53c40570 hp=3/3 armor=5 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=1 skill_begin/SkillBegin: Gear Vanguard used Armor.
+   - seq=2 Gear Vanguard#53c40570 gains armor 3. Armor 2->5. Gear Vanguard gained 3 armor.
+-- Step 4 | UTC 2026-06-12T23:44:05.5963765Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Chrome Vanguard#3df8c0d5 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Gear Vanguard#53c40570 hp=3/3 armor=5 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Chrome Vanguard entered Front.
+-- Step 5 | UTC 2026-06-12T23:44:07.5036155Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=14/20 board=[Front:Chrome Vanguard#3df8c0d5 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Gear Vanguard#53c40570 hp=3/3 armor=5 unitType=1 delivery=projectile, BackRight:Iron Turret#28480b17 hp=3/3 armor=3 unitType=0 delivery=melee] hand=1 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Iron Turret entered BackRight.
+-- Step 6 | UTC 2026-06-12T23:44:08.9858486Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=14/20 board=[Front:Chrome Vanguard#3df8c0d5 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Gear Vanguard#53c40570 hp=3/3 armor=5 unitType=1 delivery=projectile, BackRight:Iron Turret#28480b17 hp=3/3 armor=3 unitType=0 delivery=melee] hand=1 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=3 Chrome Vanguard#3df8c0d5 skipped. Chrome Vanguard is not ready to attack.
+   - seq=4 Gear Vanguard#53c40570 skipped. Gear Vanguard is not ready to attack.
+   - seq=5 Iron Turret#28480b17 skipped. Iron Turret is not ready to attack.
+-- Step 7 | UTC 2026-06-12T23:44:09.6357399Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=14/20 board=[Front:Chrome Vanguard#3df8c0d5 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Gear Vanguard#53c40570 hp=3/3 armor=5 unitType=1 delivery=projectile, BackRight:Iron Turret#28480b17 hp=3/3 armor=3 unitType=0 delivery=melee] hand=1 deck=20 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Wild Boar#8036bca0 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Wild Boar entered Front.
+-- Step 8 | UTC 2026-06-12T23:44:10.5763991Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=14/20 board=[Front:Chrome Vanguard#3df8c0d5 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Gear Vanguard#53c40570 hp=3/3 armor=5 unitType=1 delivery=projectile, BackRight:Iron Turret#28480b17 hp=3/3 armor=3 unitType=0 delivery=melee] hand=1 deck=20 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Wild Boar#0c38c414 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Briar Spider#68c990e1 hp=2/2 armor=1 unitType=1 delivery=projectile, BackRight:Wild Boar#8036bca0 hp=4/4 armor=0 unitType=0 delivery=melee] hand=0 deck=19
+   - seq=-1 /Info: Briar Spider entered BackLeft.
+-- Step 9 | UTC 2026-06-12T23:44:11.0420587Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Chrome Vanguard#3df8c0d5 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Gear Vanguard#53c40570 hp=3/3 armor=5 unitType=1 delivery=projectile, BackRight:Iron Turret#28480b17 hp=3/3 armor=3 unitType=0 delivery=melee] hand=2 deck=19 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Wild Boar#0c38c414 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Briar Spider#68c990e1 hp=2/2 armor=1 unitType=1 delivery=projectile, BackRight:Wild Boar#8036bca0 hp=4/4 armor=0 unitType=0 delivery=melee] hand=0 deck=19
+   - seq=6 Wild Boar#0c38c414 skipped. Wild Boar is not ready to attack.
+   - seq=7 Briar Spider#68c990e1 skipped. Briar Spider is not ready to attack.
+   - seq=8 Wild Boar#8036bca0 skipped. Wild Boar is not ready to attack.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=53c4057082764b40bce2214a852bf295 serverTargetSeat=0 targetVisual=-1 target= ability=armor effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Vanguard used Armor.
+seq=2 id=evt-000002 kind=armor_gain serverSrcSeat=0 srcVisual=0 src=53c4057082764b40bce2214a852bf295 serverTargetSeat=0 targetVisual=0 target=53c4057082764b40bce2214a852bf295 ability=armor effect=2 status=0 amount=3 hp=3->3 armor=2->5 message=Gear Vanguard gained 3 armor.
+seq=3 id=evt-000003 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=3df8c0d5565d4f7d81e59d7852e6f955 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Chrome Vanguard is not ready to attack.
+seq=4 id=evt-000004 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=53c4057082764b40bce2214a852bf295 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Vanguard is not ready to attack.
+seq=5 id=evt-000005 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=28480b17392d46e38e4d61dce6358a4a serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Turret is not ready to attack.
+seq=6 id=evt-000006 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=0c38c41498c34f9e9e0c4916c744180b serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar is not ready to attack.
+seq=7 id=evt-000007 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=68c990e1d3634df180a267c4965a457b serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Briar Spider is not ready to attack.
+seq=8 id=evt-000008 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=8036bca0495d41c6a12eba4e70e3bc01 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar is not ready to attack.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 435811345.
+turn=1 Info: Gear Vanguard entered Front.
+turn=1 Info: Chrome Vanguard entered Front.
+turn=1 Info: Iron Turret entered BackRight.
+turn=2 Info: Wild Boar entered Front.
+turn=2 Info: Briar Spider entered BackLeft.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "12befd3f94dd43bc825e58c6f33885de",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 3,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 435811345,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "54ca225d69d749ee9793d881101edc43",
+                    "cardId": "alloy_0016",
+                    "displayName": "Plated Sentinel",
+                    "manaCost": 3,
+                    "attack": 3,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "cleave",
+                            "displayName": "Cleave",
+                            "iconAssetRef": "",
+                            "skillType": 4,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_cleave",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"normalAttackModifier\": true}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 0,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"note\": \"usesAttackerAttack\", \"animationStep\": \"cleave\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "cfd0ed1aec4f4bc595c880aae93abb66",
+                    "cardId": "alloy_0014",
+                    "displayName": "Gear Automaton",
+                    "manaCost": 3,
+                    "attack": 3,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_taunt_pulse",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"targetingModifier\": true}",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "3df8c0d5565d4f7d81e59d7852e6f955",
+                        "cardId": "alloy_0028",
+                        "displayName": "Chrome Vanguard",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 1,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "53c4057082764b40bce2214a852bf295",
+                        "cardId": "alloy_0034",
+                        "displayName": "Gear Vanguard",
+                        "manaCost": 2,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 5,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "armor",
+                                "displayName": "Armor",
+                                "iconAssetRef": "",
+                                "skillType": 0,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_armor_gain",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"battleOrder\": \"on_play\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 3,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"armor\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "28480b17392d46e38e4d61dce6358a4a",
+                        "cardId": "alloy_0029",
+                        "displayName": "Iron Turret",
+                        "manaCost": 2,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 3,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_taunt_pulse",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"targetingModifier\": true}",
+                                "effects": []
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 19,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 12,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "0c38c41498c34f9e9e0c4916c744180b",
+                        "cardId": "grove_0034",
+                        "displayName": "Wild Boar",
+                        "manaCost": 3,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "poison",
+                                "displayName": "Poison",
+                                "iconAssetRef": "",
+                                "skillType": 1,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_poison_apply",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 2,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"poison\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "68c990e1d3634df180a267c4965a457b",
+                        "cardId": "grove_0032",
+                        "displayName": "Briar Spider",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 1,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "poison",
+                                "displayName": "Poison",
+                                "iconAssetRef": "",
+                                "skillType": 1,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_poison_apply",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 2,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"poison\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "8036bca0495d41c6a12eba4e70e3bc01",
+                        "cardId": "grove_0034",
+                        "displayName": "Wild Boar",
+                        "manaCost": 3,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "poison",
+                                "displayName": "Poison",
+                                "iconAssetRef": "",
+                                "skillType": 1,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_poison_apply",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 2,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"poison\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 19,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 435811345."
+        },
+        {
+            "type": 0,
+            "message": "Gear Vanguard entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Chrome Vanguard entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Iron Turret entered BackRight."
+        },
+        {
+            "type": 0,
+            "message": "Wild Boar entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Wild Boar entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Briar Spider entered BackLeft."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "53c4057082764b40bce2214a852bf295",
+            "targetRuntimeId": "",
+            "abilityId": "armor",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard used Armor."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "armor_gain",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "53c4057082764b40bce2214a852bf295",
+            "targetRuntimeId": "53c4057082764b40bce2214a852bf295",
+            "abilityId": "armor",
+            "effectKind": 2,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 2,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard gained 3 armor."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "3df8c0d5565d4f7d81e59d7852e6f955",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard is not ready to attack."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "53c4057082764b40bce2214a852bf295",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard is not ready to attack."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "28480b17392d46e38e4d61dce6358a4a",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Turret is not ready to attack."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "0c38c41498c34f9e9e0c4916c744180b",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar is not ready to attack."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "68c990e1d3634df180a267c4965a457b",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Briar Spider is not ready to attack."
+        },
+        {
+            "eventId": "evt-000008",
+            "sequence": 8,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8036bca0495d41c6a12eba4e70e3bc01",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar is not ready to attack."
+        }
+    ]
+}

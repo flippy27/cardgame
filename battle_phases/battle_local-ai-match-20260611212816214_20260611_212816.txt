@@ -1,0 +1,825 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-11T21:28:16.4943336Z
+LastUpdatedUtc: 2026-06-11T21:28:31.7235017Z
+MatchId: local-ai-match-20260611212816214
+CurrentTurn: 3
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset:  ()
+
+Human Timeline
+001. seq=-1 /Info: Alloy Card #23 entered Front.
+002. seq=-1 /Info: Player 0 ended turn.
+003. seq=-1 P0 P0 hits hero P1 for 6. HP 20->14. Direct attack to Player 1 Hero: 6 damage dealt. 20→14HP
+004. seq=-1 /Info: Player 1 drew a card. Deck: 15 remaining.
+005. seq=-1 /Info: Grove Card #177 entered BackRight.
+006. seq=-1 /Info: Grove Card #142 entered Front.
+007. seq=-1 /Info: Grove Card #112 entered BackLeft.
+008. seq=-1 /Info: Player 1 ended turn.
+009. seq=-1 P1 Grove Card #142#none attacks Alloy Card #23#none for 3. HP 4->1, Armor 0->0. [P1] Grove Card #142 (ATK 3) → [P0] Alloy Card #23: 4→1HP
+010. seq=-1 P1 Grove Card #112#none attacks Alloy Card #23#none for 6. HP 1->-5, Armor 0->0. [P1] Grove Card #112 (ATK 6) → [P0] Alloy Card #23: 1→-5HP
+011. seq=-1 Alloy Card #23#none dies. Alloy Card #23 died.
+012. seq=-1 /Info: [P-1] Unknown (ATK 1) → [P1] Grove Card #112: 2→2HP (Armor blocked 1)
+013. seq=-1 P1 P1 hits hero P0 for 4. HP 20->16. Direct attack to Player 0 Hero: 4 damage dealt. 20→16HP
+014. seq=-1 /Info: Player 0 drew a card. Deck: 15 remaining.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-11T21:28:16.4948571Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=16 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=16
+   Events: none
+-- Step 2 | UTC 2026-06-11T21:28:19.3036266Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Alloy Card #23#6532a95f hp=4/4 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=16 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=16
+   - seq=-1 /Info: Alloy Card #23 entered Front.
+-- Step 3 | UTC 2026-06-11T21:28:30.2245341Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Alloy Card #23#6532a95f hp=4/4 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=16 | P1 id=user-2 hp=14 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=5 deck=15
+   - seq=-1 /Info: Player 0 ended turn.
+   - seq=-1 P0 P0 hits hero P1 for 6. HP 20->14. Direct attack to Player 1 Hero: 6 damage dealt. 20→14HP
+   - seq=-1 /Info: Player 1 drew a card. Deck: 15 remaining.
+-- Step 4 | UTC 2026-06-11T21:28:31.1936289Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Alloy Card #23#6532a95f hp=4/4 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=16 | P1 id=user-2 hp=14 mana=17/20 board=[Front:empty, BackLeft:empty, BackRight:Grove Card #177#e15bebe1 hp=4/4 armor=0 unitType=2 delivery=beam] hand=4 deck=15
+   - seq=-1 /Info: Grove Card #177 entered BackRight.
+-- Step 5 | UTC 2026-06-11T21:28:31.2184769Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Alloy Card #23#6532a95f hp=4/4 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=16 | P1 id=user-2 hp=14 mana=14/20 board=[Front:Grove Card #142#be2b7fb1 hp=4/4 armor=1 unitType=0 delivery=melee, BackLeft:empty, BackRight:Grove Card #177#e15bebe1 hp=4/4 armor=0 unitType=2 delivery=beam] hand=3 deck=15
+   - seq=-1 /Info: Grove Card #142 entered Front.
+-- Step 6 | UTC 2026-06-11T21:28:31.3699678Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Alloy Card #23#6532a95f hp=4/4 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=16 | P1 id=user-2 hp=14 mana=13/20 board=[Front:Grove Card #142#be2b7fb1 hp=4/4 armor=1 unitType=0 delivery=melee, BackLeft:Grove Card #112#dc17537c hp=2/2 armor=1 unitType=0 delivery=melee, BackRight:Grove Card #177#e15bebe1 hp=4/4 armor=0 unitType=2 delivery=beam] hand=2 deck=15
+   - seq=-1 /Info: Grove Card #112 entered BackLeft.
+-- Step 7 | UTC 2026-06-11T21:28:31.7235017Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=16 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=15 | P1 id=user-2 hp=23 mana=13/20 board=[Front:Grove Card #142#be2b7fb1 hp=4/4 armor=1 unitType=0 delivery=melee, BackLeft:Grove Card #112#dc17537c hp=2/2 armor=0 unitType=0 delivery=melee, BackRight:Grove Card #177#e15bebe1 hp=4/4 armor=0 unitType=2 delivery=beam] hand=2 deck=15
+   - seq=-1 /Info: Player 1 ended turn.
+   - seq=-1 P1 Grove Card #142#none attacks Alloy Card #23#none for 3. HP 4->1, Armor 0->0. [P1] Grove Card #142 (ATK 3) → [P0] Alloy Card #23: 4→1HP
+   - seq=-1 P1 Grove Card #112#none attacks Alloy Card #23#none for 6. HP 1->-5, Armor 0->0. [P1] Grove Card #112 (ATK 6) → [P0] Alloy Card #23: 1→-5HP
+   - seq=-1 Alloy Card #23#none dies. Alloy Card #23 died.
+   - seq=-1 /Info: [P-1] Unknown (ATK 1) → [P1] Grove Card #112: 2→2HP (Armor blocked 1)
+   - seq=-1 P1 P1 hits hero P0 for 4. HP 20->16. Direct attack to Player 0 Hero: 4 damage dealt. 20→16HP
+   - seq=-1 /Info: Player 0 drew a card. Deck: 15 remaining.
+
+Raw Structured Battle Events Seen By Unity
+
+Raw Logs Seen By Unity
+turn=1 Summon: Alloy Card #23 entered Front.
+turn=2 Turn: Player 0 ended turn.
+turn=2 Attack: Direct attack to Player 1 Hero: 6 damage dealt. 20→14HP
+turn=2 Info: Player 1 drew a card. Deck: 15 remaining.
+turn=2 Summon: Grove Card #177 entered BackRight.
+turn=2 Summon: Grove Card #142 entered Front.
+turn=2 Summon: Grove Card #112 entered BackLeft.
+turn=3 Turn: Player 1 ended turn.
+turn=3 Attack: [P1] Grove Card #142 (ATK 3) → [P0] Alloy Card #23: 4→1HP
+turn=3 Attack: [P1] Grove Card #112 (ATK 6) → [P0] Alloy Card #23: 1→-5HP
+turn=3 Death: Alloy Card #23 died.
+turn=3 Attack: [P-1] Unknown (ATK 1) → [P1] Grove Card #112: 2→2HP (Armor blocked 1)
+turn=3 Attack: Direct attack to Player 0 Hero: 4 damage dealt. 20→16HP
+turn=3 Info: Player 0 drew a card. Deck: 15 remaining.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "local-ai-match-20260611212816214",
+    "rulesetId": "",
+    "rulesetName": "",
+    "rules": {
+        "rulesetId": "",
+        "rulesetKey": "",
+        "displayName": "",
+        "description": "",
+        "isActive": false,
+        "isDefault": false,
+        "startingHeroHealth": 0,
+        "maxHeroHealth": 0,
+        "startingMana": 0,
+        "maxMana": 0,
+        "manaGrantedPerTurn": 0,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 0,
+        "cardsDrawnOnTurnStart": 0,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 3,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 0,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 16,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "8a303b9e64574f0fb6e3cf2c3c414e51",
+                    "cardId": "alloy_0083",
+                    "displayName": "Alloy Card #83",
+                    "manaCost": 7,
+                    "attack": 6,
+                    "health": 8,
+                    "armor": 2,
+                    "isUnit": false,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "taunt",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "fly",
+                            "displayName": "Fly",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "fly",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "leech",
+                            "displayName": "Leech",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "leech",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "4a11b08101bb4e038cde499e15e29da3",
+                    "cardId": "alloy_0098",
+                    "displayName": "Alloy Card #98",
+                    "manaCost": 1,
+                    "attack": 3,
+                    "health": 2,
+                    "armor": 2,
+                    "isUnit": false,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "shield",
+                            "displayName": "Shield",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "shield",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "poison",
+                            "displayName": "Poison",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "poison",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "enrage",
+                            "displayName": "Enrage",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "enrage",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "a40c3c1e0b5749fe8c0fb0f3e40f4a9e",
+                    "cardId": "alloy_0038",
+                    "displayName": "Alloy Card #38",
+                    "manaCost": 4,
+                    "attack": 3,
+                    "health": 5,
+                    "armor": 2,
+                    "isUnit": false,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "shield",
+                            "displayName": "Shield",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "shield",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "poison",
+                            "displayName": "Poison",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "poison",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "enrage",
+                            "displayName": "Enrage",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "enrage",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "143ff64cb9ae4d5fbbbf792f8f78deb9",
+                    "cardId": "alloy_0033",
+                    "displayName": "Alloy Card #33",
+                    "manaCost": 6,
+                    "attack": 4,
+                    "health": 7,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "taunt",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "fly",
+                            "displayName": "Fly",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "fly",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "leech",
+                            "displayName": "Leech",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "leech",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 0,
+                        "attackShakeLevel": 0,
+                        "attackDeliveryType": "",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 15,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 23,
+            "mana": 13,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "cc4b656c00474a96bb69198add3fc464",
+                    "cardId": "grove_0127",
+                    "displayName": "Grove Card #127",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 1,
+                    "isUnit": false,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "armor",
+                            "displayName": "Armor",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "armor",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "haste",
+                            "displayName": "Haste",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "haste",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "trample",
+                            "displayName": "Trample",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "trample",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "leech",
+                            "displayName": "Leech",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "leech",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "18ae530f06c44606bcd5888715336355",
+                    "cardId": "grove_0192",
+                    "displayName": "Grove Card #192",
+                    "manaCost": 4,
+                    "attack": 1,
+                    "health": 5,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": [
+                        {
+                            "abilityId": "shield",
+                            "displayName": "Shield",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "shield",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "stun",
+                            "displayName": "Stun",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "stun",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        },
+                        {
+                            "abilityId": "regenerate_left",
+                            "displayName": "Regenerate Left",
+                            "iconAssetRef": "",
+                            "skillType": -1,
+                            "triggerKind": 10,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "regenerate_left",
+                            "conditionsJson": "",
+                            "metadataJson": "",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "be2b7fb13da8451f971e0998caf7ff88",
+                        "cardId": "grove_0142",
+                        "displayName": "Grove Card #142",
+                        "manaCost": 3,
+                        "attackMotionLevel": 5,
+                        "attackShakeLevel": 5,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 5,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 1,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "shield",
+                                "displayName": "Shield",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "shield",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "stun",
+                                "displayName": "Stun",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "stun",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "regenerate_left",
+                                "displayName": "Regenerate Left",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "regenerate_left",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "dc17537c77284715925cf71756cc7207",
+                        "cardId": "grove_0112",
+                        "displayName": "Grove Card #112",
+                        "manaCost": 1,
+                        "attackMotionLevel": 5,
+                        "attackShakeLevel": 5,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 5,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "shield",
+                                "displayName": "Shield",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "shield",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "stun",
+                                "displayName": "Stun",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "stun",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "regenerate_left",
+                                "displayName": "Regenerate Left",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "regenerate_left",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "e15bebe12ed542b5851a33f283cde331",
+                        "cardId": "grove_0177",
+                        "displayName": "Grove Card #177",
+                        "manaCost": 3,
+                        "attackMotionLevel": 4,
+                        "attackShakeLevel": 4,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 4,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": true,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "armor",
+                                "displayName": "Armor",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "armor",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "haste",
+                                "displayName": "Haste",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "haste",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "trample",
+                                "displayName": "Trample",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "trample",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            },
+                            {
+                                "abilityId": "leech",
+                                "displayName": "Leech",
+                                "iconAssetRef": "",
+                                "skillType": -1,
+                                "triggerKind": 10,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "leech",
+                                "conditionsJson": "",
+                                "metadataJson": "",
+                                "effects": []
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 15,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 19 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 19 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 18 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 18 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 17 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 17 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 16 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 16 remaining."
+        },
+        {
+            "type": 0,
+            "message": "Duel started with seed -555516372. Player 0 starts."
+        },
+        {
+            "type": 3,
+            "message": "Alloy Card #23 entered Front."
+        },
+        {
+            "type": 5,
+            "message": "Player 0 ended turn."
+        },
+        {
+            "type": 1,
+            "message": "Direct attack to Player 1 Hero: 6 damage dealt. 20→14HP"
+        },
+        {
+            "type": 0,
+            "message": "Player 1 drew a card. Deck: 15 remaining."
+        },
+        {
+            "type": 3,
+            "message": "Grove Card #177 entered BackRight."
+        },
+        {
+            "type": 3,
+            "message": "Grove Card #142 entered Front."
+        },
+        {
+            "type": 3,
+            "message": "Grove Card #112 entered BackLeft."
+        },
+        {
+            "type": 5,
+            "message": "Player 1 ended turn."
+        },
+        {
+            "type": 1,
+            "message": "[P1] Grove Card #142 (ATK 3) → [P0] Alloy Card #23: 4→1HP"
+        },
+        {
+            "type": 1,
+            "message": "[P1] Grove Card #112 (ATK 6) → [P0] Alloy Card #23: 1→-5HP"
+        },
+        {
+            "type": 4,
+            "message": "Alloy Card #23 died."
+        },
+        {
+            "type": 1,
+            "message": "[P-1] Unknown (ATK 1) → [P1] Grove Card #112: 2→2HP (Armor blocked 1)"
+        },
+        {
+            "type": 1,
+            "message": "Direct attack to Player 0 Hero: 4 damage dealt. 20→16HP"
+        },
+        {
+            "type": 0,
+            "message": "Player 0 drew a card. Deck: 15 remaining."
+        }
+    ],
+    "battleEvents": []
+}

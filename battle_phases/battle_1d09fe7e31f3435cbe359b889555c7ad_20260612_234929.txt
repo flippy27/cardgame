@@ -1,0 +1,2623 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-12T23:49:29.1320630Z
+LastUpdatedUtc: 2026-06-12T23:55:39.1155674Z
+MatchId: 1d09fe7e31f3435cbe359b889555c7ad
+CurrentTurn: 13
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 1095851073.
+002. seq=-1 /Info: Piston Reckoner entered Front.
+003. seq=-1 /Info: Gear Automaton entered Front.
+004. seq=1 skill_begin/SkillBegin: Gear Vanguard used Armor.
+005. seq=2 Gear Vanguard#caf14814 gains armor 3. Armor 2->5. Gear Vanguard gained 3 armor.
+006. seq=3 Gear Vanguard#caf14814 skipped. Gear Vanguard is not ready to attack.
+007. seq=4 Gear Automaton#a3c3050e skipped. Gear Automaton is not ready to attack.
+008. seq=5 Piston Reckoner#1115d5e1 skipped. Piston Reckoner is not ready to attack.
+009. seq=-1 /Info: Wild Boar entered Front.
+010. seq=-1 /Info: Moss Spider entered BackLeft.
+011. seq=-1 /Info: Root Treant entered BackRight.
+012. seq=6 skill_begin/SkillBegin: Moss Spider used Regenerate.
+013. seq=7 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+014. seq=8 skill_begin/SkillBegin: Root Treant used Regenerate.
+015. seq=9 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+016. seq=10 Wild Boar#7c7b0e43 skipped. Wild Boar is not ready to attack.
+017. seq=11 Moss Spider#be640a62 skipped. Moss Spider is not ready to attack.
+018. seq=12 Root Treant#02f97513 skipped. Root Treant is not ready to attack.
+019. seq=13 Gear Vanguard#caf14814 skipped. Gear Vanguard cannot attack from Front.
+020. seq=14 Gear Automaton#a3c3050e skipped. Gear Automaton cannot attack from BackLeft.
+021. seq=15 Piston Reckoner#1115d5e1 skipped. Piston Reckoner cannot attack from BackRight.
+022. seq=16 skill_begin/SkillBegin: Moss Spider used Regenerate.
+023. seq=17 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+024. seq=18 skill_begin/SkillBegin: Root Treant used Regenerate.
+025. seq=19 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+026. seq=20 skill_begin/SkillBegin: Wild Boar used Poison.
+027. seq=21 card_attack/Info: Wild Boar attacked Gear Automaton.
+028. seq=22 P1 Wild Boar#7c7b0e43 attacks P0 for 2. HP 4->2, Armor 0->0. Gear Automaton took 2 damage.
+029. seq=23 status 0 applied to P0 for 2 turns by Wild Boar#7c7b0e43. Poison applied to Gear Automaton.
+030. seq=24 P0 P0 attacks Wild Boar#7c7b0e43 for 3. HP 0->0, Armor 0->0. Gear Automaton struck back at Wild Boar.
+031. seq=25 P0 P0 attacks Wild Boar#7c7b0e43 for 3. HP 4->1, Armor 0->0. Wild Boar took 3 damage.
+032. seq=26 card_attack/Info: Moss Spider attacked Gear Automaton.
+033. seq=27 P1 Moss Spider#be640a62 attacks P0 for 3. HP 2->-1, Armor 0->0. Gear Automaton took 3 damage.
+034. seq=28 P0 dies. Gear Automaton died.
+035. seq=29 P0 P0 attacks Moss Spider#be640a62 for 3. HP 0->0, Armor 0->0. Gear Automaton struck back at Moss Spider.
+036. seq=30 P0 P0 attacks Moss Spider#be640a62 for 3. HP 4->1, Armor 0->0. Moss Spider took 3 damage.
+037. seq=31 card_attack/Info: Root Treant attacked Gear Vanguard.
+038. seq=32 P1 Root Treant#02f97513 attacks Gear Vanguard#caf14814 for 2. HP 3->3, Armor 5->3. Gear Vanguard took 2 damage.
+039. seq=33 P0 Gear Vanguard#caf14814 attacks Root Treant#02f97513 for 1. HP 0->0, Armor 0->0. Gear Vanguard struck back at Root Treant.
+040. seq=34 P0 Gear Vanguard#caf14814 attacks Root Treant#02f97513 for 1. HP 4->3, Armor 0->0. Root Treant took 1 damage.
+041. seq=35 Gear Vanguard#caf14814 skipped. Gear Vanguard cannot attack from Front.
+042. seq=36 Piston Reckoner#1115d5e1 skipped. Piston Reckoner cannot attack from BackLeft.
+043. seq=37 skill_begin/SkillBegin: Moss Spider used Regenerate.
+044. seq=38 Moss Spider#be640a62 heals 2. HP 1->3. Moss Spider healed 2.
+045. seq=39 skill_begin/SkillBegin: Root Treant used Regenerate.
+046. seq=40 Moss Spider#be640a62 heals 1. HP 3->4. Moss Spider healed 1.
+047. seq=41 skill_begin/SkillBegin: Wild Boar used Poison.
+048. seq=42 card_attack/Info: Wild Boar attacked Gear Vanguard.
+049. seq=43 P1 P1 attacks Gear Vanguard#caf14814 for 2. HP 3->3, Armor 3->1. Gear Vanguard took 2 damage.
+050. seq=44 P0 Gear Vanguard#caf14814 attacks P1 for 1. HP 0->0, Armor 0->0. Gear Vanguard struck back at Wild Boar.
+051. seq=45 P0 Gear Vanguard#caf14814 attacks P1 for 1. HP 1->0, Armor 0->0. Wild Boar took 1 damage.
+052. seq=46 P1 dies. Wild Boar died.
+053. seq=47 card_attack/Info: Root Treant attacked Piston Reckoner.
+054. seq=48 P1 Root Treant#02f97513 attacks Piston Reckoner#1115d5e1 for 2. HP 3->3, Armor 2->0. Piston Reckoner took 2 damage.
+055. seq=49 P0 Piston Reckoner#1115d5e1 attacks Root Treant#02f97513 for 2. HP 0->0, Armor 0->0. Piston Reckoner struck back at Root Treant.
+056. seq=50 P0 Piston Reckoner#1115d5e1 attacks Root Treant#02f97513 for 2. HP 3->1, Armor 0->0. Root Treant took 2 damage.
+057. seq=51 Gear Vanguard#caf14814 skipped. Gear Vanguard cannot attack from Front.
+058. seq=52 Piston Reckoner#1115d5e1 skipped. Piston Reckoner cannot attack from BackLeft.
+059. seq=-1 /Info: Root Treant entered BackLeft.
+060. seq=53 skill_begin/SkillBegin: Moss Spider used Regenerate.
+061. seq=54 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+062. seq=55 skill_begin/SkillBegin: Root Treant used Regenerate.
+063. seq=56 Root Treant#351a04aa heals 0. HP 4->4. Root Treant healed 0.
+064. seq=57 skill_begin/SkillBegin: Root Treant used Regenerate.
+065. seq=58 Root Treant#351a04aa heals 0. HP 4->4. Root Treant healed 0.
+066. seq=59 Moss Spider#be640a62 skipped. Moss Spider cannot attack from Front.
+067. seq=60 Root Treant#351a04aa skipped. Root Treant is not ready to attack.
+068. seq=61 card_attack/Info: Root Treant attacked Gear Vanguard.
+069. seq=62 P1 P1 attacks Gear Vanguard#caf14814 for 2. HP 3->2, Armor 1->0. Gear Vanguard took 2 damage.
+070. seq=63 P0 Gear Vanguard#caf14814 attacks P1 for 1. HP 0->0, Armor 0->0. Gear Vanguard struck back at Root Treant.
+071. seq=64 P0 Gear Vanguard#caf14814 attacks P1 for 1. HP 1->0, Armor 0->0. Root Treant took 1 damage.
+072. seq=65 P1 dies. Root Treant died.
+073. seq=-1 /Info: Cog Golem entered Front.
+074. seq=66 Cog Golem#02ec71e6 skipped. Cog Golem is not ready to attack.
+075. seq=67 card_attack/Info: Gear Vanguard attacked Root Treant.
+076. seq=68 P0 P0 attacks Root Treant#351a04aa for 1. HP 4->3, Armor 0->0. Root Treant took 1 damage.
+077. seq=69 P1 Root Treant#351a04aa attacks P0 for 2. HP 0->0, Armor 0->0. Root Treant struck back at Gear Vanguard.
+078. seq=70 P1 Root Treant#351a04aa attacks P0 for 2. HP 2->0, Armor 0->0. Gear Vanguard took 2 damage.
+079. seq=71 P0 dies. Gear Vanguard died.
+080. seq=-1 /Info: Bloom Treant entered BackRight.
+081. seq=72 skill_begin/SkillBegin: Moss Spider used Regenerate.
+082. seq=73 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+083. seq=74 skill_begin/SkillBegin: Root Treant used Regenerate.
+084. seq=75 Root Treant#351a04aa heals 1. HP 3->4. Root Treant healed 1.
+085. seq=76 Moss Spider#be640a62 skipped. Moss Spider cannot attack from Front.
+086. seq=77 card_attack/Info: Root Treant attacked Piston Reckoner.
+087. seq=78 P1 Root Treant#351a04aa attacks Piston Reckoner#1115d5e1 for 2. HP 3->1, Armor 0->0. Piston Reckoner took 2 damage.
+088. seq=79 P0 Piston Reckoner#1115d5e1 attacks Root Treant#351a04aa for 2. HP 0->0, Armor 0->0. Piston Reckoner struck back at Root Treant.
+089. seq=80 P0 Piston Reckoner#1115d5e1 attacks Root Treant#351a04aa for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+090. seq=81 Bloom Treant#2aa50880 skipped. Bloom Treant is not ready to attack.
+091. seq=82 card_attack/Info: Cog Golem attacked Moss Spider.
+092. seq=83 P0 P0 attacks Moss Spider#be640a62 for 1. HP 4->3, Armor 0->0. Moss Spider took 1 damage.
+093. seq=84 P1 Moss Spider#be640a62 attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider struck back at Cog Golem.
+094. seq=85 P1 Moss Spider#be640a62 attacks P0 for 3. HP 2->0, Armor 1->0. Cog Golem took 3 damage.
+095. seq=86 P0 dies. Cog Golem died.
+096. seq=87 skill_begin/SkillBegin: Moss Spider used Regenerate.
+097. seq=88 Moss Spider#be640a62 heals 1. HP 3->4. Moss Spider healed 1.
+098. seq=89 skill_begin/SkillBegin: Root Treant used Regenerate.
+099. seq=90 Root Treant#351a04aa heals 2. HP 2->4. Root Treant healed 2.
+100. seq=91 Moss Spider#be640a62 skipped. Moss Spider cannot attack from Front.
+101. seq=92 card_attack/Info: Root Treant attacked Piston Reckoner.
+102. seq=93 P1 Root Treant#351a04aa attacks P0 for 2. HP 1->-1, Armor 0->0. Piston Reckoner took 2 damage.
+103. seq=94 P0 dies. Piston Reckoner died.
+104. seq=95 P0 P0 attacks Root Treant#351a04aa for 2. HP 0->0, Armor 0->0. Piston Reckoner struck back at Root Treant.
+105. seq=96 P0 P0 attacks Root Treant#351a04aa for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+106. seq=97 P1 Bloom Treant#2aa50880 attacks P0 for 3. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+107. seq=98 P1 Bloom Treant#2aa50880 hits hero P0 for 3. HP 20->17. Seat 1 hero took 3 damage.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-12T23:49:29.1330824Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-12T23:49:29.4831206Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 1095851073.
+-- Step 3 | UTC 2026-06-12T23:49:31.2513111Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Piston Reckoner#1115d5e1 hp=3/3 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Piston Reckoner entered Front.
+-- Step 4 | UTC 2026-06-12T23:49:59.0314122Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=15/20 board=[Front:Gear Automaton#a3c3050e hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Piston Reckoner#1115d5e1 hp=3/3 armor=2 unitType=0 delivery=melee, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Gear Automaton entered Front.
+-- Step 5 | UTC 2026-06-12T23:50:00.3453914Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=13/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=5 unitType=1 delivery=projectile, BackLeft:Gear Automaton#a3c3050e hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Piston Reckoner#1115d5e1 hp=3/3 armor=2 unitType=0 delivery=melee] hand=1 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=1 skill_begin/SkillBegin: Gear Vanguard used Armor.
+   - seq=2 Gear Vanguard#caf14814 gains armor 3. Armor 2->5. Gear Vanguard gained 3 armor.
+-- Step 6 | UTC 2026-06-12T23:50:29.6063105Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=13/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=5 unitType=1 delivery=projectile, BackLeft:Gear Automaton#a3c3050e hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Piston Reckoner#1115d5e1 hp=3/3 armor=2 unitType=0 delivery=melee] hand=1 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=3 Gear Vanguard#caf14814 skipped. Gear Vanguard is not ready to attack.
+   - seq=4 Gear Automaton#a3c3050e skipped. Gear Automaton is not ready to attack.
+   - seq=5 Piston Reckoner#1115d5e1 skipped. Piston Reckoner is not ready to attack.
+-- Step 7 | UTC 2026-06-12T23:50:30.3193534Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=13/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=5 unitType=1 delivery=projectile, BackLeft:Gear Automaton#a3c3050e hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Piston Reckoner#1115d5e1 hp=3/3 armor=2 unitType=0 delivery=melee] hand=1 deck=20 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Wild Boar#7c7b0e43 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Wild Boar entered Front.
+-- Step 8 | UTC 2026-06-12T23:50:30.7537960Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=13/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=5 unitType=1 delivery=projectile, BackLeft:Gear Automaton#a3c3050e hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Piston Reckoner#1115d5e1 hp=3/3 armor=2 unitType=0 delivery=melee] hand=1 deck=20 | P1 id=user-2 hp=20 mana=14/20 board=[Front:Wild Boar#7c7b0e43 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Moss Spider entered BackLeft.
+-- Step 9 | UTC 2026-06-12T23:50:31.1964755Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=13/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=5 unitType=1 delivery=projectile, BackLeft:Gear Automaton#a3c3050e hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Piston Reckoner#1115d5e1 hp=3/3 armor=2 unitType=0 delivery=melee] hand=1 deck=20 | P1 id=user-2 hp=20 mana=11/20 board=[Front:Wild Boar#7c7b0e43 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Root Treant#02f97513 hp=4/4 armor=0 unitType=1 delivery=projectile] hand=0 deck=19
+   - seq=-1 /Info: Root Treant entered BackRight.
+-- Step 10 | UTC 2026-06-12T23:50:31.6530852Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=5 unitType=1 delivery=projectile, BackLeft:Gear Automaton#a3c3050e hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Piston Reckoner#1115d5e1 hp=3/3 armor=2 unitType=0 delivery=melee] hand=2 deck=19 | P1 id=user-2 hp=20 mana=11/20 board=[Front:Wild Boar#7c7b0e43 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Root Treant#02f97513 hp=4/4 armor=0 unitType=1 delivery=projectile] hand=0 deck=19
+   - seq=6 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=7 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=8 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=9 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=10 Wild Boar#7c7b0e43 skipped. Wild Boar is not ready to attack.
+   - seq=11 Moss Spider#be640a62 skipped. Moss Spider is not ready to attack.
+   - seq=12 Root Treant#02f97513 skipped. Root Treant is not ready to attack.
+-- Step 11 | UTC 2026-06-12T23:51:08.3117588Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=5 unitType=1 delivery=projectile, BackLeft:Gear Automaton#a3c3050e hp=4/4 armor=0 unitType=0 delivery=melee, BackRight:Piston Reckoner#1115d5e1 hp=3/3 armor=2 unitType=0 delivery=melee] hand=2 deck=19 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#7c7b0e43 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Root Treant#02f97513 hp=4/4 armor=0 unitType=1 delivery=projectile] hand=0 deck=18
+   - seq=13 Gear Vanguard#caf14814 skipped. Gear Vanguard cannot attack from Front.
+   - seq=14 Gear Automaton#a3c3050e skipped. Gear Automaton cannot attack from BackLeft.
+   - seq=15 Piston Reckoner#1115d5e1 skipped. Piston Reckoner cannot attack from BackRight.
+-- Step 12 | UTC 2026-06-12T23:51:08.9760073Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=3 unitType=1 delivery=projectile, BackLeft:Piston Reckoner#1115d5e1 hp=3/3 armor=2 unitType=0 delivery=melee, BackRight:empty] hand=3 deck=18 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#7c7b0e43 hp=1/4 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#be640a62 hp=1/4 armor=0 unitType=2 delivery=beam, BackRight:Root Treant#02f97513 hp=3/4 armor=0 unitType=1 delivery=projectile] hand=0 deck=18
+   - seq=16 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=17 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=18 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=19 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=20 skill_begin/SkillBegin: Wild Boar used Poison.
+   - seq=21 card_attack/Info: Wild Boar attacked Gear Automaton.
+   - seq=22 P1 Wild Boar#7c7b0e43 attacks P0 for 2. HP 4->2, Armor 0->0. Gear Automaton took 2 damage.
+   - seq=23 status 0 applied to P0 for 2 turns by Wild Boar#7c7b0e43. Poison applied to Gear Automaton.
+   - seq=24 P0 P0 attacks Wild Boar#7c7b0e43 for 3. HP 0->0, Armor 0->0. Gear Automaton struck back at Wild Boar.
+   - seq=25 P0 P0 attacks Wild Boar#7c7b0e43 for 3. HP 4->1, Armor 0->0. Wild Boar took 3 damage.
+   - seq=26 card_attack/Info: Moss Spider attacked Gear Automaton.
+   - seq=27 P1 Moss Spider#be640a62 attacks P0 for 3. HP 2->-1, Armor 0->0. Gear Automaton took 3 damage.
+   - seq=28 P0 dies. Gear Automaton died.
+   - seq=29 P0 P0 attacks Moss Spider#be640a62 for 3. HP 0->0, Armor 0->0. Gear Automaton struck back at Moss Spider.
+   - seq=30 P0 P0 attacks Moss Spider#be640a62 for 3. HP 4->1, Armor 0->0. Moss Spider took 3 damage.
+   - seq=31 card_attack/Info: Root Treant attacked Gear Vanguard.
+   - seq=32 P1 Root Treant#02f97513 attacks Gear Vanguard#caf14814 for 2. HP 3->3, Armor 5->3. Gear Vanguard took 2 damage.
+   - seq=33 P0 Gear Vanguard#caf14814 attacks Root Treant#02f97513 for 1. HP 0->0, Armor 0->0. Gear Vanguard struck back at Root Treant.
+   - seq=34 P0 Gear Vanguard#caf14814 attacks Root Treant#02f97513 for 1. HP 4->3, Armor 0->0. Root Treant took 1 damage.
+-- Step 13 | UTC 2026-06-12T23:52:54.9321453Z | Turn 6 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=3 unitType=1 delivery=projectile, BackLeft:Piston Reckoner#1115d5e1 hp=3/3 armor=2 unitType=0 delivery=melee, BackRight:empty] hand=3 deck=18 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#7c7b0e43 hp=1/4 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#be640a62 hp=1/4 armor=0 unitType=2 delivery=beam, BackRight:Root Treant#02f97513 hp=3/4 armor=0 unitType=1 delivery=projectile] hand=0 deck=17
+   - seq=35 Gear Vanguard#caf14814 skipped. Gear Vanguard cannot attack from Front.
+   - seq=36 Piston Reckoner#1115d5e1 skipped. Piston Reckoner cannot attack from BackLeft.
+-- Step 14 | UTC 2026-06-12T23:52:55.5935377Z | Turn 7 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Piston Reckoner#1115d5e1 hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=4 deck=17 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackLeft:Root Treant#02f97513 hp=1/4 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=0 deck=17
+   - seq=37 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=38 Moss Spider#be640a62 heals 2. HP 1->3. Moss Spider healed 2.
+   - seq=39 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=40 Moss Spider#be640a62 heals 1. HP 3->4. Moss Spider healed 1.
+   - seq=41 skill_begin/SkillBegin: Wild Boar used Poison.
+   - seq=42 card_attack/Info: Wild Boar attacked Gear Vanguard.
+   - seq=43 P1 P1 attacks Gear Vanguard#caf14814 for 2. HP 3->3, Armor 3->1. Gear Vanguard took 2 damage.
+   - seq=44 P0 Gear Vanguard#caf14814 attacks P1 for 1. HP 0->0, Armor 0->0. Gear Vanguard struck back at Wild Boar.
+   - seq=45 P0 Gear Vanguard#caf14814 attacks P1 for 1. HP 1->0, Armor 0->0. Wild Boar took 1 damage.
+   - seq=46 P1 dies. Wild Boar died.
+   - seq=47 card_attack/Info: Root Treant attacked Piston Reckoner.
+   - seq=48 P1 Root Treant#02f97513 attacks Piston Reckoner#1115d5e1 for 2. HP 3->3, Armor 2->0. Piston Reckoner took 2 damage.
+   - seq=49 P0 Piston Reckoner#1115d5e1 attacks Root Treant#02f97513 for 2. HP 0->0, Armor 0->0. Piston Reckoner struck back at Root Treant.
+   - seq=50 P0 Piston Reckoner#1115d5e1 attacks Root Treant#02f97513 for 2. HP 3->1, Armor 0->0. Root Treant took 2 damage.
+-- Step 15 | UTC 2026-06-12T23:54:45.8950169Z | Turn 8 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Piston Reckoner#1115d5e1 hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=4 deck=17 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackLeft:Root Treant#02f97513 hp=1/4 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=0 deck=16
+   - seq=51 Gear Vanguard#caf14814 skipped. Gear Vanguard cannot attack from Front.
+   - seq=52 Piston Reckoner#1115d5e1 skipped. Piston Reckoner cannot attack from BackLeft.
+-- Step 16 | UTC 2026-06-12T23:54:46.5530815Z | Turn 8 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Gear Vanguard#caf14814 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:Piston Reckoner#1115d5e1 hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=4 deck=17 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackLeft:Root Treant#351a04aa hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Root Treant#02f97513 hp=1/4 armor=0 unitType=1 delivery=projectile] hand=0 deck=16
+   - seq=-1 /Info: Root Treant entered BackLeft.
+-- Step 17 | UTC 2026-06-12T23:54:47.0092893Z | Turn 9 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Gear Vanguard#caf14814 hp=2/3 armor=0 unitType=1 delivery=projectile, BackLeft:Piston Reckoner#1115d5e1 hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=5 deck=16 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackLeft:Root Treant#351a04aa hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=0 deck=16
+   - seq=53 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=54 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=55 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=56 Root Treant#351a04aa heals 0. HP 4->4. Root Treant healed 0.
+   - seq=57 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=58 Root Treant#351a04aa heals 0. HP 4->4. Root Treant healed 0.
+   - seq=59 Moss Spider#be640a62 skipped. Moss Spider cannot attack from Front.
+   - seq=60 Root Treant#351a04aa skipped. Root Treant is not ready to attack.
+   - seq=61 card_attack/Info: Root Treant attacked Gear Vanguard.
+   - seq=62 P1 P1 attacks Gear Vanguard#caf14814 for 2. HP 3->2, Armor 1->0. Gear Vanguard took 2 damage.
+   - seq=63 P0 Gear Vanguard#caf14814 attacks P1 for 1. HP 0->0, Armor 0->0. Gear Vanguard struck back at Root Treant.
+   - seq=64 P0 Gear Vanguard#caf14814 attacks P1 for 1. HP 1->0, Armor 0->0. Root Treant took 1 damage.
+   - seq=65 P1 dies. Root Treant died.
+-- Step 18 | UTC 2026-06-12T23:55:01.5670806Z | Turn 9 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=19/20 board=[Front:Cog Golem#02ec71e6 hp=2/2 armor=1 unitType=0 delivery=melee, BackLeft:Gear Vanguard#caf14814 hp=2/3 armor=0 unitType=1 delivery=projectile, BackRight:Piston Reckoner#1115d5e1 hp=3/3 armor=0 unitType=0 delivery=melee] hand=4 deck=16 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackLeft:Root Treant#351a04aa hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=0 deck=16
+   - seq=-1 /Info: Cog Golem entered Front.
+-- Step 19 | UTC 2026-06-12T23:55:04.6141707Z | Turn 10 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=19/20 board=[Front:Cog Golem#02ec71e6 hp=2/2 armor=1 unitType=0 delivery=melee, BackLeft:Piston Reckoner#1115d5e1 hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=4 deck=16 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackLeft:Root Treant#351a04aa hp=3/4 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=0 deck=15
+   - seq=66 Cog Golem#02ec71e6 skipped. Cog Golem is not ready to attack.
+   - seq=67 card_attack/Info: Gear Vanguard attacked Root Treant.
+   - seq=68 P0 P0 attacks Root Treant#351a04aa for 1. HP 4->3, Armor 0->0. Root Treant took 1 damage.
+   - seq=69 P1 Root Treant#351a04aa attacks P0 for 2. HP 0->0, Armor 0->0. Root Treant struck back at Gear Vanguard.
+   - seq=70 P1 Root Treant#351a04aa attacks P0 for 2. HP 2->0, Armor 0->0. Gear Vanguard took 2 damage.
+   - seq=71 P0 dies. Gear Vanguard died.
+-- Step 20 | UTC 2026-06-12T23:55:09.3944198Z | Turn 10 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=19/20 board=[Front:Cog Golem#02ec71e6 hp=2/2 armor=1 unitType=0 delivery=melee, BackLeft:Piston Reckoner#1115d5e1 hp=3/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=4 deck=16 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackLeft:Root Treant#351a04aa hp=3/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#2aa50880 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=15
+   - seq=-1 /Info: Bloom Treant entered BackRight.
+-- Step 21 | UTC 2026-06-12T23:55:09.4120608Z | Turn 11 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Cog Golem#02ec71e6 hp=2/2 armor=1 unitType=0 delivery=melee, BackLeft:Piston Reckoner#1115d5e1 hp=1/3 armor=0 unitType=0 delivery=melee, BackRight:empty] hand=5 deck=15 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackLeft:Root Treant#351a04aa hp=2/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#2aa50880 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=15
+   - seq=72 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=73 Moss Spider#be640a62 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=74 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=75 Root Treant#351a04aa heals 1. HP 3->4. Root Treant healed 1.
+   - seq=76 Moss Spider#be640a62 skipped. Moss Spider cannot attack from Front.
+   - seq=77 card_attack/Info: Root Treant attacked Piston Reckoner.
+   - seq=78 P1 Root Treant#351a04aa attacks Piston Reckoner#1115d5e1 for 2. HP 3->1, Armor 0->0. Piston Reckoner took 2 damage.
+   - seq=79 P0 Piston Reckoner#1115d5e1 attacks Root Treant#351a04aa for 2. HP 0->0, Armor 0->0. Piston Reckoner struck back at Root Treant.
+   - seq=80 P0 Piston Reckoner#1115d5e1 attacks Root Treant#351a04aa for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+   - seq=81 Bloom Treant#2aa50880 skipped. Bloom Treant is not ready to attack.
+-- Step 22 | UTC 2026-06-12T23:55:34.8026739Z | Turn 12 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Piston Reckoner#1115d5e1 hp=1/3 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=5 deck=15 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Moss Spider#be640a62 hp=3/4 armor=0 unitType=2 delivery=beam, BackLeft:Root Treant#351a04aa hp=2/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#2aa50880 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=14
+   - seq=82 card_attack/Info: Cog Golem attacked Moss Spider.
+   - seq=83 P0 P0 attacks Moss Spider#be640a62 for 1. HP 4->3, Armor 0->0. Moss Spider took 1 damage.
+   - seq=84 P1 Moss Spider#be640a62 attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider struck back at Cog Golem.
+   - seq=85 P1 Moss Spider#be640a62 attacks P0 for 3. HP 2->0, Armor 1->0. Cog Golem took 3 damage.
+   - seq=86 P0 dies. Cog Golem died.
+-- Step 23 | UTC 2026-06-12T23:55:39.1150669Z | Turn 13 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=17 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=6 deck=14 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Moss Spider#be640a62 hp=4/4 armor=0 unitType=2 delivery=beam, BackLeft:Root Treant#351a04aa hp=2/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#2aa50880 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=14
+   - seq=87 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=88 Moss Spider#be640a62 heals 1. HP 3->4. Moss Spider healed 1.
+   - seq=89 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=90 Root Treant#351a04aa heals 2. HP 2->4. Root Treant healed 2.
+   - seq=91 Moss Spider#be640a62 skipped. Moss Spider cannot attack from Front.
+   - seq=92 card_attack/Info: Root Treant attacked Piston Reckoner.
+   - seq=93 P1 Root Treant#351a04aa attacks P0 for 2. HP 1->-1, Armor 0->0. Piston Reckoner took 2 damage.
+   - seq=94 P0 dies. Piston Reckoner died.
+   - seq=95 P0 P0 attacks Root Treant#351a04aa for 2. HP 0->0, Armor 0->0. Piston Reckoner struck back at Root Treant.
+   - seq=96 P0 P0 attacks Root Treant#351a04aa for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+   - seq=97 P1 Bloom Treant#2aa50880 attacks P0 for 3. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+   - seq=98 P1 Bloom Treant#2aa50880 hits hero P0 for 3. HP 20->17. Seat 1 hero took 3 damage.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=0 targetVisual=-1 target= ability=armor effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Vanguard used Armor.
+seq=2 id=evt-000002 kind=armor_gain serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=0 targetVisual=0 target=caf14814ac864e57bddd88e50acb3f78 ability=armor effect=2 status=0 amount=3 hp=3->3 armor=2->5 message=Gear Vanguard gained 3 armor.
+seq=3 id=evt-000003 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Vanguard is not ready to attack.
+seq=4 id=evt-000004 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=a3c3050e359c413891c164fb8c7a58f9 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Automaton is not ready to attack.
+seq=5 id=evt-000005 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=1115d5e113ae49e9b09531f555e3635f serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Piston Reckoner is not ready to attack.
+seq=6 id=evt-000006 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=7 id=evt-000007 kind=heal serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=8 id=evt-000008 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=02f97513d3654939bb4a31837a19d166 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=9 id=evt-000009 kind=heal serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=10 id=evt-000010 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=7c7b0e439e5f4b2b898a5694234e8896 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar is not ready to attack.
+seq=11 id=evt-000011 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider is not ready to attack.
+seq=12 id=evt-000012 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=02f97513d3654939bb4a31837a19d166 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant is not ready to attack.
+seq=13 id=evt-000013 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Vanguard cannot attack from Front.
+seq=14 id=evt-000014 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=a3c3050e359c413891c164fb8c7a58f9 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Automaton cannot attack from BackLeft.
+seq=15 id=evt-000015 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=1115d5e113ae49e9b09531f555e3635f serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Piston Reckoner cannot attack from BackRight.
+seq=16 id=evt-000016 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=17 id=evt-000017 kind=heal serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=18 id=evt-000018 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=02f97513d3654939bb4a31837a19d166 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=19 id=evt-000019 kind=heal serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=20 id=evt-000020 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=7c7b0e439e5f4b2b898a5694234e8896 serverTargetSeat=0 targetVisual=-1 target= ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar used Poison.
+seq=21 id=evt-000021 kind=card_attack serverSrcSeat=1 srcVisual=1 src=7c7b0e439e5f4b2b898a5694234e8896 serverTargetSeat=0 targetVisual=0 target=a3c3050e359c413891c164fb8c7a58f9 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Wild Boar attacked Gear Automaton.
+seq=22 id=evt-000022 kind=card_damage serverSrcSeat=1 srcVisual=1 src=7c7b0e439e5f4b2b898a5694234e8896 serverTargetSeat=0 targetVisual=0 target=a3c3050e359c413891c164fb8c7a58f9 ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Gear Automaton took 2 damage.
+seq=23 id=evt-000023 kind=status_applied serverSrcSeat=0 srcVisual=0 src=7c7b0e439e5f4b2b898a5694234e8896 serverTargetSeat=0 targetVisual=0 target=a3c3050e359c413891c164fb8c7a58f9 ability=poison effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Poison applied to Gear Automaton.
+seq=24 id=evt-000024 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=a3c3050e359c413891c164fb8c7a58f9 serverTargetSeat=1 targetVisual=1 target=7c7b0e439e5f4b2b898a5694234e8896 ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Gear Automaton struck back at Wild Boar.
+seq=25 id=evt-000025 kind=card_damage serverSrcSeat=0 srcVisual=0 src=a3c3050e359c413891c164fb8c7a58f9 serverTargetSeat=1 targetVisual=1 target=7c7b0e439e5f4b2b898a5694234e8896 ability= effect=0 status=0 amount=3 hp=4->1 armor=0->0 message=Wild Boar took 3 damage.
+seq=26 id=evt-000026 kind=card_attack serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=0 target=a3c3050e359c413891c164fb8c7a58f9 ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Moss Spider attacked Gear Automaton.
+seq=27 id=evt-000027 kind=card_damage serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=0 target=a3c3050e359c413891c164fb8c7a58f9 ability= effect=0 status=0 amount=3 hp=2->-1 armor=0->0 message=Gear Automaton took 3 damage.
+seq=28 id=evt-000028 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=a3c3050e359c413891c164fb8c7a58f9 ability= effect=0 status=0 amount=0 hp=-1->-1 armor=0->0 message=Gear Automaton died.
+seq=29 id=evt-000029 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=a3c3050e359c413891c164fb8c7a58f9 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Gear Automaton struck back at Moss Spider.
+seq=30 id=evt-000030 kind=card_damage serverSrcSeat=0 srcVisual=0 src=a3c3050e359c413891c164fb8c7a58f9 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability= effect=0 status=0 amount=3 hp=4->1 armor=0->0 message=Moss Spider took 3 damage.
+seq=31 id=evt-000031 kind=card_attack serverSrcSeat=1 srcVisual=1 src=02f97513d3654939bb4a31837a19d166 serverTargetSeat=0 targetVisual=0 target=caf14814ac864e57bddd88e50acb3f78 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked Gear Vanguard.
+seq=32 id=evt-000032 kind=card_damage serverSrcSeat=1 srcVisual=1 src=02f97513d3654939bb4a31837a19d166 serverTargetSeat=0 targetVisual=0 target=caf14814ac864e57bddd88e50acb3f78 ability= effect=0 status=0 amount=2 hp=3->3 armor=5->3 message=Gear Vanguard took 2 damage.
+seq=33 id=evt-000033 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=1 targetVisual=1 target=02f97513d3654939bb4a31837a19d166 ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Gear Vanguard struck back at Root Treant.
+seq=34 id=evt-000034 kind=card_damage serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=1 targetVisual=1 target=02f97513d3654939bb4a31837a19d166 ability= effect=0 status=0 amount=1 hp=4->3 armor=0->0 message=Root Treant took 1 damage.
+seq=35 id=evt-000035 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Vanguard cannot attack from Front.
+seq=36 id=evt-000036 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=1115d5e113ae49e9b09531f555e3635f serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Piston Reckoner cannot attack from BackLeft.
+seq=37 id=evt-000037 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=38 id=evt-000038 kind=heal serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability=regenerate effect=1 status=0 amount=2 hp=1->3 armor=0->0 message=Moss Spider healed 2.
+seq=39 id=evt-000039 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=02f97513d3654939bb4a31837a19d166 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=40 id=evt-000040 kind=heal serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability=regenerate_left effect=1 status=0 amount=1 hp=3->4 armor=0->0 message=Moss Spider healed 1.
+seq=41 id=evt-000041 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=7c7b0e439e5f4b2b898a5694234e8896 serverTargetSeat=0 targetVisual=-1 target= ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar used Poison.
+seq=42 id=evt-000042 kind=card_attack serverSrcSeat=1 srcVisual=1 src=7c7b0e439e5f4b2b898a5694234e8896 serverTargetSeat=0 targetVisual=0 target=caf14814ac864e57bddd88e50acb3f78 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Wild Boar attacked Gear Vanguard.
+seq=43 id=evt-000043 kind=card_damage serverSrcSeat=1 srcVisual=1 src=7c7b0e439e5f4b2b898a5694234e8896 serverTargetSeat=0 targetVisual=0 target=caf14814ac864e57bddd88e50acb3f78 ability= effect=0 status=0 amount=2 hp=3->3 armor=3->1 message=Gear Vanguard took 2 damage.
+seq=44 id=evt-000044 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=1 targetVisual=1 target=7c7b0e439e5f4b2b898a5694234e8896 ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Gear Vanguard struck back at Wild Boar.
+seq=45 id=evt-000045 kind=card_damage serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=1 targetVisual=1 target=7c7b0e439e5f4b2b898a5694234e8896 ability= effect=0 status=0 amount=1 hp=1->0 armor=0->0 message=Wild Boar took 1 damage.
+seq=46 id=evt-000046 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=1 targetVisual=1 target=7c7b0e439e5f4b2b898a5694234e8896 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar died.
+seq=47 id=evt-000047 kind=card_attack serverSrcSeat=1 srcVisual=1 src=02f97513d3654939bb4a31837a19d166 serverTargetSeat=0 targetVisual=0 target=1115d5e113ae49e9b09531f555e3635f ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked Piston Reckoner.
+seq=48 id=evt-000048 kind=card_damage serverSrcSeat=1 srcVisual=1 src=02f97513d3654939bb4a31837a19d166 serverTargetSeat=0 targetVisual=0 target=1115d5e113ae49e9b09531f555e3635f ability= effect=0 status=0 amount=2 hp=3->3 armor=2->0 message=Piston Reckoner took 2 damage.
+seq=49 id=evt-000049 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=1115d5e113ae49e9b09531f555e3635f serverTargetSeat=1 targetVisual=1 target=02f97513d3654939bb4a31837a19d166 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Piston Reckoner struck back at Root Treant.
+seq=50 id=evt-000050 kind=card_damage serverSrcSeat=0 srcVisual=0 src=1115d5e113ae49e9b09531f555e3635f serverTargetSeat=1 targetVisual=1 target=02f97513d3654939bb4a31837a19d166 ability= effect=0 status=0 amount=2 hp=3->1 armor=0->0 message=Root Treant took 2 damage.
+seq=51 id=evt-000051 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Vanguard cannot attack from Front.
+seq=52 id=evt-000052 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=1115d5e113ae49e9b09531f555e3635f serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Piston Reckoner cannot attack from BackLeft.
+seq=53 id=evt-000053 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=54 id=evt-000054 kind=heal serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=55 id=evt-000055 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=56 id=evt-000056 kind=heal serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=1 targetVisual=1 target=351a04aa6bd444aa876f6a39b50bb03c ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Root Treant healed 0.
+seq=57 id=evt-000057 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=02f97513d3654939bb4a31837a19d166 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=58 id=evt-000058 kind=heal serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=1 targetVisual=1 target=351a04aa6bd444aa876f6a39b50bb03c ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Root Treant healed 0.
+seq=59 id=evt-000059 kind=attack_position_blocked serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider cannot attack from Front.
+seq=60 id=evt-000060 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant is not ready to attack.
+seq=61 id=evt-000061 kind=card_attack serverSrcSeat=1 srcVisual=1 src=02f97513d3654939bb4a31837a19d166 serverTargetSeat=0 targetVisual=0 target=caf14814ac864e57bddd88e50acb3f78 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked Gear Vanguard.
+seq=62 id=evt-000062 kind=card_damage serverSrcSeat=1 srcVisual=1 src=02f97513d3654939bb4a31837a19d166 serverTargetSeat=0 targetVisual=0 target=caf14814ac864e57bddd88e50acb3f78 ability= effect=0 status=0 amount=2 hp=3->2 armor=1->0 message=Gear Vanguard took 2 damage.
+seq=63 id=evt-000063 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=1 targetVisual=1 target=02f97513d3654939bb4a31837a19d166 ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Gear Vanguard struck back at Root Treant.
+seq=64 id=evt-000064 kind=card_damage serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=1 targetVisual=1 target=02f97513d3654939bb4a31837a19d166 ability= effect=0 status=0 amount=1 hp=1->0 armor=0->0 message=Root Treant took 1 damage.
+seq=65 id=evt-000065 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=1 targetVisual=1 target=02f97513d3654939bb4a31837a19d166 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant died.
+seq=66 id=evt-000066 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=02ec71e6658e422f83128e9d1bff4920 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Cog Golem is not ready to attack.
+seq=67 id=evt-000067 kind=card_attack serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=1 targetVisual=1 target=351a04aa6bd444aa876f6a39b50bb03c ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Gear Vanguard attacked Root Treant.
+seq=68 id=evt-000068 kind=card_damage serverSrcSeat=0 srcVisual=0 src=caf14814ac864e57bddd88e50acb3f78 serverTargetSeat=1 targetVisual=1 target=351a04aa6bd444aa876f6a39b50bb03c ability= effect=0 status=0 amount=1 hp=4->3 armor=0->0 message=Root Treant took 1 damage.
+seq=69 id=evt-000069 kind=card_counterattack serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=0 targetVisual=0 target=caf14814ac864e57bddd88e50acb3f78 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant struck back at Gear Vanguard.
+seq=70 id=evt-000070 kind=card_damage serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=0 targetVisual=0 target=caf14814ac864e57bddd88e50acb3f78 ability= effect=0 status=0 amount=2 hp=2->0 armor=0->0 message=Gear Vanguard took 2 damage.
+seq=71 id=evt-000071 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=caf14814ac864e57bddd88e50acb3f78 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Vanguard died.
+seq=72 id=evt-000072 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=73 id=evt-000073 kind=heal serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=74 id=evt-000074 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=75 id=evt-000075 kind=heal serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=1 targetVisual=1 target=351a04aa6bd444aa876f6a39b50bb03c ability=regenerate_left effect=1 status=0 amount=1 hp=3->4 armor=0->0 message=Root Treant healed 1.
+seq=76 id=evt-000076 kind=attack_position_blocked serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider cannot attack from Front.
+seq=77 id=evt-000077 kind=card_attack serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=0 targetVisual=0 target=1115d5e113ae49e9b09531f555e3635f ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked Piston Reckoner.
+seq=78 id=evt-000078 kind=card_damage serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=0 targetVisual=0 target=1115d5e113ae49e9b09531f555e3635f ability= effect=0 status=0 amount=2 hp=3->1 armor=0->0 message=Piston Reckoner took 2 damage.
+seq=79 id=evt-000079 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=1115d5e113ae49e9b09531f555e3635f serverTargetSeat=1 targetVisual=1 target=351a04aa6bd444aa876f6a39b50bb03c ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Piston Reckoner struck back at Root Treant.
+seq=80 id=evt-000080 kind=card_damage serverSrcSeat=0 srcVisual=0 src=1115d5e113ae49e9b09531f555e3635f serverTargetSeat=1 targetVisual=1 target=351a04aa6bd444aa876f6a39b50bb03c ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Root Treant took 2 damage.
+seq=81 id=evt-000081 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=2aa5088007d74a758b7a51245f870df5 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Bloom Treant is not ready to attack.
+seq=82 id=evt-000082 kind=card_attack serverSrcSeat=0 srcVisual=0 src=02ec71e6658e422f83128e9d1bff4920 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Cog Golem attacked Moss Spider.
+seq=83 id=evt-000083 kind=card_damage serverSrcSeat=0 srcVisual=0 src=02ec71e6658e422f83128e9d1bff4920 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability= effect=0 status=0 amount=1 hp=4->3 armor=0->0 message=Moss Spider took 1 damage.
+seq=84 id=evt-000084 kind=card_counterattack serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=0 target=02ec71e6658e422f83128e9d1bff4920 ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Moss Spider struck back at Cog Golem.
+seq=85 id=evt-000085 kind=card_damage serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=0 target=02ec71e6658e422f83128e9d1bff4920 ability= effect=0 status=0 amount=3 hp=2->0 armor=1->0 message=Cog Golem took 3 damage.
+seq=86 id=evt-000086 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=02ec71e6658e422f83128e9d1bff4920 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Cog Golem died.
+seq=87 id=evt-000087 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=88 id=evt-000088 kind=heal serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=1 targetVisual=1 target=be640a6286174d709dff8371c23965f9 ability=regenerate effect=1 status=0 amount=1 hp=3->4 armor=0->0 message=Moss Spider healed 1.
+seq=89 id=evt-000089 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=90 id=evt-000090 kind=heal serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=1 targetVisual=1 target=351a04aa6bd444aa876f6a39b50bb03c ability=regenerate_left effect=1 status=0 amount=2 hp=2->4 armor=0->0 message=Root Treant healed 2.
+seq=91 id=evt-000091 kind=attack_position_blocked serverSrcSeat=1 srcVisual=1 src=be640a6286174d709dff8371c23965f9 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider cannot attack from Front.
+seq=92 id=evt-000092 kind=card_attack serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=0 targetVisual=0 target=1115d5e113ae49e9b09531f555e3635f ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked Piston Reckoner.
+seq=93 id=evt-000093 kind=card_damage serverSrcSeat=1 srcVisual=1 src=351a04aa6bd444aa876f6a39b50bb03c serverTargetSeat=0 targetVisual=0 target=1115d5e113ae49e9b09531f555e3635f ability= effect=0 status=0 amount=2 hp=1->-1 armor=0->0 message=Piston Reckoner took 2 damage.
+seq=94 id=evt-000094 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=1115d5e113ae49e9b09531f555e3635f ability= effect=0 status=0 amount=0 hp=-1->-1 armor=0->0 message=Piston Reckoner died.
+seq=95 id=evt-000095 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=1115d5e113ae49e9b09531f555e3635f serverTargetSeat=1 targetVisual=1 target=351a04aa6bd444aa876f6a39b50bb03c ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Piston Reckoner struck back at Root Treant.
+seq=96 id=evt-000096 kind=card_damage serverSrcSeat=0 srcVisual=0 src=1115d5e113ae49e9b09531f555e3635f serverTargetSeat=1 targetVisual=1 target=351a04aa6bd444aa876f6a39b50bb03c ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Root Treant took 2 damage.
+seq=97 id=evt-000097 kind=card_attack serverSrcSeat=1 srcVisual=1 src=2aa5088007d74a758b7a51245f870df5 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Bloom Treant attacked the enemy hero.
+seq=98 id=evt-000098 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=2aa5088007d74a758b7a51245f870df5 serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=3 hp=20->17 armor=0->0 message=Seat 1 hero took 3 damage.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 1095851073.
+turn=1 Info: Piston Reckoner entered Front.
+turn=1 Info: Gear Automaton entered Front.
+turn=1 Info: Gear Vanguard entered Front.
+turn=2 Info: Wild Boar entered Front.
+turn=2 Info: Moss Spider entered BackLeft.
+turn=2 Info: Root Treant entered BackRight.
+turn=3 Info: Moss Spider healed 0.
+turn=5 Info: 7c7b0e439e5f4b2b898a5694234e8896 hit Gear Automaton for 2.
+turn=5 Info: a3c3050e359c413891c164fb8c7a58f9 hit Wild Boar for 3.
+turn=5 Info: be640a6286174d709dff8371c23965f9 hit Gear Automaton for 3.
+turn=5 Info: Gear Automaton died.
+turn=5 Info: a3c3050e359c413891c164fb8c7a58f9 hit Moss Spider for 3.
+turn=5 Info: 02f97513d3654939bb4a31837a19d166 hit Gear Vanguard for 2.
+turn=5 Info: caf14814ac864e57bddd88e50acb3f78 hit Root Treant for 1.
+turn=7 Info: Moss Spider healed 2.
+turn=7 Info: Moss Spider healed 1.
+turn=7 Info: 7c7b0e439e5f4b2b898a5694234e8896 hit Gear Vanguard for 2.
+turn=7 Info: caf14814ac864e57bddd88e50acb3f78 hit Wild Boar for 1.
+turn=7 Info: Wild Boar died.
+turn=7 Info: 02f97513d3654939bb4a31837a19d166 hit Piston Reckoner for 2.
+turn=7 Info: 1115d5e113ae49e9b09531f555e3635f hit Root Treant for 2.
+turn=8 Info: Root Treant entered BackLeft.
+turn=9 Info: Root Treant healed 0.
+turn=9 Info: Root Treant died.
+turn=9 Info: Cog Golem entered Front.
+turn=10 Info: 351a04aa6bd444aa876f6a39b50bb03c hit Gear Vanguard for 2.
+turn=10 Info: Gear Vanguard died.
+turn=10 Info: Bloom Treant entered BackRight.
+turn=11 Info: Root Treant healed 1.
+turn=11 Info: 351a04aa6bd444aa876f6a39b50bb03c hit Piston Reckoner for 2.
+turn=12 Info: 02ec71e6658e422f83128e9d1bff4920 hit Moss Spider for 1.
+turn=12 Info: be640a6286174d709dff8371c23965f9 hit Cog Golem for 3.
+turn=12 Info: Cog Golem died.
+turn=13 Info: Root Treant healed 2.
+turn=13 Info: Piston Reckoner died.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "1d09fe7e31f3435cbe359b889555c7ad",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 13,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 1095851073,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 17,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "8badae13b2f543fbbffa7dec6f058d6a",
+                    "cardId": "alloy_0035",
+                    "displayName": "Iron Warforged",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "df9ba89bdb8941c5ad8770a841f9df79",
+                    "cardId": "alloy_0035",
+                    "displayName": "Iron Warforged",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "26d8037f669a4a44a4bf06c362387d2d",
+                    "cardId": "alloy_0026",
+                    "displayName": "Forge Automaton",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "d1cb41369bae4a079922e5d515fb2a55",
+                    "cardId": "alloy_0028",
+                    "displayName": "Chrome Vanguard",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "0bae4034faf2463896e72b5573b1d51e",
+                    "cardId": "alloy_0016",
+                    "displayName": "Plated Sentinel",
+                    "manaCost": 3,
+                    "attack": 3,
+                    "health": 4,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "cleave",
+                            "displayName": "Cleave",
+                            "iconAssetRef": "",
+                            "skillType": 4,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_cleave",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"normalAttackModifier\": true}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 0,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"note\": \"usesAttackerAttack\", \"animationStep\": \"cleave\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "9712796552e64c74988cb9045121d293",
+                    "cardId": "alloy_0025",
+                    "displayName": "Steel Construct",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": []
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 14,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "be640a6286174d709dff8371c23965f9",
+                        "cardId": "grove_0011",
+                        "displayName": "Moss Spider",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"self\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-self\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+                        "cardId": "grove_0027",
+                        "displayName": "Root Treant",
+                        "manaCost": 3,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate_left",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate_left",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"left\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-left\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "2aa5088007d74a758b7a51245f870df5",
+                        "cardId": "grove_0025",
+                        "displayName": "Bloom Treant",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 14,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "02f97513d3654939bb4a31837a19d166 hit Gear Vanguard for 2."
+        },
+        {
+            "type": 0,
+            "message": "caf14814ac864e57bddd88e50acb3f78 hit Root Treant for 1."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant died."
+        },
+        {
+            "type": 0,
+            "message": "Cog Golem entered Front."
+        },
+        {
+            "type": 0,
+            "message": "caf14814ac864e57bddd88e50acb3f78 hit Root Treant for 1."
+        },
+        {
+            "type": 0,
+            "message": "351a04aa6bd444aa876f6a39b50bb03c hit Gear Vanguard for 2."
+        },
+        {
+            "type": 0,
+            "message": "Gear Vanguard died."
+        },
+        {
+            "type": 0,
+            "message": "Bloom Treant entered BackRight."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant healed 1."
+        },
+        {
+            "type": 0,
+            "message": "351a04aa6bd444aa876f6a39b50bb03c hit Piston Reckoner for 2."
+        },
+        {
+            "type": 0,
+            "message": "1115d5e113ae49e9b09531f555e3635f hit Root Treant for 2."
+        },
+        {
+            "type": 0,
+            "message": "02ec71e6658e422f83128e9d1bff4920 hit Moss Spider for 1."
+        },
+        {
+            "type": 0,
+            "message": "be640a6286174d709dff8371c23965f9 hit Cog Golem for 3."
+        },
+        {
+            "type": 0,
+            "message": "Cog Golem died."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 1."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant healed 2."
+        },
+        {
+            "type": 0,
+            "message": "351a04aa6bd444aa876f6a39b50bb03c hit Piston Reckoner for 2."
+        },
+        {
+            "type": 0,
+            "message": "Piston Reckoner died."
+        },
+        {
+            "type": 0,
+            "message": "1115d5e113ae49e9b09531f555e3635f hit Root Treant for 2."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000019",
+            "sequence": 19,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000020",
+            "sequence": 20,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "targetRuntimeId": "",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar used Poison."
+        },
+        {
+            "eventId": "evt-000021",
+            "sequence": 21,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "targetRuntimeId": "a3c3050e359c413891c164fb8c7a58f9",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar attacked Gear Automaton."
+        },
+        {
+            "eventId": "evt-000022",
+            "sequence": 22,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "targetRuntimeId": "a3c3050e359c413891c164fb8c7a58f9",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton took 2 damage."
+        },
+        {
+            "eventId": "evt-000023",
+            "sequence": 23,
+            "kind": "status_applied",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "targetRuntimeId": "a3c3050e359c413891c164fb8c7a58f9",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 2,
+            "message": "Poison applied to Gear Automaton."
+        },
+        {
+            "eventId": "evt-000024",
+            "sequence": 24,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "a3c3050e359c413891c164fb8c7a58f9",
+            "targetRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton struck back at Wild Boar."
+        },
+        {
+            "eventId": "evt-000025",
+            "sequence": 25,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "a3c3050e359c413891c164fb8c7a58f9",
+            "targetRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar took 3 damage."
+        },
+        {
+            "eventId": "evt-000026",
+            "sequence": 26,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "a3c3050e359c413891c164fb8c7a58f9",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider attacked Gear Automaton."
+        },
+        {
+            "eventId": "evt-000027",
+            "sequence": 27,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "a3c3050e359c413891c164fb8c7a58f9",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton took 3 damage."
+        },
+        {
+            "eventId": "evt-000028",
+            "sequence": 28,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "a3c3050e359c413891c164fb8c7a58f9",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": -1,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton died."
+        },
+        {
+            "eventId": "evt-000029",
+            "sequence": 29,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "a3c3050e359c413891c164fb8c7a58f9",
+            "targetRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Automaton struck back at Moss Spider."
+        },
+        {
+            "eventId": "evt-000030",
+            "sequence": 30,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "a3c3050e359c413891c164fb8c7a58f9",
+            "targetRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider took 3 damage."
+        },
+        {
+            "eventId": "evt-000031",
+            "sequence": 31,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "targetRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked Gear Vanguard."
+        },
+        {
+            "eventId": "evt-000032",
+            "sequence": 32,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "targetRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 5,
+            "armorAfter": 3,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard took 2 damage."
+        },
+        {
+            "eventId": "evt-000033",
+            "sequence": 33,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "targetRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard struck back at Root Treant."
+        },
+        {
+            "eventId": "evt-000034",
+            "sequence": 34,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "targetRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 1 damage."
+        },
+        {
+            "eventId": "evt-000035",
+            "sequence": 35,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000036",
+            "sequence": 36,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner cannot attack from BackLeft."
+        },
+        {
+            "eventId": "evt-000037",
+            "sequence": 37,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000038",
+            "sequence": 38,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 2."
+        },
+        {
+            "eventId": "evt-000039",
+            "sequence": 39,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000040",
+            "sequence": 40,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 1."
+        },
+        {
+            "eventId": "evt-000041",
+            "sequence": 41,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "targetRuntimeId": "",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar used Poison."
+        },
+        {
+            "eventId": "evt-000042",
+            "sequence": 42,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "targetRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar attacked Gear Vanguard."
+        },
+        {
+            "eventId": "evt-000043",
+            "sequence": 43,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "targetRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 3,
+            "armorAfter": 1,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard took 2 damage."
+        },
+        {
+            "eventId": "evt-000044",
+            "sequence": 44,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "targetRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard struck back at Wild Boar."
+        },
+        {
+            "eventId": "evt-000045",
+            "sequence": 45,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "targetRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar took 1 damage."
+        },
+        {
+            "eventId": "evt-000046",
+            "sequence": 46,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "7c7b0e439e5f4b2b898a5694234e8896",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar died."
+        },
+        {
+            "eventId": "evt-000047",
+            "sequence": 47,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "targetRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked Piston Reckoner."
+        },
+        {
+            "eventId": "evt-000048",
+            "sequence": 48,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "targetRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 2,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner took 2 damage."
+        },
+        {
+            "eventId": "evt-000049",
+            "sequence": 49,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "targetRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner struck back at Root Treant."
+        },
+        {
+            "eventId": "evt-000050",
+            "sequence": 50,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "targetRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 2 damage."
+        },
+        {
+            "eventId": "evt-000051",
+            "sequence": 51,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000052",
+            "sequence": 52,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner cannot attack from BackLeft."
+        },
+        {
+            "eventId": "evt-000053",
+            "sequence": 53,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000054",
+            "sequence": 54,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000055",
+            "sequence": 55,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000056",
+            "sequence": 56,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "eventId": "evt-000057",
+            "sequence": 57,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000058",
+            "sequence": 58,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "eventId": "evt-000059",
+            "sequence": 59,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000060",
+            "sequence": 60,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant is not ready to attack."
+        },
+        {
+            "eventId": "evt-000061",
+            "sequence": 61,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "targetRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked Gear Vanguard."
+        },
+        {
+            "eventId": "evt-000062",
+            "sequence": 62,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "targetRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 2,
+            "armorBefore": 1,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard took 2 damage."
+        },
+        {
+            "eventId": "evt-000063",
+            "sequence": 63,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "targetRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard struck back at Root Treant."
+        },
+        {
+            "eventId": "evt-000064",
+            "sequence": 64,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "targetRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 1 damage."
+        },
+        {
+            "eventId": "evt-000065",
+            "sequence": 65,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "02f97513d3654939bb4a31837a19d166",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant died."
+        },
+        {
+            "eventId": "evt-000066",
+            "sequence": 66,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "02ec71e6658e422f83128e9d1bff4920",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Cog Golem is not ready to attack."
+        },
+        {
+            "eventId": "evt-000067",
+            "sequence": 67,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "targetRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard attacked Root Treant."
+        },
+        {
+            "eventId": "evt-000068",
+            "sequence": 68,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "targetRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 1 damage."
+        },
+        {
+            "eventId": "evt-000069",
+            "sequence": 69,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant struck back at Gear Vanguard."
+        },
+        {
+            "eventId": "evt-000070",
+            "sequence": 70,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard took 2 damage."
+        },
+        {
+            "eventId": "evt-000071",
+            "sequence": 71,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "caf14814ac864e57bddd88e50acb3f78",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard died."
+        },
+        {
+            "eventId": "evt-000072",
+            "sequence": 72,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000073",
+            "sequence": 73,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000074",
+            "sequence": 74,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000075",
+            "sequence": 75,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 1."
+        },
+        {
+            "eventId": "evt-000076",
+            "sequence": 76,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000077",
+            "sequence": 77,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked Piston Reckoner."
+        },
+        {
+            "eventId": "evt-000078",
+            "sequence": 78,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner took 2 damage."
+        },
+        {
+            "eventId": "evt-000079",
+            "sequence": 79,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "targetRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner struck back at Root Treant."
+        },
+        {
+            "eventId": "evt-000080",
+            "sequence": 80,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "targetRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 2 damage."
+        },
+        {
+            "eventId": "evt-000081",
+            "sequence": 81,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "2aa5088007d74a758b7a51245f870df5",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant is not ready to attack."
+        },
+        {
+            "eventId": "evt-000082",
+            "sequence": 82,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "02ec71e6658e422f83128e9d1bff4920",
+            "targetRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Cog Golem attacked Moss Spider."
+        },
+        {
+            "eventId": "evt-000083",
+            "sequence": 83,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "02ec71e6658e422f83128e9d1bff4920",
+            "targetRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider took 1 damage."
+        },
+        {
+            "eventId": "evt-000084",
+            "sequence": 84,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "02ec71e6658e422f83128e9d1bff4920",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider struck back at Cog Golem."
+        },
+        {
+            "eventId": "evt-000085",
+            "sequence": 85,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "02ec71e6658e422f83128e9d1bff4920",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 0,
+            "armorBefore": 1,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Cog Golem took 3 damage."
+        },
+        {
+            "eventId": "evt-000086",
+            "sequence": 86,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "02ec71e6658e422f83128e9d1bff4920",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Cog Golem died."
+        },
+        {
+            "eventId": "evt-000087",
+            "sequence": 87,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000088",
+            "sequence": 88,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 1."
+        },
+        {
+            "eventId": "evt-000089",
+            "sequence": 89,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000090",
+            "sequence": 90,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 2."
+        },
+        {
+            "eventId": "evt-000091",
+            "sequence": 91,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be640a6286174d709dff8371c23965f9",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000092",
+            "sequence": 92,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked Piston Reckoner."
+        },
+        {
+            "eventId": "evt-000093",
+            "sequence": 93,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "targetRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner took 2 damage."
+        },
+        {
+            "eventId": "evt-000094",
+            "sequence": 94,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": -1,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner died."
+        },
+        {
+            "eventId": "evt-000095",
+            "sequence": 95,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "targetRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner struck back at Root Treant."
+        },
+        {
+            "eventId": "evt-000096",
+            "sequence": 96,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1115d5e113ae49e9b09531f555e3635f",
+            "targetRuntimeId": "351a04aa6bd444aa876f6a39b50bb03c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 2 damage."
+        },
+        {
+            "eventId": "evt-000097",
+            "sequence": 97,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "2aa5088007d74a758b7a51245f870df5",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000098",
+            "sequence": 98,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "2aa5088007d74a758b7a51245f870df5",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 20,
+            "hpAfter": 17,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 3 damage."
+        }
+    ]
+}

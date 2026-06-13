@@ -1,0 +1,459 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-12T23:42:14.4927471Z
+LastUpdatedUtc: 2026-06-12T23:42:24.7008686Z
+MatchId: dfe9cd8253ed4bfba9a71d0f0299ea14
+CurrentTurn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 1055010381.
+002. seq=-1 /Info: Forge Automaton entered Front.
+003. seq=1 skill_begin/SkillBegin: Gear Vanguard used Armor.
+004. seq=2 Gear Vanguard#3ac09e80 gains armor 3. Armor 2->5. Gear Vanguard gained 3 armor.
+005. seq=3 skill_begin/SkillBegin: Gear Vanguard used Armor.
+006. seq=4 Gear Vanguard#e1015337 gains armor 3. Armor 2->5. Gear Vanguard gained 3 armor.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-12T23:42:14.4942816Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-12T23:42:15.0583918Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 1055010381.
+-- Step 3 | UTC 2026-06-12T23:42:18.7809213Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Forge Automaton#bc173411 hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Forge Automaton entered Front.
+-- Step 4 | UTC 2026-06-12T23:42:21.3016607Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Gear Vanguard#3ac09e80 hp=3/3 armor=5 unitType=1 delivery=projectile, BackLeft:Forge Automaton#bc173411 hp=3/3 armor=2 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=1 skill_begin/SkillBegin: Gear Vanguard used Armor.
+   - seq=2 Gear Vanguard#3ac09e80 gains armor 3. Armor 2->5. Gear Vanguard gained 3 armor.
+-- Step 5 | UTC 2026-06-12T23:42:24.4508967Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=14/20 board=[Front:Gear Vanguard#e1015337 hp=3/3 armor=5 unitType=1 delivery=projectile, BackLeft:Gear Vanguard#3ac09e80 hp=3/3 armor=5 unitType=1 delivery=projectile, BackRight:Forge Automaton#bc173411 hp=3/3 armor=2 unitType=1 delivery=projectile] hand=1 deck=20 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=3 skill_begin/SkillBegin: Gear Vanguard used Armor.
+   - seq=4 Gear Vanguard#e1015337 gains armor 3. Armor 2->5. Gear Vanguard gained 3 armor.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=3ac09e803f29435f86e0752056e09610 serverTargetSeat=0 targetVisual=-1 target= ability=armor effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Vanguard used Armor.
+seq=2 id=evt-000002 kind=armor_gain serverSrcSeat=0 srcVisual=0 src=3ac09e803f29435f86e0752056e09610 serverTargetSeat=0 targetVisual=0 target=3ac09e803f29435f86e0752056e09610 ability=armor effect=2 status=0 amount=3 hp=3->3 armor=2->5 message=Gear Vanguard gained 3 armor.
+seq=3 id=evt-000003 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=e10153379e7048f8b20f1b07ee650c0c serverTargetSeat=0 targetVisual=-1 target= ability=armor effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Vanguard used Armor.
+seq=4 id=evt-000004 kind=armor_gain serverSrcSeat=0 srcVisual=0 src=e10153379e7048f8b20f1b07ee650c0c serverTargetSeat=0 targetVisual=0 target=e10153379e7048f8b20f1b07ee650c0c ability=armor effect=2 status=0 amount=3 hp=3->3 armor=2->5 message=Gear Vanguard gained 3 armor.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 1055010381.
+turn=1 Info: Forge Automaton entered Front.
+turn=1 Info: Gear Vanguard entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "dfe9cd8253ed4bfba9a71d0f0299ea14",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 1,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 1055010381,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 14,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "2640dbfa7bda40dabedff3e024d0b126",
+                    "cardId": "alloy_0029",
+                    "displayName": "Iron Turret",
+                    "manaCost": 2,
+                    "attack": 1,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "taunt",
+                            "displayName": "Taunt",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_taunt_pulse",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"targetingModifier\": true}",
+                            "effects": []
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "e10153379e7048f8b20f1b07ee650c0c",
+                        "cardId": "alloy_0034",
+                        "displayName": "Gear Vanguard",
+                        "manaCost": 2,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 5,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "armor",
+                                "displayName": "Armor",
+                                "iconAssetRef": "",
+                                "skillType": 0,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_armor_gain",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"battleOrder\": \"on_play\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 3,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"armor\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "3ac09e803f29435f86e0752056e09610",
+                        "cardId": "alloy_0034",
+                        "displayName": "Gear Vanguard",
+                        "manaCost": 2,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 5,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "armor",
+                                "displayName": "Armor",
+                                "iconAssetRef": "",
+                                "skillType": 0,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_armor_gain",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"battleOrder\": \"on_play\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 3,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"armor\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "bc1734114c07402a874917f68dc1d844",
+                        "cardId": "alloy_0026",
+                        "displayName": "Forge Automaton",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 2,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 1055010381."
+        },
+        {
+            "type": 0,
+            "message": "Forge Automaton entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Gear Vanguard entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Gear Vanguard entered Front."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "3ac09e803f29435f86e0752056e09610",
+            "targetRuntimeId": "",
+            "abilityId": "armor",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard used Armor."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "armor_gain",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "3ac09e803f29435f86e0752056e09610",
+            "targetRuntimeId": "3ac09e803f29435f86e0752056e09610",
+            "abilityId": "armor",
+            "effectKind": 2,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 2,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard gained 3 armor."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "e10153379e7048f8b20f1b07ee650c0c",
+            "targetRuntimeId": "",
+            "abilityId": "armor",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard used Armor."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "armor_gain",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "e10153379e7048f8b20f1b07ee650c0c",
+            "targetRuntimeId": "e10153379e7048f8b20f1b07ee650c0c",
+            "abilityId": "armor",
+            "effectKind": 2,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 2,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard gained 3 armor."
+        }
+    ]
+}
