@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Flippy.CardDuelMobile.SinglePlayer;
 using Flippy.CardDuelMobile.Networking;
 
 namespace Flippy.CardDuelMobile.Core
@@ -14,7 +13,6 @@ namespace Flippy.CardDuelMobile.Core
         public static GameModeManager Instance { get; private set; }
 
         [SerializeField] private bool _isLocalMode = true;
-        private LocalSinglePlayerCoordinator _localCoord;
         private NetworkBootstrap _networkBootstrap;
 
         public bool IsLocalMode => _isLocalMode;
@@ -75,17 +73,11 @@ namespace Flippy.CardDuelMobile.Core
 
         private void RefreshSceneReferences()
         {
-            _localCoord = FindFirstObjectByType<LocalSinglePlayerCoordinator>();
             _networkBootstrap = FindFirstObjectByType<NetworkBootstrap>();
         }
 
         private void ApplyMode()
         {
-            if (_localCoord != null)
-            {
-                _localCoord.gameObject.SetActive(_isLocalMode);
-            }
-
             if (_networkBootstrap != null)
             {
                 _networkBootstrap.gameObject.SetActive(!_isLocalMode);
