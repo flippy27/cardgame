@@ -117,5 +117,3 @@ namespace Flippy.CardDuelMobile.UI
         public static void ClearCache() => _frameCache.Clear();
     }
 }
-</content>
-</invoke>
