@@ -50,6 +50,9 @@ namespace Flippy.CardDuelMobile.UI
         private float _dragScreenDistance;
         private bool _isDragging;
         private Board3DSlot _hoveredSlot;
+        private Board3DSlot _pendingHoverSlot;
+        private float _pendingHoverElapsed;
+        private const float hoverSwitchDebounce = 0.08f; // stable window before switching hovered slot
         private GameObject _dragGhostInstance;
         private DragGhost3D _dragGhost;
 
@@ -308,7 +311,33 @@ namespace Flippy.CardDuelMobile.UI
                 _dragDistance = Vector3.Distance(_dragStartWorldPos, ghostWorldPos);
             }
 
-            SetHoveredSlot(RaycastBoardSlot(screenPosition));
+            // Debounce the hovered slot: at a boundary the raycast can flip between two slots every
+            // frame, which made the displacement preview oscillate wildly. Only commit a switch once
+            // the same candidate has been hovered for a short, stable window.
+            var candidate = RaycastBoardSlot(screenPosition);
+            if (candidate == _hoveredSlot)
+            {
+                _pendingHoverSlot = candidate;
+                _pendingHoverElapsed = 0f;
+            }
+            else
+            {
+                if (candidate == _pendingHoverSlot)
+                {
+                    _pendingHoverElapsed += Time.deltaTime;
+                }
+                else
+                {
+                    _pendingHoverSlot = candidate;
+                    _pendingHoverElapsed = 0f;
+                }
+
+                if (_pendingHoverElapsed >= hoverSwitchDebounce)
+                {
+                    SetHoveredSlot(candidate);
+                    _pendingHoverElapsed = 0f;
+                }
+            }
         }
 
         private void EndDrag()
