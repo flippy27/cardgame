@@ -41,15 +41,16 @@ namespace Flippy.CardDuelMobile.UI
         private const string SkillIconRoot = "Art/icons/skills";
         private const string StatusIconRoot = "Art/icons/status";
 
-        // Socket centres as fractions of the full-bleed 512x768 card (top-left origin, y grows down).
-        // The frame fills the whole canvas, so these are the pockets designed into the art-pack frames.
-        // The TMP stat numbers overlay at the same fractions (LayoutStatsOverlay). Tune by screenshot.
-        private static readonly Vector2 HandSocketMana = new Vector2(0.155f, 0.115f);   // top-left disc
-        private static readonly Vector2 HandSocketAttack = new Vector2(0.165f, 0.875f); // bottom-left
-        private static readonly Vector2 HandSocketHealth = new Vector2(0.835f, 0.875f); // bottom-right
-        private static readonly Vector2 BoardSocketAttack = new Vector2(0.18f, 0.80f);
-        private static readonly Vector2 BoardSocketHealth = new Vector2(0.82f, 0.80f);
-        private const float SocketArmorYOffset = 0.10f;   // armor socket sits this much above health
+        // Socket centres as fractions of the 512x768 / 256x384 card (top-left origin, y grows down).
+        // PACK1 frames are CENTRED with transparent top/bottom margins (hand art spans y 0.128-0.876,
+        // board y 0.167-0.828), so sockets live inside that band. The TMP stat numbers overlay at the
+        // same fractions (LayoutStatsOverlay). Tune by screenshot.
+        private static readonly Vector2 HandSocketMana = new Vector2(0.130f, 0.170f);   // top-left disc
+        private static readonly Vector2 HandSocketAttack = new Vector2(0.130f, 0.780f); // bottom-left
+        private static readonly Vector2 HandSocketHealth = new Vector2(0.870f, 0.780f); // bottom-right
+        private static readonly Vector2 BoardSocketAttack = new Vector2(0.130f, 0.740f);
+        private static readonly Vector2 BoardSocketHealth = new Vector2(0.870f, 0.740f);
+        private const float SocketArmorYOffset = 0.085f;  // armor socket sits this much above health
         private const float SocketIconFraction = 0.15f;   // icon size as fraction of canvas width
         private static readonly Vector2 CrestCentre = new Vector2(0.5f, 0.135f); // faction emblem, top band
         private const float CrestFraction = 0.20f;        // crest size as fraction of canvas width

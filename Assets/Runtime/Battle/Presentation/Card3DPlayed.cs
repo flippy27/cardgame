@@ -89,10 +89,11 @@ namespace Flippy.CardDuelMobile.UI
         {
             // Numbers sit on top of the baked socket symbols (same fractions as CardArtLibrary, with
             // the centred frame's transparent band accounted for). Overlay canvas is 1000x1000.
-            PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -300f), 65f);   // name strip (top)
-            PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(250f, 375f), 155f); // attack, bottom-left
-            PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-250f, 375f), 155f);// health, bottom-right
-            PlaceStat(armorText, new Vector2(1f, 0f), new Vector2(-250f, 490f), 135f); // armor, above health
+            // Canvas 1000x1000. Tracks board socket fractions (attack 0.13,0.74 · health 0.87,0.74).
+            PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -180f), 65f);   // name strip (top)
+            PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(130f, 260f), 155f); // attack, bottom-left
+            PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-130f, 260f), 155f);// health, bottom-right
+            PlaceStat(armorText, new Vector2(1f, 0f), new Vector2(-130f, 345f), 135f); // armor, above health
         }
 
         private static void PlaceStat(TextMeshProUGUI text, Vector2 anchor, Vector2 anchoredPosition, float fontSize)

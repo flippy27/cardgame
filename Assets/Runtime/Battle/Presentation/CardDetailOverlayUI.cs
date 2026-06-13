@@ -65,12 +65,18 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             var detailImage = FindPreferredDetailImage();
+            // FindPreferredDetailImage only finds a real art image when the scene has one named
+            // art/visual/card; otherwise it falls back to an unrelated icon panel image (which made the
+            // preview render into a tiny wrong rect under the full-screen dim panel). Guarantee a proper
+            // centred 2:3 art surface by creating a dedicated one when none is named.
+            if (detailImage == null || !detailImage.gameObject.name.ToLowerInvariant().Contains("art"))
+            {
+                detailImage = CreateDetailArtImage();
+            }
             if (visualRenderer != null && detailImage != null)
             {
                 visualRenderer.EnsureDefaultImageBinding(detailImage, "played");
-                // The composite is a 2:3 card; keep it from stretching across the (often full-screen)
-                // overlay image. PreserveAspect renders it centred at card proportions over the dim backdrop.
-                detailImage.preserveAspect = true;
+                detailImage.preserveAspect = true; // 2:3 card, never stretched across the overlay
             }
 
             attackTypeImage ??= FindPreferredAttackTypeImage();
@@ -151,6 +157,27 @@ namespace Flippy.CardDuelMobile.UI
                 canvasGroup.interactable = visible;
                 canvasGroup.blocksRaycasts = visible;
             }
+        }
+
+        // Builds a dedicated centred 2:3 card-art Image under the panel (behind the stat/text children,
+        // above the dim backdrop) so the composite shows as a card, not a stretched full-screen wash.
+        private Image CreateDetailArtImage()
+        {
+            var parent = (panelRoot != null ? panelRoot.transform : transform) as RectTransform;
+            var go = new GameObject("CardArt", typeof(RectTransform), typeof(Image));
+            var rect = go.GetComponent<RectTransform>();
+            rect.SetParent(parent, false);
+            rect.anchorMin = new Vector2(0.5f, 0.5f);
+            rect.anchorMax = new Vector2(0.5f, 0.5f);
+            rect.pivot = new Vector2(0.5f, 0.5f);
+            rect.sizeDelta = new Vector2(420f, 630f); // 2:3 card
+            rect.anchoredPosition = Vector2.zero;
+            rect.SetSiblingIndex(0); // behind the title/stat children, in front of the panel backdrop
+
+            var image = go.GetComponent<Image>();
+            image.raycastTarget = false;
+            image.preserveAspect = true;
+            return image;
         }
 
         private Image FindPreferredDetailImage()
