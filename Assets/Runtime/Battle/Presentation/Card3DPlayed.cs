@@ -97,10 +97,10 @@ namespace Flippy.CardDuelMobile.UI
 
             // Board cards show skills + buffs/debuffs as a row of SMALL circles floating ABOVE the
             // frame (skills left, status right). y positive past the top edge = above the card.
-            abilityIconGroup?.SetCellSize(new Vector2(70f, 70f));
-            statusIconGroup?.SetCellSize(new Vector2(70f, 70f));
-            PlaceIconPanel(abilityIconGroup, new Vector2(0.5f, 1f), new Vector2(-170f, 90f), new Vector2(360f, 90f));
-            PlaceIconPanel(statusIconGroup, new Vector2(0.5f, 1f), new Vector2(170f, 90f), new Vector2(360f, 90f));
+            abilityIconGroup?.SetCellSize(new Vector2(130f, 130f));
+            statusIconGroup?.SetCellSize(new Vector2(130f, 130f));
+            PlaceIconPanel(abilityIconGroup, new Vector2(0.5f, 1f), new Vector2(-150f, 40f), new Vector2(360f, 130f));
+            PlaceIconPanel(statusIconGroup, new Vector2(0.5f, 1f), new Vector2(150f, 40f), new Vector2(360f, 130f));
         }
 
         private static void PlaceIconPanel(CardIconGroup group, Vector2 anchor, Vector2 anchoredPosition, Vector2 size)

@@ -24,6 +24,8 @@ namespace Flippy.CardDuelMobile.UI
         public float dragMinScreenDistance = 24f;
         public float quickDragStartScreenDistance = 24f;
         public float detailToDragUpwardDistance = 80f;
+        [Tooltip("Allow dragging cards already in play (destroy-by-drag). Off: played cards aren't draggable.")]
+        [SerializeField] private bool allowBoardCardDrag = false;
 
         [Header("Inspect")]
         public float inspectHoldDelay = 0.35f;
@@ -162,7 +164,9 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
-            if (_pressedBoardCard != null &&
+            // Cards already in play are not draggable (no destroy-by-drag) unless explicitly enabled.
+            if (allowBoardCardDrag &&
+                _pressedBoardCard != null &&
                 (cardDetailOverlay == null || !cardDetailOverlay.IsVisible) &&
                 Vector2.Distance(pointerState.screenPosition, _pressStartScreenPos) >= quickDragStartScreenDistance)
             {
@@ -337,19 +341,18 @@ namespace Flippy.CardDuelMobile.UI
                 Debug.Log("[DragHandler3D] Drag ghost destroyed");
             }
 
-            // Restore the original card only if it was NOT played; a played card is removed by the
-            // upcoming hand refresh, so leaving it hidden prevents a one-frame duplicate flash.
-            if (!played)
+            // Always restore the card's visuals. The server is authoritative: if the play is accepted
+            // the next snapshot removes the card from the hand; if it is REJECTED (e.g. illegal slot)
+            // the card stays in hand and must remain visible — never leave it hidden ("consumed but
+            // not played"). A brief 1-frame flash on a successful play is acceptable.
+            SetRenderersEnabled(_draggedCardHiddenRenderers, true);
+            if (_draggedCardHiddenCanvases != null)
             {
-                SetRenderersEnabled(_draggedCardHiddenRenderers, true);
-                if (_draggedCardHiddenCanvases != null)
+                foreach (var canvas in _draggedCardHiddenCanvases)
                 {
-                    foreach (var canvas in _draggedCardHiddenCanvases)
+                    if (canvas != null)
                     {
-                        if (canvas != null)
-                        {
-                            canvas.enabled = true;
-                        }
+                        canvas.enabled = true;
                     }
                 }
             }
