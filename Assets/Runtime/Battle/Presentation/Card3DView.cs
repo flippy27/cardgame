@@ -93,8 +93,9 @@ namespace Flippy.CardDuelMobile.UI
             PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-130f, 308f), 150f); // health, bottom-right (0.87,0.78)
             PlaceStat(armorText, new Vector2(1f, 0f), new Vector2(-130f, 427f), 130f);  // armor, above health
 
-            // Ability icons: a row across the lower-middle of the card (prefab had it parked off-screen).
-            PlaceIconPanel(abilityIconGroup, new Vector2(0.5f, 0.5f), new Vector2(0f, -150f), new Vector2(760f, 150f));
+            // Ability icons: a row of larger circles across the lower-middle of the card.
+            abilityIconGroup?.SetCellSize(new Vector2(110f, 110f));
+            PlaceIconPanel(abilityIconGroup, new Vector2(0.5f, 0.5f), new Vector2(0f, -120f), new Vector2(820f, 150f));
         }
 
         private static void PlaceIconPanel(CardIconGroup group, Vector2 anchor, Vector2 anchoredPosition, Vector2 size)

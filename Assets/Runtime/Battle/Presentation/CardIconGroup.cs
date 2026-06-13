@@ -61,6 +61,13 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
+        /// <summary>Sets the grid cell size at runtime (hand cards use bigger icons than board tokens).</summary>
+        public void SetCellSize(Vector2 size)
+        {
+            cellSize = size;
+            EnsureLayout();
+        }
+
         public void Apply(IReadOnlyList<CardStateVisualData> states)
         {
             EnsureRoot();
