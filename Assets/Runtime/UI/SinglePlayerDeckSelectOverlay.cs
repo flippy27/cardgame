@@ -86,9 +86,9 @@ namespace Flippy.CardDuelMobile.UI
             srt.pivot = new Vector2(0.5f, 0.5f);
             srt.sizeDelta = new Vector2(740, 760);
             srt.anchoredPosition = new Vector2(0f, 10f);
-            var scrollRect = scrollGo.AddComponent<ScrollRect>();
+            var scrollRect = scrollGo.gameObject.AddComponent<ScrollRect>();
             scrollRect.horizontal = false;
-            scrollGo.AddComponent<RectMask2D>();
+            scrollGo.gameObject.AddComponent<RectMask2D>();
 
             var content = new GameObject("Content").AddComponent<RectTransform>();
             content.SetParent(scrollGo.transform, false);
@@ -104,7 +104,7 @@ namespace Flippy.CardDuelMobile.UI
             vlg.childForceExpandHeight = false;
             vlg.childForceExpandWidth = true;
             var fitter = content.gameObject.AddComponent<ContentSizeFitter>();
-            fitter.verticalFit = ContentSizeFitter.Fit.PreferredSize;
+            fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
             scrollRect.content = content;
             scrollRect.viewport = srt;
             _listContainer = content;
