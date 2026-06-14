@@ -101,3 +101,29 @@ Unity writes all `Debug.Log` to `C:\Users\Flippy\AppData\Local\Unity\Editor\Edit
 file** (grep) to diagnose runtime behaviour instead of asking the user to paste the console — this is
 the fastest way to nail visual/positioning/timing bugs. Unity cannot be compiled from Claude Code; the
 user recompiles in the editor and iterates by screenshot.
+Validate C# without compiling via `mcp__ide__getDiagnostics` (per file) — but note it does NOT catch all
+cross-namespace errors the Unity compiler does (e.g. a missing `using`). Input: project uses the NEW Input
+System only — use `UnityEngine.InputSystem.Keyboard.current`, NEVER `UnityEngine.Input` (legacy throws).
+
+## Systems added 2026-06-14 (see ../HANDOFF_20260614.md + memory)
+- **Stat/effect badges**: `CardStatBadges` restyle — health = heart WITHOUT a circle, stat icons poke to the
+  outer corner, armor raised off health; non-unit effect badges (+/- + status icon). 107 pixel-art icons
+  installed under `Resources/Art/icons/{modular,status,skills,faction,rarity,type}` + `Resources/Art/items`
+  (Point-filter via `CardArtImportPostprocessor`). Status sprite keys are PAST-tense (`status_poisoned`…).
+- **Card icons**: skills + buffs/debuffs render via `CardIconGroup` (hand bottom-centre, board above); the
+  group is created at runtime if the prefab didn't wire one. Skill icons = `Art/icons/skills/skill_{abilityId}`.
+- **Progression UI**: `ProgressApiClient` → Lv/XP bar in `DeckBuilderShell` header; `PlayerProfileHud` (level
+  circle = Player Profile button) in the main menu (`MatchmakingPanelController`); ★N card level in collection
+  cells + preview (`CardCellView`/`CardDetailOverlayUI`). In-battle ★N is a TODO (snapshot lacks the level).
+- **Card upgrade trees (client)**: "My Cards" tab in `DeckBuilderShell` + `CardUpgradeView` (leveling) +
+  `CardUpgradeApiClient` (GET tree/state, POST apply-level).
+- **Card effect shaders**: `Assets/Shaders/CardEffects.shader` + `CardEffectController` (Shield/Glow/Dissolve/
+  Freeze/Burn/Holo/Outline). **Currently GATED OFF** (`Card3DPlayed.SurfaceEffectsEnabled=false`, summon glow
+  removed) because the shader-swap blanked cards. Diagnose with the **FX Test** view (`EffectTestView`, menu
+  button) which drives `CardEffectController` directly; fix the material binding before re-enabling.
+- **Debug battle panel** (`DebugBattlePanel`, F9 / "DBG" button, editor/dev only): server-authoritative debug
+  actions (HP/mana/draw/end-turn/status/force-attack) via `MatchSignalRCoordinator.DebugActionAsync`.
+- **Match-start**: `MatchLoadingOverlay` + composite warm-up; fixed the play→board "disappear/reappear"
+  (removed a renderer hide-gap in `GameplayPresenter3D.AnimateBoardCardEntry`).
+- Card frames are still `frames3`; new `frames4` (title nameplate as a separate overlay, faction-themed,
+  rarity-by-gem) are to be generated from the `tutorials/*.csv` manifests, then re-mapped in `CardArtLibrary`.
