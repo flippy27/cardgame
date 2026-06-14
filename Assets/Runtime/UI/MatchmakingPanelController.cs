@@ -54,6 +54,7 @@ namespace Flippy.CardDuelMobile.UI
         private int _connectedPlayers;
         private bool _loadedMainGame;
         private PlayerProfileHud _profileHud;
+        private GameObject _fxTestButtonRoot;
 
         private void Awake()
         {
@@ -61,6 +62,9 @@ namespace Flippy.CardDuelMobile.UI
             AttachCoordinator(MatchSignalRCoordinator.Instance);
             // Main-menu player widget: level circle (top-right) that opens the profile overlay.
             _profileHud = PlayerProfileHud.Create(_authService);
+            // DIAGNOSTIC entry: a small "FX Test" button (own overlay canvas) that opens the standalone
+            // shader-effects test view (EffectTestView). Code-built so it needs no scene/prefab wiring.
+            _fxTestButtonRoot = BuildFxTestButton();
         }
 
         private void OnEnable()
@@ -101,6 +105,69 @@ namespace Flippy.CardDuelMobile.UI
             {
                 Destroy(_profileHud.gameObject);
             }
+            if (_fxTestButtonRoot != null)
+            {
+                Destroy(_fxTestButtonRoot);
+            }
+        }
+
+        // Builds the code-side "FX Test" button on its own screen-space overlay canvas (same pattern as
+        // PlayerProfileHud). Tapping it opens EffectTestView and hands it the menu roots to hide while the
+        // view is open (the matchmaking UI root, the profile HUD canvas, and this button's own canvas) so
+        // no menu overlay bleeds over the test card; EffectTestView re-activates them on Back.
+        private GameObject BuildFxTestButton()
+        {
+            var canvasGo = new GameObject("FxTestMenuButton");
+            var canvas = canvasGo.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = 480; // just under the profile HUD (500)
+            var scaler = canvasGo.AddComponent<UnityEngine.UI.CanvasScaler>();
+            scaler.uiScaleMode = UnityEngine.UI.CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1080f, 1920f);
+            scaler.matchWidthOrHeight = 0.5f;
+            canvasGo.AddComponent<UnityEngine.UI.GraphicRaycaster>();
+
+            var btnGo = new GameObject("FxTestButton",
+                typeof(RectTransform), typeof(CanvasRenderer), typeof(UnityEngine.UI.Image), typeof(Button));
+            var rt = (RectTransform)btnGo.transform;
+            rt.SetParent(canvasGo.transform, false);
+            rt.anchorMin = rt.anchorMax = new Vector2(0f, 1f); // top-left
+            rt.pivot = new Vector2(0f, 1f);
+            rt.anchoredPosition = new Vector2(24f, -24f);
+            rt.sizeDelta = new Vector2(180f, 84f);
+            btnGo.GetComponent<UnityEngine.UI.Image>().color = new Color(0.20f, 0.24f, 0.32f, 0.96f);
+
+            var labelGo = new GameObject("Label",
+                typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
+            var lrt = (RectTransform)labelGo.transform;
+            lrt.SetParent(rt, false);
+            lrt.anchorMin = Vector2.zero;
+            lrt.anchorMax = Vector2.one;
+            lrt.offsetMin = Vector2.zero;
+            lrt.offsetMax = Vector2.zero;
+            var label = labelGo.GetComponent<TextMeshProUGUI>();
+            label.text = "FX Test";
+            label.fontSize = 30f;
+            label.alignment = TextAlignmentOptions.Center;
+            label.color = Color.white;
+            label.raycastTarget = false;
+
+            btnGo.GetComponent<Button>().onClick.AddListener(OpenFxTestView);
+            return canvasGo;
+        }
+
+        private void OpenFxTestView()
+        {
+            // Hide the menu UI (this controller's root, the profile HUD, and the FX-test button canvas)
+            // while the test view is open so nothing bleeds over the test card. EffectTestView restores
+            // them on Back.
+            var rootsToHide = new[]
+            {
+                gameObject,
+                _profileHud != null ? _profileHud.gameObject : null,
+                _fxTestButtonRoot,
+            };
+            EffectTestView.Open(rootsToHide);
         }
 
         private void ResolveDependencies()
