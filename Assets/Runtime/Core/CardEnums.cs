@@ -91,4 +91,77 @@ namespace Flippy.CardDuelMobile.Core
         Completed = 4,
         Abandoned = 5
     }
+
+    /// <summary>
+    /// Tipo de efecto de una habilidad. ESPEJO EXACTO del server
+    /// (CardDuel.ServerApi <c>Game/MatchEngine.cs</c> enum EffectKind). Llega por wire como
+    /// ENTERO en <c>CardEffectDto.effectKind</c> / <c>BattleEventDto.effectKind</c>; castea
+    /// <c>(EffectKind)dto.effectKind</c> para leerlo. Mantener los valores idénticos al server.
+    /// </summary>
+    public enum EffectKind
+    {
+        Damage = 0,
+        Heal = 1,
+        GainArmor = 2,
+        BuffAttack = 3,
+        HitHero = 4,
+        Stun = 5,
+        Poison = 6,
+        Leech = 7,
+        Evasion = 8,
+        Shield = 9,
+        Reflection = 10,
+        Dodge = 11,
+        Enrage = 12,
+        ManaBurn = 13,
+        Regenerate = 14,
+        Execute = 15,
+        DiagonalAttack = 16,
+        Fly = 17,
+        Armor = 18,
+        Chain = 19,
+        Charge = 20,
+        Cleave = 21,
+        LastStand = 22,
+        MeleeRange = 23,
+        Ricochet = 24,
+        Taunt = 25,
+        Trample = 26,
+        Haste = 27,
+        AddShield = 28,
+        ApplyPoison = 29,
+        ApplyStun = 30,
+        // ── Status-applying / cleansing effects (mirror StatusEffectKind 4..11). ──
+        ApplyBurn = 31,          // damage-over-time, ignores armor (fire)
+        ApplyRegeneration = 32,  // heal-over-time (ally)
+        ApplyParalyze = 33,      // multi-turn skip-attack (hard control)
+        ApplyConfuse = 34,       // attacks a random target (incl. allies)
+        ApplySilence = 35,       // disables the unit's abilities/modifiers
+        ApplyVulnerable = 36,    // target takes extra incoming damage
+        ApplyWeaken = 37,        // target deals less attack/counter damage
+        ApplyWard = 38,          // blocks the next debuff applied to target (immunity charge)
+        Cleanse = 39,            // removes all debuffs from target (ally cure)
+        Dispel = 40              // removes all buffs from target (enemy purge)
+    }
+
+    /// <summary>
+    /// Estado persistente sobre una carta. ESPEJO EXACTO del server
+    /// (CardDuel.ServerApi <c>Game/MatchEngine.cs</c> enum StatusEffectKind). Llega por wire como
+    /// ENTERO en <c>StatusEffectDto.kind</c> / <c>BattleEventDto.statusKind</c>. Mantener idéntico.
+    /// </summary>
+    public enum StatusEffectKind
+    {
+        Poison = 0,
+        Stun = 1,
+        Shield = 2,
+        EnrageCooldown = 3,
+        Burn = 4,
+        Regeneration = 5,
+        Paralyze = 6,
+        Confuse = 7,
+        Silence = 8,
+        Vulnerable = 9,
+        Weaken = 10,
+        Ward = 11
+    }
 }

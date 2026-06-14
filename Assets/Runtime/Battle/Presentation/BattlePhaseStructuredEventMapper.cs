@@ -24,7 +24,12 @@ namespace Flippy.CardDuelMobile.UI
             foreach (var battleEvent in orderedEvents)
             {
                 var kind = NormalizeKind(battleEvent.kind);
-                if (kind is "card_damage" or "card_counterattack" or "hero_damage" or "shield_block")
+                // Only the events that carry the ACTUAL damage seed the resolved set.
+                // card_attack AND card_counterattack are windup/declare events that the
+                // server pairs with a following card_damage (same source->target). The
+                // windup must NOT lunge when its damage event will — otherwise the
+                // counterattack animates twice ("the defender attacks twice").
+                if (kind is "card_damage" or "hero_damage" or "shield_block")
                 {
                     resolvedDamageKeys.Add(AttackKey(battleEvent));
                 }
@@ -56,7 +61,9 @@ namespace Flippy.CardDuelMobile.UI
                 "armor_gain" => BattlePresentationEventKind.ArmorGain,
                 "attack_buff" => BattlePresentationEventKind.AttackBuff,
                 "death" => BattlePresentationEventKind.Death,
-                "card_counterattack" => BattlePresentationEventKind.CardAttack,
+                "card_counterattack" => resolvedDamageKeys != null && resolvedDamageKeys.Contains(AttackKey(battleEvent))
+                    ? BattlePresentationEventKind.Info
+                    : BattlePresentationEventKind.CardAttack,
                 "card_attack" => resolvedDamageKeys != null && resolvedDamageKeys.Contains(AttackKey(battleEvent))
                     ? BattlePresentationEventKind.Info
                     : BattlePresentationEventKind.CardAttack,
@@ -208,12 +215,21 @@ namespace Flippy.CardDuelMobile.UI
 
         public static string StatusKindName(int statusKind)
         {
+            // Mirror Flippy.CardDuelMobile.Core.StatusEffectKind (server StatusEffectKind).
             return statusKind switch
             {
                 0 => "Poison",
                 1 => "Stun",
                 2 => "Shield",
                 3 => "EnrageCooldown",
+                4 => "Burn",
+                5 => "Regeneration",
+                6 => "Paralyze",
+                7 => "Confuse",
+                8 => "Silence",
+                9 => "Vulnerable",
+                10 => "Weaken",
+                11 => "Ward",
                 _ => statusKind >= 0 ? $"Status{statusKind}" : "Status"
             };
         }

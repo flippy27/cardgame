@@ -271,4 +271,23 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         public string matchId;
         public string playerId;
     }
+
+    // DEBUG/TEST: mirrors server Contracts/ApiDtos.cs MatchDebugRequest. Only honored when the server has
+    // match debug enabled (Development env or Debug:EnableMatchDebug=true). 'action' is the discriminator;
+    // the remaining fields are interpreted per-action by the server. See DebugBattlePanel.
+    [System.Serializable]
+    public sealed class MatchDebugRequestDto
+    {
+        public string matchId;
+        public string playerId;
+        public string action;
+        public int seatIndex;
+        public int amount;
+        public int value;
+        public int duration;
+        public int slotIndex;
+        public int statusKind;
+        public string runtimeId;
+        public string cardId;
+    }
 }

@@ -1,0 +1,617 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-14T22:05:58.7424292Z
+LastUpdatedUtc: 2026-06-14T22:10:46.1537942Z
+MatchId: 69711f2aa472479e90a233be0b57805d
+CurrentTurn: 3
+ActivePlayerIndex: 0
+ActivePlayerId: 4711bc99-7e71-4b9f-af63-03d783bcfb67
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (72b269b6-4054-4bdf-8dfa-f709ab408855)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 721156165.
+002. seq=-1 /Info: Iron Warforged entered Front.
+003. seq=1 P0 P0 attacks P0 for 10002. HP 3->-9999, Armor 0->0. Iron Warforged took 10002 damage.
+004. seq=2 P0 dies. Iron Warforged died.
+005. seq=-1 /Info: Cog Golem entered Front.
+006. seq=-1 /Info: Forge Automaton entered Front.
+007. seq=3 Forge Automaton#1ee3475b skipped. Forge Automaton is not ready to attack.
+008. seq=4 Cog Golem#9c8690f3 skipped. Cog Golem is not ready to attack.
+009. seq=-1 /Info: Wild Boar entered Front.
+010. seq=-1 /Info: Fang Spriggan entered BackLeft.
+011. seq=-1 /Info: Fang Spriggan entered BackRight.
+012. seq=5 Wild Boar#c4d9ad4f skipped. Wild Boar is not ready to attack.
+013. seq=6 Fang Spriggan#f00482af skipped. Fang Spriggan is not ready to attack.
+014. seq=7 Fang Spriggan#be935f2a skipped. Fang Spriggan is not ready to attack.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-14T22:05:58.7473064Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=4711bc99 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=30 | P1 id=fbabafcc hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-14T22:06:02.7213312Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=4711bc99 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=fbabafcc hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 721156165.
+-- Step 3 | UTC 2026-06-14T22:06:13.8231525Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=4711bc99 hp=20 mana=18/20 board=[Front:Iron Warforged#f8d06e6e hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=fbabafcc hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Iron Warforged entered Front.
+-- Step 4 | UTC 2026-06-14T22:06:32.7158469Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=4711bc99 hp=20 mana=18/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=fbabafcc hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=1 P0 P0 attacks P0 for 10002. HP 3->-9999, Armor 0->0. Iron Warforged took 10002 damage.
+   - seq=2 P0 dies. Iron Warforged died.
+-- Step 5 | UTC 2026-06-14T22:06:35.9484144Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=4711bc99 hp=20 mana=17/20 board=[Front:Cog Golem#9c8690f3 hp=2/2 armor=1 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=2 deck=26 | P1 id=fbabafcc hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Cog Golem entered Front.
+-- Step 6 | UTC 2026-06-14T22:07:33.7831124Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=4711bc99 hp=20 mana=15/20 board=[Front:Forge Automaton#1ee3475b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:Cog Golem#9c8690f3 hp=2/2 armor=1 unitType=0 delivery=melee, BackRight:empty] hand=1 deck=26 | P1 id=fbabafcc hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Forge Automaton entered Front.
+-- Step 7 | UTC 2026-06-14T22:10:44.0995516Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=4711bc99 hp=20 mana=15/20 board=[Front:Forge Automaton#1ee3475b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:Cog Golem#9c8690f3 hp=2/2 armor=1 unitType=0 delivery=melee, BackRight:empty] hand=1 deck=26 | P1 id=fbabafcc hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=3 Forge Automaton#1ee3475b skipped. Forge Automaton is not ready to attack.
+   - seq=4 Cog Golem#9c8690f3 skipped. Cog Golem is not ready to attack.
+-- Step 8 | UTC 2026-06-14T22:10:44.7633575Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=4711bc99 hp=20 mana=15/20 board=[Front:Forge Automaton#1ee3475b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:Cog Golem#9c8690f3 hp=2/2 armor=1 unitType=0 delivery=melee, BackRight:empty] hand=1 deck=26 | P1 id=fbabafcc hp=20 mana=17/20 board=[Front:Wild Boar#c4d9ad4f hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Wild Boar entered Front.
+-- Step 9 | UTC 2026-06-14T22:10:45.2242195Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=4711bc99 hp=20 mana=15/20 board=[Front:Forge Automaton#1ee3475b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:Cog Golem#9c8690f3 hp=2/2 armor=1 unitType=0 delivery=melee, BackRight:empty] hand=1 deck=26 | P1 id=fbabafcc hp=20 mana=15/20 board=[Front:Wild Boar#c4d9ad4f hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Fang Spriggan#f00482af hp=2/2 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Fang Spriggan entered BackLeft.
+-- Step 10 | UTC 2026-06-14T22:10:45.6841170Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=4711bc99 hp=20 mana=15/20 board=[Front:Forge Automaton#1ee3475b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:Cog Golem#9c8690f3 hp=2/2 armor=1 unitType=0 delivery=melee, BackRight:empty] hand=1 deck=26 | P1 id=fbabafcc hp=20 mana=13/20 board=[Front:Wild Boar#c4d9ad4f hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Fang Spriggan#f00482af hp=2/2 armor=0 unitType=2 delivery=beam, BackRight:Fang Spriggan#be935f2a hp=2/2 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=-1 /Info: Fang Spriggan entered BackRight.
+-- Step 11 | UTC 2026-06-14T22:10:46.1537942Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=4711bc99 hp=20 mana=20/20 board=[Front:Forge Automaton#1ee3475b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:Cog Golem#9c8690f3 hp=2/2 armor=1 unitType=0 delivery=melee, BackRight:empty] hand=2 deck=25 | P1 id=fbabafcc hp=20 mana=13/20 board=[Front:Wild Boar#c4d9ad4f hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Fang Spriggan#f00482af hp=2/2 armor=0 unitType=2 delivery=beam, BackRight:Fang Spriggan#be935f2a hp=2/2 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=5 Wild Boar#c4d9ad4f skipped. Wild Boar is not ready to attack.
+   - seq=6 Fang Spriggan#f00482af skipped. Fang Spriggan is not ready to attack.
+   - seq=7 Fang Spriggan#be935f2a skipped. Fang Spriggan is not ready to attack.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=card_damage serverSrcSeat=0 srcVisual=0 src=debug serverTargetSeat=0 targetVisual=0 target=f8d06e6e98354a979d49147d9a8fae8d ability=debug effect=0 status=0 amount=10002 hp=3->-9999 armor=0->0 message=Iron Warforged took 10002 damage.
+seq=2 id=evt-000002 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=f8d06e6e98354a979d49147d9a8fae8d ability= effect=0 status=0 amount=0 hp=-9999->-9999 armor=0->0 message=Iron Warforged died.
+seq=3 id=evt-000003 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=1ee3475bee9141c5a97f57ab8a2fc58c serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Forge Automaton is not ready to attack.
+seq=4 id=evt-000004 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=9c8690f361d3462aba472589565744ed serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Cog Golem is not ready to attack.
+seq=5 id=evt-000005 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=c4d9ad4fad384e36bb5c8019c713f8ab serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar is not ready to attack.
+seq=6 id=evt-000006 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=f00482af40fd4422a7245f5d9878ed11 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Fang Spriggan is not ready to attack.
+seq=7 id=evt-000007 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=be935f2a4e314fcb9c064c03d33dadba serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Fang Spriggan is not ready to attack.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 721156165.
+turn=1 Info: Iron Warforged entered Front.
+turn=1 Info: debug hit Iron Warforged for 10002.
+turn=1 Info: Iron Warforged died.
+turn=1 Info: Cog Golem entered Front.
+turn=1 Info: Forge Automaton entered Front.
+turn=2 Info: Wild Boar entered Front.
+turn=2 Info: Fang Spriggan entered BackLeft.
+turn=2 Info: Fang Spriggan entered BackRight.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "69711f2aa472479e90a233be0b57805d",
+    "rulesetId": "72b269b6-4054-4bdf-8dfa-f709ab408855",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "72b269b6-4054-4bdf-8dfa-f709ab408855",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "4711bc99-7e71-4b9f-af63-03d783bcfb67",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 3,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 721156165,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "4711bc99-7e71-4b9f-af63-03d783bcfb67",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "4c4bcee1eac14b5096896d7734fbf8cc",
+                    "cardId": "ember_0022",
+                    "displayName": "War Banner",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_blessing",
+                            "displayName": "Blessing",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_blessing",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-heal\"}"
+                                },
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-buff\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "485bc18abc6a47968436f19908187d7d",
+                    "cardId": "grove_0028",
+                    "displayName": "Bramble Lurker",
+                    "manaCost": 1,
+                    "attack": 1,
+                    "health": 2,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": []
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "1ee3475bee9141c5a97f57ab8a2fc58c",
+                        "cardId": "alloy_0026",
+                        "displayName": "Forge Automaton",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 2,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "9c8690f361d3462aba472589565744ed",
+                        "cardId": "alloy_0036",
+                        "displayName": "Cog Golem",
+                        "manaCost": 1,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 1,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 25,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "fbabafcc-0bcf-4314-8d71-0322755f0160",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 13,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "c4d9ad4fad384e36bb5c8019c713f8ab",
+                        "cardId": "grove_0034",
+                        "displayName": "Wild Boar",
+                        "manaCost": 3,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "poison",
+                                "displayName": "Poison",
+                                "iconAssetRef": "",
+                                "skillType": 1,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_poison_apply",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 2,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"poison\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "f00482af40fd4422a7245f5d9878ed11",
+                        "cardId": "grove_0031",
+                        "displayName": "Fang Spriggan",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_taunt_pulse",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"targetingModifier\": true}",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "be935f2a4e314fcb9c064c03d33dadba",
+                        "cardId": "grove_0031",
+                        "displayName": "Fang Spriggan",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_taunt_pulse",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"targetingModifier\": true}",
+                                "effects": []
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 19,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by 4711bc99-7e71-4b9f-af63-03d783bcfb67."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by fbabafcc-0bcf-4314-8d71-0322755f0160."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 721156165."
+        },
+        {
+            "type": 0,
+            "message": "Iron Warforged entered Front."
+        },
+        {
+            "type": 0,
+            "message": "debug hit Iron Warforged for 10002."
+        },
+        {
+            "type": 0,
+            "message": "Iron Warforged died."
+        },
+        {
+            "type": 0,
+            "message": "Cog Golem entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Forge Automaton entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Wild Boar entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Fang Spriggan entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Fang Spriggan entered BackRight."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "debug",
+            "targetRuntimeId": "f8d06e6e98354a979d49147d9a8fae8d",
+            "abilityId": "debug",
+            "effectKind": 0,
+            "amount": 10002,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": -9999,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged took 10002 damage."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "f8d06e6e98354a979d49147d9a8fae8d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": -9999,
+            "hpAfter": -9999,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged died."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "1ee3475bee9141c5a97f57ab8a2fc58c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Forge Automaton is not ready to attack."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "9c8690f361d3462aba472589565744ed",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Cog Golem is not ready to attack."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "c4d9ad4fad384e36bb5c8019c713f8ab",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar is not ready to attack."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "f00482af40fd4422a7245f5d9878ed11",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Fang Spriggan is not ready to attack."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "be935f2a4e314fcb9c064c03d33dadba",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Fang Spriggan is not ready to attack."
+        }
+    ]
+}

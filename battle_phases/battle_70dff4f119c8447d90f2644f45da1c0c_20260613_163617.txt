@@ -1,0 +1,435 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T16:36:17.3987652Z
+LastUpdatedUtc: 2026-06-13T16:36:28.9984339Z
+MatchId: 70dff4f119c8447d90f2644f45da1c0c
+CurrentTurn: 1
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 985658038.
+002. seq=1 skill_begin/SkillBegin: Gear Vanguard used Armor.
+003. seq=2 Gear Vanguard#fd343dc7 gains armor 3. Armor 2->5. Gear Vanguard gained 3 armor.
+004. seq=-1 /Info: Bramble Lurker entered Front.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T16:36:17.4050965Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=30 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T16:36:17.6643046Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 985658038.
+-- Step 3 | UTC 2026-06-13T16:36:21.5952819Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Gear Vanguard#fd343dc7 hp=3/3 armor=5 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=1 skill_begin/SkillBegin: Gear Vanguard used Armor.
+   - seq=2 Gear Vanguard#fd343dc7 gains armor 3. Armor 2->5. Gear Vanguard gained 3 armor.
+-- Step 4 | UTC 2026-06-13T16:36:28.9752096Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Bramble Lurker#0f2aef81 hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:Gear Vanguard#fd343dc7 hp=3/3 armor=5 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Bramble Lurker entered Front.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=fd343dc72cc641d4b40a44b1a4526b09 serverTargetSeat=0 targetVisual=-1 target= ability=armor effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Gear Vanguard used Armor.
+seq=2 id=evt-000002 kind=armor_gain serverSrcSeat=0 srcVisual=0 src=fd343dc72cc641d4b40a44b1a4526b09 serverTargetSeat=0 targetVisual=0 target=fd343dc72cc641d4b40a44b1a4526b09 ability=armor effect=2 status=0 amount=3 hp=3->3 armor=2->5 message=Gear Vanguard gained 3 armor.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 985658038.
+turn=1 Info: Gear Vanguard entered Front.
+turn=1 Info: Bramble Lurker entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "70dff4f119c8447d90f2644f45da1c0c",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 1,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 985658038,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 17,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "bf1428c572084d8e848ecd1d6dd4b9de",
+                    "cardId": "ember_0040",
+                    "displayName": "Forge Rite",
+                    "manaCost": 2,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_blessing",
+                            "displayName": "Blessing",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_blessing",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-heal\"}"
+                                },
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-buff\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "12be77d5e858484d9691df4dcf568e0c",
+                    "cardId": "ember_0039",
+                    "displayName": "Cinderbrand Axe",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "equip_weapon",
+                            "displayName": "Weapon",
+                            "iconAssetRef": "",
+                            "skillType": 2,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "equip_weapon",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"equipment\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"equip-weapon\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "0f2aef81f3164193b9e7fc85afb48940",
+                        "cardId": "grove_0028",
+                        "displayName": "Bramble Lurker",
+                        "manaCost": 1,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "fd343dc72cc641d4b40a44b1a4526b09",
+                        "cardId": "alloy_0034",
+                        "displayName": "Gear Vanguard",
+                        "manaCost": 2,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 1,
+                        "currentHealth": 3,
+                        "maxHealth": 3,
+                        "armor": 5,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "armor",
+                                "displayName": "Armor",
+                                "iconAssetRef": "",
+                                "skillType": 0,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_armor_gain",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"battleOrder\": \"on_play\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 3,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"armor\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 26,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 20,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 985658038."
+        },
+        {
+            "type": 0,
+            "message": "Gear Vanguard entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Bramble Lurker entered Front."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "fd343dc72cc641d4b40a44b1a4526b09",
+            "targetRuntimeId": "",
+            "abilityId": "armor",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard used Armor."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "armor_gain",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "fd343dc72cc641d4b40a44b1a4526b09",
+            "targetRuntimeId": "fd343dc72cc641d4b40a44b1a4526b09",
+            "abilityId": "armor",
+            "effectKind": 2,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 2,
+            "armorAfter": 5,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Gear Vanguard gained 3 armor."
+        }
+    ]
+}

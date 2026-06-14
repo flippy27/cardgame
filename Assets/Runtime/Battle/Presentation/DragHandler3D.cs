@@ -51,6 +51,19 @@ namespace Flippy.CardDuelMobile.UI
         private bool _isDragging;
         private Board3DSlot _hoveredSlot;
         private ICardDisplay _targetCard;             // board card highlighted as a spell/equipment target
+        private GameObject _targetOutline;            // generated soft-glow quad hugging _targetCard's border
+        private static readonly Color FriendlyTargetColor = new Color(0.2f, 1f, 0.3f);
+        private static readonly Color EnemyTargetColor = new Color(1f, 0.25f, 0.2f);
+        // --- Soft rim-glow tuning (all in the card's local space, where the card is ~1 unit) ---
+        private const float targetGlowScale = 1.22f;     // glow quad size relative to the card (outer reach of the halo)
+        private const float targetGlowBorder = 0.16f;    // glow band thickness as a fraction of the quad (rim hugging the edge)
+        private const float targetGlowFeather = 0.55f;   // 0..1 softness of the outward fade (higher = softer/blurrier)
+        private const float targetGlowIntensity = 0.9f;  // peak alpha of the glow rim
+        private const float targetGlowLocalZ = 0.02f;    // push BEHIND the card so the halo peeks out around the edges
+        private const float targetGlowPulseAmount = 0.18f; // alpha swing of the gentle pulse (fraction of intensity)
+        private const float targetGlowPulseScale = 0.03f;  // scale swing of the gentle pulse (fraction of size)
+        private const float targetGlowPulseSpeed = 3.2f;    // pulse cycles speed (radians/sec feed)
+        private const int targetGlowTextureSize = 256;      // resolution of the cached glow texture
         private const float hoverMaxDistance = 3.2f; // max world distance from a slot centre to count as "over board"
         private const float hoverHysteresis = 1.0f;  // the nearest slot must be this much closer to switch away
         private GameObject _dragGhostInstance;
@@ -80,6 +93,13 @@ namespace Flippy.CardDuelMobile.UI
         private void Start()
         {
             EnsureReferences();
+        }
+
+        private void OnDisable()
+        {
+            // Don't leave a target halo behind if the handler is torn down / disabled mid-drag.
+            ClearTargetOutline();
+            _targetCard = null;
         }
 
         private void Update()
@@ -347,6 +367,60 @@ namespace Flippy.CardDuelMobile.UI
             return false;
         }
 
+        // Mirrors the server's EnsureLegalPlacement for the LOCAL player's board. Placement priority is
+        // Front -> BackLeft -> BackRight; a back slot is blocked until its prerequisite(s) are occupied,
+        // and an occupied slot stays playable (placing there shifts the chain down) until all three are
+        // full. Reads occupancy from the latest snapshot's local board.
+        //   - Front:     legal unless all three slots are occupied (full board).
+        //   - BackLeft:  legal only if Front is occupied AND not (BackLeft AND BackRight both occupied).
+        //   - BackRight: legal only if Front AND BackLeft are occupied AND BackRight is empty.
+        // Only applies to UNIT placement; callers gate non-units out before calling this.
+        private bool IsSlotLegalForPlacement(BoardSlot slot)
+        {
+            var snapshot = GameplayPresenter3D.GetLatestSnapshot();
+            if (snapshot?.players == null ||
+                snapshot.localPlayerIndex < 0 ||
+                snapshot.localPlayerIndex >= snapshot.players.Length)
+            {
+                // Without a snapshot we can't validate; fail closed so we never highlight/send an
+                // illegal slot. (Front would be the only ever-safe choice, but be conservative.)
+                return false;
+            }
+
+            var board = snapshot.players[snapshot.localPlayerIndex]?.board;
+            var frontOccupied = IsSlotOccupied(board, BoardSlot.Front);
+            var backLeftOccupied = IsSlotOccupied(board, BoardSlot.BackLeft);
+            var backRightOccupied = IsSlotOccupied(board, BoardSlot.BackRight);
+
+            switch (slot)
+            {
+                case BoardSlot.Front:
+                    return !(frontOccupied && backLeftOccupied && backRightOccupied);
+                case BoardSlot.BackLeft:
+                    return frontOccupied && !(backLeftOccupied && backRightOccupied);
+                case BoardSlot.BackRight:
+                    return frontOccupied && backLeftOccupied && !backRightOccupied;
+                default:
+                    return false;
+            }
+        }
+
+        private static bool IsSlotOccupied(BoardSlotSnapshotDto[] board, BoardSlot slot)
+        {
+            if (board == null)
+            {
+                return false;
+            }
+            foreach (var entry in board)
+            {
+                if (entry != null && entry.slot == slot)
+                {
+                    return entry.occupied;
+                }
+            }
+            return false;
+        }
+
         // Highlights the board card nearest the ghost as the spell/equipment target.
         private void UpdateTargetHover(Vector3 ghostPos)
         {
@@ -385,14 +459,268 @@ namespace Flippy.CardDuelMobile.UI
             {
                 return;
             }
-            _targetCard?.ResetColor();
+
+            ClearTargetOutline();
             _targetCard = card;
+
             if (_targetCard != null)
             {
-                // Green = friendly target, red = enemy target (tint stands in for a coloured outline).
-                _targetCard.SetColor(_targetCard.PlayerIndex == 0
-                    ? new Color(0.45f, 1f, 0.5f)
-                    : new Color(1f, 0.45f, 0.45f));
+                // Green outline = friendly/ally target (local player owns it, PlayerIndex 0),
+                // red outline = enemy target. Ownership comes straight off the board card itself.
+                var color = _targetCard.PlayerIndex == 0 ? FriendlyTargetColor : EnemyTargetColor;
+                ShowTargetOutline(_targetCard, color);
+            }
+        }
+
+        // Renders a soft RIM-GLOW that hugs the targeted card's silhouette: a single quad, sitting just
+        // behind the card and a little larger, textured with a cached soft-edged rounded-rectangle halo
+        // (transparent centre, coloured rim feathered outward). Tinted green (friendly) / red (enemy) and
+        // gently pulsed. Reads as an emissive glow tracing the border, not a hard bar. Generated in code
+        // (no prefab/shader asset needed) and re-created each time the target changes; cleaned up by
+        // ClearTargetOutline. This replaces the old hollow green frame.
+        private void ShowTargetOutline(ICardDisplay card, Color color)
+        {
+            if (card == null || !card.TryGetTransform(out var cardTransform))
+            {
+                return;
+            }
+
+            _targetOutline = new GameObject("SpellTargetGlow")
+            {
+                hideFlags = HideFlags.HideAndDontSave
+            };
+            _targetOutline.transform.SetParent(cardTransform, worldPositionStays: false);
+            // Push slightly BEHIND the card (+Z, away from camera) so only the feathered halo peeks out
+            // around the edges instead of overlapping the card art.
+            _targetOutline.transform.localPosition = new Vector3(0f, 0f, targetGlowLocalZ);
+            _targetOutline.transform.localRotation = Quaternion.identity;
+            _targetOutline.transform.localScale = Vector3.one * targetGlowScale;
+
+            var filter = _targetOutline.AddComponent<MeshFilter>();
+            filter.sharedMesh = GetGlowQuadMesh();
+
+            var renderer = _targetOutline.AddComponent<MeshRenderer>();
+            renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            renderer.receiveShadows = false;
+
+            // Per-instance material (tinted + pulsed alpha) over a shared transparent-unlit shader and the
+            // shared white glow texture. Unlit transparent reads as a flat emissive halo regardless of the
+            // scene lighting / render pipeline.
+            var material = new Material(GetGlowShader())
+            {
+                hideFlags = HideFlags.HideAndDontSave,
+                mainTexture = GetGlowTexture()
+            };
+            ApplyGlowTint(material, color, targetGlowIntensity);
+            renderer.sharedMaterial = material;
+
+            // Gentle pulse (alpha + scale) so the highlight feels alive without being distracting.
+            var pulse = _targetOutline.AddComponent<TargetGlowPulse>();
+            pulse.Configure(material, color, targetGlowScale, targetGlowIntensity,
+                targetGlowPulseAmount, targetGlowPulseScale, targetGlowPulseSpeed);
+        }
+
+        private void ClearTargetOutline()
+        {
+            if (_targetOutline == null)
+            {
+                return;
+            }
+
+            var renderer = _targetOutline.GetComponent<MeshRenderer>();
+            if (renderer != null && renderer.sharedMaterial != null)
+            {
+                Destroy(renderer.sharedMaterial);
+            }
+
+            Destroy(_targetOutline);
+            _targetOutline = null;
+        }
+
+        // Tints the glow material to the given colour at the given peak alpha. White texture * colour gives
+        // the rim its hue; alpha rides the texture's feathered falloff.
+        private static void ApplyGlowTint(Material material, Color color, float intensity)
+        {
+            if (material == null)
+            {
+                return;
+            }
+            var tint = color;
+            tint.a = Mathf.Clamp01(intensity);
+            material.color = tint;
+            if (material.HasProperty(GlowColorId))
+            {
+                material.SetColor(GlowColorId, tint);
+            }
+        }
+
+        private static readonly int GlowColorId = Shader.PropertyToID("_Color");
+
+        // A simple unit quad (1x1 in XY, facing -Z toward the camera) carrying the glow texture. Scaled up
+        // by targetGlowScale on the instance. Built once and reused for every target glow.
+        private static Mesh _glowQuadMesh;
+        private static Mesh GetGlowQuadMesh()
+        {
+            if (_glowQuadMesh != null)
+            {
+                return _glowQuadMesh;
+            }
+
+            const float h = 0.5f;
+            var vertices = new[]
+            {
+                new Vector3(-h, -h, 0f),
+                new Vector3(-h, h, 0f),
+                new Vector3(h, h, 0f),
+                new Vector3(h, -h, 0f)
+            };
+            var uv = new[]
+            {
+                new Vector2(0f, 0f),
+                new Vector2(0f, 1f),
+                new Vector2(1f, 1f),
+                new Vector2(1f, 0f)
+            };
+            // Wound so the quad faces -Z (toward the camera).
+            var triangles = new[] { 0, 1, 2, 0, 2, 3 };
+
+            _glowQuadMesh = new Mesh
+            {
+                name = "SpellTargetGlowQuad",
+                hideFlags = HideFlags.HideAndDontSave,
+                vertices = vertices,
+                uv = uv,
+                triangles = triangles
+            };
+            _glowQuadMesh.RecalculateNormals();
+            _glowQuadMesh.RecalculateBounds();
+            return _glowQuadMesh;
+        }
+
+        // Picks a transparent unlit shader that works in built-in + URP. "Sprites/Default" multiplies
+        // texture * vertex/_Color and blends alpha — ideal for a tinted, feathered glow. Falls back to the
+        // particle additive shader, then plain unlit transparent.
+        private static Shader _glowShader;
+        private static Shader GetGlowShader()
+        {
+            if (_glowShader != null)
+            {
+                return _glowShader;
+            }
+            _glowShader = Shader.Find("Sprites/Default")
+                ?? Shader.Find("Legacy Shaders/Particles/Alpha Blended")
+                ?? Shader.Find("Unlit/Transparent");
+            return _glowShader;
+        }
+
+        // Cached soft glow texture: a rounded-rectangle "rim" in white with a transparent centre and an
+        // alpha that feathers to zero outward, so tinting it produces a soft halo hugging the card edge.
+        // The band peaks near the card silhouette and fades both inward (so it doesn't cover the art) and
+        // outward (so the edge is soft, not a hard line).
+        private static Texture2D _glowTexture;
+        private static Texture2D GetGlowTexture()
+        {
+            if (_glowTexture != null)
+            {
+                return _glowTexture;
+            }
+
+            var size = Mathf.Max(16, targetGlowTextureSize);
+            var tex = new Texture2D(size, size, TextureFormat.RGBA32, mipChain: false, linear: false)
+            {
+                name = "SpellTargetGlowTex",
+                hideFlags = HideFlags.HideAndDontSave,
+                wrapMode = TextureWrapMode.Clamp,
+                filterMode = FilterMode.Bilinear
+            };
+
+            var pixels = new Color32[size * size];
+            // The card silhouette occupies the quad inset by half the (scaled) overshoot. In UV terms the
+            // glow quad is targetGlowScale across, so the card edge sits at inset = (1 - 1/scale) * 0.5.
+            var edgeInset = Mathf.Clamp01((1f - 1f / Mathf.Max(0.0001f, targetGlowScale)) * 0.5f);
+            // Half-thickness of the bright band, as a fraction of the quad (UV space).
+            var band = Mathf.Max(0.001f, targetGlowBorder * 0.5f);
+            var feather = Mathf.Clamp01(targetGlowFeather);
+
+            for (var y = 0; y < size; y++)
+            {
+                var v = (y + 0.5f) / size;
+                for (var x = 0; x < size; x++)
+                {
+                    var u = (x + 0.5f) / size;
+                    // Distance from the nearest quad edge (0 at the border, 0.5 at the centre).
+                    var distToEdge = Mathf.Min(Mathf.Min(u, 1f - u), Mathf.Min(v, 1f - v));
+                    // Signed distance from the card silhouette line: 0 on the line, grows inward.
+                    var d = distToEdge - edgeInset;
+
+                    float alpha;
+                    if (d <= 0f)
+                    {
+                        // Outside the card silhouette (toward the quad border): feather outward to 0.
+                        // -band reaches full edge of the soft outer falloff.
+                        var t = Mathf.Clamp01(1f + d / (band * (1f + feather * 2f)));
+                        alpha = t * t; // ease so the outer fade is gentle
+                    }
+                    else
+                    {
+                        // Inside the card: fade quickly to 0 so the centre/art stays clear.
+                        var t = Mathf.Clamp01(1f - d / band);
+                        alpha = t * t;
+                    }
+
+                    var a = (byte)Mathf.Clamp(Mathf.RoundToInt(alpha * 255f), 0, 255);
+                    pixels[y * size + x] = new Color32(255, 255, 255, a);
+                }
+            }
+
+            tex.SetPixels32(pixels);
+            tex.Apply(updateMipmaps: false);
+            _glowTexture = tex;
+            return _glowTexture;
+        }
+
+        // Subtly animates the glow's alpha and scale so the target highlight breathes. Lives on the glow
+        // GameObject and is destroyed with it; it only drives the per-instance material/transform.
+        private sealed class TargetGlowPulse : MonoBehaviour
+        {
+            private Material _material;
+            private Color _baseColor;
+            private float _baseScale;
+            private float _baseIntensity;
+            private float _alphaAmount;
+            private float _scaleAmount;
+            private float _speed;
+            private float _phase;
+
+            public void Configure(Material material, Color color, float baseScale, float baseIntensity,
+                float alphaAmount, float scaleAmount, float speed)
+            {
+                _material = material;
+                _baseColor = color;
+                _baseScale = baseScale;
+                _baseIntensity = baseIntensity;
+                _alphaAmount = alphaAmount;
+                _scaleAmount = scaleAmount;
+                _speed = speed;
+                _phase = 0f;
+            }
+
+            private void Update()
+            {
+                if (_material == null)
+                {
+                    return;
+                }
+
+                _phase += Time.deltaTime * _speed;
+                // 0..1 breathing curve.
+                var wave = (Mathf.Sin(_phase) + 1f) * 0.5f;
+
+                var intensity = _baseIntensity * (1f - _alphaAmount * (1f - wave));
+                ApplyGlowTint(_material, _baseColor, intensity);
+
+                var scale = _baseScale * (1f + _scaleAmount * (wave - 0.5f) * 2f);
+                transform.localScale = Vector3.one * scale;
             }
         }
 
@@ -407,6 +735,13 @@ namespace Flippy.CardDuelMobile.UI
             var nearestDist = float.MaxValue;
             foreach (var slotEnum in new[] { BoardSlot.Front, BoardSlot.BackLeft, BoardSlot.BackRight })
             {
+                // Only the local player's LEGAL slots can be hovered/highlighted for a unit placement
+                // (Front -> BackLeft -> BackRight priority). Illegal slots are skipped entirely so the
+                // nearest LEGAL slot wins and the displacement preview never fires on a blocked slot.
+                if (!IsSlotLegalForPlacement(slotEnum))
+                {
+                    continue;
+                }
                 var slot = board3DManager.GetSlot(0, slotEnum);
                 if (slot == null)
                 {
@@ -428,7 +763,8 @@ namespace Flippy.CardDuelMobile.UI
             }
 
             // Hysteresis: keep the current slot unless the new nearest is at least hoverHysteresis closer.
-            if (_hoveredSlot != null && _hoveredSlot != nearest)
+            // Only stick to the current slot while it is itself still a legal placement target.
+            if (_hoveredSlot != null && _hoveredSlot != nearest && IsSlotLegalForPlacement(_hoveredSlot.Slot))
             {
                 var cp = _hoveredSlot.transform.position;
                 var currentDist = Vector2.Distance(new Vector2(cp.x, cp.y), new Vector2(worldPos.x, worldPos.y));
@@ -675,6 +1011,16 @@ namespace Flippy.CardDuelMobile.UI
 
             var targetSlot = _hoveredSlot.Slot;
             Debug.Log($"[DragHandler3D] TryPlayCard: {_draggedCard.CardData.displayName} -> {targetSlot}");
+
+            // Final client-side guard: units may only be placed on a LEGAL slot (Front -> BackLeft ->
+            // BackRight priority). This prevents sending a PlayCard the server would reject with
+            // "left_slot_required" / "front_slot_required". Non-units never reach here (they go through
+            // TryPlayCardOnTarget), but scope the check to units defensively all the same.
+            if (!DraggedCardIsNonUnit() && !IsSlotLegalForPlacement(targetSlot))
+            {
+                Debug.LogWarning($"[DragHandler3D] Illegal slot {targetSlot} for unit placement; returning card to hand.");
+                return false;
+            }
 
             var snapshot = GameplayPresenter3D.GetLatestSnapshot();
             if (snapshot == null)

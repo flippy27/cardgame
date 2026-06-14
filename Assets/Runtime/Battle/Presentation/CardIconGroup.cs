@@ -42,9 +42,30 @@ namespace Flippy.CardDuelMobile.UI
         private void Awake()
         {
             EnsureRoot();
+            DisableBackgroundImage();
             RemoveGeneratedIconsFromClonedInstances();
             EnsureLayout();
             HideTemplateIfNeeded();
+        }
+
+        // The panel ships with a grey backing Image; the skill/buff icons should float over the board
+        // with no panel behind them. Disable the panel's own background Image(s) (NOT the icon images,
+        // which live on child objects).
+        private void DisableBackgroundImage()
+        {
+            var bg = GetComponent<Image>();
+            if (bg != null)
+            {
+                bg.enabled = false;
+            }
+            if (iconRoot != null && iconRoot != transform)
+            {
+                var rootBg = iconRoot.GetComponent<Image>();
+                if (rootBg != null)
+                {
+                    rootBg.enabled = false;
+                }
+            }
         }
 
         private void Reset()
@@ -223,19 +244,13 @@ namespace Flippy.CardDuelMobile.UI
 
             grid.cellSize = cellSize;
             grid.spacing = spacing;
-            grid.constraint = GridLayoutGroup.Constraint.Flexible;
             grid.startAxis = GridLayoutGroup.Axis.Horizontal;
-
-            if (layout == CardIconGroupLayout.BottomLeftGrid)
-            {
-                grid.startCorner = GridLayoutGroup.Corner.LowerLeft;
-                grid.childAlignment = TextAnchor.LowerLeft;
-            }
-            else
-            {
-                grid.startCorner = GridLayoutGroup.Corner.UpperLeft;
-                grid.childAlignment = TextAnchor.MiddleCenter;
-            }
+            // Centered grid that grows from the bottom-centre: fills up to 3 across, then wraps UPWARD,
+            // staying centred (like the reference). Replaces the old left-anchored / flexible layout.
+            grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+            grid.constraintCount = 3;
+            grid.startCorner = GridLayoutGroup.Corner.LowerLeft;
+            grid.childAlignment = TextAnchor.LowerCenter;
         }
 
         private void HideTemplateIfNeeded()

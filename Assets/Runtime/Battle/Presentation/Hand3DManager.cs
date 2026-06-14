@@ -13,11 +13,11 @@ namespace Flippy.CardDuelMobile.UI
     {
         [Header("Hand Arc")]
         public float arcRadius = 5f;
-        public float arcHeight = -2f;
+        public float arcHeight = -1.85f;
         public float arcAngle = 60f;
         public float arcDepth = 1f;
         public float cardSpacing = 0.5f;
-        public float hoverLiftY = 0.6f;
+        public float hoverLiftY = 0.9f;
         public float hoverSlerpSpeed = 18f;
 
         [Header("Debug")]
@@ -229,7 +229,7 @@ namespace Flippy.CardDuelMobile.UI
                     continue;
                 }
 
-                var angle = (-(arcAngle / 2f) + (i * anglePerCard)) * Mathf.Deg2Rad;
+                var angle = ((i - (count - 1) / 2f) * anglePerCard) * Mathf.Deg2Rad;
                 var x = Mathf.Sin(angle) * absRadius;
                 var y = arcHeight + Mathf.Cos(angle) * arcDepth;
                 if (card == _hoveredCard)

@@ -11,9 +11,8 @@ namespace Flippy.CardDuelMobile.Networking
         public static event Action<string> SnapshotReceived;
         private static string _lastSnapshot;
 
-        /// <summary>
-        /// Publica snapshot serializado.
-        /// </summary>
+        /// <summary>Publica snapshot serializado a la UI. Los snapshots duplicados son
+        /// inofensivos: el presenter deduplica battle events por sequence ascendente.</summary>
         public static void Publish(string json)
         {
             _lastSnapshot = json;

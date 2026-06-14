@@ -159,6 +159,25 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         }
 
         /// <summary>
+        /// DEBUG/TEST: send a match-debug action (HTTP fallback path). Only honored when the server has
+        /// match debug enabled. POST /api/v1/matches/{matchId}/debug
+        /// </summary>
+        public async Task<MatchSnapshot> DebugAction(MatchDebugRequestDto request)
+        {
+            try
+            {
+                var url = $"{_baseUrl}/api/v1/matches/{request.matchId}/debug";
+                var response = await HttpClientHelper.PostAsync(url, JsonUtility.ToJson(request));
+                return JsonUtility.FromJson<MatchSnapshot>(response);
+            }
+            catch (Exception ex)
+            {
+                GameLogger.Error("MatchplayApiClient", $"DebugAction failed: {ex.Message}");
+                throw;
+            }
+        }
+
+        /// <summary>
         /// Forfeit match (auth token auto-added from SecureTokenStorage).
         /// POST /api/v1/matches/{matchId}/forfeit
         /// </summary>

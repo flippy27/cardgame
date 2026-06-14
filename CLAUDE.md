@@ -73,3 +73,31 @@ Server URL: `ApiConfig.BaseUrl` — from `API_BASE_URL` env, else
   requirement — no properties, no `[JsonProperty]`).
 - Keep server calls inside `Networking/ApiClients/*`; UI/battle code consumes the
   coordinators/converted snapshots, not raw HTTP.
+
+## Card visual system (battle) — READ before touching card rendering
+
+A card = **composite texture (art + frame)** on a 3D quad + **stat badges as overlay UI**.
+- `CardArtLibrary.BuildComposite` builds ONLY art + frame (hand 512x768 2:3, board 512x512 square).
+  Frames: `Resources/Art/frames3/frame_{hand|board}_{design}.png` (open ornamental, no sockets);
+  `FrameDesign(cardType,faction)` maps type/faction → design. Art: `Resources/Art/cardart_type/{type}.png`
+  (per-TYPE test art, precedes per-card `Resources/CardArt/{cardId}.png`).
+- **Stat badges** = `CardStatBadges.cs`: under each card's world-space `StatsOverlay` Canvas it builds
+  one badge per stat = circle Image + icon Image + **number TMP centred as a child** (so number never
+  drifts from its circle). Cost (hand only), attack/health (units), armor (>0), rarity (hexagon+gem, no
+  number). Used by `Card3DView` (hand), `Card3DPlayed` (board), `CardDetailOverlayUI` (preview) via
+  `CardStatBadges.Apply(overlayRect, card, isBoard)`. Socket positions come from
+  `CardArtLibrary.HandSocket()/BoardSocket()` (the single source of truth — tune there).
+- **Board overlay occlusion gotcha**: the board quad is TILTED (bounds z-depth ~2) and scaled by the
+  slot (~4.2x) × `boardCardScale`. `Card3DPlayed.LateUpdate` pushes the overlay
+  `bounds.extents.z + margin` ALONG THE VIEW RAY toward `Camera.main` so badges clear the quad in Z
+  (no parallax). Do NOT use TMP `_ZTestMode` (the Mobile/Distance Field shader ignores it) and do NOT
+  use ZTest Always (it bleeds a card's numbers over other cards).
+- **Combat positioning rule** (`Assets/mydocs/battle.md`): melee attacks only from Front; ranged/magic
+  only from BackLeft/BackRight — **including counterattacks**. Enforced server-side
+  (`MatchEngine.CanAttackFromCurrentSlot`).
+
+## Debugging the running game
+Unity writes all `Debug.Log` to `C:\Users\Flippy\AppData\Local\Unity\Editor\Editor.log`. **Read that
+file** (grep) to diagnose runtime behaviour instead of asking the user to paste the console — this is
+the fastest way to nail visual/positioning/timing bugs. Unity cannot be compiled from Claude Code; the
+user recompiles in the editor and iterates by screenshot.

@@ -47,7 +47,7 @@ namespace Flippy.CardDuelMobile.SinglePlayer
         /// Server-authoritative: decides a move purely from the server MatchSnapshot for the
         /// AI seat. Used when single-player runs as a real server match (no client DuelRuntime).
         /// </summary>
-        public AiMove BuildMove(MatchSnapshot snapshot, int aiSeatIndex, AiDifficulty difficulty)
+        public AiMove BuildMove(MatchSnapshot snapshot, int aiSeatIndex, AiDifficulty difficulty, HashSet<string> excludeKeys = null)
         {
             _moves.Clear();
 
@@ -89,13 +89,27 @@ namespace Flippy.CardDuelMobile.SinglePlayer
                     continue;
                 }
 
+                // Skip cards that already failed to play this turn (non-units needing a target,
+                // illegal slot, etc.) so the AI moves on to a playable card instead of retrying.
+                if (excludeKeys != null && !string.IsNullOrEmpty(card.runtimeHandKey) && excludeKeys.Contains(card.runtimeHandKey))
+                {
+                    continue;
+                }
+
                 // Legal target slots: the server's can-play flags combined with the board fill order
                 // (back slots require the slot in front of them to be occupied). Server is the final judge.
-                if (card.canBePlayedInFront)
+                // unitType -1 = non-unit (spell/equipment/utility) which the simple AI can't target;
+                // 0/1/2 = a real unit. The server's AllowedRow placement restriction is disabled, so
+                // ANY unit can legally go into ANY open slot (subject only to the Front->Left->Right
+                // fill order). Relax the can-be-played flags accordingly so a hand of e.g. only ranged
+                // units still places a Front unit on an empty board instead of stalling all game.
+                var isUnit = card.unitType >= 0;
+
+                if (card.canBePlayedInFront || (isUnit && !frontOccupied))
                 {
                     _moves.Add(new ScoredMove(card.runtimeHandKey, BoardSlot.Front, ScoreSnapshotCard(card, BoardSlot.Front, difficulty)));
                 }
-                if (card.canBePlayedInBack && frontOccupied)
+                if ((card.canBePlayedInBack || isUnit) && frontOccupied)
                 {
                     _moves.Add(new ScoredMove(card.runtimeHandKey, BoardSlot.BackLeft, ScoreSnapshotCard(card, BoardSlot.BackLeft, difficulty)));
                     if (backLeftOccupied)

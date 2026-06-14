@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -46,6 +47,10 @@ namespace Flippy.CardDuelMobile.SinglePlayer
         private bool _started;
         private Coroutine _aiLoop;
         private int _lastAiTurnHandled = -1;
+        // Cards the AI failed to play THIS turn (e.g. a non-unit that needs a target it can't pick,
+        // or an illegal slot). Excluded from further attempts so the AI moves on to a playable card
+        // instead of giving up the whole turn. Reset at the start of each AI turn.
+        private readonly HashSet<string> _aiFailedCardKeys = new();
 
         private void Awake() => Instance = this;
 
@@ -69,11 +74,19 @@ namespace Flippy.CardDuelMobile.SinglePlayer
             }
             _started = true;
 
+            // Loading overlay so the player never stares at an empty board while the private match is
+            // created, the SignalR connection is established and the first snapshot arrives. Hidden by
+            // GameplayPresenter3D once the first hand/board is actually presented.
+            var loading = UI.MatchLoadingOverlay.Show("Preparing battle...");
+            loading.SetProgress(0.05f);
+
+            var success = false;
             try
             {
                 _baseUrl = ConfigManager.GetApiBaseUrl();
 
                 // 1) Human session (wait briefly for editor auto-login to finish).
+                loading.SetStatus("Signing in...");
                 var auth = await WaitForAuthenticatedSessionAsync();
                 if (auth == null)
                 {
@@ -100,7 +113,22 @@ namespace Flippy.CardDuelMobile.SinglePlayer
                     return false;
                 }
 
+                // Warm the card composites for the human deck on a coroutine WHILE the rest of the start
+                // sequence (AI login, match create/join, connect) runs. This spreads the CPU compositing
+                // across the loading screen so the opening-hand RefreshHand burst hits a warm cache
+                // instead of compositing every card synchronously the instant the board appears — the
+                // single biggest match-start hitch on low-end devices. Requests are resolved NOW (before
+                // any AI-token swap) from the selected-deck card ids + the in-memory catalog, so the
+                // coroutine itself does no network I/O and can't race the token swaps below.
+                var warmRequests = BuildDeckWarmRequests();
+                if (warmRequests.Count > 0)
+                {
+                    StartCoroutine(WarmComposites(warmRequests));
+                }
+
                 // 2) AI session: login as the AI account, capture its token + first deck.
+                loading.SetStatus("Summoning opponent...");
+                loading.SetProgress(0.25f);
                 var aiDeckId = await LoginAiAndResolveDeckAsync(api);
                 if (string.IsNullOrWhiteSpace(aiDeckId))
                 {
@@ -109,6 +137,8 @@ namespace Flippy.CardDuelMobile.SinglePlayer
                 RestoreHumanToken();
 
                 // 3) Human creates the private match (seat 0).
+                loading.SetStatus("Creating match...");
+                loading.SetProgress(0.45f);
                 var mm = new MatchmakingApiClient(_baseUrl);
                 var humanRes = await mm.CreatePrivateMatch(_humanId, humanDeckId, "AI Match");
                 if (humanRes == null || string.IsNullOrWhiteSpace(humanRes.matchId))
@@ -142,6 +172,8 @@ namespace Flippy.CardDuelMobile.SinglePlayer
 
                 // 5) Human connects through the normal coordinator (publishes snapshots to the bus
                 //    that GameplayPresenter3D renders — exactly like multiplayer).
+                loading.SetStatus("Connecting to match...");
+                loading.SetProgress(0.65f);
                 _humanCoordinator = MatchSignalRCoordinator.Instance;
                 if (_humanCoordinator == null)
                 {
@@ -168,13 +200,30 @@ namespace Flippy.CardDuelMobile.SinglePlayer
                 }
                 await _humanCoordinator.SetReadyAsync(true);
 
+                // Both seats ready: wait for the first snapshot to be presented. The overlay is hidden
+                // by GameplayPresenter3D once the first hand/board is rendered (see HideLoadingOverlayIfNeeded);
+                // this just advances the bar so it doesn't sit frozen during the snapshot round-trip.
+                loading.SetStatus("Dealing cards...");
+                loading.SetProgress(0.85f);
+
                 Debug.Log($"[ServerSP] Server-authoritative AI match started (match {_matchId}, AI seat {_aiSeatIndex}).");
+                success = true;
                 return true;
             }
             catch (Exception ex)
             {
                 Debug.LogError($"[ServerSP] Failed to start server AI match: {ex.Message}");
                 return false;
+            }
+            finally
+            {
+                // On any failure path (early returns or exception) hide the overlay so the player isn't
+                // stuck behind it. On success the overlay stays up and is hidden by GameplayPresenter3D
+                // once the first hand/board is actually presented.
+                if (!success)
+                {
+                    UI.MatchLoadingOverlay.HideCurrent();
+                }
             }
         }
 
@@ -194,6 +243,8 @@ namespace Flippy.CardDuelMobile.SinglePlayer
 
         private IEnumerator RunAiTurn()
         {
+            _aiFailedCardKeys.Clear();
+
             // Wait until the human's battle presentation has finished animating, so the AI doesn't
             // appear to act "first" / on top of the player's own attacks resolving.
             while (GameplayPresenter3D.Instance != null && GameplayPresenter3D.Instance.IsPlayingBattlePresentation)
@@ -236,15 +287,27 @@ namespace Flippy.CardDuelMobile.SinglePlayer
                     return false;
                 }
 
-                var move = _ai.BuildMove(snapshot, _aiSeatIndex, aiDifficulty);
+                var move = _ai.BuildMove(snapshot, _aiSeatIndex, aiDifficulty, _aiFailedCardKeys);
                 if (move.IsEndTurn || string.IsNullOrWhiteSpace(move.RuntimeCardKey))
                 {
                     await _matchplay.EndTurn(_matchId, _aiId);
                     return false;
                 }
 
-                await _matchplay.PlayCard(_matchId, _aiId, move.RuntimeCardKey, (int)move.Slot);
-                return true;
+                try
+                {
+                    await _matchplay.PlayCard(_matchId, _aiId, move.RuntimeCardKey, (int)move.Slot);
+                    return true;
+                }
+                catch (Exception playEx)
+                {
+                    // This specific card couldn't be played (a non-unit that needs a target the simple
+                    // AI doesn't pick, or an illegal slot). Exclude it and keep going so the AI still
+                    // plays its other cards (units) this turn instead of stalling with a full hand.
+                    Debug.LogWarning($"[ServerSP] AI could not play {move.RuntimeCardKey}: {playEx.Message}; trying another card.");
+                    _aiFailedCardKeys.Add(move.RuntimeCardKey);
+                    return true;
+                }
             }
             catch (Exception ex)
             {
@@ -255,6 +318,79 @@ namespace Flippy.CardDuelMobile.SinglePlayer
             finally
             {
                 RestoreHumanToken();
+            }
+        }
+
+        // Resolves the composite-warm requests for the selected deck SYNCHRONOUSLY from the in-memory
+        // card catalog (loaded at login). Returns the hand+board composite requests for each distinct
+        // deck card. No network I/O, so it's safe to call before the AI-token swaps. Empty if the deck
+        // card ids or the catalog aren't available (then warming is simply skipped).
+        private List<(string cardId, int cardType, int cardRarity, int cardFaction, int unitType, bool hasArmor, bool board)> BuildDeckWarmRequests()
+        {
+            var requests = new List<(string cardId, int cardType, int cardRarity, int cardFaction, int unitType, bool hasArmor, bool board)>();
+
+            var cardIds = GamePlayStateManager.Instance?.GetSelectedDeck().cardIds;
+            if (cardIds == null || cardIds.Count == 0)
+            {
+                return requests; // no selected-deck card ids cached → skip warming (lazy path still works).
+            }
+
+            var catalog = GameService.Instance?.CardCatalog;
+            if (catalog == null)
+            {
+                return requests;
+            }
+
+            var seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var cardId in cardIds)
+            {
+                if (string.IsNullOrWhiteSpace(cardId) || !seen.Add(cardId))
+                {
+                    continue;
+                }
+                if (!catalog.TryGetCard(cardId, out var card) || card == null)
+                {
+                    continue;
+                }
+                var hasArmor = card.armor > 0;
+                // Hand composite (the opening hand) first; board composite for when it gets played.
+                requests.Add((cardId, card.cardType, card.cardRarity, card.cardFaction, card.unitType, hasArmor, false));
+                requests.Add((cardId, card.cardType, card.cardRarity, card.cardFaction, card.unitType, hasArmor, true));
+            }
+
+            return requests;
+        }
+
+        // Pre-builds the framed card composites a couple per frame, so the CPU compositing is spread
+        // across the loading screen instead of hitting all at once when the opening hand is dealt. The
+        // composites are cached in CardArtLibrary, so the in-match RefreshHand just looks them up. Pure
+        // CPU, no network I/O.
+        private IEnumerator WarmComposites(
+            List<(string cardId, int cardType, int cardRarity, int cardFaction, int unitType, bool hasArmor, bool board)> requests)
+        {
+            if (requests == null || requests.Count == 0)
+            {
+                yield break;
+            }
+
+            // A couple of composites per frame keeps each frame cheap on old hardware while the loading
+            // overlay's spinner stays smooth.
+            const int perFrame = 2;
+            var built = 0;
+            for (var i = 0; i < requests.Count; i++)
+            {
+                CardArtLibrary.WarmCompositeAt(requests, i);
+                if (++built >= perFrame)
+                {
+                    built = 0;
+                    var overlay = UI.MatchLoadingOverlay.Instance;
+                    if (overlay != null)
+                    {
+                        // Nudge the bar between 0.85..0.98 so it visibly fills as warming progresses.
+                        overlay.SetProgress(0.85f + 0.13f * ((i + 1f) / requests.Count));
+                    }
+                    yield return null;
+                }
             }
         }
 

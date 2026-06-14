@@ -75,6 +75,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         [SerializeField] private Button craftCardsButton;
         [SerializeField] private Button deckManagementButton;
         [SerializeField] private Button cardCatalogButton;
+        [SerializeField] private Button salvageButton; // optional: created in code if not wired
 
         [Header("Feedback")]
         [SerializeField] private TextMeshProUGUI statusText;
@@ -96,16 +97,47 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private readonly CardCollectionFilter _filter = new();
         private int _currentPage;
 
+        // Salvage screen — created in code (full-screen, no prefab), mirroring how craftingPanel is shown.
+        private SalvageScreen _salvageScreen;
+
         // ---- Lifecycle ----
+
+        // NEW: by default this legacy screen now bootstraps the componentized, bottom-tabbed
+        // DeckBuilderShell (Decks | Create | Salvage) instead of the old single-album layout. The
+        // shell is built entirely in code and reuses the same services, so no scene rewiring is
+        // needed. Set this to false (in the Inspector) to fall back to the original screen.
+        [Header("Shell")]
+        [SerializeField] private bool useTabbedShell = true;
+
+        private DeckBuilderShell _shell;
 
         private void Start()
         {
+            if (useTabbedShell)
+            {
+                BootstrapTabbedShell();
+                return;
+            }
+
             ApplyTextScale();
             ApplyKenneySkin();
             WireButtons();
             PopulateDropdowns();
             SubscribePanelEvents();
             LoadDataAsync();
+        }
+
+        // Spawns the new tabbed shell as a child of the root canvas and hides this screen's own
+        // legacy chrome (the shell draws its own full-screen UI on top). No prefab wiring.
+        private void BootstrapTabbedShell()
+        {
+            // Hide every legacy visual under this root so the old album doesn't show behind the shell.
+            foreach (var g in GetComponentsInChildren<Graphic>(true))
+                if (g != null) g.enabled = false;
+
+            var canvas = GetComponentInParent<Canvas>();
+            var parent = canvas != null ? canvas.rootCanvas.transform : transform;
+            _shell = DeckBuilderShell.Create(parent);
         }
 
         private void ApplyTextScale()
@@ -123,31 +155,56 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         {
             if (!KenneyUiSkin.Available) return;
 
-            // Root window + scroll-view background.
-            KenneyUiSkin.SkinPanelWindow(this);
-            if (cardGridContent != null)
+            // Framed brown window behind the whole screen. The root has no Image of its own,
+            // so this creates a stretched backdrop child behind the existing layout (which is
+            // why the old SkinPanelWindow(this) silently did nothing — there was no target).
+            KenneyUiSkin.EnsureWindowBackdrop(this);
+
+            // Scroll-view inset background (beige) — skin both the Viewport and the ScrollView
+            // behind it (whichever carries the grey image), so the card list reads as a framed
+            // beige panel sitting on the brown window. Falls back to a backdrop child if neither
+            // has an Image.
+            var viewport = cardGridContent != null ? cardGridContent.parent : null;
+            if (viewport != null)
             {
-                // The scroll Content's Viewport (parent) usually carries the bg image.
-                var viewport = cardGridContent.parent != null ? cardGridContent.parent.GetComponent<Image>() : null;
-                KenneyUiSkin.SkinInsetImage(viewport);
+                var vimg = viewport.GetComponent<Image>();
+                if (vimg != null) KenneyUiSkin.SkinInsetImage(vimg);
+                var scroll = viewport.parent;
+                var simg = scroll != null ? scroll.GetComponent<Image>() : null;
+                if (simg != null) KenneyUiSkin.SkinInsetImage(simg);
+                if (vimg == null && simg == null) KenneyUiSkin.EnsureInsetBackdrop(viewport);
+                KenneyUiSkin.SkinScrollbarsUnder(scroll != null ? scroll : viewport);
             }
 
-            // Nav buttons.
-            KenneyUiSkin.SkinButton(backButton, KenneyUiSkin.ButtonStyle.Nav);
+            // Filters: search input + rarity/faction dropdowns.
+            if (searchField != null) KenneyUiSkin.SkinInputImage(searchField.GetComponent<Image>());
+            KenneyUiSkin.SkinDropdown(rarityDropdown);
+            KenneyUiSkin.SkinDropdown(factionDropdown);
+
+            // Buttons. Give captions to the ones that otherwise render their GameObject name.
+            KenneyUiSkin.SkinButtonWithLabel(backButton, KenneyUiSkin.ButtonStyle.Nav, "Back");
             KenneyUiSkin.SkinButton(deckManagementButton, KenneyUiSkin.ButtonStyle.Nav);
             KenneyUiSkin.SkinButton(cardCatalogButton, KenneyUiSkin.ButtonStyle.Nav);
-            KenneyUiSkin.SkinButton(clearFiltersButton, KenneyUiSkin.ButtonStyle.Nav);
+            KenneyUiSkin.SkinButtonWithLabel(clearFiltersButton, KenneyUiSkin.ButtonStyle.Nav, "Clear");
             // Page arrows are small square icon buttons.
             KenneyUiSkin.SkinButton(prevPageButton, KenneyUiSkin.ButtonStyle.Icon);
             KenneyUiSkin.SkinButton(nextPageButton, KenneyUiSkin.ButtonStyle.Icon);
             // Primary action.
-            KenneyUiSkin.SkinButton(craftCardsButton, KenneyUiSkin.ButtonStyle.Primary);
+            KenneyUiSkin.SkinButtonWithLabel(craftCardsButton, KenneyUiSkin.ButtonStyle.Primary, "Craft");
+
+            // Unify typography on the Kenney theme font (no-op if the TTF/font asset is absent).
+            KenneyUiSkin.ApplyFontUnder(this);
         }
 
         private void OnDestroy()
         {
             if (craftingPanel != null) craftingPanel.OnCraftSuccess -= OnInventoryOrCollectionChanged;
             if (cardDetailPanel != null) cardDetailPanel.OnUpgradeSuccess -= OnInventoryOrCollectionChanged;
+            if (_salvageScreen != null)
+            {
+                _salvageScreen.OnSalvaged -= OnInventoryOrCollectionChanged;
+                _salvageScreen.OnOpenDeckRequested -= OnSalvageOpenDeck;
+            }
         }
 
         private void WireButtons()
@@ -156,6 +213,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             if (craftCardsButton != null) craftCardsButton.onClick.AddListener(OnCraftClicked);
             if (deckManagementButton != null) deckManagementButton.onClick.AddListener(OnDecksClicked);
             if (cardCatalogButton != null) cardCatalogButton.onClick.AddListener(OnCatalogClicked);
+            EnsureSalvageButton();
             if (prevPageButton != null) prevPageButton.onClick.AddListener(OnPrevPage);
             if (nextPageButton != null) nextPageButton.onClick.AddListener(OnNextPage);
             if (clearFiltersButton != null) clearFiltersButton.onClick.AddListener(OnClearFilters);
@@ -280,6 +338,14 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         {
             if (cardGridContent == null || cardItemPrefab == null) return;
 
+            // Guarantee a sane grid (cell size / spacing / padding) so cells render at a
+            // readable size and wrap into columns instead of overlapping. Idempotent.
+            // OVERHAUL: compact vertical list of rows (was a grid). Drop the scene's GridLayoutGroup so
+            // the VerticalLayoutGroup can drive the rows.
+            var grid = cardGridContent.GetComponent<GridLayoutGroup>();
+            if (grid != null) Destroy(grid);
+            KenneyUiSkin.EnsureVerticalList(cardGridContent, spacing: 10f, padding: 12);
+
             foreach (Transform child in cardGridContent) Destroy(child.gameObject);
 
             int total = TotalPages;
@@ -323,6 +389,66 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void OnCraftClicked() => craftingPanel?.Show();
         private void OnDecksClicked() => deckListPanel?.Show();
         private void OnCatalogClicked() => cardCatalogPanel?.Show();
+
+        // ---- Salvage ----
+
+        // Salvage is a full-screen inverse-crafting workshop created in code (no prefab wiring),
+        // mirroring how craftingPanel is shown. The nav button is created in code if the scene
+        // didn't wire one (so no manual editor step is required).
+        private void EnsureSalvageButton()
+        {
+            if (salvageButton == null)
+            {
+                // Place the button just under the existing Craft button (or top-right) so it sits in the
+                // action bar without needing layout edits.
+                // Bottom-LEFT corner of the screen so it never overlaps the Craft button (which lives
+                // bottom-centre/right). Matches the Craft button's size when available.
+                var craftRt = craftCardsButton != null ? (RectTransform)craftCardsButton.transform : null;
+                var size = (craftRt != null && craftRt.sizeDelta != Vector2.zero) ? craftRt.sizeDelta : new Vector2(240f, 84f);
+                var parent = craftRt != null && craftRt.parent != null ? craftRt.parent : transform;
+                var go = new GameObject("SalvageButton", typeof(RectTransform), typeof(Image), typeof(Button));
+                var rt = (RectTransform)go.transform;
+                rt.SetParent(parent, false);
+                rt.anchorMin = new Vector2(0f, 0f);
+                rt.anchorMax = new Vector2(0f, 0f);
+                rt.pivot = new Vector2(0f, 0f);
+                rt.sizeDelta = size;
+                rt.anchoredPosition = new Vector2(48f, 60f);
+
+                var labelGo = new GameObject("Label", typeof(RectTransform));
+                var lt = labelGo.AddComponent<TextMeshProUGUI>();
+                labelGo.transform.SetParent(go.transform, false);
+                KenneyUiSkin.Fill(lt);
+                lt.text = "Salvage";
+                lt.alignment = TextAlignmentOptions.Center;
+                lt.color = Color.white;
+
+                salvageButton = go.GetComponent<Button>();
+            }
+
+            if (KenneyUiSkin.Available) KenneyUiSkin.SkinButtonWithLabel(salvageButton, KenneyUiSkin.ButtonStyle.Primary, "Salvage");
+            salvageButton.onClick.AddListener(OnSalvageClicked);
+        }
+
+        private void OnSalvageClicked()
+        {
+            if (_salvageScreen == null)
+            {
+                var canvas = GetComponentInParent<Canvas>();
+                var parent = canvas != null ? canvas.rootCanvas.transform : transform;
+                _salvageScreen = SalvageScreen.Create(parent);
+                _salvageScreen.OnSalvaged += OnInventoryOrCollectionChanged;
+                _salvageScreen.OnOpenDeckRequested += OnSalvageOpenDeck;
+            }
+            _salvageScreen.Show();
+        }
+
+        // Deep-link from a locked card in the Salvage screen → open that deck's editor.
+        private void OnSalvageOpenDeck(string deckId)
+        {
+            _salvageScreen?.Hide();
+            if (deckListPanel != null) deckListPanel.OpenDeckById(deckId);
+        }
 
         private void OnCardSelected(PlayerCardsApiClient.PlayerCardSummaryEntryDto entry)
         {

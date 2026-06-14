@@ -405,50 +405,28 @@ namespace Flippy.CardDuelMobile.UI
                 return "status";
             }
 
-            if (!string.IsNullOrWhiteSpace(status.abilityId))
+            // CardArtLibrary owns the kind->key mapping (mirror StatusEffectKind 0..11).
+            var key = CardArtLibrary.StatusIconKey(status.kind);
+            if (key != null)
             {
-                return status.kind switch
-                {
-                    0 => "poisoned",
-                    1 => "stunned",
-                    2 => "shielded",
-                    3 => "enrage_cooldown",
-                    _ => NormalizeAssetId(status.abilityId)
-                };
+                return key;
             }
 
-            return status.kind switch
-            {
-                0 => "poisoned",
-                1 => "stunned",
-                2 => "shielded",
-                3 => "enrage_cooldown",
-                _ => $"status_{status.kind}"
-            };
+            return !string.IsNullOrWhiteSpace(status.abilityId)
+                ? NormalizeAssetId(status.abilityId)
+                : $"status_{status.kind}";
         }
 
         private static string ResolveStatusDisplayName(StatusEffectDto status)
         {
-            return status?.kind switch
-            {
-                0 => "Poisoned",
-                1 => "Stunned",
-                2 => "Shielded",
-                3 => "Enrage Cooldown",
-                _ => status != null ? $"Status {status.kind}" : "Status"
-            };
+            // Reuse the canonical kind names (Poison/Burn/Ward/...) from the event mapper.
+            return status != null ? BattlePhaseStructuredEventMapper.StatusKindName(status.kind) : "Status";
         }
 
         private static Color ResolveStatusTint(int statusKind)
         {
-            return statusKind switch
-            {
-                0 => new Color(0.6f, 1f, 0.35f, 1f),
-                1 => new Color(1f, 0.85f, 0.2f, 1f),
-                2 => new Color(0.45f, 0.75f, 1f, 1f),
-                3 => new Color(1f, 0.45f, 0.25f, 1f),
-                _ => Color.white
-            };
+            // CardArtLibrary owns the per-kind tint (mirror StatusEffectKind 0..11).
+            return CardArtLibrary.StatusBadgeTint(statusKind);
         }
 
         private static string NormalizeAssetId(string value)

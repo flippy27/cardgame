@@ -1,0 +1,703 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T16:25:38.6133155Z
+LastUpdatedUtc: 2026-06-13T16:25:44.8673517Z
+MatchId: 334a0d76753e437d8197df9f29ad125c
+CurrentTurn: 3
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 10116421.
+002. seq=-1 /Info: Thorn Howler entered Front.
+003. seq=-1 /Info: Moss Spider entered BackLeft.
+004. seq=-1 /Info: Fang Spriggan entered BackRight.
+005. seq=1 skill_begin/SkillBegin: Thorn Howler used Regenerate.
+006. seq=2 Moss Spider#a0f79ec6 heals 0. HP 4->4. Moss Spider healed 0.
+007. seq=3 skill_begin/SkillBegin: Moss Spider used Regenerate.
+008. seq=4 Moss Spider#a0f79ec6 heals 0. HP 4->4. Moss Spider healed 0.
+009. seq=5 Thorn Howler#6eb5c445 skipped. Thorn Howler is not ready to attack.
+010. seq=6 Moss Spider#a0f79ec6 skipped. Moss Spider is not ready to attack.
+011. seq=7 Fang Spriggan#3f5702ea skipped. Fang Spriggan is not ready to attack.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T16:25:38.6212890Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=30 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T16:25:38.8878797Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 10116421.
+-- Step 3 | UTC 2026-06-13T16:25:43.4735565Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Thorn Howler#6eb5c445 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Thorn Howler entered Front.
+-- Step 4 | UTC 2026-06-13T16:25:43.9407167Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=14/20 board=[Front:Thorn Howler#6eb5c445 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#a0f79ec6 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Moss Spider entered BackLeft.
+-- Step 5 | UTC 2026-06-13T16:25:44.3980749Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Thorn Howler#6eb5c445 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#a0f79ec6 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Fang Spriggan#3f5702ea hp=2/2 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=-1 /Info: Fang Spriggan entered BackRight.
+-- Step 6 | UTC 2026-06-13T16:25:44.8673517Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=5 deck=25 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Thorn Howler#6eb5c445 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#a0f79ec6 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Fang Spriggan#3f5702ea hp=2/2 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=1 skill_begin/SkillBegin: Thorn Howler used Regenerate.
+   - seq=2 Moss Spider#a0f79ec6 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=3 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=4 Moss Spider#a0f79ec6 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=5 Thorn Howler#6eb5c445 skipped. Thorn Howler is not ready to attack.
+   - seq=6 Moss Spider#a0f79ec6 skipped. Moss Spider is not ready to attack.
+   - seq=7 Fang Spriggan#3f5702ea skipped. Fang Spriggan is not ready to attack.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=6eb5c4455fa047229427911e845c56bc serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Thorn Howler used Regenerate.
+seq=2 id=evt-000002 kind=heal serverSrcSeat=1 srcVisual=1 src=a0f79ec6aa1e4d988641c10369fe1841 serverTargetSeat=1 targetVisual=1 target=a0f79ec6aa1e4d988641c10369fe1841 ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=3 id=evt-000003 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=a0f79ec6aa1e4d988641c10369fe1841 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=4 id=evt-000004 kind=heal serverSrcSeat=1 srcVisual=1 src=a0f79ec6aa1e4d988641c10369fe1841 serverTargetSeat=1 targetVisual=1 target=a0f79ec6aa1e4d988641c10369fe1841 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=5 id=evt-000005 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=6eb5c4455fa047229427911e845c56bc serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Thorn Howler is not ready to attack.
+seq=6 id=evt-000006 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=a0f79ec6aa1e4d988641c10369fe1841 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider is not ready to attack.
+seq=7 id=evt-000007 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=3f5702ea35784c7a910ba4a819b728da serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Fang Spriggan is not ready to attack.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 10116421.
+turn=2 Info: Thorn Howler entered Front.
+turn=2 Info: Moss Spider entered BackLeft.
+turn=2 Info: Fang Spriggan entered BackRight.
+turn=3 Info: Moss Spider healed 0.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "334a0d76753e437d8197df9f29ad125c",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 3,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 10116421,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "ef8d938130404b28be701a3792bf3b8d",
+                    "cardId": "tidal_0020",
+                    "displayName": "Deep Freeze",
+                    "manaCost": 4,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "spell_freeze",
+                            "displayName": "Freeze",
+                            "iconAssetRef": "",
+                            "skillType": 1,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "spell_freeze",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"spell\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 0,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 1,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"spell-freeze\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "393381481ae646edaa95fd3aab9ccfcd",
+                    "cardId": "ember_0021",
+                    "displayName": "Molten Gauntlets",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "equip_weapon",
+                            "displayName": "Weapon",
+                            "iconAssetRef": "",
+                            "skillType": 2,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "equip_weapon",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"equipment\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"equip-weapon\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "4be119d92b2a4afca12ebbf376f46a8f",
+                    "cardId": "ember_0010",
+                    "displayName": "Forgeheart Blade",
+                    "manaCost": 5,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "equip_weapon",
+                            "displayName": "Weapon",
+                            "iconAssetRef": "",
+                            "skillType": 2,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "equip_weapon",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"equipment\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"equip-weapon\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "b0449da507ef43f389e19017f7acdda1",
+                    "cardId": "grove_0022",
+                    "displayName": "Healing Totem",
+                    "manaCost": 5,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_blessing",
+                            "displayName": "Blessing",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_blessing",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-heal\"}"
+                                },
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-buff\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "97e4fbd76ef14e4eaad722f883f5e6fa",
+                    "cardId": "alloy_0037",
+                    "displayName": "Piston Reckoner",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 25,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 12,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "6eb5c4455fa047229427911e845c56bc",
+                        "cardId": "grove_0013",
+                        "displayName": "Thorn Howler",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate_left",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate_left",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"left\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-left\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "a0f79ec6aa1e4d988641c10369fe1841",
+                        "cardId": "grove_0011",
+                        "displayName": "Moss Spider",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"self\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-self\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "3f5702ea35784c7a910ba4a819b728da",
+                        "cardId": "grove_0031",
+                        "displayName": "Fang Spriggan",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_taunt_pulse",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"targetingModifier\": true}",
+                                "effects": []
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 19,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 10116421."
+        },
+        {
+            "type": 0,
+            "message": "Thorn Howler entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Fang Spriggan entered BackRight."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "6eb5c4455fa047229427911e845c56bc",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Thorn Howler used Regenerate."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "a0f79ec6aa1e4d988641c10369fe1841",
+            "targetRuntimeId": "a0f79ec6aa1e4d988641c10369fe1841",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "a0f79ec6aa1e4d988641c10369fe1841",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "a0f79ec6aa1e4d988641c10369fe1841",
+            "targetRuntimeId": "a0f79ec6aa1e4d988641c10369fe1841",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "6eb5c4455fa047229427911e845c56bc",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Thorn Howler is not ready to attack."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "a0f79ec6aa1e4d988641c10369fe1841",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider is not ready to attack."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "3f5702ea35784c7a910ba4a819b728da",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Fang Spriggan is not ready to attack."
+        }
+    ]
+}

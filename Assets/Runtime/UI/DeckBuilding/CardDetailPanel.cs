@@ -101,13 +101,19 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void ApplyKenneySkin()
         {
             if (!KenneyUiSkin.Available) return;
-            KenneyUiSkin.SkinPanelWindow(this);
+            KenneyUiSkin.EnsureWindowBackdrop(this);
             if (upgradeHistoryContainer != null)
             {
-                var viewport = upgradeHistoryContainer.parent != null ? upgradeHistoryContainer.parent.GetComponent<Image>() : null;
-                KenneyUiSkin.SkinInsetImage(viewport);
+                var viewport = upgradeHistoryContainer.parent;
+                if (viewport != null)
+                {
+                    var vimg = viewport.GetComponent<Image>();
+                    if (vimg != null) KenneyUiSkin.SkinInsetImage(vimg);
+                    else KenneyUiSkin.EnsureInsetBackdrop(viewport);
+                }
             }
-            KenneyUiSkin.SkinButton(closeButton, KenneyUiSkin.ButtonStyle.Icon);
+            KenneyUiSkin.SkinButtonWithLabel(closeButton, KenneyUiSkin.ButtonStyle.Icon, "X");
+            KenneyUiSkin.ApplyFontUnder(this);
         }
 
         private void ApplyTextScale()
@@ -213,6 +219,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
         private void BuildUpgradeHistory(PlayerCardsApiClient.PlayerCardUpgradeDto[] upgrades)
         {
+            KenneyUiSkin.EnsureVerticalList(upgradeHistoryContainer, spacing: 8f, padding: 10);
             ClearChildren(upgradeHistoryContainer);
 
             if (upgrades == null || upgrades.Length == 0)
@@ -229,6 +236,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
 
         private void BuildUpgradeOptions(string playerCardId)
         {
+            KenneyUiSkin.EnsureVerticalList(upgradeOptionsContainer, spacing: 10f, padding: 10);
             ClearChildren(upgradeOptionsContainer);
 
             if (upgradeOptionItemPrefab == null || upgradeOptionsContainer == null) return;
@@ -247,6 +255,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
                 }
 
                 var go = Instantiate(upgradeOptionItemPrefab, upgradeOptionsContainer);
+                KenneyUiSkin.EnsureRowHeight(go.GetComponent<RectTransform>(), 120f);
                 var item = go.GetComponent<UpgradeOptionItem>();
                 if (item == null) continue;
 
@@ -379,6 +388,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             }
 
             var go = Instantiate(prefab, container);
+            KenneyUiSkin.EnsureRowHeight(go.GetComponent<RectTransform>(), 48f);
             var tmp = go.GetComponent<TextMeshProUGUI>() ?? go.GetComponentInChildren<TextMeshProUGUI>(true);
             if (tmp != null)
             {

@@ -92,17 +92,24 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void ApplyKenneySkin()
         {
             if (!KenneyUiSkin.Available) return;
-            KenneyUiSkin.SkinPanelWindow(this);
+            KenneyUiSkin.EnsureWindowBackdrop(this);
             if (catalogContent != null)
             {
-                var viewport = catalogContent.parent != null ? catalogContent.parent.GetComponent<Image>() : null;
-                KenneyUiSkin.SkinInsetImage(viewport);
+                var viewport = catalogContent.parent;
+                if (viewport != null)
+                {
+                    var vimg = viewport.GetComponent<Image>();
+                    if (vimg != null) KenneyUiSkin.SkinInsetImage(vimg);
+                    else KenneyUiSkin.EnsureInsetBackdrop(viewport);
+                    KenneyUiSkin.SkinScrollbarsUnder(viewport);
+                }
             }
             if (searchField != null) KenneyUiSkin.SkinInputImage(searchField.GetComponent<Image>());
-            KenneyUiSkin.SkinButton(closeButton, KenneyUiSkin.ButtonStyle.Icon);
-            KenneyUiSkin.SkinButton(clearFiltersButton, KenneyUiSkin.ButtonStyle.Nav);
+            KenneyUiSkin.SkinButtonWithLabel(closeButton, KenneyUiSkin.ButtonStyle.Icon, "X");
+            KenneyUiSkin.SkinButtonWithLabel(clearFiltersButton, KenneyUiSkin.ButtonStyle.Nav, "Clear");
             KenneyUiSkin.SkinButton(prevButton, KenneyUiSkin.ButtonStyle.Icon);
             KenneyUiSkin.SkinButton(nextButton, KenneyUiSkin.ButtonStyle.Icon);
+            KenneyUiSkin.ApplyFontUnder(this);
         }
 
         public void Show()
@@ -219,6 +226,10 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void RebuildGrid()
         {
             if (catalogContent == null || catalogItemPrefab == null) return;
+
+            // Sane grid so catalog cells wrap into columns at a readable size. Idempotent.
+            KenneyUiSkin.EnsureGrid(catalogContent, cellSize: new Vector2(240f, 320f), spacing: new Vector2(16f, 16f), padding: 14);
+
             foreach (Transform child in catalogContent) Destroy(child.gameObject);
 
             int totalPages = TotalPages;

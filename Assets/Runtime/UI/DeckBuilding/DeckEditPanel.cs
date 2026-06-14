@@ -94,16 +94,23 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void ApplyKenneySkin()
         {
             if (!KenneyUiSkin.Available) return;
-            KenneyUiSkin.SkinPanelWindow(this);
+            KenneyUiSkin.EnsureWindowBackdrop(this);
             if (deckCardsContainer != null)
             {
-                var viewport = deckCardsContainer.parent != null ? deckCardsContainer.parent.GetComponent<Image>() : null;
-                KenneyUiSkin.SkinInsetImage(viewport);
+                var viewport = deckCardsContainer.parent;
+                if (viewport != null)
+                {
+                    var vimg = viewport.GetComponent<Image>();
+                    if (vimg != null) KenneyUiSkin.SkinInsetImage(vimg);
+                    else KenneyUiSkin.EnsureInsetBackdrop(viewport);
+                    KenneyUiSkin.SkinScrollbarsUnder(viewport);
+                }
             }
             if (deckNameInput != null) KenneyUiSkin.SkinInputImage(deckNameInput.GetComponent<Image>());
-            KenneyUiSkin.SkinButton(closeButton, KenneyUiSkin.ButtonStyle.Icon);
-            KenneyUiSkin.SkinButton(addCardsButton, KenneyUiSkin.ButtonStyle.Primary);
-            KenneyUiSkin.SkinButton(saveButton, KenneyUiSkin.ButtonStyle.Primary);
+            KenneyUiSkin.SkinButtonWithLabel(closeButton, KenneyUiSkin.ButtonStyle.Icon, "X");
+            KenneyUiSkin.SkinButtonWithLabel(addCardsButton, KenneyUiSkin.ButtonStyle.Primary, "Add Cards");
+            KenneyUiSkin.SkinButtonWithLabel(saveButton, KenneyUiSkin.ButtonStyle.Primary, "Save");
+            KenneyUiSkin.ApplyFontUnder(this);
         }
 
         private void ApplyTextScale()
@@ -204,6 +211,10 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void RebuildCardList()
         {
             if (deckCardsContainer == null) return;
+
+            // Ensure deck rows stack vertically with spacing (no overlap). Idempotent.
+            KenneyUiSkin.EnsureVerticalList(deckCardsContainer, spacing: 10f, padding: 12);
+
             foreach (Transform child in deckCardsContainer) Destroy(child.gameObject);
 
             int total = _cardCounts.Values.Sum();
@@ -224,6 +235,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             if (deckCardRowPrefab == null || deckCardsContainer == null) return;
 
             var go = Instantiate(deckCardRowPrefab, deckCardsContainer);
+            KenneyUiSkin.EnsureRowHeight(go.GetComponent<RectTransform>(), 84f);
 
             var texts = go.GetComponentsInChildren<TextMeshProUGUI>(true);
             if (texts.Length > 0)

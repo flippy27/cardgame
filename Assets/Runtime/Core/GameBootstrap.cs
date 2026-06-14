@@ -55,9 +55,23 @@ namespace Flippy.CardDuelMobile.Core
             var collectionService = new PlayerCardCollectionService(playerCardsApiClient, authService);
             ServiceLocator.Register<PlayerCardCollectionService>(collectionService);
 
+            // Player progression (level + XP bar). Stateless HTTP client; the HUD calls it directly.
+            var progressApiClient = new ProgressApiClient(apiBaseUrl);
+            ServiceLocator.Register<ProgressApiClient>(progressApiClient);
+
             var craftingApiClient = new CraftingApiClient(apiBaseUrl);
             var craftingService = new CraftingService(craftingApiClient, authService);
             ServiceLocator.Register<CraftingService>(craftingService);
+
+            // Salvage (disenchant) — the SalvageScreen resolves this client; a transient is created as a
+            // fallback if absent.
+            var salvageApiClient = new SalvageApiClient(apiBaseUrl);
+            ServiceLocator.Register<SalvageApiClient>(salvageApiClient);
+
+            // Card upgrade-tree / leveling — the deck-builder "My Cards" tab + leveling view resolve this
+            // client (a transient is created as a fallback if absent).
+            var cardUpgradeApiClient = new CardUpgradeApiClient(apiBaseUrl);
+            ServiceLocator.Register<CardUpgradeApiClient>(cardUpgradeApiClient);
 
             // 3. Start background tasks
             var healthPinger = new GameObject("HealthCheckPinger").AddComponent<HealthCheckPinger>();

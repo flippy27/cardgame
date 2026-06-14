@@ -1,0 +1,1272 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T16:52:21.9440902Z
+LastUpdatedUtc: 2026-06-13T16:56:16.4630982Z
+MatchId: 8baf5492a5984d64b446eaa103fc6186
+CurrentTurn: 5
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 871737670.
+002. seq=-1 /Info: Chrome Vanguard entered Front.
+003. seq=-1 /Info: Scorch Golem entered Front.
+004. seq=1 Scorch Golem#efa9ec6a skipped. Scorch Golem cannot attack from Front.
+005. seq=2 Chrome Vanguard#70c50902 skipped. Chrome Vanguard is not ready to attack.
+006. seq=-1 /Info: Sap Venomspine entered Front.
+007. seq=-1 /Info: Moss Spider entered BackLeft.
+008. seq=-1 /Info: Root Treant entered BackLeft.
+009. seq=3 skill_begin/SkillBegin: Root Treant used Regenerate.
+010. seq=4 Root Treant#ea6e3004 heals 0. HP 4->4. Root Treant healed 0.
+011. seq=5 skill_begin/SkillBegin: Moss Spider used Regenerate.
+012. seq=6 Moss Spider#fa2e3c54 heals 0. HP 4->4. Moss Spider healed 0.
+013. seq=7 Sap Venomspine#a64dc604 skipped. Sap Venomspine is not ready to attack.
+014. seq=8 Root Treant#ea6e3004 skipped. Root Treant is not ready to attack.
+015. seq=9 Moss Spider#fa2e3c54 skipped. Moss Spider is not ready to attack.
+016. seq=10 Scorch Golem#efa9ec6a skipped. Scorch Golem cannot attack from Front.
+017. seq=11 card_attack/Info: Chrome Vanguard attacked Root Treant.
+018. seq=12 P0 Chrome Vanguard#70c50902 attacks Root Treant#ea6e3004 for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+019. seq=13 card_counterattack/Info: Root Treant struck back at Chrome Vanguard.
+020. seq=14 P1 Root Treant#ea6e3004 attacks Chrome Vanguard#70c50902 for 2. HP 3->2, Armor 1->0. Chrome Vanguard took 2 damage.
+021. seq=15 skill_begin/SkillBegin: Root Treant used Regenerate.
+022. seq=16 Root Treant#ea6e3004 heals 2. HP 2->4. Root Treant healed 2.
+023. seq=17 skill_begin/SkillBegin: Moss Spider used Regenerate.
+024. seq=18 Moss Spider#fa2e3c54 heals 0. HP 4->4. Moss Spider healed 0.
+025. seq=19 card_attack/Info: Sap Venomspine attacked Scorch Golem.
+026. seq=20 P1 P1 attacks P0 for 1. HP 2->1, Armor 0->0. Scorch Golem took 1 damage.
+027. seq=21 card_counterattack/Info: Scorch Golem struck back at Sap Venomspine.
+028. seq=22 P0 P0 attacks P1 for 2. HP 2->0, Armor 0->0. Sap Venomspine took 2 damage.
+029. seq=23 P1 dies. Sap Venomspine died.
+030. seq=24 card_attack/Info: Moss Spider attacked Scorch Golem.
+031. seq=25 P1 Moss Spider#fa2e3c54 attacks P0 for 3. HP 1->-2, Armor 0->0. Scorch Golem took 3 damage.
+032. seq=26 P0 dies. Scorch Golem died.
+033. seq=27 card_counterattack/Info: Scorch Golem struck back at Moss Spider.
+034. seq=28 P0 P0 attacks Moss Spider#fa2e3c54 for 2. HP 4->2, Armor 0->0. Moss Spider took 2 damage.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T16:52:21.9492020Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=30 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T16:52:22.1836426Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 871737670.
+-- Step 3 | UTC 2026-06-13T16:53:17.9231527Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Chrome Vanguard#70c50902 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Chrome Vanguard entered Front.
+-- Step 4 | UTC 2026-06-13T16:53:26.5742599Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Scorch Golem#efa9ec6a hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:Chrome Vanguard#70c50902 hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Scorch Golem entered Front.
+-- Step 5 | UTC 2026-06-13T16:55:16.2995498Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Scorch Golem#efa9ec6a hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:Chrome Vanguard#70c50902 hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=1 Scorch Golem#efa9ec6a skipped. Scorch Golem cannot attack from Front.
+   - seq=2 Chrome Vanguard#70c50902 skipped. Chrome Vanguard is not ready to attack.
+-- Step 6 | UTC 2026-06-13T16:55:16.9386408Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Scorch Golem#efa9ec6a hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:Chrome Vanguard#70c50902 hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=19/20 board=[Front:Sap Venomspine#a64dc604 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Sap Venomspine entered Front.
+-- Step 7 | UTC 2026-06-13T16:55:17.3991381Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Scorch Golem#efa9ec6a hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:Chrome Vanguard#70c50902 hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=16/20 board=[Front:Sap Venomspine#a64dc604 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Moss Spider#fa2e3c54 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Moss Spider entered BackLeft.
+-- Step 8 | UTC 2026-06-13T16:55:17.8624620Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Scorch Golem#efa9ec6a hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:Chrome Vanguard#70c50902 hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=13/20 board=[Front:Sap Venomspine#a64dc604 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#ea6e3004 hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Moss Spider#fa2e3c54 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=-1 /Info: Root Treant entered BackLeft.
+-- Step 9 | UTC 2026-06-13T16:55:18.3376535Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Scorch Golem#efa9ec6a hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:Chrome Vanguard#70c50902 hp=3/3 armor=1 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=25 | P1 id=user-2 hp=20 mana=13/20 board=[Front:Sap Venomspine#a64dc604 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#ea6e3004 hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Moss Spider#fa2e3c54 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=3 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=4 Root Treant#ea6e3004 heals 0. HP 4->4. Root Treant healed 0.
+   - seq=5 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=6 Moss Spider#fa2e3c54 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=7 Sap Venomspine#a64dc604 skipped. Sap Venomspine is not ready to attack.
+   - seq=8 Root Treant#ea6e3004 skipped. Root Treant is not ready to attack.
+   - seq=9 Moss Spider#fa2e3c54 skipped. Moss Spider is not ready to attack.
+-- Step 10 | UTC 2026-06-13T16:56:12.9939556Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Scorch Golem#efa9ec6a hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:Chrome Vanguard#70c50902 hp=2/3 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=25 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Sap Venomspine#a64dc604 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#ea6e3004 hp=2/4 armor=0 unitType=1 delivery=projectile, BackRight:Moss Spider#fa2e3c54 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=10 Scorch Golem#efa9ec6a skipped. Scorch Golem cannot attack from Front.
+   - seq=11 card_attack/Info: Chrome Vanguard attacked Root Treant.
+   - seq=12 P0 Chrome Vanguard#70c50902 attacks Root Treant#ea6e3004 for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+   - seq=13 card_counterattack/Info: Root Treant struck back at Chrome Vanguard.
+   - seq=14 P1 Root Treant#ea6e3004 attacks Chrome Vanguard#70c50902 for 2. HP 3->2, Armor 1->0. Chrome Vanguard took 2 damage.
+-- Step 11 | UTC 2026-06-13T16:56:16.4630982Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Chrome Vanguard#70c50902 hp=2/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Root Treant#ea6e3004 hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:Moss Spider#fa2e3c54 hp=2/4 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=18
+   - seq=15 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=16 Root Treant#ea6e3004 heals 2. HP 2->4. Root Treant healed 2.
+   - seq=17 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=18 Moss Spider#fa2e3c54 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=19 card_attack/Info: Sap Venomspine attacked Scorch Golem.
+   - seq=20 P1 P1 attacks P0 for 1. HP 2->1, Armor 0->0. Scorch Golem took 1 damage.
+   - seq=21 card_counterattack/Info: Scorch Golem struck back at Sap Venomspine.
+   - seq=22 P0 P0 attacks P1 for 2. HP 2->0, Armor 0->0. Sap Venomspine took 2 damage.
+   - seq=23 P1 dies. Sap Venomspine died.
+   - seq=24 card_attack/Info: Moss Spider attacked Scorch Golem.
+   - seq=25 P1 Moss Spider#fa2e3c54 attacks P0 for 3. HP 1->-2, Armor 0->0. Scorch Golem took 3 damage.
+   - seq=26 P0 dies. Scorch Golem died.
+   - seq=27 card_counterattack/Info: Scorch Golem struck back at Moss Spider.
+   - seq=28 P0 P0 attacks Moss Spider#fa2e3c54 for 2. HP 4->2, Armor 0->0. Moss Spider took 2 damage.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=efa9ec6a1f424197ab0b0d59a0f67b8e serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Scorch Golem cannot attack from Front.
+seq=2 id=evt-000002 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=70c50902a98f41ac908a496ce1e670ea serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Chrome Vanguard is not ready to attack.
+seq=3 id=evt-000003 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=ea6e3004bd48421982b75d8fbbc44cfe serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=4 id=evt-000004 kind=heal serverSrcSeat=1 srcVisual=1 src=ea6e3004bd48421982b75d8fbbc44cfe serverTargetSeat=1 targetVisual=1 target=ea6e3004bd48421982b75d8fbbc44cfe ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Root Treant healed 0.
+seq=5 id=evt-000005 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=fa2e3c542af646cf9b691d908fc157f5 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=6 id=evt-000006 kind=heal serverSrcSeat=1 srcVisual=1 src=fa2e3c542af646cf9b691d908fc157f5 serverTargetSeat=1 targetVisual=1 target=fa2e3c542af646cf9b691d908fc157f5 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=7 id=evt-000007 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=a64dc60442a04494bcb32cf6cf9a7dd0 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Sap Venomspine is not ready to attack.
+seq=8 id=evt-000008 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=ea6e3004bd48421982b75d8fbbc44cfe serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant is not ready to attack.
+seq=9 id=evt-000009 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=fa2e3c542af646cf9b691d908fc157f5 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider is not ready to attack.
+seq=10 id=evt-000010 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=efa9ec6a1f424197ab0b0d59a0f67b8e serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Scorch Golem cannot attack from Front.
+seq=11 id=evt-000011 kind=card_attack serverSrcSeat=0 srcVisual=0 src=70c50902a98f41ac908a496ce1e670ea serverTargetSeat=1 targetVisual=1 target=ea6e3004bd48421982b75d8fbbc44cfe ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Chrome Vanguard attacked Root Treant.
+seq=12 id=evt-000012 kind=card_damage serverSrcSeat=0 srcVisual=0 src=70c50902a98f41ac908a496ce1e670ea serverTargetSeat=1 targetVisual=1 target=ea6e3004bd48421982b75d8fbbc44cfe ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Root Treant took 2 damage.
+seq=13 id=evt-000013 kind=card_counterattack serverSrcSeat=1 srcVisual=1 src=ea6e3004bd48421982b75d8fbbc44cfe serverTargetSeat=0 targetVisual=0 target=70c50902a98f41ac908a496ce1e670ea ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant struck back at Chrome Vanguard.
+seq=14 id=evt-000014 kind=card_damage serverSrcSeat=1 srcVisual=1 src=ea6e3004bd48421982b75d8fbbc44cfe serverTargetSeat=0 targetVisual=0 target=70c50902a98f41ac908a496ce1e670ea ability= effect=0 status=0 amount=2 hp=3->2 armor=1->0 message=Chrome Vanguard took 2 damage.
+seq=15 id=evt-000015 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=ea6e3004bd48421982b75d8fbbc44cfe serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=16 id=evt-000016 kind=heal serverSrcSeat=1 srcVisual=1 src=ea6e3004bd48421982b75d8fbbc44cfe serverTargetSeat=1 targetVisual=1 target=ea6e3004bd48421982b75d8fbbc44cfe ability=regenerate_left effect=1 status=0 amount=2 hp=2->4 armor=0->0 message=Root Treant healed 2.
+seq=17 id=evt-000017 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=fa2e3c542af646cf9b691d908fc157f5 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=18 id=evt-000018 kind=heal serverSrcSeat=1 srcVisual=1 src=fa2e3c542af646cf9b691d908fc157f5 serverTargetSeat=1 targetVisual=1 target=fa2e3c542af646cf9b691d908fc157f5 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=19 id=evt-000019 kind=card_attack serverSrcSeat=1 srcVisual=1 src=a64dc60442a04494bcb32cf6cf9a7dd0 serverTargetSeat=0 targetVisual=0 target=efa9ec6a1f424197ab0b0d59a0f67b8e ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Sap Venomspine attacked Scorch Golem.
+seq=20 id=evt-000020 kind=card_damage serverSrcSeat=1 srcVisual=1 src=a64dc60442a04494bcb32cf6cf9a7dd0 serverTargetSeat=0 targetVisual=0 target=efa9ec6a1f424197ab0b0d59a0f67b8e ability= effect=0 status=0 amount=1 hp=2->1 armor=0->0 message=Scorch Golem took 1 damage.
+seq=21 id=evt-000021 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=efa9ec6a1f424197ab0b0d59a0f67b8e serverTargetSeat=1 targetVisual=1 target=a64dc60442a04494bcb32cf6cf9a7dd0 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Scorch Golem struck back at Sap Venomspine.
+seq=22 id=evt-000022 kind=card_damage serverSrcSeat=0 srcVisual=0 src=efa9ec6a1f424197ab0b0d59a0f67b8e serverTargetSeat=1 targetVisual=1 target=a64dc60442a04494bcb32cf6cf9a7dd0 ability= effect=0 status=0 amount=2 hp=2->0 armor=0->0 message=Sap Venomspine took 2 damage.
+seq=23 id=evt-000023 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=1 targetVisual=1 target=a64dc60442a04494bcb32cf6cf9a7dd0 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Sap Venomspine died.
+seq=24 id=evt-000024 kind=card_attack serverSrcSeat=1 srcVisual=1 src=fa2e3c542af646cf9b691d908fc157f5 serverTargetSeat=0 targetVisual=0 target=efa9ec6a1f424197ab0b0d59a0f67b8e ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Moss Spider attacked Scorch Golem.
+seq=25 id=evt-000025 kind=card_damage serverSrcSeat=1 srcVisual=1 src=fa2e3c542af646cf9b691d908fc157f5 serverTargetSeat=0 targetVisual=0 target=efa9ec6a1f424197ab0b0d59a0f67b8e ability= effect=0 status=0 amount=3 hp=1->-2 armor=0->0 message=Scorch Golem took 3 damage.
+seq=26 id=evt-000026 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=efa9ec6a1f424197ab0b0d59a0f67b8e ability= effect=0 status=0 amount=0 hp=-2->-2 armor=0->0 message=Scorch Golem died.
+seq=27 id=evt-000027 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=efa9ec6a1f424197ab0b0d59a0f67b8e serverTargetSeat=1 targetVisual=1 target=fa2e3c542af646cf9b691d908fc157f5 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Scorch Golem struck back at Moss Spider.
+seq=28 id=evt-000028 kind=card_damage serverSrcSeat=0 srcVisual=0 src=efa9ec6a1f424197ab0b0d59a0f67b8e serverTargetSeat=1 targetVisual=1 target=fa2e3c542af646cf9b691d908fc157f5 ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Moss Spider took 2 damage.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 871737670.
+turn=1 Info: Chrome Vanguard entered Front.
+turn=1 Info: Scorch Golem entered Front.
+turn=2 Info: Sap Venomspine entered Front.
+turn=2 Info: Moss Spider entered BackLeft.
+turn=2 Info: Root Treant entered BackLeft.
+turn=3 Info: Root Treant healed 0.
+turn=3 Info: Moss Spider healed 0.
+turn=4 Info: 70c50902a98f41ac908a496ce1e670ea hit Root Treant for 2.
+turn=4 Info: ea6e3004bd48421982b75d8fbbc44cfe hit Chrome Vanguard for 2.
+turn=5 Info: Root Treant healed 2.
+turn=5 Info: a64dc60442a04494bcb32cf6cf9a7dd0 hit Scorch Golem for 1.
+turn=5 Info: efa9ec6a1f424197ab0b0d59a0f67b8e hit Sap Venomspine for 2.
+turn=5 Info: Sap Venomspine died.
+turn=5 Info: fa2e3c542af646cf9b691d908fc157f5 hit Scorch Golem for 3.
+turn=5 Info: Scorch Golem died.
+turn=5 Info: efa9ec6a1f424197ab0b0d59a0f67b8e hit Moss Spider for 2.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "8baf5492a5984d64b446eaa103fc6186",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 5,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 871737670,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "1d9ec233d5634f1bb390f5e4b4d8685b",
+                    "cardId": "tidal_0040",
+                    "displayName": "Frozen Ward",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_bulwark",
+                            "displayName": "Bulwark",
+                            "iconAssetRef": "",
+                            "skillType": 0,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_bulwark",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 99,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-bulwark\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "b2ff03d1df1c41ad9d15c778b8663264",
+                    "cardId": "tidal_0020",
+                    "displayName": "Deep Freeze",
+                    "manaCost": 4,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "spell_freeze",
+                            "displayName": "Freeze",
+                            "iconAssetRef": "",
+                            "skillType": 1,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "spell_freeze",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"spell\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 0,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 1,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"spell-freeze\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "560775f27a974f4591d1c6b1a8053a57",
+                    "cardId": "ember_0022",
+                    "displayName": "War Banner",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_blessing",
+                            "displayName": "Blessing",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_blessing",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-heal\"}"
+                                },
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-buff\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "1032e728192f46059e6678e7a26e683a",
+                    "cardId": "tidal_0022",
+                    "displayName": "Tide Charm",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_bulwark",
+                            "displayName": "Bulwark",
+                            "iconAssetRef": "",
+                            "skillType": 0,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_bulwark",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 99,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-bulwark\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "70c50902a98f41ac908a496ce1e670ea",
+                        "cardId": "alloy_0028",
+                        "displayName": "Chrome Vanguard",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 3,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 24,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+                        "cardId": "grove_0027",
+                        "displayName": "Root Treant",
+                        "manaCost": 3,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate_left",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate_left",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"left\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-left\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "fa2e3c542af646cf9b691d908fc157f5",
+                        "cardId": "grove_0011",
+                        "displayName": "Moss Spider",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 2,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"self\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-self\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 18,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 871737670."
+        },
+        {
+            "type": 0,
+            "message": "Chrome Vanguard entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Scorch Golem entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Sap Venomspine entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "type": 0,
+            "message": "70c50902a98f41ac908a496ce1e670ea hit Root Treant for 2."
+        },
+        {
+            "type": 0,
+            "message": "ea6e3004bd48421982b75d8fbbc44cfe hit Chrome Vanguard for 2."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant healed 2."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "type": 0,
+            "message": "a64dc60442a04494bcb32cf6cf9a7dd0 hit Scorch Golem for 1."
+        },
+        {
+            "type": 0,
+            "message": "efa9ec6a1f424197ab0b0d59a0f67b8e hit Sap Venomspine for 2."
+        },
+        {
+            "type": 0,
+            "message": "Sap Venomspine died."
+        },
+        {
+            "type": 0,
+            "message": "fa2e3c542af646cf9b691d908fc157f5 hit Scorch Golem for 3."
+        },
+        {
+            "type": 0,
+            "message": "Scorch Golem died."
+        },
+        {
+            "type": 0,
+            "message": "efa9ec6a1f424197ab0b0d59a0f67b8e hit Moss Spider for 2."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "efa9ec6a1f424197ab0b0d59a0f67b8e",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "70c50902a98f41ac908a496ce1e670ea",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard is not ready to attack."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+            "targetRuntimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "fa2e3c542af646cf9b691d908fc157f5",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "fa2e3c542af646cf9b691d908fc157f5",
+            "targetRuntimeId": "fa2e3c542af646cf9b691d908fc157f5",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "a64dc60442a04494bcb32cf6cf9a7dd0",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Sap Venomspine is not ready to attack."
+        },
+        {
+            "eventId": "evt-000008",
+            "sequence": 8,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant is not ready to attack."
+        },
+        {
+            "eventId": "evt-000009",
+            "sequence": 9,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "fa2e3c542af646cf9b691d908fc157f5",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider is not ready to attack."
+        },
+        {
+            "eventId": "evt-000010",
+            "sequence": 10,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "efa9ec6a1f424197ab0b0d59a0f67b8e",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000011",
+            "sequence": 11,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "70c50902a98f41ac908a496ce1e670ea",
+            "targetRuntimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard attacked Root Treant."
+        },
+        {
+            "eventId": "evt-000012",
+            "sequence": 12,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "70c50902a98f41ac908a496ce1e670ea",
+            "targetRuntimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 2 damage."
+        },
+        {
+            "eventId": "evt-000013",
+            "sequence": 13,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+            "targetRuntimeId": "70c50902a98f41ac908a496ce1e670ea",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant struck back at Chrome Vanguard."
+        },
+        {
+            "eventId": "evt-000014",
+            "sequence": 14,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+            "targetRuntimeId": "70c50902a98f41ac908a496ce1e670ea",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 2,
+            "armorBefore": 1,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard took 2 damage."
+        },
+        {
+            "eventId": "evt-000015",
+            "sequence": 15,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000016",
+            "sequence": 16,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+            "targetRuntimeId": "ea6e3004bd48421982b75d8fbbc44cfe",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 2."
+        },
+        {
+            "eventId": "evt-000017",
+            "sequence": 17,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "fa2e3c542af646cf9b691d908fc157f5",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000018",
+            "sequence": 18,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "fa2e3c542af646cf9b691d908fc157f5",
+            "targetRuntimeId": "fa2e3c542af646cf9b691d908fc157f5",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000019",
+            "sequence": 19,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "a64dc60442a04494bcb32cf6cf9a7dd0",
+            "targetRuntimeId": "efa9ec6a1f424197ab0b0d59a0f67b8e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Sap Venomspine attacked Scorch Golem."
+        },
+        {
+            "eventId": "evt-000020",
+            "sequence": 20,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "a64dc60442a04494bcb32cf6cf9a7dd0",
+            "targetRuntimeId": "efa9ec6a1f424197ab0b0d59a0f67b8e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem took 1 damage."
+        },
+        {
+            "eventId": "evt-000021",
+            "sequence": 21,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "efa9ec6a1f424197ab0b0d59a0f67b8e",
+            "targetRuntimeId": "a64dc60442a04494bcb32cf6cf9a7dd0",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem struck back at Sap Venomspine."
+        },
+        {
+            "eventId": "evt-000022",
+            "sequence": 22,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "efa9ec6a1f424197ab0b0d59a0f67b8e",
+            "targetRuntimeId": "a64dc60442a04494bcb32cf6cf9a7dd0",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Sap Venomspine took 2 damage."
+        },
+        {
+            "eventId": "evt-000023",
+            "sequence": 23,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "a64dc60442a04494bcb32cf6cf9a7dd0",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Sap Venomspine died."
+        },
+        {
+            "eventId": "evt-000024",
+            "sequence": 24,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "fa2e3c542af646cf9b691d908fc157f5",
+            "targetRuntimeId": "efa9ec6a1f424197ab0b0d59a0f67b8e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider attacked Scorch Golem."
+        },
+        {
+            "eventId": "evt-000025",
+            "sequence": 25,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "fa2e3c542af646cf9b691d908fc157f5",
+            "targetRuntimeId": "efa9ec6a1f424197ab0b0d59a0f67b8e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": -2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem took 3 damage."
+        },
+        {
+            "eventId": "evt-000026",
+            "sequence": 26,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "efa9ec6a1f424197ab0b0d59a0f67b8e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": -2,
+            "hpAfter": -2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem died."
+        },
+        {
+            "eventId": "evt-000027",
+            "sequence": 27,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "efa9ec6a1f424197ab0b0d59a0f67b8e",
+            "targetRuntimeId": "fa2e3c542af646cf9b691d908fc157f5",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem struck back at Moss Spider."
+        },
+        {
+            "eventId": "evt-000028",
+            "sequence": 28,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "efa9ec6a1f424197ab0b0d59a0f67b8e",
+            "targetRuntimeId": "fa2e3c542af646cf9b691d908fc157f5",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider took 2 damage."
+        }
+    ]
+}

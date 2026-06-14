@@ -1,0 +1,2103 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T18:03:23.6410513Z
+LastUpdatedUtc: 2026-06-13T18:05:02.5230451Z
+MatchId: 2a656b7e7f874195b005d2270203edf1
+CurrentTurn: 11
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 1497858153.
+002. seq=-1 /Info: Iron Warforged entered Front.
+003. seq=1 Iron Warforged#948b871d skipped. Iron Warforged is not ready to attack.
+004. seq=-1 /Info: Root Antler entered Front.
+005. seq=-1 /Info: Root Treant entered BackLeft.
+006. seq=-1 /Info: Bramble Lurker entered BackRight.
+007. seq=2 skill_begin/SkillBegin: Root Treant used Regenerate.
+008. seq=3 Root Treant#052faa8e heals 0. HP 4->4. Root Treant healed 0.
+009. seq=4 Root Antler#356f60df skipped. Root Antler is not ready to attack.
+010. seq=5 Root Treant#052faa8e skipped. Root Treant is not ready to attack.
+011. seq=6 Bramble Lurker#e6f1e88d skipped. Bramble Lurker is not ready to attack.
+012. seq=7 Iron Warforged#948b871d skipped. Iron Warforged cannot attack from Front.
+013. seq=8 skill_begin/SkillBegin: Root Treant used Regenerate.
+014. seq=9 Root Treant#052faa8e heals 0. HP 4->4. Root Treant healed 0.
+015. seq=10 card_attack/Info: Root Antler attacked Iron Warforged.
+016. seq=11 P1 Root Antler#356f60df attacks P0 for 2. HP 3->1, Armor 0->0. Iron Warforged took 2 damage.
+017. seq=12 card_counterattack/Info: Iron Warforged struck back at Root Antler.
+018. seq=13 P0 P0 attacks Root Antler#356f60df for 2. HP 3->1, Armor 0->0. Root Antler took 2 damage.
+019. seq=14 card_attack/Info: Root Treant attacked Iron Warforged.
+020. seq=15 P1 Root Treant#052faa8e attacks P0 for 2. HP 1->-1, Armor 0->0. Iron Warforged took 2 damage.
+021. seq=16 P0 dies. Iron Warforged died.
+022. seq=17 card_counterattack/Info: Iron Warforged struck back at Root Treant.
+023. seq=18 P0 P0 attacks Root Treant#052faa8e for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+024. seq=19 P1 Bramble Lurker#e6f1e88d attacks P0 for 1. HP 0->0, Armor 0->0. Bramble Lurker attacked the enemy hero.
+025. seq=20 P1 Bramble Lurker#e6f1e88d hits hero P0 for 1. HP 20->19. Seat 1 hero took 1 damage.
+026. seq=-1 /Info: Bramble Lurker entered Front.
+027. seq=21 Bramble Lurker#9ae20e4e skipped. Bramble Lurker is not ready to attack.
+028. seq=22 skill_begin/SkillBegin: Root Treant used Regenerate.
+029. seq=23 Root Treant#052faa8e heals 2. HP 2->4. Root Treant healed 2.
+030. seq=24 card_attack/Info: Root Antler attacked Bramble Lurker.
+031. seq=25 P1 P1 attacks P0 for 2. HP 2->0, Armor 0->0. Bramble Lurker took 2 damage.
+032. seq=26 P0 dies. Bramble Lurker died.
+033. seq=27 card_counterattack/Info: Bramble Lurker struck back at Root Antler.
+034. seq=28 P0 P0 attacks P1 for 1. HP 1->0, Armor 0->0. Root Antler took 1 damage.
+035. seq=29 P1 dies. Root Antler died.
+036. seq=30 P1 Bramble Lurker#e6f1e88d attacks P0 for 1. HP 0->0, Armor 0->0. Bramble Lurker attacked the enemy hero.
+037. seq=31 P1 Bramble Lurker#e6f1e88d hits hero P0 for 1. HP 19->18. Seat 1 hero took 1 damage.
+038. seq=-1 /Info: Chrome Vanguard entered Front.
+039. seq=32 Chrome Vanguard#27c63014 skipped. Chrome Vanguard is not ready to attack.
+040. seq=-1 /Info: Root Treant entered BackRight.
+041. seq=33 skill_begin/SkillBegin: Root Treant used Regenerate.
+042. seq=34 P1 heals 0. HP 2->2. Bramble Lurker healed 0.
+043. seq=35 skill_begin/SkillBegin: Root Treant used Regenerate.
+044. seq=36 P1 heals 0. HP 2->2. Bramble Lurker healed 0.
+045. seq=37 Root Treant#052faa8e skipped. Root Treant cannot attack from Front.
+046. seq=38 card_attack/Info: Bramble Lurker attacked Chrome Vanguard.
+047. seq=39 P1 P1 attacks Chrome Vanguard#27c63014 for 1. HP 3->3, Armor 1->0. Chrome Vanguard took 1 damage.
+048. seq=40 card_counterattack/Info: Chrome Vanguard struck back at Bramble Lurker.
+049. seq=41 P0 Chrome Vanguard#27c63014 attacks P1 for 2. HP 2->0, Armor 0->0. Bramble Lurker took 2 damage.
+050. seq=42 P1 dies. Bramble Lurker died.
+051. seq=43 Chrome Vanguard#27c63014 skipped. Chrome Vanguard cannot attack from Front.
+052. seq=-1 /Info: Wild Boar entered Front.
+053. seq=44 skill_begin/SkillBegin: Root Treant used Regenerate.
+054. seq=45 Root Treant#052faa8e heals 0. HP 4->4. Root Treant healed 0.
+055. seq=46 skill_begin/SkillBegin: Root Treant used Regenerate.
+056. seq=47 Root Treant#052faa8e heals 0. HP 4->4. Root Treant healed 0.
+057. seq=48 Wild Boar#f7cf43c0 skipped. Wild Boar is not ready to attack.
+058. seq=49 card_attack/Info: Root Treant attacked Chrome Vanguard.
+059. seq=50 P1 Root Treant#052faa8e attacks P0 for 2. HP 3->1, Armor 0->0. Chrome Vanguard took 2 damage.
+060. seq=51 card_counterattack/Info: Chrome Vanguard struck back at Root Treant.
+061. seq=52 P0 P0 attacks Root Treant#052faa8e for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+062. seq=53 card_attack/Info: Root Treant attacked Chrome Vanguard.
+063. seq=54 P1 Root Treant#5550a10b attacks P0 for 2. HP 1->-1, Armor 0->0. Chrome Vanguard took 2 damage.
+064. seq=55 P0 dies. Chrome Vanguard died.
+065. seq=56 card_counterattack/Info: Chrome Vanguard struck back at Root Treant.
+066. seq=57 P0 P0 attacks Root Treant#5550a10b for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T18:03:23.6466042Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=30 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T18:03:23.9051738Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 1497858153.
+-- Step 3 | UTC 2026-06-13T18:03:25.6084318Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#948b871d hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Iron Warforged entered Front.
+-- Step 4 | UTC 2026-06-13T18:04:21.0871812Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#948b871d hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=1 Iron Warforged#948b871d skipped. Iron Warforged is not ready to attack.
+-- Step 5 | UTC 2026-06-13T18:04:21.7235557Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#948b871d hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=18/20 board=[Front:Root Antler#356f60df hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Root Antler entered Front.
+-- Step 6 | UTC 2026-06-13T18:04:22.1948295Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#948b871d hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=15/20 board=[Front:Root Antler#356f60df hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#052faa8e hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Root Treant entered BackLeft.
+-- Step 7 | UTC 2026-06-13T18:04:22.6562379Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#948b871d hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=14/20 board=[Front:Root Antler#356f60df hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#052faa8e hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Bramble Lurker#e6f1e88d hp=2/2 armor=0 unitType=1 delivery=projectile] hand=0 deck=19
+   - seq=-1 /Info: Bramble Lurker entered BackRight.
+-- Step 8 | UTC 2026-06-13T18:04:23.1435164Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Iron Warforged#948b871d hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=25 | P1 id=user-2 hp=20 mana=14/20 board=[Front:Root Antler#356f60df hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#052faa8e hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Bramble Lurker#e6f1e88d hp=2/2 armor=0 unitType=1 delivery=projectile] hand=0 deck=19
+   - seq=2 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=3 Root Treant#052faa8e heals 0. HP 4->4. Root Treant healed 0.
+   - seq=4 Root Antler#356f60df skipped. Root Antler is not ready to attack.
+   - seq=5 Root Treant#052faa8e skipped. Root Treant is not ready to attack.
+   - seq=6 Bramble Lurker#e6f1e88d skipped. Bramble Lurker is not ready to attack.
+-- Step 9 | UTC 2026-06-13T18:04:26.3689895Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Iron Warforged#948b871d hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=25 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Root Antler#356f60df hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#052faa8e hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Bramble Lurker#e6f1e88d hp=2/2 armor=0 unitType=1 delivery=projectile] hand=0 deck=18
+   - seq=7 Iron Warforged#948b871d skipped. Iron Warforged cannot attack from Front.
+-- Step 10 | UTC 2026-06-13T18:04:27.0138604Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=19 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=5 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Root Antler#356f60df hp=1/3 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#052faa8e hp=2/4 armor=0 unitType=1 delivery=projectile, BackRight:Bramble Lurker#e6f1e88d hp=2/2 armor=0 unitType=1 delivery=projectile] hand=0 deck=18
+   - seq=8 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=9 Root Treant#052faa8e heals 0. HP 4->4. Root Treant healed 0.
+   - seq=10 card_attack/Info: Root Antler attacked Iron Warforged.
+   - seq=11 P1 Root Antler#356f60df attacks P0 for 2. HP 3->1, Armor 0->0. Iron Warforged took 2 damage.
+   - seq=12 card_counterattack/Info: Iron Warforged struck back at Root Antler.
+   - seq=13 P0 P0 attacks Root Antler#356f60df for 2. HP 3->1, Armor 0->0. Root Antler took 2 damage.
+   - seq=14 card_attack/Info: Root Treant attacked Iron Warforged.
+   - seq=15 P1 Root Treant#052faa8e attacks P0 for 2. HP 1->-1, Armor 0->0. Iron Warforged took 2 damage.
+   - seq=16 P0 dies. Iron Warforged died.
+   - seq=17 card_counterattack/Info: Iron Warforged struck back at Root Treant.
+   - seq=18 P0 P0 attacks Root Treant#052faa8e for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+   - seq=19 P1 Bramble Lurker#e6f1e88d attacks P0 for 1. HP 0->0, Armor 0->0. Bramble Lurker attacked the enemy hero.
+   - seq=20 P1 Bramble Lurker#e6f1e88d hits hero P0 for 1. HP 20->19. Seat 1 hero took 1 damage.
+-- Step 11 | UTC 2026-06-13T18:04:45.5130423Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=19 mana=19/20 board=[Front:Bramble Lurker#9ae20e4e hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Root Antler#356f60df hp=1/3 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#052faa8e hp=2/4 armor=0 unitType=1 delivery=projectile, BackRight:Bramble Lurker#e6f1e88d hp=2/2 armor=0 unitType=1 delivery=projectile] hand=0 deck=18
+   - seq=-1 /Info: Bramble Lurker entered Front.
+-- Step 12 | UTC 2026-06-13T18:04:46.9350284Z | Turn 6 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=19 mana=19/20 board=[Front:Bramble Lurker#9ae20e4e hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Root Antler#356f60df hp=1/3 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#052faa8e hp=2/4 armor=0 unitType=1 delivery=projectile, BackRight:Bramble Lurker#e6f1e88d hp=2/2 armor=0 unitType=1 delivery=projectile] hand=0 deck=17
+   - seq=21 Bramble Lurker#9ae20e4e skipped. Bramble Lurker is not ready to attack.
+-- Step 13 | UTC 2026-06-13T18:04:47.5889230Z | Turn 7 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=18 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=5 deck=23 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Root Treant#052faa8e hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:Bramble Lurker#e6f1e88d hp=2/2 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=0 deck=17
+   - seq=22 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=23 Root Treant#052faa8e heals 2. HP 2->4. Root Treant healed 2.
+   - seq=24 card_attack/Info: Root Antler attacked Bramble Lurker.
+   - seq=25 P1 P1 attacks P0 for 2. HP 2->0, Armor 0->0. Bramble Lurker took 2 damage.
+   - seq=26 P0 dies. Bramble Lurker died.
+   - seq=27 card_counterattack/Info: Bramble Lurker struck back at Root Antler.
+   - seq=28 P0 P0 attacks P1 for 1. HP 1->0, Armor 0->0. Root Antler took 1 damage.
+   - seq=29 P1 dies. Root Antler died.
+   - seq=30 P1 Bramble Lurker#e6f1e88d attacks P0 for 1. HP 0->0, Armor 0->0. Bramble Lurker attacked the enemy hero.
+   - seq=31 P1 Bramble Lurker#e6f1e88d hits hero P0 for 1. HP 19->18. Seat 1 hero took 1 damage.
+-- Step 14 | UTC 2026-06-13T18:04:53.1532378Z | Turn 7 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=18 mana=18/20 board=[Front:Chrome Vanguard#27c63014 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=23 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Root Treant#052faa8e hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:Bramble Lurker#e6f1e88d hp=2/2 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=0 deck=17
+   - seq=-1 /Info: Chrome Vanguard entered Front.
+-- Step 15 | UTC 2026-06-13T18:04:54.3380956Z | Turn 8 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=18 mana=18/20 board=[Front:Chrome Vanguard#27c63014 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=23 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Root Treant#052faa8e hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:Bramble Lurker#e6f1e88d hp=2/2 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=0 deck=16
+   - seq=32 Chrome Vanguard#27c63014 skipped. Chrome Vanguard is not ready to attack.
+-- Step 16 | UTC 2026-06-13T18:04:54.9949795Z | Turn 8 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=18 mana=18/20 board=[Front:Chrome Vanguard#27c63014 hp=3/3 armor=1 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=23 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Root Treant#052faa8e hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:Bramble Lurker#e6f1e88d hp=2/2 armor=0 unitType=1 delivery=projectile, BackRight:Root Treant#5550a10b hp=4/4 armor=0 unitType=1 delivery=projectile] hand=0 deck=16
+   - seq=-1 /Info: Root Treant entered BackRight.
+-- Step 17 | UTC 2026-06-13T18:04:55.4677133Z | Turn 9 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=18 mana=20/20 board=[Front:Chrome Vanguard#27c63014 hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=5 deck=22 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Root Treant#052faa8e hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:Root Treant#5550a10b hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=0 deck=16
+   - seq=33 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=34 P1 heals 0. HP 2->2. Bramble Lurker healed 0.
+   - seq=35 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=36 P1 heals 0. HP 2->2. Bramble Lurker healed 0.
+   - seq=37 Root Treant#052faa8e skipped. Root Treant cannot attack from Front.
+   - seq=38 card_attack/Info: Bramble Lurker attacked Chrome Vanguard.
+   - seq=39 P1 P1 attacks Chrome Vanguard#27c63014 for 1. HP 3->3, Armor 1->0. Chrome Vanguard took 1 damage.
+   - seq=40 card_counterattack/Info: Chrome Vanguard struck back at Bramble Lurker.
+   - seq=41 P0 Chrome Vanguard#27c63014 attacks P1 for 2. HP 2->0, Armor 0->0. Bramble Lurker took 2 damage.
+   - seq=42 P1 dies. Bramble Lurker died.
+-- Step 18 | UTC 2026-06-13T18:05:01.3625103Z | Turn 10 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=18 mana=20/20 board=[Front:Chrome Vanguard#27c63014 hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=5 deck=22 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Root Treant#052faa8e hp=4/4 armor=0 unitType=1 delivery=projectile, BackLeft:Root Treant#5550a10b hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=0 deck=15
+   - seq=43 Chrome Vanguard#27c63014 skipped. Chrome Vanguard cannot attack from Front.
+-- Step 19 | UTC 2026-06-13T18:05:02.0432514Z | Turn 10 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=18 mana=20/20 board=[Front:Chrome Vanguard#27c63014 hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=5 deck=22 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Wild Boar#f7cf43c0 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#052faa8e hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Root Treant#5550a10b hp=4/4 armor=0 unitType=1 delivery=projectile] hand=0 deck=15
+   - seq=-1 /Info: Wild Boar entered Front.
+-- Step 20 | UTC 2026-06-13T18:05:02.5230451Z | Turn 11 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=18 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=6 deck=21 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Wild Boar#f7cf43c0 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#052faa8e hp=2/4 armor=0 unitType=1 delivery=projectile, BackRight:Root Treant#5550a10b hp=2/4 armor=0 unitType=1 delivery=projectile] hand=0 deck=15
+   - seq=44 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=45 Root Treant#052faa8e heals 0. HP 4->4. Root Treant healed 0.
+   - seq=46 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=47 Root Treant#052faa8e heals 0. HP 4->4. Root Treant healed 0.
+   - seq=48 Wild Boar#f7cf43c0 skipped. Wild Boar is not ready to attack.
+   - seq=49 card_attack/Info: Root Treant attacked Chrome Vanguard.
+   - seq=50 P1 Root Treant#052faa8e attacks P0 for 2. HP 3->1, Armor 0->0. Chrome Vanguard took 2 damage.
+   - seq=51 card_counterattack/Info: Chrome Vanguard struck back at Root Treant.
+   - seq=52 P0 P0 attacks Root Treant#052faa8e for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+   - seq=53 card_attack/Info: Root Treant attacked Chrome Vanguard.
+   - seq=54 P1 Root Treant#5550a10b attacks P0 for 2. HP 1->-1, Armor 0->0. Chrome Vanguard took 2 damage.
+   - seq=55 P0 dies. Chrome Vanguard died.
+   - seq=56 card_counterattack/Info: Chrome Vanguard struck back at Root Treant.
+   - seq=57 P0 P0 attacks Root Treant#5550a10b for 2. HP 4->2, Armor 0->0. Root Treant took 2 damage.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=948b871d5bac4e1a9e3b689d896f0901 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Warforged is not ready to attack.
+seq=2 id=evt-000002 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=3 id=evt-000003 kind=heal serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=1 targetVisual=1 target=052faa8e1ee542f3b89d4629f47ce232 ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Root Treant healed 0.
+seq=4 id=evt-000004 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=356f60df35914c5e8755b180d50753f5 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Antler is not ready to attack.
+seq=5 id=evt-000005 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant is not ready to attack.
+seq=6 id=evt-000006 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=e6f1e88d29a04af4b99e3798ec315a6c serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Bramble Lurker is not ready to attack.
+seq=7 id=evt-000007 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=948b871d5bac4e1a9e3b689d896f0901 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Warforged cannot attack from Front.
+seq=8 id=evt-000008 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=9 id=evt-000009 kind=heal serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=1 targetVisual=1 target=052faa8e1ee542f3b89d4629f47ce232 ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Root Treant healed 0.
+seq=10 id=evt-000010 kind=card_attack serverSrcSeat=1 srcVisual=1 src=356f60df35914c5e8755b180d50753f5 serverTargetSeat=0 targetVisual=0 target=948b871d5bac4e1a9e3b689d896f0901 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Antler attacked Iron Warforged.
+seq=11 id=evt-000011 kind=card_damage serverSrcSeat=1 srcVisual=1 src=356f60df35914c5e8755b180d50753f5 serverTargetSeat=0 targetVisual=0 target=948b871d5bac4e1a9e3b689d896f0901 ability= effect=0 status=0 amount=2 hp=3->1 armor=0->0 message=Iron Warforged took 2 damage.
+seq=12 id=evt-000012 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=948b871d5bac4e1a9e3b689d896f0901 serverTargetSeat=1 targetVisual=1 target=356f60df35914c5e8755b180d50753f5 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Iron Warforged struck back at Root Antler.
+seq=13 id=evt-000013 kind=card_damage serverSrcSeat=0 srcVisual=0 src=948b871d5bac4e1a9e3b689d896f0901 serverTargetSeat=1 targetVisual=1 target=356f60df35914c5e8755b180d50753f5 ability= effect=0 status=0 amount=2 hp=3->1 armor=0->0 message=Root Antler took 2 damage.
+seq=14 id=evt-000014 kind=card_attack serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=0 targetVisual=0 target=948b871d5bac4e1a9e3b689d896f0901 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked Iron Warforged.
+seq=15 id=evt-000015 kind=card_damage serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=0 targetVisual=0 target=948b871d5bac4e1a9e3b689d896f0901 ability= effect=0 status=0 amount=2 hp=1->-1 armor=0->0 message=Iron Warforged took 2 damage.
+seq=16 id=evt-000016 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=948b871d5bac4e1a9e3b689d896f0901 ability= effect=0 status=0 amount=0 hp=-1->-1 armor=0->0 message=Iron Warforged died.
+seq=17 id=evt-000017 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=948b871d5bac4e1a9e3b689d896f0901 serverTargetSeat=1 targetVisual=1 target=052faa8e1ee542f3b89d4629f47ce232 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Iron Warforged struck back at Root Treant.
+seq=18 id=evt-000018 kind=card_damage serverSrcSeat=0 srcVisual=0 src=948b871d5bac4e1a9e3b689d896f0901 serverTargetSeat=1 targetVisual=1 target=052faa8e1ee542f3b89d4629f47ce232 ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Root Treant took 2 damage.
+seq=19 id=evt-000019 kind=card_attack serverSrcSeat=1 srcVisual=1 src=e6f1e88d29a04af4b99e3798ec315a6c serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Bramble Lurker attacked the enemy hero.
+seq=20 id=evt-000020 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=e6f1e88d29a04af4b99e3798ec315a6c serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=1 hp=20->19 armor=0->0 message=Seat 1 hero took 1 damage.
+seq=21 id=evt-000021 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=9ae20e4e3ec84877a188eecbd406cb7c serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Bramble Lurker is not ready to attack.
+seq=22 id=evt-000022 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=23 id=evt-000023 kind=heal serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=1 targetVisual=1 target=052faa8e1ee542f3b89d4629f47ce232 ability=regenerate_left effect=1 status=0 amount=2 hp=2->4 armor=0->0 message=Root Treant healed 2.
+seq=24 id=evt-000024 kind=card_attack serverSrcSeat=1 srcVisual=1 src=356f60df35914c5e8755b180d50753f5 serverTargetSeat=0 targetVisual=0 target=9ae20e4e3ec84877a188eecbd406cb7c ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Antler attacked Bramble Lurker.
+seq=25 id=evt-000025 kind=card_damage serverSrcSeat=1 srcVisual=1 src=356f60df35914c5e8755b180d50753f5 serverTargetSeat=0 targetVisual=0 target=9ae20e4e3ec84877a188eecbd406cb7c ability= effect=0 status=0 amount=2 hp=2->0 armor=0->0 message=Bramble Lurker took 2 damage.
+seq=26 id=evt-000026 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=9ae20e4e3ec84877a188eecbd406cb7c ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Bramble Lurker died.
+seq=27 id=evt-000027 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=9ae20e4e3ec84877a188eecbd406cb7c serverTargetSeat=1 targetVisual=1 target=356f60df35914c5e8755b180d50753f5 ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Bramble Lurker struck back at Root Antler.
+seq=28 id=evt-000028 kind=card_damage serverSrcSeat=0 srcVisual=0 src=9ae20e4e3ec84877a188eecbd406cb7c serverTargetSeat=1 targetVisual=1 target=356f60df35914c5e8755b180d50753f5 ability= effect=0 status=0 amount=1 hp=1->0 armor=0->0 message=Root Antler took 1 damage.
+seq=29 id=evt-000029 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=1 targetVisual=1 target=356f60df35914c5e8755b180d50753f5 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Antler died.
+seq=30 id=evt-000030 kind=card_attack serverSrcSeat=1 srcVisual=1 src=e6f1e88d29a04af4b99e3798ec315a6c serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Bramble Lurker attacked the enemy hero.
+seq=31 id=evt-000031 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=e6f1e88d29a04af4b99e3798ec315a6c serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=1 hp=19->18 armor=0->0 message=Seat 1 hero took 1 damage.
+seq=32 id=evt-000032 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=27c63014db03410d8c76aee4d82a81a1 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Chrome Vanguard is not ready to attack.
+seq=33 id=evt-000033 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=34 id=evt-000034 kind=heal serverSrcSeat=1 srcVisual=1 src=e6f1e88d29a04af4b99e3798ec315a6c serverTargetSeat=1 targetVisual=1 target=e6f1e88d29a04af4b99e3798ec315a6c ability=regenerate_left effect=1 status=0 amount=0 hp=2->2 armor=0->0 message=Bramble Lurker healed 0.
+seq=35 id=evt-000035 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=5550a10bb2544f35a1408c2f3029b99b serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=36 id=evt-000036 kind=heal serverSrcSeat=1 srcVisual=1 src=e6f1e88d29a04af4b99e3798ec315a6c serverTargetSeat=1 targetVisual=1 target=e6f1e88d29a04af4b99e3798ec315a6c ability=regenerate_left effect=1 status=0 amount=0 hp=2->2 armor=0->0 message=Bramble Lurker healed 0.
+seq=37 id=evt-000037 kind=attack_position_blocked serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant cannot attack from Front.
+seq=38 id=evt-000038 kind=card_attack serverSrcSeat=1 srcVisual=1 src=e6f1e88d29a04af4b99e3798ec315a6c serverTargetSeat=0 targetVisual=0 target=27c63014db03410d8c76aee4d82a81a1 ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Bramble Lurker attacked Chrome Vanguard.
+seq=39 id=evt-000039 kind=card_damage serverSrcSeat=1 srcVisual=1 src=e6f1e88d29a04af4b99e3798ec315a6c serverTargetSeat=0 targetVisual=0 target=27c63014db03410d8c76aee4d82a81a1 ability= effect=0 status=0 amount=1 hp=3->3 armor=1->0 message=Chrome Vanguard took 1 damage.
+seq=40 id=evt-000040 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=27c63014db03410d8c76aee4d82a81a1 serverTargetSeat=1 targetVisual=1 target=e6f1e88d29a04af4b99e3798ec315a6c ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Chrome Vanguard struck back at Bramble Lurker.
+seq=41 id=evt-000041 kind=card_damage serverSrcSeat=0 srcVisual=0 src=27c63014db03410d8c76aee4d82a81a1 serverTargetSeat=1 targetVisual=1 target=e6f1e88d29a04af4b99e3798ec315a6c ability= effect=0 status=0 amount=2 hp=2->0 armor=0->0 message=Bramble Lurker took 2 damage.
+seq=42 id=evt-000042 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=1 targetVisual=1 target=e6f1e88d29a04af4b99e3798ec315a6c ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Bramble Lurker died.
+seq=43 id=evt-000043 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=27c63014db03410d8c76aee4d82a81a1 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Chrome Vanguard cannot attack from Front.
+seq=44 id=evt-000044 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=45 id=evt-000045 kind=heal serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=1 targetVisual=1 target=052faa8e1ee542f3b89d4629f47ce232 ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Root Treant healed 0.
+seq=46 id=evt-000046 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=5550a10bb2544f35a1408c2f3029b99b serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=47 id=evt-000047 kind=heal serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=1 targetVisual=1 target=052faa8e1ee542f3b89d4629f47ce232 ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Root Treant healed 0.
+seq=48 id=evt-000048 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=f7cf43c0fb4e45f4a5082006cd4c7a42 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar is not ready to attack.
+seq=49 id=evt-000049 kind=card_attack serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=0 targetVisual=0 target=27c63014db03410d8c76aee4d82a81a1 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked Chrome Vanguard.
+seq=50 id=evt-000050 kind=card_damage serverSrcSeat=1 srcVisual=1 src=052faa8e1ee542f3b89d4629f47ce232 serverTargetSeat=0 targetVisual=0 target=27c63014db03410d8c76aee4d82a81a1 ability= effect=0 status=0 amount=2 hp=3->1 armor=0->0 message=Chrome Vanguard took 2 damage.
+seq=51 id=evt-000051 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=27c63014db03410d8c76aee4d82a81a1 serverTargetSeat=1 targetVisual=1 target=052faa8e1ee542f3b89d4629f47ce232 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Chrome Vanguard struck back at Root Treant.
+seq=52 id=evt-000052 kind=card_damage serverSrcSeat=0 srcVisual=0 src=27c63014db03410d8c76aee4d82a81a1 serverTargetSeat=1 targetVisual=1 target=052faa8e1ee542f3b89d4629f47ce232 ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Root Treant took 2 damage.
+seq=53 id=evt-000053 kind=card_attack serverSrcSeat=1 srcVisual=1 src=5550a10bb2544f35a1408c2f3029b99b serverTargetSeat=0 targetVisual=0 target=27c63014db03410d8c76aee4d82a81a1 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked Chrome Vanguard.
+seq=54 id=evt-000054 kind=card_damage serverSrcSeat=1 srcVisual=1 src=5550a10bb2544f35a1408c2f3029b99b serverTargetSeat=0 targetVisual=0 target=27c63014db03410d8c76aee4d82a81a1 ability= effect=0 status=0 amount=2 hp=1->-1 armor=0->0 message=Chrome Vanguard took 2 damage.
+seq=55 id=evt-000055 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=27c63014db03410d8c76aee4d82a81a1 ability= effect=0 status=0 amount=0 hp=-1->-1 armor=0->0 message=Chrome Vanguard died.
+seq=56 id=evt-000056 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=27c63014db03410d8c76aee4d82a81a1 serverTargetSeat=1 targetVisual=1 target=5550a10bb2544f35a1408c2f3029b99b ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Chrome Vanguard struck back at Root Treant.
+seq=57 id=evt-000057 kind=card_damage serverSrcSeat=0 srcVisual=0 src=27c63014db03410d8c76aee4d82a81a1 serverTargetSeat=1 targetVisual=1 target=5550a10bb2544f35a1408c2f3029b99b ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Root Treant took 2 damage.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 1497858153.
+turn=1 Info: Iron Warforged entered Front.
+turn=2 Info: Root Antler entered Front.
+turn=2 Info: Root Treant entered BackLeft.
+turn=2 Info: Bramble Lurker entered BackRight.
+turn=3 Info: Root Treant healed 0.
+turn=5 Info: 356f60df35914c5e8755b180d50753f5 hit Iron Warforged for 2.
+turn=5 Info: 948b871d5bac4e1a9e3b689d896f0901 hit Root Antler for 2.
+turn=5 Info: 052faa8e1ee542f3b89d4629f47ce232 hit Iron Warforged for 2.
+turn=5 Info: Iron Warforged died.
+turn=5 Info: 948b871d5bac4e1a9e3b689d896f0901 hit Root Treant for 2.
+turn=5 Info: Bramble Lurker entered Front.
+turn=7 Info: Root Treant healed 2.
+turn=7 Info: 356f60df35914c5e8755b180d50753f5 hit Bramble Lurker for 2.
+turn=7 Info: Bramble Lurker died.
+turn=7 Info: 9ae20e4e3ec84877a188eecbd406cb7c hit Root Antler for 1.
+turn=7 Info: Root Antler died.
+turn=7 Info: Chrome Vanguard entered Front.
+turn=8 Info: Root Treant entered BackRight.
+turn=9 Info: Bramble Lurker healed 0.
+turn=9 Info: e6f1e88d29a04af4b99e3798ec315a6c hit Chrome Vanguard for 1.
+turn=9 Info: 27c63014db03410d8c76aee4d82a81a1 hit Bramble Lurker for 2.
+turn=10 Info: Wild Boar entered Front.
+turn=11 Info: 052faa8e1ee542f3b89d4629f47ce232 hit Chrome Vanguard for 2.
+turn=11 Info: 27c63014db03410d8c76aee4d82a81a1 hit Root Treant for 2.
+turn=11 Info: 5550a10bb2544f35a1408c2f3029b99b hit Chrome Vanguard for 2.
+turn=11 Info: Chrome Vanguard died.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "2a656b7e7f874195b005d2270203edf1",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 11,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 1497858153,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 18,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "1e6808ea00904b44bf01543fc95efa8a",
+                    "cardId": "ember_0010",
+                    "displayName": "Forgeheart Blade",
+                    "manaCost": 5,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "equip_weapon",
+                            "displayName": "Weapon",
+                            "iconAssetRef": "",
+                            "skillType": 2,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "equip_weapon",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"equipment\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"equip-weapon\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "13ff3e2070284d9498ec2abb7bfd7668",
+                    "cardId": "tidal_0010",
+                    "displayName": "Frostforged Spear",
+                    "manaCost": 7,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "equip_armor",
+                            "displayName": "Plating",
+                            "iconAssetRef": "",
+                            "skillType": 0,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "equip_armor",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"equipment\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"equip-armor\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "51f3406d218c4bda84a947b88d2c17da",
+                    "cardId": "grove_0022",
+                    "displayName": "Healing Totem",
+                    "manaCost": 5,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_blessing",
+                            "displayName": "Blessing",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_blessing",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-heal\"}"
+                                },
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-buff\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "c5403e1840234f298ff04414c6dbddd0",
+                    "cardId": "ember_0024",
+                    "displayName": "Scorch Golem",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 2,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 1,
+                    "attackDeliveryType": "projectile",
+                    "abilities": [
+                        {
+                            "abilityId": "haste",
+                            "displayName": "Haste",
+                            "iconAssetRef": "",
+                            "skillType": 4,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_haste_ready",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"normalAttackModifier\": true}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"haste-ready\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "cc37aa83d47241a1b4a0832cd99d50b0",
+                    "cardId": "tidal_0022",
+                    "displayName": "Tide Charm",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_bulwark",
+                            "displayName": "Bulwark",
+                            "iconAssetRef": "",
+                            "skillType": 0,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_bulwark",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 99,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-bulwark\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "9e380e30840a4ed2bb11a081ae0ee950",
+                    "cardId": "grove_0033",
+                    "displayName": "Sap Venomspine",
+                    "manaCost": 1,
+                    "attack": 1,
+                    "health": 2,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 21,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 17,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "f7cf43c0fb4e45f4a5082006cd4c7a42",
+                        "cardId": "grove_0034",
+                        "displayName": "Wild Boar",
+                        "manaCost": 3,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "poison",
+                                "displayName": "Poison",
+                                "iconAssetRef": "",
+                                "skillType": 1,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_poison_apply",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 2,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"poison\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "052faa8e1ee542f3b89d4629f47ce232",
+                        "cardId": "grove_0027",
+                        "displayName": "Root Treant",
+                        "manaCost": 3,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate_left",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate_left",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"left\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-left\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "5550a10bb2544f35a1408c2f3029b99b",
+                        "cardId": "grove_0027",
+                        "displayName": "Root Treant",
+                        "manaCost": 3,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate_left",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate_left",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"left\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-left\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 15,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Root Treant healed 2."
+        },
+        {
+            "type": 0,
+            "message": "356f60df35914c5e8755b180d50753f5 hit Bramble Lurker for 2."
+        },
+        {
+            "type": 0,
+            "message": "Bramble Lurker died."
+        },
+        {
+            "type": 0,
+            "message": "9ae20e4e3ec84877a188eecbd406cb7c hit Root Antler for 1."
+        },
+        {
+            "type": 0,
+            "message": "Root Antler died."
+        },
+        {
+            "type": 0,
+            "message": "Chrome Vanguard entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant entered BackRight."
+        },
+        {
+            "type": 0,
+            "message": "Bramble Lurker healed 0."
+        },
+        {
+            "type": 0,
+            "message": "Bramble Lurker healed 0."
+        },
+        {
+            "type": 0,
+            "message": "e6f1e88d29a04af4b99e3798ec315a6c hit Chrome Vanguard for 1."
+        },
+        {
+            "type": 0,
+            "message": "27c63014db03410d8c76aee4d82a81a1 hit Bramble Lurker for 2."
+        },
+        {
+            "type": 0,
+            "message": "Bramble Lurker died."
+        },
+        {
+            "type": 0,
+            "message": "Wild Boar entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "type": 0,
+            "message": "052faa8e1ee542f3b89d4629f47ce232 hit Chrome Vanguard for 2."
+        },
+        {
+            "type": 0,
+            "message": "27c63014db03410d8c76aee4d82a81a1 hit Root Treant for 2."
+        },
+        {
+            "type": 0,
+            "message": "5550a10bb2544f35a1408c2f3029b99b hit Chrome Vanguard for 2."
+        },
+        {
+            "type": 0,
+            "message": "Chrome Vanguard died."
+        },
+        {
+            "type": 0,
+            "message": "27c63014db03410d8c76aee4d82a81a1 hit Root Treant for 2."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "948b871d5bac4e1a9e3b689d896f0901",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged is not ready to attack."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "356f60df35914c5e8755b180d50753f5",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Antler is not ready to attack."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant is not ready to attack."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker is not ready to attack."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "948b871d5bac4e1a9e3b689d896f0901",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000008",
+            "sequence": 8,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000009",
+            "sequence": 9,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "eventId": "evt-000010",
+            "sequence": 10,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "356f60df35914c5e8755b180d50753f5",
+            "targetRuntimeId": "948b871d5bac4e1a9e3b689d896f0901",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Antler attacked Iron Warforged."
+        },
+        {
+            "eventId": "evt-000011",
+            "sequence": 11,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "356f60df35914c5e8755b180d50753f5",
+            "targetRuntimeId": "948b871d5bac4e1a9e3b689d896f0901",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged took 2 damage."
+        },
+        {
+            "eventId": "evt-000012",
+            "sequence": 12,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "948b871d5bac4e1a9e3b689d896f0901",
+            "targetRuntimeId": "356f60df35914c5e8755b180d50753f5",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged struck back at Root Antler."
+        },
+        {
+            "eventId": "evt-000013",
+            "sequence": 13,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "948b871d5bac4e1a9e3b689d896f0901",
+            "targetRuntimeId": "356f60df35914c5e8755b180d50753f5",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Antler took 2 damage."
+        },
+        {
+            "eventId": "evt-000014",
+            "sequence": 14,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "948b871d5bac4e1a9e3b689d896f0901",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked Iron Warforged."
+        },
+        {
+            "eventId": "evt-000015",
+            "sequence": 15,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "948b871d5bac4e1a9e3b689d896f0901",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged took 2 damage."
+        },
+        {
+            "eventId": "evt-000016",
+            "sequence": 16,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "948b871d5bac4e1a9e3b689d896f0901",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": -1,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged died."
+        },
+        {
+            "eventId": "evt-000017",
+            "sequence": 17,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "948b871d5bac4e1a9e3b689d896f0901",
+            "targetRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged struck back at Root Treant."
+        },
+        {
+            "eventId": "evt-000018",
+            "sequence": 18,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "948b871d5bac4e1a9e3b689d896f0901",
+            "targetRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 2 damage."
+        },
+        {
+            "eventId": "evt-000019",
+            "sequence": 19,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000020",
+            "sequence": 20,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 20,
+            "hpAfter": 19,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 1 damage."
+        },
+        {
+            "eventId": "evt-000021",
+            "sequence": 21,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "9ae20e4e3ec84877a188eecbd406cb7c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker is not ready to attack."
+        },
+        {
+            "eventId": "evt-000022",
+            "sequence": 22,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000023",
+            "sequence": 23,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 2."
+        },
+        {
+            "eventId": "evt-000024",
+            "sequence": 24,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "356f60df35914c5e8755b180d50753f5",
+            "targetRuntimeId": "9ae20e4e3ec84877a188eecbd406cb7c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Antler attacked Bramble Lurker."
+        },
+        {
+            "eventId": "evt-000025",
+            "sequence": 25,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "356f60df35914c5e8755b180d50753f5",
+            "targetRuntimeId": "9ae20e4e3ec84877a188eecbd406cb7c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker took 2 damage."
+        },
+        {
+            "eventId": "evt-000026",
+            "sequence": 26,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "9ae20e4e3ec84877a188eecbd406cb7c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker died."
+        },
+        {
+            "eventId": "evt-000027",
+            "sequence": 27,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "9ae20e4e3ec84877a188eecbd406cb7c",
+            "targetRuntimeId": "356f60df35914c5e8755b180d50753f5",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker struck back at Root Antler."
+        },
+        {
+            "eventId": "evt-000028",
+            "sequence": 28,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "9ae20e4e3ec84877a188eecbd406cb7c",
+            "targetRuntimeId": "356f60df35914c5e8755b180d50753f5",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Antler took 1 damage."
+        },
+        {
+            "eventId": "evt-000029",
+            "sequence": 29,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "356f60df35914c5e8755b180d50753f5",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Antler died."
+        },
+        {
+            "eventId": "evt-000030",
+            "sequence": 30,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000031",
+            "sequence": 31,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 19,
+            "hpAfter": 18,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 1 damage."
+        },
+        {
+            "eventId": "evt-000032",
+            "sequence": 32,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard is not ready to attack."
+        },
+        {
+            "eventId": "evt-000033",
+            "sequence": 33,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000034",
+            "sequence": 34,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "targetRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker healed 0."
+        },
+        {
+            "eventId": "evt-000035",
+            "sequence": 35,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "5550a10bb2544f35a1408c2f3029b99b",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000036",
+            "sequence": 36,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "targetRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker healed 0."
+        },
+        {
+            "eventId": "evt-000037",
+            "sequence": 37,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000038",
+            "sequence": 38,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "targetRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker attacked Chrome Vanguard."
+        },
+        {
+            "eventId": "evt-000039",
+            "sequence": 39,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "targetRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 1,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard took 1 damage."
+        },
+        {
+            "eventId": "evt-000040",
+            "sequence": 40,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "targetRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard struck back at Bramble Lurker."
+        },
+        {
+            "eventId": "evt-000041",
+            "sequence": 41,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "targetRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker took 2 damage."
+        },
+        {
+            "eventId": "evt-000042",
+            "sequence": 42,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "e6f1e88d29a04af4b99e3798ec315a6c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bramble Lurker died."
+        },
+        {
+            "eventId": "evt-000043",
+            "sequence": 43,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000044",
+            "sequence": 44,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000045",
+            "sequence": 45,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "eventId": "evt-000046",
+            "sequence": 46,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "5550a10bb2544f35a1408c2f3029b99b",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000047",
+            "sequence": 47,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "eventId": "evt-000048",
+            "sequence": 48,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "f7cf43c0fb4e45f4a5082006cd4c7a42",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar is not ready to attack."
+        },
+        {
+            "eventId": "evt-000049",
+            "sequence": 49,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked Chrome Vanguard."
+        },
+        {
+            "eventId": "evt-000050",
+            "sequence": 50,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "targetRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard took 2 damage."
+        },
+        {
+            "eventId": "evt-000051",
+            "sequence": 51,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "targetRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard struck back at Root Treant."
+        },
+        {
+            "eventId": "evt-000052",
+            "sequence": 52,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "targetRuntimeId": "052faa8e1ee542f3b89d4629f47ce232",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 2 damage."
+        },
+        {
+            "eventId": "evt-000053",
+            "sequence": 53,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "5550a10bb2544f35a1408c2f3029b99b",
+            "targetRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked Chrome Vanguard."
+        },
+        {
+            "eventId": "evt-000054",
+            "sequence": 54,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "5550a10bb2544f35a1408c2f3029b99b",
+            "targetRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard took 2 damage."
+        },
+        {
+            "eventId": "evt-000055",
+            "sequence": 55,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": -1,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard died."
+        },
+        {
+            "eventId": "evt-000056",
+            "sequence": 56,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "targetRuntimeId": "5550a10bb2544f35a1408c2f3029b99b",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Chrome Vanguard struck back at Root Treant."
+        },
+        {
+            "eventId": "evt-000057",
+            "sequence": 57,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "27c63014db03410d8c76aee4d82a81a1",
+            "targetRuntimeId": "5550a10bb2544f35a1408c2f3029b99b",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 2 damage."
+        }
+    ]
+}

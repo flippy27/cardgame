@@ -53,11 +53,14 @@ namespace Flippy.CardDuelMobile.UI
         private bool _waitingForOpponent = true;
         private int _connectedPlayers;
         private bool _loadedMainGame;
+        private PlayerProfileHud _profileHud;
 
         private void Awake()
         {
             ResolveDependencies();
             AttachCoordinator(MatchSignalRCoordinator.Instance);
+            // Main-menu player widget: level circle (top-right) that opens the profile overlay.
+            _profileHud = PlayerProfileHud.Create(_authService);
         }
 
         private void OnEnable()
@@ -94,6 +97,10 @@ namespace Flippy.CardDuelMobile.UI
             AttachCoordinator(null);
             _matchmakerCts?.Cancel();
             _matchmakerCts?.Dispose();
+            if (_profileHud != null)
+            {
+                Destroy(_profileHud.gameObject);
+            }
         }
 
         private void ResolveDependencies()

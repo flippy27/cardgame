@@ -1,0 +1,932 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T14:38:28.4309151Z
+LastUpdatedUtc: 2026-06-13T14:38:40.7860597Z
+MatchId: 44c4a7988a0c48e598b289c60794a93b
+CurrentTurn: 5
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 1264447664.
+002. seq=-1 /Info: Wild Boar entered Front.
+003. seq=-1 /Info: Fang Spriggan entered BackLeft.
+004. seq=1 Wild Boar#f74f88a3 skipped. Wild Boar is not ready to attack.
+005. seq=2 Fang Spriggan#b8e07a52 skipped. Fang Spriggan is not ready to attack.
+006. seq=3 Fang Spriggan#72403ee2 skipped. Fang Spriggan is not ready to attack.
+007. seq=-1 /Info: Iron Warforged entered Front.
+008. seq=-1 /Info: Sap Venomspine entered Front.
+009. seq=4 Sap Venomspine#d084a159 skipped. Sap Venomspine is not ready to attack.
+010. seq=5 Iron Warforged#d317d069 skipped. Iron Warforged is not ready to attack.
+011. seq=6 skill_begin/SkillBegin: Wild Boar used Poison.
+012. seq=7 card_attack/Info: Wild Boar attacked Sap Venomspine.
+013. seq=8 P1 Wild Boar#f74f88a3 attacks P0 for 2. HP 2->0, Armor 0->0. Sap Venomspine took 2 damage.
+014. seq=9 P0 dies. Sap Venomspine died.
+015. seq=10 card_counterattack/Info: Sap Venomspine struck back at Wild Boar.
+016. seq=11 P0 P0 attacks Wild Boar#f74f88a3 for 1. HP 4->3, Armor 0->0. Wild Boar took 1 damage.
+017. seq=12 skill_begin/SkillBegin: Fang Spriggan used Taunt.
+018. seq=13 card_attack/Info: Fang Spriggan attacked Iron Warforged.
+019. seq=14 P1 P1 attacks Iron Warforged#d317d069 for 2. HP 3->1, Armor 0->0. Iron Warforged took 2 damage.
+020. seq=15 card_counterattack/Info: Iron Warforged struck back at Fang Spriggan.
+021. seq=16 P0 Iron Warforged#d317d069 attacks P1 for 2. HP 2->0, Armor 0->0. Fang Spriggan took 2 damage.
+022. seq=17 P1 dies. Fang Spriggan died.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T14:38:28.4369725Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=30 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T14:38:28.6250069Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 1264447664.
+-- Step 3 | UTC 2026-06-13T14:38:31.9292280Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Wild Boar#f74f88a3 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Wild Boar entered Front.
+-- Step 4 | UTC 2026-06-13T14:38:32.3799441Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=15/20 board=[Front:Wild Boar#f74f88a3 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Fang Spriggan#72403ee2 hp=2/2 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Fang Spriggan entered BackLeft.
+-- Step 5 | UTC 2026-06-13T14:38:33.3049734Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=5 deck=25 | P1 id=user-2 hp=20 mana=13/20 board=[Front:Wild Boar#f74f88a3 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Fang Spriggan#b8e07a52 hp=2/2 armor=0 unitType=2 delivery=beam, BackRight:Fang Spriggan#72403ee2 hp=2/2 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=1 Wild Boar#f74f88a3 skipped. Wild Boar is not ready to attack.
+   - seq=2 Fang Spriggan#b8e07a52 skipped. Fang Spriggan is not ready to attack.
+   - seq=3 Fang Spriggan#72403ee2 skipped. Fang Spriggan is not ready to attack.
+-- Step 6 | UTC 2026-06-13T14:38:35.8279312Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Warforged#d317d069 hp=3/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=25 | P1 id=user-2 hp=20 mana=13/20 board=[Front:Wild Boar#f74f88a3 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Fang Spriggan#b8e07a52 hp=2/2 armor=0 unitType=2 delivery=beam, BackRight:Fang Spriggan#72403ee2 hp=2/2 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=-1 /Info: Iron Warforged entered Front.
+-- Step 7 | UTC 2026-06-13T14:38:38.4734072Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Sap Venomspine#d084a159 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Iron Warforged#d317d069 hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=25 | P1 id=user-2 hp=20 mana=13/20 board=[Front:Wild Boar#f74f88a3 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Fang Spriggan#b8e07a52 hp=2/2 armor=0 unitType=2 delivery=beam, BackRight:Fang Spriggan#72403ee2 hp=2/2 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=-1 /Info: Sap Venomspine entered Front.
+-- Step 8 | UTC 2026-06-13T14:38:40.1168398Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Sap Venomspine#d084a159 hp=2/2 armor=0 unitType=0 delivery=melee, BackLeft:Iron Warforged#d317d069 hp=3/3 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=3 deck=25 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#f74f88a3 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Fang Spriggan#b8e07a52 hp=2/2 armor=0 unitType=2 delivery=beam, BackRight:Fang Spriggan#72403ee2 hp=2/2 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=4 Sap Venomspine#d084a159 skipped. Sap Venomspine is not ready to attack.
+   - seq=5 Iron Warforged#d317d069 skipped. Iron Warforged is not ready to attack.
+-- Step 9 | UTC 2026-06-13T14:38:40.7860597Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Iron Warforged#d317d069 hp=1/3 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#f74f88a3 hp=3/4 armor=0 unitType=0 delivery=melee, BackLeft:Fang Spriggan#72403ee2 hp=2/2 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=18
+   - seq=6 skill_begin/SkillBegin: Wild Boar used Poison.
+   - seq=7 card_attack/Info: Wild Boar attacked Sap Venomspine.
+   - seq=8 P1 Wild Boar#f74f88a3 attacks P0 for 2. HP 2->0, Armor 0->0. Sap Venomspine took 2 damage.
+   - seq=9 P0 dies. Sap Venomspine died.
+   - seq=10 card_counterattack/Info: Sap Venomspine struck back at Wild Boar.
+   - seq=11 P0 P0 attacks Wild Boar#f74f88a3 for 1. HP 4->3, Armor 0->0. Wild Boar took 1 damage.
+   - seq=12 skill_begin/SkillBegin: Fang Spriggan used Taunt.
+   - seq=13 card_attack/Info: Fang Spriggan attacked Iron Warforged.
+   - seq=14 P1 P1 attacks Iron Warforged#d317d069 for 2. HP 3->1, Armor 0->0. Iron Warforged took 2 damage.
+   - seq=15 card_counterattack/Info: Iron Warforged struck back at Fang Spriggan.
+   - seq=16 P0 Iron Warforged#d317d069 attacks P1 for 2. HP 2->0, Armor 0->0. Fang Spriggan took 2 damage.
+   - seq=17 P1 dies. Fang Spriggan died.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=f74f88a3781243f08da775d0cfd5bfba serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar is not ready to attack.
+seq=2 id=evt-000002 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=b8e07a5259c347809de61cd379c3df33 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Fang Spriggan is not ready to attack.
+seq=3 id=evt-000003 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=72403ee211a24fa3b3c79ae5bdda81bc serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Fang Spriggan is not ready to attack.
+seq=4 id=evt-000004 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=d084a159b9544af8ac6b8a7da0ce7537 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Sap Venomspine is not ready to attack.
+seq=5 id=evt-000005 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=d317d069ff6d4d9c83f7fd6eb6cae8f3 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Warforged is not ready to attack.
+seq=6 id=evt-000006 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=f74f88a3781243f08da775d0cfd5bfba serverTargetSeat=0 targetVisual=-1 target= ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar used Poison.
+seq=7 id=evt-000007 kind=card_attack serverSrcSeat=1 srcVisual=1 src=f74f88a3781243f08da775d0cfd5bfba serverTargetSeat=0 targetVisual=0 target=d084a159b9544af8ac6b8a7da0ce7537 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Wild Boar attacked Sap Venomspine.
+seq=8 id=evt-000008 kind=card_damage serverSrcSeat=1 srcVisual=1 src=f74f88a3781243f08da775d0cfd5bfba serverTargetSeat=0 targetVisual=0 target=d084a159b9544af8ac6b8a7da0ce7537 ability= effect=0 status=0 amount=2 hp=2->0 armor=0->0 message=Sap Venomspine took 2 damage.
+seq=9 id=evt-000009 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=d084a159b9544af8ac6b8a7da0ce7537 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Sap Venomspine died.
+seq=10 id=evt-000010 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=d084a159b9544af8ac6b8a7da0ce7537 serverTargetSeat=1 targetVisual=1 target=f74f88a3781243f08da775d0cfd5bfba ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Sap Venomspine struck back at Wild Boar.
+seq=11 id=evt-000011 kind=card_damage serverSrcSeat=0 srcVisual=0 src=d084a159b9544af8ac6b8a7da0ce7537 serverTargetSeat=1 targetVisual=1 target=f74f88a3781243f08da775d0cfd5bfba ability= effect=0 status=0 amount=1 hp=4->3 armor=0->0 message=Wild Boar took 1 damage.
+seq=12 id=evt-000012 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=b8e07a5259c347809de61cd379c3df33 serverTargetSeat=0 targetVisual=-1 target= ability=taunt effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Fang Spriggan used Taunt.
+seq=13 id=evt-000013 kind=card_attack serverSrcSeat=1 srcVisual=1 src=b8e07a5259c347809de61cd379c3df33 serverTargetSeat=0 targetVisual=0 target=d317d069ff6d4d9c83f7fd6eb6cae8f3 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Fang Spriggan attacked Iron Warforged.
+seq=14 id=evt-000014 kind=card_damage serverSrcSeat=1 srcVisual=1 src=b8e07a5259c347809de61cd379c3df33 serverTargetSeat=0 targetVisual=0 target=d317d069ff6d4d9c83f7fd6eb6cae8f3 ability= effect=0 status=0 amount=2 hp=3->1 armor=0->0 message=Iron Warforged took 2 damage.
+seq=15 id=evt-000015 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=d317d069ff6d4d9c83f7fd6eb6cae8f3 serverTargetSeat=1 targetVisual=1 target=b8e07a5259c347809de61cd379c3df33 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Iron Warforged struck back at Fang Spriggan.
+seq=16 id=evt-000016 kind=card_damage serverSrcSeat=0 srcVisual=0 src=d317d069ff6d4d9c83f7fd6eb6cae8f3 serverTargetSeat=1 targetVisual=1 target=b8e07a5259c347809de61cd379c3df33 ability= effect=0 status=0 amount=2 hp=2->0 armor=0->0 message=Fang Spriggan took 2 damage.
+seq=17 id=evt-000017 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=1 targetVisual=1 target=b8e07a5259c347809de61cd379c3df33 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Fang Spriggan died.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 1264447664.
+turn=2 Info: Wild Boar entered Front.
+turn=2 Info: Fang Spriggan entered BackLeft.
+turn=3 Info: Iron Warforged entered Front.
+turn=3 Info: Sap Venomspine entered Front.
+turn=5 Info: f74f88a3781243f08da775d0cfd5bfba hit Sap Venomspine for 2.
+turn=5 Info: Sap Venomspine died.
+turn=5 Info: d084a159b9544af8ac6b8a7da0ce7537 hit Wild Boar for 1.
+turn=5 Info: b8e07a5259c347809de61cd379c3df33 hit Iron Warforged for 2.
+turn=5 Info: d317d069ff6d4d9c83f7fd6eb6cae8f3 hit Fang Spriggan for 2.
+turn=5 Info: Fang Spriggan died.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "44c4a7988a0c48e598b289c60794a93b",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 5,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 1264447664,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "57903aeab0bb4ee5902c7d001d18c9fc",
+                    "cardId": "grove_0022",
+                    "displayName": "Healing Totem",
+                    "manaCost": 5,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_blessing",
+                            "displayName": "Blessing",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_blessing",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-heal\"}"
+                                },
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-buff\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "b9b7d868dcb1408f9e0d4cd4477fea06",
+                    "cardId": "tidal_0022",
+                    "displayName": "Tide Charm",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_bulwark",
+                            "displayName": "Bulwark",
+                            "iconAssetRef": "",
+                            "skillType": 0,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_bulwark",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 99,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-bulwark\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "9e6d58c02e224e4b81d1d184d1b7517b",
+                    "cardId": "alloy_0037",
+                    "displayName": "Piston Reckoner",
+                    "manaCost": 2,
+                    "attack": 2,
+                    "health": 3,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": []
+                },
+                {
+                    "runtimeCardKey": "669b3eb7a3814facb3347e6f869b2489",
+                    "cardId": "ember_0038",
+                    "displayName": "Pyroclasm",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "spell_strike",
+                            "displayName": "Strike",
+                            "iconAssetRef": "",
+                            "skillType": 1,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "spell_strike",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"spell\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 4,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"spell-strike\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "d317d069ff6d4d9c83f7fd6eb6cae8f3",
+                        "cardId": "alloy_0035",
+                        "displayName": "Iron Warforged",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 1,
+                        "maxHealth": 3,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 24,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "f74f88a3781243f08da775d0cfd5bfba",
+                        "cardId": "grove_0034",
+                        "displayName": "Wild Boar",
+                        "manaCost": 3,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 3,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "poison",
+                                "displayName": "Poison",
+                                "iconAssetRef": "",
+                                "skillType": 1,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_poison_apply",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 2,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"poison\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "72403ee211a24fa3b3c79ae5bdda81bc",
+                        "cardId": "grove_0031",
+                        "displayName": "Fang Spriggan",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 2,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "taunt",
+                                "displayName": "Taunt",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_taunt_pulse",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"targetingModifier\": true}",
+                                "effects": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 18,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Seat 1 reserved by user-1."
+        },
+        {
+            "type": 0,
+            "message": "Seat 2 reserved by user-2."
+        },
+        {
+            "type": 0,
+            "message": "Seat 1 reconnected."
+        },
+        {
+            "type": 0,
+            "message": "Match started with seed 1264447664."
+        },
+        {
+            "type": 0,
+            "message": "Wild Boar entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Fang Spriggan entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Fang Spriggan entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Iron Warforged entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Sap Venomspine entered Front."
+        },
+        {
+            "type": 0,
+            "message": "f74f88a3781243f08da775d0cfd5bfba hit Sap Venomspine for 2."
+        },
+        {
+            "type": 0,
+            "message": "Sap Venomspine died."
+        },
+        {
+            "type": 0,
+            "message": "d084a159b9544af8ac6b8a7da0ce7537 hit Wild Boar for 1."
+        },
+        {
+            "type": 0,
+            "message": "b8e07a5259c347809de61cd379c3df33 hit Iron Warforged for 2."
+        },
+        {
+            "type": 0,
+            "message": "d317d069ff6d4d9c83f7fd6eb6cae8f3 hit Fang Spriggan for 2."
+        },
+        {
+            "type": 0,
+            "message": "Fang Spriggan died."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "f74f88a3781243f08da775d0cfd5bfba",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar is not ready to attack."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "b8e07a5259c347809de61cd379c3df33",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Fang Spriggan is not ready to attack."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "72403ee211a24fa3b3c79ae5bdda81bc",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Fang Spriggan is not ready to attack."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "d084a159b9544af8ac6b8a7da0ce7537",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Sap Venomspine is not ready to attack."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "d317d069ff6d4d9c83f7fd6eb6cae8f3",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged is not ready to attack."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "f74f88a3781243f08da775d0cfd5bfba",
+            "targetRuntimeId": "",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar used Poison."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "f74f88a3781243f08da775d0cfd5bfba",
+            "targetRuntimeId": "d084a159b9544af8ac6b8a7da0ce7537",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar attacked Sap Venomspine."
+        },
+        {
+            "eventId": "evt-000008",
+            "sequence": 8,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "f74f88a3781243f08da775d0cfd5bfba",
+            "targetRuntimeId": "d084a159b9544af8ac6b8a7da0ce7537",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Sap Venomspine took 2 damage."
+        },
+        {
+            "eventId": "evt-000009",
+            "sequence": 9,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "d084a159b9544af8ac6b8a7da0ce7537",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Sap Venomspine died."
+        },
+        {
+            "eventId": "evt-000010",
+            "sequence": 10,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "d084a159b9544af8ac6b8a7da0ce7537",
+            "targetRuntimeId": "f74f88a3781243f08da775d0cfd5bfba",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Sap Venomspine struck back at Wild Boar."
+        },
+        {
+            "eventId": "evt-000011",
+            "sequence": 11,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "d084a159b9544af8ac6b8a7da0ce7537",
+            "targetRuntimeId": "f74f88a3781243f08da775d0cfd5bfba",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar took 1 damage."
+        },
+        {
+            "eventId": "evt-000012",
+            "sequence": 12,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "b8e07a5259c347809de61cd379c3df33",
+            "targetRuntimeId": "",
+            "abilityId": "taunt",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Fang Spriggan used Taunt."
+        },
+        {
+            "eventId": "evt-000013",
+            "sequence": 13,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "b8e07a5259c347809de61cd379c3df33",
+            "targetRuntimeId": "d317d069ff6d4d9c83f7fd6eb6cae8f3",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Fang Spriggan attacked Iron Warforged."
+        },
+        {
+            "eventId": "evt-000014",
+            "sequence": 14,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "b8e07a5259c347809de61cd379c3df33",
+            "targetRuntimeId": "d317d069ff6d4d9c83f7fd6eb6cae8f3",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged took 2 damage."
+        },
+        {
+            "eventId": "evt-000015",
+            "sequence": 15,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "d317d069ff6d4d9c83f7fd6eb6cae8f3",
+            "targetRuntimeId": "b8e07a5259c347809de61cd379c3df33",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Warforged struck back at Fang Spriggan."
+        },
+        {
+            "eventId": "evt-000016",
+            "sequence": 16,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "d317d069ff6d4d9c83f7fd6eb6cae8f3",
+            "targetRuntimeId": "b8e07a5259c347809de61cd379c3df33",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Fang Spriggan took 2 damage."
+        },
+        {
+            "eventId": "evt-000017",
+            "sequence": 17,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "b8e07a5259c347809de61cd379c3df33",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Fang Spriggan died."
+        }
+    ]
+}

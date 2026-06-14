@@ -82,6 +82,11 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             public int cardType;            // CardType int
             public string acquiredFrom;     // "crafted" | "starter_pack" | etc.
             public string acquiredAt;
+            // Upgrade level on this owned instance. The server appends these to the cards listing
+            // (additive); when absent JsonUtility leaves level=0 / upgrades=null, so unupgraded cards
+            // resolve to level 1 via PlayerCardLevel.Resolve. Mirror the server camelCase names exactly.
+            public int level;               // computed effective level (1 = no upgrades)
+            public PlayerCardUpgradeDto[] upgrades;
         }
 
         [Serializable]
@@ -147,6 +152,7 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
             public string appliedAt;
             public string appliedBy;
             public string note;
+            public int level;              // upgrade level reached by this upgrade (0 if not a level step)
         }
 
         [Serializable]
@@ -162,5 +168,41 @@ namespace Flippy.CardDuelMobile.Networking.ApiClients
         // ---- Internal wrappers ----
         [Serializable] private sealed class PlayerCardListWrapper { public PlayerCardDto[] cards; }
         [Serializable] private sealed class UpgradeListWrapper { public PlayerCardUpgradeDto[] upgrades; }
+    }
+
+    /// <summary>
+    /// Resolves the effective upgrade level (★N) for an owned card instance, the single source of truth
+    /// shared by the collection cell and the card preview. Effective level = the highest upgrade level,
+    /// falling back to the instance's own <c>level</c> field, with a floor of 1 (an unupgraded card is ★1).
+    /// </summary>
+    public static class PlayerCardLevel
+    {
+        public static int Resolve(PlayerCardsApiClient.PlayerCardDto card)
+        {
+            if (card == null) return 1;
+            int level = card.level;
+            if (card.upgrades != null)
+            {
+                foreach (var u in card.upgrades)
+                {
+                    if (u != null && u.level > level) level = u.level;
+                }
+            }
+            return Mathf.Max(1, level);
+        }
+
+        public static int Resolve(PlayerCardsApiClient.PlayerCardDetailDto card)
+        {
+            if (card == null) return 1;
+            int level = card.level;
+            if (card.upgrades != null)
+            {
+                foreach (var u in card.upgrades)
+                {
+                    if (u != null && u.level > level) level = u.level;
+                }
+            }
+            return Mathf.Max(1, level);
+        }
     }
 }

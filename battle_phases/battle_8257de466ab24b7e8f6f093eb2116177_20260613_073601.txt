@@ -1,0 +1,2024 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T07:36:01.6471085Z
+LastUpdatedUtc: 2026-06-13T07:37:42.0928557Z
+MatchId: 8257de466ab24b7e8f6f093eb2116177
+CurrentTurn: 10
+ActivePlayerIndex: 1
+ActivePlayerId: 
+IsLocalPlayersTurn: False
+DuelEnded: True
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 1124868123.
+002. seq=-1 /Info: Scorch Golem entered Front.
+003. seq=1 utility_played/Info: Forge Rite was played.
+004. seq=2 skill_begin/SkillBegin: Forge Rite used Blessing.
+005. seq=3 Scorch Golem#f45d31b5 heals 0. HP 2->2. Scorch Golem healed 0.
+006. seq=4 attack_buff/AttackBuff: Scorch Golem attack changed by 1.
+007. seq=5 Scorch Golem#f45d31b5 skipped. Scorch Golem cannot attack from Front.
+008. seq=-1 /Info: Wild Boar entered Front.
+009. seq=-1 /Info: Bloom Treant entered BackLeft.
+010. seq=-1 /Info: Root Treant entered BackLeft.
+011. seq=6 skill_begin/SkillBegin: Root Treant used Regenerate.
+012. seq=7 Root Treant#814f4d59 heals 0. HP 4->4. Root Treant healed 0.
+013. seq=8 Wild Boar#edfde574 skipped. Wild Boar is not ready to attack.
+014. seq=9 Root Treant#814f4d59 skipped. Root Treant is not ready to attack.
+015. seq=10 Bloom Treant#4738db2b skipped. Bloom Treant is not ready to attack.
+016. seq=-1 /Info: Steel Construct entered Front.
+017. seq=11 Steel Construct#1a641b49 skipped. Steel Construct is not ready to attack.
+018. seq=12 skill_begin/SkillBegin: Scorch Golem used Haste.
+019. seq=13 card_attack/Info: Scorch Golem attacked Root Treant.
+020. seq=14 P0 P0 attacks Root Treant#814f4d59 for 3. HP 4->1, Armor 0->0. Root Treant took 3 damage.
+021. seq=15 P1 Root Treant#814f4d59 attacks P0 for 2. HP 0->0, Armor 0->0. Root Treant struck back at Scorch Golem.
+022. seq=16 P1 Root Treant#814f4d59 attacks P0 for 2. HP 2->0, Armor 0->0. Scorch Golem took 2 damage.
+023. seq=17 P0 dies. Scorch Golem died.
+024. seq=18 skill_begin/SkillBegin: Root Treant used Regenerate.
+025. seq=19 Root Treant#814f4d59 heals 2. HP 1->3. Root Treant healed 2.
+026. seq=20 skill_begin/SkillBegin: Wild Boar used Poison.
+027. seq=21 card_attack/Info: Wild Boar attacked Steel Construct.
+028. seq=22 P1 Wild Boar#edfde574 attacks P0 for 2. HP 3->1, Armor 0->0. Steel Construct took 2 damage.
+029. seq=23 status 0 applied to P0 for 2 turns by Wild Boar#edfde574. Poison applied to Steel Construct.
+030. seq=24 P0 P0 attacks Wild Boar#edfde574 for 2. HP 0->0, Armor 0->0. Steel Construct struck back at Wild Boar.
+031. seq=25 P0 P0 attacks Wild Boar#edfde574 for 2. HP 4->2, Armor 0->0. Wild Boar took 2 damage.
+032. seq=26 card_attack/Info: Root Treant attacked Steel Construct.
+033. seq=27 P1 Root Treant#814f4d59 attacks P0 for 2. HP 1->-1, Armor 0->0. Steel Construct took 2 damage.
+034. seq=28 P0 dies. Steel Construct died.
+035. seq=29 P0 P0 attacks Root Treant#814f4d59 for 2. HP 0->0, Armor 0->0. Steel Construct struck back at Root Treant.
+036. seq=30 P0 P0 attacks Root Treant#814f4d59 for 2. HP 3->1, Armor 0->0. Root Treant took 2 damage.
+037. seq=31 P1 Bloom Treant#4738db2b attacks P0 for 3. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+038. seq=32 P1 Bloom Treant#4738db2b hits hero P0 for 3. HP 20->17. Seat 1 hero took 3 damage.
+039. seq=33 skill_begin/SkillBegin: Root Treant used Regenerate.
+040. seq=34 Root Treant#814f4d59 heals 2. HP 1->3. Root Treant healed 2.
+041. seq=35 skill_begin/SkillBegin: Wild Boar used Poison.
+042. seq=36 P1 Wild Boar#edfde574 attacks P0 for 2. HP 0->0, Armor 0->0. Wild Boar attacked the enemy hero.
+043. seq=37 P1 Wild Boar#edfde574 hits hero P0 for 2. HP 17->15. Seat 1 hero took 2 damage.
+044. seq=38 P1 Root Treant#814f4d59 attacks P0 for 2. HP 0->0, Armor 0->0. Root Treant attacked the enemy hero.
+045. seq=39 P1 Root Treant#814f4d59 hits hero P0 for 2. HP 15->13. Seat 1 hero took 2 damage.
+046. seq=40 P1 Bloom Treant#4738db2b attacks P0 for 3. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+047. seq=41 P1 Bloom Treant#4738db2b hits hero P0 for 3. HP 13->10. Seat 1 hero took 3 damage.
+048. seq=42 skill_begin/SkillBegin: Root Treant used Regenerate.
+049. seq=43 Root Treant#814f4d59 heals 1. HP 3->4. Root Treant healed 1.
+050. seq=44 skill_begin/SkillBegin: Wild Boar used Poison.
+051. seq=45 P1 Wild Boar#edfde574 attacks P0 for 2. HP 0->0, Armor 0->0. Wild Boar attacked the enemy hero.
+052. seq=46 P1 Wild Boar#edfde574 hits hero P0 for 2. HP 10->8. Seat 1 hero took 2 damage.
+053. seq=47 P1 Root Treant#814f4d59 attacks P0 for 2. HP 0->0, Armor 0->0. Root Treant attacked the enemy hero.
+054. seq=48 P1 Root Treant#814f4d59 hits hero P0 for 2. HP 8->6. Seat 1 hero took 2 damage.
+055. seq=49 P1 Bloom Treant#4738db2b attacks P0 for 3. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+056. seq=50 P1 Bloom Treant#4738db2b hits hero P0 for 3. HP 6->3. Seat 1 hero took 3 damage.
+057. seq=51 skill_begin/SkillBegin: Root Treant used Regenerate.
+058. seq=52 Root Treant#814f4d59 heals 0. HP 4->4. Root Treant healed 0.
+059. seq=53 skill_begin/SkillBegin: Wild Boar used Poison.
+060. seq=54 P1 Wild Boar#edfde574 attacks P0 for 2. HP 0->0, Armor 0->0. Wild Boar attacked the enemy hero.
+061. seq=55 P1 Wild Boar#edfde574 hits hero P0 for 2. HP 3->1. Seat 1 hero took 2 damage.
+062. seq=56 P1 Root Treant#814f4d59 attacks P0 for 2. HP 0->0, Armor 0->0. Root Treant attacked the enemy hero.
+063. seq=57 P1 Root Treant#814f4d59 hits hero P0 for 2. HP 1->0. Seat 1 hero took 2 damage.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T07:36:01.6537546Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=30 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T07:36:01.9375395Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 1124868123.
+-- Step 3 | UTC 2026-06-13T07:36:12.5083389Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Scorch Golem#f45d31b5 hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Scorch Golem entered Front.
+-- Step 4 | UTC 2026-06-13T07:36:21.1538816Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Scorch Golem#f45d31b5 hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=1 utility_played/Info: Forge Rite was played.
+   - seq=2 skill_begin/SkillBegin: Forge Rite used Blessing.
+   - seq=3 Scorch Golem#f45d31b5 heals 0. HP 2->2. Scorch Golem healed 0.
+   - seq=4 attack_buff/AttackBuff: Scorch Golem attack changed by 1.
+-- Step 5 | UTC 2026-06-13T07:36:44.1688639Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Scorch Golem#f45d31b5 hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=5 Scorch Golem#f45d31b5 skipped. Scorch Golem cannot attack from Front.
+-- Step 6 | UTC 2026-06-13T07:36:44.8092890Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Scorch Golem#f45d31b5 hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Wild Boar#edfde574 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Wild Boar entered Front.
+-- Step 7 | UTC 2026-06-13T07:36:45.2644438Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Scorch Golem#f45d31b5 hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=14/20 board=[Front:Wild Boar#edfde574 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#4738db2b hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Bloom Treant entered BackLeft.
+-- Step 8 | UTC 2026-06-13T07:36:45.7100934Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=16/20 board=[Front:Scorch Golem#f45d31b5 hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=11/20 board=[Front:Wild Boar#edfde574 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#814f4d59 hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#4738db2b hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=-1 /Info: Root Treant entered BackLeft.
+-- Step 9 | UTC 2026-06-13T07:36:46.1757234Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Scorch Golem#f45d31b5 hp=2/2 armor=0 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=25 | P1 id=user-2 hp=20 mana=11/20 board=[Front:Wild Boar#edfde574 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#814f4d59 hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#4738db2b hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=6 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=7 Root Treant#814f4d59 heals 0. HP 4->4. Root Treant healed 0.
+   - seq=8 Wild Boar#edfde574 skipped. Wild Boar is not ready to attack.
+   - seq=9 Root Treant#814f4d59 skipped. Root Treant is not ready to attack.
+   - seq=10 Bloom Treant#4738db2b skipped. Bloom Treant is not ready to attack.
+-- Step 10 | UTC 2026-06-13T07:36:52.3565518Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Steel Construct#1a641b49 hp=3/3 armor=0 unitType=2 delivery=beam, BackLeft:Scorch Golem#f45d31b5 hp=2/2 armor=0 unitType=1 delivery=projectile, BackRight:empty] hand=2 deck=25 | P1 id=user-2 hp=20 mana=11/20 board=[Front:Wild Boar#edfde574 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#814f4d59 hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#4738db2b hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=-1 /Info: Steel Construct entered Front.
+-- Step 11 | UTC 2026-06-13T07:36:53.8849660Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Steel Construct#1a641b49 hp=3/3 armor=0 unitType=2 delivery=beam, BackLeft:empty, BackRight:empty] hand=2 deck=25 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#edfde574 hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#814f4d59 hp=1/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#4738db2b hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=11 Steel Construct#1a641b49 skipped. Steel Construct is not ready to attack.
+   - seq=12 skill_begin/SkillBegin: Scorch Golem used Haste.
+   - seq=13 card_attack/Info: Scorch Golem attacked Root Treant.
+   - seq=14 P0 P0 attacks Root Treant#814f4d59 for 3. HP 4->1, Armor 0->0. Root Treant took 3 damage.
+   - seq=15 P1 Root Treant#814f4d59 attacks P0 for 2. HP 0->0, Armor 0->0. Root Treant struck back at Scorch Golem.
+   - seq=16 P1 Root Treant#814f4d59 attacks P0 for 2. HP 2->0, Armor 0->0. Scorch Golem took 2 damage.
+   - seq=17 P0 dies. Scorch Golem died.
+-- Step 12 | UTC 2026-06-13T07:36:59.1393891Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=17 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=3 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#edfde574 hp=2/4 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#814f4d59 hp=1/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#4738db2b hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=18 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=19 Root Treant#814f4d59 heals 2. HP 1->3. Root Treant healed 2.
+   - seq=20 skill_begin/SkillBegin: Wild Boar used Poison.
+   - seq=21 card_attack/Info: Wild Boar attacked Steel Construct.
+   - seq=22 P1 Wild Boar#edfde574 attacks P0 for 2. HP 3->1, Armor 0->0. Steel Construct took 2 damage.
+   - seq=23 status 0 applied to P0 for 2 turns by Wild Boar#edfde574. Poison applied to Steel Construct.
+   - seq=24 P0 P0 attacks Wild Boar#edfde574 for 2. HP 0->0, Armor 0->0. Steel Construct struck back at Wild Boar.
+   - seq=25 P0 P0 attacks Wild Boar#edfde574 for 2. HP 4->2, Armor 0->0. Wild Boar took 2 damage.
+   - seq=26 card_attack/Info: Root Treant attacked Steel Construct.
+   - seq=27 P1 Root Treant#814f4d59 attacks P0 for 2. HP 1->-1, Armor 0->0. Steel Construct took 2 damage.
+   - seq=28 P0 dies. Steel Construct died.
+   - seq=29 P0 P0 attacks Root Treant#814f4d59 for 2. HP 0->0, Armor 0->0. Steel Construct struck back at Root Treant.
+   - seq=30 P0 P0 attacks Root Treant#814f4d59 for 2. HP 3->1, Armor 0->0. Root Treant took 2 damage.
+   - seq=31 P1 Bloom Treant#4738db2b attacks P0 for 3. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+   - seq=32 P1 Bloom Treant#4738db2b hits hero P0 for 3. HP 20->17. Seat 1 hero took 3 damage.
+-- Step 13 | UTC 2026-06-13T07:37:14.7912658Z | Turn 7 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=10 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=23 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#edfde574 hp=2/4 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#814f4d59 hp=3/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#4738db2b hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=17
+   - seq=33 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=34 Root Treant#814f4d59 heals 2. HP 1->3. Root Treant healed 2.
+   - seq=35 skill_begin/SkillBegin: Wild Boar used Poison.
+   - seq=36 P1 Wild Boar#edfde574 attacks P0 for 2. HP 0->0, Armor 0->0. Wild Boar attacked the enemy hero.
+   - seq=37 P1 Wild Boar#edfde574 hits hero P0 for 2. HP 17->15. Seat 1 hero took 2 damage.
+   - seq=38 P1 Root Treant#814f4d59 attacks P0 for 2. HP 0->0, Armor 0->0. Root Treant attacked the enemy hero.
+   - seq=39 P1 Root Treant#814f4d59 hits hero P0 for 2. HP 15->13. Seat 1 hero took 2 damage.
+   - seq=40 P1 Bloom Treant#4738db2b attacks P0 for 3. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+   - seq=41 P1 Bloom Treant#4738db2b hits hero P0 for 3. HP 13->10. Seat 1 hero took 3 damage.
+-- Step 14 | UTC 2026-06-13T07:37:19.4418397Z | Turn 9 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=3 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=5 deck=22 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#edfde574 hp=2/4 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#814f4d59 hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#4738db2b hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=16
+   - seq=42 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=43 Root Treant#814f4d59 heals 1. HP 3->4. Root Treant healed 1.
+   - seq=44 skill_begin/SkillBegin: Wild Boar used Poison.
+   - seq=45 P1 Wild Boar#edfde574 attacks P0 for 2. HP 0->0, Armor 0->0. Wild Boar attacked the enemy hero.
+   - seq=46 P1 Wild Boar#edfde574 hits hero P0 for 2. HP 10->8. Seat 1 hero took 2 damage.
+   - seq=47 P1 Root Treant#814f4d59 attacks P0 for 2. HP 0->0, Armor 0->0. Root Treant attacked the enemy hero.
+   - seq=48 P1 Root Treant#814f4d59 hits hero P0 for 2. HP 8->6. Seat 1 hero took 2 damage.
+   - seq=49 P1 Bloom Treant#4738db2b attacks P0 for 3. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+   - seq=50 P1 Bloom Treant#4738db2b hits hero P0 for 3. HP 6->3. Seat 1 hero took 3 damage.
+-- Step 15 | UTC 2026-06-13T07:37:42.0928557Z | Turn 10 | Active P1 | LocalTurn=False | Phase=Completed
+   Players: P0 id=user-1 hp=0 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=5 deck=22 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#edfde574 hp=2/4 armor=0 unitType=0 delivery=melee, BackLeft:Root Treant#814f4d59 hp=4/4 armor=0 unitType=1 delivery=projectile, BackRight:Bloom Treant#4738db2b hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=15
+   - seq=51 skill_begin/SkillBegin: Root Treant used Regenerate.
+   - seq=52 Root Treant#814f4d59 heals 0. HP 4->4. Root Treant healed 0.
+   - seq=53 skill_begin/SkillBegin: Wild Boar used Poison.
+   - seq=54 P1 Wild Boar#edfde574 attacks P0 for 2. HP 0->0, Armor 0->0. Wild Boar attacked the enemy hero.
+   - seq=55 P1 Wild Boar#edfde574 hits hero P0 for 2. HP 3->1. Seat 1 hero took 2 damage.
+   - seq=56 P1 Root Treant#814f4d59 attacks P0 for 2. HP 0->0, Armor 0->0. Root Treant attacked the enemy hero.
+   - seq=57 P1 Root Treant#814f4d59 hits hero P0 for 2. HP 1->0. Seat 1 hero took 2 damage.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=utility_played serverSrcSeat=0 srcVisual=0 src=play-42b8bb4e3f484b90abb02d6c9d933e80 serverTargetSeat=0 targetVisual=0 target=f45d31b57fa6487dae0fa310e0e3ac13 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Forge Rite was played.
+seq=2 id=evt-000002 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=play-42b8bb4e3f484b90abb02d6c9d933e80 serverTargetSeat=0 targetVisual=0 target=f45d31b57fa6487dae0fa310e0e3ac13 ability=util_blessing effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Forge Rite used Blessing.
+seq=3 id=evt-000003 kind=heal serverSrcSeat=0 srcVisual=0 src=f45d31b57fa6487dae0fa310e0e3ac13 serverTargetSeat=0 targetVisual=0 target=f45d31b57fa6487dae0fa310e0e3ac13 ability=util_blessing effect=1 status=0 amount=0 hp=2->2 armor=0->0 message=Scorch Golem healed 0.
+seq=4 id=evt-000004 kind=attack_buff serverSrcSeat=0 srcVisual=0 src=play-42b8bb4e3f484b90abb02d6c9d933e80 serverTargetSeat=0 targetVisual=0 target=f45d31b57fa6487dae0fa310e0e3ac13 ability=util_blessing effect=3 status=0 amount=1 hp=0->0 armor=0->0 message=Scorch Golem attack changed by 1.
+seq=5 id=evt-000005 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=f45d31b57fa6487dae0fa310e0e3ac13 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Scorch Golem cannot attack from Front.
+seq=6 id=evt-000006 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=7 id=evt-000007 kind=heal serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=1 targetVisual=1 target=814f4d59816d4c01a891d16187b93a4d ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Root Treant healed 0.
+seq=8 id=evt-000008 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar is not ready to attack.
+seq=9 id=evt-000009 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant is not ready to attack.
+seq=10 id=evt-000010 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=4738db2b12e644f9909ac67c708e557c serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Bloom Treant is not ready to attack.
+seq=11 id=evt-000011 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=1a641b49d5284498ac34771e00b3fcbb serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Steel Construct is not ready to attack.
+seq=12 id=evt-000012 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=f45d31b57fa6487dae0fa310e0e3ac13 serverTargetSeat=0 targetVisual=-1 target= ability=haste effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Scorch Golem used Haste.
+seq=13 id=evt-000013 kind=card_attack serverSrcSeat=0 srcVisual=0 src=f45d31b57fa6487dae0fa310e0e3ac13 serverTargetSeat=1 targetVisual=1 target=814f4d59816d4c01a891d16187b93a4d ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Scorch Golem attacked Root Treant.
+seq=14 id=evt-000014 kind=card_damage serverSrcSeat=0 srcVisual=0 src=f45d31b57fa6487dae0fa310e0e3ac13 serverTargetSeat=1 targetVisual=1 target=814f4d59816d4c01a891d16187b93a4d ability= effect=0 status=0 amount=3 hp=4->1 armor=0->0 message=Root Treant took 3 damage.
+seq=15 id=evt-000015 kind=card_counterattack serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=0 target=f45d31b57fa6487dae0fa310e0e3ac13 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant struck back at Scorch Golem.
+seq=16 id=evt-000016 kind=card_damage serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=0 target=f45d31b57fa6487dae0fa310e0e3ac13 ability= effect=0 status=0 amount=2 hp=2->0 armor=0->0 message=Scorch Golem took 2 damage.
+seq=17 id=evt-000017 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=f45d31b57fa6487dae0fa310e0e3ac13 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Scorch Golem died.
+seq=18 id=evt-000018 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=19 id=evt-000019 kind=heal serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=1 targetVisual=1 target=814f4d59816d4c01a891d16187b93a4d ability=regenerate_left effect=1 status=0 amount=2 hp=1->3 armor=0->0 message=Root Treant healed 2.
+seq=20 id=evt-000020 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=-1 target= ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar used Poison.
+seq=21 id=evt-000021 kind=card_attack serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=0 target=1a641b49d5284498ac34771e00b3fcbb ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Wild Boar attacked Steel Construct.
+seq=22 id=evt-000022 kind=card_damage serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=0 target=1a641b49d5284498ac34771e00b3fcbb ability= effect=0 status=0 amount=2 hp=3->1 armor=0->0 message=Steel Construct took 2 damage.
+seq=23 id=evt-000023 kind=status_applied serverSrcSeat=0 srcVisual=0 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=0 target=1a641b49d5284498ac34771e00b3fcbb ability=poison effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Poison applied to Steel Construct.
+seq=24 id=evt-000024 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=1a641b49d5284498ac34771e00b3fcbb serverTargetSeat=1 targetVisual=1 target=edfde574a967447fbec923e851a25f31 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Steel Construct struck back at Wild Boar.
+seq=25 id=evt-000025 kind=card_damage serverSrcSeat=0 srcVisual=0 src=1a641b49d5284498ac34771e00b3fcbb serverTargetSeat=1 targetVisual=1 target=edfde574a967447fbec923e851a25f31 ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Wild Boar took 2 damage.
+seq=26 id=evt-000026 kind=card_attack serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=0 target=1a641b49d5284498ac34771e00b3fcbb ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked Steel Construct.
+seq=27 id=evt-000027 kind=card_damage serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=0 target=1a641b49d5284498ac34771e00b3fcbb ability= effect=0 status=0 amount=2 hp=1->-1 armor=0->0 message=Steel Construct took 2 damage.
+seq=28 id=evt-000028 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=1a641b49d5284498ac34771e00b3fcbb ability= effect=0 status=0 amount=0 hp=-1->-1 armor=0->0 message=Steel Construct died.
+seq=29 id=evt-000029 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=1a641b49d5284498ac34771e00b3fcbb serverTargetSeat=1 targetVisual=1 target=814f4d59816d4c01a891d16187b93a4d ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Steel Construct struck back at Root Treant.
+seq=30 id=evt-000030 kind=card_damage serverSrcSeat=0 srcVisual=0 src=1a641b49d5284498ac34771e00b3fcbb serverTargetSeat=1 targetVisual=1 target=814f4d59816d4c01a891d16187b93a4d ability= effect=0 status=0 amount=2 hp=3->1 armor=0->0 message=Root Treant took 2 damage.
+seq=31 id=evt-000031 kind=card_attack serverSrcSeat=1 srcVisual=1 src=4738db2b12e644f9909ac67c708e557c serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Bloom Treant attacked the enemy hero.
+seq=32 id=evt-000032 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=4738db2b12e644f9909ac67c708e557c serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=3 hp=20->17 armor=0->0 message=Seat 1 hero took 3 damage.
+seq=33 id=evt-000033 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=34 id=evt-000034 kind=heal serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=1 targetVisual=1 target=814f4d59816d4c01a891d16187b93a4d ability=regenerate_left effect=1 status=0 amount=2 hp=1->3 armor=0->0 message=Root Treant healed 2.
+seq=35 id=evt-000035 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=-1 target= ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar used Poison.
+seq=36 id=evt-000036 kind=card_attack serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Wild Boar attacked the enemy hero.
+seq=37 id=evt-000037 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=2 hp=17->15 armor=0->0 message=Seat 1 hero took 2 damage.
+seq=38 id=evt-000038 kind=card_attack serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked the enemy hero.
+seq=39 id=evt-000039 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=2 hp=15->13 armor=0->0 message=Seat 1 hero took 2 damage.
+seq=40 id=evt-000040 kind=card_attack serverSrcSeat=1 srcVisual=1 src=4738db2b12e644f9909ac67c708e557c serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Bloom Treant attacked the enemy hero.
+seq=41 id=evt-000041 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=4738db2b12e644f9909ac67c708e557c serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=3 hp=13->10 armor=0->0 message=Seat 1 hero took 3 damage.
+seq=42 id=evt-000042 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=43 id=evt-000043 kind=heal serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=1 targetVisual=1 target=814f4d59816d4c01a891d16187b93a4d ability=regenerate_left effect=1 status=0 amount=1 hp=3->4 armor=0->0 message=Root Treant healed 1.
+seq=44 id=evt-000044 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=-1 target= ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar used Poison.
+seq=45 id=evt-000045 kind=card_attack serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Wild Boar attacked the enemy hero.
+seq=46 id=evt-000046 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=2 hp=10->8 armor=0->0 message=Seat 1 hero took 2 damage.
+seq=47 id=evt-000047 kind=card_attack serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked the enemy hero.
+seq=48 id=evt-000048 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=2 hp=8->6 armor=0->0 message=Seat 1 hero took 2 damage.
+seq=49 id=evt-000049 kind=card_attack serverSrcSeat=1 srcVisual=1 src=4738db2b12e644f9909ac67c708e557c serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Bloom Treant attacked the enemy hero.
+seq=50 id=evt-000050 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=4738db2b12e644f9909ac67c708e557c serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=3 hp=6->3 armor=0->0 message=Seat 1 hero took 3 damage.
+seq=51 id=evt-000051 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=-1 target= ability=regenerate_left effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Root Treant used Regenerate.
+seq=52 id=evt-000052 kind=heal serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=1 targetVisual=1 target=814f4d59816d4c01a891d16187b93a4d ability=regenerate_left effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Root Treant healed 0.
+seq=53 id=evt-000053 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=-1 target= ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar used Poison.
+seq=54 id=evt-000054 kind=card_attack serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Wild Boar attacked the enemy hero.
+seq=55 id=evt-000055 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=edfde574a967447fbec923e851a25f31 serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=2 hp=3->1 armor=0->0 message=Seat 1 hero took 2 damage.
+seq=56 id=evt-000056 kind=card_attack serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Root Treant attacked the enemy hero.
+seq=57 id=evt-000057 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=814f4d59816d4c01a891d16187b93a4d serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=2 hp=1->0 armor=0->0 message=Seat 1 hero took 2 damage.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 1124868123.
+turn=1 Info: Scorch Golem entered Front.
+turn=1 Info: Scorch Golem healed 0.
+turn=1 Info: Forge Rite was played.
+turn=2 Info: Wild Boar entered Front.
+turn=2 Info: Bloom Treant entered BackLeft.
+turn=2 Info: Root Treant entered BackLeft.
+turn=3 Info: Root Treant healed 0.
+turn=3 Info: Steel Construct entered Front.
+turn=4 Info: f45d31b57fa6487dae0fa310e0e3ac13 hit Root Treant for 3.
+turn=4 Info: 814f4d59816d4c01a891d16187b93a4d hit Scorch Golem for 2.
+turn=4 Info: Scorch Golem died.
+turn=5 Info: Root Treant healed 2.
+turn=5 Info: edfde574a967447fbec923e851a25f31 hit Steel Construct for 2.
+turn=5 Info: 1a641b49d5284498ac34771e00b3fcbb hit Wild Boar for 2.
+turn=5 Info: 814f4d59816d4c01a891d16187b93a4d hit Steel Construct for 2.
+turn=5 Info: Steel Construct died.
+turn=5 Info: 1a641b49d5284498ac34771e00b3fcbb hit Root Treant for 2.
+turn=9 Info: Root Treant healed 1.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "8257de466ab24b7e8f6f093eb2116177",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 1,
+    "activePlayerId": "",
+    "isLocalPlayersTurn": false,
+    "turnNumber": 10,
+    "duelEnded": true,
+    "endReason": 0,
+    "matchPhase": 4,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 1124868123,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Defeat.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 0,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "d9663815662d4ee7be30dc6fcd18c280",
+                    "cardId": "ember_0020",
+                    "displayName": "Flame Lance",
+                    "manaCost": 5,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "spell_strike",
+                            "displayName": "Strike",
+                            "iconAssetRef": "",
+                            "skillType": 1,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "spell_strike",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"spell\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 4,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"spell-strike\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "3c0a245207a4483cb929fdee85e9199a",
+                    "cardId": "tidal_0010",
+                    "displayName": "Frostforged Spear",
+                    "manaCost": 7,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "equip_armor",
+                            "displayName": "Plating",
+                            "iconAssetRef": "",
+                            "skillType": 0,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "equip_armor",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"equipment\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"equip-armor\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "fe25d9210c554a73bcc2c2d6b2dbe2dd",
+                    "cardId": "void_0037",
+                    "displayName": "Oblivion Eidolon",
+                    "manaCost": 1,
+                    "attack": 1,
+                    "health": 1,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 2,
+                    "attackDeliveryType": "beam",
+                    "abilities": [
+                        {
+                            "abilityId": "leech",
+                            "displayName": "Leech",
+                            "iconAssetRef": "",
+                            "skillType": 1,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "skill_leech_heal",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"normalAttackModifier\": true}",
+                            "effects": []
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "f919b6cb0bdf47c98066e0e5f474661f",
+                    "cardId": "tidal_0009",
+                    "displayName": "Tidal Wave",
+                    "manaCost": 6,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "spell_freeze",
+                            "displayName": "Freeze",
+                            "iconAssetRef": "",
+                            "skillType": 1,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "spell_freeze",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"spell\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 0,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 1,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"spell-freeze\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "03288a850fbd4354a831af4d5743b38f",
+                    "cardId": "ember_0039",
+                    "displayName": "Cinderbrand Axe",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "equip_weapon",
+                            "displayName": "Weapon",
+                            "iconAssetRef": "",
+                            "skillType": 2,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "equip_weapon",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"equipment\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"equip-weapon\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 22,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "edfde574a967447fbec923e851a25f31",
+                        "cardId": "grove_0034",
+                        "displayName": "Wild Boar",
+                        "manaCost": 3,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 2,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "poison",
+                                "displayName": "Poison",
+                                "iconAssetRef": "",
+                                "skillType": 1,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_poison_apply",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"normalAttackModifier\": true}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 1,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 2,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"poison\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "814f4d59816d4c01a891d16187b93a4d",
+                        "cardId": "grove_0027",
+                        "displayName": "Root Treant",
+                        "manaCost": 3,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "projectile",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 1,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate_left",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate_left",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"left\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-left\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "4738db2b12e644f9909ac67c708e557c",
+                        "cardId": "grove_0025",
+                        "displayName": "Bloom Treant",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 15,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Scorch Golem entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Scorch Golem healed 0."
+        },
+        {
+            "type": 0,
+            "message": "Forge Rite was played."
+        },
+        {
+            "type": 0,
+            "message": "Wild Boar entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Bloom Treant entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "type": 0,
+            "message": "Steel Construct entered Front."
+        },
+        {
+            "type": 0,
+            "message": "f45d31b57fa6487dae0fa310e0e3ac13 hit Root Treant for 3."
+        },
+        {
+            "type": 0,
+            "message": "814f4d59816d4c01a891d16187b93a4d hit Scorch Golem for 2."
+        },
+        {
+            "type": 0,
+            "message": "Scorch Golem died."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant healed 2."
+        },
+        {
+            "type": 0,
+            "message": "edfde574a967447fbec923e851a25f31 hit Steel Construct for 2."
+        },
+        {
+            "type": 0,
+            "message": "1a641b49d5284498ac34771e00b3fcbb hit Wild Boar for 2."
+        },
+        {
+            "type": 0,
+            "message": "814f4d59816d4c01a891d16187b93a4d hit Steel Construct for 2."
+        },
+        {
+            "type": 0,
+            "message": "Steel Construct died."
+        },
+        {
+            "type": 0,
+            "message": "1a641b49d5284498ac34771e00b3fcbb hit Root Treant for 2."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant healed 2."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant healed 1."
+        },
+        {
+            "type": 0,
+            "message": "Root Treant healed 0."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "utility_played",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "play-42b8bb4e3f484b90abb02d6c9d933e80",
+            "targetRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Forge Rite was played."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "play-42b8bb4e3f484b90abb02d6c9d933e80",
+            "targetRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "abilityId": "util_blessing",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Forge Rite used Blessing."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "heal",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "targetRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "abilityId": "util_blessing",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem healed 0."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "attack_buff",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "play-42b8bb4e3f484b90abb02d6c9d933e80",
+            "targetRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "abilityId": "util_blessing",
+            "effectKind": 3,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem attack changed by 1."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "eventId": "evt-000008",
+            "sequence": 8,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar is not ready to attack."
+        },
+        {
+            "eventId": "evt-000009",
+            "sequence": 9,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant is not ready to attack."
+        },
+        {
+            "eventId": "evt-000010",
+            "sequence": 10,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "4738db2b12e644f9909ac67c708e557c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant is not ready to attack."
+        },
+        {
+            "eventId": "evt-000011",
+            "sequence": 11,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "1a641b49d5284498ac34771e00b3fcbb",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Steel Construct is not ready to attack."
+        },
+        {
+            "eventId": "evt-000012",
+            "sequence": 12,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "targetRuntimeId": "",
+            "abilityId": "haste",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem used Haste."
+        },
+        {
+            "eventId": "evt-000013",
+            "sequence": 13,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "targetRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem attacked Root Treant."
+        },
+        {
+            "eventId": "evt-000014",
+            "sequence": 14,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "targetRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 3 damage."
+        },
+        {
+            "eventId": "evt-000015",
+            "sequence": 15,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant struck back at Scorch Golem."
+        },
+        {
+            "eventId": "evt-000016",
+            "sequence": 16,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem took 2 damage."
+        },
+        {
+            "eventId": "evt-000017",
+            "sequence": 17,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "f45d31b57fa6487dae0fa310e0e3ac13",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Scorch Golem died."
+        },
+        {
+            "eventId": "evt-000018",
+            "sequence": 18,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000019",
+            "sequence": 19,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 2."
+        },
+        {
+            "eventId": "evt-000020",
+            "sequence": 20,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar used Poison."
+        },
+        {
+            "eventId": "evt-000021",
+            "sequence": 21,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "1a641b49d5284498ac34771e00b3fcbb",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar attacked Steel Construct."
+        },
+        {
+            "eventId": "evt-000022",
+            "sequence": 22,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "1a641b49d5284498ac34771e00b3fcbb",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Steel Construct took 2 damage."
+        },
+        {
+            "eventId": "evt-000023",
+            "sequence": 23,
+            "kind": "status_applied",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "1a641b49d5284498ac34771e00b3fcbb",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 2,
+            "message": "Poison applied to Steel Construct."
+        },
+        {
+            "eventId": "evt-000024",
+            "sequence": 24,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1a641b49d5284498ac34771e00b3fcbb",
+            "targetRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Steel Construct struck back at Wild Boar."
+        },
+        {
+            "eventId": "evt-000025",
+            "sequence": 25,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1a641b49d5284498ac34771e00b3fcbb",
+            "targetRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar took 2 damage."
+        },
+        {
+            "eventId": "evt-000026",
+            "sequence": 26,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "1a641b49d5284498ac34771e00b3fcbb",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked Steel Construct."
+        },
+        {
+            "eventId": "evt-000027",
+            "sequence": 27,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "1a641b49d5284498ac34771e00b3fcbb",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Steel Construct took 2 damage."
+        },
+        {
+            "eventId": "evt-000028",
+            "sequence": 28,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "1a641b49d5284498ac34771e00b3fcbb",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": -1,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Steel Construct died."
+        },
+        {
+            "eventId": "evt-000029",
+            "sequence": 29,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1a641b49d5284498ac34771e00b3fcbb",
+            "targetRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Steel Construct struck back at Root Treant."
+        },
+        {
+            "eventId": "evt-000030",
+            "sequence": 30,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1a641b49d5284498ac34771e00b3fcbb",
+            "targetRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant took 2 damage."
+        },
+        {
+            "eventId": "evt-000031",
+            "sequence": 31,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "4738db2b12e644f9909ac67c708e557c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000032",
+            "sequence": 32,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "4738db2b12e644f9909ac67c708e557c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 20,
+            "hpAfter": 17,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 3 damage."
+        },
+        {
+            "eventId": "evt-000033",
+            "sequence": 33,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000034",
+            "sequence": 34,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 2."
+        },
+        {
+            "eventId": "evt-000035",
+            "sequence": 35,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar used Poison."
+        },
+        {
+            "eventId": "evt-000036",
+            "sequence": 36,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000037",
+            "sequence": 37,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 17,
+            "hpAfter": 15,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 2 damage."
+        },
+        {
+            "eventId": "evt-000038",
+            "sequence": 38,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000039",
+            "sequence": 39,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 15,
+            "hpAfter": 13,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 2 damage."
+        },
+        {
+            "eventId": "evt-000040",
+            "sequence": 40,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "4738db2b12e644f9909ac67c708e557c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000041",
+            "sequence": 41,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "4738db2b12e644f9909ac67c708e557c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 13,
+            "hpAfter": 10,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 3 damage."
+        },
+        {
+            "eventId": "evt-000042",
+            "sequence": 42,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000043",
+            "sequence": 43,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 1."
+        },
+        {
+            "eventId": "evt-000044",
+            "sequence": 44,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar used Poison."
+        },
+        {
+            "eventId": "evt-000045",
+            "sequence": 45,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000046",
+            "sequence": 46,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 10,
+            "hpAfter": 8,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 2 damage."
+        },
+        {
+            "eventId": "evt-000047",
+            "sequence": 47,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000048",
+            "sequence": 48,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 8,
+            "hpAfter": 6,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 2 damage."
+        },
+        {
+            "eventId": "evt-000049",
+            "sequence": 49,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "4738db2b12e644f9909ac67c708e557c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000050",
+            "sequence": 50,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "4738db2b12e644f9909ac67c708e557c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 6,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 3 damage."
+        },
+        {
+            "eventId": "evt-000051",
+            "sequence": 51,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate_left",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant used Regenerate."
+        },
+        {
+            "eventId": "evt-000052",
+            "sequence": 52,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "abilityId": "regenerate_left",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant healed 0."
+        },
+        {
+            "eventId": "evt-000053",
+            "sequence": 53,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar used Poison."
+        },
+        {
+            "eventId": "evt-000054",
+            "sequence": 54,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000055",
+            "sequence": 55,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "edfde574a967447fbec923e851a25f31",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 2 damage."
+        },
+        {
+            "eventId": "evt-000056",
+            "sequence": 56,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Root Treant attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000057",
+            "sequence": 57,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "814f4d59816d4c01a891d16187b93a4d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 2 damage."
+        }
+    ]
+}

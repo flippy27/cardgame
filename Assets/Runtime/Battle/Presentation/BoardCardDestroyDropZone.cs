@@ -12,7 +12,9 @@ namespace Flippy.CardDuelMobile.UI
         [SerializeField] private int acceptedPlayerIndex = 0;
         [SerializeField] private GameObject highlightRoot;
         [SerializeField] private Graphic[] highlightGraphics;
-        [SerializeField] private Color normalColor = new Color(1f, 1f, 1f, 0.35f);
+        // Invisible by default — these per-card destroy drop zones used to show as faint white/pink
+        // squares behind every board card. They only need to appear while a destroy-drag is hovering.
+        [SerializeField] private Color normalColor = new Color(1f, 1f, 1f, 0f);
         [SerializeField] private Color highlightedColor = new Color(1f, 0.15f, 0.75f, 0.8f);
 
         private RectTransform _rectTransform;

@@ -46,6 +46,7 @@ namespace Flippy.CardDuelMobile.Networking
         private bool _endTurnInFlight;
         private bool _rulesSyncInFlight;
         private MatchSnapshot _currentSnapshot;
+        private string _lastPublishedSnapshotJson;
 
         public static MatchSignalRCoordinator Instance { get; private set; }
         public bool IsConnected => _usingHttpFallback
@@ -275,6 +276,39 @@ namespace Flippy.CardDuelMobile.Networking
             catch (Exception ex)
             {
                 ReportActionError("Forfeit", ex);
+            }
+        }
+
+        // DEBUG/TEST: send a match-debug action through the same transport as normal play. Over SignalR it
+        // invokes the gated hub "DebugAction"; on the HTTP fallback it POSTs to /matches/{id}/debug. Either
+        // way the server broadcasts a fresh MatchSnapshot, so the battle animates through the usual pipeline.
+        // No-op (logged) on a non-dev server, where the hub method throws "debug_disabled".
+        public async Task DebugActionAsync(MatchDebugRequestDto request)
+        {
+            if (request == null)
+            {
+                return;
+            }
+            request.matchId = matchId;
+            request.playerId = playerId;
+
+            try
+            {
+                if (_usingHttpFallback && _httpCoordinator != null)
+                {
+                    EnsureMatchplayApiClient();
+                    var httpSnapshot = await _matchplayApiClient.DebugAction(request);
+                    EnqueueSnapshotProcessing(httpSnapshot);
+                    return;
+                }
+
+                EnsureSignalRConnected();
+                var snapshot = await InvokeAsync("DebugAction", request);
+                EnqueueSnapshotProcessing(snapshot);
+            }
+            catch (Exception ex)
+            {
+                ReportActionError("DebugAction", ex);
             }
         }
 
@@ -689,8 +723,11 @@ namespace Flippy.CardDuelMobile.Networking
             var duelSnapshot = SnapshotConverter.Convert(snapshot, seatIndex);
             if (duelSnapshot != null)
             {
-                var json = JsonUtility.ToJson(duelSnapshot);
-                BattleSnapshotBus.Publish(json);
+                // Duplicate snapshots (the action RPC response + the "MatchSnapshot"
+                // broadcast of the same state) are harmless: the presenter de-dupes
+                // battle events by ascending sequence, so re-publishing identical state
+                // never re-animates. Always publish so no turn/state update is dropped.
+                BattleSnapshotBus.Publish(JsonUtility.ToJson(duelSnapshot));
             }
 
             SnapshotChanged?.Invoke(snapshot);
@@ -949,7 +986,12 @@ namespace Flippy.CardDuelMobile.Networking
                     var duelSnapshot = SnapshotConverter.Convert(_currentSnapshot, seatIndex);
                     if (duelSnapshot != null)
                     {
-                        BattleSnapshotBus.Publish(JsonUtility.ToJson(duelSnapshot));
+                        var rulesJson = JsonUtility.ToJson(duelSnapshot);
+                        if (!string.Equals(_lastPublishedSnapshotJson, rulesJson, StringComparison.Ordinal))
+                        {
+                            _lastPublishedSnapshotJson = rulesJson;
+                            BattleSnapshotBus.Publish(rulesJson);
+                        }
                     }
 
                     SnapshotChanged?.Invoke(_currentSnapshot);

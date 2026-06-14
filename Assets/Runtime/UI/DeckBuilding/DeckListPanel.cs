@@ -72,14 +72,21 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void ApplyKenneySkin()
         {
             if (!KenneyUiSkin.Available) return;
-            KenneyUiSkin.SkinPanelWindow(this);
+            KenneyUiSkin.EnsureWindowBackdrop(this);
             if (deckListContainer != null)
             {
-                var viewport = deckListContainer.parent != null ? deckListContainer.parent.GetComponent<Image>() : null;
-                KenneyUiSkin.SkinInsetImage(viewport);
+                var viewport = deckListContainer.parent;
+                if (viewport != null)
+                {
+                    var vimg = viewport.GetComponent<Image>();
+                    if (vimg != null) KenneyUiSkin.SkinInsetImage(vimg);
+                    else KenneyUiSkin.EnsureInsetBackdrop(viewport);
+                    KenneyUiSkin.SkinScrollbarsUnder(viewport);
+                }
             }
-            KenneyUiSkin.SkinButton(closeButton, KenneyUiSkin.ButtonStyle.Icon);
-            KenneyUiSkin.SkinButton(createDeckButton, KenneyUiSkin.ButtonStyle.Primary);
+            KenneyUiSkin.SkinButtonWithLabel(closeButton, KenneyUiSkin.ButtonStyle.Icon, "X");
+            KenneyUiSkin.SkinButtonWithLabel(createDeckButton, KenneyUiSkin.ButtonStyle.Primary, "New Deck");
+            KenneyUiSkin.ApplyFontUnder(this);
         }
 
         public void Show()
@@ -92,6 +99,30 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         {
             gameObject.SetActive(false);
             OnClose?.Invoke();
+        }
+
+        /// <summary>
+        /// Deep-link: open this panel and immediately open the deck editor for the given deckId
+        /// (used by the Salvage screen when a card is locked in a deck). Null/empty id just shows
+        /// the list. The deck is resolved from the player's decks (cached/fetched).
+        /// </summary>
+        public async void OpenDeckById(string deckId)
+        {
+            Show();
+            if (string.IsNullOrWhiteSpace(deckId) || deckEditPanel == null) return;
+
+            ServiceLocator.TryResolve<DeckManagementService>(out _deckService);
+            if (_deckService == null) return;
+            try
+            {
+                var decks = await _deckService.GetPlayerDecksAsync();
+                var deck = decks?.Find(d => (d.deckId ?? d.id) == deckId);
+                if (deck != null) deckEditPanel.OpenForEdit(deck);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[DeckList] OpenDeckById({deckId}) failed: {ex}");
+            }
         }
 
         private async void LoadAsync()
@@ -123,6 +154,10 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         private void RebuildList(List<DeckDto> decks)
         {
             if (deckListContainer == null) return;
+
+            // Ensure deck rows stack vertically with spacing (no overlap). Idempotent.
+            KenneyUiSkin.EnsureVerticalList(deckListContainer, spacing: 12f, padding: 12);
+
             foreach (Transform child in deckListContainer) Destroy(child.gameObject);
 
             if (decks == null || decks.Count == 0)
@@ -144,6 +179,7 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             if (deckRowPrefab == null || deckListContainer == null) return;
 
             var go = Instantiate(deckRowPrefab, deckListContainer);
+            KenneyUiSkin.EnsureRowHeight(go.GetComponent<RectTransform>(), 96f);
 
             // Try to find text labels in the row
             var texts = go.GetComponentsInChildren<TextMeshProUGUI>(true);

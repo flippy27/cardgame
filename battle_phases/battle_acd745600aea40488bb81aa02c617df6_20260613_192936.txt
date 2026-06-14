@@ -1,0 +1,1352 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T19:29:36.9379579Z
+LastUpdatedUtc: 2026-06-13T19:30:56.5092979Z
+MatchId: acd745600aea40488bb81aa02c617df6
+CurrentTurn: 7
+ActivePlayerIndex: 0
+ActivePlayerId: user-1
+IsLocalPlayersTurn: True
+DuelEnded: False
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 1062526508.
+002. seq=-1 /Info: Forge Automaton entered Front.
+003. seq=1 Forge Automaton#4bfbf41b skipped. Forge Automaton is not ready to attack.
+004. seq=-1 /Info: Wild Boar entered Front.
+005. seq=-1 /Info: Bloom Treant entered BackLeft.
+006. seq=-1 /Info: Moss Spider entered BackRight.
+007. seq=2 skill_begin/SkillBegin: Moss Spider used Regenerate.
+008. seq=3 Moss Spider#6145ed9c heals 0. HP 4->4. Moss Spider healed 0.
+009. seq=4 Wild Boar#7a8466fc skipped. Wild Boar is not ready to attack.
+010. seq=5 Bloom Treant#aa328364 skipped. Bloom Treant is not ready to attack.
+011. seq=6 Moss Spider#6145ed9c skipped. Moss Spider is not ready to attack.
+012. seq=7 Forge Automaton#4bfbf41b skipped. Forge Automaton cannot attack from Front.
+013. seq=8 skill_begin/SkillBegin: Moss Spider used Regenerate.
+014. seq=9 Moss Spider#6145ed9c heals 0. HP 4->4. Moss Spider healed 0.
+015. seq=10 skill_begin/SkillBegin: Wild Boar used Poison.
+016. seq=11 card_attack/Info: Wild Boar attacked Forge Automaton.
+017. seq=12 P1 Wild Boar#7a8466fc attacks P0 for 2. HP 3->3, Armor 2->0. Forge Automaton took 2 damage.
+018. seq=13 card_attack/Info: Bloom Treant attacked Forge Automaton.
+019. seq=14 P1 Bloom Treant#aa328364 attacks P0 for 3. HP 3->0, Armor 0->0. Forge Automaton took 3 damage.
+020. seq=15 P0 dies. Forge Automaton died.
+021. seq=16 P1 Moss Spider#6145ed9c attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider attacked the enemy hero.
+022. seq=17 P1 Moss Spider#6145ed9c hits hero P0 for 3. HP 20->17. Seat 1 hero took 3 damage.
+023. seq=-1 /Info: Piston Reckoner entered Front.
+024. seq=18 equipment_played/Info: Molten Gauntlets was played.
+025. seq=19 equipment_attached/Info: Molten Gauntlets equipped to Piston Reckoner.
+026. seq=20 Piston Reckoner#5fdea1b1 skipped. Piston Reckoner is not ready to attack.
+027. seq=21 skill_begin/SkillBegin: Moss Spider used Regenerate.
+028. seq=22 P1 heals 0. HP 4->4. Moss Spider healed 0.
+029. seq=23 skill_begin/SkillBegin: Wild Boar used Poison.
+030. seq=24 card_attack/Info: Wild Boar attacked Piston Reckoner.
+031. seq=25 P1 P1 attacks P0 for 2. HP 3->3, Armor 2->0. Piston Reckoner took 2 damage.
+032. seq=26 card_counterattack/Info: Piston Reckoner struck back at Wild Boar.
+033. seq=27 P0 P0 attacks P1 for 4. HP 4->0, Armor 0->0. Wild Boar took 4 damage.
+034. seq=28 P1 dies. Wild Boar died.
+035. seq=29 card_attack/Info: Moss Spider attacked Piston Reckoner.
+036. seq=30 P1 P1 attacks P0 for 3. HP 3->0, Armor 0->0. Piston Reckoner took 3 damage.
+037. seq=31 P0 dies. Piston Reckoner died.
+038. seq=32 card_counterattack/Info: Piston Reckoner struck back at Moss Spider.
+039. seq=33 P0 P0 attacks P1 for 4. HP 4->0, Armor 0->0. Moss Spider took 4 damage.
+040. seq=34 P1 dies. Moss Spider died.
+041. seq=-1 /Info: Whisper Fiend entered Front.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T19:29:36.9430549Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=30 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T19:29:37.4519736Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 1062526508.
+-- Step 3 | UTC 2026-06-13T19:29:44.4215295Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Forge Automaton#4bfbf41b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Forge Automaton entered Front.
+-- Step 4 | UTC 2026-06-13T19:29:48.4950576Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Forge Automaton#4bfbf41b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=1 Forge Automaton#4bfbf41b skipped. Forge Automaton is not ready to attack.
+-- Step 5 | UTC 2026-06-13T19:29:49.1431152Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Forge Automaton#4bfbf41b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=17/20 board=[Front:Wild Boar#7a8466fc hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Wild Boar entered Front.
+-- Step 6 | UTC 2026-06-13T19:29:49.6002559Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Forge Automaton#4bfbf41b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=14/20 board=[Front:Wild Boar#7a8466fc hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#aa328364 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Bloom Treant entered BackLeft.
+-- Step 7 | UTC 2026-06-13T19:29:50.0694969Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Forge Automaton#4bfbf41b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=11/20 board=[Front:Wild Boar#7a8466fc hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#aa328364 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#6145ed9c hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=-1 /Info: Moss Spider entered BackRight.
+-- Step 8 | UTC 2026-06-13T19:29:50.5609139Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Forge Automaton#4bfbf41b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=25 | P1 id=user-2 hp=20 mana=11/20 board=[Front:Wild Boar#7a8466fc hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#aa328364 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#6145ed9c hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=2 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=3 Moss Spider#6145ed9c heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=4 Wild Boar#7a8466fc skipped. Wild Boar is not ready to attack.
+   - seq=5 Bloom Treant#aa328364 skipped. Bloom Treant is not ready to attack.
+   - seq=6 Moss Spider#6145ed9c skipped. Moss Spider is not ready to attack.
+-- Step 9 | UTC 2026-06-13T19:29:53.4443851Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Forge Automaton#4bfbf41b hp=3/3 armor=2 unitType=1 delivery=projectile, BackLeft:empty, BackRight:empty] hand=4 deck=25 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#7a8466fc hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#aa328364 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#6145ed9c hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=7 Forge Automaton#4bfbf41b skipped. Forge Automaton cannot attack from Front.
+-- Step 10 | UTC 2026-06-13T19:29:54.1073807Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=17 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=5 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#7a8466fc hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#aa328364 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#6145ed9c hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=8 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=9 Moss Spider#6145ed9c heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=10 skill_begin/SkillBegin: Wild Boar used Poison.
+   - seq=11 card_attack/Info: Wild Boar attacked Forge Automaton.
+   - seq=12 P1 Wild Boar#7a8466fc attacks P0 for 2. HP 3->3, Armor 2->0. Forge Automaton took 2 damage.
+   - seq=13 card_attack/Info: Bloom Treant attacked Forge Automaton.
+   - seq=14 P1 Bloom Treant#aa328364 attacks P0 for 3. HP 3->0, Armor 0->0. Forge Automaton took 3 damage.
+   - seq=15 P0 dies. Forge Automaton died.
+   - seq=16 P1 Moss Spider#6145ed9c attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider attacked the enemy hero.
+   - seq=17 P1 Moss Spider#6145ed9c hits hero P0 for 3. HP 20->17. Seat 1 hero took 3 damage.
+-- Step 11 | UTC 2026-06-13T19:30:10.1952566Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=17 mana=18/20 board=[Front:Piston Reckoner#5fdea1b1 hp=3/3 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=4 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#7a8466fc hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#aa328364 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#6145ed9c hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=-1 /Info: Piston Reckoner entered Front.
+-- Step 12 | UTC 2026-06-13T19:30:14.5280014Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=17 mana=15/20 board=[Front:Piston Reckoner#5fdea1b1 hp=3/3 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#7a8466fc hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#aa328364 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#6145ed9c hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=18 equipment_played/Info: Molten Gauntlets was played.
+   - seq=19 equipment_attached/Info: Molten Gauntlets equipped to Piston Reckoner.
+-- Step 13 | UTC 2026-06-13T19:30:16.2641694Z | Turn 6 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=17 mana=15/20 board=[Front:Piston Reckoner#5fdea1b1 hp=3/3 armor=2 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Wild Boar#7a8466fc hp=4/4 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#aa328364 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#6145ed9c hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=17
+   - seq=20 Piston Reckoner#5fdea1b1 skipped. Piston Reckoner is not ready to attack.
+-- Step 14 | UTC 2026-06-13T19:30:16.9142399Z | Turn 7 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=17 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=23 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Bloom Treant#aa328364 hp=4/4 armor=0 unitType=2 delivery=beam, BackLeft:empty, BackRight:empty] hand=0 deck=17
+   - seq=21 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=22 P1 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=23 skill_begin/SkillBegin: Wild Boar used Poison.
+   - seq=24 card_attack/Info: Wild Boar attacked Piston Reckoner.
+   - seq=25 P1 P1 attacks P0 for 2. HP 3->3, Armor 2->0. Piston Reckoner took 2 damage.
+   - seq=26 card_counterattack/Info: Piston Reckoner struck back at Wild Boar.
+   - seq=27 P0 P0 attacks P1 for 4. HP 4->0, Armor 0->0. Wild Boar took 4 damage.
+   - seq=28 P1 dies. Wild Boar died.
+   - seq=29 card_attack/Info: Moss Spider attacked Piston Reckoner.
+   - seq=30 P1 P1 attacks P0 for 3. HP 3->0, Armor 0->0. Piston Reckoner took 3 damage.
+   - seq=31 P0 dies. Piston Reckoner died.
+   - seq=32 card_counterattack/Info: Piston Reckoner struck back at Moss Spider.
+   - seq=33 P0 P0 attacks P1 for 4. HP 4->0, Armor 0->0. Moss Spider took 4 damage.
+   - seq=34 P1 dies. Moss Spider died.
+-- Step 15 | UTC 2026-06-13T19:30:56.4885807Z | Turn 7 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=17 mana=19/20 board=[Front:Whisper Fiend#29d5ada7 hp=1/1 armor=0 unitType=2 delivery=beam, BackLeft:empty, BackRight:empty] hand=3 deck=23 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Bloom Treant#aa328364 hp=4/4 armor=0 unitType=2 delivery=beam, BackLeft:empty, BackRight:empty] hand=0 deck=17
+   - seq=-1 /Info: Whisper Fiend entered Front.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=4bfbf41b50b1402d9d89935b860f543d serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Forge Automaton is not ready to attack.
+seq=2 id=evt-000002 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=6145ed9c01a94a749a56aa2de1486438 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=3 id=evt-000003 kind=heal serverSrcSeat=1 srcVisual=1 src=6145ed9c01a94a749a56aa2de1486438 serverTargetSeat=1 targetVisual=1 target=6145ed9c01a94a749a56aa2de1486438 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=4 id=evt-000004 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=7a8466fc1a3543dcb4611da2ca12941c serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar is not ready to attack.
+seq=5 id=evt-000005 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=aa328364ff564d6a92af73631699ee47 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Bloom Treant is not ready to attack.
+seq=6 id=evt-000006 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=6145ed9c01a94a749a56aa2de1486438 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider is not ready to attack.
+seq=7 id=evt-000007 kind=attack_position_blocked serverSrcSeat=0 srcVisual=0 src=4bfbf41b50b1402d9d89935b860f543d serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Forge Automaton cannot attack from Front.
+seq=8 id=evt-000008 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=6145ed9c01a94a749a56aa2de1486438 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=9 id=evt-000009 kind=heal serverSrcSeat=1 srcVisual=1 src=6145ed9c01a94a749a56aa2de1486438 serverTargetSeat=1 targetVisual=1 target=6145ed9c01a94a749a56aa2de1486438 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=10 id=evt-000010 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=7a8466fc1a3543dcb4611da2ca12941c serverTargetSeat=0 targetVisual=-1 target= ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar used Poison.
+seq=11 id=evt-000011 kind=card_attack serverSrcSeat=1 srcVisual=1 src=7a8466fc1a3543dcb4611da2ca12941c serverTargetSeat=0 targetVisual=0 target=4bfbf41b50b1402d9d89935b860f543d ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Wild Boar attacked Forge Automaton.
+seq=12 id=evt-000012 kind=card_damage serverSrcSeat=1 srcVisual=1 src=7a8466fc1a3543dcb4611da2ca12941c serverTargetSeat=0 targetVisual=0 target=4bfbf41b50b1402d9d89935b860f543d ability= effect=0 status=0 amount=2 hp=3->3 armor=2->0 message=Forge Automaton took 2 damage.
+seq=13 id=evt-000013 kind=card_attack serverSrcSeat=1 srcVisual=1 src=aa328364ff564d6a92af73631699ee47 serverTargetSeat=0 targetVisual=0 target=4bfbf41b50b1402d9d89935b860f543d ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Bloom Treant attacked Forge Automaton.
+seq=14 id=evt-000014 kind=card_damage serverSrcSeat=1 srcVisual=1 src=aa328364ff564d6a92af73631699ee47 serverTargetSeat=0 targetVisual=0 target=4bfbf41b50b1402d9d89935b860f543d ability= effect=0 status=0 amount=3 hp=3->0 armor=0->0 message=Forge Automaton took 3 damage.
+seq=15 id=evt-000015 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=4bfbf41b50b1402d9d89935b860f543d ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Forge Automaton died.
+seq=16 id=evt-000016 kind=card_attack serverSrcSeat=1 srcVisual=1 src=6145ed9c01a94a749a56aa2de1486438 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Moss Spider attacked the enemy hero.
+seq=17 id=evt-000017 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=6145ed9c01a94a749a56aa2de1486438 serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=3 hp=20->17 armor=0->0 message=Seat 1 hero took 3 damage.
+seq=18 id=evt-000018 kind=equipment_played serverSrcSeat=0 srcVisual=0 src=play-2dde5c1c36f94bb8bc251a37bfda66c5 serverTargetSeat=0 targetVisual=0 target=5fdea1b14fcb4d6eadbd65ee0daf569a ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Molten Gauntlets was played.
+seq=19 id=evt-000019 kind=equipment_attached serverSrcSeat=0 srcVisual=0 src=play-2dde5c1c36f94bb8bc251a37bfda66c5 serverTargetSeat=0 targetVisual=0 target=5fdea1b14fcb4d6eadbd65ee0daf569a ability= effect=0 status=0 amount=2 hp=0->0 armor=2->2 message=Molten Gauntlets equipped to Piston Reckoner.
+seq=20 id=evt-000020 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=5fdea1b14fcb4d6eadbd65ee0daf569a serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Piston Reckoner is not ready to attack.
+seq=21 id=evt-000021 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=6145ed9c01a94a749a56aa2de1486438 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=22 id=evt-000022 kind=heal serverSrcSeat=1 srcVisual=1 src=6145ed9c01a94a749a56aa2de1486438 serverTargetSeat=1 targetVisual=1 target=6145ed9c01a94a749a56aa2de1486438 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=23 id=evt-000023 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=7a8466fc1a3543dcb4611da2ca12941c serverTargetSeat=0 targetVisual=-1 target= ability=poison effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar used Poison.
+seq=24 id=evt-000024 kind=card_attack serverSrcSeat=1 srcVisual=1 src=7a8466fc1a3543dcb4611da2ca12941c serverTargetSeat=0 targetVisual=0 target=5fdea1b14fcb4d6eadbd65ee0daf569a ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Wild Boar attacked Piston Reckoner.
+seq=25 id=evt-000025 kind=card_damage serverSrcSeat=1 srcVisual=1 src=7a8466fc1a3543dcb4611da2ca12941c serverTargetSeat=0 targetVisual=0 target=5fdea1b14fcb4d6eadbd65ee0daf569a ability= effect=0 status=0 amount=2 hp=3->3 armor=2->0 message=Piston Reckoner took 2 damage.
+seq=26 id=evt-000026 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=5fdea1b14fcb4d6eadbd65ee0daf569a serverTargetSeat=1 targetVisual=1 target=7a8466fc1a3543dcb4611da2ca12941c ability= effect=0 status=0 amount=4 hp=0->0 armor=0->0 message=Piston Reckoner struck back at Wild Boar.
+seq=27 id=evt-000027 kind=card_damage serverSrcSeat=0 srcVisual=0 src=5fdea1b14fcb4d6eadbd65ee0daf569a serverTargetSeat=1 targetVisual=1 target=7a8466fc1a3543dcb4611da2ca12941c ability= effect=0 status=0 amount=4 hp=4->0 armor=0->0 message=Wild Boar took 4 damage.
+seq=28 id=evt-000028 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=1 targetVisual=1 target=7a8466fc1a3543dcb4611da2ca12941c ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Wild Boar died.
+seq=29 id=evt-000029 kind=card_attack serverSrcSeat=1 srcVisual=1 src=6145ed9c01a94a749a56aa2de1486438 serverTargetSeat=0 targetVisual=0 target=5fdea1b14fcb4d6eadbd65ee0daf569a ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Moss Spider attacked Piston Reckoner.
+seq=30 id=evt-000030 kind=card_damage serverSrcSeat=1 srcVisual=1 src=6145ed9c01a94a749a56aa2de1486438 serverTargetSeat=0 targetVisual=0 target=5fdea1b14fcb4d6eadbd65ee0daf569a ability= effect=0 status=0 amount=3 hp=3->0 armor=0->0 message=Piston Reckoner took 3 damage.
+seq=31 id=evt-000031 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=5fdea1b14fcb4d6eadbd65ee0daf569a ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Piston Reckoner died.
+seq=32 id=evt-000032 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=5fdea1b14fcb4d6eadbd65ee0daf569a serverTargetSeat=1 targetVisual=1 target=6145ed9c01a94a749a56aa2de1486438 ability= effect=0 status=0 amount=4 hp=0->0 armor=0->0 message=Piston Reckoner struck back at Moss Spider.
+seq=33 id=evt-000033 kind=card_damage serverSrcSeat=0 srcVisual=0 src=5fdea1b14fcb4d6eadbd65ee0daf569a serverTargetSeat=1 targetVisual=1 target=6145ed9c01a94a749a56aa2de1486438 ability= effect=0 status=0 amount=4 hp=4->0 armor=0->0 message=Moss Spider took 4 damage.
+seq=34 id=evt-000034 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=1 targetVisual=1 target=6145ed9c01a94a749a56aa2de1486438 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider died.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 1062526508.
+turn=1 Info: Forge Automaton entered Front.
+turn=2 Info: Wild Boar entered Front.
+turn=2 Info: Bloom Treant entered BackLeft.
+turn=2 Info: Moss Spider entered BackRight.
+turn=3 Info: Moss Spider healed 0.
+turn=5 Info: 7a8466fc1a3543dcb4611da2ca12941c hit Forge Automaton for 2.
+turn=5 Info: aa328364ff564d6a92af73631699ee47 hit Forge Automaton for 3.
+turn=5 Info: Forge Automaton died.
+turn=5 Info: Piston Reckoner entered Front.
+turn=5 Info: Molten Gauntlets was played.
+turn=7 Info: 7a8466fc1a3543dcb4611da2ca12941c hit Piston Reckoner for 2.
+turn=7 Info: 5fdea1b14fcb4d6eadbd65ee0daf569a hit Wild Boar for 4.
+turn=7 Info: Wild Boar died.
+turn=7 Info: 6145ed9c01a94a749a56aa2de1486438 hit Piston Reckoner for 3.
+turn=7 Info: Piston Reckoner died.
+turn=7 Info: 5fdea1b14fcb4d6eadbd65ee0daf569a hit Moss Spider for 4.
+turn=7 Info: Moss Spider died.
+turn=7 Info: Whisper Fiend entered Front.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "acd745600aea40488bb81aa02c617df6",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 0,
+    "activePlayerId": "user-1",
+    "isLocalPlayersTurn": true,
+    "turnNumber": 7,
+    "duelEnded": false,
+    "endReason": 0,
+    "matchPhase": 3,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 1062526508,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Your turn.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 17,
+            "mana": 19,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "ce240f1d6b0b4b95b53686cf33ef0603",
+                    "cardId": "tidal_0021",
+                    "displayName": "Coral Aegis",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "equip_armor",
+                            "displayName": "Plating",
+                            "iconAssetRef": "",
+                            "skillType": 0,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "equip_armor",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"equipment\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"equip-armor\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "2cfc767fc38b4f9787c0e404726dee08",
+                    "cardId": "ember_0040",
+                    "displayName": "Forge Rite",
+                    "manaCost": 2,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_blessing",
+                            "displayName": "Blessing",
+                            "iconAssetRef": "",
+                            "skillType": 3,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_blessing",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 3,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 0,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-heal\"}"
+                                },
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-blessing-buff\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "649dfb656f924ece9796a1bc25a48425",
+                    "cardId": "ember_0039",
+                    "displayName": "Cinderbrand Axe",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "equip_weapon",
+                            "displayName": "Weapon",
+                            "iconAssetRef": "",
+                            "skillType": 2,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "equip_weapon",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"equipment\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"equip-weapon\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "29d5ada7867f4aa4b9227728aad60923",
+                        "cardId": "void_0031",
+                        "displayName": "Whisper Fiend",
+                        "manaCost": 1,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 0,
+                        "attack": 2,
+                        "currentHealth": 1,
+                        "maxHealth": 1,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 23,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "aa328364ff564d6a92af73631699ee47",
+                        "cardId": "grove_0025",
+                        "displayName": "Bloom Treant",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 17,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Forge Automaton entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Wild Boar entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Bloom Treant entered BackLeft."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider entered BackRight."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "type": 0,
+            "message": "7a8466fc1a3543dcb4611da2ca12941c hit Forge Automaton for 2."
+        },
+        {
+            "type": 0,
+            "message": "aa328364ff564d6a92af73631699ee47 hit Forge Automaton for 3."
+        },
+        {
+            "type": 0,
+            "message": "Forge Automaton died."
+        },
+        {
+            "type": 0,
+            "message": "Piston Reckoner entered Front."
+        },
+        {
+            "type": 0,
+            "message": "Molten Gauntlets was played."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "type": 0,
+            "message": "7a8466fc1a3543dcb4611da2ca12941c hit Piston Reckoner for 2."
+        },
+        {
+            "type": 0,
+            "message": "5fdea1b14fcb4d6eadbd65ee0daf569a hit Wild Boar for 4."
+        },
+        {
+            "type": 0,
+            "message": "Wild Boar died."
+        },
+        {
+            "type": 0,
+            "message": "6145ed9c01a94a749a56aa2de1486438 hit Piston Reckoner for 3."
+        },
+        {
+            "type": 0,
+            "message": "Piston Reckoner died."
+        },
+        {
+            "type": 0,
+            "message": "5fdea1b14fcb4d6eadbd65ee0daf569a hit Moss Spider for 4."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider died."
+        },
+        {
+            "type": 0,
+            "message": "Whisper Fiend entered Front."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "4bfbf41b50b1402d9d89935b860f543d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Forge Automaton is not ready to attack."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "targetRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7a8466fc1a3543dcb4611da2ca12941c",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar is not ready to attack."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "aa328364ff564d6a92af73631699ee47",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant is not ready to attack."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider is not ready to attack."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "attack_position_blocked",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "4bfbf41b50b1402d9d89935b860f543d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Forge Automaton cannot attack from Front."
+        },
+        {
+            "eventId": "evt-000008",
+            "sequence": 8,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000009",
+            "sequence": 9,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "targetRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000010",
+            "sequence": 10,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7a8466fc1a3543dcb4611da2ca12941c",
+            "targetRuntimeId": "",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar used Poison."
+        },
+        {
+            "eventId": "evt-000011",
+            "sequence": 11,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7a8466fc1a3543dcb4611da2ca12941c",
+            "targetRuntimeId": "4bfbf41b50b1402d9d89935b860f543d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar attacked Forge Automaton."
+        },
+        {
+            "eventId": "evt-000012",
+            "sequence": 12,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7a8466fc1a3543dcb4611da2ca12941c",
+            "targetRuntimeId": "4bfbf41b50b1402d9d89935b860f543d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 2,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Forge Automaton took 2 damage."
+        },
+        {
+            "eventId": "evt-000013",
+            "sequence": 13,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "aa328364ff564d6a92af73631699ee47",
+            "targetRuntimeId": "4bfbf41b50b1402d9d89935b860f543d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant attacked Forge Automaton."
+        },
+        {
+            "eventId": "evt-000014",
+            "sequence": 14,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "aa328364ff564d6a92af73631699ee47",
+            "targetRuntimeId": "4bfbf41b50b1402d9d89935b860f543d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Forge Automaton took 3 damage."
+        },
+        {
+            "eventId": "evt-000015",
+            "sequence": 15,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "4bfbf41b50b1402d9d89935b860f543d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Forge Automaton died."
+        },
+        {
+            "eventId": "evt-000016",
+            "sequence": 16,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000017",
+            "sequence": 17,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 20,
+            "hpAfter": 17,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 3 damage."
+        },
+        {
+            "eventId": "evt-000018",
+            "sequence": 18,
+            "kind": "equipment_played",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "play-2dde5c1c36f94bb8bc251a37bfda66c5",
+            "targetRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Molten Gauntlets was played."
+        },
+        {
+            "eventId": "evt-000019",
+            "sequence": 19,
+            "kind": "equipment_attached",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "play-2dde5c1c36f94bb8bc251a37bfda66c5",
+            "targetRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 2,
+            "armorAfter": 2,
+            "statusKind": 0,
+            "durationTurns": 3,
+            "message": "Molten Gauntlets equipped to Piston Reckoner."
+        },
+        {
+            "eventId": "evt-000020",
+            "sequence": 20,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner is not ready to attack."
+        },
+        {
+            "eventId": "evt-000021",
+            "sequence": 21,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000022",
+            "sequence": 22,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "targetRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000023",
+            "sequence": 23,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7a8466fc1a3543dcb4611da2ca12941c",
+            "targetRuntimeId": "",
+            "abilityId": "poison",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar used Poison."
+        },
+        {
+            "eventId": "evt-000024",
+            "sequence": 24,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7a8466fc1a3543dcb4611da2ca12941c",
+            "targetRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar attacked Piston Reckoner."
+        },
+        {
+            "eventId": "evt-000025",
+            "sequence": 25,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7a8466fc1a3543dcb4611da2ca12941c",
+            "targetRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 2,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner took 2 damage."
+        },
+        {
+            "eventId": "evt-000026",
+            "sequence": 26,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "targetRuntimeId": "7a8466fc1a3543dcb4611da2ca12941c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 4,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner struck back at Wild Boar."
+        },
+        {
+            "eventId": "evt-000027",
+            "sequence": 27,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "targetRuntimeId": "7a8466fc1a3543dcb4611da2ca12941c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 4,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar took 4 damage."
+        },
+        {
+            "eventId": "evt-000028",
+            "sequence": 28,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "7a8466fc1a3543dcb4611da2ca12941c",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Wild Boar died."
+        },
+        {
+            "eventId": "evt-000029",
+            "sequence": 29,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "targetRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider attacked Piston Reckoner."
+        },
+        {
+            "eventId": "evt-000030",
+            "sequence": 30,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "targetRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner took 3 damage."
+        },
+        {
+            "eventId": "evt-000031",
+            "sequence": 31,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner died."
+        },
+        {
+            "eventId": "evt-000032",
+            "sequence": 32,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "targetRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 4,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Piston Reckoner struck back at Moss Spider."
+        },
+        {
+            "eventId": "evt-000033",
+            "sequence": 33,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "5fdea1b14fcb4d6eadbd65ee0daf569a",
+            "targetRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 4,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider took 4 damage."
+        },
+        {
+            "eventId": "evt-000034",
+            "sequence": 34,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "6145ed9c01a94a749a56aa2de1486438",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider died."
+        }
+    ]
+}

@@ -14,3 +14,5 @@ ranged will always prioritize straight across first, if sstraight, if theres no 
 
 magic will always prioritize diagonal first, if theres no card there, it will attack top then, magic should never attack straight
 
+top can only attack WHILE being on the top slot, ranged and magic can only attack while on left or right
+

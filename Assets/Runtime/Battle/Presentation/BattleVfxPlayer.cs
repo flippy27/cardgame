@@ -71,8 +71,58 @@ namespace Flippy.CardDuelMobile.UI
             }
         }
 
+        // Cartoon-FX (or any) PARTICLE prefabs, dropped at Resources/Art/vfx/cfx/{key}.prefab. When a
+        // prefab exists for an effect key it is preferred over the legacy sprite-frame animation, so the
+        // whole battle upgrades to particles just by importing the pack and placing named prefabs — one
+        // mapping place (the cfx/ folder), no per-call-site changes. Cached (misses too).
+        private const string CfxRoot = "Art/vfx/cfx";
+        private static readonly Dictionary<string, GameObject> _prefabCache = new();
+        // Per-key world scale override (CFX prefabs are authored ~1u; the board scales cards up ~4x, so
+        // particles may need a bump). Tune here in ONE place.
+        public static float ParticleWorldScale = 3.5f;
+
+        private static GameObject GetParticlePrefab(string key)
+        {
+            if (string.IsNullOrWhiteSpace(key)) return null;
+            if (_prefabCache.TryGetValue(key, out var cached)) return cached;
+            var prefab = Resources.Load<GameObject>($"{CfxRoot}/{key}");
+            _prefabCache[key] = prefab; // cache misses too (avoid repeated I/O)
+            return prefab;
+        }
+
+        /// <summary>
+        /// Instantiates a particle (Cartoon FX) prefab for an effect key at a world position and
+        /// auto-destroys it when the systems finish. Returns false when no prefab exists for the key
+        /// (so callers can fall back to the legacy sprite frames).
+        /// </summary>
+        public bool PlayParticle(string key, Vector3 worldPosition, float scaleMultiplier = 1f)
+        {
+            var prefab = GetParticlePrefab(key);
+            if (prefab == null) return false;
+
+            var go = Instantiate(prefab, worldPosition, Quaternion.identity);
+            var s = ParticleWorldScale * Mathf.Max(0.01f, scaleMultiplier);
+            go.transform.localScale = go.transform.localScale * s;
+
+            // Lifetime = longest (duration + max start lifetime) across all child systems, + buffer.
+            float life = 0f;
+            foreach (var ps in go.GetComponentsInChildren<ParticleSystem>(true))
+            {
+                var m = ps.main;
+                var l = m.duration + m.startLifetime.constantMax;
+                if (l > life) life = l;
+            }
+            Destroy(go, life > 0f ? life + 0.5f : 2.5f);
+            return true;
+        }
+
         public void Play(string vfxName, Vector3 worldPosition, float worldScale = DefaultWorldScale, float fps = DefaultFps)
         {
+            // 1) Imported CFX prefab (cfx/{key}) if present. 2) Procedural code-built particles
+            // (BattleParticleFx). 3) Legacy sprite-frame animation.
+            if (PlayParticle(vfxName, worldPosition)) return;
+            if (BattleParticleFx.Play(vfxName, worldPosition, ParticleWorldScale)) return;
+
             var frames = BattleVfxLibrary.GetFrames(vfxName);
             if (frames == null || frames.Length == 0)
             {

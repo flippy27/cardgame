@@ -36,11 +36,18 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
         }
 
         // ---- Type scale (point sizes) ----
-        public const float Header   = 40f;
-        public const float Label    = 28f;
-        public const float Button   = 26f;
-        public const float CardName = 24f;
-        public const float Status   = 24f;
+        // Sized for a PHONE-portrait canvas. The scene's prominent labels are authored at
+        // ~57-87pt, so the old 28-48pt scale rendered tiny by comparison and was illegible on
+        // a handset. Bumped up substantially — this is the single knob for deck-builder type.
+        public const float Header   = 64f;
+        public const float Label    = 46f;
+        public const float Button   = 46f;
+        public const float CardName = 42f;
+        public const float Status   = 40f;
+
+        /// <summary>Absolute readability floor (pt). No deck-builder text should render below
+        /// this on a phone — used by the theme font pass to catch text that bypasses the role API.</summary>
+        public const float MinReadable = 38f;
 
         /// <summary>Returns the point size for a role.</summary>
         public static float SizeFor(Role role) => role switch
@@ -81,7 +88,9 @@ namespace Flippy.CardDuelMobile.UI.DeckBuilding
             if (text == null) return;
 
             float max = SizeFor(role);
-            float min = Mathf.Max(12f, max * 0.66f);
+            // Keep the shrink floor high enough to stay readable on a phone even when
+            // a long string forces auto-size down (was 12pt / 0.66 — too small).
+            float min = Mathf.Max(18f, max * 0.75f);
 
             text.enableAutoSizing = true;
             text.fontSizeMin = min;

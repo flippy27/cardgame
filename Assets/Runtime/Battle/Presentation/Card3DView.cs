@@ -79,24 +79,42 @@ namespace Flippy.CardDuelMobile.UI
             GameLogger.Info("Card3D", $"Initialized {card.displayName}");
         }
 
-        // The prefab ships the stat texts hand-tuned to an old frame's coordinate space (anchored
-        // positions in the thousands, 100x child scales), so they no longer land on the current
-        // frame's sockets. Normalise them here in the 1000x1400 overlay canvas: each stat is pinned
-        // to its corner socket at a readable size. Tweak these offsets to match the frame art.
+        // The stat circles+icons+numbers are now ONE overlay-UI badge per stat, built by
+        // CardStatBadges under the StatsOverlay rect (number is a child of its circle, so they can
+        // never drift). This method only positions the NAME strip and the ability-icon panel; the
+        // badges (cost/attack/health/armor/rarity) are placed by CardStatBadges.Apply at the socket
+        // fractions in CardArtLibrary. Tune the sockets/sizes there, not here.
         private void LayoutStatsOverlay()
         {
-            // Numbers sit on top of the baked socket symbols (same fractions as CardArtLibrary, with
-            // the centred frame's transparent band accounted for). Overlay canvas is 1000x1400.
-            PlaceStat(costText, new Vector2(0f, 1f), new Vector2(130f, -238f), 150f);   // cost, top-left (0.13,0.17)
-            PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -180f), 70f);    // name, title strip
-            PlaceStat(attackText, new Vector2(0f, 0f), new Vector2(130f, 308f), 150f);  // attack, bottom-left (0.13,0.78)
-            PlaceStat(healthText, new Vector2(1f, 0f), new Vector2(-130f, 308f), 150f); // health, bottom-right (0.87,0.78)
-            PlaceStat(armorText, new Vector2(1f, 0f), new Vector2(-130f, 539f), 130f);  // armor, just above health
+            // Hide the prefab's per-stat TMP refs — CardStatBadges owns the stat numbers now. The
+            // shared "name" object is kept; ApplyCardTexts still drives nameText.
+            HideLegacyStat(costText);
+            HideLegacyStat(attackText);
+            HideLegacyStat(healthText);
+            HideLegacyStat(armorText);
 
-            // Ability icons: a row of larger circles across the lower-middle of the card.
-            abilityIconGroup?.SetCellSize(new Vector2(110f, 110f));
-            PlaceIconPanel(abilityIconGroup, new Vector2(0.5f, 0.5f), new Vector2(0f, -120f), new Vector2(820f, 150f));
+            PlaceStat(nameText, new Vector2(0.5f, 1f), new Vector2(0f, -180f), 70f);    // name, title strip
+
+            // Ability icons: a BIG, centred row of square cells across the lower-middle of the card
+            // (max 3). Larger + lower than before so the skills read clearly (see reference). The hand
+            // overlay is 1000x1400; anchor (0.5,0.5) is centre, y is negative = downward.
+            abilityIconGroup?.SetCellSize(new Vector2(180f, 180f));
+            PlaceIconPanel(abilityIconGroup, new Vector2(0.5f, 0.5f), new Vector2(0f, -350f), new Vector2(560f, 180f));
         }
+
+        // The prefab wires a couple of stat TMPs to the SAME GameObject as the name strip; don't
+        // disable those (it would blank the name). Only blank the text on dedicated stat objects so a
+        // stray prefab number never shows behind the new overlay badges.
+        private void HideLegacyStat(TextMeshProUGUI text)
+        {
+            if (text == null || (nameText != null && ReferenceEquals(text.gameObject, nameText.gameObject)))
+            {
+                return;
+            }
+            text.text = string.Empty;
+        }
+
+        private RectTransform OverlayRect => uprightOverlayRoot as RectTransform;
 
         private static void PlaceIconPanel(CardIconGroup group, Vector2 anchor, Vector2 anchoredPosition, Vector2 size)
         {
@@ -117,6 +135,14 @@ namespace Flippy.CardDuelMobile.UI
             if (text == null)
             {
                 return;
+            }
+
+            // Guarantee the stat object is showing. The prefab wires legacyStatsText to the SAME
+            // GameObject as nameText; ApplyCardTexts disables that shared object when dedicated stats
+            // exist, so force every placed stat active to keep numbers from being hidden.
+            if (!text.gameObject.activeSelf)
+            {
+                text.gameObject.SetActive(true);
             }
 
             var rect = text.rectTransform;
@@ -155,25 +181,48 @@ namespace Flippy.CardDuelMobile.UI
                 return;
             }
 
+            // Stat numbers (cost/attack/health/armor) are owned by the overlay badges now, so don't
+            // pass those TMPs to ApplyCardTexts — only the NAME strip is driven here. nameText != null
+            // keeps hasDedicatedStats true, so the legacy combined-stats string stays hidden.
             CardVisualCommon.ApplyCardTexts(
                 CardData,
                 nameText,
-                costText,
+                null,
                 costRoot,
-                attackText,
-                healthText,
-                armorText,
+                null,
+                null,
+                null,
                 armorRoot,
                 legacyStatsText);
+
+            // Build/refresh the overlay stat badges (circle + icon + number per stat) on the overlay.
+            CardStatBadges.Apply(OverlayRect, CardData, isBoard: false);
+
             CardVisualCommon.ApplyDescriptionText(CardData, descriptionText);
-            CardVisualCommon.ApplyAttackTypeIcon(
-                CardData,
-                attackTypeImage,
-                attackTypeRoot,
-                meleeAttackTypeSprite,
-                rangedAttackTypeSprite,
-                magicAttackTypeSprite);
+            // Old unit-type square is redundant (the attack badge shows sword/bow/magic) — hide it.
+            if (attackTypeImage != null) attackTypeImage.enabled = false;
+            if (attackTypeRoot != null) attackTypeRoot.SetActive(false);
+            if (abilityIconGroup == null)
+            {
+                abilityIconGroup = CreateRuntimeIconGroup("AbilityIcons");
+                abilityIconGroup?.SetCellSize(new Vector2(180f, 180f));
+                PlaceIconPanel(abilityIconGroup, new Vector2(0.5f, 0.5f), new Vector2(0f, -350f), new Vector2(560f, 180f));
+            }
             CardVisualCommon.ApplyAbilityIcons(CardData, abilityIconGroup, abilityIconSlots);
+        }
+
+        // Builds the ability-icon group at runtime when the prefab didn't wire one, so unit skills
+        // always show. Parented under the world-space StatsOverlay (same canvas as the stat badges).
+        private CardIconGroup CreateRuntimeIconGroup(string groupName)
+        {
+            var parent = OverlayRect;
+            if (parent == null)
+            {
+                return null;
+            }
+            var go = new GameObject(groupName, typeof(RectTransform));
+            go.transform.SetParent(parent, false);
+            return go.AddComponent<CardIconGroup>();
         }
 
         public void SetStatsOverlayRotation(Quaternion rotation)
@@ -182,6 +231,11 @@ namespace Flippy.CardDuelMobile.UI
             {
                 uprightOverlayRoot.localRotation = rotation;
             }
+        }
+
+        private void OnDestroy()
+        {
+            CardStatBadges.Release(OverlayRect);
         }
 
         public void SetColor(Color color)

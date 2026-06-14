@@ -76,6 +76,8 @@ namespace Flippy.CardDuelMobile.UI
         private readonly Queue<DuelSnapshotDto> _snapshotQueue = new();
         private string _lastBattleEventMatchId;
         private int _lastBattleEventSequence = -1;
+        private bool _matchCompletionHandled;
+        private bool _loadingOverlayHidden;
         private string _battleDebugMatchId;
         private string _battleDebugFilePath;
         private DateTime _battleDebugStartedUtc;
@@ -686,10 +688,48 @@ namespace Flippy.CardDuelMobile.UI
             UpdateLocalHand(snapshot);
             UpdateHUD(snapshot);
 
-            if (snapshot.duelEnded && snapshot.winnerPlayerIndex >= 0)
+            // First time the board/hand is actually presented, tear down the match loading overlay so
+            // the player transitions straight from the spinner into the live battle.
+            HideLoadingOverlayIfNeeded(snapshot);
+
+            // Fire on duelEnded REGARDLESS of winnerPlayerIndex: the final snapshot
+            // sometimes arrives with the winner still unresolved (-1), and gating on
+            // winner>=0 left the match looking frozen on the opponent's turn with no
+            // summary. Win/lose is derived (from the winner index, else hero HP) inside.
+            if (snapshot.duelEnded && !_matchCompletionHandled)
             {
+                _matchCompletionHandled = true;
                 HandleMatchCompletion(snapshot);
             }
+        }
+
+        // Hides the match loading overlay the first time a real battle snapshot (phase >= playing, with
+        // a hand or board) has been applied, so the spinner gives way to the live board exactly when the
+        // cards are ready. One-shot; no-op if there is no overlay (e.g. multiplayer entered another way).
+        private void HideLoadingOverlayIfNeeded(DuelSnapshotDto snapshot)
+        {
+            if (_loadingOverlayHidden)
+            {
+                return;
+            }
+
+            if (snapshot?.players == null || snapshot.players.Length == 0)
+            {
+                return;
+            }
+
+            var localIndex = snapshot.localPlayerIndex;
+            var localPlayer = localIndex >= 0 && localIndex < snapshot.players.Length
+                ? snapshot.players[localIndex]
+                : null;
+            var hasHand = localPlayer?.hand != null && localPlayer.hand.Length > 0;
+            if (!hasHand)
+            {
+                return; // wait until the deal has actually populated the hand.
+            }
+
+            _loadingOverlayHidden = true;
+            MatchLoadingOverlay.HideCurrent();
         }
 
         private void ProcessAttackLogs(DuelSnapshotDto snapshot)
@@ -1986,25 +2026,52 @@ namespace Flippy.CardDuelMobile.UI
             return value.Length <= 8 ? value : value.Substring(0, 8);
         }
 
+        // The server's winner index can still be -1 in the snapshot that first flips
+        // duelEnded. Fall back to hero HP so the summary still reports win/lose.
+        private static bool ResolveLocalWin(DuelSnapshotDto snapshot)
+        {
+            if (snapshot.winnerPlayerIndex >= 0)
+            {
+                return snapshot.winnerPlayerIndex == snapshot.localPlayerIndex;
+            }
+
+            if (snapshot.players != null && snapshot.players.Length >= 2)
+            {
+                var localIndex = snapshot.localPlayerIndex >= 0 && snapshot.localPlayerIndex < snapshot.players.Length
+                    ? snapshot.localPlayerIndex
+                    : 0;
+                var enemyIndex = localIndex == 0 ? 1 : 0;
+                var local = snapshot.players[localIndex];
+                var enemy = enemyIndex < snapshot.players.Length ? snapshot.players[enemyIndex] : null;
+                if (local != null && local.heroHealth <= 0)
+                {
+                    return false;
+                }
+                if (enemy != null && enemy.heroHealth <= 0)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private void HandleMatchCompletion(DuelSnapshotDto snapshot)
         {
-            var isLocalWin = snapshot.winnerPlayerIndex == snapshot.localPlayerIndex;
-            var opponentIndex = 1 - snapshot.localPlayerIndex;
-            var opponentName = snapshot.players?[opponentIndex]?.playerId ?? "Opponent";
+            var isLocalWin = ResolveLocalWin(snapshot);
 
-            var completionScreen = FindFirstObjectByType<MatchCompletionScreen>();
-            if (completionScreen != null)
+            // Find the screen if it was wired into the scene, otherwise build one at runtime so
+            // the detailed summary reliably appears on win/lose regardless of editor wiring.
+            var completionScreen = MatchCompletionScreen.GetOrCreate();
+            completionScreen.ShowSummary(snapshot);
+
+            if (isLocalWin)
             {
-                if (isLocalWin)
-                {
-                    completionScreen.ShowVictory(opponentName, snapshot.turnNumber);
-                    AudioManager.Instance?.PlayVictory();
-                }
-                else
-                {
-                    completionScreen.ShowDefeat(opponentName, snapshot.turnNumber);
-                    AudioManager.Instance?.PlayDefeat();
-                }
+                AudioManager.Instance?.PlayVictory();
+            }
+            else
+            {
+                AudioManager.Instance?.PlayDefeat();
             }
         }
 
@@ -2865,8 +2932,9 @@ namespace Flippy.CardDuelMobile.UI
 
             board3DManager.SetCardInSlot(playerIndex, slot, cardPlayed);
 
-            // Game-feel drop sequence: brief pause (the card "vanished" into particles at release),
-            // then it falls from the sky a touch oversized, settling to real size with a dust kick + shake.
+            // Game-feel drop: the card falls from the sky a touch oversized, settling to real size with a
+            // dust kick + shake. Runs exactly once per placement (board state is diffed by runtimeId in
+            // UpdateBoardAuthoritative, so equivalent re-applied snapshots never recreate or re-animate it).
             StartCoroutine(AnimateBoardCardEntry(cardPlayed, cardPlayed.transform.position));
         }
 
@@ -2877,37 +2945,20 @@ namespace Flippy.CardDuelMobile.UI
                 yield break;
             }
 
-            var renderers = card.GetComponentsInChildren<Renderer>(true);
-            SetRenderersEnabled(renderers, false);
-
-            // Beat between the ghost dispersing and the card falling — enough to feel deliberate, not slow.
-            yield return new WaitForSeconds(0.13f);
-            if (card == null)
-            {
-                yield break;
-            }
-
-            SetRenderersEnabled(renderers, true);
+            // Land ONCE, smoothly. AnimateDropFromSky snaps the card to the sky start position on its
+            // first frame, so the card never flashes at the slot first — it just falls in. (The previous
+            // hide-renderers + 0.13s wait + re-enable read as a "disappear then reappear" glitch because
+            // there were no release particles to fill the gap.)
             card.AnimateDropFromSky(landingPos, 0.3f, 1.25f);
 
             yield return new WaitForSeconds(0.27f); // land
             CardFeedbackVfx.LandImpact(landingPos);
             ResolveCameraShake()?.PlayLevel(2);
-        }
 
-        private static void SetRenderersEnabled(Renderer[] renderers, bool enabled)
-        {
-            if (renderers == null)
-            {
-                return;
-            }
-            foreach (var renderer in renderers)
-            {
-                if (renderer != null)
-                {
-                    renderer.enabled = enabled;
-                }
-            }
+            // NOTE: the on-play summon glow is DISABLED — its CardEffectController shader-swap blanked
+            // the card for the effect's duration (the "disappears for ~a second then reappears" right
+            // after landing the user reported). Re-enable only after the effect controller's material
+            // binding is fixed so it can't blank the composite. (card.PlaySummonGlow();)
         }
 
         private BattleCameraShake _cameraShake;

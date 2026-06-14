@@ -1,0 +1,1912 @@
+Card Duel Unity Battle Debug Log
+FileStartedUtc: 2026-06-13T07:01:06.7480403Z
+LastUpdatedUtc: 2026-06-13T07:05:29.0920616Z
+MatchId: 817b67174f55430280f3d164ee2d4fce
+CurrentTurn: 8
+ActivePlayerIndex: 1
+ActivePlayerId: 
+IsLocalPlayersTurn: False
+DuelEnded: True
+WinnerPlayerIndex: -1
+Ruleset: Default Rules (ruleset-default)
+
+Human Timeline
+001. seq=-1 /Info: Match started with seed 1926877570.
+002. seq=-1 /Info: Iron Turret entered Front.
+003. seq=1 equipment_played/Info: Frostforged Spear was played.
+004. seq=2 equipment_attached/Info: Frostforged Spear equipped to Iron Turret.
+005. seq=-1 /Info: Oblivion Eidolon entered BackLeft.
+006. seq=-1 /Info: Steel Construct entered BackRight.
+007. seq=3 Iron Turret#1f90d57b skipped. Iron Turret is not ready to attack.
+008. seq=4 Oblivion Eidolon#7c91d768 skipped. Oblivion Eidolon is not ready to attack.
+009. seq=5 Steel Construct#15c1e08b skipped. Steel Construct is not ready to attack.
+010. seq=-1 /Info: Vine Spider entered Front.
+011. seq=-1 /Info: Bloom Treant entered BackLeft.
+012. seq=-1 /Info: Moss Spider entered BackRight.
+013. seq=6 skill_begin/SkillBegin: Moss Spider used Regenerate.
+014. seq=7 Moss Spider#8214e414 heals 0. HP 4->4. Moss Spider healed 0.
+015. seq=8 Vine Spider#bbc7ced5 skipped. Vine Spider is not ready to attack.
+016. seq=9 Bloom Treant#32f78a70 skipped. Bloom Treant is not ready to attack.
+017. seq=10 Moss Spider#8214e414 skipped. Moss Spider is not ready to attack.
+018. seq=11 equipment_played/Info: Molten Gauntlets was played.
+019. seq=12 equipment_attached/Info: Molten Gauntlets equipped to Bloom Treant.
+020. seq=13 skill_begin/SkillBegin: Iron Turret used Taunt.
+021. seq=14 card_attack/Info: Iron Turret attacked Vine Spider.
+022. seq=15 P0 Iron Turret#1f90d57b attacks Vine Spider#bbc7ced5 for 1. HP 3->2, Armor 0->0. Vine Spider took 1 damage.
+023. seq=16 P1 Vine Spider#bbc7ced5 attacks Iron Turret#1f90d57b for 2. HP 0->0, Armor 0->0. Vine Spider struck back at Iron Turret.
+024. seq=17 P1 Vine Spider#bbc7ced5 attacks Iron Turret#1f90d57b for 2. HP 3->3, Armor 6->4. Iron Turret took 2 damage.
+025. seq=18 skill_begin/SkillBegin: Oblivion Eidolon used Leech.
+026. seq=19 card_attack/Info: Oblivion Eidolon attacked Moss Spider.
+027. seq=20 P0 P0 attacks Moss Spider#8214e414 for 1. HP 4->3, Armor 0->0. Moss Spider took 1 damage.
+028. seq=21 P0 heals 1. HP 1->2. Oblivion Eidolon healed 1.
+029. seq=22 P1 Moss Spider#8214e414 attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider struck back at Oblivion Eidolon.
+030. seq=23 P1 Moss Spider#8214e414 attacks P0 for 3. HP 2->-1, Armor 0->0. Oblivion Eidolon took 3 damage.
+031. seq=24 P0 dies. Oblivion Eidolon died.
+032. seq=25 skill_begin/SkillBegin: Moss Spider used Regenerate.
+033. seq=26 Moss Spider#8214e414 heals 1. HP 3->4. Moss Spider healed 1.
+034. seq=27 card_attack/Info: Vine Spider attacked Iron Turret.
+035. seq=28 P1 Vine Spider#bbc7ced5 attacks P0 for 2. HP 3->3, Armor 4->2. Iron Turret took 2 damage.
+036. seq=29 P0 P0 attacks Vine Spider#bbc7ced5 for 1. HP 0->0, Armor 0->0. Iron Turret struck back at Vine Spider.
+037. seq=30 P0 P0 attacks Vine Spider#bbc7ced5 for 1. HP 2->1, Armor 0->0. Vine Spider took 1 damage.
+038. seq=31 card_attack/Info: Bloom Treant attacked Iron Turret.
+039. seq=32 P1 Bloom Treant#32f78a70 attacks P0 for 5. HP 3->0, Armor 2->0. Iron Turret took 5 damage.
+040. seq=33 P0 dies. Iron Turret died.
+041. seq=34 P0 P0 attacks Bloom Treant#32f78a70 for 1. HP 0->0, Armor 0->0. Iron Turret struck back at Bloom Treant.
+042. seq=35 P0 P0 attacks Bloom Treant#32f78a70 for 1. HP 4->3, Armor 0->0. Bloom Treant took 1 damage.
+043. seq=36 card_attack/Info: Moss Spider attacked Steel Construct.
+044. seq=37 P1 Moss Spider#8214e414 attacks P0 for 3. HP 3->0, Armor 0->0. Steel Construct took 3 damage.
+045. seq=38 P0 dies. Steel Construct died.
+046. seq=39 P0 P0 attacks Moss Spider#8214e414 for 2. HP 0->0, Armor 0->0. Steel Construct struck back at Moss Spider.
+047. seq=40 P0 P0 attacks Moss Spider#8214e414 for 2. HP 4->2, Armor 0->0. Moss Spider took 2 damage.
+048. seq=41 skill_begin/SkillBegin: Moss Spider used Regenerate.
+049. seq=42 Moss Spider#8214e414 heals 2. HP 2->4. Moss Spider healed 2.
+050. seq=43 P1 Vine Spider#bbc7ced5 attacks P0 for 2. HP 0->0, Armor 0->0. Vine Spider attacked the enemy hero.
+051. seq=44 P1 Vine Spider#bbc7ced5 hits hero P0 for 2. HP 20->18. Seat 1 hero took 2 damage.
+052. seq=45 P1 Bloom Treant#32f78a70 attacks P0 for 5. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+053. seq=46 P1 Bloom Treant#32f78a70 hits hero P0 for 5. HP 18->13. Seat 1 hero took 5 damage.
+054. seq=47 P1 Moss Spider#8214e414 attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider attacked the enemy hero.
+055. seq=48 P1 Moss Spider#8214e414 hits hero P0 for 3. HP 13->10. Seat 1 hero took 3 damage.
+056. seq=49 skill_begin/SkillBegin: Moss Spider used Regenerate.
+057. seq=50 Moss Spider#8214e414 heals 0. HP 4->4. Moss Spider healed 0.
+058. seq=51 P1 Vine Spider#bbc7ced5 attacks P0 for 2. HP 0->0, Armor 0->0. Vine Spider attacked the enemy hero.
+059. seq=52 P1 Vine Spider#bbc7ced5 hits hero P0 for 2. HP 10->8. Seat 1 hero took 2 damage.
+060. seq=53 P1 Bloom Treant#32f78a70 attacks P0 for 5. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+061. seq=54 P1 Bloom Treant#32f78a70 hits hero P0 for 5. HP 8->3. Seat 1 hero took 5 damage.
+062. seq=55 P1 Moss Spider#8214e414 attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider attacked the enemy hero.
+063. seq=56 P1 Moss Spider#8214e414 hits hero P0 for 3. HP 3->0. Seat 1 hero took 3 damage.
+064. seq=57 equipment_expired/Info: Molten Gauntlets wore off Bloom Treant.
+
+Step By Step Snapshots
+-- Step 1 | UTC 2026-06-13T07:01:06.7527670Z | Turn 0 | Active P0 | LocalTurn=False | Phase=WaitingForReady
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=30 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=24
+   Events: none
+-- Step 2 | UTC 2026-06-13T07:01:06.9434729Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=4 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Match started with seed 1926877570.
+-- Step 3 | UTC 2026-06-13T07:01:14.9829035Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=18/20 board=[Front:Iron Turret#1f90d57b hp=3/3 armor=3 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=3 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Iron Turret entered Front.
+-- Step 4 | UTC 2026-06-13T07:02:14.2934843Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=11/20 board=[Front:Iron Turret#1f90d57b hp=3/3 armor=6 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=2 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=1 equipment_played/Info: Frostforged Spear was played.
+   - seq=2 equipment_attached/Info: Frostforged Spear equipped to Iron Turret.
+-- Step 5 | UTC 2026-06-13T07:03:04.1263545Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=10/20 board=[Front:Iron Turret#1f90d57b hp=3/3 armor=6 unitType=0 delivery=melee, BackLeft:Oblivion Eidolon#7c91d768 hp=1/1 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=1 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Oblivion Eidolon entered BackLeft.
+-- Step 6 | UTC 2026-06-13T07:03:50.7206330Z | Turn 1 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=8/20 board=[Front:Iron Turret#1f90d57b hp=3/3 armor=6 unitType=0 delivery=melee, BackLeft:Oblivion Eidolon#7c91d768 hp=1/1 armor=0 unitType=2 delivery=beam, BackRight:Steel Construct#15c1e08b hp=3/3 armor=0 unitType=2 delivery=beam] hand=0 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=20
+   - seq=-1 /Info: Steel Construct entered BackRight.
+-- Step 7 | UTC 2026-06-13T07:03:52.7117828Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=8/20 board=[Front:Iron Turret#1f90d57b hp=3/3 armor=6 unitType=0 delivery=melee, BackLeft:Oblivion Eidolon#7c91d768 hp=1/1 armor=0 unitType=2 delivery=beam, BackRight:Steel Construct#15c1e08b hp=3/3 armor=0 unitType=2 delivery=beam] hand=0 deck=26 | P1 id=user-2 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=3 Iron Turret#1f90d57b skipped. Iron Turret is not ready to attack.
+   - seq=4 Oblivion Eidolon#7c91d768 skipped. Oblivion Eidolon is not ready to attack.
+   - seq=5 Steel Construct#15c1e08b skipped. Steel Construct is not ready to attack.
+-- Step 8 | UTC 2026-06-13T07:03:53.3625173Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=8/20 board=[Front:Iron Turret#1f90d57b hp=3/3 armor=6 unitType=0 delivery=melee, BackLeft:Oblivion Eidolon#7c91d768 hp=1/1 armor=0 unitType=2 delivery=beam, BackRight:Steel Construct#15c1e08b hp=3/3 armor=0 unitType=2 delivery=beam] hand=0 deck=26 | P1 id=user-2 hp=20 mana=18/20 board=[Front:Vine Spider#bbc7ced5 hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:empty, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Vine Spider entered Front.
+-- Step 9 | UTC 2026-06-13T07:03:53.8115388Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=8/20 board=[Front:Iron Turret#1f90d57b hp=3/3 armor=6 unitType=0 delivery=melee, BackLeft:Oblivion Eidolon#7c91d768 hp=1/1 armor=0 unitType=2 delivery=beam, BackRight:Steel Construct#15c1e08b hp=3/3 armor=0 unitType=2 delivery=beam] hand=0 deck=26 | P1 id=user-2 hp=20 mana=15/20 board=[Front:Vine Spider#bbc7ced5 hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#32f78a70 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=19
+   - seq=-1 /Info: Bloom Treant entered BackLeft.
+-- Step 10 | UTC 2026-06-13T07:03:54.2501507Z | Turn 2 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=8/20 board=[Front:Iron Turret#1f90d57b hp=3/3 armor=6 unitType=0 delivery=melee, BackLeft:Oblivion Eidolon#7c91d768 hp=1/1 armor=0 unitType=2 delivery=beam, BackRight:Steel Construct#15c1e08b hp=3/3 armor=0 unitType=2 delivery=beam] hand=0 deck=26 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Vine Spider#bbc7ced5 hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#32f78a70 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#8214e414 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=-1 /Info: Moss Spider entered BackRight.
+-- Step 11 | UTC 2026-06-13T07:03:54.6913437Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:Iron Turret#1f90d57b hp=3/3 armor=6 unitType=0 delivery=melee, BackLeft:Oblivion Eidolon#7c91d768 hp=1/1 armor=0 unitType=2 delivery=beam, BackRight:Steel Construct#15c1e08b hp=3/3 armor=0 unitType=2 delivery=beam] hand=1 deck=25 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Vine Spider#bbc7ced5 hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#32f78a70 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#8214e414 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=6 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=7 Moss Spider#8214e414 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=8 Vine Spider#bbc7ced5 skipped. Vine Spider is not ready to attack.
+   - seq=9 Bloom Treant#32f78a70 skipped. Bloom Treant is not ready to attack.
+   - seq=10 Moss Spider#8214e414 skipped. Moss Spider is not ready to attack.
+-- Step 12 | UTC 2026-06-13T07:04:03.7152081Z | Turn 3 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Iron Turret#1f90d57b hp=3/3 armor=6 unitType=0 delivery=melee, BackLeft:Oblivion Eidolon#7c91d768 hp=1/1 armor=0 unitType=2 delivery=beam, BackRight:Steel Construct#15c1e08b hp=3/3 armor=0 unitType=2 delivery=beam] hand=0 deck=25 | P1 id=user-2 hp=20 mana=12/20 board=[Front:Vine Spider#bbc7ced5 hp=3/3 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#32f78a70 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#8214e414 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=19
+   - seq=11 equipment_played/Info: Molten Gauntlets was played.
+   - seq=12 equipment_attached/Info: Molten Gauntlets equipped to Bloom Treant.
+-- Step 13 | UTC 2026-06-13T07:04:07.8711068Z | Turn 4 | Active P1 | LocalTurn=False | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=17/20 board=[Front:Iron Turret#1f90d57b hp=3/3 armor=4 unitType=0 delivery=melee, BackLeft:Steel Construct#15c1e08b hp=3/3 armor=0 unitType=2 delivery=beam, BackRight:empty] hand=0 deck=25 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Vine Spider#bbc7ced5 hp=2/3 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#32f78a70 hp=4/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#8214e414 hp=3/4 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=13 skill_begin/SkillBegin: Iron Turret used Taunt.
+   - seq=14 card_attack/Info: Iron Turret attacked Vine Spider.
+   - seq=15 P0 Iron Turret#1f90d57b attacks Vine Spider#bbc7ced5 for 1. HP 3->2, Armor 0->0. Vine Spider took 1 damage.
+   - seq=16 P1 Vine Spider#bbc7ced5 attacks Iron Turret#1f90d57b for 2. HP 0->0, Armor 0->0. Vine Spider struck back at Iron Turret.
+   - seq=17 P1 Vine Spider#bbc7ced5 attacks Iron Turret#1f90d57b for 2. HP 3->3, Armor 6->4. Iron Turret took 2 damage.
+   - seq=18 skill_begin/SkillBegin: Oblivion Eidolon used Leech.
+   - seq=19 card_attack/Info: Oblivion Eidolon attacked Moss Spider.
+   - seq=20 P0 P0 attacks Moss Spider#8214e414 for 1. HP 4->3, Armor 0->0. Moss Spider took 1 damage.
+   - seq=21 P0 heals 1. HP 1->2. Oblivion Eidolon healed 1.
+   - seq=22 P1 Moss Spider#8214e414 attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider struck back at Oblivion Eidolon.
+   - seq=23 P1 Moss Spider#8214e414 attacks P0 for 3. HP 2->-1, Armor 0->0. Oblivion Eidolon took 3 damage.
+   - seq=24 P0 dies. Oblivion Eidolon died.
+-- Step 14 | UTC 2026-06-13T07:04:16.1953903Z | Turn 5 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=20 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=1 deck=24 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Vine Spider#bbc7ced5 hp=1/3 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#32f78a70 hp=3/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#8214e414 hp=2/4 armor=0 unitType=2 delivery=beam] hand=0 deck=18
+   - seq=25 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=26 Moss Spider#8214e414 heals 1. HP 3->4. Moss Spider healed 1.
+   - seq=27 card_attack/Info: Vine Spider attacked Iron Turret.
+   - seq=28 P1 Vine Spider#bbc7ced5 attacks P0 for 2. HP 3->3, Armor 4->2. Iron Turret took 2 damage.
+   - seq=29 P0 P0 attacks Vine Spider#bbc7ced5 for 1. HP 0->0, Armor 0->0. Iron Turret struck back at Vine Spider.
+   - seq=30 P0 P0 attacks Vine Spider#bbc7ced5 for 1. HP 2->1, Armor 0->0. Vine Spider took 1 damage.
+   - seq=31 card_attack/Info: Bloom Treant attacked Iron Turret.
+   - seq=32 P1 Bloom Treant#32f78a70 attacks P0 for 5. HP 3->0, Armor 2->0. Iron Turret took 5 damage.
+   - seq=33 P0 dies. Iron Turret died.
+   - seq=34 P0 P0 attacks Bloom Treant#32f78a70 for 1. HP 0->0, Armor 0->0. Iron Turret struck back at Bloom Treant.
+   - seq=35 P0 P0 attacks Bloom Treant#32f78a70 for 1. HP 4->3, Armor 0->0. Bloom Treant took 1 damage.
+   - seq=36 card_attack/Info: Moss Spider attacked Steel Construct.
+   - seq=37 P1 Moss Spider#8214e414 attacks P0 for 3. HP 3->0, Armor 0->0. Steel Construct took 3 damage.
+   - seq=38 P0 dies. Steel Construct died.
+   - seq=39 P0 P0 attacks Moss Spider#8214e414 for 2. HP 0->0, Armor 0->0. Steel Construct struck back at Moss Spider.
+   - seq=40 P0 P0 attacks Moss Spider#8214e414 for 2. HP 4->2, Armor 0->0. Moss Spider took 2 damage.
+-- Step 15 | UTC 2026-06-13T07:05:23.8402547Z | Turn 7 | Active P0 | LocalTurn=True | Phase=InProgress
+   Players: P0 id=user-1 hp=10 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=2 deck=23 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Vine Spider#bbc7ced5 hp=1/3 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#32f78a70 hp=3/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#8214e414 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=17
+   - seq=41 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=42 Moss Spider#8214e414 heals 2. HP 2->4. Moss Spider healed 2.
+   - seq=43 P1 Vine Spider#bbc7ced5 attacks P0 for 2. HP 0->0, Armor 0->0. Vine Spider attacked the enemy hero.
+   - seq=44 P1 Vine Spider#bbc7ced5 hits hero P0 for 2. HP 20->18. Seat 1 hero took 2 damage.
+   - seq=45 P1 Bloom Treant#32f78a70 attacks P0 for 5. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+   - seq=46 P1 Bloom Treant#32f78a70 hits hero P0 for 5. HP 18->13. Seat 1 hero took 5 damage.
+   - seq=47 P1 Moss Spider#8214e414 attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider attacked the enemy hero.
+   - seq=48 P1 Moss Spider#8214e414 hits hero P0 for 3. HP 13->10. Seat 1 hero took 3 damage.
+-- Step 16 | UTC 2026-06-13T07:05:29.0920616Z | Turn 8 | Active P1 | LocalTurn=False | Phase=Completed
+   Players: P0 id=user-1 hp=0 mana=20/20 board=[Front:empty, BackLeft:empty, BackRight:empty] hand=2 deck=23 | P1 id=user-2 hp=20 mana=20/20 board=[Front:Vine Spider#bbc7ced5 hp=1/3 armor=0 unitType=0 delivery=melee, BackLeft:Bloom Treant#32f78a70 hp=3/4 armor=0 unitType=2 delivery=beam, BackRight:Moss Spider#8214e414 hp=4/4 armor=0 unitType=2 delivery=beam] hand=0 deck=16
+   - seq=49 skill_begin/SkillBegin: Moss Spider used Regenerate.
+   - seq=50 Moss Spider#8214e414 heals 0. HP 4->4. Moss Spider healed 0.
+   - seq=51 P1 Vine Spider#bbc7ced5 attacks P0 for 2. HP 0->0, Armor 0->0. Vine Spider attacked the enemy hero.
+   - seq=52 P1 Vine Spider#bbc7ced5 hits hero P0 for 2. HP 10->8. Seat 1 hero took 2 damage.
+   - seq=53 P1 Bloom Treant#32f78a70 attacks P0 for 5. HP 0->0, Armor 0->0. Bloom Treant attacked the enemy hero.
+   - seq=54 P1 Bloom Treant#32f78a70 hits hero P0 for 5. HP 8->3. Seat 1 hero took 5 damage.
+   - seq=55 P1 Moss Spider#8214e414 attacks P0 for 3. HP 0->0, Armor 0->0. Moss Spider attacked the enemy hero.
+   - seq=56 P1 Moss Spider#8214e414 hits hero P0 for 3. HP 3->0. Seat 1 hero took 3 damage.
+   - seq=57 equipment_expired/Info: Molten Gauntlets wore off Bloom Treant.
+
+Raw Structured Battle Events Seen By Unity
+seq=1 id=evt-000001 kind=equipment_played serverSrcSeat=0 srcVisual=0 src=play-006cd2f547e64da8ad45cabb769f4453 serverTargetSeat=0 targetVisual=0 target=1f90d57b73fb4fc6ac0f2269d18aa41e ability= effect=0 status=0 amount=7 hp=0->0 armor=0->0 message=Frostforged Spear was played.
+seq=2 id=evt-000002 kind=equipment_attached serverSrcSeat=0 srcVisual=0 src=play-006cd2f547e64da8ad45cabb769f4453 serverTargetSeat=0 targetVisual=0 target=1f90d57b73fb4fc6ac0f2269d18aa41e ability= effect=0 status=0 amount=0 hp=0->0 armor=3->6 message=Frostforged Spear equipped to Iron Turret.
+seq=3 id=evt-000003 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=1f90d57b73fb4fc6ac0f2269d18aa41e serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Turret is not ready to attack.
+seq=4 id=evt-000004 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=7c91d768f6d744ee831e7dc57e5c9902 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Oblivion Eidolon is not ready to attack.
+seq=5 id=evt-000005 kind=attack_not_ready serverSrcSeat=0 srcVisual=0 src=15c1e08b990f4a359d60a3c09d5e9cd5 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Steel Construct is not ready to attack.
+seq=6 id=evt-000006 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=7 id=evt-000007 kind=heal serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=1 targetVisual=1 target=8214e4140ebe4448a10b4b49fc3678e8 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=8 id=evt-000008 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=bbc7ced51e5f4c069fe6f753501cf47d serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Vine Spider is not ready to attack.
+seq=9 id=evt-000009 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=32f78a7039ef43bfa6fe3cb18c1f0c83 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Bloom Treant is not ready to attack.
+seq=10 id=evt-000010 kind=attack_not_ready serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider is not ready to attack.
+seq=11 id=evt-000011 kind=equipment_played serverSrcSeat=0 srcVisual=0 src=play-185d230ad994496699a24c13cd12e1e5 serverTargetSeat=1 targetVisual=1 target=32f78a7039ef43bfa6fe3cb18c1f0c83 ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Molten Gauntlets was played.
+seq=12 id=evt-000012 kind=equipment_attached serverSrcSeat=0 srcVisual=0 src=play-185d230ad994496699a24c13cd12e1e5 serverTargetSeat=1 targetVisual=1 target=32f78a7039ef43bfa6fe3cb18c1f0c83 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Molten Gauntlets equipped to Bloom Treant.
+seq=13 id=evt-000013 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=1f90d57b73fb4fc6ac0f2269d18aa41e serverTargetSeat=0 targetVisual=-1 target= ability=taunt effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Turret used Taunt.
+seq=14 id=evt-000014 kind=card_attack serverSrcSeat=0 srcVisual=0 src=1f90d57b73fb4fc6ac0f2269d18aa41e serverTargetSeat=1 targetVisual=1 target=bbc7ced51e5f4c069fe6f753501cf47d ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Iron Turret attacked Vine Spider.
+seq=15 id=evt-000015 kind=card_damage serverSrcSeat=0 srcVisual=0 src=1f90d57b73fb4fc6ac0f2269d18aa41e serverTargetSeat=1 targetVisual=1 target=bbc7ced51e5f4c069fe6f753501cf47d ability= effect=0 status=0 amount=1 hp=3->2 armor=0->0 message=Vine Spider took 1 damage.
+seq=16 id=evt-000016 kind=card_counterattack serverSrcSeat=1 srcVisual=1 src=bbc7ced51e5f4c069fe6f753501cf47d serverTargetSeat=0 targetVisual=0 target=1f90d57b73fb4fc6ac0f2269d18aa41e ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Vine Spider struck back at Iron Turret.
+seq=17 id=evt-000017 kind=card_damage serverSrcSeat=1 srcVisual=1 src=bbc7ced51e5f4c069fe6f753501cf47d serverTargetSeat=0 targetVisual=0 target=1f90d57b73fb4fc6ac0f2269d18aa41e ability= effect=0 status=0 amount=2 hp=3->3 armor=6->4 message=Iron Turret took 2 damage.
+seq=18 id=evt-000018 kind=skill_begin serverSrcSeat=0 srcVisual=0 src=7c91d768f6d744ee831e7dc57e5c9902 serverTargetSeat=0 targetVisual=-1 target= ability=leech effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Oblivion Eidolon used Leech.
+seq=19 id=evt-000019 kind=card_attack serverSrcSeat=0 srcVisual=0 src=7c91d768f6d744ee831e7dc57e5c9902 serverTargetSeat=1 targetVisual=1 target=8214e4140ebe4448a10b4b49fc3678e8 ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Oblivion Eidolon attacked Moss Spider.
+seq=20 id=evt-000020 kind=card_damage serverSrcSeat=0 srcVisual=0 src=7c91d768f6d744ee831e7dc57e5c9902 serverTargetSeat=1 targetVisual=1 target=8214e4140ebe4448a10b4b49fc3678e8 ability= effect=0 status=0 amount=1 hp=4->3 armor=0->0 message=Moss Spider took 1 damage.
+seq=21 id=evt-000021 kind=heal serverSrcSeat=0 srcVisual=0 src=7c91d768f6d744ee831e7dc57e5c9902 serverTargetSeat=0 targetVisual=0 target=7c91d768f6d744ee831e7dc57e5c9902 ability=leech effect=1 status=0 amount=1 hp=1->2 armor=0->0 message=Oblivion Eidolon healed 1.
+seq=22 id=evt-000022 kind=card_counterattack serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=0 target=7c91d768f6d744ee831e7dc57e5c9902 ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Moss Spider struck back at Oblivion Eidolon.
+seq=23 id=evt-000023 kind=card_damage serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=0 target=7c91d768f6d744ee831e7dc57e5c9902 ability= effect=0 status=0 amount=3 hp=2->-1 armor=0->0 message=Oblivion Eidolon took 3 damage.
+seq=24 id=evt-000024 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=7c91d768f6d744ee831e7dc57e5c9902 ability= effect=0 status=0 amount=0 hp=-1->-1 armor=0->0 message=Oblivion Eidolon died.
+seq=25 id=evt-000025 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=26 id=evt-000026 kind=heal serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=1 targetVisual=1 target=8214e4140ebe4448a10b4b49fc3678e8 ability=regenerate effect=1 status=0 amount=1 hp=3->4 armor=0->0 message=Moss Spider healed 1.
+seq=27 id=evt-000027 kind=card_attack serverSrcSeat=1 srcVisual=1 src=bbc7ced51e5f4c069fe6f753501cf47d serverTargetSeat=0 targetVisual=0 target=1f90d57b73fb4fc6ac0f2269d18aa41e ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Vine Spider attacked Iron Turret.
+seq=28 id=evt-000028 kind=card_damage serverSrcSeat=1 srcVisual=1 src=bbc7ced51e5f4c069fe6f753501cf47d serverTargetSeat=0 targetVisual=0 target=1f90d57b73fb4fc6ac0f2269d18aa41e ability= effect=0 status=0 amount=2 hp=3->3 armor=4->2 message=Iron Turret took 2 damage.
+seq=29 id=evt-000029 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=1f90d57b73fb4fc6ac0f2269d18aa41e serverTargetSeat=1 targetVisual=1 target=bbc7ced51e5f4c069fe6f753501cf47d ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Iron Turret struck back at Vine Spider.
+seq=30 id=evt-000030 kind=card_damage serverSrcSeat=0 srcVisual=0 src=1f90d57b73fb4fc6ac0f2269d18aa41e serverTargetSeat=1 targetVisual=1 target=bbc7ced51e5f4c069fe6f753501cf47d ability= effect=0 status=0 amount=1 hp=2->1 armor=0->0 message=Vine Spider took 1 damage.
+seq=31 id=evt-000031 kind=card_attack serverSrcSeat=1 srcVisual=1 src=32f78a7039ef43bfa6fe3cb18c1f0c83 serverTargetSeat=0 targetVisual=0 target=1f90d57b73fb4fc6ac0f2269d18aa41e ability= effect=0 status=0 amount=5 hp=0->0 armor=0->0 message=Bloom Treant attacked Iron Turret.
+seq=32 id=evt-000032 kind=card_damage serverSrcSeat=1 srcVisual=1 src=32f78a7039ef43bfa6fe3cb18c1f0c83 serverTargetSeat=0 targetVisual=0 target=1f90d57b73fb4fc6ac0f2269d18aa41e ability= effect=0 status=0 amount=5 hp=3->0 armor=2->0 message=Iron Turret took 5 damage.
+seq=33 id=evt-000033 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=1f90d57b73fb4fc6ac0f2269d18aa41e ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Iron Turret died.
+seq=34 id=evt-000034 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=1f90d57b73fb4fc6ac0f2269d18aa41e serverTargetSeat=1 targetVisual=1 target=32f78a7039ef43bfa6fe3cb18c1f0c83 ability= effect=0 status=0 amount=1 hp=0->0 armor=0->0 message=Iron Turret struck back at Bloom Treant.
+seq=35 id=evt-000035 kind=card_damage serverSrcSeat=0 srcVisual=0 src=1f90d57b73fb4fc6ac0f2269d18aa41e serverTargetSeat=1 targetVisual=1 target=32f78a7039ef43bfa6fe3cb18c1f0c83 ability= effect=0 status=0 amount=1 hp=4->3 armor=0->0 message=Bloom Treant took 1 damage.
+seq=36 id=evt-000036 kind=card_attack serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=0 target=15c1e08b990f4a359d60a3c09d5e9cd5 ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Moss Spider attacked Steel Construct.
+seq=37 id=evt-000037 kind=card_damage serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=0 target=15c1e08b990f4a359d60a3c09d5e9cd5 ability= effect=0 status=0 amount=3 hp=3->0 armor=0->0 message=Steel Construct took 3 damage.
+seq=38 id=evt-000038 kind=death serverSrcSeat=0 srcVisual=-1 src= serverTargetSeat=0 targetVisual=0 target=15c1e08b990f4a359d60a3c09d5e9cd5 ability= effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Steel Construct died.
+seq=39 id=evt-000039 kind=card_counterattack serverSrcSeat=0 srcVisual=0 src=15c1e08b990f4a359d60a3c09d5e9cd5 serverTargetSeat=1 targetVisual=1 target=8214e4140ebe4448a10b4b49fc3678e8 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Steel Construct struck back at Moss Spider.
+seq=40 id=evt-000040 kind=card_damage serverSrcSeat=0 srcVisual=0 src=15c1e08b990f4a359d60a3c09d5e9cd5 serverTargetSeat=1 targetVisual=1 target=8214e4140ebe4448a10b4b49fc3678e8 ability= effect=0 status=0 amount=2 hp=4->2 armor=0->0 message=Moss Spider took 2 damage.
+seq=41 id=evt-000041 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=42 id=evt-000042 kind=heal serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=1 targetVisual=1 target=8214e4140ebe4448a10b4b49fc3678e8 ability=regenerate effect=1 status=0 amount=2 hp=2->4 armor=0->0 message=Moss Spider healed 2.
+seq=43 id=evt-000043 kind=card_attack serverSrcSeat=1 srcVisual=1 src=bbc7ced51e5f4c069fe6f753501cf47d serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Vine Spider attacked the enemy hero.
+seq=44 id=evt-000044 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=bbc7ced51e5f4c069fe6f753501cf47d serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=2 hp=20->18 armor=0->0 message=Seat 1 hero took 2 damage.
+seq=45 id=evt-000045 kind=card_attack serverSrcSeat=1 srcVisual=1 src=32f78a7039ef43bfa6fe3cb18c1f0c83 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=5 hp=0->0 armor=0->0 message=Bloom Treant attacked the enemy hero.
+seq=46 id=evt-000046 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=32f78a7039ef43bfa6fe3cb18c1f0c83 serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=5 hp=18->13 armor=0->0 message=Seat 1 hero took 5 damage.
+seq=47 id=evt-000047 kind=card_attack serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Moss Spider attacked the enemy hero.
+seq=48 id=evt-000048 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=3 hp=13->10 armor=0->0 message=Seat 1 hero took 3 damage.
+seq=49 id=evt-000049 kind=skill_begin serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=-1 target= ability=regenerate effect=0 status=0 amount=0 hp=0->0 armor=0->0 message=Moss Spider used Regenerate.
+seq=50 id=evt-000050 kind=heal serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=1 targetVisual=1 target=8214e4140ebe4448a10b4b49fc3678e8 ability=regenerate effect=1 status=0 amount=0 hp=4->4 armor=0->0 message=Moss Spider healed 0.
+seq=51 id=evt-000051 kind=card_attack serverSrcSeat=1 srcVisual=1 src=bbc7ced51e5f4c069fe6f753501cf47d serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Vine Spider attacked the enemy hero.
+seq=52 id=evt-000052 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=bbc7ced51e5f4c069fe6f753501cf47d serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=2 hp=10->8 armor=0->0 message=Seat 1 hero took 2 damage.
+seq=53 id=evt-000053 kind=card_attack serverSrcSeat=1 srcVisual=1 src=32f78a7039ef43bfa6fe3cb18c1f0c83 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=5 hp=0->0 armor=0->0 message=Bloom Treant attacked the enemy hero.
+seq=54 id=evt-000054 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=32f78a7039ef43bfa6fe3cb18c1f0c83 serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=5 hp=8->3 armor=0->0 message=Seat 1 hero took 5 damage.
+seq=55 id=evt-000055 kind=card_attack serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=-1 target= ability= effect=0 status=0 amount=3 hp=0->0 armor=0->0 message=Moss Spider attacked the enemy hero.
+seq=56 id=evt-000056 kind=hero_damage serverSrcSeat=1 srcVisual=1 src=8214e4140ebe4448a10b4b49fc3678e8 serverTargetSeat=0 targetVisual=0 target= ability= effect=0 status=0 amount=3 hp=3->0 armor=0->0 message=Seat 1 hero took 3 damage.
+seq=57 id=evt-000057 kind=equipment_expired serverSrcSeat=0 srcVisual=0 src=play-185d230ad994496699a24c13cd12e1e5 serverTargetSeat=1 targetVisual=1 target=32f78a7039ef43bfa6fe3cb18c1f0c83 ability= effect=0 status=0 amount=2 hp=0->0 armor=0->0 message=Molten Gauntlets wore off Bloom Treant.
+
+Raw Logs Seen By Unity
+turn=1 Info: Match started with seed 1926877570.
+turn=1 Info: Iron Turret entered Front.
+turn=1 Info: Frostforged Spear was played.
+turn=1 Info: Oblivion Eidolon entered BackLeft.
+turn=1 Info: Steel Construct entered BackRight.
+turn=2 Info: Vine Spider entered Front.
+turn=2 Info: Bloom Treant entered BackLeft.
+turn=2 Info: Moss Spider entered BackRight.
+turn=3 Info: Moss Spider healed 0.
+turn=3 Info: Molten Gauntlets was played.
+turn=4 Info: 1f90d57b73fb4fc6ac0f2269d18aa41e hit Vine Spider for 1.
+turn=4 Info: bbc7ced51e5f4c069fe6f753501cf47d hit Iron Turret for 2.
+turn=4 Info: 7c91d768f6d744ee831e7dc57e5c9902 hit Moss Spider for 1.
+turn=4 Info: Oblivion Eidolon healed 1.
+turn=4 Info: 8214e4140ebe4448a10b4b49fc3678e8 hit Oblivion Eidolon for 3.
+turn=4 Info: Oblivion Eidolon died.
+turn=5 Info: Moss Spider healed 1.
+turn=5 Info: 32f78a7039ef43bfa6fe3cb18c1f0c83 hit Iron Turret for 5.
+turn=5 Info: Iron Turret died.
+turn=5 Info: 1f90d57b73fb4fc6ac0f2269d18aa41e hit Bloom Treant for 1.
+turn=5 Info: 8214e4140ebe4448a10b4b49fc3678e8 hit Steel Construct for 3.
+turn=5 Info: Steel Construct died.
+turn=5 Info: 15c1e08b990f4a359d60a3c09d5e9cd5 hit Moss Spider for 2.
+turn=7 Info: Moss Spider healed 2.
+
+Latest Unity Snapshot JSON
+{
+    "snapshotVersion": 1,
+    "matchId": "817b67174f55430280f3d164ee2d4fce",
+    "rulesetId": "ruleset-default",
+    "rulesetName": "Default Rules",
+    "rules": {
+        "rulesetId": "ruleset-default",
+        "rulesetKey": "default",
+        "displayName": "Default Rules",
+        "description": "Default server ruleset for casual, ranked and private matches.",
+        "isActive": true,
+        "isDefault": true,
+        "startingHeroHealth": 20,
+        "maxHeroHealth": 20,
+        "startingMana": 20,
+        "maxMana": 20,
+        "manaGrantedPerTurn": 20,
+        "manaGrantTiming": 0,
+        "initialDrawCount": 4,
+        "cardsDrawnOnTurnStart": 1,
+        "startingSeatIndex": 0,
+        "seatOverrides": []
+    },
+    "localPlayerIndex": 0,
+    "activePlayerIndex": 1,
+    "activePlayerId": "",
+    "isLocalPlayersTurn": false,
+    "turnNumber": 8,
+    "duelEnded": true,
+    "endReason": 0,
+    "matchPhase": 4,
+    "localPlayerReady": true,
+    "remotePlayerReady": true,
+    "localPlayerConnected": true,
+    "remotePlayerConnected": true,
+    "connectedPlayers": 2,
+    "winnerPlayerIndex": -1,
+    "matchSeed": 1926877570,
+    "localHeroMaxHealth": 20,
+    "remoteHeroMaxHealth": 20,
+    "reconnectGraceRemainingSeconds": 0.0,
+    "statusMessage": "Defeat.",
+    "players": [
+        {
+            "playerId": "user-1",
+            "playerIndex": 0,
+            "heroHealth": 0,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [
+                {
+                    "runtimeCardKey": "755b7c11c77e427b86aaf0fa98194dcb",
+                    "cardId": "tidal_0040",
+                    "displayName": "Frozen Ward",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "util_bulwark",
+                            "displayName": "Bulwark",
+                            "iconAssetRef": "",
+                            "skillType": 0,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "util_bulwark",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"utility\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 1,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 99,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"util-bulwark\"}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "runtimeCardKey": "c1cdda9a9de14b7d8df43af0f70b22cf",
+                    "cardId": "ember_0039",
+                    "displayName": "Cinderbrand Axe",
+                    "manaCost": 3,
+                    "attack": 0,
+                    "health": 0,
+                    "armor": 0,
+                    "isUnit": true,
+                    "unitType": 0,
+                    "attackDeliveryType": "melee",
+                    "abilities": [
+                        {
+                            "abilityId": "equip_weapon",
+                            "displayName": "Weapon",
+                            "iconAssetRef": "",
+                            "skillType": 2,
+                            "triggerKind": -1,
+                            "targetSelectorKind": -1,
+                            "animationCueId": "equip_weapon",
+                            "conditionsJson": "{}",
+                            "metadataJson": "{\"cardType\": \"equipment\"}",
+                            "effects": [
+                                {
+                                    "effectKind": -1,
+                                    "amount": 2,
+                                    "secondaryAmount": 0,
+                                    "durationTurns": 3,
+                                    "targetSelectorKindOverride": -1,
+                                    "sequence": 0,
+                                    "metadataJson": "{\"animationStep\": \"equip-weapon\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": false,
+                    "occupant": {
+                        "runtimeId": "",
+                        "cardId": "",
+                        "displayName": "",
+                        "manaCost": 0,
+                        "attackMotionLevel": 1,
+                        "attackShakeLevel": 1,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 0,
+                        "attack": 0,
+                        "currentHealth": 0,
+                        "maxHealth": 0,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                }
+            ],
+            "remainingDeckCount": 23,
+            "deadCardPileCount": 0
+        },
+        {
+            "playerId": "user-2",
+            "playerIndex": 1,
+            "heroHealth": 20,
+            "mana": 20,
+            "maxMana": 20,
+            "rating": 1000,
+            "hand": [],
+            "board": [
+                {
+                    "slot": 0,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+                        "cardId": "grove_0023",
+                        "displayName": "Vine Spider",
+                        "manaCost": 2,
+                        "attackMotionLevel": 2,
+                        "attackShakeLevel": 2,
+                        "attackDeliveryType": "melee",
+                        "ownerIndex": 1,
+                        "attack": 2,
+                        "currentHealth": 1,
+                        "maxHealth": 3,
+                        "armor": 0,
+                        "slot": 0,
+                        "canAttack": false,
+                        "unitType": 0,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 1,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+                        "cardId": "grove_0025",
+                        "displayName": "Bloom Treant",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 3,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 1,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": []
+                    }
+                },
+                {
+                    "slot": 2,
+                    "occupied": true,
+                    "occupant": {
+                        "runtimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+                        "cardId": "grove_0011",
+                        "displayName": "Moss Spider",
+                        "manaCost": 3,
+                        "attackMotionLevel": 3,
+                        "attackShakeLevel": 3,
+                        "attackDeliveryType": "beam",
+                        "ownerIndex": 1,
+                        "attack": 3,
+                        "currentHealth": 4,
+                        "maxHealth": 4,
+                        "armor": 0,
+                        "slot": 2,
+                        "canAttack": false,
+                        "unitType": 2,
+                        "turnsUntilCanAttack": 0,
+                        "statusEffects": [],
+                        "abilities": [
+                            {
+                                "abilityId": "regenerate",
+                                "displayName": "Regenerate",
+                                "iconAssetRef": "",
+                                "skillType": 3,
+                                "triggerKind": -1,
+                                "targetSelectorKind": -1,
+                                "animationCueId": "skill_regenerate",
+                                "conditionsJson": "{}",
+                                "metadataJson": "{\"regenTarget\": \"self\"}",
+                                "effects": [
+                                    {
+                                        "effectKind": -1,
+                                        "amount": 2,
+                                        "secondaryAmount": 0,
+                                        "durationTurns": 0,
+                                        "targetSelectorKindOverride": -1,
+                                        "sequence": 0,
+                                        "metadataJson": "{\"animationStep\": \"regen-self\"}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "remainingDeckCount": 16,
+            "deadCardPileCount": 0
+        }
+    ],
+    "logs": [
+        {
+            "type": 0,
+            "message": "Moss Spider entered BackRight."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "type": 0,
+            "message": "Molten Gauntlets was played."
+        },
+        {
+            "type": 0,
+            "message": "1f90d57b73fb4fc6ac0f2269d18aa41e hit Vine Spider for 1."
+        },
+        {
+            "type": 0,
+            "message": "bbc7ced51e5f4c069fe6f753501cf47d hit Iron Turret for 2."
+        },
+        {
+            "type": 0,
+            "message": "7c91d768f6d744ee831e7dc57e5c9902 hit Moss Spider for 1."
+        },
+        {
+            "type": 0,
+            "message": "Oblivion Eidolon healed 1."
+        },
+        {
+            "type": 0,
+            "message": "8214e4140ebe4448a10b4b49fc3678e8 hit Oblivion Eidolon for 3."
+        },
+        {
+            "type": 0,
+            "message": "Oblivion Eidolon died."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 1."
+        },
+        {
+            "type": 0,
+            "message": "bbc7ced51e5f4c069fe6f753501cf47d hit Iron Turret for 2."
+        },
+        {
+            "type": 0,
+            "message": "1f90d57b73fb4fc6ac0f2269d18aa41e hit Vine Spider for 1."
+        },
+        {
+            "type": 0,
+            "message": "32f78a7039ef43bfa6fe3cb18c1f0c83 hit Iron Turret for 5."
+        },
+        {
+            "type": 0,
+            "message": "Iron Turret died."
+        },
+        {
+            "type": 0,
+            "message": "1f90d57b73fb4fc6ac0f2269d18aa41e hit Bloom Treant for 1."
+        },
+        {
+            "type": 0,
+            "message": "8214e4140ebe4448a10b4b49fc3678e8 hit Steel Construct for 3."
+        },
+        {
+            "type": 0,
+            "message": "Steel Construct died."
+        },
+        {
+            "type": 0,
+            "message": "15c1e08b990f4a359d60a3c09d5e9cd5 hit Moss Spider for 2."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 2."
+        },
+        {
+            "type": 0,
+            "message": "Moss Spider healed 0."
+        }
+    ],
+    "battleEvents": [
+        {
+            "eventId": "evt-000001",
+            "sequence": 1,
+            "kind": "equipment_played",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "play-006cd2f547e64da8ad45cabb769f4453",
+            "targetRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 7,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Frostforged Spear was played."
+        },
+        {
+            "eventId": "evt-000002",
+            "sequence": 2,
+            "kind": "equipment_attached",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "play-006cd2f547e64da8ad45cabb769f4453",
+            "targetRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 3,
+            "armorAfter": 6,
+            "statusKind": 0,
+            "durationTurns": 3,
+            "message": "Frostforged Spear equipped to Iron Turret."
+        },
+        {
+            "eventId": "evt-000003",
+            "sequence": 3,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Turret is not ready to attack."
+        },
+        {
+            "eventId": "evt-000004",
+            "sequence": 4,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7c91d768f6d744ee831e7dc57e5c9902",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Oblivion Eidolon is not ready to attack."
+        },
+        {
+            "eventId": "evt-000005",
+            "sequence": 5,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "15c1e08b990f4a359d60a3c09d5e9cd5",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Steel Construct is not ready to attack."
+        },
+        {
+            "eventId": "evt-000006",
+            "sequence": 6,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000007",
+            "sequence": 7,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000008",
+            "sequence": 8,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Vine Spider is not ready to attack."
+        },
+        {
+            "eventId": "evt-000009",
+            "sequence": 9,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant is not ready to attack."
+        },
+        {
+            "eventId": "evt-000010",
+            "sequence": 10,
+            "kind": "attack_not_ready",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider is not ready to attack."
+        },
+        {
+            "eventId": "evt-000011",
+            "sequence": 11,
+            "kind": "equipment_played",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "play-185d230ad994496699a24c13cd12e1e5",
+            "targetRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Molten Gauntlets was played."
+        },
+        {
+            "eventId": "evt-000012",
+            "sequence": 12,
+            "kind": "equipment_attached",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "play-185d230ad994496699a24c13cd12e1e5",
+            "targetRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 3,
+            "message": "Molten Gauntlets equipped to Bloom Treant."
+        },
+        {
+            "eventId": "evt-000013",
+            "sequence": 13,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "targetRuntimeId": "",
+            "abilityId": "taunt",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Turret used Taunt."
+        },
+        {
+            "eventId": "evt-000014",
+            "sequence": 14,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "targetRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Turret attacked Vine Spider."
+        },
+        {
+            "eventId": "evt-000015",
+            "sequence": 15,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "targetRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Vine Spider took 1 damage."
+        },
+        {
+            "eventId": "evt-000016",
+            "sequence": 16,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "targetRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Vine Spider struck back at Iron Turret."
+        },
+        {
+            "eventId": "evt-000017",
+            "sequence": 17,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "targetRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 6,
+            "armorAfter": 4,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Turret took 2 damage."
+        },
+        {
+            "eventId": "evt-000018",
+            "sequence": 18,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7c91d768f6d744ee831e7dc57e5c9902",
+            "targetRuntimeId": "",
+            "abilityId": "leech",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Oblivion Eidolon used Leech."
+        },
+        {
+            "eventId": "evt-000019",
+            "sequence": 19,
+            "kind": "card_attack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "7c91d768f6d744ee831e7dc57e5c9902",
+            "targetRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Oblivion Eidolon attacked Moss Spider."
+        },
+        {
+            "eventId": "evt-000020",
+            "sequence": 20,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "7c91d768f6d744ee831e7dc57e5c9902",
+            "targetRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider took 1 damage."
+        },
+        {
+            "eventId": "evt-000021",
+            "sequence": 21,
+            "kind": "heal",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "7c91d768f6d744ee831e7dc57e5c9902",
+            "targetRuntimeId": "7c91d768f6d744ee831e7dc57e5c9902",
+            "abilityId": "leech",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 1,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Oblivion Eidolon healed 1."
+        },
+        {
+            "eventId": "evt-000022",
+            "sequence": 22,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "7c91d768f6d744ee831e7dc57e5c9902",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider struck back at Oblivion Eidolon."
+        },
+        {
+            "eventId": "evt-000023",
+            "sequence": 23,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "7c91d768f6d744ee831e7dc57e5c9902",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Oblivion Eidolon took 3 damage."
+        },
+        {
+            "eventId": "evt-000024",
+            "sequence": 24,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "7c91d768f6d744ee831e7dc57e5c9902",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": -1,
+            "hpAfter": -1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Oblivion Eidolon died."
+        },
+        {
+            "eventId": "evt-000025",
+            "sequence": 25,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000026",
+            "sequence": 26,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 1."
+        },
+        {
+            "eventId": "evt-000027",
+            "sequence": 27,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "targetRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Vine Spider attacked Iron Turret."
+        },
+        {
+            "eventId": "evt-000028",
+            "sequence": 28,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "targetRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 3,
+            "armorBefore": 4,
+            "armorAfter": 2,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Turret took 2 damage."
+        },
+        {
+            "eventId": "evt-000029",
+            "sequence": 29,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "targetRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Turret struck back at Vine Spider."
+        },
+        {
+            "eventId": "evt-000030",
+            "sequence": 30,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "targetRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 1,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Vine Spider took 1 damage."
+        },
+        {
+            "eventId": "evt-000031",
+            "sequence": 31,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "targetRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 5,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant attacked Iron Turret."
+        },
+        {
+            "eventId": "evt-000032",
+            "sequence": 32,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "targetRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 5,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 0,
+            "armorBefore": 2,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Turret took 5 damage."
+        },
+        {
+            "eventId": "evt-000033",
+            "sequence": 33,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Turret died."
+        },
+        {
+            "eventId": "evt-000034",
+            "sequence": 34,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "targetRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Iron Turret struck back at Bloom Treant."
+        },
+        {
+            "eventId": "evt-000035",
+            "sequence": 35,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "1f90d57b73fb4fc6ac0f2269d18aa41e",
+            "targetRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 1,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant took 1 damage."
+        },
+        {
+            "eventId": "evt-000036",
+            "sequence": 36,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "15c1e08b990f4a359d60a3c09d5e9cd5",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider attacked Steel Construct."
+        },
+        {
+            "eventId": "evt-000037",
+            "sequence": 37,
+            "kind": "card_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "15c1e08b990f4a359d60a3c09d5e9cd5",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Steel Construct took 3 damage."
+        },
+        {
+            "eventId": "evt-000038",
+            "sequence": 38,
+            "kind": "death",
+            "sourceSeatIndex": -1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "",
+            "targetRuntimeId": "15c1e08b990f4a359d60a3c09d5e9cd5",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Steel Construct died."
+        },
+        {
+            "eventId": "evt-000039",
+            "sequence": 39,
+            "kind": "card_counterattack",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "15c1e08b990f4a359d60a3c09d5e9cd5",
+            "targetRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Steel Construct struck back at Moss Spider."
+        },
+        {
+            "eventId": "evt-000040",
+            "sequence": 40,
+            "kind": "card_damage",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "15c1e08b990f4a359d60a3c09d5e9cd5",
+            "targetRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 2,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider took 2 damage."
+        },
+        {
+            "eventId": "evt-000041",
+            "sequence": 41,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000042",
+            "sequence": 42,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 2,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 2."
+        },
+        {
+            "eventId": "evt-000043",
+            "sequence": 43,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Vine Spider attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000044",
+            "sequence": 44,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 20,
+            "hpAfter": 18,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 2 damage."
+        },
+        {
+            "eventId": "evt-000045",
+            "sequence": 45,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 5,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000046",
+            "sequence": 46,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 5,
+            "secondaryAmount": 0,
+            "hpBefore": 18,
+            "hpAfter": 13,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 5 damage."
+        },
+        {
+            "eventId": "evt-000047",
+            "sequence": 47,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000048",
+            "sequence": 48,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 13,
+            "hpAfter": 10,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 3 damage."
+        },
+        {
+            "eventId": "evt-000049",
+            "sequence": 49,
+            "kind": "skill_begin",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "",
+            "abilityId": "regenerate",
+            "effectKind": 0,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider used Regenerate."
+        },
+        {
+            "eventId": "evt-000050",
+            "sequence": 50,
+            "kind": "heal",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "abilityId": "regenerate",
+            "effectKind": 1,
+            "amount": 0,
+            "secondaryAmount": 0,
+            "hpBefore": 4,
+            "hpAfter": 4,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider healed 0."
+        },
+        {
+            "eventId": "evt-000051",
+            "sequence": 51,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Vine Spider attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000052",
+            "sequence": 52,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "bbc7ced51e5f4c069fe6f753501cf47d",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 10,
+            "hpAfter": 8,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 2 damage."
+        },
+        {
+            "eventId": "evt-000053",
+            "sequence": 53,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 5,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Bloom Treant attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000054",
+            "sequence": 54,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 5,
+            "secondaryAmount": 0,
+            "hpBefore": 8,
+            "hpAfter": 3,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 5 damage."
+        },
+        {
+            "eventId": "evt-000055",
+            "sequence": 55,
+            "kind": "card_attack",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": -1,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Moss Spider attacked the enemy hero."
+        },
+        {
+            "eventId": "evt-000056",
+            "sequence": 56,
+            "kind": "hero_damage",
+            "sourceSeatIndex": 1,
+            "targetSeatIndex": 0,
+            "serverSourceSeatIndex": 1,
+            "serverTargetSeatIndex": 0,
+            "sourceRuntimeId": "8214e4140ebe4448a10b4b49fc3678e8",
+            "targetRuntimeId": "",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 3,
+            "secondaryAmount": 0,
+            "hpBefore": 3,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Seat 1 hero took 3 damage."
+        },
+        {
+            "eventId": "evt-000057",
+            "sequence": 57,
+            "kind": "equipment_expired",
+            "sourceSeatIndex": 0,
+            "targetSeatIndex": 1,
+            "serverSourceSeatIndex": 0,
+            "serverTargetSeatIndex": 1,
+            "sourceRuntimeId": "play-185d230ad994496699a24c13cd12e1e5",
+            "targetRuntimeId": "32f78a7039ef43bfa6fe3cb18c1f0c83",
+            "abilityId": "",
+            "effectKind": 0,
+            "amount": 2,
+            "secondaryAmount": 0,
+            "hpBefore": 0,
+            "hpAfter": 0,
+            "armorBefore": 0,
+            "armorAfter": 0,
+            "statusKind": 0,
+            "durationTurns": 0,
+            "message": "Molten Gauntlets wore off Bloom Treant."
+        }
+    ]
+}
